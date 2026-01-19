@@ -4,14 +4,22 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
+using DatabaseMigrationGenerator.Settings;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DatabaseMigrationGenerator
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddDatabaseMigrationGenerator(this IServiceCollection services)
+        public static IServiceCollection AddDatabaseMigrationGenerator(
+            this IServiceCollection services,
+            IConfiguration configuration)
         {
+            services.Configure<LiquibaseSettings>(configuration.GetSection("Liquibase"));
+            services.Configure<SqlServerSettings>(configuration.GetSection("SqlServer"));
+            services.Configure<MiscSettings>(configuration.GetSection("Misc"));
+            
             services.AddTransient<IMigrationService, MigrationService>();
             return services;
         }
