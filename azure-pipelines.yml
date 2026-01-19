@@ -36,14 +36,14 @@ steps:
      Write-Host "##vso[task.setvariable variable=RevVersion]$Rev"
      Write-Host "##vso[task.setvariable variable=RevBuild]$Build"
      Write-Host "##vso[task.setvariable variable=PackageVersion]$(MajorVersion).$(MinorVersion).$Rev"
-     Write-Output "RevVersion: $Rev"
-     Write-Output "RevBuild: $Build"
       
 - powershell: |
     echo "PackageVersion: $(PackageVersion)"
     echo "MajorVersion: $(MajorVersion)"
     echo "MinorVersion: $(MinorVersion)"
     echo "RevVersion: $(RevVersion)"
+    echo "RevVersion: $(RevBuild)"
+    echo "RevVersion: $(RevBuild)"
     echo "Build.BuildNumber: $(Build.BuildNumber)"
     echo "Build.SourceBranchName: $(Build.SourceBranchName)"
     echo "BuildConfiguration: $(BuildConfiguration)"
