@@ -65,7 +65,7 @@
         <Copyright>Copyright (c) Hypothekarbank Lenzburg. All rights reserved.</Copyright>
         <PackageProjectUrl>https://www.finstar.ch</PackageProjectUrl>
         <!-- <PackageIconUrl>https://www.finstar.ch/wp-content/uploads/2016/06/cropped-Finstar_nur_Welle_ohne_Weissraum-192x192.png</PackageIconUrl> -->
-        <PackageIcon>Finstar logo icon only.png</PackageIcon>
+        <!-- <PackageIcon>Finstar logo icon only.png</PackageIcon>-->
     </PropertyGroup>
 
     <!-- Nuget use package reference -->
