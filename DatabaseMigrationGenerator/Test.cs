@@ -1,9 +1,9 @@
 ﻿namespace DatabaseMigrationGenerator;
 
-public class Test
+public class Test : ITest
 {
     public void Write()
     {
-        Console.WriteLine("Hello World!");
+        Console.WriteLine("Test text written!");
     }
 }

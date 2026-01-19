@@ -1,6 +1,6 @@
 <Project>
-    <ItemGroup>
-        <PackageVersion Include="Microsoft.SourceLink.AzureDevOpsServer.Git"
-                        Version="8.0.0" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+    <PackageVersion Include="Microsoft.SourceLink.AzureDevOpsServer.Git" Version="8.0.0" />
+  </ItemGroup>
 </Project>
