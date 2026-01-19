@@ -74,17 +74,27 @@ steps:
       /p:PackageVersion=$(MajorVersion).$(MinorVersion).$(RevVersion)
       /p:FileVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
 
-- task: DotNetCoreCLI@2
-  displayName: 'Dotnet pack'
+- task: NuGetCommand@2
+  displayName: 'NuGet pack'
   inputs:
-    command: pack
+    command: 'pack'
     packagesToPack: '$(projects)'
-    arguments: >
-      -c $(BuildConfiguration)
-      /p:Version="1.1.0"
-      /p:PackageVersion="1.1.0"
-      --output $(Build.ArtifactStagingDirectory)
-    nobuild: false
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: '1.1.1'   # oder eine Variable, die du als komplette Version setzt
+    buildProperties: 'Configuration=$(BuildConfiguration)'
+    packDestination: '$(Build.ArtifactStagingDirectory)'
+      
+#- task: DotNetCoreCLI@2
+#  displayName: 'Dotnet pack'
+#  inputs:
+#    command: pack
+#    packagesToPack: '$(projects)'
+#    arguments: >
+#      -c $(BuildConfiguration)
+#      /p:Version="1.1.0"
+#      /p:PackageVersion="1.1.0"
+#      --output $(Build.ArtifactStagingDirectory)
+#    nobuild: true
                
 - task: DotNetCoreCLI@2
   displayName: 'Push'
