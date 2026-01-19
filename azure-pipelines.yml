@@ -40,7 +40,20 @@ steps:
      Write-Host "##vso[task.setvariable variable=RevBuild]$Build"
      Write-Output "RevVersion: $Rev"
      Write-Output "RevBuild: $Build"
-
+      
+- powershell: |
+    echo "MajorVersion: $(MajorVersion)"
+    echo "MinorVersion: $(MinorVersion)"
+    echo "RevVersion: $(RevVersion)"
+    echo "Build.BuildNumber: $(Build.BuildNumber)"
+    echo "Build.SourceBranchName: $(Build.SourceBranchName)"
+    echo "BuildConfiguration: $(BuildConfiguration)"
+    echo "Build.DefinitionName: $(Build.DefinitionName)"
+    echo "Build.Repository.Uri: $(Build.Repository.Uri)"
+    echo "Build.SourcesDirectory): $(Build.SourcesDirectory)"
+    echo "Build.ArtifactStagingDirectory: $(Build.ArtifactStagingDirectory)"
+  displayName: 'Output variables for checking'
+  
 - task: DotNetCoreCLI@2
   displayName: 'Dotnet restore'
   inputs:
