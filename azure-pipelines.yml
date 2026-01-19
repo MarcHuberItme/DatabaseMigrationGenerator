@@ -33,19 +33,25 @@ steps:
      Write-Output "RevVersion: $Rev"
      Write-Output "RevBuild: $Build"
 
-- task: NuGetCommand@2
-  displayName: 'NuGet restore **/*.sln'
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore'
   inputs:
+    command: restore
+    projects: '**/*.sln'
     feedsToUse: config
     nugetConfigPath: nuget.config
 
-- task: MSBuild@1
-  displayName: 'Build solution **/*.sln'
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build'
   inputs:
-    msbuildArchitecture: x64
-    platform: '$(BuildPlatform)'
-    configuration: '$(BuildConfiguration)'
-    msbuildArguments: '/property:Version=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild) /property:AssemblyVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild) /property:FileVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild) /property:PackageVersion=$(MajorVersion).$(MinorVersion).$(RevVersion)'
+    command: build
+    projects: '**/*.sln'
+    arguments: >
+      -c $(BuildConfiguration)
+      /p:Version=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
+      /p:AssemblyVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
+      /p:FileVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
+      /p:PackageVersion=$(MajorVersion).$(MinorVersion).$(RevVersion)
 
 - task: CopyFiles@2
   displayName: 'Copy binaries to BuildOutput'
