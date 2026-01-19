@@ -7,10 +7,15 @@ pool:
   - msbuild
 
 variables:
-  BuildPlatform: 'any cpu'
-  BuildConfiguration: 'Release'
-  MajorVersion: '1'
-  MinorVersion: '1'
+- group: Build Basics
+- name: BuildPlatform
+  value: 'any cpu'
+- name: BuildConfiguration
+  value: 'Release'
+- name: MajorVersion
+  value: '1'
+- name: MinorVersion
+  value: '1'
 
 steps:
 - task: PowerShell@1
