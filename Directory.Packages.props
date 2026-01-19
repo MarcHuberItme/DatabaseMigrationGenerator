@@ -1,0 +1,6 @@
+<Project>
+    <ItemGroup>
+        <PackageVersion Include="Microsoft.SourceLink.AzureDevOpsServer.Git"
+                        Version="8.0.0" />
+    </ItemGroup>
+</Project>
