@@ -1,4 +1,4 @@
-name: $(BuildDefinitionName)_$(MajorVersion).$(MinorVersion)$(Rev:.r).$(Year:yy)$(DayOfYear)
+name: $(BuildDefinitionName)_$(MajorVersion).$(MinorVersion).$(Rev:.r).$(Year:yy)$(DayOfYear)
 
 pool:
   name: Standalone
@@ -67,6 +67,7 @@ steps:
     arguments: >
       -c $(BuildConfiguration)
       /p:Version=$(MajorVersion).$(MinorVersion).$(RevVersion)
+      --output $(Build.ArtifactStagingDirectory)
     nobuild: true
                
 - task: DotNetCoreCLI@2
