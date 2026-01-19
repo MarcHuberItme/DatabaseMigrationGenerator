@@ -1,4 +1,4 @@
-name: $(Build.DefinitionName)_$(Date:yyyyMMdd)_$(Rev:.r)
+name: $(BuildDefinitionName)_$(MajorVersion).$(MinorVersion)$(Rev:.r).$(Year:yy)$(DayOfYear)
 
 pool:
   name: Standalone
