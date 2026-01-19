@@ -64,7 +64,7 @@ steps:
     projects: '**/*.sln'
     arguments: >
       -c $(BuildConfiguration)
-      /p:PackageVersion=$(MajorVersion).$(MinorVersion).$(RevVersion)
+      /p:Version=$(MajorVersion).$(MinorVersion).$(RevVersion)
     nobuild: true
                
 - task: DotNetCoreCLI@2
