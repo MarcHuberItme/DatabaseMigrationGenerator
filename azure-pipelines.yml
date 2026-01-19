@@ -34,7 +34,7 @@ steps:
      Write-Output "RevBuild: $Build"
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet restore'
+  displayName: 'Dotnet restore'
   inputs:
     command: restore
     projects: '**/*.sln'
@@ -42,7 +42,7 @@ steps:
     nugetConfigPath: nuget.config
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet build'
+  displayName: 'Dotnet build'
   inputs:
     command: build
     projects: '**/*.sln'
