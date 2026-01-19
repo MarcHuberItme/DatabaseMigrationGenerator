@@ -75,32 +75,22 @@ steps:
       /p:AssemblyVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
       /p:PackageVersion=$(MajorVersion).$(MinorVersion).$(RevVersion)
       /p:FileVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
-
-- task: NuGetCommand@2
-  displayName: 'NuGet pack'
+  
+- task: DotNetCoreCLI@2
+  displayName: 'Dotnet pack'
   inputs:
-    command: 'pack'
+    command: pack
     packagesToPack: '$(projects)'
-    versioningScheme: 'byEnvVar'
-    versionEnvVar: 'PackageVersion'
-#    buildProperties: 'Configuration=$(BuildConfiguration)'
-    packDestination: '$(Build.ArtifactStagingDirectory)'
-      
-#- task: DotNetCoreCLI@2
-#  displayName: 'Dotnet pack'
-#  inputs:
-#    command: pack
-#    packagesToPack: '$(projects)'
-#    arguments: >
-#      -c $(BuildConfiguration)
-#      /p:Version="1.1.1"
-#      /p:PackageVersion="1.1.1"
-#      --output $(Build.ArtifactStagingDirectory)
-#    nobuild: true
+    arguments: >
+      -c $(BuildConfiguration)
+      /p:Version="1.1.1"
+      /p:PackageVersion="1.1.1"
+      --output $(Build.ArtifactStagingDirectory)
+    nobuild: true
     
 - powershell: |
-    Get-ChildItem "$(Build.ArtifactStagingDirectory)" -Filter *.nupkg | Select Name
-  displayName: 'List nupkg'
+    Get-ChildItem "$(Build.ArtifactStagingDirectory)" -Filter "*.nupkg" | Select Name, FullName
+  displayName: 'List created nupkg'
                
 - task: DotNetCoreCLI@2
   displayName: 'Push'
