@@ -73,7 +73,7 @@ steps:
       -c $(BuildConfiguration)
       /p:Version="$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)"
       /p:AssemblyVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
-      /p:PackageVersion=$(MajorVersion).$(MinorVersion).$(RevVersion)
+#      /p:PackageVersion=$(MajorVersion).$(MinorVersion).$(RevVersion)
       /p:FileVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
   
 - task: DotNetCoreCLI@2
@@ -84,7 +84,7 @@ steps:
     arguments: >
       -c $(BuildConfiguration)
       /p:Version="$(PackageVersion)"
-      /p:PackageVersion="$(PackageVersion)"
+#      /p:PackageVersion="$(PackageVersion)"
       --output $(Build.ArtifactStagingDirectory)
     nobuild: true
     
