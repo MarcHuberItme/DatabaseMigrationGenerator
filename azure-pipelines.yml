@@ -56,7 +56,7 @@ steps:
     projects: '$(projects)'
     arguments: >
       -c $(BuildConfiguration)
-      /p:Version=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
+      /p:Version="$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)"
       /p:AssemblyVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
       /p:FileVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
 
@@ -67,7 +67,8 @@ steps:
     packagesToPack: '$(projects)'
     arguments: >
       -c $(BuildConfiguration)
-      /p:Version=$(MajorVersion).$(MinorVersion).$(RevVersion)
+      /p:Version="$(MajorVersion).$(MinorVersion).$(RevVersion)"
+      /p:PackageVersion=$(MajorVersion).$(MinorVersion).$(RevVersion)
       --output $(Build.ArtifactStagingDirectory)
     nobuild: true
                
