@@ -82,8 +82,8 @@ steps:
     command: 'pack'
     packagesToPack: '$(projects)'
     versioningScheme: 'byEnvVar'
-    versionEnvVar: '$(PackageVersion)'
-    buildProperties: 'Configuration=$(BuildConfiguration)'
+    versionEnvVar: 'PackageVersion'
+#    buildProperties: 'Configuration=$(BuildConfiguration)'
     packDestination: '$(Build.ArtifactStagingDirectory)'
       
 #- task: DotNetCoreCLI@2
@@ -97,6 +97,10 @@ steps:
 #      /p:PackageVersion="1.1.1"
 #      --output $(Build.ArtifactStagingDirectory)
 #    nobuild: true
+    
+- powershell: |
+    Get-ChildItem "$(Build.ArtifactStagingDirectory)" -Filter *.nupkg | Select Name
+  displayName: 'List nupkg'
                
 - task: DotNetCoreCLI@2
   displayName: 'Push'
