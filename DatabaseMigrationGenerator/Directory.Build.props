@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ==========================================================================
+<copyright file="Directory.Build.props" company="Hypothekarbank Lenzburg">
+    Copyright (c) Hypothekarbank Lenzburg. All rights reserved.
+</copyright>
+=========================================================================== -->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <FinstarRootDirectory>$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), "DatabaseMigrationGenerator.sln"))\</FinstarRootDirectory>
+        <FinstarOutputDirectory>$(FinstarRootDirectory)output\</FinstarOutputDirectory>
+    </PropertyGroup>
+    <PropertyGroup>
+        <BaseIntermediateOutputPath>$(FinstarOutputDirectory)obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+        <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>
+    </PropertyGroup>
+
+    <!-- Change the default output directory for binaries. -->
+    <PropertyGroup>
+        <OutputPath>$(FinstarOutputDirectory)bin\$(MSBuildProjectName)_$(Configuration)</OutputPath>
+    </PropertyGroup>
+
+    <!-- Change the default output directory for nuget-files. -->
+    <PropertyGroup>
+        <PackageOutputPath>$(FinstarOutputDirectory)packages</PackageOutputPath>
+    </PropertyGroup>
+
+
+    <!-- Do not add the target framework to output path. -->
+    <PropertyGroup>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    </PropertyGroup>
+
+    <!-- Set some defaults -->
+    <PropertyGroup>
+        <!-- Use the latest language features of CSharp. -->
+        <LangVersion>latest</LangVersion>
+
+        <!-- Do not prefer 32-Bit on all platforms -->
+        <Prefer32Bit>false</Prefer32Bit>
+
+        <!-- Embed source files that are not tracked by the source control manager in the PDB -->
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+        <!-- Recommended: Embed symbols containing Source Link in the main file (exe/dll) -->
+        <DebugType>embedded</DebugType>
+
+        <!-- Restrict resource dll's languages -->
+        <SatelliteResourceLanguages>en;it;fr;de</SatelliteResourceLanguages>
+    </PropertyGroup>
+
+    <!-- Change warnings to errors. -->
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <WarningsAsErrors>0108;0162;0168;0169;0219;0414;0419;0472;0649;1717;1570;1573;1574</WarningsAsErrors>
+    </PropertyGroup>
+
+    <!-- General / Nuget defaults -->
+    <PropertyGroup>
+        <Company>Hypothekarbank Lenzburg AG</Company>
+        <Product>Finstar Core Banking</Product>
+        <Authors>Finstar Team</Authors>
+        <Copyright>Copyright (c) Hypothekarbank Lenzburg. All rights reserved.</Copyright>
+        <PackageProjectUrl>https://www.finstar.ch</PackageProjectUrl>
+        <!-- <PackageIconUrl>https://www.finstar.ch/wp-content/uploads/2016/06/cropped-Finstar_nur_Welle_ohne_Weissraum-192x192.png</PackageIconUrl> -->
+        <PackageIcon>Finstar logo icon only.png</PackageIcon>
+    </PropertyGroup>
+
+    <!-- Nuget use package reference -->
+    <PropertyGroup>
+        <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    </PropertyGroup>
+
+    <!-- Add runtime identifiers for nuget restore -->
+    <PropertyGroup>
+        <RuntimeIdentifiers>win;osx;linux</RuntimeIdentifiers>
+    </PropertyGroup>
+
+    <!-- Stuff used only on build server -->
+    <PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+        <!-- Deterministic build. These should not be enabled during local dev or the debugger won't be able to find the local source files. -->
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+
+        <!-- Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    </PropertyGroup>
+
+    <!-- Allow debugging with sourcelink -->
+    <!-- See here: https://github.com/dotnet/sourcelink -->
+    <ItemGroup Condition="'$(TF_BUILD)' == 'true'">
+        <!-- Nuget package to sourcelink Git on DevOps server -->
+        <PackageReference Include="Microsoft.SourceLink.AzureDevOpsServer.Git">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+
+        <!-- DevOps server for sourcelink -->
+        <SourceLinkAzureDevOpsServerGitHost Include="fstfp01"/>
+    </ItemGroup>
+
+</Project>
