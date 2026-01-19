@@ -2,9 +2,6 @@ name: $(BuildDefinitionName)_$(MajorVersion).$(MinorVersion)$(Rev:.r).$(Year:yy)
 
 pool:
   name: Standalone
-  demands:
-  - DotNetFramework
-  - msbuild
 
 variables:
 - group: Build Basics
