@@ -4,10 +4,10 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-namespace DatabaseMigrationGenerator
+namespace Finstar.DatabaseMigrationGenerator
 {
     public interface IMigrationService
     {
-        void CreateChangeSets();
+        Task CreateChangeSetsAsync();
     }
 }

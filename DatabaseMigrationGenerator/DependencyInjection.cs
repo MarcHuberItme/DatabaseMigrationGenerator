@@ -4,11 +4,12 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
+using DatabaseMigrationGenerator;
 using DatabaseMigrationGenerator.Settings;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DatabaseMigrationGenerator
+namespace Finstar.DatabaseMigrationGenerator
 {
     public static class DependencyInjection
     {
