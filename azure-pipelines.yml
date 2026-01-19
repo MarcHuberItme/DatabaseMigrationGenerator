@@ -56,7 +56,16 @@ steps:
       /p:Version=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
       /p:AssemblyVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
       /p:FileVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
+
+- task: DotNetCoreCLI@2
+  displayName: 'Dotnet pack'
+  inputs:
+    command: pack
+    projects: '**/*.sln'
+    arguments: >
+      -c $(BuildConfiguration)
       /p:PackageVersion=$(MajorVersion).$(MinorVersion).$(RevVersion)
+    nobuild: true
 
 - task: CopyFiles@2
   displayName: 'Copy binaries to BuildOutput'
