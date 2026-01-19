@@ -1,19 +1,62 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- main
-
 pool:
-  name: default
+  name: Standalone
+  demands:
+  - DotNetFramework
+  - msbuild
+
+variables:
+  BuildPlatform: 'any cpu'
+  BuildConfiguration: 'Release'
+  MajorVersion: '1'
+  MinorVersion: '1'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: PowerShell@1
+  displayName: 'Split Build Number'
+  inputs:
+    scriptType: inlineScript
+    inlineScript: |
+     [CmdletBinding()]
+     
+     $VersionRegex = "\d+\.\d+\.\d+\.\d+"
+     $VersionData = [regex]::matches($Env:BUILD_BUILDNUMBER,$VersionRegex)
+     $NewVersion = $VersionData[0].ToString()
+     Write-Output "Version: $NewVersion"
+     
+     $VersArr = $NewVersion.Split(".")
+     $Rev = $VersArr[2]
+     $Build = $VersArr[3]
+     Write-Host "##vso[task.setvariable variable=RevVersion]$Rev"
+     Write-Host "##vso[task.setvariable variable=RevBuild]$Build"
+     Write-Output "RevVersion: $Rev"
+     Write-Output "RevBuild: $Build"
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: NuGetCommand@2
+  displayName: 'NuGet restore **/*.sln'
+  inputs:
+    feedsToUse: config
+    nugetConfigPath: nuget.config
+
+- task: MSBuild@1
+  displayName: 'Build solution **/*.sln'
+  inputs:
+    msbuildArchitecture: x64
+    platform: '$(BuildPlatform)'
+    configuration: '$(BuildConfiguration)'
+    msbuildArguments: '/property:Version=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild) /property:AssemblyVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild) /property:FileVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild) /property:PackageVersion=$(MajorVersion).$(MinorVersion).$(RevVersion)'
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries to BuildOutput'
+  inputs:
+    SourceFolder: '.\output'
+    Contents: |
+     bin\**
+     packages\**
+    TargetFolder: '$(ReleaseOutputDir)\$(Build.BuildNumber)'
+
+- task: CmdLine@1
+  displayName: 'Copy to StandalonePackages feed'
+  inputs:
+    filename: '$(BuildToolsDir)\Nuget\nuget.exe'
+    arguments: 'push "$(build.sourcesDirectory)\output\packages\*.nupkg" -Source "https://fstfp01/FinstarMainCollection/Standalone/_packaging/StandalonePackages/nuget/v3/index.json" -ApiKey "Finstar-Standalone" -NonInteractive -SkipDuplicate'
+  continueOnError: true
