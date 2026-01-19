@@ -66,10 +66,11 @@ steps:
       -c $(BuildConfiguration)
       /p:PackageVersion=$(MajorVersion).$(MinorVersion).$(RevVersion)
     nobuild: true
-
-- task: CmdLine@1
-  displayName: 'Copy to StandalonePackages feed'
+               
+- task: DotNetCoreCLI@2
+  displayName: 'Push'
   inputs:
-    filename: '$(BuildToolsDir)\Nuget\nuget.exe'
-    arguments: 'push "$(build.sourcesDirectory)\output\packages\*.nupkg" -Source "https://fstfp01/FinstarMainCollection/Standalone/_packaging/StandalonePackages/nuget/v3/index.json" -ApiKey "Finstar-Standalone" -NonInteractive -SkipDuplicate'
-  continueOnError: true
+    command: 'push'
+    packagesToPush: '$(Build.SourcesDirectory)/**/*.nupkg;!$(Build.SourcesDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'StandalonePackages'
