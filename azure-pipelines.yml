@@ -1,4 +1,4 @@
-name: $(BuildDefinitionName)_$(MajorVersion).$(MinorVersion).$(Rev:.r).$(Year:yy)$(DayOfYear)
+name: $(BuildDefinitionName)_$(MajorVersion).$(MinorVersion)$(Rev:.r).$(Year:yy)$(DayOfYear)
 
 pool:
   name: Standalone
@@ -29,6 +29,7 @@ steps:
      
      $VersionRegex = "\d+\.\d+\.\d+\.\d+"
      $VersionData = [regex]::matches($Env:BUILD_BUILDNUMBER,$VersionRegex)
+     Write-Output = "Buildnumber: $Env:BUILD_BUILDNUMBER"
      $NewVersion = $VersionData[0].ToString()
      Write-Output "Version: $NewVersion"
      
