@@ -64,7 +64,7 @@ steps:
   displayName: 'Dotnet pack'
   inputs:
     command: pack
-    projects: '$(projects)'
+    packagesToPack: '$(projects)'
     arguments: >
       -c $(BuildConfiguration)
       /p:Version=$(MajorVersion).$(MinorVersion).$(RevVersion)
