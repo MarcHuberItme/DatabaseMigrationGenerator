@@ -6,8 +6,8 @@
 
 namespace DatabaseMigrationGenerator
 {
-    public interface ITest
+    public interface IMigrationService
     {
-        void Write();
+        void CreateChangeSets();
     }
 }

@@ -3,14 +3,14 @@ using Microsoft.Extensions.Options;
 
 namespace DatabaseMigrationGenerator;
 
-public class Test(
+public class MigrationService(
     IOptions<LiquibaseSettings> liquibase,
     IOptions<SqlServerSettings> sql,
     IOptions<MiscSettings> misc)
-    : ITest
+    : IMigrationService
 {
 
-    public void Write()
+    public void CreateChangeSets()
     {
         Console.WriteLine($"Liquibase Settings: Run:{liquibase.Value.Run}");
         Console.WriteLine($"Liquibase Settings: ExecutablePath:{liquibase.Value.ExecutablePath}");

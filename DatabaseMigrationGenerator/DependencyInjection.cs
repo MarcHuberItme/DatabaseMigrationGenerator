@@ -12,7 +12,7 @@ namespace DatabaseMigrationGenerator
     {
         public static IServiceCollection AddDatabaseMigrationGenerator(this IServiceCollection services)
         {
-            services.AddTransient<ITest, Test>();
+            services.AddTransient<IMigrationService, MigrationService>();
             return services;
         }
     }
