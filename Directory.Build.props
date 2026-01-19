@@ -9,31 +9,6 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     </PropertyGroup>
 
-    <PropertyGroup>
-        <FinstarRootDirectory>$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), "DatabaseMigrationGenerator.sln"))\</FinstarRootDirectory>
-        <FinstarOutputDirectory>$(FinstarRootDirectory)output\</FinstarOutputDirectory>
-    </PropertyGroup>
-    <PropertyGroup>
-        <BaseIntermediateOutputPath>$(FinstarOutputDirectory)obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
-        <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>
-    </PropertyGroup>
-
-    <!-- Change the default output directory for binaries. -->
-    <PropertyGroup>
-        <OutputPath>$(FinstarOutputDirectory)bin\$(MSBuildProjectName)_$(Configuration)</OutputPath>
-    </PropertyGroup>
-
-    <!-- Change the default output directory for nuget-files. -->
-    <PropertyGroup>
-        <PackageOutputPath>$(FinstarOutputDirectory)packages</PackageOutputPath>
-    </PropertyGroup>
-
-
-    <!-- Do not add the target framework to output path. -->
-    <PropertyGroup>
-        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    </PropertyGroup>
-
     <!-- Set some defaults -->
     <PropertyGroup>
         <!-- Use the latest language features of CSharp. -->

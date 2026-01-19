@@ -67,15 +67,6 @@ steps:
       /p:PackageVersion=$(MajorVersion).$(MinorVersion).$(RevVersion)
     nobuild: true
 
-- task: CopyFiles@2
-  displayName: 'Copy binaries to BuildOutput'
-  inputs:
-    SourceFolder: '.\output'
-    Contents: |
-     bin\**
-     packages\**
-    TargetFolder: '$(ReleaseOutputDir)\$(Build.BuildNumber)'
-
 - task: CmdLine@1
   displayName: 'Copy to StandalonePackages feed'
   inputs:
