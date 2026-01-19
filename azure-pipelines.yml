@@ -84,7 +84,7 @@ steps:
       /p:Version="1.1.0"
       /p:PackageVersion="1.1.0"
       --output $(Build.ArtifactStagingDirectory)
-    nobuild: true
+    nobuild: false
                
 - task: DotNetCoreCLI@2
   displayName: 'Push'
