@@ -16,6 +16,8 @@ variables:
   value: '1'
 - name: MinorVersion
   value: '1'
+- name: projects
+  value: 'DatabaseMigrationGenerator/DatabaseMigrationGenerator.csproj'
 
 steps:
 - task: PowerShell@1
@@ -42,7 +44,7 @@ steps:
   displayName: 'Dotnet restore'
   inputs:
     command: restore
-    projects: '**/*.sln'
+    projects: '$(projects)'
     feedsToUse: config
     nugetConfigPath: nuget.config
 
@@ -50,7 +52,7 @@ steps:
   displayName: 'Dotnet build'
   inputs:
     command: build
-    projects: '**/*.sln'
+    projects: '$(projects)'
     arguments: >
       -c $(BuildConfiguration)
       /p:Version=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
@@ -61,7 +63,7 @@ steps:
   displayName: 'Dotnet pack'
   inputs:
     command: pack
-    projects: '**/*.sln'
+    projects: '$(projects)'
     arguments: >
       -c $(BuildConfiguration)
       /p:Version=$(MajorVersion).$(MinorVersion).$(RevVersion)
