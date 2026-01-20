@@ -1,0 +1,7 @@
+<Project>
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)Templates\Table\Settings.yaml"
+              Link="Templates\Table\Settings.yaml"
+              Visible="true" />
+    </ItemGroup>
+</Project>

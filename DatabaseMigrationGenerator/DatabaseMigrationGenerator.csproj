@@ -4,9 +4,18 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <!-- <Version>1.0.7</Version>-->
         <RootNamespace>Finstar.DatabaseMigrationGenerator</RootNamespace>
     </PropertyGroup>
+
+    <!-- Templates and scripts for developer -->
+    <ItemGroup>
+        <None Include="buildTransitive\DatabaseMigrationGenerator.targets"
+              Pack="true"
+              PackagePath="buildTransitive\DatabaseMigrationGenerator.targets" />
+        <None Include="buildTransitive\Templates\Table\Settings.yaml"
+              Pack="true"
+              PackagePath="buildTransitive\Templates\Table\Settings.yaml" />
+    </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Microsoft.Extensions.Configuration" />
