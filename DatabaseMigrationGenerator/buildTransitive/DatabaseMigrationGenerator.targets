@@ -1,10 +1,10 @@
 <Project>
     <ItemGroup>
-<!--        <None Include="$(MSBuildThisFileDirectory)Templates\Table\Settings.yaml"-->
-<!--              Link="Templates\Table\Settings.yaml"-->
-<!--              Visible="true" />-->
         <None Include="$(MSBuildThisFileDirectory)Templates\**\*.yaml"
               Link="Templates\%(RecursiveDir)%(Filename)%(Extension)"
+              Visible="true" />
+        <None Include="$(MSBuildThisFileDirectory)Scripts\**\*.*"
+              Link="Scripts\%(RecursiveDir)%(Filename)%(Extension)"
               Visible="true" />
     </ItemGroup>
 </Project>

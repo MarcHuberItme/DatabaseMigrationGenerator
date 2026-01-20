@@ -12,12 +12,12 @@
         <None Include="buildTransitive\DatabaseMigrationGenerator.targets"
               Pack="true"
               PackagePath="buildTransitive\DatabaseMigrationGenerator.targets" />
-<!--        <None Include="buildTransitive\Templates\Table\Settings.yaml"-->
-<!--              Pack="true"-->
-<!--              PackagePath="buildTransitive\Templates\Table\Settings.yaml" />-->
         <None Include="buildTransitive\Templates\**\*.yaml"
               Pack="true"
               PackagePath="buildTransitive\Templates\%(RecursiveDir)%(Filename)%(Extension)" />
+        <None Include="buildTransitive\Scripts\**\*.*"
+              Pack="true"
+              PackagePath="buildTransitive\Scripts\%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
 
     <ItemGroup>
