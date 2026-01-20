@@ -4,93 +4,108 @@ pool:
   name: Standalone
 
 variables:
-- group: Build Basics
-- name: BuildPlatform
-  value: 'any cpu'
-- name: BuildConfiguration
-  value: 'Release'
-- name: MajorVersion
-  value: '1'
-- name: MinorVersion
-  value: '1'
-- name: projects
-  value: 'DatabaseMigrationGenerator/DatabaseMigrationGenerator.csproj'
+  - group: Build Basics
+  - name: BuildPlatform
+    value: 'any cpu'
+  - name: BuildConfiguration
+    value: 'Release'
+  - name: MajorVersion
+    value: '1'
+  - name: MinorVersion
+    value: '1'
+  - name: projects
+    value: 'DatabaseMigrationGenerator/DatabaseMigrationGenerator.csproj'
+  - name: PreReleaseLabel
+    value: 'alpha'
+  - name: MainBranch
+    value: 'main'
 
 steps:
-- task: PowerShell@1
-  displayName: 'Split Build Number'
-  inputs:
-    scriptType: inlineScript
-    inlineScript: |
-     [CmdletBinding()]
-     
-     $VersionRegex = "\d+\.\d+\.\d+\.\d+"
-     $VersionData = [regex]::matches($Env:BUILD_BUILDNUMBER,$VersionRegex)
-     Write-Output = "Buildnumber: $Env:BUILD_BUILDNUMBER"
-     $NewVersion = $VersionData[0].ToString()
-     Write-Output "Version: $NewVersion"
-     
-     $VersArr = $NewVersion.Split(".")
-     $Rev = $VersArr[2]
-     $Build = $VersArr[3]
-     Write-Host "##vso[task.setvariable variable=RevVersion]$Rev"
-     Write-Host "##vso[task.setvariable variable=RevBuild]$Build"
-     Write-Host "##vso[task.setvariable variable=PackageVersion]$(MajorVersion).$(MinorVersion).$Rev"
-      
-- powershell: |
-    echo "PackageVersion: $(PackageVersion)"
-    echo "MajorVersion: $(MajorVersion)"
-    echo "MinorVersion: $(MinorVersion)"
-    echo "RevVersion: $(RevVersion)"
-    echo "RevVersion: $(RevBuild)"
-    echo "RevVersion: $(RevBuild)"
-    echo "Build.BuildNumber: $(Build.BuildNumber)"
-    echo "Build.SourceBranchName: $(Build.SourceBranchName)"
-    echo "BuildConfiguration: $(BuildConfiguration)"
-    echo "Build.DefinitionName: $(Build.DefinitionName)"
-    echo "Build.Repository.Uri: $(Build.Repository.Uri)"
-    echo "Build.SourcesDirectory: $(Build.SourcesDirectory)"
-    echo "Build.ArtifactStagingDirectory: $(Build.ArtifactStagingDirectory)"
-  displayName: 'Output variables for checking'
-  
-- task: DotNetCoreCLI@2
-  displayName: 'Dotnet restore'
-  inputs:
-    command: restore
-    projects: '$(projects)'
-    feedsToUse: config
-    nugetConfigPath: nuget.config
+  - task: PowerShell@1
+    displayName: 'Split Build Number'
+    inputs:
+      scriptType: inlineScript
+      inlineScript: |
+        [CmdletBinding()]
+        
+        $VersionRegex = "\d+\.\d+\.\d+\.\d+"
+        $VersionData = [regex]::matches($Env:BUILD_BUILDNUMBER,$VersionRegex)
+        Write-Output = "Buildnumber: $Env:BUILD_BUILDNUMBER"
+        $NewVersion = $VersionData[0].ToString()
+        Write-Output "Version: $NewVersion"
+        
+        $VersArr = $NewVersion.Split(".")
+        $Rev = $VersArr[2]
+        $Build = $VersArr[3]
+        Write-Host "##vso[task.setvariable variable=RevVersion]$Rev"
+        Write-Host "##vso[task.setvariable variable=RevBuild]$Build"
+        # Write-Host "##vso[task.setvariable variable=PackageVersion]$(MajorVersion).$(MinorVersion).$Rev"
+        $BasePackageVersion = "$(MajorVersion).$(MinorVersion).$Rev"
+        $branchName = "$(Build.SourceBranchName)"
+        if ($branchName -ne "$(MainBranch)") {
+          $pre = "$(PreReleaseLabel).$(Build.BuildId)"
+          $pkg = "$BasePackageVersion-$pre"
+        } else {
+          $pkg = $BasePackageVersion
+        }
+        
+        Write-Host "##vso[task.setvariable variable=PackageVersion]$pkg"
+        Write-Output "PackageVersion set to: $pkg" 
 
-- task: DotNetCoreCLI@2
-  displayName: 'Dotnet build'
-  inputs:
-    command: build
-    projects: '$(projects)'
-    arguments: >
-      -c $(BuildConfiguration)
-      /p:Version="$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)"
-      /p:AssemblyVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
-      /p:FileVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
-  
-- task: DotNetCoreCLI@2
-  displayName: 'Dotnet pack'
-  inputs:
-    command: pack
-    packagesToPack: '$(projects)'
-    arguments: >
-      -c $(BuildConfiguration)
-      /p:Version="$(PackageVersion)"
-      --output $(Build.ArtifactStagingDirectory)
-    nobuild: true
-    
-- powershell: |
-    Get-ChildItem "$(Build.ArtifactStagingDirectory)" -Filter "*.nupkg" | Select Name, FullName
-  displayName: 'List created nupkg'
-               
-- task: DotNetCoreCLI@2
-  displayName: 'Push'
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'StandalonePackages'
+  - powershell: |
+      echo "PackageVersion: $(PackageVersion)"
+      echo "MajorVersion: $(MajorVersion)"
+      echo "MinorVersion: $(MinorVersion)"
+      echo "RevVersion: $(RevVersion)"
+      echo "RevVersion: $(RevBuild)"
+      echo "RevVersion: $(RevBuild)"
+      echo "Build.BuildNumber: $(Build.BuildNumber)"
+      echo "Build.SourceBranchName: $(Build.SourceBranchName)"
+      echo "BuildConfiguration: $(BuildConfiguration)"
+      echo "Build.DefinitionName: $(Build.DefinitionName)"
+      echo "Build.Repository.Uri: $(Build.Repository.Uri)"
+      echo "Build.SourcesDirectory: $(Build.SourcesDirectory)"
+      echo "Build.ArtifactStagingDirectory: $(Build.ArtifactStagingDirectory)"
+    displayName: 'Output variables for checking'
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Dotnet restore'
+    inputs:
+      command: restore
+      projects: '$(projects)'
+      feedsToUse: config
+      nugetConfigPath: nuget.config
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Dotnet build'
+    inputs:
+      command: build
+      projects: '$(projects)'
+      arguments: >
+        -c $(BuildConfiguration)
+        /p:Version="$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)"
+        /p:AssemblyVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
+        /p:FileVersion=$(MajorVersion).$(MinorVersion).$(RevVersion).$(RevBuild)
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Dotnet pack'
+    inputs:
+      command: pack
+      packagesToPack: '$(projects)'
+      arguments: >
+        -c $(BuildConfiguration)
+        /p:Version="$(PackageVersion)"
+        --output $(Build.ArtifactStagingDirectory)
+      nobuild: true
+
+  - powershell: |
+      Get-ChildItem "$(Build.ArtifactStagingDirectory)" -Filter "*.nupkg" | Select Name, FullName
+    displayName: 'List created nupkg'
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Push'
+    inputs:
+      command: 'push'
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+      nuGetFeedType: 'external'
+      publishFeedCredentials: 'StandalonePackages'
