@@ -1,4 +1,5 @@
 ﻿using Finstar.DatabaseMigrationGenerator;
+using Finstar.DatabaseMigrationGenerator.Application;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -23,6 +24,7 @@ class Program
 
         using var scope = host.Services.CreateScope();
         var logic = scope.ServiceProvider.GetRequiredService<IMigrationService>();
-        await logic.CreateChangeSetsAsync();
+        var command = new CreateChangeSetsCommand("test");
+        await logic.CreateChangeSetsAsync(command);
     }
 }
