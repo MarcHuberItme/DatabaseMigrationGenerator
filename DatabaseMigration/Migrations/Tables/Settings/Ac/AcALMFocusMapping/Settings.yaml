@@ -1,0 +1,43 @@
+table:
+  name: 'AcALMFocusMapping'
+  description: 'The mapping table for ALM Focus (used by the .Net Project: Standalone/FsFocusInterface/FsFocusInterfaceServiceHost) to map the Finstar world with the ALM Focus world. From this Standalone tool, are the SqlScripts "FinstarDB" used, instead of banc specific scipts.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+#  genericComponents:
+#    tableType: 1
+#    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+#    defArchive: true
+#    visumLevel: 1
+#    cacheLevel: 1
+#    isGroupable: true
+#    uiTableDescription:
+#    - english:
+#        formTitle: 'The mapping table for ALM'
+#        helpText: 'The mapping table for ALM Focus'
+#    - german:
+#        formTitle: 'The mapping table for ALM'
+#        helpText: 'The mapping table for ALM Focus'
+#  columns:
+#  - name: 'FinstarProductNo'
+#    description: 'ProductNo form Finstar to be mapped in ALM Focus\r\n2020-02-04 TSH: changed from int to bigint, because BSZ has PortfolioNo with 11 digits!\r\n2020-02-05 TSH: undo change, because their are some problems...\r\n2022-07-20 TSH: changed to decimal(11,0)'
+#    genericControls:
+#      defColumnPos: 1
+#  - name: 'PlanningAccountNo'
+#    description: 'ALMFocus Name for tze Finstar AccountNo or ProductNo to be mapped in ALM Focus'
+#    genericControls:
+#      defColumnPos: 2
+#  - name: 'ModuleName'
+#    description: 'The name of SQL script in the .Net project'
+#    genericControls:
+#      defColumnPos: 3
+#  - name: 'IsActive'
+#    description: 'is it for active assets'
+#  - name: 'IsPassive'
+#    description: 'is it for passive assets'
+#  - name: 'FloatParameter'
+#    description: 'Floating point parameter for values to be migrated from .Net/SQL code into the mapping Finstar table'
+#  - name: 'Comment'
+#    description: 'Comment for some explenations and documentation'
+#    genericControls:
+#      multiLine: true

@@ -4,9 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-namespace Finstar.DatabaseMigrationGenerator.Domain
+namespace Finstar.DatabaseMigrationGenerator.Domain.DatabaseObject
 {
-    public class TableObjectSettings : IDatabaseObjectSettings
+    public interface IDatabaseObjectSettings
     {
         
     }
