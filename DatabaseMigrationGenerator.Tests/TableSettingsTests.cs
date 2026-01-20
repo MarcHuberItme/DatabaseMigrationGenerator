@@ -16,6 +16,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         public static void ClassInitialize(TestContext _)
         {
             TableSettings.SetValidDomainTypes([10, 20, 30, 40]);
+            GenericComponentsSettings.SetValidTableTypes([1, 2, 3, 4, 5, 6]);
         }
 
         #region Name Validation
@@ -29,7 +30,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = 10,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -48,7 +50,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = 10,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -67,7 +70,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = 10,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -86,7 +90,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = 10,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -105,7 +110,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = 10,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -128,7 +134,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = string.Empty,
                 TableUsageNo = 1,
                 DomainType = 10,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -147,7 +154,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "D" + new string('a', 2000),
                 TableUsageNo = 1,
                 DomainType = 10,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -166,7 +174,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "lowercase description",
                 TableUsageNo = 1,
                 DomainType = 10,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -185,7 +194,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "Description with Ümlauts",
                 TableUsageNo = 1,
                 DomainType = 10,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -208,7 +218,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "Valid description",
                 TableUsageNo = 0,
                 DomainType = 10,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -227,7 +238,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "Valid description",
                 TableUsageNo = 2,
                 DomainType = 10,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -250,7 +262,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = 0,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -269,7 +282,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = 15,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -292,7 +306,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = domainType,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -315,7 +330,8 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = 10,
-                WritableForEbanking = false
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 1 }
             };
 
             //act
@@ -340,7 +356,97 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
             var errors = setting.Validate();
 
             //assert
-            errors.Should().HaveCountGreaterThanOrEqualTo(4);
+            errors.Should().HaveCountGreaterThanOrEqualTo(6);
+        }
+
+        #endregion
+
+        #region GenericComponents Validation
+
+        [TestMethod]
+        public void Validate_GenericComponentsIsNull_ReturnsError()
+        {
+            //arrange
+            var setting = new TableSettings {
+                Name = "ValidName",
+                Description = "Valid description",
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false,
+                GenericComponents = null
+            };
+
+            //act
+            var errors = setting.Validate();
+
+            //assert
+            errors.Should().Contain(e => e.Contains("GenericComponents") && e.Contains("required"));
+        }
+
+        [TestMethod]
+        public void Validate_TableTypeIsNull_ReturnsError()
+        {
+            //arrange
+            var setting = new TableSettings {
+                Name = "ValidName",
+                Description = "Valid description",
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = null }
+            };
+
+            //act
+            var errors = setting.Validate();
+
+            //assert
+            errors.Should().Contain(e => e.Contains("TableType") && e.Contains("required"));
+        }
+
+        [TestMethod]
+        public void Validate_TableTypeIsInvalid_ReturnsError()
+        {
+            //arrange
+            var setting = new TableSettings {
+                Name = "ValidName",
+                Description = "Valid description",
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = 99 }
+            };
+
+            //act
+            var errors = setting.Validate();
+
+            //assert
+            errors.Should().Contain(e => e.Contains("TableType") && e.Contains("1, 2, 3, 4, 5, 6"));
+        }
+
+        [TestMethod]
+        [DataRow((byte)1)]
+        [DataRow((byte)2)]
+        [DataRow((byte)3)]
+        [DataRow((byte)4)]
+        [DataRow((byte)5)]
+        [DataRow((byte)6)]
+        public void Validate_TableTypeIsValid_ReturnsNoError(byte tableType)
+        {
+            //arrange
+            var setting = new TableSettings {
+                Name = "ValidName",
+                Description = "Valid description",
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false,
+                GenericComponents = new GenericComponentsSettings { TableType = tableType }
+            };
+
+            //act
+            var errors = setting.Validate();
+
+            //assert
+            errors.Should().NotContain(e => e.Contains("TableType"));
         }
 
         #endregion

@@ -22,7 +22,8 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
 
         public bool? WritableForEbanking { get; init; }
 
-        // public GenericComponentsSettings? GenericComponents { get; set; } = new();
+        public GenericComponentsSettings? GenericComponents { get; init; }
+
         // public List<TableColumnSettings>? Columns { get; set; } = new();
 
         private const int MaxNameLength = 30;
@@ -45,6 +46,7 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
             ValidateTableUsageNo(errors);
             ValidateDomainType(errors);
             ValidateWritableForEbanking(errors);
+            ValidateGenericComponents(errors);
 
             return errors;
         }
@@ -108,6 +110,16 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
             if (WritableForEbanking is null) {
                 errors.Add($"{nameof(WritableForEbanking)} is required.");
             }
+        }
+
+        private void ValidateGenericComponents(List<string> errors)
+        {
+            if (GenericComponents is null) {
+                errors.Add($"{nameof(GenericComponents)} is required.");
+                return;
+            }
+
+            errors.AddRange(GenericComponents.Validate());
         }
     }
 }

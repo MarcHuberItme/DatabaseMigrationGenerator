@@ -17,12 +17,16 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
         ISettingsReader settingsReader,
         IHeaderTableSettingsReader headerTableSettingsReader,
         IMdDomainTypeReader mdDomainTypeReader,
+        IMdTableTypeReader mdTableTypeReader,
         IMetadataBuilder metadataBuilder) : IMetadataGenerationService
     {
         public async Task<IEnumerable<IMetadata>> Generate(string migrationsPath)
         {
             var validDomainTypes = await mdDomainTypeReader.ReadAsync(migrationsPath);
             TableSettings.SetValidDomainTypes(validDomainTypes);
+
+            var validTableTypes = await mdTableTypeReader.ReadAsync(migrationsPath);
+            GenericComponentsSettings.SetValidTableTypes(validTableTypes);
 
             var settings = (await settingsReader.ReadAsync(migrationsPath)).ToList();
 
