@@ -15,6 +15,6 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
             SourceFilePath =  filePath;
         }
         
-        public abstract void Validate();
+        public abstract List<string> Validate();
     }
 }

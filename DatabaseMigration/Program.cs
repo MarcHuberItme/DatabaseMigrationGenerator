@@ -1,10 +1,10 @@
 ﻿using Finstar.DatabaseMigrationGenerator;
-using Finstar.DatabaseMigrationGenerator.Application;
 using Finstar.DatabaseMigrationGenerator.Application.Migration;
 using Finstar.DatabaseMigrationGenerator.AppSettings;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 using Microsoft.Extensions.Options;
 
 namespace Finstar.DatabaseMigration;
@@ -21,7 +21,11 @@ class Program
             .ConfigureLogging(logging =>
             {
                 logging.ClearProviders();
-                logging.AddConsole();
+                logging.AddConsoleFormatter<PlainConsoleFormatter, ConsoleFormatterOptions>();
+                logging.AddConsole(options =>
+                {
+                    options.FormatterName = PlainConsoleFormatter.FormatterName;
+                });
             })
             .Build();
         

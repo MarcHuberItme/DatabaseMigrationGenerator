@@ -6,6 +6,8 @@
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 
 namespace Finstar.DatabaseMigrationGenerator.Tests
 {
@@ -33,7 +35,9 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 .Build();
 
             var services = new ServiceCollection();
-            
+
+            services.AddSingleton<ILoggerFactory, NullLoggerFactory>();
+            services.AddSingleton(typeof(ILogger<>), typeof(NullLogger<>));
             services.AddDatabaseMigrationGenerator(Configuration);
 
             ServiceProvider = services.BuildServiceProvider();

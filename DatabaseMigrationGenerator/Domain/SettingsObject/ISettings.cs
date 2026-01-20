@@ -8,6 +8,8 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
 {
     public interface ISettings
     {
-        void Validate();
+        string SourceFilePath { get; }
+
+        List<string> Validate();
     }
 }
