@@ -4,10 +4,11 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-namespace Finstar.DatabaseMigrationGenerator
+namespace Finstar.DatabaseMigrationGenerator.AppSettings
 {
-    public interface IMigrationService
+    public class MiscSettings
     {
-        Task CreateChangeSetsAsync();
+        public string DoNotCreateTriggersForTables { get; init; }
+        public string DoNotCreateGetDetailAndGetListForStoredProcedures { get; init; }
     }
 }

@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-namespace DatabaseMigrationGenerator.Settings
+namespace Finstar.DatabaseMigrationGenerator.AppSettings
 {
     public class SqlServerSettings
     {

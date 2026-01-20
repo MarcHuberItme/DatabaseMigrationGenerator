@@ -4,11 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-namespace DatabaseMigrationGenerator.Settings
+namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 {
-    public class MiscSettings
+    public interface IDatabaseObjectSettingsReader
     {
-        public string DoNotCreateTriggersForTables { get; init; }
-        public string DoNotCreateGetDetailAndGetListForStoredProcedures { get; init; }
     }
 }
