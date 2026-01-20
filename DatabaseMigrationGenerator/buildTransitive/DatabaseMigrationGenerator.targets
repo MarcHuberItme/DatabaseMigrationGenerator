@@ -1,6 +1,6 @@
 <Project>
     <ItemGroup>
-        <None Include="$(MSBuildThisFileDirectory)Templates\**\*.yaml"
+        <None Include="$(MSBuildThisFileDirectory)Templates\**\*.*"
               Link="Templates\%(RecursiveDir)%(Filename)%(Extension)"
               Visible="true" />
         <None Include="$(MSBuildThisFileDirectory)Scripts\**\*.*"
