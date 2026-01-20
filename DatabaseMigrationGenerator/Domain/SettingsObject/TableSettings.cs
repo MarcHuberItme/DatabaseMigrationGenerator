@@ -10,8 +10,6 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
     {
         public string Name { get; init; } = string.Empty;
 
-        public string? Id { get; init; } = string.Empty;
-
         public string? Description { get; init; } = string.Empty;
 
         public byte DomainType { get; init; }
@@ -50,10 +48,6 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
                 if (Name.Contains(' ')) {
                     errors.Add($"{nameof(Name)} must not contain spaces.");
                 }
-            }
-
-            if (string.IsNullOrEmpty(Id) || !Guid.TryParse(Id, out var parsedGuid) || parsedGuid == Guid.Empty) {
-                errors.Add($"{nameof(Id)} must be a valid non-empty GUID.");
             }
 
             return errors;

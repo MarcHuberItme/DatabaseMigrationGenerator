@@ -28,60 +28,11 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         }
 
         [TestMethod]
-        public void Validate_IdIsEmpty_ReturnsError()
-        {
-            //arrange
-            var setting = new TableSettings {
-                Name = "TestTable",
-                Id = string.Empty
-            };
-
-            //act
-            var errors = setting.Validate();
-
-            //assert
-            errors.Should().Contain(e => e.Contains("Id") && e.Contains("GUID"));
-        }
-
-        [TestMethod]
-        public void Validate_IdIsNotValidGuid_ReturnsError()
-        {
-            //arrange
-            var setting = new TableSettings {
-                Name = "TestTable",
-                Id = "not-a-valid-guid"
-            };
-
-            //act
-            var errors = setting.Validate();
-
-            //assert
-            errors.Should().Contain(e => e.Contains("Id") && e.Contains("GUID"));
-        }
-
-        [TestMethod]
-        public void Validate_IdIsEmptyGuid_ReturnsError()
-        {
-            //arrange
-            var setting = new TableSettings {
-                Name = "TestTable",
-                Id = Guid.Empty.ToString()
-            };
-
-            //act
-            var errors = setting.Validate();
-
-            //assert
-            errors.Should().Contain(e => e.Contains("Id") && e.Contains("GUID"));
-        }
-
-        [TestMethod]
         public void Validate_NameExceedsMaxLength_ReturnsError()
         {
             //arrange
             var setting = new TableSettings {
-                Name = "ThisNameIsWayTooLongAndExceedsTheLimit",
-                Id = Guid.NewGuid().ToString()
+                Name = "ThisNameIsWayTooLongAndExceedsTheLimit"
             };
 
             //act
@@ -96,8 +47,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         {
             //arrange
             var setting = new TableSettings {
-                Name = "testTable",
-                Id = Guid.NewGuid().ToString()
+                Name = "testTable"
             };
 
             //act
@@ -112,8 +62,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         {
             //arrange
             var setting = new TableSettings {
-                Name = "Täble",
-                Id = Guid.NewGuid().ToString()
+                Name = "Täble"
             };
 
             //act
@@ -128,8 +77,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         {
             //arrange
             var setting = new TableSettings {
-                Name = "Table Name",
-                Id = Guid.NewGuid().ToString()
+                Name = "Table Name"
             };
 
             //act
@@ -144,8 +92,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         {
             //arrange
             var setting = new TableSettings {
-                Name = "ValidTableName",
-                Id = Guid.NewGuid().ToString()
+                Name = "ValidTableName"
             };
 
             //act
@@ -160,18 +107,16 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         {
             //arrange
             var setting = new TableSettings {
-                Name = "täbleWithUmlautAndLowercase",
-                Id = "invalid-guid"
+                Name = "täbleWithUmlautAndLowercase"
             };
 
             //act
             var errors = setting.Validate();
 
             //assert
-            errors.Should().HaveCount(3);
+            errors.Should().HaveCount(2);
             errors.Should().Contain(e => e.Contains("uppercase"));
             errors.Should().Contain(e => e.Contains("umlaut"));
-            errors.Should().Contain(e => e.Contains("GUID"));
         }
     }
 }
