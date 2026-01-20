@@ -1,11 +1,14 @@
-﻿namespace Finstar.DatabaseMigrationGenerator.Application;
+﻿using Finstar.DatabaseMigrationGenerator.Infrastructure;
 
-public class MigrationService : IMigrationService
+namespace Finstar.DatabaseMigrationGenerator.Application;
+
+public class MigrationService(
+    IDatabaseObjectSettingsReader databaseObjectSettingsReader) : IMigrationService
 {
 
     public async Task CreateChangeSetsAsync(CreateChangeSetsCommand command)
     {
-        Console.WriteLine("hello MigrationService");
+        await databaseObjectSettingsReader.ReadAsync(command.MigrationsPath);
         
         //Read Migrationspath
         

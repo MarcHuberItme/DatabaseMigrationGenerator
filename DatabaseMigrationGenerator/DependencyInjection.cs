@@ -6,6 +6,7 @@
 
 using Finstar.DatabaseMigrationGenerator.Application;
 using Finstar.DatabaseMigrationGenerator.AppSettings;
+using Finstar.DatabaseMigrationGenerator.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -22,6 +23,7 @@ namespace Finstar.DatabaseMigrationGenerator
             services.Configure<MiscSettings>(configuration.GetSection("Misc"));
             
             services.AddTransient<IMigrationService, MigrationService>();
+            services.AddTransient<IDatabaseObjectSettingsReader, DatabaseObjectSettingsReader>();
             return services;
         }
     }

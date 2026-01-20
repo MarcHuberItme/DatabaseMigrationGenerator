@@ -8,7 +8,22 @@ namespace Finstar.DatabaseMigrationGenerator.AppSettings
 {
     public class MiscSettings
     {
-        public string DoNotCreateTriggersForTables { get; init; }
-        public string DoNotCreateGetDetailAndGetListForStoredProcedures { get; init; }
+        public string MigrationsDirectoryName { get; init; } = string.Empty;
+        
+        public string BaseDirectoryPath { get; init; } = string.Empty;
+        
+        public string DoNotCreateTriggersForTables { get; init; } = string.Empty;
+        
+        public string DoNotCreateGetDetailAndGetListForStoredProcedures { get; init; } = string.Empty;
+
+        public string MigrationsDirectoryPath(string basePath)
+        {
+            var rootPath = basePath;
+            if (!string.IsNullOrEmpty(BaseDirectoryPath)) {
+                rootPath = BaseDirectoryPath;
+            }
+            var migrationsDirectoryPath = Path.Combine(rootPath, MigrationsDirectoryName);
+            return migrationsDirectoryPath;
+        }
     }
 }

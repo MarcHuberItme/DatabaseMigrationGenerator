@@ -8,10 +8,14 @@ namespace Finstar.DatabaseMigrationGenerator.AppSettings
 {
     public class LiquibaseSettings
     {
-        public bool Run { get; init; }
-        public string ExecutablePath { get; init; }
-        public string WorkingDirectory { get; init; }
-        public string ContextFilter { get; init; }
-        public string LabelFilter { get; init; }
+        public bool Run { get; init; } = false;
+        
+        public string ExecutablePath { get; init; } = string.Empty;
+        
+        public string WorkingDirectory { get; init; } = string.Empty;
+        
+        public string ContextFilter { get; init; } = string.Empty;
+        
+        public string LabelFilter { get; init; } = string.Empty;
     }
 }

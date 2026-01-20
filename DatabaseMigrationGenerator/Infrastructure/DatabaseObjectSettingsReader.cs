@@ -6,6 +6,8 @@
 
 using Finstar.DatabaseMigrationGenerator.Domain;
 using Finstar.DatabaseMigrationGenerator.Domain.DatabaseObject;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 {
@@ -19,17 +21,17 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 
             foreach (var file in settingsFiles)
             {
-                // var yamlContent = File.ReadAllText(file);
-                // var deserializer = new DeserializerBuilder()
-                //     .WithNamingConvention(CamelCaseNamingConvention.Instance)
-                //     .Build();
-                //
-                // if (yamlContent.StartsWith("table:"))
-                // {
-                //     var settings = deserializer.Deserialize<SettingsYamlTableModel>(yamlContent);
-                //     var headerTable = headerTableReader.Get(settings.Table.HeaderTable);
-                //     yield return ConfigurationMapper.MapTable(settings.Table, headerTable?.Columns);
-                // }
+                var content = await File.ReadAllTextAsync(file);
+                var deserializer = new DeserializerBuilder()
+                    .WithNamingConvention(CamelCaseNamingConvention.Instance)
+                    .Build();
+                
+                if (content.StartsWith("table:"))
+                {
+                    var settings = deserializer.Deserialize<TableObjectSettings>(content);
+                    // var headerTable = headerTableReader.Get(settings.Table.HeaderTable);
+                    // yield return ConfigurationMapper.MapTable(settings.Table, headerTable?.Columns);
+                }
                 // else if (yamlContent.StartsWith("function:"))
                 // {
                 //     var settings = deserializer.Deserialize<SettingsYamlFunctionModel>(yamlContent);

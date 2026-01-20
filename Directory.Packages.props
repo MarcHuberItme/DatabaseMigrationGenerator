@@ -11,5 +11,6 @@
     <PackageVersion Include="Microsoft.SourceLink.AzureDevOpsServer.Git" Version="8.0.0" />
     <PackageVersion Include="MSTest.TestAdapter" Version="4.0.2" />
     <PackageVersion Include="MSTest.TestFramework" Version="4.0.2" />
+    <PackageVersion Include="YamlDotNet" Version="16.3.0" />
   </ItemGroup>
 </Project>
