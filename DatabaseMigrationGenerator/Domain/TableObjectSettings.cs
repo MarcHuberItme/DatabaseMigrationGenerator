@@ -4,10 +4,10 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-namespace Finstar.DatabaseMigrationGenerator
+namespace Finstar.DatabaseMigrationGenerator.Domain
 {
-    public interface IMigrationService
+    public class TableObjectSettings : IDatabaseObjectSettings
     {
-        Task CreateChangeSetsAsync();
+        
     }
 }

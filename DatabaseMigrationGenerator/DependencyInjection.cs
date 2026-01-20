@@ -4,8 +4,8 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-using DatabaseMigrationGenerator;
-using DatabaseMigrationGenerator.Settings;
+using Finstar.DatabaseMigrationGenerator.Application;
+using Finstar.DatabaseMigrationGenerator.AppSettings;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
