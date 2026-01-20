@@ -30,6 +30,7 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
                 if (content.StartsWith("table:"))
                 {
                     var tableSettings = deserializer.Deserialize<TableSettingsRoot>(content);
+                    tableSettings.Table.MapSourceFilePath(file); 
                     settings.Add(tableSettings.Table);
                     // var headerTable = headerTableReader.Get(settings.Table.HeaderTable);
                     // yield return ConfigurationMapper.MapTable(settings.Table, headerTable?.Columns);

@@ -20,4 +20,8 @@
       <ProjectReference Include="..\DatabaseMigrationGenerator\DatabaseMigrationGenerator.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Fakes\" />
+    </ItemGroup>
+
 </Project>

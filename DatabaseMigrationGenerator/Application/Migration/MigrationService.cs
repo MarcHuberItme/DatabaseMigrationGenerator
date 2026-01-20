@@ -1,21 +1,23 @@
 ﻿using Finstar.DatabaseMigrationGenerator.Application.Metadata;
-using Finstar.DatabaseMigrationGenerator.Infrastructure;
+using Microsoft.Extensions.Logging;
 
 namespace Finstar.DatabaseMigrationGenerator.Application.Migration;
 
 public class MigrationService(
-    ISettingsReader settingsReader,
-    IHeaderTableSettingsReader headerTableSettingsReader,
-    IMetadataBuilder metadataBuilder) : IMigrationService
+    ILogger<MigrationService> logger,
+    IMetadataGenerationService metadataGenerationService) : IMigrationService
 {
-
     public async Task CreateChangeSetsAsync(CreateChangeSetsCommand command)
     {
-        var settings = await settingsReader.ReadAsync(command.MigrationsPath);
-        //validate here the settings
+        try {
+            var metadata = await metadataGenerationService.Generate(command.MigrationsPath);
+
+            //Genarte changeset(metadat)
+        } catch (Exception ex)
+        {
+            logger.LogError(ex.Message);
+        }
         
-        var headerTableSettings = await headerTableSettingsReader.ReadAsync(command.MigrationsPath);
-        var metaData = metadataBuilder.Build(settings, headerTableSettings);
 
         //Map headers
         // var headerTable = headerTableReader.Get(settings.Table.HeaderTable);

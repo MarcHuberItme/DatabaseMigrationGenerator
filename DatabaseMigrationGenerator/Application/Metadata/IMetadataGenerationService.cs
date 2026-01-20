@@ -4,10 +4,12 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
+using Finstar.DatabaseMigrationGenerator.Domain.Metadata;
+
+namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
 {
-    public interface ISettings
+    public interface IMetadataGenerationService
     {
-        void Validate();
+        Task<IEnumerable<IMetadata>> Generate(string migrationsPath);
     }
 }

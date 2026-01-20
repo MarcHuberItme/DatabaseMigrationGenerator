@@ -4,7 +4,6 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-using Finstar.DatabaseMigrationGenerator.Application;
 using Finstar.DatabaseMigrationGenerator.Application.Metadata;
 using Finstar.DatabaseMigrationGenerator.Application.Migration;
 using Finstar.DatabaseMigrationGenerator.AppSettings;
@@ -28,6 +27,7 @@ namespace Finstar.DatabaseMigrationGenerator
             services.AddTransient<ISettingsReader, SettingsReader>();
             services.AddTransient<IHeaderTableSettingsReader, HeaderTableSettingsReader>();
             services.AddTransient<IMetadataBuilder, MetadataBuilder>();
+            services.AddTransient<IMetadataGenerationService, MetadataGenerationService>();
             
             return services;
         }

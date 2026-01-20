@@ -6,8 +6,15 @@
 
 namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
 {
-    public interface ISettings
+    public abstract class SettingsBase : ISettings
     {
-        void Validate();
+        public string SourceFilePath { get; private set; }
+
+        public void MapSourceFilePath(string filePath)
+        {
+            SourceFilePath =  filePath;
+        }
+        
+        public abstract void Validate();
     }
 }
