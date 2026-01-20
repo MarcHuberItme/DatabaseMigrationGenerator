@@ -37,7 +37,7 @@ steps:
       $Build = $VersArr[3]
       Write-Host "##vso[task.setvariable variable=RevVersion]$Rev"
       Write-Host "##vso[task.setvariable variable=RevBuild]$Build"
-#     Write-Host "##vso[task.setvariable variable=PackageVersion]$(MajorVersion).$(MinorVersion).$Rev"
+      # Write-Host "##vso[task.setvariable variable=PackageVersion]$(MajorVersion).$(MinorVersion).$Rev"
       $BasePackageVersion = "$(MajorVersion).$(MinorVersion).$Rev"
       $branchName = "$(Build.SourceBranchName)"
       if ($branchName -ne "$(MainBranch)") {
