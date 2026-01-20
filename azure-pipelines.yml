@@ -15,6 +15,8 @@ variables:
   value: '1'
 - name: projects
   value: 'DatabaseMigrationGenerator/DatabaseMigrationGenerator.csproj'
+- name: PreReleaseLabel
+  value: 'alpha'
 
 steps:
 - task: PowerShell@1
@@ -22,21 +24,32 @@ steps:
   inputs:
     scriptType: inlineScript
     inlineScript: |
-     [CmdletBinding()]
-     
-     $VersionRegex = "\d+\.\d+\.\d+\.\d+"
-     $VersionData = [regex]::matches($Env:BUILD_BUILDNUMBER,$VersionRegex)
-     Write-Output = "Buildnumber: $Env:BUILD_BUILDNUMBER"
-     $NewVersion = $VersionData[0].ToString()
-     Write-Output "Version: $NewVersion"
-     
-     $VersArr = $NewVersion.Split(".")
-     $Rev = $VersArr[2]
-     $Build = $VersArr[3]
-     Write-Host "##vso[task.setvariable variable=RevVersion]$Rev"
-     Write-Host "##vso[task.setvariable variable=RevBuild]$Build"
-     Write-Host "##vso[task.setvariable variable=PackageVersion]$(MajorVersion).$(MinorVersion).$Rev"
+      [CmdletBinding()]
       
+      $VersionRegex = "\d+\.\d+\.\d+\.\d+"
+      $VersionData = [regex]::matches($Env:BUILD_BUILDNUMBER,$VersionRegex)
+      Write-Output = "Buildnumber: $Env:BUILD_BUILDNUMBER"
+      $NewVersion = $VersionData[0].ToString()
+      Write-Output "Version: $NewVersion"
+      
+      $VersArr = $NewVersion.Split(".")
+      $Rev = $VersArr[2]
+      $Build = $VersArr[3]
+      Write-Host "##vso[task.setvariable variable=RevVersion]$Rev"
+      Write-Host "##vso[task.setvariable variable=RevBuild]$Build"
+#     Write-Host "##vso[task.setvariable variable=PackageVersion]$(MajorVersion).$(MinorVersion).$Rev"
+      $BasePackageVersion = "$(MajorVersion).$(MinorVersion).$Rev"
+      $branchName = "$(Build.SourceBranchName)"
+      if ($branchName -ne "$(MainBranch)") {
+        $pre = "$(PreReleaseLabel).$(Build.BuildId)"
+        $pkg = "$BasePackageVersion-$pre"
+      } else {
+        $pkg = $BasePackageVersion
+      }
+      
+      Write-Host "##vso[task.setvariable variable=PackageVersion]$pkg"
+      Write-Output "PackageVersion set to: $pkg" 
+
 - powershell: |
     echo "PackageVersion: $(PackageVersion)"
     echo "MajorVersion: $(MajorVersion)"
