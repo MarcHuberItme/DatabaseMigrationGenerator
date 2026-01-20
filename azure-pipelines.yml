@@ -16,7 +16,7 @@ variables:
   - name: projects
     value: 'DatabaseMigrationGenerator/DatabaseMigrationGenerator.csproj'
   - name: PreReleaseLabel
-    value: 'alpha'
+    value: 'dev'
   - name: MainBranch
     value: 'main'
 
