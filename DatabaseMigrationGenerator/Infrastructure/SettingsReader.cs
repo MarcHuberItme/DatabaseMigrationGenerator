@@ -5,6 +5,7 @@
 // -----------------------------------------------------------------------------
 
 using Finstar.DatabaseMigrationGenerator.Domain.SettingsObject;
+using YamlDotNet.Core;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -30,9 +31,17 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
                 
                 if (content.StartsWith("table:"))
                 {
-                    var tableSettings = deserializer.Deserialize<TableSettingsRoot>(content);
-                    tableSettings.Table.MapSourceFilePath(file); 
-                    settings.Add(tableSettings.Table);
+                    try
+                    {
+                        var tableSettings = deserializer.Deserialize<TableSettingsRoot>(content);
+                        tableSettings.Table.MapSourceFilePath(file);
+                        settings.Add(tableSettings.Table);
+                    }
+                    catch (YamlException ex)
+                    {
+                        throw new InvalidOperationException(
+                            $"Error deserializing '{file}': {GetDeserializationErrorMessage(ex)}", ex);
+                    }
                     // var headerTable = headerTableReader.Get(settings.Table.HeaderTable);
                     // yield return ConfigurationMapper.MapTable(settings.Table, headerTable?.Columns);
                 }
@@ -62,6 +71,23 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
             }
             
             return settings;
+        }
+
+        private static string GetDeserializationErrorMessage(YamlException ex)
+        {
+            var innerMessage = ex.InnerException?.Message ?? ex.Message;
+
+            if (innerMessage.Contains("Boolean") || innerMessage.Contains("bool"))
+            {
+                return $"Invalid value at line {ex.Start.Line}. Expected a boolean value (true or false).";
+            }
+
+            if (innerMessage.Contains("Int") || innerMessage.Contains("Byte"))
+            {
+                return $"Invalid value at line {ex.Start.Line}. Expected a numeric value.";
+            }
+
+            return $"Invalid value at line {ex.Start.Line}: {innerMessage}";
         }
     }
 }
