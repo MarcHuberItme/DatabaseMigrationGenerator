@@ -4,10 +4,12 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-namespace Finstar.DatabaseMigrationGenerator.Domain.DatabaseObject
+namespace Finstar.DatabaseMigrationGenerator.Domain.HeaderTable
 {
-    public class TableObjectSettings : IDatabaseObjectSettings
+    public class HeaderTableSettings
     {
-        public TableObject Table { get; init; } = new();
+        public string Type { get; init; } = string.Empty;
+        
+        //public IEnumerable<HeaderTableColumn> Columns { get; set; }
     }
 }

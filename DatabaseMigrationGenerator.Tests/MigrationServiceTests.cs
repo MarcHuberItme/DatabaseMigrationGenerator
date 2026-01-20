@@ -1,4 +1,5 @@
 ﻿using Finstar.DatabaseMigrationGenerator.Application;
+using Finstar.DatabaseMigrationGenerator.Application.Migration;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 

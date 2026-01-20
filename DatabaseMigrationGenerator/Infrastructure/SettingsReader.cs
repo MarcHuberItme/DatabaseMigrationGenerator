@@ -4,21 +4,22 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-using Finstar.DatabaseMigrationGenerator.Domain;
-using Finstar.DatabaseMigrationGenerator.Domain.DatabaseObject;
+using Finstar.DatabaseMigrationGenerator.Domain.SettingsObject;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
 namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 {
-    public class DatabaseObjectSettingsReader : IDatabaseObjectSettingsReader
+    public class SettingsReader : ISettingsReader
     {
         private const string SettingsFilePattern = "Settings.yaml";
         
-        public async Task<IEnumerable<IDatabaseObjectSettings>> ReadAsync(string migrationsPath)
+        public async Task<IEnumerable<ISettings>> ReadAsync(string migrationsPath)
         {
             var settingsFiles = Directory.GetFiles(migrationsPath, SettingsFilePattern, SearchOption.AllDirectories);
 
+            var settings = new List<ISettings>();
+            
             foreach (var file in settingsFiles)
             {
                 var content = await File.ReadAllTextAsync(file);
@@ -28,7 +29,8 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
                 
                 if (content.StartsWith("table:"))
                 {
-                    var settings = deserializer.Deserialize<TableObjectSettings>(content);
+                    var tableSettings = deserializer.Deserialize<TableSettingsRoot>(content);
+                    settings.Add(tableSettings.Table);
                     // var headerTable = headerTableReader.Get(settings.Table.HeaderTable);
                     // yield return ConfigurationMapper.MapTable(settings.Table, headerTable?.Columns);
                 }
@@ -57,9 +59,7 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
                 // }
             }
             
-            return new List<IDatabaseObjectSettings> {
-                new TableObjectSettings()
-            };
+            return settings;
         }
     }
 }

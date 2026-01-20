@@ -4,11 +4,12 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-namespace Finstar.DatabaseMigrationGenerator.Application
+using Finstar.DatabaseMigrationGenerator.Domain.SettingsObject;
+
+namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 {
-    public class CreateChangeSetsCommand(
-        string migrationsPath)
+    public interface ISettingsReader
     {
-        public string MigrationsPath { get; } = migrationsPath;
+        Task<IEnumerable<ISettings>> ReadAsync(string migrationsPath);
     }
 }

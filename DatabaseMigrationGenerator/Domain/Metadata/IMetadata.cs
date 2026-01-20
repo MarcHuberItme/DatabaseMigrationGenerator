@@ -4,10 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-namespace Finstar.DatabaseMigrationGenerator.Application
+namespace Finstar.DatabaseMigrationGenerator.Domain.Metadata
 {
-    public interface IMigrationService
+    public interface IMetadata
     {
-        Task CreateChangeSetsAsync(CreateChangeSetsCommand command);
     }
 }

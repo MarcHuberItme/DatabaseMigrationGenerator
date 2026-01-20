@@ -4,12 +4,12 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-using Finstar.DatabaseMigrationGenerator.Domain.DatabaseObject;
+using Finstar.DatabaseMigrationGenerator.Domain.HeaderTable;
 
 namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 {
-    public interface IDatabaseObjectSettingsReader
+    public interface IHeaderTableSettingsReader
     {
-        Task<IEnumerable<IDatabaseObjectSettings>> ReadAsync(string migrationsPath);
+        Task<IEnumerable<HeaderTableSettings>> ReadAsync(string migrationsPath);
     }
 }

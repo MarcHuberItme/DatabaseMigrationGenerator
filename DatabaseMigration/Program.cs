@@ -1,5 +1,6 @@
 ﻿using Finstar.DatabaseMigrationGenerator;
 using Finstar.DatabaseMigrationGenerator.Application;
+using Finstar.DatabaseMigrationGenerator.Application.Migration;
 using Finstar.DatabaseMigrationGenerator.AppSettings;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

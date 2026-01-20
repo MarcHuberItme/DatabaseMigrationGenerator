@@ -1,0 +1,85 @@
+﻿headerTables:
+  - type: HdStandard
+    columns:
+      - name: Id
+        dataType: 'uniqueidentifier'
+        isNotNull: true
+        defaultValue: '(newsequentialid())'
+        description: 'Primary key for all independent tables.'
+      - name: HdCreateDate
+        dataType: 'datetime'
+        isNotNull: true
+        defaultValue: '(GetDate())'
+        description: 'Date and time of creation.'
+      - name: HdCreator
+        dataType: 'varchar'
+        prec: 20
+        description: 'Creator of the record. (If no confirmation required, the HdVersionNo 1 is not written to the archive. Therefore the creator has to be stored in the main record.'
+      - name: HdChangeDate
+        dataType: 'datetime'
+        isNotNull: true
+        defaultValue: '(GetDate())'
+        description: 'Date and time of the last active change that was made on the record.'
+      - name: HdChangeUser
+        dataType: 'varchar'
+        prec: 20
+        description: 'User which made the last change. (If no confirmation required and no archiving is switched on, we have no information in AsHistory or AsUnconfirmed)'
+      - name: HdEditStamp
+        dataType: 'uniqueidentifier'
+        isNotNull: true
+        defaultValue: '(newsequentialid())'
+        description: 'Stamp which is changed on each update. Write operations have only to check the edit stamp to determine whether the record has changed. (Optimistic locking)'
+      - name: HdVersionNo
+        dataType: 'int'
+        isNotNull: true
+        defaultValue: '0'
+        description: 'Version of the active entry. 0 = Record is new and unconfirmed (= invisible to the application) 999 999 999 = Record is logically deleted.'
+      - name: HdProcessId
+        dataType: 'uniqueidentifier'
+        genericControls:
+          refTable: WfProcess
+          refField: Id
+        description: 'Id of the active workflow-process for this record.'
+      - name: HdStatusFlag
+        dataType: 'varchar'
+        prec: 20
+        description: 'Each character of this string may be used to represent a status.'
+      - name: HdNoUpdateFlag
+        dataType: 'varchar'
+        prec: 20
+        description: 'Flag to prevent automatic updates'
+      - name: HdPendingChanges
+        dataType: 'tinyint'
+        isNotNull: true
+        defaultValue: '0'
+        description: 'Flag to signalize that there are pending changes for this record'
+      - name: HdPendingSubChanges
+        dataType: 'smallint'
+        isNotNull: true
+        defaultValue: '0'
+        description: 'Flags whether dependend records have pending changes. is only used for display purposes in data navigation with hidden nodes'
+      - name: HdTriggerControl
+        dataType: 'tinyint'
+        description: 'Byte to give instructions to the database trigger.'
+  - type: HdMessageStore
+    columns:
+      - name: Id
+        dataType: 'uniqueidentifier'
+        isNotNull: true
+        defaultValue: '(newsequentialid())'
+        description: 'Primary key for the table.'
+      - name: HdSequence
+        dataType: 'bigint'
+        isNotNull: true
+        defaultValue: ''
+        description: 'Sequence number of the record.'
+        genericControls:
+          isIdentity: true
+      - name: HdCreateDate
+        dataType: 'datetime'
+        isNotNull: true
+        defaultValue: '(GetDate())'
+        description: 'Date and time of creation.'
+      - name: HdCreator
+        dataType: 'varchar'
+        description: 'Creator of the record.'
