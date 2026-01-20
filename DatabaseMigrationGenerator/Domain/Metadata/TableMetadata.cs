@@ -7,7 +7,6 @@
 namespace Finstar.DatabaseMigrationGenerator.Domain.Metadata
 {
     public class TableMetadata(
-        string id,
         string name,
         string description,
         byte tableUsageNo,
@@ -15,7 +14,6 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.Metadata
         string headerTable,
         bool writableForEbanking) : IMetadata
     {
-        public string Id { get; } = id;
         public string Name { get; } = name;
         public string Description { get; } = description;
         public byte TableUsageNo { get; } = tableUsageNo;

@@ -1,0 +1,7 @@
+﻿mdTableType:
+  1: "Editable w. generic editor"
+  2: "Editable"
+  3: "No editor"
+  4: "Header Table"
+  5: "View FrontEnd"
+  6: "Message Store Table"

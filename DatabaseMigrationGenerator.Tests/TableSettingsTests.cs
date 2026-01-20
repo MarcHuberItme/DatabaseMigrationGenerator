@@ -12,12 +12,24 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
     [TestClass]
     public class TableSettingsTests()
     {
+        [ClassInitialize]
+        public static void ClassInitialize(TestContext _)
+        {
+            TableSettings.SetValidDomainTypes([10, 20, 30, 40]);
+        }
+
+        #region Name Validation
+
         [TestMethod]
         public void Validate_NameIsEmpty_ReturnsError()
         {
             //arrange
             var setting = new TableSettings {
-                Name = string.Empty
+                Name = string.Empty,
+                Description = "Valid description",
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false
             };
 
             //act
@@ -32,7 +44,11 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         {
             //arrange
             var setting = new TableSettings {
-                Name = "ThisNameIsWayTooLongAndExceedsTheLimit"
+                Name = "ThisNameIsWayTooLongAndExceedsTheLimit",
+                Description = "Valid description",
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false
             };
 
             //act
@@ -47,7 +63,11 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         {
             //arrange
             var setting = new TableSettings {
-                Name = "testTable"
+                Name = "testTable",
+                Description = "Valid description",
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false
             };
 
             //act
@@ -62,14 +82,18 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         {
             //arrange
             var setting = new TableSettings {
-                Name = "Täble"
+                Name = "Täble",
+                Description = "Valid description",
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false
             };
 
             //act
             var errors = setting.Validate();
 
             //assert
-            errors.Should().Contain(e => e.Contains("Name") && e.Contains("umlaut"));
+            errors.Should().Contain(e => e.Contains("Name") && e.Contains("letters") && e.Contains("digits"));
         }
 
         [TestMethod]
@@ -77,22 +101,221 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         {
             //arrange
             var setting = new TableSettings {
-                Name = "Table Name"
+                Name = "Table Name",
+                Description = "Valid description",
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false
             };
 
             //act
             var errors = setting.Validate();
 
             //assert
-            errors.Should().Contain(e => e.Contains("Name") && e.Contains("spaces"));
+            errors.Should().Contain(e => e.Contains("Name") && e.Contains("letters") && e.Contains("digits"));
         }
+
+        #endregion
+
+        #region Description Validation
+
+        [TestMethod]
+        public void Validate_DescriptionIsEmpty_ReturnsError()
+        {
+            //arrange
+            var setting = new TableSettings {
+                Name = "ValidName",
+                Description = string.Empty,
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false
+            };
+
+            //act
+            var errors = setting.Validate();
+
+            //assert
+            errors.Should().Contain(e => e.Contains("Description") && e.Contains("required"));
+        }
+
+        [TestMethod]
+        public void Validate_DescriptionExceedsMaxLength_ReturnsError()
+        {
+            //arrange
+            var setting = new TableSettings {
+                Name = "ValidName",
+                Description = "D" + new string('a', 2000),
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false
+            };
+
+            //act
+            var errors = setting.Validate();
+
+            //assert
+            errors.Should().Contain(e => e.Contains("Description") && e.Contains("2000"));
+        }
+
+        [TestMethod]
+        public void Validate_DescriptionStartsWithLowercase_ReturnsError()
+        {
+            //arrange
+            var setting = new TableSettings {
+                Name = "ValidName",
+                Description = "lowercase description",
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false
+            };
+
+            //act
+            var errors = setting.Validate();
+
+            //assert
+            errors.Should().Contain(e => e.Contains("Description") && e.Contains("uppercase"));
+        }
+
+        [TestMethod]
+        public void Validate_DescriptionContainsUmlaut_ReturnsError()
+        {
+            //arrange
+            var setting = new TableSettings {
+                Name = "ValidName",
+                Description = "Description with Ümlauts",
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false
+            };
+
+            //act
+            var errors = setting.Validate();
+
+            //assert
+            errors.Should().Contain(e => e.Contains("Description") && e.Contains("umlaut"));
+        }
+
+        #endregion
+
+        #region TableUsageNo Validation
+
+        [TestMethod]
+        public void Validate_TableUsageNoIsZero_ReturnsError()
+        {
+            //arrange
+            var setting = new TableSettings {
+                Name = "ValidName",
+                Description = "Valid description",
+                TableUsageNo = 0,
+                DomainType = 10,
+                WritableForEbanking = false
+            };
+
+            //act
+            var errors = setting.Validate();
+
+            //assert
+            errors.Should().Contain(e => e.Contains("TableUsageNo") && e.Contains("1"));
+        }
+
+        [TestMethod]
+        public void Validate_TableUsageNoIsTwo_ReturnsError()
+        {
+            //arrange
+            var setting = new TableSettings {
+                Name = "ValidName",
+                Description = "Valid description",
+                TableUsageNo = 2,
+                DomainType = 10,
+                WritableForEbanking = false
+            };
+
+            //act
+            var errors = setting.Validate();
+
+            //assert
+            errors.Should().Contain(e => e.Contains("TableUsageNo") && e.Contains("1"));
+        }
+
+        #endregion
+
+        #region DomainType Validation
+
+        [TestMethod]
+        public void Validate_DomainTypeIsZero_ReturnsError()
+        {
+            //arrange
+            var setting = new TableSettings {
+                Name = "ValidName",
+                Description = "Valid description",
+                TableUsageNo = 1,
+                DomainType = 0,
+                WritableForEbanking = false
+            };
+
+            //act
+            var errors = setting.Validate();
+
+            //assert
+            errors.Should().Contain(e => e.Contains("DomainType") && e.Contains("10, 20, 30, 40"));
+        }
+
+        [TestMethod]
+        public void Validate_DomainTypeIsInvalid_ReturnsError()
+        {
+            //arrange
+            var setting = new TableSettings {
+                Name = "ValidName",
+                Description = "Valid description",
+                TableUsageNo = 1,
+                DomainType = 15,
+                WritableForEbanking = false
+            };
+
+            //act
+            var errors = setting.Validate();
+
+            //assert
+            errors.Should().Contain(e => e.Contains("DomainType") && e.Contains("10, 20, 30, 40"));
+        }
+
+        [TestMethod]
+        [DataRow((byte)10)]
+        [DataRow((byte)20)]
+        [DataRow((byte)30)]
+        [DataRow((byte)40)]
+        public void Validate_DomainTypeIsValid_ReturnsNoError(byte domainType)
+        {
+            //arrange
+            var setting = new TableSettings {
+                Name = "ValidName",
+                Description = "Valid description",
+                TableUsageNo = 1,
+                DomainType = domainType,
+                WritableForEbanking = false
+            };
+
+            //act
+            var errors = setting.Validate();
+
+            //assert
+            errors.Should().NotContain(e => e.Contains("DomainType"));
+        }
+
+        #endregion
+
+        #region General Validation
 
         [TestMethod]
         public void Validate_ValidSettings_ReturnsNoErrors()
         {
             //arrange
             var setting = new TableSettings {
-                Name = "ValidTableName"
+                Name = "ValidTableName",
+                Description = "Valid description",
+                TableUsageNo = 1,
+                DomainType = 10,
+                WritableForEbanking = false
             };
 
             //act
@@ -107,16 +330,19 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         {
             //arrange
             var setting = new TableSettings {
-                Name = "täbleWithUmlautAndLowercase"
+                Name = "täble",
+                Description = "löwercase",
+                TableUsageNo = 0,
+                DomainType = 0
             };
 
             //act
             var errors = setting.Validate();
 
             //assert
-            errors.Should().HaveCount(2);
-            errors.Should().Contain(e => e.Contains("uppercase"));
-            errors.Should().Contain(e => e.Contains("umlaut"));
+            errors.Should().HaveCountGreaterThanOrEqualTo(4);
         }
+
+        #endregion
     }
 }

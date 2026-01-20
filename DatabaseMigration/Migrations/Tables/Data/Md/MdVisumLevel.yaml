@@ -1,0 +1,5 @@
+﻿mdVisumLevel:
+  1: "No confirmation"
+  2: "Process group"
+  4: "Single row"
+  8: "None, group activation"

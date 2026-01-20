@@ -1,0 +1,310 @@
+﻿index:
+  AccountancyReporting: 55CF3376-AD4B-4C80-836A-4B8403901D1A
+  Aeoi: 6343CC8C-363D-4CCE-968C-FE33E28066E0
+  ApplicationSystem: 1913DAA1-53ED-41C4-A39E-D6E93A2E67D3
+  BatchProcessor: 78CC5CA3-D241-48AC-9C89-B1583300CD2B
+  Communication: C8ABDFD0-D645-4DD5-8162-B50D7FE587CB
+  Currency: 39E36615-106E-4BD9-B32F-7D3294315AB3
+  DataNavigation: 75ACEFC4-0A56-4966-97A8-53E8B891EC08
+  DataStore: CDFBE352-FBD8-46A5-AAD6-6F893F64F551
+  DatabaseChecks: 6B91AE05-A1A4-4F29-9A23-3235F80F4066
+  Development: 94C2D033-C482-4CD0-842B-8498330B12A6
+  EBanking: 50C8CF24-0D64-438A-8E98-CF3F5D8300F4
+  EasyTax: 2FF0C162-5E66-40C2-B2F7-6F3AFD0C03BB
+  Event: 93DD25C4-D1D7-4060-B575-FDB05F708086
+  Fatca: E5916290-2B38-446A-9502-236B10CB37F3
+  FIDLEG: 492EB932-11A5-4C01-ACD4-498E5CB33327
+  HeaderTables: 395D9F23-8CC3-4AA0-8C1F-045A593F1EEB
+  Instrument: AD1522A5-0089-4328-B6D3-7D873CA13F19
+  Interface: 7DFEE250-9877-4FDC-9D97-41E6028999F6
+  Loan: 0AA7953A-9813-4F76-9E53-78DF724F757A
+  MailSystem: C1A52D85-2B4E-4419-B86A-2BE5C47BAD9D
+  Marktdaten: 1B7F657D-BF02-4F66-B37B-CEE0CFA5299B
+  MessageStore: 47A738E9-4DCB-41BC-8FCC-BB1699C6B097
+  MetaData: D18C2BAE-7838-4B83-A18E-29041114C63E
+  Migration: F6A6CD91-488E-4742-A2E4-68A2BE5A10A7
+  NameCheck: 0EBE92B4-009E-4D5F-B882-C8D9DAF72042
+  OpenApi: A4112BD6-F727-4177-A33E-E8CAC9F81144
+  OpenBanking: 4DE0D3B7-95D8-473E-BE4C-1D37A958D353
+  OrderManagement: B76A4FBD-6160-4021-9B0C-245C7B4371C2
+  Partner: 9DC441D9-52C0-4CEC-8A7F-E57B0EAD1674
+  PaymentSystem: 81A3A910-E114-4A8B-892C-BBBAA4BD60C8
+  PensionDataExchange: A457C69A-1AFF-4501-93C1-65635C1471D4
+  PortfolioManagementSys: 5041BAF0-4B1E-42DE-BC90-23121D0DDDD6
+  PrintingSystem: DFA425A0-FC5E-41BA-A1D2-22B8F44F2A95
+  Product: 20CC6FA2-8EBC-4AFE-A0AF-709583029D4C
+  RealEstate: 617E9B96-2FC1-4DBB-B666-17533607E005
+  SIS: C1378147-E089-4F5E-ABA8-C2F0E293C21A
+  SoftLogic: 4ACBE022-2230-43FF-8EE9-38F7F0E7A595
+  TaxData: 83458B04-5FA9-42C9-A46E-A39780CA3259
+  TestArchive: 8C7C7FE8-904E-449D-8B00-69C67C6A21D8
+  TestTables: ED24BD87-1B5F-4231-B64B-F2CC5CA68D5D
+  TransMessages: 39FEFC5C-772A-4EC8-BA9E-E396DA7B80BB
+  TWINT: BAD6DD0B-5ED3-4CEE-B419-0B3FAF9DDACC
+  WorkFlow: 65FFE932-C171-41F2-94BD-8D53BB5E922A
+  WorkTime: B4EF08A8-5DDD-4342-8DD4-9468BD7539DE
+
+groups:
+  - id: 55CF3376-AD4B-4C80-836A-4B8403901D1A
+    en: { groupName: "Accountancy Reporting", helpText: null }
+    de: { groupName: null, helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 6343CC8C-363D-4CCE-968C-FE33E28066E0
+    en: { groupName: "Aeoi", helpText: null }
+    de: { groupName: "Aeoi", helpText: "Automatischer Informationsaustausch" }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 1913DAA1-53ED-41C4-A39E-D6E93A2E67D3
+    en: { groupName: "Application System", helpText: null }
+    de: { groupName: "Applikationssystem", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 78CC5CA3-D241-48AC-9C89-B1583300CD2B
+    en: { groupName: "Batch Processor", helpText: null }
+    de: { groupName: "Batch Processor", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: C8ABDFD0-D645-4DD5-8162-B50D7FE587CB
+    en: { groupName: "Communication", helpText: null }
+    de: { groupName: "Kommunikation", helpText: null }
+    fr: { groupName: "Communication", helpText: null }
+    it: { groupName: "Communicazione", helpText: null }
+
+  - id: 39E36615-106E-4BD9-B32F-7D3294315AB3
+    en: { groupName: "Currency", helpText: null }
+    de: { groupName: null, helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 75ACEFC4-0A56-4966-97A8-53E8B891EC08
+    en: { groupName: "Data Navigation", helpText: null }
+    de: { groupName: "Datennavigation", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: CDFBE352-FBD8-46A5-AAD6-6F893F64F551
+    en: { groupName: "DataStore", helpText: "Data Store" }
+    de: { groupName: "DataStore", helpText: "DataStore" }
+    fr: { groupName: "DataStore", helpText: "DataStore" }
+    it: { groupName: "DataStore", helpText: "DataStore" }
+
+  - id: 6B91AE05-A1A4-4F29-9A23-3235F80F4066
+    en: { groupName: "Database Checks", helpText: null }
+    de: { groupName: "Datenbankprüfungen", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 94C2D033-C482-4CD0-842B-8498330B12A6
+    en: { groupName: "Development", helpText: null }
+    de: { groupName: "Entwicklung", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 50C8CF24-0D64-438A-8E98-CF3F5D8300F4
+    en: { groupName: "EBanking", helpText: null }
+    de: { groupName: "EBanking", helpText: null }
+    fr: { groupName: "EBanking", helpText: null }
+    it: { groupName: "EBanking", helpText: null }
+
+  - id: 2FF0C162-5E66-40C2-B2F7-6F3AFD0C03BB
+    en: { groupName: "EasyTax", helpText: "Tables used for EasyTax interface." }
+    de: { groupName: "EasyTax", helpText: "Tabellen für die EasyTax Schnittstelle." }
+    fr: { groupName: "EasyTax", helpText: null }
+    it: { groupName: "EasyTax", helpText: null }
+
+  - id: 93DD25C4-D1D7-4060-B575-FDB05F708086
+    en: { groupName: "Event", helpText: null }
+    de: { groupName: "Event", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: E5916290-2B38-446A-9502-236B10CB37F3
+    en: { groupName: "Fatca", helpText: null }
+    de: { groupName: "Fatca", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 492EB932-11A5-4C01-ACD4-498E5CB33327
+    en: { groupName: "FIDLEG", helpText: null }
+    de: { groupName: null, helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 395D9F23-8CC3-4AA0-8C1F-045A593F1EEB
+    en: { groupName: "Header Tables", helpText: null }
+    de: { groupName: "Vorsatztabellen", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: AD1522A5-0089-4328-B6D3-7D873CA13F19
+    en: { groupName: "Instrument", helpText: null }
+    de: { groupName: "Instrument", helpText: null }
+    fr: { groupName: "Instrument", helpText: null }
+    it: { groupName: "Instrument", helpText: null }
+
+  - id: 7DFEE250-9877-4FDC-9D97-41E6028999F6
+    en: { groupName: "Interface", helpText: null }
+    de: { groupName: "Schnittstelle", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 0AA7953A-9813-4F76-9E53-78DF724F757A
+    en: { groupName: "Loan", helpText: null }
+    de: { groupName: "Kredite", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: C1A52D85-2B4E-4419-B86A-2BE5C47BAD9D
+    en: { groupName: "Mail System", helpText: null }
+    de: { groupName: "Mail System", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 1B7F657D-BF02-4F66-B37B-CEE0CFA5299B
+    en: { groupName: "Marktdaten", helpText: null }
+    de: { groupName: "MarketData", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 47A738E9-4DCB-41BC-8FCC-BB1699C6B097
+    en: { groupName: "Message Store", helpText: null }
+    de: { groupName: "Message Store", helpText: null }
+    fr: { groupName: "Message Store", helpText: null }
+    it: { groupName: "Message Store", helpText: null }
+
+  - id: D18C2BAE-7838-4B83-A18E-29041114C63E
+    en: { groupName: "Meta Data", helpText: null }
+    de: { groupName: "Metadaten", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: F6A6CD91-488E-4742-A2E4-68A2BE5A10A7
+    en: { groupName: "Migration", helpText: null }
+    de: { groupName: "Migration", helpText: null }
+    fr: { groupName: "Migration", helpText: null }
+    it: { groupName: "Migrazione", helpText: null }
+
+  - id: 0EBE92B4-009E-4D5F-B882-C8D9DAF72042
+    en: { groupName: "Name Check", helpText: null }
+    de: { groupName: "Name Check", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: A4112BD6-F727-4177-A33E-E8CAC9F81144
+    en: { groupName: "OpenApi", helpText: null }
+    de: { groupName: "OpenApi", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 4DE0D3B7-95D8-473E-BE4C-1D37A958D353
+    en: { groupName: "OpenBanking", helpText: null }
+    de: { groupName: "OpenBanking", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: B76A4FBD-6160-4021-9B0C-245C7B4371C2
+    en: { groupName: "Order Management", helpText: null }
+    de: { groupName: "Auftragsbearbeitung", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 9DC441D9-52C0-4CEC-8A7F-E57B0EAD1674
+    en: { groupName: "Partner", helpText: null }
+    de: { groupName: "Partner", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 81A3A910-E114-4A8B-892C-BBBAA4BD60C8
+    en: { groupName: "Payment System", helpText: null }
+    de: { groupName: "Zahlungssystem", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: A457C69A-1AFF-4501-93C1-65635C1471D4
+    en: { groupName: "Pension Data Exchange", helpText: null }
+    de: { groupName: "Vorsorge-Datenaustausch", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 5041BAF0-4B1E-42DE-BC90-23121D0DDDD6
+    en: { groupName: "Portfolio Management Sys", helpText: null }
+    de: { groupName: "Portfolio Management Sys", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: DFA425A0-FC5E-41BA-A1D2-22B8F44F2A95
+    en: { groupName: "Printing System", helpText: null }
+    de: { groupName: "Printing System", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 20CC6FA2-8EBC-4AFE-A0AF-709583029D4C
+    en: { groupName: "Product", helpText: null }
+    de: { groupName: null, helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 617E9B96-2FC1-4DBB-B666-17533607E005
+    en: { groupName: "Real Estate", helpText: null }
+    de: { groupName: "Grundstück", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: C1378147-E089-4F5E-ABA8-C2F0E293C21A
+    en: { groupName: "SIS", helpText: "SIS" }
+    de: { groupName: "SIS", helpText: "SIS" }
+    fr: { groupName: "SIS", helpText: "SIS" }
+    it: { groupName: "SIS", helpText: "SIS" }
+
+  - id: 4ACBE022-2230-43FF-8EE9-38F7F0E7A595
+    en: { groupName: "Soft Logic", helpText: null }
+    de: { groupName: null, helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 83458B04-5FA9-42C9-A46E-A39780CA3259
+    en: { groupName: "TaxData", helpText: "TaxData" }
+    de: { groupName: "TaxData", helpText: "TaxData" }
+    fr: { groupName: "TaxData", helpText: "TaxData" }
+    it: { groupName: null, helpText: null }
+
+  - id: 8C7C7FE8-904E-449D-8B00-69C67C6A21D8
+    en: { groupName: "Test Archive", helpText: "Archive Tables for Test Application" }
+    de: { groupName: null, helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: ED24BD87-1B5F-4231-B64B-F2CC5CA68D5D
+    en: { groupName: "Test Tables", helpText: "Special Testcase oriented Tables for Test Application" }
+    de: { groupName: null, helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 39FEFC5C-772A-4EC8-BA9E-E396DA7B80BB
+    en: { groupName: "Trans Messages", helpText: null }
+    de: { groupName: "Externe Meldungen", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: BAD6DD0B-5ED3-4CEE-B419-0B3FAF9DDACC
+    en: { groupName: "TWINT", helpText: null }
+    de: { groupName: "TWINT", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: 65FFE932-C171-41F2-94BD-8D53BB5E922A
+    en: { groupName: "WorkFlow", helpText: null }
+    de: { groupName: "WorkFlow", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }
+
+  - id: B4EF08A8-5DDD-4342-8DD4-9468BD7539DE
+    en: { groupName: "WorkTime", helpText: null }
+    de: { groupName: "Arbeitszeit", helpText: null }
+    fr: { groupName: null, helpText: null }
+    it: { groupName: null, helpText: null }

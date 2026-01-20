@@ -1,0 +1,5 @@
+﻿mdCacheLevel:
+  1: "No caching"
+  2: "One day"
+  3: "Til midnight"
+  4: "One hour"

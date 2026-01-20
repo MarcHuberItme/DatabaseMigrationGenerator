@@ -25,6 +25,7 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
                 var content = await File.ReadAllTextAsync(file);
                 var deserializer = new DeserializerBuilder()
                     .WithNamingConvention(CamelCaseNamingConvention.Instance)
+                    .IgnoreUnmatchedProperties()
                     .Build();
                 
                 if (content.StartsWith("table:"))
