@@ -47,11 +47,11 @@ columns:
     id: ''
     description: ''
     dataType: ''
-    isNotNull: true
-    isUnique: true
-    defaultValue: '(newsequentialid())'
-    prec: 20
-    scale: 10
+    isNotNull: false
+    isUnique: false
+    defaultValue: ''
+    prec: 0
+    scale: 0
     minValue:
     maxValue:
     genericControls:

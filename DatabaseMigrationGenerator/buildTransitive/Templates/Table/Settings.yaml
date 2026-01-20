@@ -1,0 +1,65 @@
+table: # https://confluence.hbl.linkyard-cloud.ch/x/SJitE
+  id: ''
+  name: ''
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  writableForEbanking: false
+  genericComponents:
+    tableType: 1
+    groupId: ''
+    defArchive: true
+    visumNumber: 0
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    physicalDelete: false
+    isGroupable: false
+    descField: ''
+    navigation:
+      isNavigationRoot: false
+      rootTable: ''
+      parentTable: ''
+      parentIdField: ''
+      parentRelationField: ''
+      applicationKey: ''
+      navigationConditionField: ''
+      isSharedNode: false
+      isHiddenNode: false
+    changeNoticeLevel: 0
+    uiTableDescription:
+      - english:
+          formTitle: ''
+          helpText: ''
+      - german:
+          formTitle: ''
+          helpText: ''
+      - french:
+          formTitle: ''
+          helpText: ''
+      - italian:
+          formTitle: ''
+          helpText: ''
+columns:
+  - name: ''
+    id: ''
+    description: ''
+    minValue: 
+    maxValue: 
+    genericControls:
+      multiLine: false
+      refTable: ''
+      refField: ''
+      hasDetailBtn: false
+      visNumber: 0
+      defSizeX: 
+      defSizeY: 
+      defPosX: 
+      defPosY: 
+      tabOrder: 
+      defColumnPos: 0
+      defColumnWidth: 
+      noUpdatePos: 0
+      isOnlyForMig: false
+      isNoUpdate: false
+      isIdentity: false
