@@ -17,6 +17,8 @@ variables:
   value: 'DatabaseMigrationGenerator/DatabaseMigrationGenerator.csproj'
 - name: PreReleaseLabel
   value: 'alpha'
+- name: MainBranch
+  value: 'main'
 
 steps:
 - task: PowerShell@1
