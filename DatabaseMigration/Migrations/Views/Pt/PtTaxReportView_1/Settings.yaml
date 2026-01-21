@@ -1,0 +1,3 @@
+view:
+  name: 'PtTaxReportView_1'
+  description: 'wird für den Taxreport in Englisch verwendet. Identisch mit View PtTaxReportView mit Ausnahme der Textkonstanten und des Sprachcodes'

@@ -1,0 +1,112 @@
+table:
+  name: 'CoVeradet'
+  description: 'Deckungsausscheidungsteuerung auf Stufe Konto oder Sicherheit für eine Gruppe'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'colleteral separation con'
+    - german:
+        formTitle: 'Deckungsausscheidungs'
+  columns:
+  - name: 'Accountid'
+    description: 'Laufnummer Kreditkonto'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'Veragrp'
+    description: 'Laufnummer wird mit assequence ''CO_Veragruppe''  vergeben und ist bei einer Deckungsausscheidung für alle gleichzeitig verarbeiteten Sicherheiten und Kreditkonti gleich (z.b. mehrere Kredite die sich gleiche Sicherheiten teilen oder ein Gesamtengagement)'
+    genericControls:
+      refTable: 'CoVeragrp'
+      refField: 'Veragrp'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'Veradate'
+    description: 'Datum der Verarbeitung der  Deckungsausscheidung für alle gleichzeitig verarbeiteten Sicherheiten und Kreditkonti gleich'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Remark'
+    description: 'Bemerkung nach Verarbeitung (z.B Wert = 0), enthält nur die variablen Daten. Das Feld MsgNr enthält die tatsächlcihe Meldungsnummer'
+    genericControls:
+      multiLine: true
+      defColumnPos: 11
+  - name: 'Remarkflag'
+    description: 'wenn True Meldungsnummer gefültl'
+  - name: 'MsgNr'
+    description: 'Meldungsnummer von einem Verarbeitungshinweis'
+    genericControls:
+      refTable: 'CoMsg'
+      refField: 'CoMsgNr'
+      defColumnPos: 10
+  - name: 'Collateralid'
+    description: 'Laufnummer Sicherheit'
+    genericControls:
+      refTable: 'CoBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'Calcgrp'
+    description: 'Laufnummer der zu verwendenen Berechnung der Belehnung der Sicherheit'
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'Priocredit'
+    description: 'redundant aus ptaccountbase, Priorität Kreditkonto (kleinste Zahl, höchste Priorität)'
+    genericControls:
+      defColumnPos: 5
+  - name: 'Verabflag'
+    description: 'Satz verarbeitet'
+    genericControls:
+      defColumnPos: 8
+  - name: 'Colworkingtype'
+    description: 'Verarbeitungstyp Deckungsausscheidung\r\n030 Kreditkonto (einzeln)\r\n040 Sicherheit (einzeln)\r\n130 Kreditkonto (blowup)\r\n140 Sicherheit (blowup)'
+    genericControls:
+      refTable: 'CoTypever'
+      refField: 'ColworkingType'
+      defColumnPos: 3
+  - name: 'Wheredowecamefrom'
+    description: 'Redundant aus CoVeragrp\r\nHerkunft vom Datensatz\r\n0 -> Sicherheitenverwaltung\r\n1 -> Gesamtengagement'
+    genericControls:
+      defColumnPos: 9
+  - name: 'MsgNrBlowup'
+    description: 'Meldungsnummer nach Blowup Vearbeitung'
+    genericControls:
+      refTable: 'CoMsg'
+      refField: 'CoMsgNr'
+  - name: 'RemarkBlowup'
+    description: 'Variable Daten für die Meldugn MsgNrBlowup'
+  - name: 'Balance'
+    description: 'Saldo in chf für das Kreditkonto ( accountid) nur gefüllt bei collworkingtype 130 Kreditkonto (blowup)'
+  - name: 'BalanceKw'
+    description: 'Saldo in Kontowährung für das Kreditkonto ( accountid) nur gefüllt bei collworkingtype 130 Kreditkonto (blowup)'
+  - name: 'Limit'
+    description: 'Limit  in chf für das Kreditkonto ( accountid) nur gefüllt bei collworkingtype 130 Kreditkonto (blowup)'
+  - name: 'LimitKW'
+    description: 'Saldo in Kontowährung für das Kreditkonto ( accountid) nur gefüllt bei collworkingtype 130 Kreditkonto (blowup)'
+  - name: 'Currency'
+    description: 'Währung vom diesem Kredikonto'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ExFlag'
+    description: 'Wenn gesetzt, handel es sich um Ex-Bilanz Kredikonto andernfalls In Bilanz'
+  - name: 'WbAssigned'
+    description: 'Wenn gesetzt, sind diesem Kredikonto Sicherheiten vom colsubtype = 6100 zugeordnet (Einzel-WB)'
+  - name: 'AllowanceAmount'
+    description: 'Berechnete Wertberichtigungen dieses Kredikonto'
+  - name: 'AccrualsAmount'
+    description: 'Berechnete Rückstellungen für dieses Kredikonto'
+  - name: 'ProductId'
+    description: 'ProductId vom Kreditkonto'
+    genericControls:
+      refTable: 'PrBase'
+      refField: 'Id'

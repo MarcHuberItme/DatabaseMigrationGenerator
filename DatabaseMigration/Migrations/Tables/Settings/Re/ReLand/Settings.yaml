@@ -1,0 +1,97 @@
+table:
+  name: 'ReLand'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Land'
+    - german:
+        formTitle: 'Land'
+    - french:
+        formTitle: 'Terrain'
+    - italian:
+        formTitle: 'Terra'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+  - name: 'LandTypeNo'
+    description: 'Landtyp - GR_LAND_TYP_CD'
+    genericControls:
+      refTable: 'ReLandType'
+      refField: 'LandTypeNo'
+      defColumnPos: 1
+  - name: 'DevelopmentRate'
+    description: 'Erschliessung / GR_ERSCHL_STAND_CD'
+    genericControls:
+      refTable: 'ReDevelopmentRate'
+      refField: 'DevelopmentRate'
+      defColumnPos: 5
+  - name: 'AreaM2'
+    description: 'FLAECHE'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ConstructionZoneId'
+    description: 'Bauzone ORT_BZO_LNR (Auswahl über Ortschaft)'
+    genericControls:
+      refTable: 'ReConstructionZone'
+      refField: 'Id'
+      defColumnPos: 4
+  - name: 'UtilizationNo'
+    description: 'utilization number / Ausnützungsziffer (automatisch übernehmen als Default aus Tabelle ReConstructionZone) - AZ / AZ_DEF'
+  - name: 'IsRealValueRelevant'
+    description: 'relevant für die Berechnung des Realwertes (REALW_RELE_FL)\r\n1  =  YES'
+  - name: 'IsValuationRelevant'
+    description: 'Landwert ist entscheidend für die Bewertung des Grundstückes, d.h. Land hat mehr Wert als das Gebäude darauf (LANDW_FL)'
+  - name: 'PriceM2'
+    description: 'PREIS_M2'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PreisM2Date'
+    description: 'PREIS_M2_DAT'
+  - name: 'Remark'
+    description: 'BEM'
+    genericControls:
+      multiLine: true
+  - name: 'BuyPriceM2'
+    description: 'Value Type = 32'
+  - name: 'BuyPriceM2Date'
+    description: ''
+  - name: 'BuyPriceM2Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SellPriceM2'
+    description: 'Value Type = 33'
+  - name: 'SellPriceM2Date'
+    description: ''
+  - name: 'SellPriceM2Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SoftProfileUsed'
+    description: ''
+  - name: 'MgBZO'
+    description: ''

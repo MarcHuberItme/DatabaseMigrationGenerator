@@ -1,0 +1,52 @@
+table:
+  name: 'MgRePollution'
+  description: 'table fro migration into RePollution'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PremisesId'
+    description: ''
+  - name: 'EstimationRelevance'
+    description: ''
+  - name: 'PollutionCauseId'
+    description: ''
+  - name: 'BusinessTypeCode'
+    description: ''
+  - name: 'Remark'
+    description: ''
+  - name: 'FromDump'
+    description: ''
+  - name: 'FromAccident'
+    description: ''
+  - name: 'FromIndustry'
+    description: ''
+  - name: 'Action1'
+    description: ''
+  - name: 'Action2'
+    description: ''
+  - name: 'Action3'
+    description: ''
+  - name: 'Action4'
+    description: ''
+  - name: 'Action5'
+    description: ''
+  - name: 'Action6'
+    description: ''
+  - name: 'DumpAmount'
+    description: ''
+  - name: 'AccidentAmount'
+    description: ''
+  - name: 'IndustryAmount'
+    description: ''
+  - name: 'MigrationId'
+    description: ''
+  - name: 'MigrationDate'
+    description: ''
+  - name: 'MigrationStatus'
+    description: ''

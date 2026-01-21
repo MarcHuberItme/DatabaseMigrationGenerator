@@ -1,0 +1,28 @@
+table:
+  name: 'PrEquityCapitalRule'
+  description: 'Eigenmittel-Hinterlegungsregeln'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'EquityCapital Rule'
+    - german:
+        formTitle: 'Regel EM-Hinterlegung'
+  columns:
+  - name: 'RuleNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Rate'
+    description: 'Eigenmittel Hinterlegungssatz in %'
+    genericControls:
+      defColumnPos: 2

@@ -1,0 +1,59 @@
+table:
+  name: 'AiTaxRegulationDBA'
+  description: 'Tax-Table with the DTT (Double Treaty Tax, DBA= Doppelbesteuerungsabkommen) between 2 countries.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Double taxation treaty'
+    - german:
+        formTitle: 'Doppelbesteuerungsabkomme'
+    - french:
+        formTitle: 'Traité double imposition'
+  columns:
+  - name: 'TaxCountry'
+    description: 'TaxCountry (Steuerland)'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 1
+  - name: 'PartnerDomicile'
+    description: 'Domicile of the partner (Domizil des Partners)'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 2
+  - name: 'ValidFrom'
+    description: 'Valid From'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidTo'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'TaxRegulationCodeDividend'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+      defColumnPos: 4
+  - name: 'TaxRegulationCodeInterest'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+      defColumnPos: 5
+  - name: 'SwiftMT565'
+    description: 'Code to be used for communication with SIX SIS.'
+    genericControls:
+      refTable: 'SwMT565MsgType'
+      refField: 'MsgType'

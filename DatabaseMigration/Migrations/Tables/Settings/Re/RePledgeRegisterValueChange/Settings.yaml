@@ -1,0 +1,51 @@
+table:
+  name: 'RePledgeRegisterValueChange'
+  description: 'Für Anzeige in E-Pledge der Pfandbriefbank'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'History Value Amount'
+    - german:
+        formTitle: 'History Deckungswerte'
+  columns:
+  - name: 'PledgeRegisterId'
+    description: ''
+    genericControls:
+      refTable: 'RePledgeRegister'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'ValueDate'
+    description: 'Datum per des Deckungswertes'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ValuationOperator'
+    description: 'Mitarbeiter, der den Deckungswert bewilligt hat.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValueAmount'
+    description: 'Deckungswert'
+    genericControls:
+      defColumnPos: 3
+  - name: 'DebitAmount'
+    description: 'Summe Hyp.Saldi'
+    genericControls:
+      defColumnPos: 4
+  - name: 'CollateralAmount'
+    description: 'Total SB'
+    genericControls:
+      defColumnPos: 5
+  - name: 'EarningAmount'
+    description: 'Ertragswert'
+    genericControls:
+      defColumnPos: 6
+  - name: 'BaseAmount'
+    description: 'Verkehrswert'
+    genericControls:
+      defColumnPos: 7

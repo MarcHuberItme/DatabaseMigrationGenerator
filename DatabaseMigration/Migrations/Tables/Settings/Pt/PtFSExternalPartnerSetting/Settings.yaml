@@ -1,0 +1,32 @@
+table:
+  name: 'PtFSExternalPartnerSetting'
+  description: 'Detail setting for external partner with HBL payment service'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtFSExternalPartnerSettin'
+        helpText: 'PtFSExternalPartnerSetting'
+    - german:
+        formTitle: 'PtFSExternalPartnerSettin'
+        helpText: 'PtFSExternalPartnerSetting'
+  columns:
+  - name: 'ExternalPartnerCode'
+    description: ''
+  - name: 'MessageStandard'
+    description: ''
+  - name: 'BookAccountNo'
+    description: ''
+  - name: 'PSServerName'
+    description: ''
+  - name: 'PSQueueName'
+    description: ''

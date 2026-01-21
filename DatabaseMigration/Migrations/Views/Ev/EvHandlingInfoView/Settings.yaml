@@ -1,0 +1,164 @@
+view:
+  name: 'EvHandlingInfoView'
+  description: ''
+frontendView:
+  name: 'EvHandlingInfoView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'EvBase'
+      parentTable: 'EvBase'
+      parentRelationField: 'EventId'
+      parentIdField: 'Id'
+  columns:
+  - name: 'EventId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+    genericControls:
+      refTable: 'EvBase'
+      refField: 'Id'
+  - name: 'HandlingStatusNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      refTable: 'EvHandlingStatus'
+      refField: 'HandlingStatusNo'
+      defColumnPos: 8
+  - name: 'ReplyClient'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ReplyDepositary'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7
+  - name: 'TransferDepositary'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Depositary'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+  - name: 'UserName'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      defColumnPos: 5
+  - name: 'Remark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 3000
+    genericControls:
+      multiLine: true
+  - name: 'PeriodStartDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'PeriodEndDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'RigthsTradingFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'RigthsTradingTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'InfoRestriction'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+    genericControls:
+      multiLine: true
+  - name: 'InfoInstrument1'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'InfoInstrument2'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'InfoRatioOld'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'InfoRatioNew'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'InfoPrice'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'InfoCorpAct'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'InfoExPosition'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'EventNo'
+    description: ''
+    dataType: 'int'
+  - name: 'PublicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'ProdReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrReferenceDataView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'EventStatusNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'EvStatus'
+      refField: 'EventStatusNo'
+  - name: 'EffectiveDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 1
+  - name: 'EventTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'EvEventType'
+      refField: 'EventTypeNo'
+      defColumnPos: 4
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'PublicDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 400
+    genericControls:
+      defColumnPos: 3
+  - name: 'ExDate'
+    description: ''
+    dataType: 'datetime'

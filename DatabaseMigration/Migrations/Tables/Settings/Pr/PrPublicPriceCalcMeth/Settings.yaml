@@ -1,0 +1,34 @@
+table:
+  name: 'PrPublicPriceCalcMeth'
+  description: 'VDF-Domaine: 4965 K-18'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - german:
+        formTitle: 'Kursberechnungsart'
+  columns:
+  - name: 'PriceCalcMethNo'
+    description: 'Maintained by VDF-Metadata'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PriceUnit'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+      defColumnPos: 2
+  - name: 'PriceQuoteType'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicPriceQuoteType'
+      refField: 'PriceQuoteType'
+      defColumnPos: 3

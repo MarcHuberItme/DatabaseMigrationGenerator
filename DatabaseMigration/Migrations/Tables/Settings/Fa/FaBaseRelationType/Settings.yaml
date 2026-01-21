@@ -1,0 +1,26 @@
+table:
+  name: 'FaBaseRelationType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'FaBaseRelationType'
+    - german:
+        formTitle: 'FaBaseRelationType'
+    - french:
+        formTitle: 'FaBaseRelationType'
+  columns:
+  - name: 'RelationTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

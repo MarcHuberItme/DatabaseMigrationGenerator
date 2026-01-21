@@ -1,0 +1,25 @@
+table:
+  name: 'TrGroup'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'MessageTypeId'
+    description: ''
+    genericControls:
+      refTable: 'TrMessageType'
+      refField: 'Id'
+  - name: 'Name'
+    description: ''
+  - name: 'Description'
+    description: ''
+  - name: 'Separator'
+    description: ''
+  - name: 'GroupType'
+    description: ''

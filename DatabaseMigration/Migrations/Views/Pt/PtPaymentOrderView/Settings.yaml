@@ -1,0 +1,137 @@
+view:
+  name: 'PtPaymentOrderView'
+  description: ''
+frontendView:
+  name: 'PtPaymentOrderView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'HdPendingSubChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'OrderType'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtPaymentOrderType'
+      refField: 'OrderTypeNo'
+      defColumnPos: 1
+  - name: 'Status'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtPaymentOrderStatus'
+      refField: 'StatusNo'
+      defColumnPos: 2
+  - name: 'ScheduledDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'FileName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'TotalReportedAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 5
+  - name: 'TotalReportedTransactions'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 6
+  - name: 'TransWithError'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 7
+  - name: 'TransNeedConfirmation'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 8
+  - name: 'SenderAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtAccountAllViewNoPL'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 9
+  - name: 'SenderAccountNoList'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    scale: 38
+    genericControls:
+      defColumnPos: 10
+  - name: 'FileImportProcessId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'CMFileImportProcess'
+      refField: 'Id'
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 11
+  - name: 'OrderNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 12
+  - name: 'OrderDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 13
+  - name: 'EBankingIdVisum1'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'EBankingIdVisum2'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'

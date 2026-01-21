@@ -1,0 +1,22 @@
+table:
+  name: 'PtAgrCardExecutionStatus'
+  description: 'Possible card execution status values.'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Card Execution Status'
+        helpText: 'Card Execution Status'
+    - german:
+        formTitle: 'Card Execution Status'
+        helpText: 'Card Execution Status'
+  columns:
+  - name: 'ExecStatus'
+    description: 'Execution status'

@@ -1,0 +1,31 @@
+table:
+  name: 'AsHistory'
+  description: 'Contains all the changes of a record.\r\nThe Id is the same as the Id of the tracked record in <TableName>'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'History track'
+    - german:
+        formTitle: 'Änderungsnachweis'
+  columns:
+  - name: 'Id'
+    description: 'Id of the history table'
+  - name: 'VersionNo'
+    description: 'Version of the record before the changes were made.'
+  - name: 'TableName'
+    description: 'Name of the table the tracked record belongs to.\r\n'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'ChangeDate'
+    description: 'Date and time of the changes.'
+  - name: 'MutField'
+    description: 'String which contains all the changes from the version before to the version in <Version>. \r\nStructure:\r\n<FieldName>|<SubTable>|<SubKey>|<NewValue>|<MutUser>|<MutDat>|<NecessaryConfirmations>|<Signer1>|<SignDat1>|<Signer2>|<SignDat2>|...|<CrLf>\r\n\r\n<FieldName>\r\nName of the field which changes\r\n\r\n<SubTable>	\r\nIf field belongs to a subtable, this field contains the name of it, e.g. syText. Empty if field belongs to main table. \r\n\r\n<SubId>		\r\nContains the Id to identify the entry in a subtable, Empty if field belongs to main table.\r\n\r\n<NewValue>	\r\nNew value after the change\r\n\r\n<OldValue>\r\nValue before the change\r\n\r\n<MutUser>	\r\nId of the user who made the changes\r\n\r\n<MutDate>\r\nDate and time when changes were made\r\n\r\n<Necessary Confirmations>\r\nNumber of confirmations (different signers) necessary for this field before record can become active. Usually 0, 1 or 2.\r\n\r\n<Signer1>	\r\nId of the user who made the first confirmation\r\n\r\n<SignDate1>	\r\nDate of the first confirmation\r\n\r\n<Signer2>	\r\nAs <Signer1>, but for the second confirmation\r\n\r\n<SignDate2>\r\nAs <SignDate1>, but for the second confirmationThe number of signers is limited to 255\r\n\r\n<CrLf>		\r\nMain delimiter, marks the end of the signer list\r\n'

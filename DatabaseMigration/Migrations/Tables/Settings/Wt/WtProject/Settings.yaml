@@ -1,0 +1,30 @@
+table:
+  name: 'WtProject'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b4ef08a8-5ddd-4342-8dd4-9468bd7539de
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Project'
+    - german:
+        formTitle: 'Projekt'
+  columns:
+  - name: 'AreaNo'
+    description: ''
+    genericControls:
+      refTable: 'WtArea'
+      refField: 'AreaNo'
+      defColumnPos: 1
+  - name: 'ProjectNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'WatchList'
+    description: ''

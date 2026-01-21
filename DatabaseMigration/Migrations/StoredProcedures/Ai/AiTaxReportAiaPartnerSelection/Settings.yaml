@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AiTaxReportAiaPartnerSelection'
+  description: 'Selects partners classified as reportable for AIA (CRS) Report\r\n- 2025-04-15: At Case 6 "Passiver (209)" Changed CustomerType from ''I'' to ''IP'' for SEB.\r\n- 2023-01-31: remove duplicate block ##PartnerHolder (101, 190). And added two lines: ''AND tsR.HdVersionNo BETWEEN 1 AND 999999998'' and ''AND tsCP.HdVersionNo BETWEEN 1 AND 999999998'''

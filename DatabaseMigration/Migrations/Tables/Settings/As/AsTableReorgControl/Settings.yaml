@@ -1,0 +1,63 @@
+table:
+  name: 'AsTableReorgControl'
+  description: 'Control table for Finstar log table reorganization'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TableName'
+    description: 'Name of table with log records which have to be reorganized'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SequenceNo'
+    description: 'Sequence number for handling. The order of handling is sorted by this number. More than one records may have the same sequence number if there are no sequential dependencies.'
+    minValue: '1'
+  - name: 'Descriptor'
+    description: 'String descriptor for actual reorganization record (makes it easier to recognize it)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'MinimalRecordsToKeep'
+    description: 'Minimal number of records which have to be kept in table after reorganization process'
+  - name: 'MinimalAgeNumberToKeep'
+    description: 'Minimal age number (of corresponding unit, see field MinimalAgeUnitToKeep) for  records which have to be kept in table after reorganization process'
+  - name: 'MinimalAgeUnitToKeep'
+    description: 'Unit for minimal age (value is defined in field MinimalAgeNumberToKeep) for records which have to be kept in table after reorganization process.\r\n''m'':	month\r\n''d'':	day\r\n''h'':	hour\r\n''n'':	minute'
+  - name: 'MaximalRecordsToKeep'
+    description: 'Maximal number of records which have to be kept in table after reorganization process'
+  - name: 'MaximalAgeNumberToKeep'
+    description: 'Maximal age number (of corresponding unit, see field MaximalAgeUnitToKeep) for  records which have to be kept in table after reorganization process'
+  - name: 'MaximalAgeUnitToKeep'
+    description: 'Unit for maximal age (value is defined in field MaximalAgeNumberToKeep) for records which have to be kept in table after reorganization process.\r\n''m'':	month\r\n''d'':	day\r\n''h'':	hour\r\n''n'':	minute'
+  - name: 'MinimalRecordsHasPriority'
+    description: 'Defines if field MinimalRecordsToKeep has priority in case of contradiction with MaximalAge information'
+  - name: 'MinimalAgeHasPriority'
+    description: 'Defines if MinimalAge information has priority in case of contradiction with field MaximalRecordsToKeep'
+  - name: 'WhereStatement'
+    description: '''WHERE'' Statement for selection of records in log table.\r\nHas to be defined without(!) text ''where''.'
+  - name: 'SpecificLogFileDirectory'
+    description: 'Name of specific subdirectory for files to safe log records (will be created if it is not existing). The following variables can be used:\r\n%y:	actual year (replaced by 4 digits)\r\n%m:	actual month (replaced by 2 digits)\r\n%d:	actual day (replaced by 2 digits)\r\n%h:	actual hour (replaced by 2 digits)\r\nBlanks are not allowed!'
+  - name: 'LogFileName'
+    description: 'Name of specific file for log records (will be created if it is not existing). The following variables can be used:\r\n%y:	actual year (replaced by 4 digits)\r\n%m:	actual month (replaced by 2 digits)\r\n%d:	actual day (replaced by 2 digits)\r\n%h:	actual hour (replaced by 2 digits)\r\nBlanks are not allowed!'
+  - name: 'FieldDelimiter'
+    description: 'Delimiter for Fields if records have to be written into a log file or to be mailed (like '','' '';'' ...)'
+  - name: 'WriteLogTimeStamp'
+    description: 'Defines if each line of a log file (if it has to be written) will be prefixed by a timestamp'
+  - name: 'FieldExcludeList'
+    description: 'Semicolon separated list of field names which shall   n o t   be exported to files.'
+  - name: 'MailReceivers'
+    description: 'Semicolon separated list of mail addresses. Receivers who get mail with the list of  information about log records.'
+  - name: 'MailSubject'
+    description: 'Subject for mail to users who are informed'
+  - name: 'SafeRecordsToFile'
+    description: 'Defines if the obsolete records shall be written into a file'
+  - name: 'MailRecordsToReceivers'
+    description: 'Defines if the obsolete records shall be mailed to the predefined receivers'
+  - name: 'DeleteRecordsInDataBase'
+    description: 'Defines if the obsolete records shall be deleted in the database'
+  - name: 'FrequencyLevel'
+    description: 'Defines how often the actual reorganization shall be processed:\r\n1:	seldom\r\n2:	frequently\r\n3:	always\r\nThe selection level is given by parameter from the periodic job'

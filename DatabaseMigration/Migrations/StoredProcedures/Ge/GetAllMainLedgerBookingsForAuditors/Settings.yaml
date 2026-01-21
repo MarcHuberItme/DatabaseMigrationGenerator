@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAllMainLedgerBookingsForAuditors'
+  description: 'retrieve the bookings of all main ledger accounts for a year\r\nthe timestamp of the balance is relevant only for hbl as they book the closing and reopen the new balance immediatelly.\r\nthis information is provided to the auditors (MJET)'

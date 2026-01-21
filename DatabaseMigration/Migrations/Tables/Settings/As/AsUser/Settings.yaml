@@ -1,0 +1,60 @@
+table:
+  name: 'AsUser'
+  description: 'Contains all users of the FinStar banking application.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    descField: 'FullName'
+    uiTableDescription:
+    - english:
+        formTitle: 'User'
+    - german:
+        formTitle: 'Anwender'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key, Id of PtDescriptionView (View to create the descriptionfield of PtBase)'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'UserName'
+    description: 'This field is a unique identification of a user. \r\nIt has the structure <domain>\<username>'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'FullName'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Department'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'MgVermittlerCode'
+    description: 'contains the value of vrx table 513 (Vermittler)'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'BranchNoOverride'
+    description: 'If a BranchNo is set here, it overrides the BranchNo set in the registry of the local machine. This might be useful for running Finstar with Terminal Services.'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+  - name: 'BranchRestrictionOverride'
+    description: 'If set, this flag overrides the branch restriction that can be found in the local machine registry. This might be necessary for running Finstar with Terminal Services.'
+  - name: 'PermittedBranch'
+    description: 'If a branch no is set, the user can only acccess customers of the same branch.\r\n'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+  - name: 'TemplateUserName'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true

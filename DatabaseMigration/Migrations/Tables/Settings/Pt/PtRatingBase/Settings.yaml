@@ -1,0 +1,40 @@
+table:
+  name: 'PtRatingBase'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key; Relation to PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'OrderedAssessments'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PayedAssessments'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'AssignedAssessments'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'UsedAssessments'
+    description: ''
+  - name: 'AllowAnalysis'
+    description: '0 = Analysis-view is not allowed\r\n1 = Analysis-view is allowed'
+  - name: 'AllowQuestions'
+    description: 'Indicates if this PtRatingBase is allowed to see the questions after the completed status.\r\n0 = not allowed\r\n1 = allowed'
+  - name: 'AllowStatistic'
+    description: 'If True then all the assessments under this PtRatingBase may be used for anonym statistics.'

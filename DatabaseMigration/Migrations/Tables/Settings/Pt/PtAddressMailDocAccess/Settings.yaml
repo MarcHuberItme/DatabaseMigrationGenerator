@@ -1,0 +1,24 @@
+table:
+  name: 'PtAddressMailDocAccess'
+  description: 'This table records the access details for all the documents available to partner over the internet.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AddressMailDocId'
+    description: ''
+    genericControls:
+      refTable: 'PtAddressMailDoc'
+      refField: 'Id'
+  - name: 'AccessPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'AccessTime'
+    description: ''

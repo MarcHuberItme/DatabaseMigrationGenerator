@@ -1,0 +1,3 @@
+view:
+  name: 'CoMortgageObjectType'
+  description: 'View für die bestimmung der nominellen Objektart der Hypotheken'

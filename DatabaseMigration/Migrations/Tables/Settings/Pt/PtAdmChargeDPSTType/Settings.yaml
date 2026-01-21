@@ -1,0 +1,24 @@
+table:
+  name: 'PtAdmChargeDPSTType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargeDPSTType'
+        helpText: 'PtAdmChargeDPSTType'
+    - german:
+        formTitle: 'PtAdmChargeDPSTType'
+        helpText: 'PtAdmChargeDPSTType'
+  columns:
+  - name: 'LocGroupNo'
+    description: ''

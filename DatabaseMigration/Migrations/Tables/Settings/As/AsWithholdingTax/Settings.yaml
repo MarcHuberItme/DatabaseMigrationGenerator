@@ -1,0 +1,25 @@
+table:
+  name: 'AsWithholdingTax'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+  columns:
+  - name: 'WithholdingTaxType'
+    description: ''
+    genericControls:
+      refTable: 'AsWithholdingTaxType'
+      refField: 'WithholdingTaxType'
+  - name: 'Rate'
+    description: ''
+  - name: 'FreeLimit'
+    description: ''
+  - name: 'ValidFrom'
+    description: ''

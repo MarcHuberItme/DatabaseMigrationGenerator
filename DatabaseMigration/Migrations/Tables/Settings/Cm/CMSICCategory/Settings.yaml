@@ -1,0 +1,38 @@
+table:
+  name: 'CMSICCategory'
+  description: 'Categorization is of SIC messages for communication purpose'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'VariationId'
+    description: ''
+    genericControls:
+      refTable: 'CMSICVariation'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'Code'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Description'
+    description: ''
+  - name: 'Type'
+    description: '0 = Normal data messages\r\n1= Session  Control Messages\r\n2 = Application Control Messages'
+  - name: 'SeqDependent'
+    description: 'Flag indicating that messages in category are sequence dependent or sequence independent'
+  - name: 'Sign'
+    description: ''
+  - name: 'Encrypt'
+    description: ''
+  - name: 'IBASECFuncCode'
+    description: 'The code for the IBASEC function to be used for adding security to a message.'
+  - name: 'IBASCEFuncCodeBackup'
+    description: 'Function code for the IBASEC operation in Backup Mode'

@@ -1,0 +1,24 @@
+table:
+  name: 'NcStatusType'
+  description: 'Status of a name matching process.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0ebe92b4-009e-4d5f-b882-c8d9daf72042
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    descField: 'Type'
+    uiTableDescription:
+    - english:
+        formTitle: 'NameMatching Proc. Status'
+    - german:
+        formTitle: 'Namematching Proz.-Status'
+  columns:
+  - name: 'Type'
+    description: 'Code for a status type. Expl.: 1 (Prepared), 2 (Running), 3 (Successful), 4 (Faild) etc.'
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,20 @@
+table:
+  name: 'PtValidCustomerReference'
+  description: 'CustomerReferences defined in this table don''t have to be double checked and can be accepted directly.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'CustomerReference'
+  columns:
+  - name: 'CustomerReference'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      noUpdatePos: 1

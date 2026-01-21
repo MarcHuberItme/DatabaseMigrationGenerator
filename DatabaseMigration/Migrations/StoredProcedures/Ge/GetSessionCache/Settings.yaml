@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetSessionCache'
+  description: 'Reads session data for a key'

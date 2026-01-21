@@ -1,0 +1,70 @@
+view:
+  name: 'AsSwissTownView'
+  description: 'Display SwissTown with CantonSymbol'
+frontendView:
+  name: 'AsSwissTownView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'Town'
+    uiTableDescription:
+    - english:
+        formTitle: 'View SwissTown'
+    - german:
+        formTitle: 'View SwissTown'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+  - name: 'SwissTownNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    isUnique: true
+    genericControls:
+      defColumnPos: 1
+  - name: 'CantonSymbol'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 2
+    genericControls:
+      refTable: 'AsCanton'
+      refField: 'CantonSymbol'
+      defColumnPos: 3
+  - name: 'Population'
+    description: ''
+    dataType: 'int'
+  - name: 'Surface'
+    description: ''
+    dataType: 'int'
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'Town'
+    description: 'im View Town + Cantonsymbol'
+    dataType: 'nvarchar'
+    prec: 38
+    genericControls:
+      defColumnPos: 2
+  - name: 'TownSearch'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 35
+    genericControls:
+      defColumnPos: 3

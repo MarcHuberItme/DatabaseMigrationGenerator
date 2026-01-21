@@ -1,0 +1,75 @@
+table:
+  name: 'RePfBReplyDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PFB Reply Detail'
+    - german:
+        formTitle: 'PFB Reply Detail'
+  columns:
+  - name: 'ReplyId'
+    description: ''
+    genericControls:
+      refTable: 'RePfBReply'
+      refField: 'Id'
+  - name: 'MemberUniqueKey'
+    description: ''
+  - name: 'BCNumber'
+    description: ''
+  - name: 'PledgeRegisterNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'PledgeRegisterPartNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PledgeTypeId'
+    description: ''
+    genericControls:
+      refTable: 'RePledgeType'
+      refField: 'PledgeTypeNo'
+      defColumnPos: 3
+  - name: 'OverallLien'
+    description: ''
+  - name: 'ValueAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValueDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      refTable: 'RePledgeRegisterStatus'
+      refField: 'StatusNo'
+      defColumnPos: 6
+  - name: 'ExternalText'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ExternalTextDate'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'ExternalTextCode'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'PledgeTransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'RePledgeTransType'
+      refField: 'PledgeTransTypeNo'

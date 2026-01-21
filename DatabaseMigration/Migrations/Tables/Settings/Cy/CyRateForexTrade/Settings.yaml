@@ -1,0 +1,93 @@
+table:
+  name: 'CyRateForexTrade'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'in-/output forextrader'
+    - german:
+        formTitle: 'in-/output devisenhändler'
+  columns:
+  - name: 'TransactionId'
+    description: 'input'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+  - name: 'TransMessageId'
+    description: 'input'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+  - name: 'TradeDate'
+    description: 'input (only necessary if PtTransMessage doesn''t exist)'
+  - name: 'PaymentDate'
+    description: 'input (only necessary if PtTransMessage doesn''t exist)'
+  - name: 'PaymentCurrency'
+    description: 'input (only necessary if PtTransMessage doesn''t exist)'
+  - name: 'PaymentAmount'
+    description: 'input'
+  - name: 'DebitPortfolioId'
+    description: 'input (only necessary if PtTransMessage doesn''t exist)'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'DebitIsRebateApplicable'
+    description: 'input'
+  - name: 'DebitAccountCurrency'
+    description: 'input (only necessary if PtTransMessage doesn''t exist)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'DebitAmount'
+    description: 'output'
+  - name: 'DebitMarketRate'
+    description: 'output'
+  - name: 'DebitMarketAmountHoCu'
+    description: 'output'
+  - name: 'DebitCustomerRate'
+    description: 'output'
+  - name: 'DebitCustomerAmountHoCu'
+    description: 'output'
+  - name: 'CreditPortfolioId'
+    description: 'input (only necessary if PtTransMessage doesn''t exist)'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'CreditIsRebateApplicable'
+    description: ''
+  - name: 'CreditAccountCurrency'
+    description: 'input (only necessary if PtTransMessage doesn''t exist)'
+  - name: 'CreditAmount'
+    description: 'output'
+  - name: 'CreditMarketRate'
+    description: 'output'
+  - name: 'CreditMarketAmountHoCu'
+    description: 'output'
+  - name: 'CreditCustomerRate'
+    description: 'output'
+  - name: 'CreditCustomerAmountHoCu'
+    description: 'output'
+  - name: 'CrossMarketRate'
+    description: ''
+  - name: 'CrossCustomerRate'
+    description: ''
+  - name: 'TextToForexTrader'
+    description: 'input'
+  - name: 'TextToBackOffice'
+    description: 'output'
+  - name: 'IsRateFixed'
+    description: ''
+  - name: 'WasAlreadyByForexTrader'
+    description: ''
+  - name: 'RecId'
+    description: 'can be used by the calling application'
+  - name: 'RecParam'
+    description: 'can be used by the calling application'

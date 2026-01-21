@@ -1,0 +1,58 @@
+table:
+  name: 'PtOfferVariationComp'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtEbInfo'
+      parentTable: 'PtOfferVariation'
+      parentRelationField: 'VariationId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'version component'
+    - german:
+        formTitle: 'Modell Komponenten'
+  columns:
+  - name: 'VariationId'
+    description: ''
+    genericControls:
+      refTable: 'PtOfferVariation'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'CompTypeId'
+    description: 'z.B. 100 % Wohnen (kurante Deckung)'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'Amount'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Price'
+    description: 'from product'
+    genericControls:
+      defColumnPos: 4
+  - name: 'PriceDeviation'
+    description: 'inkl. - oder + angabe'
+    genericControls:
+      defColumnPos: 5
+  - name: 'DeviationReasonType'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountPriceDevType'
+      refField: 'DeviationReasonType'
+      defColumnPos: 2
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

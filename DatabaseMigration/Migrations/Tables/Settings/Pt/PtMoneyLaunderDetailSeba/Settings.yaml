@@ -1,0 +1,91 @@
+table:
+  name: 'PtMoneyLaunderDetailSeba'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtProfile'
+      parentRelationField: 'ProfileId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Money Laundering Detail 2'
+    - german:
+        formTitle: 'Hintergrundbericht Seba'
+  columns:
+  - name: 'ProfileId'
+    description: ''
+    genericControls:
+      refTable: 'PtProfile'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'ActivitiesCrypto'
+    description: ''
+    genericControls:
+      multiLine: true
+      refTable: 'PtActivityCryptoType'
+      refField: 'Id'
+  - name: 'TotalAssets'
+    description: ''
+  - name: 'TotalCryptoAssets'
+    description: ''
+  - name: 'TotalEqInv'
+    description: ''
+  - name: 'TotalFiat'
+    description: ''
+  - name: 'TotalNonBankAssets'
+    description: ''
+  - name: 'IronReserve'
+    description: ''
+  - name: 'TotalLiabilities'
+    description: ''
+  - name: 'TypeOfIncome'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'AmountIncome'
+    description: ''
+  - name: 'TypeExpenditure'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'AmountExpenditure'
+    description: ''
+  - name: 'AmountExpectedDeposit'
+    description: ''
+    genericControls:
+      refTable: 'PtDigitalDepositsToBeDeposited'
+      refField: 'Id'
+  - name: 'DigitalCurrencies'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'CurrencyTransfer'
+    description: ''
+  - name: 'SecuritesTransfer'
+    description: ''
+  - name: 'DigitalAssets'
+    description: ''
+  - name: 'SenderFinalInstNameBank'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'NoOfTransactions'
+    description: ''
+    genericControls:
+      refTable: 'PtActivityCryptoType'
+      refField: 'Id'
+  - name: 'TradeVolume'
+    description: ''
+    genericControls:
+      refTable: 'PtProfileTradeVolume'
+      refField: 'Id'

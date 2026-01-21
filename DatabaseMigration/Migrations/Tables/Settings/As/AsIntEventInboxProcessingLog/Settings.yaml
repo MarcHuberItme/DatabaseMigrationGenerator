@@ -1,0 +1,38 @@
+table:
+  name: 'AsIntEventInboxProcessingLog'
+  description: 'An append-only immutable log that defines the processing state for each ingested event'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdMessageStore'
+  genericComponents:
+    tableType: 6
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Inbox Processing Log'
+        helpText: 'An append-only immutable log that defines the processing state for each ingested event'
+    - german:
+        formTitle: 'Inbox Processing Log'
+        helpText: 'Ereignis-Eingangsverarbeitungsprotokoll'
+    - french:
+        formTitle: 'Inbox Processing Log'
+        helpText: 'An append-only immutable log that defines the processing state for each ingested event'
+    - italian:
+        formTitle: 'Inbox Processing Log'
+        helpText: 'An append-only immutable log that defines the processing state for each ingested event'
+  columns:
+  - name: 'EventId'
+    description: 'The incoming integration event which needs to be processed.'
+    genericControls:
+      refTable: 'MsIntEventInboxMsg'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'ProcessingState'
+    description: 'The state entered at the time this record was created, indicating processing success.'
+    genericControls:
+      refTable: 'AsIntEventInboxProcessingState'
+      refField: 'StateName'
+      isNoUpdate: true

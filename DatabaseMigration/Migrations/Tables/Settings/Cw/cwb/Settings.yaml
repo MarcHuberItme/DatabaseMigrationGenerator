@@ -1,0 +1,43 @@
+table:
+  name: 'cwb'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'TestField'
+    description: ''
+  - name: 'TestInt'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'TextFeld'
+    description: ''
+  - name: 'TestFieldPos2'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Country'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TestAmount'
+    description: ''
+  - name: 'Demo2022'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Abc'
+    description: ''
+  - name: 'Field2023'
+    description: ''

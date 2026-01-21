@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PurgeOldMsFixEntries'
+  description: 'delete old entries in the MsFix* Tables\r\ninput parameter @NumberOfDaysToKeep defines how many days back entries should be left in the table, e.g. 90 days\r\nideally a job agent is defined that executes the procedure daily or weekly\r\ndeletes in the table MsFix*Msg should automatically  trigger a delete cascade in the table MsFix*Ack'

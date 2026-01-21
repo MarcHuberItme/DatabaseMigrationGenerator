@@ -1,0 +1,46 @@
+table:
+  name: 'RePledgeType'
+  description: 'Pfandobjektart'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Pledge Type'
+    - german:
+        formTitle: 'Pfandobjektart'
+  columns:
+  - name: 'PledgeTypeNo'
+    description: 'Pfandobjektart (Bauland, EFH, Ferienhaus, Landwirtschaft, etc.)'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IaziValue'
+    description: 'Wird für IAZI Schätzung verwendet'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PfandRegValue'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValueTypeNo'
+    description: 'Default-Basiswert für diese Pfandobjektart (für Zugriff auf Belehnungssatz in %)'
+    genericControls:
+      refTable: 'ReValueType'
+      refField: 'ValueTypeNo'
+  - name: 'IsLiving'
+    description: 'PfB Gruppe Wohnbau'
+  - name: 'RateMax'
+    description: 'Ist IsLiving = True dann bezieht sich RateMax auf den maximal möglichen Gewerbe-Mietanteil. Wurde IsBusiness gecheckt trifft RateMax auf den maximal möglichen Wohn-Mietanteil zu (relevant bei der Berechnung des Ertrages).'
+  - name: 'IsBusiness'
+    description: 'PfB Gruppe Gewerbe'
+  - name: 'IsElse'
+    description: 'PfB Gruppe Übriges'

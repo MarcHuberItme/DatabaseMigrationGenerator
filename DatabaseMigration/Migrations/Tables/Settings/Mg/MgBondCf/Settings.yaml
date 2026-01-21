@@ -1,0 +1,29 @@
+table:
+  name: 'MgBondCf'
+  description: 'VRX  Kassenobligationen-Buchungen (OB60)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'VRX OB60'
+    - german:
+        formTitle: 'VRX OB60'
+  columns:
+  - name: 'ObligNr'
+    description: ''
+  - name: 'Verfall'
+    description: 'Couponsverfall'
+  - name: 'Nettobetrag'
+    description: 'Zins Nettobetrag'
+  - name: 'BDatum'
+    description: 'Buchungsdatum'
+  - name: 'MigrationStatus'
+    description: 'Status für die Migrationsverarbeitung\r\n\r\n00 = Daten werden geladen\r\n01 = Daten geladen\r\n02 = PortfolioId''s ermittelt (nicht relevant für Buchungen)\r\n03 = Record erfolgreich migriert\r\n04 = \r\n05 ='
+  - name: 'ErrorDescription'
+    description: ''

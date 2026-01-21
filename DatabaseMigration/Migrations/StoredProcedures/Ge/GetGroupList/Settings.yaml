@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetGroupList'
+  description: 'To find out GroupId''s by the parameter GroupTypeId and TargetRowId. It is possible that the result of the query is more than one GroupId. Only for nonrestricted Grouping!'

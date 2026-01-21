@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'BlockingCheckRS'
+  description: 'Purpose	: This stored procedure returns the blocking Info			\r\nInputs	: i) ParentTableName	varchar()	:Name of the Table		\r\n: ii) ParentTableRecId	uniqueidentifier	:RecordId of the Table	\r\nAuthor			: Abdul Nasir Khan\r\nDate Created	: 22-May-2003'

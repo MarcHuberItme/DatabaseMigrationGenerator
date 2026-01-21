@@ -1,0 +1,170 @@
+table:
+  name: 'ReObligation'
+  description: '[ WARNING: This table is used in ReObligationView and also in front end table ReObligationView. Therefore, any changes made to it shall also be made in the said entities.]\r\nSchuldbrief\r\nWenn ein Schuldbrief das Portfolio der Bank verlässt, z.B. für eine Aenderung zum Grundbuchamt, dann ist dies ein Ausgang, d.h. die Deckung wird vermindert. Bei der Pfandbriefbank ist dieser Betrag als mittels "Change of Basis" zu melden. Es wird somit eine Neubewerung ausgelöst. Ein Totalausgang bei der Pfandbriefbank gibt es erst, wenn alle Titel zurückgezogen werden.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'ObligAmount'
+    uiTableDescription:
+    - english:
+        formTitle: 'Obligation'
+    - german:
+        formTitle: 'Schuldbrief'
+  columns:
+  - name: 'ObjectSeqNo'
+    description: 'Unique number for the identification of obligations, insurance polices and other objects like envelopes, pictures, carpets e.g.'
+    genericControls:
+      defColumnPos: 13
+  - name: 'EREID'
+    description: 'electronic registered Schuldbriefe ID'
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ObligAmount'
+    description: 'Nominal des Schuldbriefes'
+    minValue: '0'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ObligTypeNo'
+    description: 'Schuldbrief-Art\r\ne.g. Namen-Schuldbrief / Inhaber-Schuldbrief'
+    genericControls:
+      refTable: 'ReObligType'
+      refField: 'ObligTypeNo'
+      defColumnPos: 1
+  - name: 'ObligDate'
+    description: 'Datum des Schuldbriefes'
+    genericControls:
+      defColumnPos: 15
+  - name: 'ObligRank'
+    description: 'Rang'
+    genericControls:
+      defColumnPos: 3
+  - name: 'AntecedentAmount'
+    description: 'Kapital Vorgang'
+    minValue: '0'
+  - name: 'RankRivalryAmount'
+    description: 'Rangkonkurrenz'
+    minValue: '0'
+  - name: 'LienCreationId'
+    description: 'Pfandrecht Verarbeitung'
+    genericControls:
+      refTable: 'ReObligLienCreation'
+      refField: 'Id'
+      defColumnPos: 4
+  - name: 'LienStatusId'
+    description: 'Pfandrecht Status, z.B. Information ob der Titel vorhanden ist und wo er sich befindet (z.B. beim Grundbuchamt)'
+    genericControls:
+      refTable: 'ReObligLienStatus'
+      refField: 'Id'
+      defColumnPos: 5
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'DescManual'
+    description: 'if true, the description is manual updated'
+  - name: 'Comment'
+    description: 'für weitergehende Beschreibungen muss ein Dokument verknüpft werden (AsDocumentIndex).'
+    genericControls:
+      multiLine: true
+  - name: 'PfBFlag'
+    description: 'indicates whether the Obligation is given to the Pfandbriefbank / Zeigt an, ob der SB bei der Pfandbriefbank verpfändet ist. (diese Checkbox wird nur bei der Pfandbriefbank geführt, bei HBL sagt der ObligeeTypNo = 01 dasselbe aus).'
+  - name: 'MaxInterestRate'
+    description: 'Maximalzinssatz'
+  - name: 'Zitat'
+    description: 'Informationen des GB Amt auf dem Grundpfandtitel bezüglich des Eintragungsorts, z.B. 345.74.9'
+    genericControls:
+      multiLine: true
+  - name: 'Advance'
+    description: 'Nachrückungsrecht besteht\r\n0 = No\r\n1 = Yes'
+  - name: 'ObligeeId'
+    description: 'Gläubiger\r\nIndicates, where the title is. e.g. HBL,  AKB, Grundbuchamt...'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ObligeeRightType'
+    description: 'Gläubigerrecht, z.B. Sicherungsübereignung'
+    genericControls:
+      refTable: 'ReObligObligeeRight'
+      refField: 'RightType'
+      defColumnPos: 7
+  - name: 'ObligeeStatusNo'
+    description: 'Gläubigerstatus - z.B. Ablösung'
+    genericControls:
+      refTable: 'ReObligObligeeStatus'
+      refField: 'ObligeeStatusNo'
+      defColumnPos: 8
+  - name: 'InternRatingCodeNo'
+    description: 'Rating des SB'
+    genericControls:
+      refTable: 'AsInternRatingCode'
+      refField: 'InternRatingCodeNo'
+      defColumnPos: 9
+  - name: 'ReBaseId'
+    description: 'Feld ist redundant - Erfassung im elektronischen Pfandregister (nicht für Finstar Real Estate)'
+    genericControls:
+      refTable: 'ReBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PartnerId'
+    description: 'Relation to the Owner'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'MemberUniqueKey'
+    description: 'PfB spezifisch: Jede Mitgliedbank vergibt für den gemeldeten Record eine eindeutige Identifikation. Diese benötigt sie um über E-Banking die Daten zu mutieren. Diese eindeutige Kennung muss die Mitgliedbank bei sich speichern.'
+  - name: 'Identification'
+    description: 'Additional identification of obligation\r\ne.g. Lit. or Nr'
+  - name: 'ObligeeTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReObligObligeeType'
+      refField: 'ObligeeTypeNo'
+      defColumnPos: 6
+  - name: 'ObligeeRemark'
+    description: ''
+    genericControls:
+      defColumnPos: 14
+  - name: 'ObligeeDate'
+    description: ''
+  - name: 'MgGrGlaeubCd'
+    description: 'nur für FIS-2000 SOLL später auf ObligeeID umgesetzt werden !'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVrxNo'
+    description: 'Unique key in VRX with the following format: \r\nddddddddddssvvvvvvvvaazzzzzzzzzz\r\nd=DepotNo, s=SubdepotNo, v=ValorenNo, a=Anrechtscode,z=Valorenzusatz'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgDescription'
+    description: 'Beschreibung aus VRX DS67'
+    genericControls:
+      multiLine: true
+      isOnlyForMig: true
+  - name: 'MgSUBKTNR'
+    description: 'Subdepotnr'
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgGrGpfdStatCd'
+    description: ''
+  - name: 'MgGrGpfdVerarbCd'
+    description: ''
+  - name: 'SentToPfb'
+    description: 'Indicates whether or not an obligation was already sent/submitted to PFB. It''s used to decide if the delete instruction for a certain obligation has to be sent to PFB.'
+  - name: 'NomineeAssetId'
+    description: 'external unique identifier from Terravis'
+  - name: 'UsedForCoveredBonds'
+    description: ''
+  - name: 'UsedForLGHS'
+    description: ''

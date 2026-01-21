@@ -1,0 +1,26 @@
+table:
+  name: 'PtSicSettAcctQuerySummary'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'MessageId'
+    description: ''
+  - name: 'CreationDateTime'
+    description: ''
+  - name: 'RTGSCode'
+    description: ''
+  - name: 'OriginalMessageId'
+    description: ''
+  - name: 'QueryType'
+    description: ''
+  - name: 'AccountReportId'
+    description: ''
+  - name: 'ResultTypeCode'
+    description: ''

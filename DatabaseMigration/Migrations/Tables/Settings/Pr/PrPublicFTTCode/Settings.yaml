@@ -1,0 +1,26 @@
+table:
+  name: 'PrPublicFTTCode'
+  description: 'Table to define in which country or "room" the Financial Transaction Tax belongs to'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'FTT Code'
+        helpText: 'FTT Code'
+    - german:
+        formTitle: 'FTT Code'
+        helpText: 'FTT Code'
+  columns:
+  - name: 'FTTCode'
+    description: 'country code or any group of countries'
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,35 @@
+table:
+  name: 'PtCommissionType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Commissiontype'
+    - german:
+        formTitle: 'Spesenart'
+  columns:
+  - name: 'CommissionTypeNo'
+    description: ''
+  - name: 'CorrItemGroupId'
+    description: 'Group of corr items on which this commission type is applicable. \r\nUsed in:\r\n  - Mail charging (commission type 200 & 201)'
+    genericControls:
+      refTable: 'AsCorrItemGroup'
+      refField: 'Id'
+  - name: 'TransChargeTypeNo'
+    description: 'Trans charge type which corresponds to this commission type.'
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'ChargeNo'
+  - name: 'MigCommissionType'
+    description: 'Corresponding commission type from vrx'
+    genericControls:
+      isOnlyForMig: true

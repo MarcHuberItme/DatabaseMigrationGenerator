@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountOverviewEbanking'
+  description: 'Get a list of accounts with balance information to be showed in the ebanking application'

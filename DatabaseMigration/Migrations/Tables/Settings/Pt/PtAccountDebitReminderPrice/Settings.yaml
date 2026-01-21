@@ -1,0 +1,43 @@
+table:
+  name: 'PtAccountDebitReminderPrice'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAccountDebitReminderPri'
+        helpText: 'PtAccountDebitReminderPrice'
+    - german:
+        formTitle: 'PtAccountDebitReminderPri'
+        helpText: 'PtAccountDebitReminderPrice'
+    - french:
+        formTitle: 'PtAccountDebitReminderPri'
+        helpText: 'PtAccountDebitReminderPrice'
+  columns:
+  - name: 'InvoiceType'
+    description: ''
+    genericControls:
+      refTable: 'AsInvoiceType'
+      refField: 'InvoiceType'
+      defColumnPos: 1
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      defColumnPos: 2
+  - name: 'ReminderSeqNo'
+    description: ''
+  - name: 'ChargeAmount'
+    description: ''
+  - name: 'ChargePercentage'
+    description: ''

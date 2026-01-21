@@ -1,0 +1,23 @@
+table:
+  name: 'PrPublicListingScheme'
+  description: 'VDF-Domaine: 7846 LISTINGIDSCHEME'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+  columns:
+  - name: 'ListingScheme'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Priority'
+    description: ''
+    genericControls:
+      defColumnPos: 2

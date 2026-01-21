@@ -1,0 +1,126 @@
+view:
+  name: 'PtPositionIncomeSearchView'
+  description: ''
+frontendView:
+  name: 'PtPositionIncomeSearchView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PartnerDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 300
+    genericControls:
+      defColumnPos: 2
+  - name: 'PortfolioID'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      defColumnPos: 14
+  - name: 'PortfolioNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 13
+    genericControls:
+      defColumnPos: 4
+  - name: 'publicID'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'PublicDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 6
+  - name: 'PaymentValueDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 16
+  - name: 'IncomeTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'EvIncomeType'
+      refField: 'IncomeTypeNo'
+      defColumnPos: 8
+  - name: 'TaxReportClass'
+    description: ''
+    dataType: 'char'
+    prec: 1
+    genericControls:
+      refTable: 'EvTaxReportClass'
+      refField: 'TaxReportClass'
+      defColumnPos: 9
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      defColumnPos: 10
+  - name: 'TaxableAmountPyCu'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 11
+  - name: 'EventId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'EvBaseSearchView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 12
+  - name: 'EventNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 13
+  - name: 'TransDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7
+  - name: 'SourceSystem'
+    description: ''
+    dataType: 'char'
+    prec: 1
+    genericControls:
+      defColumnPos: 15

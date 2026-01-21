@@ -1,0 +1,26 @@
+table:
+  name: 'PtTransactionProcQueueFailure'
+  description: 'Transaction Id''s which failed during Position Update with message queue'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Transaction Id''s from MSQ'
+    - german:
+        formTitle: 'Transaction Id''s von MSQ'
+  columns:
+  - name: 'TransactionId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+  - name: 'Status'
+    description: 'Status: 0 = Unprocessed\r\n1 = Processed'

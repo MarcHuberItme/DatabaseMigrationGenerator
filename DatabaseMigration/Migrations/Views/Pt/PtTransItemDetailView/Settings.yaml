@@ -1,0 +1,70 @@
+view:
+  name: 'PtTransItemDetailView'
+  description: ''
+frontendView:
+  name: 'PtTransItemDetailView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtTransItemDetailView'
+        helpText: 'PtTransItemDetailView'
+    - german:
+        formTitle: 'PtTransItemDetailView'
+        helpText: 'PtTransItemDetailView'
+  columns:
+  - name: 'TransItemId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransItem'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitQuantity'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CreditQuantity'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 2
+  - name: 'DebitAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'CreditAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'TextNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      defColumnPos: 5
+  - name: 'ServiceCenterNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsProfitCenter'
+      refField: 'ProfitCenterNo'
+      defColumnPos: 6
+  - name: 'TransText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      defColumnPos: 7
+  - name: 'TransItemCreationTime'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 8

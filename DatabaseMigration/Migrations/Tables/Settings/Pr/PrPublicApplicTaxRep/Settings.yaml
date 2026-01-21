@@ -1,0 +1,24 @@
+table:
+  name: 'PrPublicApplicTaxRep'
+  description: 'Applicability of tax or reporting\r\nVDF Doamin 7863'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Applicability of tax/rep'
+    - german:
+        formTitle: 'Anwendbarkeit Steuer'
+  columns:
+  - name: 'ApplicTaxRepNo'
+    description: 'VDF Doamin 7863'
+    genericControls:
+      defColumnPos: 1

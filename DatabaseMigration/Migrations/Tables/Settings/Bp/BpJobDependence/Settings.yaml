@@ -1,0 +1,29 @@
+table:
+  name: 'BpJobDependence'
+  description: 'Definition of dependence between Batch Jobs (only for non-periodic Jobs)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Batch Job Dependence'
+    - german:
+        formTitle: 'Batch Job Abhängigkeit'
+  columns:
+  - name: 'DependingJobId'
+    description: 'Id of Job which is depending on another job'
+    genericControls:
+      refTable: 'BpSingleJob'
+      refField: 'Id'
+  - name: 'DependingFromJobId'
+    description: 'Id of Job from which the ''DependingJob'' is depending'
+    genericControls:
+      refTable: 'BpSingleJob'
+      refField: 'Id'
+  - name: 'SuccessOnly'
+    description: 'Defines if the depending Job shall only be executed if the previous job has finished successfully'

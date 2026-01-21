@@ -1,0 +1,49 @@
+table:
+  name: 'PtEbProductInfo'
+  description: 'For every product a category, an icon and a sort order can be defined'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'ProductCategoryId'
+    description: ''
+    genericControls:
+      refTable: 'PtEbProductCategory'
+      refField: 'Id'
+      defColumnPos: 2
+      noUpdatePos: 2
+  - name: 'ProductIconId'
+    description: ''
+    genericControls:
+      refTable: 'PtEbProductIcon'
+      refField: 'Id'
+      defColumnPos: 3
+      noUpdatePos: 3
+  - name: 'ProductSortOrder'
+    description: ''
+    genericControls:
+      noUpdatePos: 4
+  - name: 'DisplayDebitInterest'
+    description: 'GetInterestRate will return debit rates for this account type'
+  - name: 'DisplayCreditInterest'
+    description: '1 = GetInterestRate will return credit rates for this account type'
+  - name: 'DisplayWithdrawRules'
+    description: '1 = shows the withdraw rules of this product to the user'
+  - name: 'DisplayCommFeeWithdrawBalance'
+    description: '1= shows the currently available commission free withdraw balance to the user'
+  - name: 'IsPension'
+    description: 'Defines whether the product is of the pension type'

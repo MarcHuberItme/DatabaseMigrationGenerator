@@ -1,0 +1,50 @@
+table:
+  name: 'PtAgrSecureListAstTransHist'
+  description: 'Journal of sent AST transactions.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'TransSendDate'
+    uiTableDescription:
+    - english:
+        formTitle: 'Kobil AST Transactions'
+    - german:
+        formTitle: 'Kobil AST Transaktionen'
+  columns:
+  - name: 'SecureListId'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrSecureList'
+      refField: 'Id'
+  - name: 'TransId'
+    description: 'Id of the AST-transaction'
+    genericControls:
+      defColumnPos: 4
+  - name: 'JobId'
+    description: 'Identifies the application or batch job which generated the transaction'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TransSendDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'TransBody'
+    description: 'Content of the transaction - text'
+    genericControls:
+      multiLine: true
+  - name: 'TransCompleteDate'
+    description: 'Date and Time when the transaction ends'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TransStatus'
+    description: 'Status of the Transaction:\r\n2 : accepted\r\n1 : declined\r\n0 : waiting\r\n-1: system error\r\n-2 user error\r\n\r\n\r\n'
+  - name: 'ErrorText'
+    description: 'Error information of failed transactions.'
+    genericControls:
+      multiLine: true

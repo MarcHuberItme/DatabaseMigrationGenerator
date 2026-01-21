@@ -1,0 +1,37 @@
+table:
+  name: 'PtProtectionAmountObject'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtProtectionAmountObject'
+        helpText: 'PtProtectionAmountObject'
+    - german:
+        formTitle: 'PtProtectionAmountObject'
+        helpText: 'PtProtectionAmountObject'
+  columns:
+  - name: 'ProtectionAmountDetailsId'
+    description: 'Id to ProtectionAmountDetails table'
+    genericControls:
+      refTable: 'PtProtectionAmountDetails'
+      refField: 'Id'
+  - name: 'ObjectType'
+    description: 'Type of entry.'
+    genericControls:
+      refTable: 'PtProtectionAmountObjectType'
+      refField: 'ObjectType'
+  - name: 'RecordId'
+    description: 'Id to the record of the entry.'
+  - name: 'RecordKey'
+    description: 'Key of the entry.'
+  - name: 'Amount'
+    description: ''
+  - name: 'AccruedInterest'
+    description: ''

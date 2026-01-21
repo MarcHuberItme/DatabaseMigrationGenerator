@@ -1,0 +1,32 @@
+table:
+  name: 'MsFixOutAck'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdMessageStore'
+  genericComponents:
+    tableType: 6
+    groupId: 47a738e9-4dcb-41bc-8fcc-bb1699c6b097
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'MessageDataId'
+    description: 'The record id in the Msg Table.'
+    genericControls:
+      refTable: 'MsFixOutMsg'
+      refField: 'Id'
+  - name: 'MessageReaderId'
+    description: 'The record id in the Message Reader Table.'
+    genericControls:
+      refTable: 'MsMessageReader'
+      refField: 'Id'
+  - name: 'ReaderNumber'
+    description: 'If the reader is made up of several processes, the process number can be saved here. In this case status processing is also required to prevent simultaneous processing of messages.'
+  - name: 'AckStatus'
+    description: 'The status of the message processing.'
+    genericControls:
+      refTable: 'MsAcknowledgeStatus'
+      refField: 'AckStatus'
+  - name: 'ErrorMessage'
+    description: 'In case of an error, the error description.'

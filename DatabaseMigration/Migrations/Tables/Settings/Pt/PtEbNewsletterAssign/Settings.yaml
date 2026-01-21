@@ -1,0 +1,34 @@
+table:
+  name: 'PtEbNewsletterAssign'
+  description: 'define to which topic a newsletter belongs\r\nrelevant to find out who has to receive the newsletter mail'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'E-News Assign'
+    - german:
+        formTitle: 'E-News Assign'
+    - french:
+        formTitle: 'E-News Assign'
+    - italian:
+        formTitle: 'E-News Assign'
+  columns:
+  - name: 'NewsletterId'
+    description: ''
+    genericControls:
+      refTable: 'PtEbNewsletter'
+      refField: 'Id'
+  - name: 'NewsTopicNo'
+    description: ''
+    genericControls:
+      refTable: 'PtEbNewsTopic'
+      refField: 'TopicNo'
+      defColumnPos: 1

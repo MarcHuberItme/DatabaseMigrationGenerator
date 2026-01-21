@@ -1,0 +1,50 @@
+table:
+  name: 'PtMLRun'
+  description: 'Stores metadata about the execution of model runs.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Metadata of Model Runs'
+    - german:
+        formTitle: 'Metadaten von Mod. Läufen'
+    - french:
+        formTitle: 'Métadonnées des modèles'
+    - italian:
+        formTitle: 'Metadati cicli del mod.'
+  columns:
+  - name: 'RunNo'
+    description: 'Run number'
+  - name: 'ModelNo'
+    description: 'Reference to the model number'
+  - name: 'ModelFilename'
+    description: 'Filename of the model used'
+  - name: 'Status'
+    description: 'Run status: 0 = running, 1 = completed, -1 = failed'
+  - name: 'TaskType'
+    description: 'Type of task executed, it is either predict or train'
+  - name: 'SoftwareVersion'
+    description: 'Version of the software used'
+  - name: 'DataStartTime'
+    description: 'Start time for the data used'
+  - name: 'DataEndTime'
+    description: 'End time for the data used'
+  - name: 'RunStartTime'
+    description: 'Start time of the run'
+  - name: 'RunEndTime'
+    description: 'End time of the run'
+  - name: 'Config'
+    description: 'Run configuration parameters (stored as JSON), can be NULL'
+  - name: 'LogContent'
+    description: 'Log file content'
+  - name: 'LogFilename'
+    description: 'Path to the log file'
+  - name: 'Comments'
+    description: 'Optional comments'

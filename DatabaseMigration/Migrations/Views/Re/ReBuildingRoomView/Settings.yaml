@@ -1,0 +1,93 @@
+view:
+  name: 'ReBuildingRoomView'
+  description: ''
+frontendView:
+  name: 'ReBuildingRoomView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'building room view'
+    - german:
+        formTitle: 'Einteilung View'
+  columns:
+  - name: 'BuildingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+  - name: 'DwellingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReDwelling'
+      refField: 'Id'
+  - name: 'FloorType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReBuildingFloorType'
+      refField: 'FloorType'
+  - name: 'RoomType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReRoomType'
+      refField: 'RoomType'
+  - name: 'IsRented'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'RentPartnerRelId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'RePremisesPtRel'
+      refField: 'Id'
+  - name: 'RentPartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'RentPartnerName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'RentPartnerFirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'SeatNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'AreaM2'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'RoomNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'IsTrade'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsLiving'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsSecondary'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'SortNoFloorType'
+    description: ''
+    dataType: 'smallint'
+  - name: 'SortNoRoomType'
+    description: ''
+    dataType: 'smallint'

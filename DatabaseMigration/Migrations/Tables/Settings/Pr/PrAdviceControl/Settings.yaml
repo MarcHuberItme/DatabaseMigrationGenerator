@@ -1,0 +1,34 @@
+table:
+  name: 'PrAdviceControl'
+  description: 'Advice Control definition'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'advice control definition'
+    - german:
+        formTitle: 'Anzeigesteuerung'
+  columns:
+  - name: 'SalaryCreditAdviceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+  - name: 'SalaryDebitStatementDetails'
+    description: ''
+  - name: 'SalaryCreditStatementDetails'
+    description: ''
+  - name: 'SalaryDebitAdviceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'

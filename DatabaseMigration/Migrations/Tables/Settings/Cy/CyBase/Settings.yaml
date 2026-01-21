@@ -1,0 +1,112 @@
+table:
+  name: 'CyBase'
+  description: 'Main Table for currencies'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Currencies'
+    - german:
+        formTitle: 'Währungen'
+    - french:
+        formTitle: 'Devises'
+  columns:
+  - name: 'Symbol'
+    description: 'ISO Code of currency'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TelekursNo'
+    description: 'Telekurs currency number'
+    genericControls:
+      defColumnPos: 2
+  - name: 'UnionSymbol'
+    description: 'Symbol of a currency union'
+    genericControls:
+      defColumnPos: 3
+  - name: 'UnionValidFrom'
+    description: ''
+  - name: 'UnionValidTo'
+    description: ''
+  - name: 'UnionFixRate'
+    description: 'Fix rate in currency union, e.g. from DEM in EUR = 0.511292'
+  - name: 'Sequence'
+    description: 'Sort order of currencies\r\nReason for max value 999:\r\nFunction RateID of CSS.cls (Project FsCss.vpb) can only work with 3 digit numbers'
+    maxValue: '999'
+    genericControls:
+      defColumnPos: 4
+  - name: 'RndTypeAmount'
+    description: 'Default rounding type of an amount.'
+    genericControls:
+      refTable: 'AsRoundingRule'
+      refField: 'RoundingRule'
+  - name: 'BillAcceptance'
+    description: 'If true then bills are possible for this currency - the opening of a bank internal (Hauptbuch) account is only allowed if the flag is true. For client accounts there are additional checks (which products are allowed in what currency).'
+  - name: 'TCAcceptance'
+    description: '0 = no\r\n1 = Yes'
+  - name: 'AccountAcceptance'
+    description: 'If true then this currency is possible for accounts.\r\n(if there are bookings for such a currency, there has to be opened a PrReference)\r\nthe opening of a bank internal (Hauptbuch) account is only allowed if the flag is true. For client accounts there are additional checks (which products are allowed in what currency).'
+  - name: 'PortfolioAcceptance'
+    description: 'If true then this currency is possible for portfolios.'
+  - name: 'MigValue'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+      isOnlyForMig: true
+  - name: 'CommissionReduction'
+    description: 'reduction of spread factors, in case of 2 linked transactions (USD / EUR)'
+  - name: 'EBankingAcceptance'
+    description: 'Nur diese Währungen werden in den DropDownlisten im E-Banking angezeigt (es muss sich dabei um eine Untermenge der Währungen handeln, die das Flag AccountAcceptance = TRUE (1) haben.'
+  - name: 'CategoryNo'
+    description: ''
+    genericControls:
+      refTable: 'CyCategory'
+      refField: 'CategoryNo'
+      defColumnPos: 6
+  - name: 'PublicId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AssetClassNo'
+    description: 'Class of Currency for Asset Allocation'
+    genericControls:
+      refTable: 'CyAssetClass'
+      refField: 'ClassNo'
+      defColumnPos: 7
+  - name: 'ForexNostroLimitHoCu'
+    description: 'Limite für die Nostrodevisenposition in Bilanzwährung (CHF)'
+  - name: 'BankNoteGroupNo'
+    description: ''
+    genericControls:
+      refTable: 'CyBankNoteGroup'
+      refField: 'BankNoteGroupNo'
+  - name: 'BillCoinImport'
+    description: 'Import flag for banknotes, coins, gold and silver'
+  - name: 'ISO4217Code'
+    description: ''
+  - name: 'EdgelabCode'
+    description: 'code to pass to Edgelab (PtPortfolioKeyFigure)'
+  - name: 'IsCrypto'
+    description: ''
+  - name: 'MinorUnit'
+    description: 'Conversion factor from currency to its minor currency (e.g. factor for Swiss Francs to Rappen is 100)'
+  - name: 'ISO4217AlphabeticCode'
+    description: 'Mapping between CyBase.Symbol and ISO4217 Alphabetic Code.\r\nUsed for (internal) currency codes (e.g. G06) unknown to partners.\r\n\r\nCurrently only used for used for Edglab Advisory Suite (01.2021).'
+  - name: 'RndTypeAmountSx'
+    description: 'Rounding rule of an amount in the stockex application.\r\nIf this field contains a value <> null this value will overrule the value of the field RndTypeAmount in the stockex application.'
+    genericControls:
+      refTable: 'AsRoundingRule'
+      refField: 'RoundingRule'
+  - name: 'DecimalsAmount'
+    description: 'for command FormatNumber in VB6'
+    minValue: '2'
+    maxValue: '18'

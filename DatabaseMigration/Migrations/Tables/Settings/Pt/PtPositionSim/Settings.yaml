@@ -1,0 +1,95 @@
+table:
+  name: 'PtPositionSim'
+  description: 'only used for the ARS Simulation'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Position Simulation'
+    - german:
+        formTitle: 'Position Simulation'
+  columns:
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'OrigCurrency'
+    description: 'Originalwährung'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'ValueOrigCurrency'
+    description: 'Betrag in Originalwährung'
+  - name: 'ReportCurrency'
+    description: 'z.B. Bilanzwährung'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ValueReportCurrency'
+    description: 'Betrag in Bilanzwährung'
+  - name: 'Quantity'
+    description: 'Menge'
+  - name: 'InterestRate'
+    description: 'Zinssatz (grouping over AcInterestRateGroup)'
+  - name: 'Maturity'
+    description: 'Verfalldatum (grouping over AcMaturityGroup)'
+  - name: 'Ranking'
+    description: 'Rang des Titels - z.B. nachrangiger Titel'
+    genericControls:
+      refTable: 'AsRanking'
+      refField: 'Ranking'
+  - name: 'CountryCode'
+    description: 'Ländercode'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 3
+  - name: 'CountryCodeId'
+    description: 'def. für Standardgruppierungslogik anstelle von Country Code'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'Id'
+  - name: 'BusinessTypeCode'
+    description: ''
+    genericControls:
+      refTable: 'PtBusinessType'
+      refField: 'NogaCode'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'ValueSign'
+    description: 'Soll / Haben Code'
+    genericControls:
+      refTable: 'AsValueSign'
+      refField: 'ValueSign'
+  - name: 'CollateralType'
+    description: 'Sicherheit (Hinterlage)'
+    genericControls:
+      refTable: 'AsCollateralType'
+      refField: 'CollateralType'
+  - name: 'ProductNo'
+    description: 'Product Type  / Produkt (Kontoart)'
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+  - name: 'NostroType'
+    description: 'Handelsbestand, Finanzanlagen, Beteiligungen'
+    genericControls:
+      refTable: 'PtPortfolioNostroType'
+      refField: 'NostroType'
+  - name: 'Employees'
+    description: 'number of employees (grouping over AcEmployeeNoGroup)'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'BalanceDate'
+    description: 'Balance Date'
+  - name: 'Period'
+    description: 'Accounting period (number)'

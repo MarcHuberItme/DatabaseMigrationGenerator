@@ -1,0 +1,29 @@
+table:
+  name: 'OaExternalUser'
+  description: 'Stores the users which are accessing Finstar through B2B APIs.\r\nMaps the external username and email address to a finstar username which is compatible with the HdChangeUser and HdCreator fields.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FinstarUserName'
+    description: 'The Finstar user name which is used for HdCreator and HdChangeUser fields when the external application user causes data to be written to Finstar.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ExternalApplicationCode'
+    description: 'The external application from where the external user causes data to be written to Finstar.'
+    genericControls:
+      refTable: 'AsExternalApplication'
+      refField: 'ApplicationCode'
+      isNoUpdate: true
+  - name: 'ExternalUserName'
+    description: 'The user name of a user in an external system which is integrated with Finstar and which is accessing Finstar indirectly through the external system.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'EmailAddress'
+    description: 'If available, the external user''s email address.'

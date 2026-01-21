@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DeleteAccountCompPrices'
+  description: 'delete all AccountComposedPrices for an account\r\nAuthor		: mct\r\nDate Created	: 29.06.2004'

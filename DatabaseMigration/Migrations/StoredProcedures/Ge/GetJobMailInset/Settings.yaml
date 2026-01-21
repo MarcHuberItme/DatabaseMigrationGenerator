@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetJobMailInset'
+  description: 'Returns a list of document numbers that might be attached to the documents of the given print job.'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPortfolioNoWhenEBankingConnectionIsValid'
+  description: 'Used for validation of the portfolio for an E-Banking contract.'

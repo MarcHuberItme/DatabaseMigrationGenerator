@@ -1,0 +1,101 @@
+table:
+  name: 'PtRelationSlave'
+  description: 'partner who receive rights from a certain master; for example an authority (proxy)\r\n\r\n-> Muss Group Activation haben ! damit WF aktiviert wird ! sonst wird die Risikokategorie bei Mutationen nicht angepasst !'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    descField: 'PartnerId'
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtRelationMaster'
+      parentRelationField: 'MasterId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Rel.Slave'
+    - german:
+        formTitle: 'Verb.Empfänger'
+    - french:
+        formTitle: 'Relation récepteur'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key, Id of PtDescriptionView (View to create the descriptionfield of PtBase)\r\n'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'MasterId'
+    description: 'foreign key, Id of PtRelationMaster'
+    genericControls:
+      refTable: 'PtRelationMaster'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'ContactPersonId'
+    description: 'this field is used when a contact person gets a "Vollmacht" without having an own PtBase in that case PtRelationMaster.PartnerId = PtRelationSlave.PartnerId.'
+    genericControls:
+      refTable: 'PtContactPersonView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'ValidFrom'
+    description: 'date of beginn of the relationsship to the master\r\n'
+  - name: 'ValidTo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'RelationRoleNo'
+    description: 'foreign-key;  Id of PtRelationRole \r\nfor some RelationTyps (other connections) it''s possible to define roles, for example: \r\nemployee , employer , member of the administrative board, president of a club, and so on'
+    genericControls:
+      refTable: 'PtRelationRole'
+      refField: 'RelationRoleNo'
+      defColumnPos: 2
+  - name: 'AllowEBill'
+    description: 'only for Proxy-Relations (TypeNo = 30)\r\n-> If true, Slave has the right to see and pay E-Bills of Master'
+  - name: 'CompositeFlag'
+    description: 'für die Kundenbetreuung kann es nötig sein, Verbunde zu bilden. wenn die Checkbox gechecked ist, heisst dies, der verbundene Kunde sollte im Verbund, d.h. vom selben Betreuer betreut werden.'
+  - name: 'Instruction'
+    description: 'statements telling what is to do\r\nrestrictions for persons for example that they have to give 3 signatures (Kollektiv zu Dritt).'
+    genericControls:
+      multiLine: true
+  - name: 'InstructionVerifyFlag'
+    description: 'if true, the workflow-process will stop and the user has to check the instructions'
+  - name: 'Participation'
+    description: 'investment in a business in %, for example for holdings, ARGE ....\r\n(Arbeitsgemeinschaften und Baukonsortien etc.)'
+  - name: 'ConsolidationFlag'
+    description: 'indicates if the consolidation is necessary'
+  - name: 'VersionNo'
+    description: 'Application Version number for documents (appl. Laufnummer)'
+  - name: 'PrintDate'
+    description: 'print date of the document'
+  - name: 'SignDate'
+    description: 'Datum, an welchem die Vollmacht rechtsgültig unterzeichnet zurück bei der HBL ist und effektiv aktiv wird. (dieses Feld fällt später wieder weg, wenn ein genereller Mechanismus gefunden wird, der sicherstellt, dass erst unterzeichnete Verträge aktiv werden).'
+  - name: 'ReplacesAllSlaves'
+    description: 'Ersetzt alle Vollmachten des Vollmachtgebers (und terminiert alle anderen)'
+  - name: 'ProxyRightNo'
+    description: ''
+    genericControls:
+      refTable: 'PtProxyRight'
+      refField: 'ProxyRightNo'
+  - name: 'DisposalRightNo'
+    description: ''
+    genericControls:
+      refTable: 'PtDisposalRight'
+      refField: 'DisposalRightNo'
+  - name: 'CloseRelTypeNo'
+    description: '0 = has close relation to PtBase (hat familiäre oder geschäftliche Bande)\r\n1 = has no close relation to PtBase (hat keine familiären oder geschäftlichen Beziehungen zwischen Vertragspartner und Wirtschaftlich Berechtigtem oder Bevollmächtigtem)'
+    genericControls:
+      refTable: 'PtRelationSlaveCloseRelType'
+      refField: 'CloseRelTypeNo'
+  - name: 'ReplacesAllSlavesText'
+    description: 'Textvariation for replace instruction\r\n(beeinflusst den Text auf dem Vertrag) - kein Ersatz der bisherigen (Vollmachten bleiben bestehen)\r\nz.B.\r\n1) ReplaceAllSlaves wählen\r\n2) anschliessend weiterarbeiten mit ReplacesAllSlavesText'

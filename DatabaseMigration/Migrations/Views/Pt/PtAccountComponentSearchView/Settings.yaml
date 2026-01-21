@@ -1,0 +1,163 @@
+view:
+  name: 'PtAccountComponentSearchView'
+  description: 'View for searching AccountComponent based on multiple criteria. E.g. PartnerNo, PortfolioId'
+frontendView:
+  name: 'PtAccountComponentSearchView'
+  description: 'View for searching account components based on multiple criteria. E.g. PartnerId, PortfolioNo, AccountId or AccountNo.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccountComponentId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtAccountComponent'
+      refField: 'Id'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+  - name: 'AccountId'
+    description: 'Id of the owner account.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'AccountNo'
+    description: 'Number of the owner account.'
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 38
+    scale: 38
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+  - name: 'PortfolioId'
+    description: 'Id of the owner portfolio.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'PortfolioNo'
+    description: 'Number of the owner portfolio.'
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 38
+    scale: 38
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'PortfolioNo'
+  - name: 'PartnerId'
+    description: 'Id of the owner partner.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 38
+    scale: 38
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+  - name: 'ContractBaseId'
+    description: 'foreign-key;  Id of PtContractBase'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtContract'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PrivateComponentId'
+    description: 'foreign-key;  Id of PrPrivateComponent'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PrPrivateComponent'
+      refField: 'Id'
+  - name: 'PrivateCompTypeId'
+    description: 'type of component (copied by create-account from PrPrivateComponent)\r\nforeign-key;  Id of PrPrivateCompType'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'PriorityOfInterestCalculation'
+    description: 'Interest Calculation Priority of Component'
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 2
+  - name: 'PriorityOfPayback'
+    description: 'Payback Priority of Component'
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 3
+  - name: 'PriorityOfLegalReporting'
+    description: 'Legal Reporting Priority of Component'
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 4
+  - name: 'IsOldComponent'
+    description: 'if true, the component is inactive (for example after a product-change)'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 5
+  - name: 'Duration'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      isNoUpdate: true
+  - name: 'DurationTypeId'
+    description: 'foreign-key;  Id of PrDurationType\r\ntime units:   - Day (d)   - Month (m)   - Year (y)'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrDurationType'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PrivateCompCharacteristicNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PrPrivateCompCharacteristic'
+      refField: 'CharacteristicNo'
+      defColumnPos: 10
+  - name: 'Remark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      multiLine: true
+      defColumnPos: 11
+  - name: 'SyncValue'
+    description: 'Amount, synchronized by application from PtAccountCompValue'
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'SyncValidFrom'
+    description: 'Start date of component value, synchronized from PtAccountCompValue'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'SyncValidTo'
+    description: 'End date of component value, synchronized from PtAccountCompValue'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 8

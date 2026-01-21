@@ -1,0 +1,85 @@
+table:
+  name: 'MgXS12'
+  description: 'VRX Sperrungen (locking)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+  columns:
+  - name: 'KdNr'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ArbGeb'
+    description: ''
+  - name: 'KtNr'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'SubKtNr'
+    description: ''
+  - name: 'VKdNr'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'VArbGeb'
+    description: ''
+  - name: 'VKtNr'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'VSubKtNr'
+    description: ''
+  - name: 'VbArt'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'VfPos'
+    description: ''
+  - name: 'MutZyklus'
+    description: ''
+  - name: 'VStatus'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'DatVon'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'DatBis'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'Betrag'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'Wrg'
+    description: ''
+  - name: 'Bem'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'VrxKey'
+    description: ''
+  - name: 'MigrationStatus'
+    description: ''
+  - name: 'MigrationDate'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'LockTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtLockType'
+      refField: 'LockTypeNo'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

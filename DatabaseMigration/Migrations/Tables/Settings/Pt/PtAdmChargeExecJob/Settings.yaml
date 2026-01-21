@@ -1,0 +1,93 @@
+table:
+  name: 'PtAdmChargeExecJob'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargeExecJob'
+        helpText: 'PtAdmChargeExecJob'
+    - german:
+        formTitle: 'PtAdmChargeExecJob'
+        helpText: 'PtAdmChargeExecJob'
+  columns:
+  - name: 'JobNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ChargeYear'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'ChargeGroupNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeGroup'
+      refField: 'GroupNo'
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'PeriodRuleNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'AdjustWithPeriodRuleNo'
+    description: 'when checked, the yearly charge will be adjusted based on the PeriodRuleNo.'
+  - name: 'ChargeBeginDate'
+    description: ''
+  - name: 'NoValuationsSelected'
+    description: ''
+  - name: 'RunChargeCalc'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'CalculationDate'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'RunBooking'
+    description: ''
+  - name: 'TransText'
+    description: ''
+  - name: 'BookingDate'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'RunReporting'
+    description: ''
+  - name: 'ReportDate'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'HasError'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'ReRunChargeCalc'
+    description: ''
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 12
+  - name: 'DeActivate'
+    description: ''
+  - name: 'IsAdHoc'
+    description: ''
+  - name: 'ForClosing'
+    description: ''
+  - name: 'AdHocRebate'
+    description: ''
+  - name: 'RunReverse'
+    description: ''
+  - name: 'ReverseDate'
+    description: ''

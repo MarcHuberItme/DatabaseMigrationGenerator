@@ -1,0 +1,62 @@
+table:
+  name: 'PtExportRun'
+  description: 'Table to control the export process of pension products, e.g. to Primanet'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Export File Type'
+    - german:
+        formTitle: 'Filetyp für Export'
+  columns:
+  - name: 'ExportNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'FileTypeNo'
+    description: '4 = Privor\r\n6 = Privit / Prifonds / Prirent\r\n8 = Revor FZ'
+    genericControls:
+      refTable: 'PtExportFileType'
+      refField: 'FileTypeNo'
+      defColumnPos: 2
+  - name: 'ExportTypeNo'
+    description: '1 = master data\r\n2 = bookings'
+    genericControls:
+      refTable: 'PtExportDataType'
+      refField: 'DataTypeNo'
+      defColumnPos: 3
+  - name: 'DateFrom'
+    description: 'start-date of bookings or changes, exclusive'
+    genericControls:
+      defColumnPos: 4
+  - name: 'DateTo'
+    description: 'End-Date of bookings or changes, inclusive.'
+    genericControls:
+      defColumnPos: 5
+  - name: 'FileName'
+    description: 'Name of the export file, according to Primanet, Liberty and Aduno specification'
+  - name: 'ExportDate'
+    description: 'DateTime when the export started.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'Sequence'
+    description: 'Sequence-Number for delivery (per File type)\r\nHas to be part of the file name.'
+    genericControls:
+      defColumnPos: 7
+  - name: 'StatusNo'
+    description: 'Status of export process'
+    genericControls:
+      refTable: 'PtExportStatus'
+      refField: 'StatusNo'
+      defColumnPos: 8
+  - name: 'ProcessId'
+    description: 'Id of the workflow process to complete the data'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'

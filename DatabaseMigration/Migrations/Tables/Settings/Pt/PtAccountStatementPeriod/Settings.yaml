@@ -1,0 +1,51 @@
+table:
+  name: 'PtAccountStatementPeriod'
+  description: 'Scheduled next statement'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'next accout statement'
+    - german:
+        formTitle: 'nächster Kontoauszug'
+  columns:
+  - name: 'AccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'CorrAccountId'
+    description: 'Relation to PtCorrAccount, used for additional statement to a special receiver\r\nIf Not Null then the statement is to send only to this rule\r\nIf Null the standard rules have to be used'
+    genericControls:
+      refTable: 'PtCorrAccount'
+      refField: 'Id'
+  - name: 'ActivityRuleCode'
+    description: ''
+    genericControls:
+      refTable: 'AsActivityRule'
+      refField: 'ActivityRuleCode'
+  - name: 'StatementNo'
+    description: 'Sequential number within an account and  Activity Rule Code and CorrAccountId'
+  - name: 'ScheduledDate'
+    description: 'Scheduled date of the next statement'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ExecutionDate'
+    description: 'Date on which report is printed'
+  - name: 'IsDailyStatement'
+    description: '0 = periodical (new scheduled date has to be calcualted)\r\n1 = is daily statement (no new scheduled date has to be calculated)\r\n(copied from AsAdviceRule.DailyStatement)'
+  - name: 'LastStatementTransDate'
+    description: 'Date of LastStatement Date'
+    genericControls:
+      defColumnPos: 3
+  - name: 'BeginBalance'
+    description: ''
+  - name: 'TerminationDate'
+    description: ''

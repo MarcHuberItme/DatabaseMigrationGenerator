@@ -1,0 +1,56 @@
+table:
+  name: 'PtAccountPriceDevType'
+  description: 'Deviation Reason'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Deviation Type'
+    - german:
+        formTitle: 'Preisabweichungsgründe'
+    - french:
+        formTitle: 'Raison déviation de prix'
+  columns:
+  - name: 'DeviationReasonType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'StandardDeviationPrice'
+    description: 'Standard Preisabweichungssatz'
+    genericControls:
+      defColumnPos: 2
+  - name: 'MinDeviationPrice'
+    description: 'minimum allowed deviation price'
+    genericControls:
+      defColumnPos: 3
+  - name: 'MaxDeviationPrice'
+    description: 'Maximum allowed deviation price'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ForceMinDevPrice'
+    description: 'If true application will force MinDeviationPrice, otherwise application will just advice the user that the deviation is not in the desired range.'
+  - name: 'ForceMaxDevPrice'
+    description: 'If true application will force MaxDeviationPrice, otherwise application will just advice the user that the deviation is not in the desired range.'
+  - name: 'IsGenerated'
+    description: '0 = no automatical generation (can be chosen manuelly through dropdownlist)\r\n1 = no manuel input choice allowed - used for automatical generation'
+  - name: 'ForDebitComponent'
+    description: 'deviation type is allowed for debit components'
+  - name: 'ForCreditComponent'
+    description: 'deviation is allowed for credit components'
+  - name: 'ForFixedDurationComp'
+    description: 'deviation type is allowed for fixed duration components'
+  - name: 'ForVariableDurationComp'
+    description: 'deviation type is allowed for variable duration components'
+  - name: 'ValidToMandatory'
+    description: 'the valid to field in the price deviation has to be given'
+  - name: 'ForCredit20'
+    description: 'deviation type could be used for credit 2.0'

@@ -1,0 +1,329 @@
+view:
+  name: 'RoTransItemDetailView'
+  description: 'RoTransItemDetail without reversals.'
+frontendView:
+  name: 'RoTransItemDetailView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'TransactionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      hasDetailBtn: true
+  - name: 'EntryId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      hasDetailBtn: true
+  - name: 'Amount'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 1
+  - name: 'CreditDebitIndicator'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4
+    genericControls:
+      defColumnPos: 2
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      defColumnPos: 3
+  - name: 'EndToEndId'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 4
+  - name: 'Reference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 5
+  - name: 'ReferenceType'
+    description: 'ISR Reference, QRR or SCOR'
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'OwnAccount'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 60
+  - name: 'OwnAddress'
+    description: 'Ordering Party Full Address\r\nPrecision accoring to source table'
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+  - name: 'OwnName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'OwnStreetName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'OwnBuildingNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'OwnPostCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'OwnTownName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'OwnCountry'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'CounterPartyAccount'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 60
+  - name: 'CounterPartyAccountType'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'CounterPartyAddress'
+    description: 'Beneficiary''s address\r\nPrecision accoring to source table'
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+  - name: 'CounterPartyName'
+    description: 'Full beneficiary name.'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'CounterPartyStreetName'
+    description: '1-1 to ISO 20022 Message'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'CounterPartyBuildingNo'
+    description: '1-1 to ISO 20022 Message'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'CounterPartyPostCode'
+    description: '1-1 to ISO 20022 Message'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'CounterPartyTownName'
+    description: '1-1 to ISO 20022 Message'
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'CounterPartyCountry'
+    description: '1-1 to ISO 20022 Message'
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'CounterPartyAddressLine1'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'CounterPartyAddressLine2'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'CounterPartyAddressLine3'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'CounterPartyAddressLine4'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'UltimateDebtorAddress'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+  - name: 'UltimateDebtorName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'UltimateDebtorStreetName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'UltimateDebtorBuildingNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'UltimateDebtorPostCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'UltimateDebtorTownName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'UltimateDebtorCountry'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'UltimateCreditorAddress'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+  - name: 'UltimateCreditorName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'UltimateCreditorStreetName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'UltimateCreditorBuildingNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'UltimateCreditorPostCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'UltimateCreditorTownName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'UltimateCreditorCountry'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'AdditionalInformation'
+    description: 'TransText / BeneficiaryMessage'
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+  - name: 'AcctSvcrReference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'TotalChargesAndTaxAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'TotalChargesAndTaxCurrency'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 3
+  - name: 'ChargesRecords'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'ReversalIndicator'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'TxDomainCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4
+  - name: 'TxFamilyCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4
+  - name: 'TxSubFamilyCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4
+  - name: 'TxProprietaryCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'EntryReference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 250
+  - name: 'TransDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'BookingDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ValueDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'GroupId'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'EntryReferenceInternal'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 250
+  - name: 'UnstructuredReference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 140
+  - name: 'Balance'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'OriginalAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'OriginalCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'ExchangeRate'
+    description: ''
+    dataType: 'float'
+  - name: 'ClearingSystemCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'ClearingSystemMemberId'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'Bic'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 15
+  - name: 'SourceId'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'SourceNumber'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'SourceType'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'SubEntryId'
+    description: 'TransactionId in API'
+    dataType: 'uniqueidentifier'
+  - name: 'TransMessageId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+  - name: 'CancelTransMsgId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+  - name: 'EntryReferenceInternalType'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100

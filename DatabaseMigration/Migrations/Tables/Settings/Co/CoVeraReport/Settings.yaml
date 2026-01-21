@@ -1,0 +1,44 @@
+table:
+  name: 'CoVeraReport'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'CoVeraReport'
+        helpText: 'CoVeraReport'
+    - german:
+        formTitle: 'CoVeraReport'
+        helpText: 'CoVeraReport'
+  columns:
+  - name: 'ProcessDate'
+    description: ''
+  - name: 'ReportDate'
+    description: ''
+  - name: 'ProcessType'
+    description: '0, Not Relevant\r\n1, DayEnd\r\n2, Extended'
+  - name: 'ReportNo'
+    description: ''
+  - name: 'GroupNoBegin'
+    description: ''
+  - name: 'GroupNoEnd'
+    description: ''
+  - name: 'CreditJob'
+    description: '0, NA\r\n1, ok\r\n9, processing\r\n99, error'
+  - name: 'DynComJob'
+    description: '0, NA\r\n1, ok\r\n9, processing\r\n99, error'
+  - name: 'MEVJob'
+    description: ''
+  - name: 'ScheduledJob'
+    description: ''
+  - name: 'TimeBegin'
+    description: ''
+  - name: 'TimeEnd'
+    description: ''

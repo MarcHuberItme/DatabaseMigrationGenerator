@@ -1,0 +1,27 @@
+table:
+  name: 'PtMrosPerson'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtMrosPerson'
+        helpText: 'PtMrosPerson'
+    - german:
+        formTitle: 'PtMrosPerson'
+        helpText: 'PtMrosPerson'
+    - french:
+        formTitle: 'PtMrosPerson'
+        helpText: 'PtMrosPerson'
+  columns:
+  - name: 'ReportId'
+    description: ''
+    genericControls:
+      refTable: 'PtMrosReport'
+      refField: 'Id'

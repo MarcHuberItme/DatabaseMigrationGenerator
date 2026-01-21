@@ -1,0 +1,39 @@
+view:
+  name: 'PtAccountCompValuesValidView'
+  description: 'Author :  Abdul Nasir Khan'
+frontendView:
+  name: 'PtAccountCompValuesValidView'
+  description: 'View for valid account component values. Created for Code Generation purposes, not transferable, as it is originally a view that is already in use.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccountBaseId'
+    description: 'Id of the account the component belongs to.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'MgVBNR'
+    description: 'Account or Portfolio number'
+    dataType: 'int'
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'ValidFrom'
+    description: 'DateTime from when the Component is Valid.'
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'VT'
+    description: 'DateTime to which the component is valid.'
+    dataType: 'datetime'
+  - name: 'Value'
+    description: 'Value of the component.'
+    dataType: 'money'
+    isNotNull: true

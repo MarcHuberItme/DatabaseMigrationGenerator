@@ -1,0 +1,106 @@
+table:
+  name: 'ReBuildingPtRel'
+  description: 'Verbindungen Versicherung und Gebäude\r\n(z.B. Gebäudeversicherung)\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'ReBuilding'
+      parentRelationField: 'BuildingId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Insurance Relation'
+    - german:
+        formTitle: 'Gebäudeversicherung'
+    - french:
+        formTitle: 'assurance bâtiment'
+    - italian:
+        formTitle: 'assicurazioni sugli edifi'
+  columns:
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'BuildingPtRelType'
+    description: '22 = Gebäudeversicherung (AVA)\r\n24 = Privatversicherung\r\n26 = Kt. Versicherung (<> AG)'
+    genericControls:
+      refTable: 'ReBuildingPtRelType'
+      refField: 'RelationType'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PartnerId'
+    description: 'Versicherungsgesellschaft'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'InsuranceTypeNo'
+    description: 'Versicherte Risiken'
+    genericControls:
+      refTable: 'ReBuildingInsuranceType'
+      refField: 'InsuranceTypeNo'
+      defColumnPos: 3
+  - name: 'PolicyNo'
+    description: 'Policennummer'
+  - name: 'ValuationDate'
+    description: 'Schätzungsdatum'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValuationYear'
+    description: 'Schätzungsjahr'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ReasonTypeNo'
+    description: 'Schätzungsgrund'
+    genericControls:
+      refTable: 'ReValuationReasonType'
+      refField: 'ReasonTypeNo'
+  - name: 'BuildCostIndex'
+    description: 'Baukostenindex'
+  - name: 'IsIndexed'
+    description: 'Indexiert'
+  - name: 'DeValuationRate'
+    description: 'Altersentwertung'
+    minValue: '0'
+    maxValue: '100'
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'ValidTo'
+    description: ''
+  - name: 'NotificationDate'
+    description: 'Notifiziert am'
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'AmountTypeNo'
+    description: '1 = Neuwert / Police\r\n2 = Neuwert / Direktanfrage\r\n3 = Zeitwert'
+    genericControls:
+      refTable: 'ReBuildingAmountType'
+      refField: 'AmountTypeNo'
+  - name: 'BaseAmount'
+    description: 'Grundversicherungsbetrag'
+  - name: 'AddAmount'
+    description: 'Zusatzbetrag'
+  - name: 'BuildValue'
+    description: 'Bauwert (neuwert) - Valuetype 30'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 4
+  - name: 'SoftProfileUsed'
+    description: ''

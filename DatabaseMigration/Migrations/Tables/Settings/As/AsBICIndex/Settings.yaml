@@ -1,0 +1,102 @@
+table:
+  name: 'AsBICIndex'
+  description: 'Swift Member Index'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'BICAddress'
+    uiTableDescription:
+    - english:
+        formTitle: 'BIC Number'
+    - german:
+        formTitle: 'Swift Numbers'
+    - french:
+        formTitle: 'Numéros Swift'
+  columns:
+  - name: 'BICHeader'
+    description: 'Combines the fields TAG and MODIFICATION FLAG from the switch textfile.'
+  - name: 'BICAddress'
+    description: 'corresponds to the field BIC CODE from the switch textfile'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Branch'
+    description: 'Code of the branch, xxx corresponds to the headquarter,\r\ncorresponds to the field BRANCH CODE of the switch textfile.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'InstitutionName'
+    description: 'Name of the bank, see also Name1, Name2, Name3\r\ncorresponds to the field INSTITUTION NAME of the switch textfile.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'BranchInformation'
+    description: 'Name and informations about the branch, see also BranchInformation1, BranchInformation2, \r\ncorresponds to the field BRANCH INFORMATION of the switch textfile.'
+  - name: 'City'
+    description: 'corresponds to the field CITY HEADING of the switch textfile.'
+  - name: 'SubtypeIndication'
+    description: 'corresponds to the field CITY HEADING of the switch textfile.'
+  - name: 'ValueAddedServices'
+    description: 'corresponds to the field CITY HEADING of the switch textfile.'
+  - name: 'ExtraInfo'
+    description: 'corresponds to the field CITY HEADING of the switch textfile.'
+  - name: 'PhysicalAddress1'
+    description: 'corresponds to the field CITY HEADING of the switch textfile.'
+  - name: 'PhysicalAddress2'
+    description: 'corresponds to the field CITY HEADING of the switch textfile.'
+  - name: 'PhysicalAddress3'
+    description: 'corresponds to the field CITY HEADING of the switch textfile.'
+  - name: 'PhysicalAddress4'
+    description: 'corresponds to the field CITY HEADING of the switch textfile.'
+  - name: 'Location'
+    description: 'corresponds to the field LOCATION of the switch textfile.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'CountryName'
+    description: 'corresponds to the field COUNTRY NAME of the switch textfile.'
+  - name: 'PobNumber'
+    description: 'corresponds to the field POB NUMBER of the switch textfile.'
+  - name: 'PobLocation'
+    description: 'corresponds to the field POB LOCATION of the switch textfile.'
+  - name: 'PobCountryName'
+    description: 'corresponds to the field POB COUNTRY NAME of the switch textfile.'
+  - name: 'InitDate'
+    description: 'Begin of the SEPA Settlement, first valid day.'
+  - name: 'EndDate'
+    description: 'End date of the SEPA Settlement, the EndDate is included.'
+  - name: 'DPBic'
+    description: 'Partner BIC-address of a direct SEPA participant who mediates for an indirect SEPA participant'
+  - name: 'SettlementBic'
+    description: 'Full partner settlement BIC-address of a direct SEPA participant who also may mediate for an indirect SEPA participant.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'PaymentTypeAllowed'
+    description: ''
+  - name: 'SepaStatus'
+    description: 'NULL - No SEPA Participant\r\n0 - Disabled direct SEPA Participant\r\n1 - Enabled direct SEPA Participant\r\n2 - Suspended direct SEPA Participant\r\n10 - Disabled indirect SEPA Participant\r\n11 - Enabled indirect SEPA Participant\r\n12 - Suspended indirect SEPA Participant'
+    genericControls:
+      defColumnPos: 5
+  - name: 'Name1'
+    description: 'first 35 chars of the field ''InstitutionName''\r\nshould not be used for further development'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Name2'
+    description: 'second 35 chars of the field ''InstitutionName''\r\nshould not be used for further development'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Name3'
+    description: 'third 35 chars of the field ''InstitutionName''\r\nshould not be used for further development'
+    genericControls:
+      isNoUpdate: true
+  - name: 'BranchInformation1'
+    description: 'first 35 chars of the field ''BranchInformation''\r\nshould not be used for further development\r\n'
+    genericControls:
+      isNoUpdate: true
+  - name: 'BranchInformation2'
+    description: 'second 35 chars of the field ''BranchInformation''\r\nshould not be used for further development'
+    genericControls:
+      isNoUpdate: true

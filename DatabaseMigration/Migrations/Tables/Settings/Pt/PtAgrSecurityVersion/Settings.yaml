@@ -1,0 +1,70 @@
+table:
+  name: 'PtAgrSecurityVersion'
+  description: 'agreement version'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAgrSecurity'
+      parentRelationField: 'AgrSecurityId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Agreement version'
+    - german:
+        formTitle: 'Vertragsversion'
+    - french:
+        formTitle: 'Version contrat'
+  columns:
+  - name: 'AgrSecurityId'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrSecurity'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'VersionNo'
+    description: ''
+    minValue: '1'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'BeginDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ExpirationDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'PrintDate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'PrintUser'
+    description: ''
+  - name: 'SignDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'SignatureVerifiedBy'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IsAgrTermination'
+    description: ''
+  - name: 'PrintLabel'
+    description: ''
+  - name: 'ReplacedDate'
+    description: ''
+    genericControls:
+      defColumnPos: 6

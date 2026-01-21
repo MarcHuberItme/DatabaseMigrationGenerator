@@ -1,0 +1,62 @@
+table:
+  name: 'WfWaitForEventStep'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'MapNo'
+    description: ''
+    genericControls:
+      refTable: 'WfMap'
+      refField: 'MapNo'
+  - name: 'EventType'
+    description: ''
+  - name: 'EventName'
+    description: ''
+  - name: 'EventCount'
+    description: ''
+  - name: 'TimeOutCount'
+    description: ''
+  - name: 'TimeOutUnitOfMeasure'
+    description: ''
+  - name: 'TimeOutInstanceType'
+    description: ''
+  - name: 'TimeOutInstanceValue'
+    description: ''
+  - name: 'TimeOutUserType'
+    description: ''
+  - name: 'TimeOutUserName'
+    description: ''
+  - name: 'TimeOutRoleGroup'
+    description: ''
+  - name: 'Label'
+    description: ''
+  - name: 'Description'
+    description: ''
+  - name: 'TerminatingLinkCount'
+    description: ''
+  - name: 'WaitForEntries'
+    description: ''
+  - name: 'GroupNumber'
+    description: ''
+  - name: 'Position_X'
+    description: ''
+  - name: 'Position_Y'
+    description: ''
+  - name: 'StepNo'
+    description: ''
+  - name: 'TimeOutType'
+    description: ''
+  - name: 'TimeOutCountVar'
+    description: ''
+  - name: 'TimeOutUnitVar'
+    description: ''
+  - name: 'PresentationTimeVar'
+    description: ''

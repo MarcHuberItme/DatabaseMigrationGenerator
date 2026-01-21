@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'MgNeonResetCardStatus'
+  description: 'Used to load data from MgNeonImport table and reset the status of all included cards from 6 to 0.'

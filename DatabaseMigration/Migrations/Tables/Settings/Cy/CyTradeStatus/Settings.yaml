@@ -1,0 +1,22 @@
+table:
+  name: 'CyTradeStatus'
+  description: 'translation of the field CyTrade.Status'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'status of the CyTrade'
+    - german:
+        formTitle: 'Status von CyTrade'
+  columns:
+  - name: 'Status'
+    description: ''

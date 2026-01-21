@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPortfolioCurrency_OnATradeDate'
+  description: ''

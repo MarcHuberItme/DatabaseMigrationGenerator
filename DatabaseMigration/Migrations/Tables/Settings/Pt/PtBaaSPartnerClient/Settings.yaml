@@ -1,0 +1,30 @@
+table:
+  name: 'PtBaaSPartnerClient'
+  description: 'Typentabelle um die BaaS Partner zu verwalten'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'BaaS Partner Client'
+    - german:
+        formTitle: 'BaaS Partner Client'
+    - french:
+        formTitle: 'BaaS Partenaire Client'
+  columns:
+  - name: 'ClientNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

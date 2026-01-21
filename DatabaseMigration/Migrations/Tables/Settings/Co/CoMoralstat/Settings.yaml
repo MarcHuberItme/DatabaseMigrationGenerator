@@ -1,0 +1,23 @@
+table:
+  name: 'CoMoralstat'
+  description: 'Codetabellle - Moralischer Status nach Ausübung der Bürgschaft'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'mor stat after pledge exe'
+    - german:
+        formTitle: 'Moral Stat. nach Ausübung'
+  columns:
+  - name: 'Moralstat'
+    description: 'Moralischer Status nach Ausübung\r\n000 vertretbar\r\n010 knapp vertretbar\r\n020 nicht vertretbar\r\n'
+    genericControls:
+      defColumnPos: 1

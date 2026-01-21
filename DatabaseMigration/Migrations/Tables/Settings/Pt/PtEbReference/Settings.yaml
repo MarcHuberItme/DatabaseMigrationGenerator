@@ -1,0 +1,38 @@
+table:
+  name: 'PtEbReference'
+  description: 'Contains all necessary foreign keys to access partner data from ebanking\r\n\r\nVisum/Confirmation not allowed --> FsNewslDac uses FsReadStd to access this table 20.12.2001/mct\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+  columns:
+  - name: 'PartnerId'
+    description: 'Partner foreign key'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'PhoneNoPrivateId'
+    description: 'private phone number id'
+    genericControls:
+      refTable: 'PtPhoneNumber'
+      refField: 'Id'
+  - name: 'PhoneNoBusinessId'
+    description: 'business phone number id'
+    genericControls:
+      refTable: 'PtPhoneNumber'
+      refField: 'Id'
+  - name: 'CorrPartnerId'
+    description: 'Reference to the partner correspondence that can be edited from ebanking partners.'
+    genericControls:
+      refTable: 'PtCorrPartner'
+      refField: 'Id'

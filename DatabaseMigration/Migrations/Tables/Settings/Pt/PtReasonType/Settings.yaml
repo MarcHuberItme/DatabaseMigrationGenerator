@@ -1,0 +1,17 @@
+table:
+  name: 'PtReasonType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ed24bd87-1b5f-4231-b64b-f2cc5ca68d5d
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+  columns:
+  - name: 'ReasonTypeNo'
+    description: 'e.g. mortage interest, mortgage amort'
+    genericControls:
+      isNoUpdate: true

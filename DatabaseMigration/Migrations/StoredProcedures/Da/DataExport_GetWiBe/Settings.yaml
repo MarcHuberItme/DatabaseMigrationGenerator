@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DataExport_GetWiBe'
+  description: 'Get the partners defined as ''Wirtschaftlich Berechtigte'' (WiBe)\r\nis used by DocWiz DataExport.'

@@ -1,0 +1,61 @@
+table:
+  name: 'PtSHOrderBroker'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtSHOrderBroker'
+        helpText: 'PtSHOrderBroker'
+    - german:
+        formTitle: 'PtSHOrderBroker'
+        helpText: 'PtSHOrderBroker'
+  columns:
+  - name: 'OrderRefNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'TradeRefNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'DepotNo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'PortfolioNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'OrderType'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'OrderSize'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'TradeSize'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'Price'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'TradeDate'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'HBLTradeRefNo'
+    description: ''
+    genericControls:
+      defColumnPos: 10

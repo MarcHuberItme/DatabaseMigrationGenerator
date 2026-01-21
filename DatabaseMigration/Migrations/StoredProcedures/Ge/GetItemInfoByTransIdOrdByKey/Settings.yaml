@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetItemInfoByTransIdOrdByKey'
+  description: ''

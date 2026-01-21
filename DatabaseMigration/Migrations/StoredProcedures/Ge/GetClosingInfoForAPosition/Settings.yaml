@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetClosingInfoForAPosition'
+  description: 'Author : Abdul Nasir Khan\r\nThis procdure returns Closing Related Information for an account'

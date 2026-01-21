@@ -1,0 +1,23 @@
+table:
+  name: 'PtLiabilityType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Liability Type'
+    - german:
+        formTitle: 'Verpflichtungsart'
+  columns:
+  - name: 'LiabilityTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

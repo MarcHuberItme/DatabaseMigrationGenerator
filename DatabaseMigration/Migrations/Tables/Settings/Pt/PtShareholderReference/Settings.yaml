@@ -1,0 +1,46 @@
+table:
+  name: 'PtShareholderReference'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtShareholderReference'
+        helpText: 'PtShareholderReference'
+    - german:
+        formTitle: 'PtShareholderReference'
+        helpText: 'PtShareholderReference'
+  columns:
+  - name: 'PartnerID'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ShareholderNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'DepotbankID'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'ExtReference'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'RegisterNo'
+    description: ''
+    genericControls:
+      defColumnPos: 5

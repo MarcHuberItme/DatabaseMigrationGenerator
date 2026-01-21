@@ -1,0 +1,42 @@
+table:
+  name: 'PtMLCustomerType'
+  description: 'Verwaltung der Kundentypen für GWG-Prüfungen'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Customer Type'
+    - german:
+        formTitle: 'GWG Kundentyp'
+  columns:
+  - name: 'TypeNo'
+    description: 'Kundentyp einer GWG-Prüfung (entspricht der TemplateNo)'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TemplateNo'
+    description: 'TemplateNo aus Tabelle PtMLPeriodCheckTemplates\r\n'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckTemplates'
+      refField: 'TemplateNo'
+      defColumnPos: 2
+  - name: 'Remark'
+    description: 'Beschreibungsfeld um den Kundentyp in Worten näher zu erläutern'
+    genericControls:
+      multiLine: true
+  - name: 'ValidFrom'
+    description: 'Zeitliche Gültigkeit des Records, Startdatum'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidTo'
+    description: 'Zeitliche Gültigkeit des Records, Enddatum'
+    genericControls:
+      defColumnPos: 4

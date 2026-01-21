@@ -1,0 +1,53 @@
+table:
+  name: 'PtMLReportedBookings'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'LogId'
+    description: 'No constraint applied to keep the insert faster'
+    genericControls:
+      refTable: 'PtMLMonitoringLog'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'TransItemId'
+    description: 'No constraint applied to keep the insert faster'
+    genericControls:
+      refTable: 'PtTransItem'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ReportedAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PaymentCurrency'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'PaymentAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'TransText'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'BookingDescription'
+    description: ''
+  - name: 'TextNo'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'TransMessageId'
+    description: ''
+  - name: 'PaymentOrderNo'
+    description: ''
+  - name: 'IsCurrentPeriod'
+    description: ''

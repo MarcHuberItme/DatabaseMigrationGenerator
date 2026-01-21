@@ -1,0 +1,3 @@
+function:
+  name: 'SplitAddressPerColumn'
+  description: 'splits address and fill each line to a separate column. max 6 columns are filled'

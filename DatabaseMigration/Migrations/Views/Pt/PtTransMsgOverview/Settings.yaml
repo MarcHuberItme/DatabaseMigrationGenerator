@@ -1,0 +1,253 @@
+view:
+  name: 'PtTransMsgOverview'
+  description: ''
+frontendView:
+  name: 'PtTransMsgOverview'
+  description: 'View for PtTransMessage to show to the user some main information'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdPendingSubChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      isNoUpdate: true
+  - name: 'PaymentAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsDueRelevant'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      isNoUpdate: true
+  - name: 'PaymentDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      isNoUpdate: true
+  - name: 'DebitMessageStandard'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      isNoUpdate: true
+  - name: 'DebitAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      isNoUpdate: true
+  - name: 'DebitAccountCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      isNoUpdate: true
+  - name: 'DebitCustomerReference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      isNoUpdate: true
+  - name: 'DebitName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 255
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'DebitOrderingName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 255
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'DebitGroupKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      isNoUpdate: true
+  - name: 'CreditMessageStandard'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      isNoUpdate: true
+  - name: 'CreditClearingNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      isNoUpdate: true
+  - name: 'CreditBICNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      isNoUpdate: true
+  - name: 'CreditAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      isNoUpdate: true
+  - name: 'CreditAccountCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      isNoUpdate: true
+  - name: 'CreditCustomerReference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      isNoUpdate: true
+  - name: 'CreditName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 255
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'CreditBeneficiaryName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 255
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'CreditBeneficiaryAccountNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 32
+    genericControls:
+      isNoUpdate: true
+  - name: 'CreditPaymentInformation'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 255
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'CreditEsrReference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 27
+    genericControls:
+      isNoUpdate: true
+  - name: 'DebitMessageType'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      isNoUpdate: true
+  - name: 'CreditMessageType'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      isNoUpdate: true
+  - name: 'CreditPcNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+    genericControls:
+      isNoUpdate: true
+  - name: 'CreditFinalBankAddress'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'CreditGroupKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      isNoUpdate: true
+  - name: 'DebitTextNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      isNoUpdate: true
+  - name: 'CreditTextNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      isNoUpdate: true
+  - name: 'TransReferenceKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+    genericControls:
+      isNoUpdate: true
+  - name: 'PaymentOrderNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      isNoUpdate: true
+  - name: 'OrderType'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtPaymentOrderType'
+      refField: 'OrderTypeNo'
+      isNoUpdate: true
+  - name: 'CreditBeneficiaryAccountNoIBAN'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 34
+    genericControls:
+      isNoUpdate: true
+  - name: 'NonTerminationComm'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'DebitPortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'CreditPortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11

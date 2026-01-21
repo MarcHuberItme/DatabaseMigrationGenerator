@@ -1,0 +1,27 @@
+table:
+  name: 'MgSHDBDispo'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'MgSHDBDispo'
+        helpText: 'MgSHDBDispo'
+    - german:
+        formTitle: 'MgSHDBDispo'
+        helpText: 'MgSHDBDispo'
+  columns:
+  - name: 'BankName'
+    description: ''
+  - name: 'DispoShares'
+    description: ''
+  - name: 'PartnerNo'
+    description: ''

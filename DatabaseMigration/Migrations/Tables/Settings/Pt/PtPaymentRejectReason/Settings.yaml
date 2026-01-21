@@ -1,0 +1,30 @@
+table:
+  name: 'PtPaymentRejectReason'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment rejection codes'
+    - german:
+        formTitle: 'ZV Ablehnungscodes'
+    - french:
+        formTitle: 'Codes de refus de paiemen'
+  columns:
+  - name: 'RejectCode'
+    description: '0 = OK\r\n10000 = OK Edited\r\nError values have to be between these two'
+    maxValue: '10000'
+    genericControls:
+      defColumnPos: 1
+  - name: 'WorkflowName'
+    description: 'The name of the workflow which shall be launched to take care of this type of rejections.'
+  - name: 'IsRelevantToCustomer'
+    description: ''

@@ -1,0 +1,94 @@
+table:
+  name: 'PrPublicHist'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Instrument history'
+    - german:
+        formTitle: 'Historie Instrumentenstam'
+  columns:
+  - name: 'PublicId'
+    description: 'VDF: FAD.VAI.K981.7842 (transformation with table PrPublic)'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'FromDate'
+    description: 'The record is valable form this date'
+    genericControls:
+      defColumnPos: 1
+  - name: 'InstrumentStatusNo'
+    description: 'VDF: FAD.FMB.7821\r\nInstrument status, e.g. active, inactive, in default (= notleidend)'
+    genericControls:
+      refTable: 'PrPublicInstrumentStatus'
+      refField: 'InstrumentStatusNo'
+      defColumnPos: 2
+  - name: 'MajorTradingPlaceId'
+    description: 'VDF: FAD.GEH.K985.3801 (translation with table PrPublicTradingPlace)\r\nMost liquid trading place'
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'NominalCurrency'
+    description: 'VDF: FAD.FMA.K983.6804 (translation with table CyBase)\r\nNominal currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'ExposureCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'NominalAmount'
+    description: 'VDF: FAD.FMA.5801\r\nNominal amount'
+    genericControls:
+      defColumnPos: 6
+  - name: 'Verse'
+    description: 'VDF: FAD.FMA.5802\r\nIf the instrument is partly paid as opposed to fully paid-up, the currently paid in amount is recorded here'
+    genericControls:
+      defColumnPos: 7
+  - name: 'UnitNo'
+    description: 'VDF: FAD.FMA.4802\r\nCode to denote the unit of measurement assigned to the instrument, e.g. piece, nominal etc.'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+      defColumnPos: 8
+  - name: 'ContractSize'
+    description: 'VDF: FAD.OFI.6911-A'
+  - name: 'CashMultiplier'
+    description: 'VDF: FAD.OFI.6911-B'
+  - name: 'ToffVersion'
+    description: 'VDF: FAD.OFI.7807'
+  - name: 'MaintenanceStatusNo'
+    description: 'VDF: -\r\nStatus, wheter an instrument is actually maintained by VDF'
+    genericControls:
+      refTable: 'PrPublicMaintenanceStatus'
+      refField: 'MaintenanceStatusNo'
+      defColumnPos: 9
+  - name: 'CollateralRate'
+    description: 'Percentage of the value of a security which is accepted as a collateral for a loan.\r\nThe value is taken from PrPublic.CollateralRatemanual, if given, otherwise from PrPublic.CollateralRateCalculated.'
+  - name: 'FinfraGObjectTaxRep'
+    description: 'see PrPublic.FinfraGTaxObject'
+  - name: 'FinfraGApplicTaxRep'
+    description: 'see PrPublic.FinfraGTaxApplic'

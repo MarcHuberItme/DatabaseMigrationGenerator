@@ -1,0 +1,24 @@
+table:
+  name: 'PtConversionStatus'
+  description: 'Status of the conversion of the account or the portfolio'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Conversion status'
+    - german:
+        formTitle: 'Umwandlungsstatus'
+  columns:
+  - name: 'ConversionStatusNo'
+    description: '10 = Converted\r\n20 = Error, Conversion failed\r\n30 = Manual Conversion needed'
+    genericControls:
+      defColumnPos: 1

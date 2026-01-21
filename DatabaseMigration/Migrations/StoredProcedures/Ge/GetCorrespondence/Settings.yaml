@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetCorrespondence'
+  description: 'get all correspondence which is related to a certain partner  (result is showed in a read-only form in the partner-administration)'

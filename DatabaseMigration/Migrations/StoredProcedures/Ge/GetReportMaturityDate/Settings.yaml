@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetReportMaturityDate'
+  description: '\r\n--Author		: Rolf Amstad\r\n--Date Created	: 16-Februar-2005'

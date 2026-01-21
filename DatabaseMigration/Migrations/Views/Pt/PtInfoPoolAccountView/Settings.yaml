@@ -1,0 +1,62 @@
+view:
+  name: 'PtInfoPoolAccountView'
+  description: ''
+frontendView:
+  name: 'PtInfoPoolAccountView'
+  description: 'possibility to save some remark of a certain account'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Information'
+    - german:
+        formTitle: 'Informationen'
+  columns:
+  - name: 'AccountId'
+    description: 'foreign-key; Id of PtAccountBase'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Remark'
+    description: 'Free text comments'
+    dataType: 'nvarchar'
+    prec: 4000
+    genericControls:
+      multiLine: true
+      defColumnPos: 2
+  - name: 'InfoPoolType'
+    description: 'foreign-key; Id of PtInfoPoolType\r\nclassification of the remark'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtInfoPoolType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'RemarkDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TableName'
+    description: ''
+    dataType: 'varchar'
+    prec: 30
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 4
+  - name: 'SortKey'
+    description: ''
+    dataType: 'int'
+    prec: 4000
+    genericControls:
+      defColumnPos: 5

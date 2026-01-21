@@ -1,0 +1,33 @@
+table:
+  name: 'PtPaymentRejectIsoRejectCode'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPaymentRejectIsoRejectC'
+        helpText: 'PtPaymentRejectIsoRejectCode'
+    - german:
+        formTitle: 'PtPaymentRejectIsoRejectC'
+        helpText: 'PtPaymentRejectIsoRejectCode'
+  columns:
+  - name: 'PaymentRejectionCode'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentRejectReason'
+      refField: 'RejectCode'
+      defColumnPos: 1
+  - name: 'IsoRejectionCode'
+    description: ''
+    genericControls:
+      refTable: 'PtIsoRejectionCode'
+      refField: 'Code'
+      defColumnPos: 2

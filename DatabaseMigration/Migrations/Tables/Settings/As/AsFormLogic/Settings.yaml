@@ -1,0 +1,42 @@
+table:
+  name: 'AsFormLogic'
+  description: 'Save to a control on a form the property mandatory or optional'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Form Logic for controls'
+    - german:
+        formTitle: 'Form Logic for controls'
+    - french:
+        formTitle: 'Form Logic for controls'
+  columns:
+  - name: 'FormName'
+    description: 'Form Name'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ControlName'
+    description: 'Name of the Control on a from'
+    genericControls:
+      defColumnPos: 2
+  - name: 'KeyValue'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'RefersTo'
+    description: ''
+  - name: 'TargetControlName'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'IsMandatory'
+    description: ''
+    genericControls:
+      defColumnPos: 5

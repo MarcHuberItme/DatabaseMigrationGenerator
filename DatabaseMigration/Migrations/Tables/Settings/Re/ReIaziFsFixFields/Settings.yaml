@@ -1,0 +1,34 @@
+table:
+  name: 'ReIaziFsFixFields'
+  description: 'To stor the Fields and their Finstar Values which are manadatory to create a record in Finstar and will have  afix value for integration..'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Finstar Fix Fields'
+        helpText: 'Finstar Fix Fields'
+    - german:
+        formTitle: 'Finstar Fix Fields'
+        helpText: 'Finstar Fix Fields'
+  columns:
+  - name: 'TableName'
+    description: ''
+    genericControls:
+      refTable: 'ReIAZIFsTables'
+      refField: 'TableName'
+      defColumnPos: 1
+  - name: 'FieldName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'FieldValue'
+    description: ''
+    genericControls:
+      defColumnPos: 3

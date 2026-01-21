@@ -1,0 +1,23 @@
+table:
+  name: 'PrAssetReportRule'
+  description: 'rules for asset report\r\n0= Show\r\n1= Show if Saldo <> 0\r\n2= don''t show'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'AssetReportRules'
+    - german:
+        formTitle: 'Vermögensausweisregeln'
+  columns:
+  - name: 'AssetReportRuleNo'
+    description: 'Rule number for asset report.'
+    genericControls:
+      defColumnPos: 1
+      noUpdatePos: 1

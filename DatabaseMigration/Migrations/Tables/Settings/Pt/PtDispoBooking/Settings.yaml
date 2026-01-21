@@ -1,0 +1,89 @@
+table:
+  name: 'PtDispoBooking'
+  description: 'Contains booking requests from different sources (e.g. OTIS). Depending on their status booking requests are balance relevant.\r\n\r\n*** CAUTION - DO NOT TRANSFER TABLE WITH DATA DEFINER ***\r\n- Optimized clustered index on TransactionDate column, not on Id column\r\n- Dedicated unique non clustered index on Id column (not defined in DD!)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Reservations'
+    - german:
+        formTitle: 'Dispo Buchungen'
+  columns:
+  - name: 'PositionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+      hasDetailBtn: true
+      noUpdatePos: 1
+  - name: 'MerchantId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMerchant'
+      refField: 'Id'
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+  - name: 'PrimaryAccountNumber'
+    description: 'unique identifier for card used to perform transaction'
+  - name: 'CardNo'
+    description: 'Refers to PtAgrCardBase.CardNo'
+  - name: 'TransactionAmount'
+    description: 'Amount that has been paid for the current transaction. \r\n\r\nThis amount can vary from the SettlementAmount: consider a POS transaction from abroad. This amount would then be e.g. EUR 100.00, whereas the SettlementAmount is something like CHF 110.00.'
+    genericControls:
+      noUpdatePos: 2
+  - name: 'TransactionCurrency'
+    description: 'Currency in which the original transaction was designated'
+  - name: 'SettlementAmount'
+    description: 'Amount that is booked on the given account/position (see TransactionAmount).'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SettlementCurrency'
+    description: 'Currency in which the amount is booked on the given account/position (see TransactionAmount).'
+  - name: 'TransactionId'
+    description: 'Transaction reference identifier'
+  - name: 'TransactionDate'
+    description: 'Date of the transaction'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TransactionTextNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+  - name: 'Status'
+    description: 'only value 1 (confirmed) is balance relevant - all other not\r\n\r\n0 - initial\r\n1 - confirmed \r\n2 - settled\r\n3 - reversed\r\n4 - cancelled'
+    genericControls:
+      refTable: 'PtDispoBookingStatus'
+      refField: 'StatusNo'
+      defColumnPos: 4
+      noUpdatePos: 4
+  - name: 'RetrievalRefNo'
+    description: 'Unique reference number for this dispo booking. When settling/reversing/cancelling a dispo booking, the retrieval is perfomed using this reference number [DE-37].'
+    genericControls:
+      noUpdatePos: 3
+  - name: 'AuthorizationCode'
+    description: 'Authorization identification response [DE-38], contains the code created and assigned by the issuer to a successfully authorized transaction.'
+  - name: 'ExternalReferenceId'
+    description: 'Additional external reference for matching certain business cases.'
+  - name: 'HoldbackDate'
+    description: 'Date until which the reservation must be hold back. After this time has elapsed the reservation may be cancelled without further delay.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Source'
+    description: 'Source/module that wrote this dispo booking. This information is compulsory and used for the cancellation of overdue bookings (see system parameter DispoBooking.HoldBackTime where a fixed number of days can be defined per source).'
+    genericControls:
+      noUpdatePos: 5
+  - name: 'Comment'
+    description: ''
+    genericControls:
+      multiLine: true

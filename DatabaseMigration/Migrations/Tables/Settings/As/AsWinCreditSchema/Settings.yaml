@@ -1,0 +1,60 @@
+table:
+  name: 'AsWinCreditSchema'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'AsWinCreditSchema'
+        helpText: 'AsWinCreditSchema'
+    - german:
+        formTitle: 'AsWinCreditSchema'
+        helpText: 'AsWinCreditSchema'
+    - french:
+        formTitle: 'AsWinCreditSchema'
+        helpText: 'AsWinCreditSchema'
+  columns:
+  - name: 'Module'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'FieldName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Sequence'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'DataType'
+    description: ''
+  - name: 'Precision'
+    description: ''
+  - name: 'Scale'
+    description: ''
+  - name: 'Length'
+    description: ''
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'NullableType'
+    description: 'O, optional. M, D, default'
+  - name: 'IsReq'
+    description: ''
+  - name: 'TableName'
+    description: ''
+  - name: 'DataFieldName'
+    description: ''
+  - name: 'DefaultValue'
+    description: ''
+  - name: 'ForOwnUse'
+    description: ''

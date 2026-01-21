@@ -1,0 +1,53 @@
+table:
+  name: 'PtAgrGeneralContract'
+  description: 'Agreement general contract'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Agreement Framework'
+    - german:
+        formTitle: 'Rahmenvertrag'
+    - french:
+        formTitle: 'Accord-cadre'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key;  Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ValidFrom'
+    description: 'from table PtPortfolioFinancingLimit'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ValidTo'
+    description: 'from table PtPortfolioFinancingLimit'
+    genericControls:
+      defColumnPos: 2
+  - name: 'UsageType'
+    description: 'Verwendungsart'
+    genericControls:
+      refTable: 'PtAgrGeneralContrUsageType'
+      refField: 'UsageType'

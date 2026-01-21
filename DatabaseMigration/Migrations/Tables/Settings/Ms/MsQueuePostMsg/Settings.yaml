@@ -1,0 +1,42 @@
+table:
+  name: 'MsQueuePostMsg'
+  description: 'Holds messages for sending MS Queues.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdMessageStore'
+  genericComponents:
+    tableType: 6
+    groupId: 47a738e9-4dcb-41bc-8fcc-bb1699c6b097
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Queue data for MSQ'
+    - german:
+        formTitle: 'Queue Daten für eine MSQ'
+    - french:
+        formTitle: 'Données de file MSQ'
+    - italian:
+        formTitle: 'Dati di coda per un MSQ'
+  columns:
+  - name: 'ServerName'
+    description: 'The name of the server for send the queue'
+    genericControls:
+      isNoUpdate: true
+  - name: 'QueueName'
+    description: 'Name of the queue which should send.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Label'
+    description: 'Label of the message queue.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Message'
+    description: 'Message of the queue.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsPrivateQueue'
+    description: 'Is it a private message queue?'
+    genericControls:
+      isNoUpdate: true

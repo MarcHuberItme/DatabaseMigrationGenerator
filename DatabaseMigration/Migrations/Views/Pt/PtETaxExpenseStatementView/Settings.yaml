@@ -1,0 +1,87 @@
+view:
+  name: 'PtETaxExpenseStatementView'
+  description: ''
+frontendView:
+  name: 'PtETaxExpenseStatementView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtETaxExpenseStatementVie'
+        helpText: 'PtETaxExpenseStatementView'
+    - german:
+        formTitle: 'PtETaxExpenseStatementVie'
+        helpText: 'PtETaxExpenseStatementView'
+    - french:
+        formTitle: 'PtETaxExpenseStatementVie'
+        helpText: 'PtETaxExpenseStatementView'
+    - italian:
+        formTitle: 'PtETaxExpenseStatementVie'
+        helpText: 'PtETaxExpenseStatementView'
+  columns:
+  - name: 'TaxReportJobNo'
+    description: ''
+    dataType: 'int'
+  - name: 'TaxReportDataId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'PortfolioNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 11
+  - name: 'ReferenceDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 60
+  - name: 'Iban'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 31
+  - name: 'BankAccountNumber	'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'DepotNumber'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 11
+  - name: 'AmountCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'Amount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ExchangeRate'
+    description: ''
+    dataType: 'float'
+  - name: 'Expenses'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ExpensesDeductible'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ExpensesDeductibleCanton'
+    description: ''
+    dataType: 'money'
+    scale: 4

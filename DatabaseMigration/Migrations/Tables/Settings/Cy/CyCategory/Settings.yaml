@@ -1,0 +1,27 @@
+table:
+  name: 'CyCategory'
+  description: 'This table is used to categorize the CyBase entries. Possible categorizations are, Forreign Currency, Gold, Silver and coins.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Currency Category'
+    - german:
+        formTitle: 'Währungs-Kategorien'
+  columns:
+  - name: 'CategoryNo'
+    description: 'Number for the currency-category'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CatParamName'
+    description: 'Name that is used for getting the assigned account number for a certain cashier and the correspondend currency'
+    genericControls:
+      defColumnPos: 2

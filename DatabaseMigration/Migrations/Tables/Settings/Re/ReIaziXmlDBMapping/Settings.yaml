@@ -1,0 +1,34 @@
+table:
+  name: 'ReIaziXmlDBMapping'
+  description: 'To Map the IAZi fields with Finstar Database Table and Field Names.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'XMLElementId'
+    description: 'Element id for the XML element.'
+    genericControls:
+      refTable: 'ReIaziXmlElement'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'TableName'
+    description: 'Finstar Table Name to import the data from IAZi XML.'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'FieldId'
+    description: 'Finstar Field to import the data from IAZi XML.'
+    genericControls:
+      refTable: 'MdField'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3

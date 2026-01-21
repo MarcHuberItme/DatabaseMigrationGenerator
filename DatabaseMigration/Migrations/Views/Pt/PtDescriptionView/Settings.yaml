@@ -1,0 +1,198 @@
+view:
+  name: 'PtDescriptionView'
+  description: 'View the identificate partner-selection'
+frontendView:
+  name: 'PtDescriptionView'
+  description: 'Front end definition for view PtDescriptionView joining PtBase and PtAddress for building the descriptionfield of PtBase'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'PtDescription'
+    uiTableDescription:
+    - english:
+        formTitle: 'Description View'
+    - german:
+        formTitle: 'Partnerdaten'
+    - french:
+        formTitle: 'données des partenaire'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    defaultValue: '0'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 1
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 3
+  - name: 'MiddleName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 4
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    isNotNull: true
+    isUnique: true
+    prec: 8
+    genericControls:
+      defColumnPos: 11
+  - name: 'NameCont'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 5
+  - name: 'MaidenName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 6
+  - name: 'SexStatusNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+      defColumnPos: 23
+  - name: 'LegalStatusNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtLegalStatus'
+      refField: 'LegalStatusNo'
+      defColumnPos: 21
+  - name: 'ServiceLevelNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtServiceLevel'
+      refField: 'ServiceLevelNo'
+      defColumnPos: 10
+  - name: 'SegmentNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtSegment'
+      refField: 'SegmentNo'
+      defColumnPos: 22
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 2
+  - name: 'DateOfBirth'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7
+  - name: 'YearOfBirth'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 13
+  - name: 'ConsultantTeamName'
+    description: ''
+    dataType: 'varchar'
+    prec: 32
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 11
+  - name: 'TerminationDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 20
+  - name: 'PrivacyGroupNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsPrivacyGroup'
+      refField: 'PrivacyGroupNo'
+      defColumnPos: 24
+  - name: 'AddrSupplement'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 35
+    genericControls:
+      defColumnPos: 14
+  - name: 'Street'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 26
+    genericControls:
+      defColumnPos: 15
+  - name: 'HouseNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 16
+  - name: 'Zip'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 13
+    genericControls:
+      defColumnPos: 7
+  - name: 'Town'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 8
+  - name: 'CountryCode'
+    description: ''
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      defColumnPos: 17
+  - name: 'PtDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 103
+    genericControls:
+      defColumnPos: 18
+  - name: 'InactiveFlag'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 19
+  - name: 'BranchNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      hasDetailBtn: true
+      defColumnPos: 25
+  - name: 'PrivacyLockNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsPrivacyLock'
+      refField: 'PrivacyLock'

@@ -1,0 +1,61 @@
+table:
+  name: 'AcBalanceSheetProcess'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Balance Sheet Process'
+    - german:
+        formTitle: 'Bilanz Prozess'
+  columns:
+  - name: 'BalanceSheetTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceSheetType'
+      refField: 'BalanceSheetTypeNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'EvaluationDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'AccountancyPeriod'
+    description: 'AccountancyPeriod  (number) \r\nBuchhaltungsperiode (Zuordnung zum Geschäftsjahr) der Bank)\r\nz.B. 201401, 201402 etc.'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'ArchivePDFReport'
+    description: 'Archivieren des Bilanzreports'
+  - name: 'ArchiveData'
+    description: 'Ende Monat sichern der Daten in Tab. AcBalanceSourceArchive'
+  - name: 'RunForMainLedgerAccounts'
+    description: ''
+  - name: 'RunForPartnerAccounts'
+    description: ''
+  - name: 'RunForAccruedInterest'
+    description: ''
+  - name: 'AfterProfitDistribution'
+    description: 'Bilanz vor oder nach Gewinnverteilung'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'StartTime'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'EndTime'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true

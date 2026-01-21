@@ -1,0 +1,50 @@
+table:
+  name: 'PtAccountAssignmentCredit'
+  description: 'Info ZessionsKredit'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Assignment Credit'
+    - german:
+        formTitle: 'Zessionskredit'
+    - french:
+        formTitle: 'Crédit contre cession'
+  columns:
+  - name: 'AccountId'
+    description: 'foreign-key; Id of PtAccountBase'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'CallDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Inventory'
+    description: 'Full inventory assignment credits'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Delinquencies'
+    description: 'Delinquencies >= 90 days'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Investiture'
+    description: 'Investiture debtors as a percentage'
+  - name: 'Remark'
+    description: 'Free text comments'
+    genericControls:
+      multiLine: true

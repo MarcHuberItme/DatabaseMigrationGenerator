@@ -1,0 +1,52 @@
+table:
+  name: 'PtAgrServiceCharge'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAgrServiceCharge'
+        helpText: 'PtAgrServiceCharge'
+    - german:
+        formTitle: 'PtAgrServiceCharge'
+        helpText: 'PtAgrServiceCharge'
+    - french:
+        formTitle: 'PtAgrServiceCharge'
+        helpText: 'PtAgrServiceCharge'
+    - italian:
+        formTitle: 'PtAgrServiceCharge'
+        helpText: 'PtAgrServiceCharge'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ServiceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtServiceNameList'
+      refField: 'ServiceTypeNo'
+  - name: 'ChargeStartDate'
+    description: ''
+  - name: 'ExpirationDate'
+    description: ''
+  - name: 'DebitAccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Rebate'
+    description: ''
+  - name: 'Remark'
+    description: ''

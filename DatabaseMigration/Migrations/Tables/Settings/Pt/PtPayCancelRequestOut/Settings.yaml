@@ -1,0 +1,40 @@
+table:
+  name: 'PtPayCancelRequestOut'
+  description: 'Details of the payment cancel request to send out'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'OrderDetailId'
+    description: ''
+    genericControls:
+      refTable: 'PtSentOrderDetailView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'CancelReason'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'TransReferenceKey'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'CommStatus'
+    description: ''
+    genericControls:
+      refTable: 'PtSisMessageStatus'
+      refField: 'StatusCode'
+      defColumnPos: 8
+  - name: 'CurrencyCode'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 1

@@ -1,0 +1,68 @@
+table:
+  name: 'PtTransSxTradeSlip'
+  description: 'the trade slips from the GL-Export or from the automatic tradingsystem will be saved in this table'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'UserNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxTradeSlipUser'
+      refField: 'UserNo'
+  - name: 'TransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+  - name: 'OrderDate'
+    description: ''
+  - name: 'Quantity'
+    description: ''
+  - name: 'Price'
+    description: ''
+  - name: 'IsinNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'IsinNo'
+  - name: 'SecurityText'
+    description: ''
+  - name: 'TradeDate'
+    description: ''
+  - name: 'SettlementDate'
+    description: ''
+  - name: 'SettlementCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'SettlementAmount'
+    description: ''
+  - name: 'AccruedInterestDays'
+    description: ''
+  - name: 'AccruedInterestAmount'
+    description: ''
+  - name: 'PrintDate'
+    description: ''
+  - name: 'ExchangeTradeNo'
+    description: ''
+  - name: 'TradeSlipNo'
+    description: ''
+  - name: 'CounterPartyMemberId'
+    description: ''
+  - name: 'IsNostro'
+    description: ''
+  - name: 'MutCode'
+    description: '1 = insert\r\n2 = mutation\r\n3 = delete'
+  - name: 'BusinessTransactionType'
+    description: 'code to identiy offexchange trades'
+  - name: 'IsGLExportObsolet'
+    description: '0= PtTransSxTradeSlip from TSxReadMQAuto\r\n1= PtTransSxTradeSlip from GLExport'

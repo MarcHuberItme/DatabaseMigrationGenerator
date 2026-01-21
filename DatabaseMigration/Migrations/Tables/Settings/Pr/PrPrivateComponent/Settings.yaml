@@ -1,0 +1,67 @@
+table:
+  name: 'PrPrivateComponent'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Product Component'
+    - german:
+        formTitle: 'Produktkomponente'
+  columns:
+  - name: 'PrivateCurrRegionId'
+    description: 'foreign-key; Id of PrPrivateCurrRegion'
+    genericControls:
+      refTable: 'PrPrivateCurrRegion'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PrivateCompTypeId'
+    description: 'foreign-key; Id of PrPrivateCompType'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'Id'
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'PrivateComponentNo'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IsFixed'
+    description: 'Defines, if the Component is one of the fixed Components or not'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsStandard'
+    description: 'if true the application will suggest to add the component to a new account/contract'
+  - name: 'PriorityOfInterestCalculation'
+    description: ''
+  - name: 'PriorityOfPayback'
+    description: ''
+  - name: 'PriorityOfLegalReporting'
+    description: ''
+  - name: 'DefaultValue'
+    description: ''
+  - name: 'MinimumValue'
+    description: ''
+  - name: 'MaximumValue'
+    description: ''
+  - name: 'Quota'
+    description: ''
+  - name: 'DurationType'
+    description: 'foreign-key; Id of PrDurationType\r\ntime units:   - Day (d)   - Month (m)   - Year (y)'
+    genericControls:
+      refTable: 'PrDurationType'
+      refField: 'Id'
+  - name: 'DurationMin'
+    description: ''
+  - name: 'DurationMax'
+    description: ''
+  - name: 'DateLimit'
+    description: 'an opening of new components is only possilbe until that date. After this date, the component is valid but no new entries are possible.'

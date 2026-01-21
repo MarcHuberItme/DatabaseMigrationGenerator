@@ -1,0 +1,26 @@
+table:
+  name: 'PtInvestmentAdvisoryCategoryOv'
+  description: 'übersteuerbare Beratungskategorien'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 492eb932-11a5-4c01-acd4-498e5cb33327
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Investment risk adv. cat.'
+    - german:
+        formTitle: 'Investitionsrisiko Kat.'
+    - french:
+        formTitle: 'Cat.de risque d''investiss'
+  columns:
+  - name: 'TypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

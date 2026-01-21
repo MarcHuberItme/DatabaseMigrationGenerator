@@ -1,0 +1,83 @@
+table:
+  name: 'PtMLPeriodicCheckOverview'
+  description: 'Enthält relevante Daten zum GWG Zustand eines Kunden in einer Uebersicht'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Check Overview'
+    - german:
+        formTitle: 'GWG Uebersicht'
+  columns:
+  - name: 'PartnerId'
+    description: 'ID des Kunden'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'CustomerTypeNoCalculated'
+    description: 'TypeNo aus Tabelle  PtMLCustomerType'
+    genericControls:
+      refTable: 'PtMLCustomerType'
+      refField: 'TypeNo'
+  - name: 'CustomerTypeNoManualOverride'
+    description: 'Manuelle Uebersteuerung des kalkulierten CustomerType'
+    genericControls:
+      refTable: 'PtMLCustomerType'
+      refField: 'TypeNo'
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'TemplateNoCalculated'
+    description: 'TemplateNo aus Tabelle PtMLPeriodCheckTemplates'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckTemplates'
+      refField: 'TemplateNo'
+  - name: 'TemplateNoManualOverride'
+    description: 'Manuelle Uebersteuerung der kalkulierten TemplateNo'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckTemplates'
+      refField: 'TemplateNo'
+      defColumnPos: 2
+      noUpdatePos: 2
+  - name: 'LastPeriodicCheckDate'
+    description: 'Datum der letzten Prüfung'
+    genericControls:
+      defColumnPos: 4
+  - name: 'NextPeriodicCheckDate'
+    description: 'Datum der nächsten Prüfung'
+  - name: 'ChannelNoCalculated'
+    description: 'Kanal für eine Kontaktaufnahme'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckChannel'
+      refField: 'ChannelNo'
+      noUpdatePos: 3
+  - name: 'ChannelNoManualOverride'
+    description: 'Manuelle Uebersteuerung der kalkulierten ChannelNo'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckChannel'
+      refField: 'ChannelNo'
+      defColumnPos: 3
+  - name: 'Remark'
+    description: 'Bemerkungen'
+    genericControls:
+      multiLine: true
+  - name: 'OverallCheckTypeNo'
+    description: 'wird nur zum Visualisieren benötigt'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckType'
+      refField: 'CheckTypeNo'
+      isNoUpdate: true

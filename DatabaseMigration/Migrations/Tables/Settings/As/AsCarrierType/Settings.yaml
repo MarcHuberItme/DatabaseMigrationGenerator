@@ -1,0 +1,48 @@
+table:
+  name: 'AsCarrierType'
+  description: 'Default if no carrier defined in document distribution table'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Carrier Type'
+    - german:
+        formTitle: 'Versandart'
+    - french:
+        formTitle: 'Type de transporteur'
+  columns:
+  - name: 'CarrierTypeNo'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IsForCRM'
+    description: 'diese Versandarten stehen dem CRM Bulkmail zur Verfügung'
+  - name: 'IsStoringOnBank'
+    description: '0= not storing on bank type\r\n1= storing on bank type'
+  - name: 'IsUnfolded'
+    description: '0= Output is folded\r\n1= Output is unfolded'
+  - name: 'MigValue'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      refTable: 'MgA10'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'ExternalSla'
+    description: 'If set, the daily mail output for the given carrier type is externally printed using the selected sla (sla = general job specification)'
+    genericControls:
+      refTable: 'AsMailOutputExternalSla'
+      refField: 'Id'
+      noUpdatePos: 2
+  - name: 'MailingPostage'
+    description: 'Postage Code of SPS for this specific carrier type\r\nA = A-Post\r\nC = B1-Post\r\nB = B2-Post\r\nIs used in NOP-Headers of mailings (CRM) since there can be several postages\r\nin a SLA. \r\nIn standard mail output (Report Server), the Postage is determined by the SLA.'

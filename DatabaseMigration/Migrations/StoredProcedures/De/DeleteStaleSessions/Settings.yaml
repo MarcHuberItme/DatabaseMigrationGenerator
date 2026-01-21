@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DeleteStaleSessions'
+  description: 'Physically deletes logically deleted records in OaSessionCache.'

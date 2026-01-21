@@ -1,0 +1,40 @@
+table:
+  name: 'PrPublicStopNo'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublicStopList'
+      parentRelationField: 'PublicStopListId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Stop list numbers'
+    - german:
+        formTitle: 'Opponierte Titelnummern'
+  columns:
+  - name: 'PublicStopListId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicStopList'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'InstrNoFrom'
+    description: 'VDF: OPD.OPN.7835\r\nInstrument number for which or from which the following stop applies.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'InstrNoTo'
+    description: 'VDF: OPD.OPN.7836\r\nInstrument number to'
+    genericControls:
+      defColumnPos: 2

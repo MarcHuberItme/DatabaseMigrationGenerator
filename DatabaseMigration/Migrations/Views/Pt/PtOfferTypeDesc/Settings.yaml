@@ -1,0 +1,76 @@
+view:
+  name: 'PtOfferTypeDesc'
+  description: 'Bezeichnung - Anzeige auf Form für Offertenkontakte'
+frontendView:
+  name: 'PtOfferTypeDesc'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'OfferDesc'
+    uiTableDescription:
+    - english:
+        formTitle: 'Offertyp Desc'
+    - german:
+        formTitle: 'Offertyp Desc'
+  columns:
+  - name: 'EbInfoId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtEbInfo'
+      refField: 'Id'
+      defColumnPos: 7
+  - name: 'OfferId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtOffer'
+      refField: 'Id'
+  - name: 'OfferTypeNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtOfferType'
+      refField: 'OfferTypeNo'
+      defColumnPos: 1
+  - name: 'OfferStatusNo'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtOfferStatus'
+      refField: 'OfferStatusNo'
+      defColumnPos: 2
+  - name: 'BankSpeakerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'CustSpeaker'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValidToDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 5
+  - name: 'OfferDesc'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 60
+    genericControls:
+      defColumnPos: 6

@@ -1,0 +1,42 @@
+table:
+  name: 'ReIAZITown'
+  description: 'Town table for IAZI valuations'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Town table for IAZI'
+    - german:
+        formTitle: 'Ortschaften für IAZI'
+  columns:
+  - name: 'TownNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'VersionNo'
+    description: ''
+  - name: 'Town'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Zip'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CantonSymbol'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'BFSType9'
+    description: ''
+  - name: 'XXXBFSType9'
+    description: ''
+  - name: 'SortNo'
+    description: ''

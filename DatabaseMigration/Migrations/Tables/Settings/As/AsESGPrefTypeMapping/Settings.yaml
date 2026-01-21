@@ -1,0 +1,32 @@
+table:
+  name: 'AsESGPrefTypeMapping'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'ESGPreferenceTypeNo'
+    description: 'ForeignKey from Table AsESGPreferenceTyp'
+    genericControls:
+      refTable: 'AsESGPreferenceType'
+      refField: 'ESGPreferenceTypeNo'
+      defColumnPos: 1
+  - name: 'ValidFrom'
+    description: 'The date from which the Score-Range for the selected PreferenceType is valid'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValidTo'
+    description: 'The date until which the Score-Range for the selected PreferenceType is valid'
+    genericControls:
+      defColumnPos: 5
+  - name: 'RangeFrom'
+    description: 'Start of Score-Range for selected PreferenceType and Validity-Range'
+    genericControls:
+      defColumnPos: 2

@@ -1,0 +1,46 @@
+table:
+  name: 'PtAccountDirectDebiting'
+  description: 'Direct debiting system'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Direct debiting'
+    - german:
+        formTitle: 'Lastschriftverfahren'
+  columns:
+  - name: 'AccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'Identification'
+    description: 'Identification of the debit authorization given by Telekurs\r\n\r\nnot more than 5 characters\r\nno updates while migration 23.02.2006/mct\r\n'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'DateOfAgreement'
+    description: ''
+    minValue: '0'
+    genericControls:
+      defColumnPos: 2
+  - name: 'DateOfExpiration'
+    description: ''
+  - name: 'MgVrxKey'
+    description: ''
+    genericControls:
+      isOnlyForMig: true

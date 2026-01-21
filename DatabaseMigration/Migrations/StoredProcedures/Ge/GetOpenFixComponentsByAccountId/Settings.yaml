@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetOpenFixComponentsByAccountId'
+  description: ''

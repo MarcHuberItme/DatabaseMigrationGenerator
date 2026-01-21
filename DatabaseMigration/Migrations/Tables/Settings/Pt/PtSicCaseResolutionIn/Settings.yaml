@@ -1,0 +1,49 @@
+table:
+  name: 'PtSicCaseResolutionIn'
+  description: 'Incoming camt.029 (case resolution messages)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'MessageId'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'InstructingParticipantBic'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'InstructingParticipantId'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CreateDate'
+    description: ''
+  - name: 'InstructiedParticipantBic'
+    description: ''
+  - name: 'InstructedParticipantId'
+    description: ''
+  - name: 'StatusConfirmation'
+    description: ''
+  - name: 'TransMessageInId'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'OriginalMessageId'
+    description: ''
+  - name: 'OriginalMessageNameId'
+    description: ''
+  - name: 'OriginalEndToEndId'
+    description: ''
+  - name: 'OriginaltransactionId'
+    description: ''
+  - name: 'OriginalDebtorName'
+    description: ''
+  - name: 'OriginalCreditorName'
+    description: ''

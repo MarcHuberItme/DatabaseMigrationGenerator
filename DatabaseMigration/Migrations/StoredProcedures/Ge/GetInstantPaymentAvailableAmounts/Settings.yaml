@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetInstantPaymentAvailableAmounts'
+  description: 'Get available amounts for instant payments using API.'

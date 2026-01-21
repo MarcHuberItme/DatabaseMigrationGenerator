@@ -1,0 +1,63 @@
+table:
+  name: 'PrPublicCfSet'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Cash flow set'
+    - german:
+        formTitle: 'Cash Flow Set'
+  columns:
+  - name: 'VdfDocGen'
+    description: 'VDF: XND.XND.0813'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: XND.MGA.7895'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'PublicId'
+    description: 'VDF: XND.VAI.K981.7842 (translate with PrPublic)'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'VdfMessageIdent'
+    description: 'VDF: XND.MGG.7891 & - & XND.MGG.7892 & - & XND.MGG.7893'
+  - name: 'VdfIdentification'
+    description: 'VDF: XND.XNI.7820'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CompositionTypeNo'
+    description: 'VDF: XND.XNA.4943'
+    genericControls:
+      refTable: 'PrPublicCompositionType'
+      refField: 'CompositionTypeNo'
+      defColumnPos: 2
+  - name: 'SelPeriodStart'
+    description: 'VDF: XND.XNA.2811'
+    genericControls:
+      defColumnPos: 3
+  - name: 'SelPeriodEnd'
+    description: 'VDF: XND.XNA.2812'
+    genericControls:
+      defColumnPos: 4
+  - name: 'EntitledPartyNo'
+    description: 'VDF: XND.XNA.4933'
+    genericControls:
+      refTable: 'PrPublicEntitledParty'
+      refField: 'EntitledPartyNo'

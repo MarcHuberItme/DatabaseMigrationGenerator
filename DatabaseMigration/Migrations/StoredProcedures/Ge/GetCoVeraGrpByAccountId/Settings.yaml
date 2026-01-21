@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetCoVeraGrpByAccountId'
+  description: 'Select data from CoVeraDet with join CoVeraGrp and by account id.'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPrBonusRulesValid'
+  description: 'This SP Returns valid bonus rules'

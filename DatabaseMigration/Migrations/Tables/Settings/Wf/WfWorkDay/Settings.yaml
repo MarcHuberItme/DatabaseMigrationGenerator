@@ -1,0 +1,50 @@
+table:
+  name: 'WfWorkDay'
+  description: 'Contains the exceptions from the normal working times defined in the WfWorkTime.\r\nIf a date is specified in this table, work times corresponding to that date are picked up from this table instead of regular times from WfWorkTime.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+  columns:
+  - name: 'Date'
+    description: 'Date which is an exception to normal working times.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'AmOpenHour'
+    description: '24 hours per day  (am = morning / pm = afternoon) \r\n00 = Midnight\r\n08 = 8 a.m.\r\n16 = 4 p.m.'
+    minValue: '0'
+    maxValue: '23'
+  - name: 'AmOpenMinute'
+    description: '60 minutes per hour'
+    minValue: '0'
+    maxValue: '59'
+  - name: 'AmCloseHour'
+    description: '24 hours per day  (am = morning / pm = afternoon) \r\n00 = Midnight\r\n08 = 8 a.m.\r\n16 = 4 p.m.'
+    minValue: '0'
+    maxValue: '23'
+  - name: 'AmCloseMinute'
+    description: '60 minutes per hour'
+    minValue: '0'
+    maxValue: '59'
+  - name: 'PmOpenHour'
+    description: '24 hours per day  (am = morning / pm = afternoon) \r\n00 = Midnight\r\n08 = 8 a.m.\r\n16 = 4 p.m.'
+    minValue: '0'
+    maxValue: '23'
+  - name: 'PmOpenMinute'
+    description: '60 minutes per hour'
+    minValue: '0'
+    maxValue: '59'
+  - name: 'PmCloseHour'
+    description: '24 hours per day  (am = morning / pm = afternoon) \r\n00 = Midnight\r\n08 = 8 a.m.\r\n16 = 4 p.m.'
+    minValue: '0'
+    maxValue: '23'
+  - name: 'PmCloseMinute'
+    description: '60 minutes per hour'
+    minValue: '0'
+    maxValue: '59'

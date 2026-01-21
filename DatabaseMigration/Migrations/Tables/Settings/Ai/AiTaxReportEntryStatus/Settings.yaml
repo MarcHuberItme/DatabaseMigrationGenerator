@@ -1,0 +1,25 @@
+table:
+  name: 'AiTaxReportEntryStatus'
+  description: 'Verarbeitungsstatus der einzelnen Steuermeldungseinträge'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Entry status'
+    - german:
+        formTitle: 'Verarbeitungsstatus'
+    - french:
+        formTitle: 'Statut de traitement'
+  columns:
+  - name: 'StatusNo'
+    description: '1 = Initial\r\n2 = Ready\r\n3 = Clarify\r\n4 = Correction'
+    genericControls:
+      defColumnPos: 1

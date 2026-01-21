@@ -1,0 +1,33 @@
+table:
+  name: 'BpJobAgent'
+  description: 'Job Agents'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Job Agent'
+    - german:
+        formTitle: 'Job Agent'
+    - french:
+        formTitle: 'Job Agent'
+    - italian:
+        formTitle: 'Job Agent'
+  columns:
+  - name: 'ServerRoleServerId'
+    description: 'Server Assignment'
+    genericControls:
+      refTable: 'AsServerRoleServer'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'MaxJobCount'
+    description: 'Maximum number of jobs running on this agent.\r\nValue 0 = unlimited'
+  - name: 'MaxCpuLoad'
+    description: 'Maximum cpu load on the server to execute new jobs.\r\nValue 0 or >= 100 = not controlled / unlimited'

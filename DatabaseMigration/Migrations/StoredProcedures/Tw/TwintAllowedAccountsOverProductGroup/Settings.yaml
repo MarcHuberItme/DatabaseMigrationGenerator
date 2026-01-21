@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'TwintAllowedAccountsOverProductGroup'
+  description: 'Get back existing entries over IBAN which are allowed to show in Twint.'

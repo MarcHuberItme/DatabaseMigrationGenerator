@@ -1,0 +1,45 @@
+table:
+  name: 'PtAgrSecureListMobileCodeHist'
+  description: 'Journal of sent (and used) mobile codes'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'SecureListId'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrSecureList'
+      refField: 'Id'
+  - name: 'GenDate'
+    description: 'Date and time of the generation of the code'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'UseDate'
+    description: 'Date and Time when a code has been used'
+    genericControls:
+      defColumnPos: 2
+  - name: 'HashCode'
+    description: 'SHA-512 "encrypted" code Base64 encoded.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'PhoneNo'
+    description: 'The phone number to which the code has been sent'
+    genericControls:
+      defColumnPos: 3
+  - name: 'JobId'
+    description: 'An optional sms service job identifier for easier identification with sms service.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'StatusDate'
+    description: 'Date and Time of last Status update.'
+  - name: 'StatusText'
+    description: 'Status message/reply from sms service'
+    genericControls:
+      multiLine: true

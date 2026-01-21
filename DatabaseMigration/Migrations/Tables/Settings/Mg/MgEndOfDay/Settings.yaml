@@ -1,0 +1,35 @@
+table:
+  name: 'MgEndOfDay'
+  description: 'Temporary table to control ''day closing'' behaviour'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'End of Day'
+        helpText: 'End of Day'
+    - german:
+        formTitle: 'Tagesende'
+        helpText: 'Tagesende'
+    - french:
+        formTitle: 'Fin du jour'
+        helpText: 'Fin du jour'
+    - italian:
+        formTitle: 'Fine del giorno'
+        helpText: 'Fine del giorno'
+  columns:
+  - name: 'TransEndHour'
+    description: 'Defines the hour of the ''day closing'' time'
+    minValue: '0'
+    maxValue: '23'
+  - name: 'TransEndMinute'
+    description: 'Defines the minute of the ''day closing'' time'
+    minValue: '0'
+    maxValue: '59'
+  - name: 'TransUpDate'
+    description: 'Maximal date which may be actually handled by transaction update process'

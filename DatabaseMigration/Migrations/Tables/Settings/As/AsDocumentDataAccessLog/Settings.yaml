@@ -1,0 +1,40 @@
+table:
+  name: 'AsDocumentDataAccessLog'
+  description: 'Access Log for AsDocumentData'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Document Access Log'
+    - german:
+        formTitle: 'Dokumenten-Zugriffslog'
+  columns:
+  - name: 'AsDocumentDataId'
+    description: ''
+  - name: 'UserName'
+    description: ''
+  - name: 'AccessDateTime'
+    description: ''
+  - name: 'SignDateTime'
+    description: ''
+  - name: 'AccessLogSequence'
+    description: 'sequence number'
+  - name: 'SignStatusNo'
+    description: ''
+  - name: 'Sign'
+    description: ''
+  - name: 'PublicKeyId'
+    description: ''
+    genericControls:
+      refTable: 'AsPublicKey'
+      refField: 'Id'
+  - name: 'CheckResult'
+    description: ''

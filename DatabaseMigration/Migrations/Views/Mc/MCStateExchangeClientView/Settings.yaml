@@ -1,0 +1,3 @@
+view:
+  name: 'MCStateExchangeClientView'
+  description: 'Client records from MasterCard CSE report'

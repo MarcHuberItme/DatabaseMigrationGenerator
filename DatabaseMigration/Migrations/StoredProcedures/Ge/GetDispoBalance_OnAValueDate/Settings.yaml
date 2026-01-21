@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetDispoBalance_OnAValueDate'
+  description: '--This stored procedure returns the balance on or before a valuedate including the open dispoitems'

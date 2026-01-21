@@ -1,0 +1,81 @@
+table:
+  name: 'PtPrintPaymentAdvice'
+  description: 'Intermediate table for payment advice printing.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Print PaymentAdvices'
+    - german:
+        formTitle: 'Zahlungsverkehr Drucken'
+  columns:
+  - name: 'Id'
+    description: ''
+  - name: 'PrintStatus'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'TransItemId'
+    description: 'id of the table Transitem corresponding to the bookings in the report'
+  - name: 'TransDate'
+    description: ''
+  - name: 'ValueDate'
+    description: ''
+  - name: 'EvaluationDate'
+    description: 'The ''DateTime'' when the ''PtTransMessage''-data are evaluated the last time.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ReportName'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'AdviceType'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'CorrItemId'
+    description: ''
+  - name: 'TransGroupNo'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'TransMessageId'
+    description: ''
+  - name: 'MessageType'
+    description: 'Contains all MessageTypes potentially contained in a report with the corresponding ReportName in a concatenated string of the form  " ''nnnn'' ,  ''nnnnn'' , ..... "'
+    genericControls:
+      defColumnPos: 6
+  - name: 'BranchNo'
+    description: ''
+  - name: 'PartnerId'
+    description: ''
+  - name: 'AccountId'
+    description: ''
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'AccountNoEdited'
+    description: ''
+  - name: 'AccountNoIbanForm'
+    description: ''
+  - name: 'Currency'
+    description: ''
+  - name: 'AccountDesc'
+    description: ''
+  - name: 'CustomerReference'
+    description: ''
+  - name: 'TotalAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'TotalCharges'
+    description: ''
+  - name: 'RecordCount'
+    description: ''

@@ -1,0 +1,29 @@
+table:
+  name: 'PtTransSxParamsResultsRate'
+  description: 'Table with the rates of the calculated results'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransSxParamsResultsId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxParamsResults'
+      refField: 'Id'
+  - name: 'SymbolOriginate'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'SymbolTarget'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'CrossRate'
+    description: ''

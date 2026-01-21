@@ -1,0 +1,35 @@
+table:
+  name: 'PtNationalityContactPerson'
+  description: 'relationship-entity of PtContactPerson and AsCountry'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Nationality contact perso'
+    - german:
+        formTitle: 'Nationalität Kontaktperso'
+    - french:
+        formTitle: 'nationalité Personne cont'
+  columns:
+  - name: 'ContactPersonId'
+    description: 'foreign-key, Id of PtContactPerson'
+    genericControls:
+      refTable: 'PtContactPerson'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'CountryCode'
+    description: 'foreign-key;  candidate-key of AsCountry (ISO-Code)'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'DateOfNationality'
+    description: 'date since the partner has this nationality'

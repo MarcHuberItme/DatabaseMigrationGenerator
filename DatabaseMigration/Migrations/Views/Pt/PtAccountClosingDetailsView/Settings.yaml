@@ -1,0 +1,123 @@
+view:
+  name: 'PtAccountClosingDetailsView'
+  description: ''
+frontendView:
+  name: 'PtAccountClosingDetailsView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccountClosingPeriodId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 20
+  - name: 'ValidFrom'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 2
+  - name: 'AccountComponentId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 21
+  - name: 'ValidTo'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValueDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Balance'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 5
+  - name: 'DayBalance'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ValueFrom'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 7
+  - name: 'Valueto'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 8
+  - name: 'Days'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 9
+  - name: 'Priority'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 10
+  - name: 'UsedValue'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 11
+  - name: 'UnusedValue'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 12
+  - name: 'UnusedLoan'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 13
+  - name: 'InterestRate'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 14
+  - name: 'InterestAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 15
+  - name: 'CommissionRate'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+    genericControls:
+      defColumnPos: 16
+  - name: 'CommissionAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 17
+  - name: 'ProvisionRate'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 18
+  - name: 'ProvisionAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 19
+  - name: 'PrivateCompTypeId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'Id'
+      defColumnPos: 1

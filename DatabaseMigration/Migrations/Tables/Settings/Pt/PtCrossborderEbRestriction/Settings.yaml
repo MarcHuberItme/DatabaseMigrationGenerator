@@ -1,0 +1,24 @@
+table:
+  name: 'PtCrossborderEbRestriction'
+  description: 'Crossborder Restriction Code for Ebanking'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'CB Ebanking Restriction'
+    - german:
+        formTitle: 'CB Ebanking Restriction'
+  columns:
+  - name: 'RestrictionCode'
+    description: 'Ebanking Zugriffsberechtigung\r\n1 - keine Berechtigung\r\n2 - nur Abfragen\r\n3 - Aufträge erfassen (ZV + Börse)'
+    genericControls:
+      defColumnPos: 1

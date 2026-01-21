@@ -1,0 +1,147 @@
+view:
+  name: 'PtAccountCompView'
+  description: 'Where-Statement is temporarely: show only german-language (because of a technical problem, but it will be solved)'
+frontendView:
+  name: 'PtAccountCompView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'Description;TextShort'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    isNotNull: true
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+  - name: 'AccountBaseId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 8
+  - name: 'PrivateComponentId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 9
+  - name: 'PrivateCompTypeId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'PriorityOfInterestCalculation'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PriorityOfPayback'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PriorityOfLegalReporting'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 4
+  - name: 'IsOldComponent'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 5
+  - name: 'PrivateComponentNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 11
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      defColumnPos: 6
+  - name: 'TextShort'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 7
+  - name: 'TextLong'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 500
+    genericControls:
+      defColumnPos: 10
+  - name: 'Description'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 37
+    genericControls:
+      defColumnPos: 12
+  - name: 'MgVBNR'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 13
+      isOnlyForMig: true
+  - name: 'MgLIMITE'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 14
+      isOnlyForMig: true
+  - name: 'MgDECKWERT'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 15
+      isOnlyForMig: true
+  - name: 'MgVERFALL'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 16
+      isOnlyForMig: true
+  - name: 'ValidFrom'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 20
+  - name: 'ValidTo'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 21
+  - name: 'Value'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 22
+  - name: 'Credit2Desc'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 23
+  - name: 'Credit2Only'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 28

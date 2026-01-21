@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetLatestOneOfIntEventOutboxByTopicAndTypeAndKey'
+  description: 'The the last event in the outbox satisfying the criteria. Topic and Type are passed as normal strings while the Key is passed as a string in hexadecimal format (starting with 0x) or as base64.'

@@ -1,0 +1,36 @@
+table:
+  name: 'PtPortfolioExpenseExeption'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'individual expenses'
+    - german:
+        formTitle: 'Individuelle Spesen'
+  columns:
+  - name: 'PortfolioExpenseId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioExpense'
+      refField: 'Id'
+  - name: 'ExpenseTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrExpenseType'
+      refField: 'ExpenseTypeNo'
+  - name: 'Currency'
+    description: ''
+  - name: 'Price'
+    description: ''
+  - name: 'PriceElectronicDelivery'
+    description: ''

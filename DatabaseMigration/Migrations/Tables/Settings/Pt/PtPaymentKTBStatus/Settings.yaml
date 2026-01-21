@@ -1,0 +1,26 @@
+table:
+  name: 'PtPaymentKTBStatus'
+  description: 'This table defines contains the status codes for KTB payments'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'KTB Payment Status'
+        helpText: 'KTB Payment Status'
+    - german:
+        formTitle: 'KTB Payment Status'
+        helpText: 'KTB Payment Status'
+    - french:
+        formTitle: 'KTB Payment Status'
+        helpText: 'KTB Payment Status'
+  columns:
+  - name: 'StatusCode'
+    description: '0 = To be processed\r\n1 = Processed\r\n2 = Error\r\nMore codes can be added when needed'

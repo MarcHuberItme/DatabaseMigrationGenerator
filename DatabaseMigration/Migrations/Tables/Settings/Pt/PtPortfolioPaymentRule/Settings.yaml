@@ -1,0 +1,92 @@
+table:
+  name: 'PtPortfolioPaymentRule'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtPortfolio'
+      parentRelationField: 'PortfolioId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PaymentRule'
+    - german:
+        formTitle: 'Buchungsvorschrift'
+    - french:
+        formTitle: 'Règle de paiement'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      createNavigationIndex: true
+  - name: 'PaymentTypeNo'
+    description: 'Defines the payment type, e.g. interest, capital, both, etc'
+    genericControls:
+      refTable: 'AsPaymentType'
+      refField: 'PaymentTypeNo'
+      defColumnPos: 1
+  - name: 'PayeeAccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'PayeeId'
+    description: 'Externer Zahlungsempfänger\r\n'
+    genericControls:
+      refTable: 'AsPayee'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'Currency'
+    description: 'Optional condition, if given it is only'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'ProdReferenceId'
+    description: 'Used to define an account for a specific position within a portfolio. or one specific security within a IsinNo (z.B. Kassenobligation mit bestimmtem Verfall)'
+    genericControls:
+      refTable: 'PrReferenceDataView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PublicId'
+    description: 'Isin No'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'MgVrxKey'
+    description: 'MgVrxKey -> dann wird Rückmigration nicht ausgelöst'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'ValidTo'
+    description: 'This payment rule is only valable until this date. \r\nIt''s only allowed to fill this field, if one of the fields PublicId or PrReferenceId is filled.'
+  - name: 'MgVBART'
+    description: 'Sequence Number in FIS-VRX'
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'PayeeAccountReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountReferenceId'
+      hasDetailBtn: true

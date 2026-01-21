@@ -1,0 +1,3 @@
+function:
+  name: 'GetEsrRefNoWithCorrectChecksum'
+  description: 'Input is a ESR reference number with 27 digits with correct or wrong checksum (last digit), the checksum will be recalculated and the output is a ESR reference number with 27 digits with correct checksum (last digit).'

@@ -1,0 +1,23 @@
+table:
+  name: 'WfStepStatus'
+  description: 'Status of the workflow steps'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Workflow Step Status'
+    - german:
+        formTitle: 'Workflow Stepstatus'
+  columns:
+  - name: 'StepStatusNo'
+    description: 'Number of the step status'
+    genericControls:
+      defColumnPos: 1

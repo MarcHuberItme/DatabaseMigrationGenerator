@@ -1,0 +1,55 @@
+table:
+  name: 'MgXS78c'
+  description: 'VRX Fees (single fees)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+  columns:
+  - name: 'MgXS78Id'
+    description: 'Id of VRX fees 50-block'
+    genericControls:
+      refTable: 'MgXS78'
+      refField: 'Id'
+  - name: 'KdNr'
+    description: 'redundant to MgXs78'
+  - name: 'KtNr'
+    description: 'redundant to MgXs78'
+  - name: 'BlockPosition'
+    description: ''
+  - name: 'SpesArt'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Datum'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'BNr'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Spesen'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'PtTransMessageChargeId'
+    description: ''
+  - name: 'MigrationStatus'
+    description: ''
+  - name: 'MigrationDate'
+    description: ''
+  - name: 'BNrBase'
+    description: ''
+  - name: 'Offset'
+    description: ''
+  - name: 'OffsetCalculated'
+    description: ''
+  - name: 'TransItemId'
+    description: ''

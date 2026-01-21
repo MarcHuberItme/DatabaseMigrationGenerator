@@ -1,0 +1,46 @@
+table:
+  name: 'PtUserTimeAssignment'
+  description: 'Wer ist zuständig für das Visieren'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtUserBase'
+      parentRelationField: 'UserBaseId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Time Assignment'
+    - german:
+        formTitle: 'GST Zuordnung'
+  columns:
+  - name: 'UserBaseId'
+    description: ''
+    genericControls:
+      refTable: 'PtUserBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'BranchNo'
+    description: 'Geschäftsstelle - wird verwendet für die Berechnung der Sollzeit. Relevant bei Berücksichtigung spezieller Feiertage, z.B. Maria Himmelfahrt etc.'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 2
+  - name: 'ProfitCenterNo'
+    description: 'Profit-Center - wird verwendet für die Visumsberechtigung.'
+    genericControls:
+      refTable: 'AsProfitCenter'
+      refField: 'ProfitCenterNo'
+      defColumnPos: 3

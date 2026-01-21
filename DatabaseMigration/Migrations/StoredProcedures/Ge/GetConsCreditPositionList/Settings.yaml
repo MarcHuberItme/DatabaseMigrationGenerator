@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetConsCreditPositionList'
+  description: 'Get accounts with balance for consumer credit valuation'

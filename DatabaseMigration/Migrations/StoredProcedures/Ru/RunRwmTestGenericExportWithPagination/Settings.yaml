@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'RunRwmTestGenericExportWithPagination'
+  description: 'test SP for the pagination functionallity'

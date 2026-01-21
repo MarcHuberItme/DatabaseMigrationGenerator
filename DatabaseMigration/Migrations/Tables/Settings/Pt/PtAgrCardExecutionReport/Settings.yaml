@@ -1,0 +1,52 @@
+table:
+  name: 'PtAgrCardExecutionReport'
+  description: 'Contains execution report for card management operations (e.g. card changes, card renewals, etc.)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Card Execution Report'
+        helpText: 'Card Execution Report'
+    - german:
+        formTitle: 'Card Execution Report'
+        helpText: 'Card Execution Report'
+  columns:
+  - name: 'ExecType'
+    description: 'Execution type'
+    genericControls:
+      refTable: 'PtAgrCardExecutionType'
+      refField: 'ExecType'
+  - name: 'CardId'
+    description: 'Reference to processed card'
+    genericControls:
+      refTable: 'PtAgrCard'
+      refField: 'Id'
+  - name: 'TaskId'
+    description: 'Reference to processing task'
+    genericControls:
+      refTable: 'BpTask'
+      refField: 'Id'
+  - name: 'ExecStatus'
+    description: 'Execution status (e.g. processed, erroneous)'
+    genericControls:
+      refTable: 'PtAgrCardExecutionStatus'
+      refField: 'ExecStatus'
+  - name: 'ErrorText'
+    description: 'Contains a detailed error message in case that the execution failed.'
+  - name: 'Reported'
+    description: 'Determines whether an execution report already has been reported to its corresponding branch.'
+  - name: 'Params'
+    description: 'Can hold different properties concerning the execution.'
+  - name: 'FullAddressDelivery'
+    description: ''
+  - name: 'CountryCodeDelivery'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'

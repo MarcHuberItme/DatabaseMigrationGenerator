@@ -1,0 +1,3 @@
+view:
+  name: 'VaPrivateView'
+  description: 'View only for Private Product'

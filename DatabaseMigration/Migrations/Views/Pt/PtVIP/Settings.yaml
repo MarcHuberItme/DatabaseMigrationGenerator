@@ -1,0 +1,61 @@
+view:
+  name: 'PtVIP'
+  description: ''
+frontendView:
+  name: 'PtVIP'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 4
+  - name: 'BusinessTypeCode'
+    description: ''
+    dataType: 'varchar'
+    prec: 6
+    genericControls:
+      refTable: 'PtBusinessType'
+      refField: 'NogaCode'
+      defColumnPos: 3
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 2
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 1
+  - name: 'NameCont'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 5
+  - name: 'DateOfBirth'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ConsultantTeamName'
+    description: ''
+    dataType: 'varchar'
+    prec: 32
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 7

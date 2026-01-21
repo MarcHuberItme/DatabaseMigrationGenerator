@@ -1,0 +1,35 @@
+table:
+  name: 'ReUseType'
+  description: 'Nutzungsart / type of use\r\n- Eigennutzung / private use\r\n- Miete / rent\r\n- Pacht / lease\r\netc.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Type of use'
+    - german:
+        formTitle: 'Nutzungsart'
+  columns:
+  - name: 'UseTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'IaziValue'
+    description: 'Value for IAZI Interface'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PfandRegValue'
+    description: 'Value for the interface to the Pfandregister (Pfandbriefbank)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsRent'
+    description: 'rent = is mandatory to enter the total amount of annual rent income\r\nes ist obligatorisch, die Gesamtmiete pro Jahr einzutippen'
+  - name: 'SortNo'
+    description: ''

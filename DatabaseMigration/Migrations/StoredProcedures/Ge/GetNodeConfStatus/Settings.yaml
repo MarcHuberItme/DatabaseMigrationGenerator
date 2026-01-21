@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetNodeConfStatus'
+  description: 'Returns the minimum confirmation status of all AsNavigationIndexSub entries of a specific node.'

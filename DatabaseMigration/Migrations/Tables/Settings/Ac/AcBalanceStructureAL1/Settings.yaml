@@ -1,0 +1,31 @@
+table:
+  name: 'AcBalanceStructureAL1'
+  description: 'Aktiven / Passiven / Aufwand / Ertrag'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Balance Structure Level 1'
+    - german:
+        formTitle: 'Bilanzstruktur Level 1'
+    - french:
+        formTitle: 'Structure du bilan Level1'
+  columns:
+  - name: 'AL1'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'BalanceSheetTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceSheetType'
+      refField: 'BalanceSheetTypeNo'
+      defColumnPos: 2

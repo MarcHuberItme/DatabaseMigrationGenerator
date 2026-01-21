@@ -1,0 +1,80 @@
+view:
+  name: 'PtPortfolioTaxRelevantCharge'
+  description: ''
+frontendView:
+  name: 'PtPortfolioTaxRelevantCharge'
+  description: 'Adm charge detail for tax report\r\n\r\n-- Old version of PtPortfolioTaxRelevantCharge ---\r\nThe data was moved into PtPortfolioTaxChargeDetail and PtPortfolioTaxRelevantCharge was replaced by ForntEndView.\r\n\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPortfolioTaxRelevantCha'
+        helpText: 'PtPortfolioTaxRelevantChargeV'
+    - german:
+        formTitle: 'PtPortfolioTaxRelevantCha'
+        helpText: 'PtPortfolioTaxRelevantChargeV'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'TaxReportDataId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTaxReportDataView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'TaxReportRelChargeTypeNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtTaxReportRelChargeType'
+      refField: 'TaxReportRelChargeTypeNo'
+      defColumnPos: 1
+  - name: 'TaxYear'
+    description: 'Adm Charge on the ChargeYear'
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 2
+  - name: 'TaxChargeAmountHoCu'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    scale: 4
+    genericControls:
+      defColumnPos: 3
+  - name: 'TaxChargeAmountWithoutVatHoCu'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 5
+  - name: 'IsManuallyInput'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 6
+  - name: 'SubCharges'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 7

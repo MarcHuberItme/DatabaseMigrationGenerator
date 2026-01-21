@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountInformationWithBlocking'
+  description: 'Get back some account information and whether the account is blocked on partner, portfolio or account'

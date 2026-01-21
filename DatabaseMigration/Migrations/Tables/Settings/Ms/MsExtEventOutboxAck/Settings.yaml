@@ -1,0 +1,32 @@
+table:
+  name: 'MsExtEventOutboxAck'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdMessageStore'
+  genericComponents:
+    tableType: 6
+    groupId: 47a738e9-4dcb-41bc-8fcc-bb1699c6b097
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'MessageDataId'
+    description: ''
+    genericControls:
+      refTable: 'MsExtEventOutboxMsg'
+      refField: 'Id'
+  - name: 'MessageReaderId'
+    description: ''
+    genericControls:
+      refTable: 'MsMessageReader'
+      refField: 'Id'
+  - name: 'ReaderNumber'
+    description: ''
+  - name: 'AckStatus'
+    description: ''
+    genericControls:
+      refTable: 'MsAcknowledgeStatus'
+      refField: 'AckStatus'
+  - name: 'ErrorMessage'
+    description: ''

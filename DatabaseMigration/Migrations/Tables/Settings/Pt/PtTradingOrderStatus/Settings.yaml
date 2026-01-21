@@ -1,0 +1,19 @@
+table:
+  name: 'PtTradingOrderStatus'
+  description: 'Status of an PtTradingOrder'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+  columns:
+  - name: 'Status'
+    description: ''
+    genericControls:
+      defColumnPos: 1

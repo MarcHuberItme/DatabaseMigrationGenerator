@@ -1,0 +1,3 @@
+view:
+  name: 'PtContractMoneyMarketView'
+  description: '2019-07-08/ram: Change field MMAccountNo to varchar  (=> PtShadowContractView)'

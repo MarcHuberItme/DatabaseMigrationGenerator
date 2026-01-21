@@ -1,0 +1,41 @@
+table:
+  name: 'AiTaxReportPartnerTin'
+  description: 'Enthält die Partner TIN-Nummer zu einem Steuerland'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax report partner TIN'
+    - german:
+        formTitle: 'Steuermeldung Partner TIN'
+    - french:
+        formTitle: 'Partenaire rap.fiscal TIN'
+  columns:
+  - name: 'TaxReportPartnerId'
+    description: 'Verbindung zum Partner'
+    genericControls:
+      refTable: 'AiTaxReportPartner'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'CountryCode'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'Tin'
+    description: 'Steuernummer (Tax identification number)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

@@ -1,0 +1,89 @@
+table:
+  name: 'PtFrontDeskConfiguration'
+  description: 'To store the Settings of Frontdesk based on the Frontdesk UserId. This is an alternative to use for saving settings in registry.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'UserId;CashDeskNo;ClientName'
+  columns:
+  - name: 'AKTAnswerFilePath'
+    description: ''
+  - name: 'AKTAnswerFileTimeOut'
+    description: ''
+  - name: 'AKTExist'
+    description: ''
+  - name: 'AKTFilePath'
+    description: ''
+  - name: 'BranchAddress'
+    description: ''
+  - name: 'BranchNo'
+    description: ''
+  - name: 'CashDeskNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CashDeskTerminal'
+    description: ''
+  - name: 'CashierName'
+    description: ''
+  - name: 'GenderText'
+    description: ''
+  - name: 'MessageOfTheDay'
+    description: ''
+  - name: 'BarCodePrinterName'
+    description: ''
+  - name: 'BondPrinterName'
+    description: ''
+  - name: 'BondPrinterBin'
+    description: ''
+  - name: 'BondPrinterDuplex'
+    description: ''
+  - name: 'BondPrinterPaper'
+    description: ''
+  - name: 'ReceiptPrinterName'
+    description: ''
+  - name: 'ReceiptPrinterBin'
+    description: ''
+  - name: 'ReceiptPrinterDuplex'
+    description: ''
+  - name: 'ReceiptPrinterPaper'
+    description: ''
+  - name: 'FormAPaper'
+    description: ''
+  - name: 'FormABin'
+    description: ''
+  - name: 'UserId'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      defColumnPos: 1
+  - name: 'AKTUserID'
+    description: ''
+  - name: 'AKTType'
+    description: '1= WincorNixdorf, 2= Prima'
+  - name: 'BookletPrinterDiagnostic'
+    description: ''
+  - name: 'BookletPrinterExists'
+    description: ''
+  - name: 'BookletPrinterForReceipt'
+    description: ''
+  - name: 'BookletPrinterPort'
+    description: ''
+  - name: 'OldPrinter'
+    description: 'To indicate that Old booklet printer in is Use and special german charaters are required to be translated before printing'
+  - name: 'ClientName'
+    description: 'Name of the PC where Cashdesk will be installed. Configuraton for Citrix will be based on this.'
+    genericControls:
+      defColumnPos: 4
+      noUpdatePos: 4
+  - name: 'DiagnosticFilePath'
+    description: ''

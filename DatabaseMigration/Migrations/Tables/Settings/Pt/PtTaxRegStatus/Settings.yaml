@@ -1,0 +1,17 @@
+table:
+  name: 'PtTaxRegStatus'
+  description: 'Easy-Tax Statsus'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'Status'
+    description: 'Status of Beneficial Owner according to easyTax'

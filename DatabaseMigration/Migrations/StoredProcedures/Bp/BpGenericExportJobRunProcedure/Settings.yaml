@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'BpGenericExportJobRunProcedure'
+  description: 'Get a Entry from the Generic Export Query Table and run its Query'

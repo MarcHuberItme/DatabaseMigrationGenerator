@@ -1,0 +1,102 @@
+table:
+  name: 'PtTransType'
+  description: 'has to be updated manually in production environment (necessary changes have to be mentioned in the rel.dokument - remarks)\r\n\r\n-> please don''t transfer these data to production\r\n(Codes < 251 have to be similar as PtTransItemText No !) > 260 are individual no (PtTransItemText = entspricht 1:1 der Tabelle A20 aus FIS-VRX)'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'transaction type'
+    - german:
+        formTitle: 'Transaktionstyp'
+  columns:
+  - name: 'TransTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'TransProfileName'
+    description: 'TransType related profile name for transaction form.\r\n'
+    genericControls:
+      defColumnPos: 3
+  - name: 'MsgProfileName'
+    description: 'TransType related part of the profile name for the TransMessage form\r\n(Complete profile name is built from PtTransType and PtTransOrderMedia)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'DefaultTextNo'
+    description: 'TextNo field of Text for the transactions'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      defColumnPos: 2
+  - name: 'SecurityBookingSide'
+    description: 'C= Credit (Buy)\r\nD= Debit (Sell) \r\nNull= C or D possible'
+    genericControls:
+      refTable: 'PtBookingSide'
+      refField: 'BookingSide'
+  - name: 'AdviceRuleAllowed'
+    description: 'defines if it is allowed to define an advice rule for the transaction type'
+  - name: 'AdviceRuleAccAllowed'
+    description: 'defines if it is allowed to define individual account advice rules\r\nfor the transaction type'
+  - name: 'GroupTypeLabel'
+    description: ''
+    genericControls:
+      refTable: 'AsGroupTypeLabel'
+      refField: 'Name'
+  - name: 'CalenderUsageType'
+    description: ''
+    genericControls:
+      refTable: 'AsCalUsageType'
+      refField: 'UsageType'
+  - name: 'PaymentTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPaymentType'
+      refField: 'PaymentTypeNo'
+  - name: 'IsStockEx'
+    description: 'refers to PrPrivatePayRule.AllowsStockEx'
+  - name: 'IsInstrPayment'
+    description: 'refers to PrPrivatePayRule.AllowsInstrPayment'
+  - name: 'IsToCreateDTA'
+    description: '1 = Generate DTA file for bookings. Bookings will be transported to external system.\r\n0 = Don''t generate DTA file. Bookings will be done directly in Finstar. External System will sync itself'
+  - name: 'IsPaymentAdviceType'
+    description: 'To select the transaction types for wich crdit and debit advices are printed.'
+  - name: 'IsMoneyLaunderingToSkip'
+    description: 'Some transactions are not monitored for money laundering\r\ne.g.\r\n - ATM Transactions\r\n - Account Closing'
+  - name: 'IsEditable'
+    description: '1 = editable trough Finstar FrontEnd'
+  - name: 'CreditTextNo'
+    description: 'TextNo to use for the credit side of pttransmessage.\r\nIn case this field is not set then DefaultTextNo will be used.'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+  - name: 'IsBankClosingTransaction'
+    description: 'if this field has value 1 it means that its bookings are related to bank closing and\r\nhave to keep original transdate.\r\nThis transaction type should not be used for customer bookings.\r\n\r\ne.g. bookings for "Gewinnverwendung"'
+  - name: 'PMSTransCodeDebit'
+    description: ''
+  - name: 'PMSTransCategory'
+    description: ''
+    genericControls:
+      refTable: 'PtPMSTransCategory'
+      refField: 'CategoryCode'
+      defColumnPos: 5
+  - name: 'PMSTransCodeCredit'
+    description: ''
+  - name: 'EasyTaxExportClass'
+    description: 'Classification of EasyTax TransactionTypes for FHWT export.'
+    genericControls:
+      refTable: 'EtExportClass'
+      refField: 'ExportClass'
+  - name: 'IsWithdrawCommRelevant'
+    description: 'Specifies if transaction participates in calcularion of "Non termination commission" (NKK)'
+  - name: 'AsChargeablePayment'
+    description: 'when checked, this type of payment can be counted for the withdrawal charge (SBB)'
+  - name: 'GetTransDateWithNow'
+    description: '1= always call GetTransDate with Now (instead of PtTransaction.TransDateTime).\r\nUsed for StockEx- and CA-Application.'

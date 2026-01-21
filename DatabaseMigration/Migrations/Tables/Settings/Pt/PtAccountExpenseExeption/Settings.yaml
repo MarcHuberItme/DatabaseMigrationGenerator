@@ -1,0 +1,43 @@
+table:
+  name: 'PtAccountExpenseExeption'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountExpense'
+      parentRelationField: 'AccountExpenseId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'individual expenses'
+    - german:
+        formTitle: 'Individuelle Spesen'
+  columns:
+  - name: 'AccountExpenseId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountExpense'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ExpenseTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrExpenseType'
+      refField: 'ExpenseTypeNo'
+  - name: 'Currency'
+    description: ''
+  - name: 'Price'
+    description: ''
+  - name: 'NumFreePayments'
+    description: ''
+  - name: 'PriceElectronicDelivery'
+    description: ''

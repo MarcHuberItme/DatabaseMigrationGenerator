@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'NcZvBatchDelta'
+  description: 'Delta Batch-Records for AsPayee Sanction check (Name-Matching).'

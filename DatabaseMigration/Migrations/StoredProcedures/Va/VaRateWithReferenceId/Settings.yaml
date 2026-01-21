@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaRateWithReferenceId'
+  description: 'Valuation for one ReferenceId\r\n\r\nMod: order by Coalesce(PP.PriceStaticTypeNo,0) (10.01.2018/wwo)\r\nMod: If PP.LogicalPriceDate is a friday and @ValuationDate is next week, consider the weekend between (20140618/wwo).'

@@ -1,0 +1,43 @@
+table:
+  name: 'PtOwnBondCf'
+  description: 'title cash flows'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Ownbond title cf'
+    - german:
+        formTitle: 'Kassenobli Titel Cashflow'
+  columns:
+  - name: 'OwnBondId'
+    description: 'FK to the PtPositionDetail'
+    genericControls:
+      refTable: 'PtOwnBond'
+      refField: 'Id'
+  - name: 'PublicCfId'
+    description: 'Foreign key to cashflow present in PrPublicCf'
+    genericControls:
+      refTable: 'PrPublicCf'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'DueDate'
+    description: 'Date on which this particular CF is due to be paid to customer'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ProcessDate'
+    description: 'Date on which this particular CF is processed through the corporate actions application'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PaymentDate'
+    description: 'Date value in this field represents if a payment to the client has been made. NULL value means no payment has been made'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Invalidated'
+    description: 'when payback is anticipated then this field is filled with value 1'

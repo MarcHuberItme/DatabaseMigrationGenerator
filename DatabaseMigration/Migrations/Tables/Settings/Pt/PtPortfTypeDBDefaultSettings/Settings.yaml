@@ -1,0 +1,66 @@
+table:
+  name: 'PtPortfTypeDBDefaultSettings'
+  description: 'Default information about an EBanking-Agreement depending on portfolio or product type. Used for automatically generate PtAgrEBankingDetail record. THERE SHOULD BE A SEPARATE TABLE FOR PRODUCT BASED AND FOR PORTFOLIO BASED CONFIGURATION.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'DB Default Portfolio Type'
+    - german:
+        formTitle: 'DB Default Portfolio Typ'
+    - french:
+        formTitle: 'DB Default type portefeui'
+    - italian:
+        formTitle: 'DB Default tipo portafogl'
+  columns:
+  - name: 'PortfolioTypeNo'
+    description: 'Foreign-key; Id of PtPortfolioType'
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      defColumnPos: 1
+  - name: 'InternetbankingAllowed'
+    description: 'If true, the account can be accessed by Internet banking'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PerformanceChartRestriction'
+    description: 'If true then the product performance / chart is not displayed.\r\n'
+  - name: 'QueryRestriction'
+    description: 'If true then it''s not possible to see a statement of account.\r\nMigration-Source is STEUER_CD C in VT_ZUORD'
+  - name: 'QueryDetailRestriction'
+    description: 'If true then it''s not possible to see details of a payment.\r\nMigration-Source is STEUER_CD D in VT_ZUORD\r\n'
+  - name: 'BalanceRestriction'
+    description: 'If true then it''s not possible to see the balance.\r\nMigration-Source is STEUER_CD E in VT_ZUORD'
+  - name: 'OrderRestriction'
+    description: 'If true then it''s not possible to make an order (payment or stock market) by E-Banking.\r\nMigration Source is STEUER_CD B in VT_ZUORD'
+    genericControls:
+      defColumnPos: 4
+  - name: 'SalaryPaymentRestriction'
+    description: 'If this field is true no payments and standingorder with a salaryflag can be created, changed or seen.'
+  - name: 'StandingOrderRestriction'
+    description: ''
+  - name: 'PaymentVisumNo'
+    description: 'Indicates visum-code for single payments.'
+    genericControls:
+      refTable: 'PtVisumNo'
+      refField: 'VisumNo'
+      defColumnPos: 5
+  - name: 'StandingOrderVisumNo'
+    description: ''
+    genericControls:
+      refTable: 'PtVisumNo'
+      refField: 'VisumNo'
+      defColumnPos: 6
+  - name: 'DTAVisumNo'
+    description: 'Value 2 = full  access, no additional visum required from other ebanking user\r\nValue 1 = another ebanking user has to give visum\r\nValue 0 = two other ebanking user have to give visum with level 1 or one with 2 have to give visum'
+    genericControls:
+      refTable: 'PtVisumNo'
+      refField: 'VisumNo'
+      defColumnPos: 7

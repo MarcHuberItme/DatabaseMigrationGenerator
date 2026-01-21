@@ -1,0 +1,43 @@
+view:
+  name: 'AsMotiveOpenTypeView'
+  description: 'View to collect motives to open for OpenAPI'
+frontendView:
+  name: 'AsMotiveOpenTypeView'
+  description: 'View contraining translation for motive to open codes.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'MotiveOpenTypeNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+  - name: 'TextShort'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 25
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'UsedForPartner'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'UsedForPortfolio'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'UsedForAccount'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true

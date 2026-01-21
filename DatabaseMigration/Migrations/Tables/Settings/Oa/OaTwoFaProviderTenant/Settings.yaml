@@ -1,0 +1,22 @@
+table:
+  name: 'OaTwoFaProviderTenant'
+  description: 'Table representing tenants of a two-factor authentication provider.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'TwoFaProviderId'
+    description: 'Identifier of the OaTwoFaProvider'
+    genericControls:
+      refTable: 'OaTwoFaProvider'
+      refField: 'Id'
+  - name: 'Name'
+    description: 'Secondary identifier for human readability.'

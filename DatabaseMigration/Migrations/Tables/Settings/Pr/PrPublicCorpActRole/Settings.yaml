@@ -1,0 +1,57 @@
+table:
+  name: 'PrPublicCorpActRole'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PrPublicCorpAct'
+      parentRelationField: 'PublicCorpActId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Event role'
+    - german:
+        formTitle: 'Ereignisrolle'
+  columns:
+  - name: 'PublicCorpActId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicCorpAct'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'RoleNo'
+    description: 'VDF: ZAD.ZAR.4974'
+  - name: 'EventRoleTypeNo'
+    description: 'VDF: ZAD.ZAR.ZTM.7820'
+    genericControls:
+      refTable: 'PrPublicEventRoleType'
+      refField: 'EventRoleTypeNo'
+      defColumnPos: 1
+  - name: 'PartnerId'
+    description: 'VDF: ZAD.ZAR.ZTM.GEI.K985.3801'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'RoleOwnerName'
+    description: 'VDF: ZAD.ZAR.ZTM.ZAS.9994-A'
+  - name: 'RoleOwnerAddress'
+    description: 'VDF: ZAD.ZAR.ZTM.ZAS.9994-C & \r\nZAD.ZAR.ZTM.ZAS.7901 & ZAD.ZAR.ZTM.ZAS.7902'
+  - name: 'RoleOwnerCountryCode'
+    description: 'VDF: ZAD.ZAR.ZTM.ZAS.K984.3991'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'ContactPerson'
+    description: 'VDF: ZAD.ZAR.ZTM.ZAS.9994-B'

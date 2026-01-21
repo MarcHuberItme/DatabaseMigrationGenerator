@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPartnerInfo'
+  description: '2015-11-12/ram:	add field PEPTypeNo\r\n		delete field PoliticalExposedPerson'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DataExport_GetAccounts'
+  description: 'Retrieves accounts vor DocWiz DataExport.'

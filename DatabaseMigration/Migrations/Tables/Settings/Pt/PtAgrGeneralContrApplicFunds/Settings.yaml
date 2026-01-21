@@ -1,0 +1,50 @@
+table:
+  name: 'PtAgrGeneralContrApplicFunds'
+  description: 'Table to store the applicable funds of a financing. these applicable funds are needed for creating a credit contract. \r\n\r\nTabelle um die Mittelverwendung einer Finanzierung zu speichern welche für den Rahmenvertrag benötigt wird.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAgrGeneralContract'
+      parentRelationField: 'GeneralContractId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Applicable Funds'
+        helpText: 'Applicable Funds'
+    - german:
+        formTitle: 'Applicable Funds'
+        helpText: 'Applicable Funds'
+    - french:
+        formTitle: 'Applicable Funds'
+        helpText: 'Applicable Funds'
+    - italian:
+        formTitle: 'Applicable Funds'
+        helpText: 'Applicable Funds'
+  columns:
+  - name: 'GeneralContractId'
+    description: 'Reference to the general contract - Referenz zum Rahmenvertrag'
+    genericControls:
+      refTable: 'PtAgrGeneralContract'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ApplicableFundName'
+    description: 'Text area to enter the Name of the applicable fund'
+    genericControls:
+      defColumnPos: 1
+  - name: 'FundAmount'
+    description: 'Amount field - value has to be entered with the +/- in front'
+    genericControls:
+      defColumnPos: 2
+  - name: 'SortOrderNo'
+    description: 'Field to manually order the entries so that they are printed in the right order in the contract\r\n\r\nFeld um die Reihenfolge für den Andruck im Rahmenvertrag zu definieren'
+    genericControls:
+      defColumnPos: 3

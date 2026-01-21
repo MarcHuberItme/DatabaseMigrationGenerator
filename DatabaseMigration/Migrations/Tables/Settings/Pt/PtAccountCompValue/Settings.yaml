@@ -1,0 +1,48 @@
+table:
+  name: 'PtAccountCompValue'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 2
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountComponent'
+      parentRelationField: 'AccountComponentId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Component Price'
+    - german:
+        formTitle: 'Komponentenpreis'
+  columns:
+  - name: 'AccountComponentId'
+    description: 'foreign-key;  Id of PtAccountComponent\r\n**DON''T DELETE NAVIGATION-RELATION!!**\r\ndo not remove delete cascade on AccountComponentId'
+    genericControls:
+      refTable: 'PtAccountComponent'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ValidFrom'
+    description: 'Start date of validity range for value'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Value'
+    description: 'Amount of component'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsFixed'
+    description: 'redunant information; if true, it isn''t allowed the modify the field ''Value''.\r\n(the reason of this redunant field: because the access to get this information would be slowely)'
+  - name: 'IsDurationRecord'
+    description: 'if true, it isn''t allowed the modify the record. this record was built automatically, because of a defined duration on the related component (this record marks the end  of the duration).'
+  - name: 'StartRecordId'
+    description: 'reference to the record that marks the start of the duration. This is a technical field that should not be edited by the user'
+    genericControls:
+      refTable: 'PtAccountCompValue'
+      refField: 'Id'

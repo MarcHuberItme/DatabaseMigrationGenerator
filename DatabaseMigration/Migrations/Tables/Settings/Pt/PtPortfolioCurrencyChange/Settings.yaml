@@ -1,0 +1,55 @@
+table:
+  name: 'PtPortfolioCurrencyChange'
+  description: 'If a client want a new portfolio currency, in this table will all the currencies stored. Additional it''s necessary that the cost value system converts the saved values (cost values etc.) in the new currency.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtPortfolio'
+      parentRelationField: 'PortfolioId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Portfolio currency change'
+    - german:
+        formTitle: 'Währungswechsel Portfolio'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'NewPortfolioCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'RateOldPfCuNewPfCu'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'BeginDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'EndDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CurrencyChangeStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtCurrencyChangeStatus'
+      refField: 'CurrencyChangeStatusNo'
+      defColumnPos: 5

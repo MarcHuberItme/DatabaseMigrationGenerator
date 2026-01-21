@@ -1,0 +1,62 @@
+table:
+  name: 'PtAgrPartnerPermission'
+  description: 'Table containing persmissions of partner level operations for ebanking contract.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Partner Permissions'
+    - german:
+        formTitle: 'Partnerberechtigungen'
+  columns:
+  - name: 'ContractId'
+    description: 'Id referring to PtAgrEbanking.Id.'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'PartnerId'
+    description: 'Id referring to PtBase.Id.'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'IsPortfolioOpeningAllowed'
+    description: 'Determines if portfolio opening for given PartnerId is allowed.'
+    genericControls:
+      defColumnPos: 5
+  - name: 'IsAccountOpeningAllowed'
+    description: 'Determines if account opening is allowed for the given partner.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'EBankingPartnerDocumentAllowed'
+    description: 'Determines if partner documents are allowed for the given partner.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'IsCardManagementAllowed'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'IsShadowAccountsAllowed'
+    description: 'Defines if shadow accounts can be shown for this agreement'
+    genericControls:
+      defColumnPos: 8
+  - name: 'WarningOverwritingUser'
+    description: 'When a warning was showed and the user ignored the warning, the user name is stored in this field.'
+  - name: 'WarningIsOverwritten'
+    description: 'True when a warning has showed, but ignored.'
+  - name: 'PartnerFirstName'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'PartnerLastName'
+    description: ''
+    genericControls:
+      defColumnPos: 2

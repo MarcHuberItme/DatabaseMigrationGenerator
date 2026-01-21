@@ -1,0 +1,30 @@
+table:
+  name: 'AcBankCounterparty'
+  description: 'Banken-Gegenparteitabelle\r\n\r\nListe aller meldepflichtigen Banken mit AR-Code für die ARIS Statistik'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    descField: 'BankName'
+    uiTableDescription:
+    - english:
+        formTitle: 'AR Code List'
+    - german:
+        formTitle: 'AR-Code Liste'
+  columns:
+  - name: 'ArCode'
+    description: 'Gegenparteicode gemäss ARIS Statistik'
+    genericControls:
+      defColumnPos: 1
+  - name: 'BankName'
+    description: 'Name der Bank gemäss ARIS Statistik'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsDomestic'
+    description: 'Inlandbank ja/nein'

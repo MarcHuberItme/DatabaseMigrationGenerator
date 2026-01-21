@@ -1,0 +1,34 @@
+table:
+  name: 'PtExportTransItem'
+  description: 'Table to control exported bookings and holding specific booking-data for primanet.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ExportNo'
+    description: 'Reference to the export process'
+    genericControls:
+      refTable: 'PtExportRun'
+      refField: 'ExportNo'
+  - name: 'TransItemId'
+    description: 'Reference to PtTransItem. No DB-Integrity to guarantee that the constraint is never stopping the transreorg process.'
+    genericControls:
+      refTable: 'PtTransItem'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'QualiCode'
+    description: ''
+    genericControls:
+      refTable: 'PtExportQualiCode'
+      refField: 'QualiCode'
+  - name: 'ExternalId'
+    description: 'External id for bookings, this field is necessary since Primanet / Finnova require numeric values and our Id (GIUD) is not accepted as string representation and is too long in an numerical representation.'
+  - name: 'IsSecuritiesBooking'
+    description: ''
+  - name: 'BankInternalReference'
+    description: 'application individual reference:\r\n\r\nStock Exchange application:\r\n    unique reference passing to the StockEx-System.\r\n    TransNo: 12 digits\r\n    SequenceNo: 4 digits \r\nCorporate actions application:\r\n    TransMsgNo (inherited from EvTemplateDetail.TransMsgNo)'

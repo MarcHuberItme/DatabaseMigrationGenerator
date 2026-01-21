@@ -1,0 +1,40 @@
+table:
+  name: 'CyContractInstrument'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Currency Pairs Contracts'
+    - german:
+        formTitle: 'Currency Pairs Contracts'
+    - french:
+        formTitle: 'Currency Pairs Contracts'
+    - italian:
+        formTitle: 'Currency Pairs Contracts'
+  columns:
+  - name: 'Label'
+    description: ''
+  - name: 'Currency1'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Currency2'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'QuotationMode'
+    description: ''
+  - name: 'DefaultContractSize'
+    description: ''
+  - name: 'CurrencyPair'
+    description: ''

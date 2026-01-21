@@ -1,0 +1,37 @@
+table:
+  name: 'TrSubItemRelationship'
+  description: 'Mapping for Sub-Fields when used in message'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'MsgFieldRelationshipId'
+    description: ''
+    genericControls:
+      refTable: 'TrMsgFieldRelationship'
+      refField: 'Id'
+  - name: 'SubItemId'
+    description: ''
+    genericControls:
+      refTable: 'TrSubItem'
+      refField: 'Id'
+  - name: 'AddToOutPut'
+    description: ''
+  - name: 'SubTableName'
+    description: ''
+  - name: 'GroupId'
+    description: ''
+    genericControls:
+      refTable: 'TrGroup'
+      refField: 'Id'
+  - name: 'InGroupOrder'
+    description: ''
+  - name: 'ParentTableName'
+    description: ''
+  - name: 'SkipItemOnParseError'
+    description: ''

@@ -1,0 +1,44 @@
+table:
+  name: 'AsPeriodRule'
+  description: 'periodicity'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Period Role'
+    - german:
+        formTitle: 'Periodizität'
+    - french:
+        formTitle: 'Périodicité'
+    - italian:
+        formTitle: 'Periodicità'
+  columns:
+  - name: 'PeriodRuleNo'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'MigValue'
+    description: ''
+    minValue: '0'
+    maxValue: '9999'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'ForMailingPeriode'
+    description: '1 = period rule is for mailing-periodes (during migration special values for VRX)'
+  - name: 'ForClosingPeriode'
+    description: '1 = period rule is for closing-periodes and Statements'
+  - name: 'ForARS'
+    description: '1 = period rule is for ARS (Accountency System)'
+  - name: 'ForStandingOrder'
+    description: ''
+  - name: 'ForFinancingPayback'
+    description: 'for table PtPortfolioFinancingPayback'

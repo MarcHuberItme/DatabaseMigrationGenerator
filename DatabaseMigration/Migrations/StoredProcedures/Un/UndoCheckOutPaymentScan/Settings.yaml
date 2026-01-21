@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'UndoCheckOutPaymentScan'
+  description: 'undo check out of payment scan details that where previously checked out for correction'

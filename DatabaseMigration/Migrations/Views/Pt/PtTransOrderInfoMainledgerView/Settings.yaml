@@ -1,0 +1,3 @@
+view:
+  name: 'PtTransOrderInfoMainledgerView'
+  description: 'All Main ledger account transmessage and payment order information necessary for  the external auditors data export that is performed at the beginning of every year (MJET)'

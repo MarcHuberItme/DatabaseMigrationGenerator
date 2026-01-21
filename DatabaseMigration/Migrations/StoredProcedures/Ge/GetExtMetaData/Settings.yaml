@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetExtMetaData'
+  description: 'Stored Procedure to retrieve all he MetaData needed to run the generic editor.'

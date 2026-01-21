@@ -1,0 +1,49 @@
+table:
+  name: 'CoLog'
+  description: 'Logtabelle'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'logingtable'
+    - german:
+        formTitle: 'Logtabelle'
+  columns:
+  - name: 'CollateralId'
+    description: 'Laufnummer Sicherheit'
+    genericControls:
+      refTable: 'CoBase'
+      refField: 'Id'
+      defColumnPos: 7
+  - name: 'Erfadate'
+    description: 'Erfassdatum Log Eintrag'
+    genericControls:
+      defColumnPos: 2
+  - name: 'lnrext'
+    description: 'Laufnummererweiterung von Erfadate (relavant während der Deckungsausscheidung)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Erfauser'
+    description: 'Log User'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Remark'
+    description: 'Bemerkung'
+    genericControls:
+      multiLine: true
+      defColumnPos: 5
+  - name: 'Wheredowecamefrom'
+    description: 'Ursprung vom Datensatz\r\n0 -> Sicherheitenverwaltung\r\n1 -> Gesamtengagement'
+    genericControls:
+      defColumnPos: 6
+  - name: 'Veragrp'
+    description: 'Verarbeitungsgruppe, Logs können auch während der Deckungsausscheidung auftreten'
+    genericControls:
+      defColumnPos: 1

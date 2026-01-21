@@ -1,0 +1,25 @@
+table:
+  name: 'PrPublicDeleteReason'
+  description: 'VDF-Domaine: 7826 DELETEREASON\r\n'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Delete reason'
+    - german:
+        formTitle: 'Löschgrund'
+  columns:
+  - name: 'DeleteReasonNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

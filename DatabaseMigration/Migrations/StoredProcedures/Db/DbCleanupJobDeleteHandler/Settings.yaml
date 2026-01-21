@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DbCleanupJobDeleteHandler'
+  description: 'This SP will be called by the DbCleanupJob. Its purpose is to delete given rows in the table by a certain chunksize. we can provide a simmulate flag - if true will return the to be deleted rows instead of actually deleting. when deleting - it will delete the rows on target table by rule and the entries in the DbCleanupToDelete table in order to cleanup after itself'

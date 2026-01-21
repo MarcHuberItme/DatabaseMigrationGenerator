@@ -1,0 +1,56 @@
+table:
+  name: 'PtPaymentOrderDetailVAT'
+  description: 'Shows details of a bank own invoice amount related to mwst / vat'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'vat information'
+    - german:
+        formTitle: 'Mwst Informationsrecord'
+  columns:
+  - name: 'OrderDetailId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderDetail'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'GrosCost'
+    description: 'Brutto (Gros) Betrag\r\n\r\nentspricht dem Paymentamount, wenn nur ein Mwst Satz zur Anwendung kommt'
+    genericControls:
+      defColumnPos: 1
+  - name: 'VatAmount'
+    description: 'MwSt Betrag\r\n'
+    genericControls:
+      defColumnPos: 3
+  - name: 'NetCost'
+    description: 'Nettokosten = Brutto - Mwst'
+    genericControls:
+      defColumnPos: 5
+  - name: 'VatType'
+    description: '% Mwst Satz bezogen auf Brutto'
+    genericControls:
+      refTable: 'AsVatDetailPercentage'
+      refField: 'VatType'
+      defColumnPos: 4
+  - name: 'Remarks'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 6
+  - name: 'Processed'
+    description: 'Flag to indicate if the vat information has been processed or not. If processed then it means that'
+  - name: 'InternalCostUnit'
+    description: 'Kostenstelle, z.B. GST'
+    genericControls:
+      refTable: 'PtPaymentOrderInternalCostUnit'
+      refField: 'InternalCostUnit'
+  - name: 'SelectionStamp'
+    description: 'For VAT porcessing, selection program will mark the entries as "Selected" with its stamp. Process them and then update their status'

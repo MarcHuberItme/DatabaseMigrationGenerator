@@ -1,0 +1,116 @@
+view:
+  name: 'ReObligationView03'
+  description: 'View for RealEstate API.'
+frontendView:
+  name: 'ReObligationView03'
+  description: 'Used for RealEstate API.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'Rank'
+    description: ''
+    dataType: 'smallint'
+  - name: 'AntecedentAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'RankRivalryAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ObligAmountChargeable'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'MemberUniqueKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 120
+  - name: 'AntecedenAmountThird'
+    description: ''
+    dataType: 'money'
+  - name: 'RankRivalryAmountThird'
+    description: ''
+    dataType: 'money'
+  - name: 'CoPremResultMan'
+    description: ''
+    dataType: 'smallint'
+  - name: 'EREID'
+    description: ''
+    dataType: 'varchar'
+    prec: 22
+  - name: 'ObjectSeqNo'
+    description: ''
+    dataType: 'int'
+  - name: 'ObligTypeNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ObligDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ObligRank'
+    description: ''
+    dataType: 'smallint'
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'ObligAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ObligAntecedentAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ObligRankRivalryAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'Description'
+    description: ''
+    dataType: 'varchar'
+    prec: 500
+  - name: 'DescManual'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PfBFlag'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'MaxInterestRate'
+    description: ''
+    dataType: 'float'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ObligMemberUniqueKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 120
+  - name: 'Identification'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'Comment'
+    description: ''
+    dataType: 'varchar'
+    prec: 100
+  - name: 'ObligPremisesRelationId'
+    description: 'FinstarId of the ReObligPremisesRelation.\r\nIt is not unique in this view because of the cardinality of the relation to ReObligation'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'ObligationId'
+    description: 'FinstarId of the ReObligation'
+    dataType: 'uniqueidentifier'
+    isNotNull: true

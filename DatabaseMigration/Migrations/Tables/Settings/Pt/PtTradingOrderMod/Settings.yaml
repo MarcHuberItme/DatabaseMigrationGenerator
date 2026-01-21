@@ -1,0 +1,183 @@
+table:
+  name: 'PtTradingOrderMod'
+  description: 'pending and settled modifications of PtTradingOrder used for modifications of stock exchange orders.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TradingOrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtTradingOrder'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsCancelRequestListingOrder'
+    description: ''
+  - name: 'OrderDate'
+    description: 'If IsAccepted = false: date of the modification\r\nIf IsAccepted = true: orig orderdate of pttradingorder'
+  - name: 'OrderTypeNoNew'
+    description: ''
+    genericControls:
+      refTable: 'AsTradingOrderType'
+      refField: 'OrderTypeNo'
+  - name: 'OrderTypeNoOrig'
+    description: ''
+    genericControls:
+      refTable: 'AsTradingOrderType'
+      refField: 'OrderTypeNo'
+  - name: 'PriceLimitNew'
+    description: 'may be set only when PriceLimitType = Limited'
+  - name: 'PriceLimitOrig'
+    description: ''
+  - name: 'TriggerPriceNew'
+    description: ''
+  - name: 'TriggerPriceOrig'
+    description: ''
+  - name: 'ValidFromNew'
+    description: ''
+  - name: 'ValidFromOrig'
+    description: ''
+  - name: 'ValidToNew'
+    description: 'may be set only when ValidToRule = Specific Date'
+  - name: 'ValidToOrig'
+    description: ''
+  - name: 'TextToTraderNew'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'TextToTraderOrig'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'TextToPartnerNew'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'TextToPartnerOrig'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'TextToBackOfficeNew'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'TextToBackOfficeOrig'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'TextToForexTraderNew'
+    description: 'this field will be replaced in the table PtTradingOrderMessageMod'
+    genericControls:
+      multiLine: true
+  - name: 'TextToForexTraderOrig'
+    description: 'this field will be replaced in the table PtTradingOrderMessageMod'
+    genericControls:
+      multiLine: true
+  - name: 'OrderQuantityRelated'
+    description: 'this field is used for the trader and the automatic trading system.\r\nits only  used by the visa of a modification.\r\n\r\nif for instance a new pricelimit is requested, the trader can define the quantity where this new limit is for (if there is already a trade)\r\n'
+  - name: 'OrderDisposerIdNew'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderDisposerIdOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderMiddlemanIdNew'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderMiddlemanIdOrig'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsKeepingInterestNew'
+    description: ''
+  - name: 'IsKeepingInterestOrig'
+    description: ''
+  - name: 'PublicIdNew'
+    description: 'only used for orders entered by the external tradingsystem (sungard)'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PublicIdOrig'
+    description: 'only used for orders entered by the external tradingsystem (sungard)'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'MaturityDateNew'
+    description: ''
+  - name: 'MaturityDateOrig'
+    description: ''
+  - name: 'InterestRateNew'
+    description: ''
+  - name: 'InterestRateOrig'
+    description: ''
+  - name: 'IsShortToffOrig'
+    description: ''
+  - name: 'IsShortToffNew'
+    description: ''
+  - name: 'IsRequested'
+    description: 'the modification is requested'
+  - name: 'IsAccepted'
+    description: 'the modification is accepted'
+  - name: 'IsDeclined'
+    description: 'the modification is declined'
+  - name: 'ModDisposerId'
+    description: 'disposer of the modification'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ProcessId'
+    description: ''
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'ProcessIdPartner'
+    description: 'only used if the modification source is from a partner (partner -> trader)\r\nif BSZ: processid of the mod-workflow in BSZ\r\nif SAL: Id of the corresponding record in PtTransSxPM1Order\r\n'
+  - name: 'TextToBOPartnerNew'
+    description: 'used to send a text to PM1 in case of an order cancellation'
+    genericControls:
+      multiLine: true
+  - name: 'TextToBOPartnerOrig'
+    description: 'used to send a text to PM1 in case of an order cancellation'
+    genericControls:
+      multiLine: true
+  - name: 'IsFondsToNAVNew'
+    description: ''
+  - name: 'IsFondsToNAVOrig'
+    description: ''
+  - name: 'IsWithoutForeignFeeNew'
+    description: ''
+  - name: 'IsWithoutForeignFeeOrig'
+    description: ''
+  - name: 'GoiApp'
+    description: 'This field will be filled if the modification (cancellation) was entered via GenericOrderInterface.'
+    genericControls:
+      refTable: 'PtTransSxGoiApp'
+      refField: 'App'
+  - name: 'GoiChannel'
+    description: 'This field will be filled if the modification (cancellation) was entered via GenericOrderInterface.'
+    genericControls:
+      refTable: 'PtTransSxGoiChannel'
+      refField: 'Channel'
+  - name: 'ModRequestKey'
+    description: 'Key of the caller (AssetMax) requested the modification.'

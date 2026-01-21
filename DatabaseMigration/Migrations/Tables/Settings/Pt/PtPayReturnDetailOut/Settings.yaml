@@ -1,0 +1,39 @@
+table:
+  name: 'PtPayReturnDetailOut'
+  description: 'Manually entered returned payment details. This table is relevant if we are not copying the details of payment to be returned from orignal incoming payment.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'OrderDetailId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderDetail'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OriginalMessageId'
+    description: ''
+  - name: 'OriginalMessageType'
+    description: ''
+  - name: 'OriginalTransactionId'
+    description: 'Reference Id of the orignal transaction'
+    genericControls:
+      defColumnPos: 1
+  - name: 'OriginalSettlementAmount'
+    description: ''
+  - name: 'OriginalSettlementCurrency'
+    description: ''
+  - name: 'ReturnedSettlementAmount'
+    description: ''
+  - name: 'ReturnedSettlementCurrency'
+    description: ''
+  - name: 'OriginalPaymentValueDate'
+    description: ''
+  - name: 'OriginalEndToEndId'
+    description: ''

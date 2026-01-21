@@ -1,0 +1,68 @@
+table:
+  name: 'BpJobBase'
+  description: 'JCS Job definition'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'JobName'
+    uiTableDescription:
+    - english:
+        formTitle: 'JCS Job Base'
+    - german:
+        formTitle: 'JCS Job Base'
+    - french:
+        formTitle: 'JCS Job Base'
+    - italian:
+        formTitle: 'JCS Job Base'
+  columns:
+  - name: 'JobName'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'AssemblyName'
+    description: 'Name of the assembly with the job class.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ClassName'
+    description: 'Class name of the job.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsEndless'
+    description: 'The job is implemented as endless job.'
+  - name: 'IsWorker'
+    description: 'The job is implemented as worker job and can process workitems.'
+  - name: 'IsPausable'
+    description: 'The job can be paused.'
+  - name: 'IsHighAvailable'
+    description: 'The job is implemented as high available job.'
+  - name: 'Param'
+    description: 'Job standard parameter list.'
+  - name: 'BasePriority'
+    description: 'Base priority of the job.'
+    genericControls:
+      refTable: 'BpTaskPriority'
+      refField: 'TaskPriority'
+  - name: 'MaxRetries'
+    description: 'Number of retries if job failed.'
+  - name: 'AutoStarting'
+    description: 'Default for automatic start of the task.'
+  - name: 'JobAgentGroupId'
+    description: 'Job Agent Group reference'
+    genericControls:
+      refTable: 'BpJobAgentGroup'
+      refField: 'Id'
+  - name: 'Instances'
+    description: 'Number of instances over all.\r\nnull = unlimited'
+  - name: 'MaximumInstancesPerAgent'
+    description: 'Maximum number of instances per Agent.\r\nnull = unlimited\r\n'
+  - name: 'ConcurrentExecution'
+    description: 'Number of concurrent execution over all Agents.\r\nnull = unlimited'
+  - name: 'MaxCycleDuration'
+    description: 'The maximal duration for DoWork cycle. Used by HA-Jobs'

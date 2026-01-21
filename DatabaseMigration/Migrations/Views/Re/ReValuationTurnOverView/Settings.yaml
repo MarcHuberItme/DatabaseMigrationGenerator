@@ -1,0 +1,57 @@
+view:
+  name: 'ReValuationTurnOverView'
+  description: ''
+frontendView:
+  name: 'ReValuationTurnOverView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'valuation turnover view'
+    - german:
+        formTitle: 'Schätzung Umsatz View'
+  columns:
+  - name: 'ValuationId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReValuation'
+      refField: 'Id'
+  - name: 'BusinessTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReBusinessType'
+      refField: 'BusinessTypeNo'
+      defColumnPos: 1
+  - name: 'TurnOver'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 3
+  - name: 'TurnOverRentRate'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 4
+  - name: 'Designation'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 2
+  - name: 'TurnOverRentAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 5

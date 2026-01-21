@@ -1,0 +1,19 @@
+table:
+  name: 'CyProvider'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+  columns:
+  - name: 'ProviderNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,48 @@
+table:
+  name: 'CMSICMessageType'
+  description: 'List of messages defined under the SIC Variations and related information needed for communication.'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'VariationId'
+    description: 'GUID of the SIC Variation'
+    genericControls:
+      refTable: 'CMSICVariation'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'CategoryId'
+    description: 'GUID of the Message Type Category'
+    genericControls:
+      refTable: 'CMSICCategory'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Code'
+    description: 'Message Type Code'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Description'
+    description: ''
+  - name: 'EmptyReply'
+    description: 'Message should be replied with an Empty message'
+  - name: 'ReplyMsgType'
+    description: 'The  Code of Message Type with which the message should be replied'
+  - name: 'QueryFieldList'
+    description: 'Comma separated field codes of the fields to be sent as query parameter. These codes are defined in table ''CMSICQueryField'''
+  - name: 'PDESupport'
+    description: ''
+  - name: 'Sign'
+    description: 'The message should be signed by IBASEC or not'
+  - name: 'Encrypt'
+    description: 'The message should be encrypted by IBASEC or not'
+  - name: 'IBASECFuncCode'
+    description: 'The code for the IBASEC function to be used for adding security to a message.'
+  - name: 'IBASECFuncCodeBackup'
+    description: 'IBASEC function code in backup mode'

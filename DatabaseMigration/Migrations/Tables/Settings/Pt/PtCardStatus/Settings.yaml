@@ -1,0 +1,30 @@
+table:
+  name: 'PtCardStatus'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'card status'
+    - german:
+        formTitle: 'Kartenstatus'
+    - french:
+        formTitle: 'Statut de la carte'
+  columns:
+  - name: 'CardStatus'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ChangeableTo'
+    description: 'If the field ''IsChangeable'' is true, the values in that field tell which status are allowed. The allowed status'' are entered in form of a comma separated string (to be used with an SQL ''IN'' statement).'
+  - name: 'IsChangeable'
+    description: 'If cards with this status can be changed to another status. If false then the status is not changeable.'

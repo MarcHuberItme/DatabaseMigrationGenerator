@@ -1,0 +1,33 @@
+table:
+  name: 'PtSegment'
+  description: 'Betreuungs-, Beratungs- und Servicekunden'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Segment'
+    - german:
+        formTitle: 'Segment'
+  columns:
+  - name: 'SegmentNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ForAML'
+    description: '0 = skipped for aml rueles\r\n1 = used for AML'
+    genericControls:
+      defColumnPos: 2
+  - name: 'SxOrderAuthValue'
+    description: 'StockExOrderAuthorizationValue\r\n\r\nvalue when a stockexorder (entered by the customer consultat or by the trader) cannot be transferred automatically (marketvalue is bigger than this value) \r\n\r\nthis value can be overruled by the the field PtPortfolio.SxOrderAuthValue'
+  - name: 'SxOrderAuthValueSpecial'
+    description: 'StockExOrderAuthorizationValueSpecial\r\n\r\nvalue when a stockexorder (entered by ebanking) cannot be transferred automatically (marketvalue is bigger than this value) \r\n\r\nthis value can be overruled by the the field PtPortfolio.SxOrderAuthValueSpecial \r\n'

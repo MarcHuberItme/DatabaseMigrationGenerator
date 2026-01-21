@@ -1,0 +1,59 @@
+view:
+  name: 'IfExternalKeyRecView'
+  description: ''
+frontendView:
+  name: 'IfExternalKeyRecView'
+  description: 'Temporary view for compability reasons'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'FinstarId'
+    description: 'Finstar Id referring of the external record internally.'
+    dataType: 'uniqueidentifier'
+  - name: 'FinstarTableName'
+    description: 'The Finstar table name where the record with the given Finstar id resides.'
+    dataType: 'varchar'
+    prec: 30
+  - name: 'ExternalID'
+    description: 'The corresponding external id to the Finstar id of the external record.'
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 1
+  - name: 'InactivationTimestamp'
+    description: ''
+    dataType: 'datetime'
+  - name: 'FieldName'
+    description: 'Name of the external records field.'
+    dataType: 'varchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 2
+  - name: 'FieldValue'
+    description: 'Value of the external record''s field.'
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 3

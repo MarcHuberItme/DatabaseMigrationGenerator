@@ -1,0 +1,35 @@
+table:
+  name: 'AsDocumentIndex'
+  description: 'link records of any finstar tables to a document'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 2
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'SourceTableName'
+  columns:
+  - name: 'SourceTableName'
+    description: 'table name of the record to be linked\r\n\r\nno DB Integrity, because when MdTable is rebuild all the content is temporary deleted and then the new content inserted! 25.11.2003/mct'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 1
+  - name: 'SourceRecordId'
+    description: 'foreign-key; Id of the record to be linked'
+    genericControls:
+      defColumnPos: 2
+  - name: 'DocumentId'
+    description: 'foreign-key;  Id of AsDocument'
+    genericControls:
+      refTable: 'AsDocument'
+      refField: 'Id'
+  - name: 'Location'
+    description: '1 = Operativ\r\n2 = Archiv'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ExpirationStart'
+    description: 'On this date, the legally required keeping and retention period for this document starts.\r\nFor documents that may never be deleted, this field contains the date of 31.12.9999 (but just 9999-12-31 00:00:00.000, no time!)'

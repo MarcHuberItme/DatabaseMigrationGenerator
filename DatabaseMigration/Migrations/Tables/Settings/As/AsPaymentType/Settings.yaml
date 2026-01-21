@@ -1,0 +1,34 @@
+table:
+  name: 'AsPaymentType'
+  description: 'Defines the payment type for debit/credit accounts, \r\ne.g. Interest, capital refund'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PaymentType'
+    - german:
+        formTitle: 'Buchungsvorschrift Code'
+  columns:
+  - name: 'PaymentTypeNo'
+    description: 'Payment type\r\ne.g. Interest, Capital, etc'
+    genericControls:
+      defColumnPos: 1
+  - name: 'MigValue'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'ForPortfolio'
+    description: '0 = not for portfolio\r\n1 = for portfolio\r\n'
+  - name: 'ForAccount'
+    description: '0 = not for account\r\n1 = for account\r\n'
+  - name: 'AllowExternalPayee'
+    description: 'if true this payment type can be set with an external payee (AsPayee)\r\nused on PtAccountPaymentRule and PtPortfolioPaymentRule'

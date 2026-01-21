@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetBalance_LimitsBySecurityId'
+  description: 'Purpose		: GetBalance_LimitsBySecurityId\r\nInputs		: @strSecurityId (uniqueidentifier)\r\nOutput		: @curLimitsAmount (money)\r\nAuthor		: Abdul Nasir Khan\r\nDate		: 07-Oct-2003'

@@ -1,0 +1,40 @@
+table:
+  name: 'PtPMSFxRateTransfer'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'VaCurrencyRateId'
+    description: ''
+    genericControls:
+      refTable: 'VaCurrencyRate'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'LastTransferProcessId'
+    description: ''
+    genericControls:
+      refTable: 'PtPMSTransferProcess'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'LastNetFReturnCode'
+    description: ''
+  - name: 'LastNetFErrorText'
+    description: ''
+  - name: 'InternalRejectCode'
+    description: ''
+    genericControls:
+      refTable: 'PtPMSInternalRjectCode'
+      refField: 'RejectCode'
+  - name: 'VARunId'
+    description: ''
+    genericControls:
+      refTable: 'VaRun'
+      refField: 'Id'
+      hasDetailBtn: true

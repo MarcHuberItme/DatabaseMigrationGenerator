@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DeleteRoTransactionProcessForUnitTests'
+  description: 'Not used in production, just for unit tests'

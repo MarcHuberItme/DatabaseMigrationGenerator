@@ -1,0 +1,36 @@
+table:
+  name: 'EtTransferType'
+  description: 'Defines the steps of an process controlled by EtTransfer'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+  columns:
+  - name: 'TransferType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ExportBo'
+    description: 'Exports EtBo to XML-File'
+  - name: 'ExportCreditor'
+    description: 'Export EtCreditor to XML-File'
+  - name: 'ExportDeposit'
+    description: 'Exportiert EtDeposit to XML-File'
+  - name: 'ExportBor'
+    description: 'Exports EtBor to XML-file'
+  - name: 'ExportInstrument'
+    description: 'Export EtInstrument to XML-file'
+  - name: 'ExportTrx'
+    description: 'Export EtTrx to XML-File'
+  - name: 'ExportFWHTBalance'
+    description: 'Export special Balance records for FHWT regualtion to XML file'
+  - name: 'ExportBookings_Bank'
+    description: 'Exports the booking confirmations to XML-File'
+  - name: 'ImportBooking'
+    description: 'Imports the bookings from XML-file to EtBooking'

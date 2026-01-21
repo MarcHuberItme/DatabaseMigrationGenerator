@@ -1,0 +1,245 @@
+view:
+  name: 'PtAccountReferenceView'
+  description: 'View to select an account with currency (ViewId is Id of PrReference)\r\n2020-01-10: add field C.QrIbanForm'
+frontendView:
+  name: 'PtAccountReferenceView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+  - name: 'HdStatusFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdNoUpdateFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+  - name: 'HdTriggerControl'
+    dataType: 'tinyint'
+  - name: 'HdVersionNoBase'
+    description: 'HdVersionNo from PtAccountBase'
+    dataType: 'int'
+  - name: 'ProductId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 13
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 6
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      defColumnPos: 15
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      defColumnPos: 8
+  - name: 'AccountNoText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 4
+  - name: 'AccountNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 5
+  - name: 'AccountNoIbanForm'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 31
+  - name: 'PrivacyLockId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'CustomerReference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 10
+  - name: 'OpeningDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'TerminationDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      defColumnPos: 9
+  - name: 'PartnerNoText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 8
+    genericControls:
+      defColumnPos: 7
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 1
+  - name: 'MiddleName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 2
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 3
+  - name: 'NameCont'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'DateOfBirth'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 11
+  - name: 'ConsultantTeamName'
+    description: ''
+    dataType: 'varchar'
+    prec: 32
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      hasDetailBtn: true
+  - name: 'AdviceAdrLine'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'AddrSupplement'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'Street'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 26
+  - name: 'HouseNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'Zip'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 13
+    genericControls:
+      defColumnPos: 12
+  - name: 'Town'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 12
+  - name: 'CountryCode'
+    description: ''
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+  - name: 'FullAddress'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 222
+  - name: 'AllowsCreditStockEx'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AllowsCreditInstrPayment'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AllowsDebitStockEx'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AllowsDebitInstrPayment'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AccountDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 24
+  - name: 'AllowsDebitCashPayment'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AllowsCreditCashPayment'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ProductNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      defColumnPos: 14
+  - name: 'QrIbanForm'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 31

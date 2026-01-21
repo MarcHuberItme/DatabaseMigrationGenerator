@@ -1,0 +1,109 @@
+table:
+  name: 'ReValuationExt'
+  description: 'GR_STZ_EXT'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ext. Valuation'
+    - german:
+        formTitle: 'ext. Schätzung'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ValuationExtTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReValuationExtType'
+      refField: 'ValuationExtTypeNo'
+      defColumnPos: 2
+  - name: 'ValuationDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'PartnerRelId'
+    description: 'Verbindung zu den Angaben des ext. Schätzers'
+    genericControls:
+      refTable: 'RePremisesPtRel'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ReasonTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReValuationReasonType'
+      refField: 'ReasonTypeNo'
+  - name: 'RealValue'
+    description: 'real value / Realwert  = ValueType ='
+    genericControls:
+      defColumnPos: 4
+  - name: 'EarningValue'
+    description: 'Ertragswert'
+    genericControls:
+      defColumnPos: 5
+  - name: 'MarketValue'
+    description: 'Verkehrswert'
+    genericControls:
+      defColumnPos: 3
+  - name: 'SelfRentValue'
+    description: 'Eigenmietwert'
+  - name: 'TaxValue'
+    description: 'Value Type = 16'
+  - name: 'LimitOfEncumbrances'
+    description: 'Belastungsgrenze'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'EarningValueCapitalRate'
+    description: 'Kapitalisierungssatz zum Ertragswert (kann bei Hotels verwendet werden)'
+  - name: 'TaxValue1'
+    description: 'Steuerlicher Mietwert - passend zu ValueType 70'
+  - name: 'TaxValue2'
+    description: 'Steuerlicher Ertragswert - passend zu ValueType 71'
+  - name: 'TaxValue3'
+    description: 'Steuerlicher Realwert - passend zu ValueType 72'
+  - name: 'TaxValue4'
+    description: 'Steuerlicher Verkehrswert 100 %- passend zu ValueType 73'
+  - name: 'TaxValue5'
+    description: 'Steuerlicher geschätzer VW - passend zu ValueType 74'
+  - name: 'TaxValue6'
+    description: 'Reserve - passend zu ValueType 75'
+  - name: 'Quality'
+    description: ''
+    genericControls:
+      refTable: 'ReIaziQualityCode'
+      refField: 'QualityCode'
+  - name: 'IaziProcessTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReIaziProcessType'
+      refField: 'ProcessTypeNo'
+  - name: 'PriceHi50'
+    description: ''
+  - name: 'PriceLo50'
+    description: ''
+  - name: 'ReferenceDate'
+    description: ''

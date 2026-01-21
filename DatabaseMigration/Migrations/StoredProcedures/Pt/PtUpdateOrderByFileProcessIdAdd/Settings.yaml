@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtUpdateOrderByFileProcessIdAdd'
+  description: 'PtUpdateOrderByFileProcessId with additional options\r\nCalled on confirmation of payment orders generated from pain files in the PaymentOrderEntry front end.'

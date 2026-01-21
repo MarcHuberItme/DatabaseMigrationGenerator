@@ -1,0 +1,38 @@
+table:
+  name: 'OaIdp'
+  description: 'Represents an identity provider that can be used with Finstar''s Open APIs.\r\nThe identity provider can be an internal or an external one.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Identity Provider'
+        helpText: 'The Identity Provider allows users to authenticate and access Open APIs.'
+    - german:
+        formTitle: 'Identity Provider'
+        helpText: 'Der Identity Provider authentifiziert Open API Benutzer'
+    - french:
+        formTitle: 'Identity Provider'
+    - italian:
+        formTitle: 'Identity Provider'
+  columns:
+  - name: 'Name'
+    description: 'The name or label of the Identity Provider for bank-internal reference.\r\n(e.g. something like "Open Banking", "Localhost" - for local testing)'
+  - name: 'FinstarInstanceClientId'
+    description: 'The clientId to use for the finstar instance when talking to the Identity Provider.\r\nWhen the identity provider issues tokens for the use with a given Finstar instance, this will be used for the "audience".\r\nThe Finstar APIs should always validate that tokens received from API clients have the correct audience.\r\n\r\nThis is automatically generated using finstar instance information but it can be overridden.\r\nEvery Finstar Instance should have a different, uniqe clientId registered within any given Identity Provider.'
+  - name: 'Url'
+    description: 'The url of the identity provider.\r\nFor a KeyCloak based IDP, it''s a URL of the form:\r\nhttps://{DOMAIN}/realms/{REALMNAME}'
+  - name: 'WellKnownConfigUrl'
+    description: 'The URL where the well-known configuration of the IDP can be obtained from.\r\nFor KeyCloak it''s a URL that looks like:\r\nhttps://{DOMAIN}/realms/{REALMNAME}/.well-known/openid-configuration'
+  - name: 'IsEnabled'
+    description: 'Whether the identity provider should be enabled or disabled.\r\nWhen changing this to true, it will be enabled.\r\nWhen changing this to false, it will be disabled.\r\nEnabling and disabling is an asynchronous process and it take some time until it is triggered and procesed.'
+  - name: 'Type'
+    description: 'The type of the idp server, e.g. "keycloak"'

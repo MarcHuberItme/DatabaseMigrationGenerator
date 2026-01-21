@@ -1,0 +1,17 @@
+table:
+  name: 'PtPaymentSICPayCode'
+  description: 'Contains SIC Payment Codes as defined in SIC Manual. These code are used in SIC B10 Messages'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+  columns:
+  - name: 'SICPaymentCode'
+    description: 'Contains SIC Payment Codes as defined in SIC Manual. These code are used in SIC B10 Messages'
+    genericControls:
+      defColumnPos: 1

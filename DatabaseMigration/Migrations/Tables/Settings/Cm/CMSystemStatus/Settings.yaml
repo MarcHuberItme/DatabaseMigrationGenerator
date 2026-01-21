@@ -1,0 +1,24 @@
+table:
+  name: 'CMSystemStatus'
+  description: 'This table maintains status of the communication systems. The information in this table is used by ''Communication Gateway Out'', SIC query Server. And in future more systems will be using this information after their respective communication systems will be developed'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'SystemId'
+    description: 'This is the unique identifier of the system. This field does not physically refers to any  field but logically it should be the GUID of the communication system. For example in case of SIC, this value of this field should be the ''SIC Variation Id'', refer to Field ''ID'' of the table CMSICVariation.'
+  - name: 'Status'
+    description: 'If value of this field is true, the system is in ''Ready'' state.'
+  - name: 'Code'
+    description: 'Code of the communication system like SIC for Swiss Interbank Clearing and SICE in case of Euro SIC.'
+  - name: 'Queue'
+    description: 'Full path of the message queue on which the communication system is running. This information is used by ''Communication Gateway Up'' when it is started.'
+  - name: 'Credit'
+    description: 'Current credit size of the systrem'

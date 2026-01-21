@@ -1,0 +1,18 @@
+table:
+  name: 'PtExternalALEntryType'
+  description: 'Entry type  code for partner external / Internal asset entries'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'EntryType'
+    description: ''
+    genericControls:
+      defColumnPos: 1

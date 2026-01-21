@@ -1,0 +1,23 @@
+table:
+  name: 'NcRiskCategory'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0ebe92b4-009e-4d5f-b882-c8d9daf72042
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'CategoryKey'
+    description: ''
+  - name: 'Priority'
+    description: ''
+  - name: 'Label'
+    description: ''
+  - name: 'Description'
+    description: ''

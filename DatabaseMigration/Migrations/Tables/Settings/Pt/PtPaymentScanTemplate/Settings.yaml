@@ -1,0 +1,35 @@
+table:
+  name: 'PtPaymentScanTemplate'
+  description: 'Saves co-ordinates of fields of various slip types.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'ParamName'
+  columns:
+  - name: 'TemplateType'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentScanTemplateType'
+      refField: 'TypeNo'
+      defColumnPos: 1
+  - name: 'ParamName'
+    description: 'This field''s value should be the name of the fields in either table PtPaymentScan (if TemplateType is order slip) or PtPaymentScanDetail (if Template is payment slip).'
+    genericControls:
+      defColumnPos: 2
+  - name: 'StartX'
+    description: 'Starting position on X-axis (Position of top left pixel for container box). Top left of image is taken as (0,0).'
+    minValue: '0'
+  - name: 'StartY'
+    description: 'Starting position on Y-axis (Position of top left pixel for container box). Top left of image is taken as (0,0).'
+    minValue: '0'
+  - name: 'Width'
+    description: 'Width of container box (on x-axis)'
+    minValue: '0'
+  - name: 'Height'
+    description: 'Height of container box (on y-axis).'
+    minValue: '0'

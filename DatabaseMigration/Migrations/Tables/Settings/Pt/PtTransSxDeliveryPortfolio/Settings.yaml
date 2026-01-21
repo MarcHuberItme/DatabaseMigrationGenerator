@@ -1,0 +1,33 @@
+table:
+  name: 'PtTransSxDeliveryPortfolio'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'PrReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3

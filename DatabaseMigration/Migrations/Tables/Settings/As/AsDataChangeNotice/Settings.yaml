@@ -1,0 +1,20 @@
+table:
+  name: 'AsDataChangeNotice'
+  description: 'table will contain notifications whenever some data is inserted or added in table in Finstar. The table has to be explicitly marked via data definer and this setting is bank dependent'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'MasterId'
+    description: ''
+  - name: 'VersionNo'
+    description: ''
+  - name: 'TableName'
+    description: ''
+  - name: 'Status'
+    description: '0 = not process\r\n1 = selected for processing\r\n2 = processed'

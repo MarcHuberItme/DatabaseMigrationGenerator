@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaPortfolioWithRunId'
+  description: 'Delete, Insert Portfolios \r\nand Update Currency'

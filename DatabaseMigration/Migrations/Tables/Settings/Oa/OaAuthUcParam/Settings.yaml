@@ -1,0 +1,41 @@
+table:
+  name: 'OaAuthUcParam'
+  description: 'Configuration of Use Case Key Value Objects to pass to futurae\r\n'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: '2FA Auth UC Param Conf'
+    - german:
+        formTitle: '2FA Auth UC Param Conf'
+    - french:
+        formTitle: '2FA Auth UC Param Conf'
+    - italian:
+        formTitle: '2FA Auth UC Param Conf'
+  columns:
+  - name: 'UseCaseNo'
+    description: ''
+    minValue: '0'
+    genericControls:
+      refTable: 'OaAuthUseCase'
+      refField: 'UseCaseNo'
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'ParamName'
+    description: 'Parameter that can be passed and used in the text\r\ne.g. Parmeter is PhoneNo then in the the OaAuthUcKeyValue.Value field use the placeholder {PhoneNo} and it will be replaced by the passed value.'
+    genericControls:
+      defColumnPos: 2
+      noUpdatePos: 2
+  - name: 'IsOptional'
+    description: 'Define if the parameter is optional'
+    genericControls:
+      defColumnPos: 3
+      noUpdatePos: 3

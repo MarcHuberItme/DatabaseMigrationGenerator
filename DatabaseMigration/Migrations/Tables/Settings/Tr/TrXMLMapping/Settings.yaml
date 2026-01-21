@@ -1,0 +1,45 @@
+table:
+  name: 'TrXMLMapping'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'VariationCode'
+    description: ''
+    genericControls:
+      refTable: 'TrXMLStandardVariation'
+      refField: 'VariationCode'
+      defColumnPos: 1
+  - name: 'ExternalNameSpace'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ExternalSchemaName'
+    description: 'Full name with version information'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ToInternMapping'
+    description: 'Mapping implementation from external schema to Finstar modal'
+  - name: 'ToExternMapping'
+    description: 'Mapping implementation from Finstar data to eternal schema'
+  - name: 'ToResponseMapping'
+    description: 'Mapping implementation to generate response for an in-coming message'
+  - name: 'ExternalSchemaShortName'
+    description: 'short name without version information'
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ToReturnMapping'
+    description: 'Mapping to generate business return mapping based on original message received.'
+  - name: 'ToReturnRequestMapping'
+    description: 'Mapping to request return of payment based on oriignal messages sent'
+  - name: 'ToCancellationMapping'
+    description: 'Mapping to generated cancellation instruction, based on message already sent'

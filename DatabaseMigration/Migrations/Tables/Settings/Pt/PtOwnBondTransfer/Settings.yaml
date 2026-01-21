@@ -1,0 +1,115 @@
+table:
+  name: 'PtOwnBondTransfer'
+  description: 'Own Bond emission detail'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Own Bond emission'
+    - german:
+        formTitle: 'Kassenobligation Emission'
+  columns:
+  - name: 'OwnerPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SourcePortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'SourceDepositPfId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'SourceLocGroupId'
+    description: ''
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+  - name: 'SourceIsPhysical'
+    description: ''
+  - name: 'SourceHasCharges'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SourceNetAmount'
+    description: ''
+  - name: 'DestinationPortfolioId'
+    description: 'customer portfolio id where the issued bond will be placed'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DestinationDepositPfId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'DestinationLocGroupId'
+    description: ''
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+  - name: 'DestinationIsPhysical'
+    description: ''
+  - name: 'DestinationHasCharges'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'DestinationNetAmount'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'AccountRefId'
+    description: 'account to be debited... a customer account or the cash desk account'
+    genericControls:
+      refTable: 'PrReference'
+      refField: 'Id'
+  - name: 'ValueDate'
+    description: 'Valutadatum'
+  - name: 'ServiceCenterNo'
+    description: 'Geschäftsstelle'
+    genericControls:
+      refTable: 'AsProfitCenter'
+      refField: 'ProfitCenterNo'
+  - name: 'BondValue'
+    description: 'total bond value'
+  - name: 'CashDeskAccountNo'
+    description: 'Kassenkonto'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+  - name: 'TransactionId'
+    description: 'Bookin information about this emission'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'LanguageNo'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'ChargesTransText'
+    description: ''
+  - name: 'SendBondByMail'
+    description: ''
+  - name: 'SourcePortfolioTransText'
+    description: ''
+  - name: 'SourceDepositPfTransText'
+    description: ''
+  - name: 'DestinationPortfolioTransText'
+    description: ''
+  - name: 'DestinationDepositPfTransText'
+    description: ''

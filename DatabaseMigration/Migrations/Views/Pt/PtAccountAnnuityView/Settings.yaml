@@ -1,0 +1,3 @@
+view:
+  name: 'PtAccountAnnuityView'
+  description: 'View to get the list of annuities'

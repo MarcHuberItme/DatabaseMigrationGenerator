@@ -1,0 +1,44 @@
+table:
+  name: 'OaBusinessParameterSetting'
+  description: 'Client-Application-specific parameterization for business logic. OaBusinessParameter defines which parameters are available. Default values are provided by the parameterization of the Default application. The Parameters can be overridden for other client-applications by adding a record with the specific ApplicationCode and FullyQualifiedName.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'OaBusinessSetting'
+        helpText: 'Client-Application-specific parameterization for business logic'
+    - german:
+        formTitle: 'OaBusinessSetting'
+        helpText: 'Client-Application-spezifische Parametrierung von Business Logik'
+    - french:
+        formTitle: 'OaBusinessSetting'
+        helpText: 'Client-Application-spezifische Parametrierung von Business Logik'
+  columns:
+  - name: 'ApplicationCode'
+    description: 'Defines the application for which the business parameter is being set.\r\nDefault settings are set for the "Default" application.\r\nTogether with FullyQualifiedName this defines a unique key unless the parameter is an array.'
+    genericControls:
+      refTable: 'AsExternalApplication'
+      refField: 'ApplicationCode'
+      defColumnPos: 1
+  - name: 'FullyQualifiedName'
+    description: 'The name of the parameter that needs to be set,\r\nTogether with the ApplicationCode it forms a uniqe key unless the parameter is an array.\r\nThe "Default" application defines the default values for the parameter that are used unless the default is overridden for a specific client application.'
+    genericControls:
+      refTable: 'OaBusinessParameter'
+      refField: 'FullyQualifiedName'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'DictionaryKey'
+    description: 'This must be set if OaBusinessParameter.IsDictionary=1.\r\n\r\nExample:\r\nfs.product.private.currency.region\r\ncan have different values for different regions such as: Worldwide, Switzerland, Lenzburg, etc.\r\nIn this case region is the dictionary key'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Value'
+    description: 'The value of a parameter. Can be null if the parameter allows it.'
+    genericControls:
+      defColumnPos: 4

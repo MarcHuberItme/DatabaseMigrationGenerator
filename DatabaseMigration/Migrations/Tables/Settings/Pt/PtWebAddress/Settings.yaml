@@ -1,0 +1,40 @@
+table:
+  name: 'PtWebAddress'
+  description: 'to save WebAddresses of a Partner'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Web Address'
+    - german:
+        formTitle: 'Web Addressen'
+    - french:
+        formTitle: 'Web Adresse'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key; Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'WebAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 1
+  - name: 'Remarks'
+    description: 'Explanation of the web address'

@@ -1,0 +1,46 @@
+table:
+  name: 'ReBuildingConditionDetail'
+  description: 'condition detail of different building parts like kitchen, bathroom, lift etc.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'ReBuilding'
+      parentRelationField: 'BuildingId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Building Condition Detail'
+    - german:
+        formTitle: 'Gebäudezustand Detail'
+    - french:
+        formTitle: 'Détail de l''état bâtiment'
+    - italian:
+        formTitle: 'condizioni dell''edificio'
+  columns:
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ConditionDetailType'
+    description: ''
+    genericControls:
+      refTable: 'ReBuildingConditionDetailType'
+      refField: 'ConditionDetailType'
+      defColumnPos: 1
+  - name: 'ChoiceType'
+    description: ''
+    genericControls:
+      refTable: 'ReBuildingConditionChoiceType'
+      refField: 'Id'
+      defColumnPos: 2

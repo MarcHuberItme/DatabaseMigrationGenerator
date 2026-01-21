@@ -1,0 +1,80 @@
+table:
+  name: 'PrPublicText'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Instrument text'
+    - german:
+        formTitle: 'Instrumententext'
+  columns:
+  - name: 'PublicId'
+    description: 'VDF: FAD.VAI.K981.7842 (transformation with table PrPublic) \r\n'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'LanguageNo'
+    description: 'VDF: FAD.VAK.K982.9981 (exceptional, the text is copied from the main language)\r\nLanguage in which the text is'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'VdfLanguageNo'
+    description: 'VDF: FAD.VAK.K982.9981\r\nLanguage from which the text is created (normally main language)'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'VdfShortName'
+    description: 'VDF: FAD.VAK.7811\r\nShort name of instrument (delivered from VDF and user cann''t change this field)'
+  - name: 'VdfPreffix'
+    description: 'VDF: FAD.VAK.7813\r\nDetails of interest rate and multilingual instrument classification (delivered from VDF and user cann''t change this field)'
+  - name: 'VdfSuffix'
+    description: 'VDF: FAD.VAK.7814\r\nMaturity, serial numbers and special properties (delivered from VDF and user cann''t change this field)'
+  - name: 'VdfProductName'
+    description: 'VDF: FAD.VAP.7815'
+  - name: 'VdfProductBrand'
+    description: 'VDF: FAD.VAP.7818'
+  - name: 'VdfFisnTk'
+    description: 'VDF: FAD.VAL.7816'
+  - name: 'VdfFisn'
+    description: 'VDF: FAD.VAL.7817'
+  - name: 'ShortName'
+    description: 'Short name of instrument, normally the same as Field VdfShortName, but the user can change this field'
+  - name: 'Interest'
+    description: 'Interest of instrument'
+  - name: 'Preffix'
+    description: 'Preffix of instrumenttext, normally the same (without interest) as Field VdfPreffix, but the user can change this field'
+  - name: 'ValidityRange'
+    description: 'Start and maturity date of instrument'
+  - name: 'Suffix'
+    description: 'Suffix of instrumenttext, normally the same (without validity range) as Field VdfSuffix, but the user can change this field'
+  - name: 'ProductName'
+    description: 'Product name, normally the same as Field VdfProductName, but the user can change this field'
+  - name: 'ProductBrand'
+    description: 'Product brand, normally the same as Field VdfProductBrand, but the user can change this field'
+  - name: 'ShortNameManual'
+    description: 'Is set to true, if a user changes field ShortName'
+  - name: 'LongNameManual'
+    description: 'Is set to true, if a user changes one of the fields: Interest, Preffix, ValidityRange or Suffix'
+  - name: 'FisnTk'
+    description: ''
+  - name: 'Fisn'
+    description: ''

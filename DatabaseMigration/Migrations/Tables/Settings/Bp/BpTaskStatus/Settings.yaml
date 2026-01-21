@@ -1,0 +1,28 @@
+table:
+  name: 'BpTaskStatus'
+  description: 'JCS task status.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'JCS task status'
+    - german:
+        formTitle: 'JCS Task Status'
+    - french:
+        formTitle: 'JCS task status'
+    - italian:
+        formTitle: 'JCS task status'
+  columns:
+  - name: 'TaskStatus'
+    description: 'Current status of the task:\r\n0 = Waiting\r\n1 = Running\r\n2 = Finished\r\n3 = Failed'
+    genericControls:
+      defColumnPos: 1

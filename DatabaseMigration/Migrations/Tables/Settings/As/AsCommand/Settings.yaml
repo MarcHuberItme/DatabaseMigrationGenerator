@@ -1,0 +1,31 @@
+table:
+  name: 'AsCommand'
+  description: 'Commands and their translations. mainly for the multifunctional button.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Commands'
+    - german:
+        formTitle: 'Kommandos'
+  columns:
+  - name: 'CommandNo'
+    description: 'Number of the command.\r\nNever change CommandNumbers of CommandTyoe 0, because these numers are internally used for performance enhancements.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CommandType'
+    description: 'Type of the command:\r\n0 = DataManager  translation or static command\r\n1 = DataManager dynamic command\r\n2 = Commands for SubEntityCounter\r\n'
+    minValue: '0'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Command'
+    description: 'Name of the command as it is referenced in the programm code'
+    genericControls:
+      defColumnPos: 3

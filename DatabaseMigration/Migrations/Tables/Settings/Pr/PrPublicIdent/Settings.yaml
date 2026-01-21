@@ -1,0 +1,74 @@
+table:
+  name: 'PrPublicIdent'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Identification'
+    - german:
+        formTitle: 'Identifikation'
+    - french:
+        formTitle: 'Identification'
+  columns:
+  - name: 'PublicId'
+    description: 'VDF: FAD.VAI.K981.7842 (transformation with table PrPublic)\r\n         HXD.VAI.K981.7842 (transformation with table PrPublic)\r\n\r\n'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'IdentType'
+    description: 'VDF: FAD.NKN.K830.0981\r\nType of identification'
+    genericControls:
+      refTable: 'PrPublicIdentType'
+      refField: 'IdentType'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PublicTradingPlaceId'
+    description: 'VDF: HXD.GEI.K985.3801\r\n'
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'IdentText'
+    description: 'VDF: FAD.NKN.K830.7804\r\n         HXD.HLS.7805\r\nUnique national securities identification number or\r\nticker symbol'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IdentTextForSorting'
+    description: 'This field must be used for all kinds of sorting.\r\nIf the first chiffre of IdentText is numeric, this field contains additional leading Zeros and IdentText, so thal the field length is 16.\r\nIf the first chiffre of IdentText is not numeric, this field contains the same value as IdentText.'
+  - name: 'FromDate'
+    description: 'VDF: FAD.NKN.2811\r\n         HXD.HXA.2811\r\nInclusion date'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ToDate'
+    description: 'VDF: FAD.NKN.2812\r\n         HXD.HXA.2812\r\nDeletion date'
+  - name: 'SymbolStatusNo'
+    description: 'VDF: FAD.NKN.7843\r\nStatus of the instrument symbol'
+    genericControls:
+      refTable: 'PrPublicSymbolStatus'
+      refField: 'SymbolStatusNo'
+      defColumnPos: 5
+  - name: 'GeneratedFromListingSymbol'
+    description: ''
+  - name: 'PublicListingSymbolId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicListingSymbol'
+      refField: 'Id'

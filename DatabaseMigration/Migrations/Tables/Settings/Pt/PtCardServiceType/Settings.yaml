@@ -1,0 +1,26 @@
+table:
+  name: 'PtCardServiceType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'bank specific service typ'
+    - german:
+        formTitle: 'bankspez. Service Typ'
+    - french:
+        formTitle: 'type de service spécifiqu'
+  columns:
+  - name: 'ServiceType'
+    description: 'For bankkards this field controls the PIN creation (bankSpecificUse). Possible values:\r\n0 Bank service not used\r\n1 Bank service used without PIN\r\n2 Bank service used, with PIN'
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,81 @@
+table:
+  name: 'EtDeposit'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FsPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'FsChangeDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'FsExported'
+    description: ''
+  - name: 'FsSyncNo'
+    description: ''
+    genericControls:
+      refTable: 'EtSync'
+      refField: 'SyncNo'
+      hasDetailBtn: true
+  - name: 'FsTransferNo'
+    description: ''
+    genericControls:
+      refTable: 'EtTransfer'
+      refField: 'TransferNo'
+      hasDetailBtn: true
+  - name: 'dep_id'
+    description: ''
+  - name: 'crdt_id'
+    description: ''
+    genericControls:
+      refTable: 'EtCreditor'
+      refField: 'crdt_id'
+  - name: 'accounts'
+    description: ''
+  - name: 'valid_from'
+    description: ''
+  - name: 'valid_to'
+    description: ''
+  - name: 'generate_report'
+    description: ''
+  - name: 'jur_1'
+    description: ''
+  - name: 'lang_1'
+    description: ''
+  - name: 'gen_rep_1'
+    description: ''
+  - name: 'jur_2'
+    description: ''
+  - name: 'lang_2'
+    description: ''
+  - name: 'gen_rep_2'
+    description: ''
+  - name: 'jur_3'
+    description: ''
+  - name: 'lang_3'
+    description: ''
+  - name: 'gen_rep_3'
+    description: ''
+  - name: 'gen_dep_grp'
+    description: ''
+  - name: 'CH_canton'
+    description: ''
+  - name: 'depot_name'
+    description: ''
+  - name: 'cmnt'
+    description: ''
+  - name: 'status'
+    description: ''

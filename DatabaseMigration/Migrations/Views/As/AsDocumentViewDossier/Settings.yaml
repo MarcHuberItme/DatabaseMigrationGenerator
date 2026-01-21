@@ -1,0 +1,85 @@
+view:
+  name: 'AsDocumentViewDossier'
+  description: 'As document view with dossier extension'
+frontendView:
+  name: 'AsDocumentViewDossier'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 1
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 2
+  - name: 'DocumentNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 3
+  - name: 'NumPages'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Type'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+      defColumnPos: 5
+  - name: 'VirtualDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'Format'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      refTable: 'AsDocumentFormat'
+      refField: 'Format'
+      defColumnPos: 7
+  - name: 'RecordDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 8
+  - name: 'StatusNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsDocumentStatus'
+      refField: 'StatusNo'
+      defColumnPos: 9
+  - name: 'PrivacyGroupNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsPrivacyGroup'
+      refField: 'PrivacyGroupNo'
+  - name: 'DocumentGroup'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'AsDocumentGroup'
+      refField: 'GroupCode'
+  - name: 'DossierNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsDossier'
+      refField: 'DossierNo'

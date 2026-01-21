@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountWarnings_old'
+  description: 'read account blockings, warnings and remarks from MgXS40 that contain words related to blockings'

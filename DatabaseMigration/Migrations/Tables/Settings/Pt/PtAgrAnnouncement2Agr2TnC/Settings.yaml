@@ -1,0 +1,34 @@
+table:
+  name: 'PtAgrAnnouncement2Agr2TnC'
+  description: 'Intermediate table between the contractual terms and conditions, the e-banking event and the e-banking constract.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'AnnouncementId'
+    description: 'Unique identifier of an announcement (foreign key which references the primary key on the PtAgrAnnouncement table)'
+    genericControls:
+      refTable: 'PtAgrAnnouncement'
+      refField: 'Id'
+  - name: 'TermsAndConditionsId'
+    description: 'Id to the terms and conditions table'
+    genericControls:
+      refTable: 'PtAgrTermsAndConditions'
+      refField: 'Id'
+  - name: 'AgreementId'
+    description: 'Identifier for an e banking agreement id'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'AnnouncementSeenAt'
+    description: 'Date when the announcement was seen by the e-banking user'
+  - name: 'TermsAndConditionsAcceptedAt'
+    description: 'Date when the user accepted the terms and conditions'

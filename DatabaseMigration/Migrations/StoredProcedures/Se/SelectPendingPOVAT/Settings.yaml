@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'SelectPendingPOVAT'
+  description: 'Select pending payment order VAT'

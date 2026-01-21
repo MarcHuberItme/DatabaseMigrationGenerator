@@ -1,0 +1,28 @@
+table:
+  name: 'AsProfileValue'
+  description: 'Contains the property values of a certain system- or user profile.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Profile Value'
+    - german:
+        formTitle: 'Profilwerte'
+  columns:
+  - name: 'UserProfileId'
+    description: 'Id of the user profile the properties belong to'
+    genericControls:
+      refTable: 'AsProfileUser'
+      refField: 'Id'
+  - name: 'ControlName'
+    description: 'Name of the control the properties belong to.'
+  - name: 'PropertyName'
+    description: 'Name of the property which receives the PropertyValue.'
+  - name: 'PropertyValue'
+    description: 'Value to be assigne the property defined in ''PropertyName''.'

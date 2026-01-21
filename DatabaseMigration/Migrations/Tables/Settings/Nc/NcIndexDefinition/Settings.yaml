@@ -1,0 +1,48 @@
+table:
+  name: 'NcIndexDefinition'
+  description: 'Definition of a NameMatching-Index'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0ebe92b4-009e-4d5f-b882-c8d9daf72042
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'IndexId'
+    uiTableDescription:
+    - english:
+        formTitle: 'IndexDefinition NameMatch'
+    - german:
+        formTitle: 'Indexdefinition Namematch'
+  columns:
+  - name: 'PersonSelectionView'
+    description: 'Name of CoucheDB-View. Defines the selection of persons.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'OrganisationSelectionView'
+    description: 'Name of CoucheDB-View. Defines the selection of organisations.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IndexId'
+    description: ''
+    genericControls:
+      refTable: 'NcIndex'
+      refField: 'Id'
+  - name: 'IsIncrementalIndex'
+    description: 'Dethermines whether it is an incremental or full index.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'SearchProperties'
+    description: 'JSON-String of the search properties.'
+    genericControls:
+      multiLine: true
+  - name: 'ValidFrom'
+    description: 'Specifies the time from when the index is valid to use. In case of an incremental index this field is used also as start point for the first run.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'IsActiv'
+    description: 'Specifies if the index is activ or not.'
+    genericControls:
+      defColumnPos: 5

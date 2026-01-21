@@ -1,0 +1,278 @@
+view:
+  name: 'PtTransItemFull'
+  description: '2023-08-02/FIN-9318/daga: condition added for PtTransItem HdVersionNo between 1 and 999999998'
+frontendView:
+  name: 'PtTransItemFull'
+  description: 'View which is Unioning PtTransitem (where DetailCounter == 1) and PtTransItemDetail (where DetailCounter is equal or bigger than 2)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransId'
+    description: 'Refers to PtTransItem.TransId or PtTransItemDetail.TransactionId (t (Union in View!)'
+    dataType: 'uniqueidentifier'
+  - name: 'TransItemId'
+    description: 'Refers to PtTransItem.Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtTransItem'
+      refField: 'Id'
+  - name: 'DebitAmount'
+    description: 'Refers to PtTransItem.DebitAmount or PtTransItemDetail.DebitAmount (Union in View!)'
+    dataType: 'money'
+    isNotNull: true
+    scale: 4
+  - name: 'PositionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'MessageId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'SourcePositionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'GroupKey'
+    description: ''
+    dataType: 'varchar'
+    prec: 30
+  - name: 'DetailCounter'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+  - name: 'TransMsgStatusNo'
+    description: ''
+    dataType: 'int'
+  - name: 'RealDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'TransDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'TransDateTime'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'ValueDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'TradeDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'IsInterestPayment'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'DebitQuantity'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    scale: 4
+  - name: 'CreditQuantity'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    scale: 4
+  - name: 'CreditAmount'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    scale: 4
+  - name: 'RateAcCuPfCu'
+    description: ''
+    dataType: 'float'
+  - name: 'SourceAmountCvAcCu'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'RateSourceAcCuPfCu'
+    description: ''
+    dataType: 'float'
+  - name: 'SourceCvAmountTypeNo'
+    description: ''
+    dataType: 'int'
+  - name: 'TextNo'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+  - name: 'MainTransText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+  - name: 'TransText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+  - name: 'CounterParty'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 255
+  - name: 'ServiceCenterNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+  - name: 'MatchingCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 32
+  - name: 'Project'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'PeriodFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'PeriodTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'BudgetValue'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'VatCode'
+    description: ''
+    dataType: 'smallint'
+  - name: 'AdvicePrinted'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'BookletPrintDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'BookletPageNo'
+    description: ''
+    dataType: 'int'
+  - name: 'BookletLineNo'
+    description: ''
+    dataType: 'int'
+  - name: 'CompletionDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'IsClosingItem'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsDueRelevant'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsSuspicious'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'MgVrxBuNr'
+    description: ''
+    dataType: 'decimal'
+    prec: 15
+  - name: 'MgBuffer'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'MgBetragSfr'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'MgSpesen'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'MgMenge'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'MgHandelsWrg'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'MgKurs'
+    description: ''
+    dataType: 'decimal'
+    prec: 28
+    scale: 10
+  - name: 'MgBruttoHandelsWrg'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'MgChange'
+    description: ''
+    dataType: 'float'
+  - name: 'MgNettoKundenWrg'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'MgDepNr'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+  - name: 'MgValidNrAnrecht'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+  - name: 'MgLabDat'
+    description: ''
+    dataType: 'datetime'
+  - name: 'MgLabVal'
+    description: ''
+    dataType: 'datetime'
+  - name: 'MgLabSaldo'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'MgLabAuszug'
+    description: ''
+    dataType: 'datetime'
+  - name: 'CardNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'SourceKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'ClearingNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'IsInactive'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'DetailsOnStatement'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AmountCvAcCu'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CvAmountTypeNo'
+    description: ''
+    dataType: 'int'
+  - name: 'CvBookStatusNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'SourceCvBookStatusNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'SourcePoslsCvRelevant'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'TransItemDetailId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'

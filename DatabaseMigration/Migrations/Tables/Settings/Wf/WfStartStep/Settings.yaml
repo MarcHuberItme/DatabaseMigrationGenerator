@@ -1,0 +1,32 @@
+table:
+  name: 'WfStartStep'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'MapNo'
+    description: ''
+    genericControls:
+      refTable: 'WfMap'
+      refField: 'MapNo'
+  - name: 'InVariableSet'
+    description: ''
+  - name: 'Label'
+    description: ''
+  - name: 'Description'
+    description: ''
+  - name: 'GroupNumber'
+    description: ''
+  - name: 'Position_X'
+    description: ''
+  - name: 'Position_Y'
+    description: ''
+  - name: 'StepNo'
+    description: ''

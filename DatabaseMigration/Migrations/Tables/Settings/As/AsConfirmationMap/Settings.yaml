@@ -1,0 +1,29 @@
+table:
+  name: 'AsConfirmationMap'
+  description: 'Contains the name of the worflow map which is used for a specific table.\r\nBy default, the workflow map is taken form the programm parameter Workflow->ConfirmationMap. This table contains only variations of the default.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Confirmation Maps'
+    - german:
+        formTitle: 'Visierungs-Workflows'
+  columns:
+  - name: 'TableName'
+    description: 'Contains a table name\r\n- for single record confirmation, the edited table\r\n- for group confirmation, the root table name'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 1
+  - name: 'WorkflowMap'
+    description: 'Name of the workflow map. Since the same name can appear in several versions in WfMap, we can not define referential integrity to WfMap.'
+    genericControls:
+      defColumnPos: 2

@@ -1,0 +1,103 @@
+table:
+  name: 'PtOpenIssue'
+  description: 'Open issues of a partner\r\nthe open issue should be handled on the next visit of the client (the entries in the open issue table could opend manually or automatically for an oms-application (for example if the client has to sign a given order (payment)).\r\n\r\nEffektive Pendenzen, die beim Kunden gespeichert werden, unterscheiden sich von den Reklamationen (die sind als WF-Orders erfasst). Beispiel einer Pendenz: Ausbildungsende (=Termin). Es gibt sogennante Summenpendenzen, z.B. für den Hinweis, dass ein Kunde telefonisch (u.ä.) erteilte Aufträge visieren muss.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'open issue'
+    - german:
+        formTitle: 'Pendenz'
+    - french:
+        formTitle: 'Points en suspens'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key;  Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'TypeNo'
+    description: 'foreign-key;  candidate-key of PtOpenIssueType (OpenIssueTypeNo)\r\n(for unsigned payment orders exists only one uncompleted entry.\r\nnachrichtenlos = 90 (fix) = MoneyLaunderSuspect = 2'
+    genericControls:
+      refTable: 'PtOpenIssueType'
+      refField: 'TypeNo'
+      defColumnPos: 1
+  - name: 'Alert'
+    description: 'checkbox - if checked - it''s an important issue that should be displayed every time whether a partner contact takes place'
+  - name: 'StatusNo'
+    description: 'foreign-key;  candidate-key of PtOpenIssueStatus (OpenIssueStatusNo)\r\n5 = offen (fix)'
+    genericControls:
+      refTable: 'PtOpenIssueStatus'
+      refField: 'StatusNo'
+      defColumnPos: 2
+  - name: 'TargetDate'
+    description: 'Target Date ("Termin")'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ActivationDate'
+    description: 'on this date the workflow will be started'
+    genericControls:
+      defColumnPos: 5
+  - name: 'CompletionDate'
+    description: 'Date of completion (depend on OpenIssueType) - the last step in the activated WF has to write the completion date in that table'
+  - name: 'InitiatorId'
+    description: 'foreign-key;  Id of AsUser - Mitarbeiter, der die Pendenz initiiert hat.'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'ContactPersonId'
+    description: 'if a certain contact person is responsible for the open issue'
+    genericControls:
+      refTable: 'PtContactPerson'
+      refField: 'Id'
+  - name: 'Remark'
+    description: 'notices'
+    genericControls:
+      multiLine: true
+  - name: 'ProcessId'
+    description: 'based on a open issue a workflow can be initiated - the ProcessId of the started Workflow map is stored in this field.'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'RemarkDate1'
+    description: 'Bilanz Abschluss-Stichtag'
+  - name: 'RemarkDate2'
+    description: 'Bilanz-Abschluss-Eingangsdatum'
+  - name: 'RemarkDate3'
+    description: 'Bilanz-Abschluss-Vorlage (VRA) - Datum'
+  - name: 'AccountId'
+    description: 'in case a open issue is for a specific account, this field is filled'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ResponsibleId'
+    description: 'foreign-key;  Id of AsUser - Mitarbeiter, der für die Pendenz verantwortlich ist'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6

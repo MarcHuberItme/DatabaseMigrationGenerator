@@ -1,0 +1,72 @@
+table:
+  name: 'AsCorrItem'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'possible document types'
+    - german:
+        formTitle: 'mögliche Dokumente'
+    - french:
+        formTitle: 'Types de documents possib'
+  columns:
+  - name: 'ItemNo'
+    description: 'Number is used for SQL-Selection'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ForInset'
+    description: '0 = not inset item (keine Beilage)\r\n1 = is inset item (ist eine Beilage)'
+  - name: 'SheetEquivalent'
+    description: 'Number of sheets that is substituted by this inset.\r\nIs used for calculation the number of sheets that fits together with this inset in an envelope.'
+  - name: 'MgDocType'
+    description: 'e.g. ZVAV .....'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'IsDocPrefolded'
+    description: ''
+  - name: 'ForImmediateMailing'
+    description: '0 = according to correspondance instruction / gemäss Korr. Regel\r\n1 = immediate mailing / Sofort Versand - unabhängig der Regel (z.B. Hypotheken-Zinsenavisierungen, Börsenabrechnungen)\r\n\r\nApplication (e.g. Stock Exchange) has to prepare the correct mail periode / die betreffenden Applikationen müssen die Mailaufbereitung per richtigem Datum machen, d.h. ,müssen dieses Flag interpretieren.'
+  - name: 'IsEMailPossible'
+    description: '0 = E-Mail Versand ist nicht möglich\r\n1 = E-Mail Versand ist möglich\r\n\r\nApplikation muss allenfalls CarrierType übersteuern, e.g. CarrierType ist E-Mail ... Taschenkalender ist aber IsEMailPossible = 0, d.h. die Applikation muss den CarrierType in der Regel übersteuern.'
+  - name: 'ShowBalance'
+    description: 'If TRUE, for this type of Corr Items, additional balance information is included in XML when generating print instructions from AsMailOutput table.'
+  - name: 'DocumentGroup'
+    description: ''
+    genericControls:
+      refTable: 'AsDocumentGroup'
+      refField: 'GroupCode'
+      defColumnPos: 2
+  - name: 'PtExpenseTypeNo'
+    description: 'Portfolio type commission type number which shall be used for this corr type. If NULL, no commission exists.'
+    genericControls:
+      refTable: 'PrExpenseType'
+      refField: 'ExpenseTypeNo'
+  - name: 'PrExpenseTypeNo'
+    description: 'Product expense type number which shall be used for this corr type. If NULL, no commission exists.'
+    genericControls:
+      refTable: 'PrExpenseType'
+      refField: 'ExpenseTypeNo'
+  - name: 'ForEBanking'
+    description: '0 = im E-Banking nicht anzeigen\r\n1 = im E-Banking anzeigen'
+  - name: 'AddressSheetRequired'
+    description: 'True if thedocument requires an extra address sheet'
+  - name: 'EsrOnLastPage'
+    description: 'True if last page of document has to be an ESR-form'
+  - name: 'IsPrivacyRelevant'
+    description: 'If True, the document will be unavailable for users with no privacy authorization.'
+  - name: 'FunctionGroupNo'
+    description: 'Is used to assign function permission to certain "document-types"'
+    genericControls:
+      refTable: 'AsFunctionGroup'
+      refField: 'FunctionGroupNo'
+      hasDetailBtn: true

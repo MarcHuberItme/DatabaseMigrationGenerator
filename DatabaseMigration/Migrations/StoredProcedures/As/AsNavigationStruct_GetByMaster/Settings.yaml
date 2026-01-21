@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AsNavigationStruct_GetByMaster'
+  description: 'Retrieves the navigation structrue for a given MasterId\r\n2022-02-28/ram: add LEFT OUTER JOIN AsNavigationFolder'

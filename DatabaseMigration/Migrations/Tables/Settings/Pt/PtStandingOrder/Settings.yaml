@@ -1,0 +1,274 @@
+table:
+  name: 'PtStandingOrder'
+  description: 'standing orders\r\n(VRX table = GD20)\r\nStanding orders are not for Bank internal use (no MwSt logic).\r\nCharges are acquired by a seperate rule.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 2
+    cacheLevel: 1
+    descField: 'OrderNo'
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'standing order'
+    - german:
+        formTitle: 'Dauerauftrag'
+    - french:
+        formTitle: 'Ordre permanent'
+  columns:
+  - name: 'AccountId'
+    description: 'debit account id'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      createNavigationIndex: true
+  - name: 'DebitReferenceId'
+    description: 'has to be stored by first data entry (for  client accounts normally only one currecy exists)'
+    genericControls:
+      refTable: 'PrReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditPortfolioId'
+    description: 'to select only one position it''s necessary to have PortfolioId and ReferenceId'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditReferenceId'
+    description: 'used for payments and security transactions (z.B. Fonds-Sparen und Entnahme)'
+    genericControls:
+      refTable: 'PrReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PayeeId'
+    description: 'External Payee used for that standing order.\r\nIf it is given, then CreditPortfolio and CreditReferenceId are NULL.'
+    genericControls:
+      refTable: 'AsPayee'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 10
+  - name: 'OrderNo'
+    description: 'sequence number of the standing orders within an account'
+    minValue: '1'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'OrderType'
+    description: '0 = Payment / Fondssparen (FundsSaving)\r\n1 = LSV / Fondsentnahme(FundsWithdrawal)'
+  - name: 'PeriodRuleNo'
+    description: 'date of execution (monday, etc.)'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 3
+  - name: 'PeriodRuleBase'
+    description: 'out from first selection date ... without year'
+    genericControls:
+      defColumnPos: 7
+  - name: 'MaxSelection'
+    description: 'indicates how many times the standing order should be processed.\r\nthe standing order should not executed more than the mentioned number in that field (this field won''t be decremented)\r\nIf the number is reached but the standing order is still valid, the execution need a authorization (over Workflow).'
+  - name: 'FirstSelectionDate'
+    description: 'first selection date'
+  - name: 'PreviousSelectionDate'
+    description: 'the previous selection date of this standing order'
+    genericControls:
+      isNoUpdate: true
+  - name: 'NextSelectionDate'
+    description: 'Is the result of the interpretation of PeriodRule at opening a standing order and after every selection of a payment.'
+  - name: 'FinalSelectionDate'
+    description: 'final selection date. It is the expiration of standing order.'
+  - name: 'PreviousExecutionDate'
+    description: 'date of the previous execution'
+    genericControls:
+      isNoUpdate: true
+  - name: 'SelectionCounter'
+    description: 'numbers of execution times up to now.\r\nnumber of execution until today (max. value = MaxSelection)'
+  - name: 'NokCounter'
+    description: 'This counter is incremented each time a Standing Order payment failes.\r\nIn case of a succeeded payment, the counter is set to zero (similar to the password handling).'
+  - name: 'SuspendFrom'
+    description: 'start of the period (excl.)'
+  - name: 'SuspendTo'
+    description: 'end of the period (incl.)'
+  - name: 'PaymentCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'PaymentAmount'
+    description: 'NULL = Amount must be defined over PreDefinedAmount ! (Im Falle von NULL, muss es einen vordefinierten Betrag haben, z.B. Privor) ) (PtStandingOrderPreDefAmount)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'BalanceLimit'
+    description: 'dependency balance amount (this amount should be left after execution of the standing order !)\r\nÜbersteigt der Kontosaldo diesen Betrag, so wird der Restsaldo (der in diesem Feld erfasste Betrag) übersteigende Betrag als Zahlung ausgeführt. Falls Zahlungsbetrag ausgefüllt, gilt dieser als Maximalbetrag der Ausführung. Ist der Zahlungsbetrag nicht gefüllt, wir der volle Betrag überwiesen, der die Grenze übersteigt.'
+  - name: 'PaymentAmountMin'
+    description: 'Minimum Zahlungsbetrag im Fall "BalanceLimit"\r\nDifferenz Kontosaldo/Balancelimit'
+  - name: 'FullPayment'
+    description: 'Sobald BalanceLimit überschritten wird, wird der gesamte Zahlungsbetrag ausgeführt. Es gilt kein Minimum.\r\n0 = BalanceLimit Logik gilt (Saldo - BalcanceLimit) / 1 = Full Payment'
+  - name: 'SalaryFlag'
+    description: 'YES = salary payment'
+  - name: 'ChargeBorneTypeNo'
+    description: 'Who has to pay the expenses, ordering or beneficiary party or both half of the amount ?SWIFT: BEN, OUR, SHA\r\n\r\nThis field will be set in PtPaymentOrderDetail.ChargeOptionText when generating the payment order. 12.02.07/mct'
+    genericControls:
+      refTable: 'PtChargeBorneType'
+      refField: 'ChargeBorneTypeNo'
+  - name: 'PaymentInformation'
+    description: 'Reason for payment'
+    genericControls:
+      multiLine: true
+  - name: 'ReferenceNo'
+    description: 'ESR Reference number\r\n15 / 16 or 27 digits'
+  - name: 'InterventionCodeId'
+    description: 'the standing order does never execute automatically (i.e. without confirmation of a bank employee).'
+    genericControls:
+      refTable: 'AsInterventionCode'
+      refField: 'Id'
+  - name: 'Remark'
+    description: 'internal remarks'
+    genericControls:
+      multiLine: true
+  - name: 'BlockedForPartner'
+    description: 'true = is blocked for modifications through the partner (e.g over Internet)\r\nfalse = can be changed trough a partner (default)'
+  - name: 'EBankingId'
+    description: 'Standingorder was enterd by this user.\r\n\r\nEBankingId, EBankingIdVisum1 and EBankingIdVisum2 have to be filled in. Otherwise the standingorder will not accomplished.'
+    genericControls:
+      refTable: 'PtAgrEBankingView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransTypeOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtTransTypeOrig'
+      refField: 'TransTypeOrig'
+      defColumnPos: 5
+  - name: 'DelDate'
+    description: 'zu diesem Zeitpunkt wurde der Record gelöscht, wenn durch den Kunden selbst über E-Banking (->DelEBankingId ->  ist hier die Vertrags-Id gespeichert)'
+  - name: 'DelEBankingId'
+    description: 'durch diesen E-Banking-User wurde der Record gelöscht'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DelRemark'
+    description: 'Bemerkung, warum der Eintrag gelöscht wurde. Wenn der Eintrag durch einen Mitarbeiter gelöscht wurde, soll im E-Banking der Test nicht mutiert werden können. Nur angezeigt.'
+    genericControls:
+      multiLine: true
+  - name: 'RejectFlag'
+    description: '0 = Accepted\r\nNon-zero = Rejected for some reasons. (We can define specific rejecting flags later)\r\n\r\n101-Workflow initiated'
+    genericControls:
+      defColumnPos: 7
+  - name: 'EBankingIdVisum1'
+    description: 'StandingOrder was signed by this user.\r\n\r\nEBankingId, EBankingIdVisum1 and EBankingIdVisum2 have to be filled in. Otherwise the standingorder will not accomplished.\r\n\r\nThis will be filled automatically if a user CanSignOrder and hasn''t any LimitValues (PtAgrEbankingDetail).'
+    genericControls:
+      refTable: 'PtAgrEBankingView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'EBankingIdVisum2'
+    description: 'Standingorder was signed by this user.\r\n\r\nEBankingId, EBankingIdVisum1 and EBankingIdVisum2 have to be filled in. Otherwise the standingorder will not accomplished.\r\n\r\nThis will be filled automatically if a user CanSignOrder and hasn''t any LimitValues (PtAgrEbankingDetail).'
+    genericControls:
+      refTable: 'PtAgrEBankingView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'PreDefTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtStandingOrderPreDefType'
+      refField: 'PreDefTypeNo'
+  - name: 'PrintDate'
+    description: ''
+  - name: 'RejectedEbankingAddress'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'UsageNo'
+    description: 'as payment, cover and invest'
+    genericControls:
+      refTable: 'PtStandingOrderUsage'
+      refField: 'UsageNo'
+      defColumnPos: 10
+  - name: 'ValueDatePlus'
+    description: 'days delayed for ValueDate'
+  - name: 'PublicId'
+    description: 'security selected for the investment'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SecurityPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SenderRemarks'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'AllocPercent'
+    description: 'The percentage allocated to this investment order from the valid amount'
+  - name: 'OrderStyleNo'
+    description: ''
+    genericControls:
+      refTable: 'PtStandingOrderStyle'
+      refField: 'OrderStyleNo'
+  - name: 'StructuredCreditorReference'
+    description: 'Structured Creditor Reference (SCOR) for IBAN payments'
+  - name: 'OriginalSenderName'
+    description: 'Full ultimate debtor name.\r\n1-1 to ISO 20022 Message'
+  - name: 'OriginalSenderStreetName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'OriginalSenderBuildingNo'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'OriginalSenderPostCode'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'OriginalSenderTownName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'OriginalSenderCountry'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'EndBeneficiaryName'
+    description: 'Full ultimate creditor name.\r\n1-1 to ISO 20022 Message'
+  - name: 'EndBeneficiaryStreetName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'EndBeneficiaryBuildingNo'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'EndBeneficiaryPostCode'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'EndBeneficiaryTownName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'EndBeneficiaryCountry'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'AlternativeParameter1'
+    description: 'QR-Bill Alternative Parameter (Alternatives Verfahren)'
+  - name: 'AlternativeParameter2'
+    description: 'QR-Bill Alternative Parameter (Alternatives Verfahren)'
+  - name: 'AdditionalPaymentInfo'
+    description: 'Payment information from QR-Bill (Field StrdBkgInf)'
+  - name: 'CustConfirmationTime'
+    description: ''
+  - name: 'CustomerConfirmationPending'
+    description: ''
+  - name: 'ReferenceType'
+    description: 'Referenztyp (QR, ISO)\r\nDie folgenden Codes sind zugelassen:\r\nQRR: QR-Referenz\r\nSCOR: Creditor Reference (ISO 11649)\r\nNON: ohne Referenz'
+  - name: 'PersonalNote'
+    description: 'Allows customer to add own payment notes'
+  - name: 'LastCapital'
+    description: 'for multiple investment standing order, as sub-balance'
+  - name: 'LastCapitalDateTime'
+    description: 'for multiple investment standing order, as the datetime that LastCapital checked'
+  - name: 'RealLeftOver'
+    description: 'LeftOver after validated with trade payment in last period'

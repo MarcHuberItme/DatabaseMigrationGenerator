@@ -1,0 +1,64 @@
+table:
+  name: 'AccountNumberRestore'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 3
+    groupId: ed24bd87-1b5f-4231-b64b-f2cc5ca68d5d
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'AccountNoEdited'
+  columns:
+  - name: 'PortfolioId'
+    description: 'foreign-key; Id of PtPortfolio'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountId'
+    description: ''
+  - name: 'AccountNo'
+    description: 'candidate-key; account identificationnumber'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'AccountNoText'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'AccountNoEdited'
+    description: 'not for manual input, but for display'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'AccountNoIbanElect'
+    description: 'IBAN Number for electronic use.\r\ne.g.:\r\nCH7208307000123456300'
+  - name: 'AccountNoIbanForm'
+    description: 'Formatted IBAN for paper use.\r\ne.g.: IBAN CH72 0830 7000 1234 563 0\r\n'
+  - name: 'CustomerReference'
+    description: 'Description of Account (View of Partner)\r\n*** Warning: Must remain 30 chars as long as VRX-Migration is active\r\n*** nmu 13.7.2004 : 100 chars for main ledger accounts'
+    genericControls:
+      defColumnPos: 3
+  - name: 'OpeningDate'
+    description: 'Date of Account Opening'
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'MotiveToOpenNo'
+    description: 'foreign-key;  candidate-key of AsMotiveOpenType (MotiveOpenTypeNo)'
+    genericControls:
+      refTable: 'AsMotiveOpenType'
+      refField: 'MotiveOpenTypeNo'
+  - name: 'TerminationDate'
+    description: 'Date of Account closing'
+  - name: 'TerminationRemark'
+    description: 'remarks about reasons of termination the account'
+    genericControls:
+      multiLine: true
+  - name: 'ProductId'
+    description: ''
+    genericControls:
+      refTable: 'PrBase'
+      refField: 'Id'

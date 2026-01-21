@@ -1,0 +1,21 @@
+table:
+  name: 'RePfBLoanHistory'
+  description: 'Table used to store the history of PfBLoan data. \r\nRecords are introduced and updated by a stored procedure, executed daily'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Historization of PfBLoans'
+    - german:
+        formTitle: 'Historisierung PfB-Loans'
+  columns:
+  - name: 'SumLoans'
+    description: 'Amount of PfB Loans at the historization date'
+  - name: 'DateHistory'
+    description: 'Date of the historization.'

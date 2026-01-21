@@ -1,0 +1,3 @@
+view:
+  name: 'Credit2LimitsGrantedView'
+  description: 'Replacement for PtPositionView and PtAccountCompValuesValidView, it''s used when HasCredit2Active is true'

@@ -1,0 +1,112 @@
+table:
+  name: 'PtRatingPrivateCalc'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtRatingPrivateCalc'
+        helpText: 'PtRatingPrivateCalc'
+    - german:
+        formTitle: 'PtRatingPrivateCalc'
+        helpText: 'PtRatingPrivateCalc'
+  columns:
+  - name: 'PartnerID'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'Date'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'InterestBearing1'
+    description: ''
+  - name: 'InterestRate1'
+    description: ''
+  - name: 'InterestPaid1'
+    description: ''
+  - name: 'InterestBearing2'
+    description: ''
+  - name: 'InterestRate2'
+    description: ''
+  - name: 'InterestPaid2'
+    description: ''
+  - name: 'InterestBearing3'
+    description: ''
+  - name: 'InterestRate3'
+    description: ''
+  - name: 'InterestPaid3'
+    description: ''
+  - name: 'PaybackDesp'
+    description: ''
+  - name: 'Payback'
+    description: ''
+  - name: 'PropertyExpenseDesp'
+    description: ''
+  - name: 'PropertyExpense'
+    description: ''
+  - name: 'RentNetDesp'
+    description: ''
+  - name: 'RentNet'
+    description: ''
+  - name: 'OtherRegularCostDesp'
+    description: ''
+  - name: 'OtherRegularCost'
+    description: ''
+  - name: 'InterestInOutRatio'
+    description: ''
+  - name: 'TotalExpenses'
+    description: ''
+  - name: 'EarningNetLgDesp'
+    description: ''
+  - name: 'EarningNetLg'
+    description: ''
+  - name: 'SecEarningNetLgDesp'
+    description: ''
+  - name: 'SecEarningNetLg'
+    description: ''
+  - name: 'MoreEarningNetLgDesp'
+    description: ''
+  - name: 'MoreEarningNetLg'
+    description: ''
+  - name: 'DebtLgDesp'
+    description: ''
+  - name: 'DebtLg'
+    description: ''
+  - name: 'CostIncomeRatio'
+    description: ''
+  - name: 'NetIncome1'
+    description: ''
+  - name: 'NetIncome2Desp'
+    description: ''
+  - name: 'NetIncome2'
+    description: ''
+  - name: 'TotalIncome'
+    description: ''
+  - name: 'IncomeRatio1'
+    description: ''
+  - name: 'IncomeRatio2'
+    description: ''
+  - name: 'BlankCredit'
+    description: ''
+  - name: 'BlankRatio'
+    description: ''
+  - name: 'Remark'
+    description: ''
+  - name: 'ProcessDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ProcessPerson'
+    description: ''

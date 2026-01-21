@@ -1,0 +1,29 @@
+table:
+  name: 'AsInterfaceConv'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'InterfaceTableId'
+    description: ''
+    genericControls:
+      refTable: 'AsInterfaceTable'
+      refField: 'Id'
+  - name: 'InternalCode'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ExternalCode'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ExternalFormat'
+    description: ''

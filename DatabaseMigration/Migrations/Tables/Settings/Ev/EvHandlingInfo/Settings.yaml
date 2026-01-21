@@ -1,0 +1,69 @@
+table:
+  name: 'EvHandlingInfo'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'EvBase'
+      parentTable: 'EvBase'
+      parentRelationField: 'EventId'
+      parentIdField: 'Id'
+  columns:
+  - name: 'EventId'
+    description: ''
+    genericControls:
+      refTable: 'EvBase'
+      refField: 'Id'
+  - name: 'HandlingStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'EvHandlingStatus'
+      refField: 'HandlingStatusNo'
+  - name: 'ReplyClient'
+    description: ''
+  - name: 'ReplyDepositary'
+    description: ''
+  - name: 'TransferDepositary'
+    description: ''
+  - name: 'Depositary'
+    description: ''
+  - name: 'UserName'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'PeriodStartDate'
+    description: ''
+  - name: 'PeriodEndDate'
+    description: ''
+  - name: 'RigthsTradingFrom'
+    description: ''
+  - name: 'RigthsTradingTo'
+    description: ''
+  - name: 'InfoRestriction'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'InfoInstrument1'
+    description: ''
+  - name: 'InfoInstrument2'
+    description: ''
+  - name: 'InfoRatioOld'
+    description: ''
+  - name: 'InfoRatioNew'
+    description: ''
+  - name: 'InfoPrice'
+    description: ''
+  - name: 'InfoCorpAct'
+    description: ''
+  - name: 'InfoExPosition'
+    description: ''

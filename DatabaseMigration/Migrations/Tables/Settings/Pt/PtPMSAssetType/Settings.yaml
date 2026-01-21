@@ -1,0 +1,33 @@
+table:
+  name: 'PtPMSAssetType'
+  description: 'The table is used to map the AssetTypes (Anlagekategorien) of Finstar (see the table PtPublicAssetType) and those of PMS (currently PM1 from Expersoft)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'PMS Asset Types'
+  columns:
+  - name: 'PMSAssetType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'FinstarAssetCyClass'
+    description: 'Asset Currency Class'
+    genericControls:
+      refTable: 'CyAssetClass'
+      refField: 'ClassNo'
+      defColumnPos: 2
+  - name: 'FinstarAssetType'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicAssetType'
+      refField: 'AssetTypeCode'
+      defColumnPos: 3

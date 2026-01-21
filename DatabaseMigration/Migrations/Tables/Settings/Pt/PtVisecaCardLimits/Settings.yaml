@@ -1,0 +1,36 @@
+table:
+  name: 'PtVisecaCardLimits'
+  description: 'Information from Viseca Card Service'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Viseca card limits'
+    - german:
+        formTitle: 'Viseca Kartenlimiten'
+  columns:
+  - name: 'VisecaCardStockId'
+    description: ''
+    genericControls:
+      refTable: 'PtVisecaCardStock'
+      refField: 'Id'
+  - name: 'LimitType'
+    description: '01 - Customer selected Globallimit\r\n02 - Issuer selected Globallimit\r\n03 - Karte Total Limite\r\n04 - Bargeld Total Limite\r\n07 - ATM Kredit Limite\r\n08 - ATM Direct Debit Limite\r\n09 - Tank Limite'
+    genericControls:
+      refTable: 'PtVisecaCardLimitType'
+      refField: 'LimitType'
+  - name: 'LimitCycle'
+    description: '00 - Kein Zyklus'
+  - name: 'LimitValue'
+    description: ''
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'ValidTo'
+    description: ''

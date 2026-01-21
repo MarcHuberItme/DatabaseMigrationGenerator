@@ -1,0 +1,134 @@
+table:
+  name: 'AcFrozenDerivative'
+  description: 'Diese Tabelle enthält den täglichen Snapshot der Derivate (Devisentermingeschäfte, Swaps,...) mit Bewertung. Diese Daten werden für den Fire Export verwendet.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Derivate Bewertung'
+    - german:
+        formTitle: 'Derivate Bewertung'
+  columns:
+  - name: 'ReportDate'
+    description: 'Berichtsdatum'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'SourceRecordId'
+    description: 'Source Record Identifikation'
+    genericControls:
+      defColumnPos: 12
+      isNoUpdate: true
+  - name: 'SourceTableName'
+    description: 'Sourcetabelle (z.B. AcOwnDerivativeContract für Swaps, AcFrozenSecurityBalance für Optionen im Depot)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'DerivativeTypeNo'
+    description: 'Derivattyp:\r\n10	IRS Payer\r\n11	IRS Receiver\r\n20	Devisentermin\r\n30	Swap (Aktien)\r\n40	Future (Aktienindex)\r\n50	Option Traded Call Long\r\n51	Option Traded Put Long\r\n52	Option Traded Call Short\r\n53	Option Traded Put Short\r\n99	CDS Spezial'
+    genericControls:
+      refTable: 'AcDerivativeType'
+      refField: 'DerivativeTypeNo'
+      defColumnPos: 9
+  - name: 'PartnerId'
+    description: 'PartnerId der Gegenpartei'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'ContractKey'
+    description: 'Kontraktschlüssel'
+    genericControls:
+      defColumnPos: 4
+  - name: 'DateTo'
+    description: 'Verfall'
+    genericControls:
+      defColumnPos: 5
+  - name: 'IsTradingBook'
+    description: '1 = Handelsbuch / 2 = Bankenbuch'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ContractCurrency'
+    description: 'Receive Leg: Kontraktwährung'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 6
+  - name: 'ContractAmount'
+    description: 'Receive Leg: Betrag in Kontraktwährung'
+    genericControls:
+      defColumnPos: 7
+  - name: 'OpponentCurrency'
+    description: 'Payer Leg: Währung'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 8
+  - name: 'OpponentAmount'
+    description: 'Payer Leg: Betrag'
+    genericControls:
+      defColumnPos: 9
+  - name: 'CoCuHoCuConversionRate'
+    description: 'Receive Leg: Wechselkurs'
+  - name: 'OpCuHoCuConversionRate'
+    description: 'Payer Leg: Wechselkurs'
+  - name: 'ContractAmountHoCu'
+    description: 'Kontrakt Betrag in Bilanzwährung'
+  - name: 'OpponentAmountHoCu'
+    description: 'Payer Leg: Betrag in Bilanzwährung'
+  - name: 'CoCuInterestRate'
+    description: 'Receive Leg: Zinssatz für Barwertberechnung'
+  - name: 'OpCuInterestRate'
+    description: 'Payer Leg: Zinssatz für Barwertberechnung'
+  - name: 'CalcDays'
+    description: 'Anzahl Tage für Barwertberechnung'
+  - name: 'CoAmountPresentValueHoCu'
+    description: 'Receive Leg: Barwert in Bilanzwährung'
+  - name: 'OpAmountPresentValueHoCu'
+    description: 'Payer Leg: Barwert in Bilanzwährung'
+  - name: 'ReplacementValue'
+    description: 'Wiederbeschaffungswert (negativ oder positiv)'
+    genericControls:
+      defColumnPos: 10
+  - name: 'Remark'
+    description: 'Bemerkung'
+    genericControls:
+      multiLine: true
+      defColumnPos: 11
+  - name: 'PendingValuationFlag'
+    description: 'Bewertung pendent, Flag wird während Bewertungsprozess durch System verwendet.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ValuationTimeStamp'
+    description: 'Timestamp für die durchgeführte Bewertung'
+    genericControls:
+      isNoUpdate: true
+  - name: 'WithCloseOutNetting'
+    description: 'Nettingoption bei Swaps'
+  - name: 'DateFrom'
+    description: 'Gültig ab'
+  - name: 'OpInterestRateDate'
+    description: 'Payer Leg: Zinsdatum'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CoInterestRateDate'
+    description: 'Receiver Leg: Zinsdatum'
+    genericControls:
+      isNoUpdate: true
+  - name: 'UnderlyingMarketValueHoCu'
+    description: 'Marktwert des Underlying in Bilanzwährung, wird bei Optionen (DerivativeTypeNo 50-53) verwendet'
+    minValue: '0'
+  - name: 'ContractValueHoCu'
+    description: 'Kontraktwert in Bilanzwährung'
+  - name: 'Delta'
+    description: 'Call Optionen haben ein Delta von 0 bis maximal 1.\r\nPut Optionen haben ein Delta von 0 bis -1\r\n\r\nOption ist ausserhalb des Geldes (Delta wird immer kleiner)\r\nOption ist at the money (Delta beträgt ca. 0,5)\r\nOption ist über den Strike (Delta näher sich einem Delta von 1)\r\nOption weit über den Strike (Delta = 1)'
+    minValue: '-1'
+    maxValue: '1'

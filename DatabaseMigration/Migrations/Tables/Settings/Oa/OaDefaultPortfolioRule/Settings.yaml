@@ -1,0 +1,57 @@
+table:
+  name: 'OaDefaultPortfolioRule'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'OaDefaultPortfolioRule'
+        helpText: 'OaDefaultPortfolioRule'
+    - german:
+        formTitle: 'OaDefaultPortfolioRule'
+        helpText: 'OaDefaultPortfolioRule'
+    - french:
+        formTitle: 'OaDefaultPortfolioRule'
+        helpText: 'OaDefaultPortfolioRule'
+  columns:
+  - name: 'RuleNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'DefaultPortfolioType'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      defColumnPos: 2
+  - name: 'DefaultCurrency'
+    description: 'always CHF'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'MotiveToOpenNo'
+    description: ''
+    genericControls:
+      refTable: 'AsMotiveOpenType'
+      refField: 'MotiveOpenTypeNo'
+      defColumnPos: 3
+  - name: 'SuppressCorrPortfolio'
+    description: ''
+  - name: 'FillPartnerIdCorr'
+    description: ''
+  - name: 'FromCorrPartner'
+    description: ''
+  - name: 'ItemGroupNo'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItemGroup'
+      refField: 'CorrItemGroupNo'

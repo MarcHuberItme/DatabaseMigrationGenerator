@@ -1,0 +1,22 @@
+table:
+  name: 'PtRatingStatus'
+  description: 'Statuses of the ratings. e.g. New, Incomplete, Completed.'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Statuses of the ratings'
+    - german:
+        formTitle: 'Rating Status'
+    - french:
+        formTitle: 'Statuts des notations'
+  columns:
+  - name: 'StatusNo'
+    description: ''

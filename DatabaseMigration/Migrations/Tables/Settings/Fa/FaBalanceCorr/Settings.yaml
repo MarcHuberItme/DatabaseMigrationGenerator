@@ -1,0 +1,22 @@
+table:
+  name: 'FaBalanceCorr'
+  description: 'Correction in FaBalance caused by reassignment of assetes between partners'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FaBaseIdOut'
+    description: ''
+  - name: 'FaBaseIdIn'
+    description: ''
+  - name: 'ValuationDate'
+    description: ''
+  - name: 'AmountCHF'
+    description: ''
+  - name: 'Comment'
+    description: ''

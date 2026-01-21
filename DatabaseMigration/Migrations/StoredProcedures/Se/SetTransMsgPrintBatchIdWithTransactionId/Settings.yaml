@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'SetTransMsgPrintBatchIdWithTransactionId'
+  description: 'Copy of SetTransMsgPrintBatchId, but in search the transaction id is included.'

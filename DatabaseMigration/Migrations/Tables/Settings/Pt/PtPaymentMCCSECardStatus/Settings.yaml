@@ -1,0 +1,23 @@
+table:
+  name: 'PtPaymentMCCSECardStatus'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Comment'
+    description: 'Additional comment on status change (i.e. detailed reason of card restriction)'
+  - name: 'StatusChangeDate'
+    description: 'Date, when status has been changed. In format "yyyyMMdd".'
+  - name: 'StatusChangeTime'
+    description: 'Time, when status has been changed (Polish time zone). In format "hh:mm:ss".'
+  - name: 'PaymentMasterCardCseID'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentMasterCardCSE'
+      refField: 'Id'

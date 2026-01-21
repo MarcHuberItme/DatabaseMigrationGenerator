@@ -1,0 +1,65 @@
+table:
+  name: 'PmPerfData'
+  description: 'Table contains the calculated performance data per portfolio, method and chosen time interval (default: one business day)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+  columns:
+  - name: 'FromDate'
+    description: 'Interval start date'
+  - name: 'ToDate'
+    description: 'Interval end date'
+  - name: 'PortfolioId'
+    description: ''
+  - name: 'PositionId'
+    description: 'For future applications. Currently null since only performance data on portfolio level is calculated.'
+  - name: 'Currency'
+    description: 'Portfolio (or position) currency'
+  - name: 'Cashflow'
+    description: 'Valuation of the external cashflow (total) from or to a portfolio within the given interval.'
+  - name: 'CapitalIn'
+    description: 'Valuation of incoming capital to a portfolio within the given interval.'
+  - name: 'CapitalOut'
+    description: 'Valuation of outgoing capital from a portfolio within the given interval.'
+  - name: 'SecIn'
+    description: 'Valuation of securities booked into a portfolio within the given interval.'
+  - name: 'SecOut'
+    description: 'Valuation of securities booked out from a portfolio within the given interval.'
+  - name: 'Performance'
+    description: 'Actual performance figure within the given interval.'
+  - name: 'PerfMethod'
+    description: 'Only TWR (0) supported'
+  - name: 'ValuationAtBegin'
+    description: ''
+  - name: 'ValuationAtEnd'
+    description: ''
+  - name: 'ManagementFees'
+    description: ''
+  - name: 'DepotFees'
+    description: ''
+  - name: 'TransactionFees'
+    description: ''
+  - name: 'TaxFees'
+    description: ''
+  - name: 'Interests'
+    description: ''
+  - name: 'AccruedInterests'
+    description: ''
+  - name: 'MarchInterests'
+    description: ''
+  - name: 'Coupons'
+    description: ''
+  - name: 'Source'
+    description: 'Data source: Calculated (0), Migrated (1)'
+    genericControls:
+      refTable: 'PmPerfDataSource'
+      refField: 'SourceType'
+  - name: 'VersionNo'
+    description: 'Performance processor version. Initial version: 1'

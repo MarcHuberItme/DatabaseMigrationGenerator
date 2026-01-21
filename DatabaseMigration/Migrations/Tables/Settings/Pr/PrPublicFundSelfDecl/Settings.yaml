@@ -1,0 +1,65 @@
+table:
+  name: 'PrPublicFundSelfDecl'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Fund self declaration'
+    - german:
+        formTitle: 'Fonds Selbstdeklaration'
+  columns:
+  - name: 'VdfDocGen'
+    description: 'VDF: ERD.ERD.K801.0813'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: ERD.MGA.7895\r\nMessage status of FAD-Doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'PublicId'
+    description: 'VDF: ERD.VAI.K981.7842 (translate with PrPublic)'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'VdfIdentification'
+    description: 'VDF: ERD.MGG.7820'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PublicationDate'
+    description: 'VDF: ERD.ERA.2801-A'
+    genericControls:
+      defColumnPos: 1
+  - name: 'AnnualAccountsCutoffDate'
+    description: 'VDF: ERD.ERA.2801-B'
+  - name: 'ValidFromAssetTest'
+    description: 'VDF: ERD.ERA.2811'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidToAssetTest'
+    description: 'VDF: ERD.ERA.2812'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValidFromProspectus'
+    description: 'VDF: ERD.ERA.2801-C'
+  - name: 'EuInterestTaxScopeNo'
+    description: 'VDF: ERD.EUA.4923'
+    genericControls:
+      refTable: 'PrPublicEuInterestTaxScope'
+      refField: 'EuInterestTaxScopeNo'
+      defColumnPos: 5

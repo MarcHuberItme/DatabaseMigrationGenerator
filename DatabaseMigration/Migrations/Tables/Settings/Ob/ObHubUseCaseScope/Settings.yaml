@@ -1,0 +1,30 @@
+table:
+  name: 'ObHubUseCaseScope'
+  description: 'Scope for a specific use case'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 4de0d3b7-95d8-473e-be4c-1d37a958d353
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Use Case Scope'
+    - german:
+        formTitle: 'Use Case Scope'
+    - french:
+        formTitle: 'Use Case Scope'
+    - italian:
+        formTitle: 'Use Case Scope'
+  columns:
+  - name: 'UseCaseId'
+    description: 'Reference to hub use case'
+    genericControls:
+      refTable: 'ObHubUseCase'
+      refField: 'Id'
+  - name: 'Scope'
+    description: 'Name of the scope'
+    genericControls:
+      defColumnPos: 1

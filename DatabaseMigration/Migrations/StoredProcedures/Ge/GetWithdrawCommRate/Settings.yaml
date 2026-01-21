@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetWithdrawCommRate'
+  description: 'Return commission rate for un-announced withdrawals exceeding defined limits'

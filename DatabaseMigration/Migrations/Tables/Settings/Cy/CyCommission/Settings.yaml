@@ -1,0 +1,60 @@
+table:
+  name: 'CyCommission'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Commission'
+    - german:
+        formTitle: 'Kommission'
+  columns:
+  - name: 'Amount'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'SpreadTrader'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'SpreadManager'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'AgioTrader'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'AgioManager'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'Symbol'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 1
+  - name: 'PaymentInstrumentNo'
+    description: ''
+    genericControls:
+      refTable: 'CyPaymentInstrument'
+      refField: 'PaymentInstrumentNo'
+      defColumnPos: 7
+  - name: 'SpreadTraderWithRebate'
+    description: 'Rebated Trader''s Spread'
+  - name: 'SpreadManagerWithRebate'
+    description: ''
+  - name: 'AgioTraderWithRebate'
+    description: ''
+  - name: 'AgioManagerWithRebate'
+    description: ''

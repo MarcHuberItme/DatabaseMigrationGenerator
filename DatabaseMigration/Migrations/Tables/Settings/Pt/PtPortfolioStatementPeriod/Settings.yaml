@@ -1,0 +1,43 @@
+table:
+  name: 'PtPortfolioStatementPeriod'
+  description: 'Scheduled next statement (no daily statements are possible)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'next portfolio statement'
+    - german:
+        formTitle: 'nächster Portfolioauszug'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'CorrPortfolioId'
+    description: 'Relation to PtCorrPortfolio used for additional statement to a special receiver\r\nIf Not Null then the statement is to send only to this rule\r\nIf Null the standard rules have to be used'
+    genericControls:
+      refTable: 'PtCorrPortfolio'
+      refField: 'Id'
+  - name: 'ActivityRuleCode'
+    description: ''
+    genericControls:
+      refTable: 'AsActivityRule'
+      refField: 'ActivityRuleCode'
+  - name: 'StatementNo'
+    description: 'Sequential number within an portfolio and  ActivityRuleCode and CorrPortfolioId'
+  - name: 'ScheduledDate'
+    description: 'Scheduled date of the next statement'
+  - name: 'ExecutionDate'
+    description: ''
+  - name: 'LastStatementDate'
+    description: 'Last Statement Date of Portfolio Printing'
+  - name: 'TerminationDate'
+    description: ''

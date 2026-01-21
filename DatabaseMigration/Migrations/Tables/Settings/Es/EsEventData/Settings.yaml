@@ -1,0 +1,24 @@
+table:
+  name: 'EsEventData'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'AttributeName'
+    description: ''
+  - name: 'AttributeType'
+    description: ''
+  - name: 'EventId'
+    description: ''
+    genericControls:
+      refTable: 'EsEvent'
+      refField: 'Id'

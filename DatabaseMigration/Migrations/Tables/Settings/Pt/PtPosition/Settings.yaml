@@ -1,0 +1,111 @@
+table:
+  name: 'PtPosition'
+  description: 'components of a portfolio'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PortfolioId'
+    description: 'foreign-key; Id of PtPortfolio, defines the owner of this position'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ProdReferenceId'
+    description: 'foreign-key; Id of PrReference, defines the product of this position in detail'
+    genericControls:
+      refTable: 'PrReference'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'ProdLocGroupId'
+    description: 'foreign-key; Id of ProdLocGroup of the physical location of securities\r\nIs <Null> in case of accounts'
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'Quantity'
+    description: 'Balance of shares or similar pieces.\r\n'
+  - name: 'ValueProductCurrencyNominal'
+    description: 'Nominalwert für Kassaobligationen (HBL) und eigene Wertschriften (Anlage- bzw. Handelsbestand), dieser Wert muss in die Bilanz'
+  - name: 'ValueProductCurrency'
+    description: 'Value of the position in original currency (PrReference.currency )  \r\n- for accounts = balance of the account\r\n- for shares = valuation of quantity'
+  - name: 'ValueCustomerCurrency'
+    description: 'Value of the position in the customer preferred currency (PtPortfolio.currency)\r\nas valuation of ValueProductCurrence \r\n'
+  - name: 'ValueBasicCurrency'
+    description: 'Value of the position in the basic currency (CHF)\r\nas valuation of ValueProductCurrency\r\n'
+  - name: 'ValueBasicCurrencyCollateral'
+    description: 'Value of the position in the basic currency (CHF)\r\nas valuation of ValueProductCurrency reduced by a marging'
+  - name: 'DueValueProductCurrency'
+    description: 'Open value e.g. pending interest payment for mortgage in product currency'
+  - name: 'DueValueCustomerCurrency'
+    description: 'Open value e.g. pending interest payment for mortgage in customer currency'
+  - name: 'DueValueBasicCurrency'
+    description: 'Open value e.g. pending interest payment for mortgage in basic currency'
+  - name: 'AverageBalance'
+    description: 'Durchschnitts-Saldo pro Monat'
+  - name: 'AverageBalanceMoney'
+    description: 'SNB-Geldstandstatistik: Durchschnitts-Saldo Notenbestand'
+  - name: 'AverageBalanceCoins'
+    description: 'SNB-Geldstandstatistik: Durchschnitts-Saldo Münzbestand'
+  - name: 'SumDbtQuantityTrade'
+    description: 'Sollumsatz im Monat bei Wertschriften (Handelstransaktionen)\r\n\r\n\r\n-> Felder werden ab 2007 nicht mehr benötigt !\r\n'
+  - name: 'SumCrtQuantityTrade'
+    description: 'Habenumsatz im Monat bei Wertschriften\r\n\r\n\r\n-> Felder werden ab 2007 nicht mehr benötigt !'
+  - name: 'SumDbtQuantityElse'
+    description: 'Sollumsatz im Monat bei Wertschriften (Nicht Handel)\r\n\r\n\r\n-> Felder werden ab 2007 nicht mehr benötigt !'
+  - name: 'SumCrtQuantityElse'
+    description: 'Habenumsatz im Monat bei Wertschriften (Nicht Handel)\r\n\r\n\r\n-> Felder werden ab 2007 nicht mehr benötigt !'
+  - name: 'SumDbtValuePrCurrencyTrade'
+    description: 'Sollumsatz in Produktwährung im Monat\r\n\r\n-> Felder werden ab 2007 nicht mehr benötigt !'
+  - name: 'SumCrtValuePrCurrencyTrade'
+    description: 'Habenumsatz in Produktwährung im Monat\r\n\r\n-> Felder werden ab 2007 nicht mehr benötigt !\r\n'
+  - name: 'SumDbtValueBasicCurrencyTrade'
+    description: 'valuation of SumDebitValueProdCurrency\r\n\r\n-> Felder werden ab 2007 nicht mehr benötigt !'
+  - name: 'SumCrtValueBasicCurrencyTrade'
+    description: 'valuation of SumCreditValueProdCurrency\r\n\r\n\r\n-> Felder werden ab 2007 nicht mehr benötigt !'
+  - name: 'SumDbtValuePrCurrencyElse'
+    description: 'Sollumsatz in Produktwährung im Monat\r\n\r\n\r\n-> Felder werden ab 2007 nicht mehr benötigt !'
+  - name: 'SumCrtValuePrCurrencyElse'
+    description: 'Habenumsatz in Produktwährung im Monat \r\n\r\n\r\n-> Felder werden ab 2007 nicht mehr benötigt !'
+  - name: 'SumDbtValueBasicCurrencyElse'
+    description: 'valuation of SumDebitDelValueProdCurrency\r\n\r\n\r\n-> Felder werden ab 2007 nicht mehr benötigt !'
+  - name: 'SumCrtValueBasicCurrencyElse'
+    description: 'valuation of SumCreditDelValueProdCurrency\r\n\r\n\r\n-> Felder werden ab 2007 nicht mehr benötigt !'
+  - name: 'Agent'
+    description: 'foreign-key, Id of PtDescriptionView (View to create the descriptionfield of PtBase)'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      defColumnPos: 3
+  - name: 'NostroTypeId'
+    description: 'dient der "manuellen" Übersteuerung der Bewertung dieser Position (übersteuert den Wert NostroTyp im PtPortfolio)'
+    genericControls:
+      refTable: 'PtPortfolioNostroType'
+      refField: 'Id'
+  - name: 'BookletPrintDate'
+    description: 'Last Date of Printing on a booklet.\r\n//This information is useful for handling booklets that does not contain magnetic strips for storing this information.'
+  - name: 'BookletPage'
+    description: 'Last Page Number of Printing on a booklet.\r\n//This information is useful for handling booklets that does not contain magnetic strips for storing this information.'
+  - name: 'BookletLine'
+    description: 'Last Line of Printing on a booklet.\r\n//This information is useful for handling booklets that does not contain magnetic strips for storing this information.'
+  - name: 'BookletBalance'
+    description: 'Last Balance Value on a booklet.\r\n//This information is useful for handling booklets that does not contain magnetic strips for storing this information.'
+  - name: 'IsToClose'
+    description: 'When the account''s position is to be closed/terminated, this flag is set to true and as soon as the Quantity and ValueProductCurrency comes to ''0'', this position is blocked for additional transactions.'
+  - name: 'LatestTransDate'
+    description: 'Defines the date when the last transaction was booked and the Value/Quantity field was updated'
+  - name: 'MaturityInfoTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMaturityInfoType'
+      refField: 'MaturityInfoTypeNo'
+  - name: 'LatestTransDateTime'
+    description: 'Defines the timestamp, when the last transaction was booked and the Value/Quantity field was updated'

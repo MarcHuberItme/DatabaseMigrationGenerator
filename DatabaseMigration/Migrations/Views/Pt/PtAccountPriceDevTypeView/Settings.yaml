@@ -1,0 +1,39 @@
+view:
+  name: 'PtAccountPriceDevTypeView'
+  description: ''
+frontendView:
+  name: 'PtAccountPriceDevTypeView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'TextShort'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 25
+  - name: 'DeviationReasonType'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+  - name: 'ForFixedDurationComp'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ForVariableDurationComp'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true

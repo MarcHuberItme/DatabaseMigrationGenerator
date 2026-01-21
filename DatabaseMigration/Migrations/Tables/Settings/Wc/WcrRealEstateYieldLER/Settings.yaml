@@ -1,0 +1,53 @@
+table:
+  name: 'WcrRealEstateYieldLER'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'WcrRealEstateYieldLER'
+    - german:
+        formTitle: 'WcrRealEstateYieldLER'
+    - french:
+        formTitle: 'WcrRealEstateYieldLER'
+    - italian:
+        formTitle: 'WcrRealEstateYieldLER'
+  columns:
+  - name: 'ReportDate'
+    description: ''
+  - name: 'ReportId'
+    description: ''
+    genericControls:
+      refTable: 'WcrMessageReport'
+      refField: 'Id'
+  - name: 'PledgeRegisterId'
+    description: ''
+    genericControls:
+      refTable: 'RePledgeRegister'
+      refField: 'Id'
+  - name: 'DWH_LER_ID'
+    description: ''
+  - name: 'DWH_LIG_ID'
+    description: ''
+  - name: 'LEA_CD'
+    description: ''
+  - name: 'LEG_CD'
+    description: ''
+  - name: 'Beschrieb'
+    description: ''
+  - name: 'NettomietzinsMt'
+    description: ''
+  - name: 'NettomietzinsJahr'
+    description: ''
+  - name: 'Gewichtung'
+    description: ''
+  - name: 'Kapitalisierungssatz'
+    description: ''
+  - name: 'Jahr'
+    description: ''

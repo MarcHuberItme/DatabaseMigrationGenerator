@@ -1,0 +1,124 @@
+table:
+  name: 'PtMLPeriodicCheck'
+  description: 'Details zu einer periodischen Überprüfung des Geldwäscherei-Status (GWG) eines Kunden'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtMLPeriodicCheckOverview'
+      parentRelationField: 'PeriodicCheckOverviewId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Periodic Check'
+    - german:
+        formTitle: 'GWG Period. Ueberprüfung'
+  columns:
+  - name: 'PeriodicCheckOverviewId'
+    description: 'ForeignKey to PtMLPeriodicCheckOverview (1:n)'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckOverview'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'StartDate'
+    description: 'Frontpendenz-Datum oder Start AdHoc.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'StateNo'
+    description: 'StateNo aus Tabelle PtMLPeriodicCheckState'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckState'
+      refField: 'StateNo'
+      defColumnPos: 3
+  - name: 'ApprovalDate'
+    description: 'Wird automatisch gesetzt wenn der Button "Prüfung abschliessen" geklickt wird.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'CustomerTypeNo'
+    description: 'TypeNo aus PtMLCustomerType (wird aus Parent-Table übernommen, manueller Wert falls vorhanden, sonst der kalkulierte)'
+    genericControls:
+      refTable: 'PtMLCustomerType'
+      refField: 'TypeNo'
+      defColumnPos: 4
+  - name: 'ChannelNo'
+    description: 'ChannelNo aus PtMLPeriodicCheckChannel (wird aus Parent-Table übernommen, manueller Wert falls vorhanden, sonst der kalkulierte)'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckChannel'
+      refField: 'ChannelNo'
+      defColumnPos: 6
+  - name: 'CheckMasterDataState'
+    description: 'StateNo aus PtMLPeriodicCheckDataState'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckDataState'
+      refField: 'StateNo'
+  - name: 'CheckMasterDataId'
+    description: 'Referenz zu Detailseite'
+  - name: 'CheckBeneficialOwnershipState'
+    description: 'StateNo from PtMLPeriodicCheckOwnShipState'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckOwnShipState'
+      refField: 'StateNo'
+  - name: 'CheckBeneficialOwnershipId'
+    description: 'Referenz zur Detailseite'
+  - name: 'CheckProxiesState'
+    description: 'StateNo aus PtMLPeriodicCheckProxiesState'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckProxiesState'
+      refField: 'StateNo'
+  - name: 'CheckProxiesId'
+    description: 'Referenz zu Detailseite'
+  - name: 'Remark'
+    description: 'Bemerkung zu einer Prüfung'
+    genericControls:
+      multiLine: true
+  - name: 'CheckUser'
+    description: 'Benuzter, der die Prüfung freigibt (aus Tabelle AsUser)'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ApprovalUser'
+    description: 'Benutzer, der die Prüfung freigibt (aus Tabelle AsUser)'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TemplateNo'
+    description: 'TemplateNo aus PtMLPeriodicCheckTemplates (aus Parent-Table, manueller Wert falls vorhanden, sonst der kalkulierte)'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckTemplates'
+      refField: 'TemplateNo'
+      defColumnPos: 5
+  - name: 'ManualEdit'
+    description: 'falls angehakt, müssen ApprovalDate und -User händisch gesetzt werden, ansonsten werden diese automatisch bei Freigabe gesetzt'
+  - name: 'OpenIssueId'
+    description: 'foreign-key;  Id of PtOpenIssue'
+    genericControls:
+      refTable: 'PtOpenIssue'
+      refField: 'Id'
+  - name: 'CheckReasonNo'
+    description: 'Grund für die Prüfung, Referenz zu PtMlPeriodicCheckReason. folgende Möglichkeiten stehen zur Verfügung\r\nperiodische Prüfung, AdHoc Prüfung, GmeR Hochstufung'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckReason'
+      refField: 'ReasonNo'
+  - name: 'CompletionDate'
+    description: 'Datum an welchem der Kunde oder der Kundenberater die Prüfung vollständig vorgenommen hat (wann wird die Prüfung zur Freigabe gesendet oder automatisch freigegeben)'
+    genericControls:
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'EndDate'
+    description: 'Enddatum an welchem der Task abgeschlossen sein soll. Wird für Auswertungen benötigt. Wird beim Starten einer Prüfung festgelegt:\r\n\r\n-ReasonNo = 10\r\n     PtMlPeriodicCheck.EndDate ? es wird beim Starten      PtMlPeriodicCheckOverview.NextPeriodCheckDate übernommen\r\n-ReasonNo IN (20, 30)\r\n     PtMlPeriodicCheck.EndDate ? das Enddatum wird berechnet:      PtMlPeriodicCheck.StartDate + PtMlPeriodicCheckReason.DaysUntilEndDate'
+  - name: 'OverallCheckTypeNo'
+    description: 'wird nur zum Visualisieren benötigt'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckType'
+      refField: 'CheckTypeNo'
+      isNoUpdate: true

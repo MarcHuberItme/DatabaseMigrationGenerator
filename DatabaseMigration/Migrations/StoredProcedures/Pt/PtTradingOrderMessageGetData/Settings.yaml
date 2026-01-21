@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtTradingOrderMessageGetData'
+  description: 'Used in MigPartnerToTraderCancelDetailService and it is from FsStockExWf.basFsTSxModIntegrate.ReadActBroPtTradingOrderMessage'

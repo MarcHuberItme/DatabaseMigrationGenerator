@@ -1,0 +1,32 @@
+table:
+  name: 'PtRatingImFunction'
+  description: 'Immaterielles Rating -  Total der einzelnen Funktionen'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'rating function'
+    - german:
+        formTitle: 'Ratingfunktion'
+  columns:
+  - name: 'RatingId'
+    description: ''
+    genericControls:
+      refTable: 'PtRating'
+      refField: 'Id'
+  - name: 'FunctionId'
+    description: 'Funktion, z.B. Besitzverhältnisse'
+    genericControls:
+      refTable: 'AsRatingImFunction'
+      refField: 'Id'
+  - name: 'ImRatingFunctionAvgX'
+    description: 'X = Weakness / Threats (maximum value = 5)'
+  - name: 'ImRatingFunctionAvgY'
+    description: 'Y =  Strengh / Opportunities  (maximum value = 5)'

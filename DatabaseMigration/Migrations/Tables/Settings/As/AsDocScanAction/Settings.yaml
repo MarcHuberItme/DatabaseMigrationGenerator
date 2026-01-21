@@ -1,0 +1,19 @@
+table:
+  name: 'AsDocScanAction'
+  description: 'allowed actions for failed scanner documents'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'ScanActionNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

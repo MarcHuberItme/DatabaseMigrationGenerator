@@ -1,0 +1,108 @@
+view:
+  name: 'PtIncomingOrderDetailView'
+  description: ''
+frontendView:
+  name: 'PtIncomingOrderDetailView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtIncomingOrderDetailView'
+        helpText: 'PtIncomingOrderDetailView'
+    - german:
+        formTitle: 'PtIncomingOrderDetailView'
+        helpText: 'PtIncomingOrderDetailView'
+    - french:
+        formTitle: 'PtIncomingOrderDetailView'
+        helpText: 'PtIncomingOrderDetailView'
+  columns:
+  - name: 'OrderNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 12
+    genericControls:
+      defColumnPos: 1
+  - name: 'OrderType'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtPaymentOrderType'
+      refField: 'OrderTypeNo'
+      defColumnPos: 2
+  - name: 'OrderDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Status'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtPaymentOrderStatus'
+      refField: 'StatusNo'
+      defColumnPos: 4
+  - name: 'PaymentAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 5
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      defColumnPos: 6
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      defColumnPos: 7
+  - name: 'BeneficiaryName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+    genericControls:
+      defColumnPos: 8
+  - name: 'BookingInformation'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 35
+    genericControls:
+      defColumnPos: 9
+  - name: 'ReferenceNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 27
+    genericControls:
+      defColumnPos: 10
+  - name: 'RejectFlag'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 11
+  - name: 'MessageStandard'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 12
+  - name: 'TransMessageInId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 13
+  - name: 'ShowText'
+    description: ''
+    dataType: 'char'
+    prec: 8
+    genericControls:
+      defColumnPos: 14

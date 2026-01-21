@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountPledgeInfo'
+  description: 'Get Pledge Info for Account (new add coll from cobase check for account)'

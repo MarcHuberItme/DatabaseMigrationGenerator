@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetReportDetail_Update'
+  description: '\r\n--Author		: Rolf Amstad\r\n--Date Created	: 18-May-2005\r\n--Date Modified        : 11-July-2005    Set Transaction Isolation Level in comment\r\n                                : 03-Nov-2005    Inputparameter ''AmountType'' ersetzt Inputparameter Position und Länge von AmountType im KeyString'

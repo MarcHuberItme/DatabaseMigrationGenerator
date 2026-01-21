@@ -1,0 +1,46 @@
+table:
+  name: 'PtInvestmentKE'
+  description: 'Specifies the risk profile according to Asset Classes'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Risk Profile'
+    - german:
+        formTitle: 'Risiko Profil'
+    - french:
+        formTitle: 'Profil de risque'
+    - italian:
+        formTitle: 'Profilo di rischio'
+  columns:
+  - name: 'InvestmentRiskProfileID'
+    description: 'foreign-key, Id of PtInvestmentRiskProfile'
+    genericControls:
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'Knowledge'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'Experience'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Information'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'AssetClassNumber'
+    description: ''
+    genericControls:
+      refTable: 'PtInvestmentKEAssetClasses'
+      refField: 'AssetClassNumber'
+      defColumnPos: 1

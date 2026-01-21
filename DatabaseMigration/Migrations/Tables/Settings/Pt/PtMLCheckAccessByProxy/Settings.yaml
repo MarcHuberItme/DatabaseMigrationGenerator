@@ -1,0 +1,235 @@
+table:
+  name: 'PtMLCheckAccessByProxy'
+  description: 'Personen mit Zugriff via Vollmacht'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccessId'
+    description: 'Id der Zugriffsprüfung'
+    genericControls:
+      refTable: 'PtMLCheckAccess'
+      refField: 'Id'
+  - name: 'MasterId'
+    description: 'Id des Kunden unter welchem die Prüfung stattfindet'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'MasterDescription'
+    description: 'PtDescriptionView,PtDescription\r\n'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'SlaveId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'SlaveName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'SlaveNameCorrected'
+    description: ''
+  - name: 'SlaveFirstName'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'SlaveFirstNameCorrected'
+    description: ''
+  - name: 'SlaveMiddleName'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SlaveMiddleNameCorrected'
+    description: ''
+  - name: 'SlaveNameCont'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SlaveNameContCorrected'
+    description: ''
+  - name: 'SlaveMaidenName'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SlaveMaidenNameCorrected'
+    description: ''
+  - name: 'SlaveDateOfBirth'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SlaveDateOfBirthCorrected'
+    description: ''
+  - name: 'SlaveCountryCode'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      isNoUpdate: true
+  - name: 'SlaveCountryCodeCorrected'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'SlaveZip'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SlaveZipCorrected'
+    description: ''
+  - name: 'SlaveSubZip'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SlaveSubZipCorreced'
+    description: ''
+  - name: 'SlaveTown'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SlaveTownCorrected'
+    description: ''
+  - name: 'SlaveStreet'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SlaveStreetCorrected'
+    description: ''
+  - name: 'SlaveHouseNo'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SlaveHouseNoCorrected'
+    description: ''
+  - name: 'SlaveAddrSupplement'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SlaveAddrSupplementCorrected'
+    description: ''
+  - name: 'SlavePOBox'
+    description: 'If true the AddrSupplement is assumed to contain post-office box information.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'SlavePOBoxCorrected'
+    description: ''
+  - name: 'SlaveFormalAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'SlaveFormalAddressCorrected'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ContactPersonId'
+    description: 'Id der Kontaktperson, falls auf PtRelationSlave eine solche referenziert ist.'
+    genericControls:
+      refTable: 'PtContactPerson'
+      refField: 'Id'
+  - name: 'ContactPersonName'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'ContactPersonFirstName'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'RelationRoleNo'
+    description: ''
+    genericControls:
+      refTable: 'PtRelationRole'
+      refField: 'RelationRoleNo'
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'RelationRoleNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtRelationRole'
+      refField: 'RelationRoleNo'
+  - name: 'RelationRole'
+    description: 'AsText.TextShort'
+  - name: 'CloseRelationTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtRelationSlaveCloseRelType'
+      refField: 'CloseRelTypeNo'
+      isNoUpdate: true
+  - name: 'CloseRelationTypeNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtRelationSlaveCloseRelType'
+      refField: 'CloseRelTypeNo'
+  - name: 'CloseRelationType'
+    description: 'AsText.TextShort'
+  - name: 'ProxyRightNo'
+    description: ''
+    genericControls:
+      refTable: 'PtProxyRight'
+      refField: 'ProxyRightNo'
+      isNoUpdate: true
+  - name: 'ProxyRightNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtProxyRight'
+      refField: 'ProxyRightNo'
+  - name: 'ProxyRight'
+    description: 'AsText.TextShort'
+  - name: 'DisposalRightNo'
+    description: ''
+    genericControls:
+      refTable: 'PtDisposalRight'
+      refField: 'DisposalRightNo'
+      isNoUpdate: true
+  - name: 'DisposalRightNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtDisposalRight'
+      refField: 'DisposalRightNo'
+  - name: 'DisposalRight'
+    description: 'AsText.TextShort'
+  - name: 'DetailInstruction'
+    description: 'PtProxyDetail.Instruction'
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'DetailInstructionCorrected'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ObjectId'
+    description: '-AccountId\r\n-PortfolioId\r\n-SafeDepositId'
+  - name: 'Object'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'ObjectDescription'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsToDelete'
+    description: 'Flag, welches angibt, ob ein Record gelöscht werden darf. Macht bei Stammdaten keinen Sinn'
+  - name: 'HasChanges'
+    description: 'Flag, welches angibt, ob der Kunde Änderungen vorgenommen hat'
+  - name: 'Comment'
+    description: 'Kommentar des Kunden'
+    genericControls:
+      multiLine: true
+  - name: 'CheckStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckDetailState'
+      refField: 'CheckDetailStateNo'
+      defColumnPos: 5
+      isNoUpdate: true

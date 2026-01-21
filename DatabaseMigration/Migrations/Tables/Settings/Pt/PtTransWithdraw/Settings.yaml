@@ -1,0 +1,119 @@
+table:
+  name: 'PtTransWithdraw'
+  description: 'Debit transmessages for NKK relevant products'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Debit Transactions'
+        helpText: 'Debit Transactions'
+    - german:
+        formTitle: 'Debit Transactions'
+        helpText: 'Debit Transactions'
+  columns:
+  - name: 'TransMessageId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'TransDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'TransDateTime'
+    description: 'Transaction date with time information'
+  - name: 'ValueDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'DebitPrReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PrReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'CreditPrReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PrReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'DebitAmount'
+    description: ''
+  - name: 'TransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'WithdrawCommRelevant'
+    description: ''
+  - name: 'CommissionAmount'
+    description: ''
+  - name: 'ExceptionGrantedBy'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'ExceptionReason'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'AnalysisSequence'
+    description: 'The sequence in which transmessages in a transaction have been analyzed. This sequence is generated during first time analysis. Later on it is used in re-execution of analysis. to make sure predictable and repeatable results'
+  - name: 'BasisLimitDefined'
+    description: 'Basis limit in account currency, per TransDate, saved according to configuration at time of analysis. for non CHF account this would be calcualted using middle rate'
+  - name: 'BasisSumNotices'
+    description: 'Total of valid withdraw notices at time of analysis (in account currency)'
+  - name: 'BasisTotalWithdrawLimit'
+    description: 'Basis limit + Sum notices per TransDate, saved according to configuration at time of analysis (in account account currency)'
+  - name: 'BasisSumWithdraws'
+    description: 'Sum of relevant debit Transaction, per time of analysis (in account currency)'
+  - name: 'BasisAmount'
+    description: 'Basis amount on which commission is calculated'
+  - name: 'CommissionRate'
+    description: ''
+  - name: 'BasisPeriodStartDate'
+    description: ''
+  - name: 'PreDefinedExceptionId'
+    description: ''
+    genericControls:
+      refTable: 'PrNonTerminationException'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsReversed'
+    description: 'The transmessage has been cancelled'
+  - name: 'IsReversal'
+    description: 'The transmessage is a reverse transaction'
+  - name: 'TransNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'TransNo'
+      hasDetailBtn: true
+  - name: 'ForceExclusion'
+    description: 'During ra-anlysis this field will be check for exception'
+  - name: 'IsToBookCommission'
+    description: 'Copy from PrPrivate at time of transaction analysis'
+  - name: 'BasisLimitDefinedCHF'
+    description: 'The basis limit in CHF'
+  - name: 'BasisSumNoticesCHF'
+    description: ''
+  - name: 'BasisTotalWithdrawLimitCHF'
+    description: ''
+  - name: 'BasisSumWithdrawsCHF'
+    description: ''

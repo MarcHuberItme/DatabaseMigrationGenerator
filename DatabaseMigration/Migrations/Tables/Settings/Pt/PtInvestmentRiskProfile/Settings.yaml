@@ -1,0 +1,105 @@
+table:
+  name: 'PtInvestmentRiskProfile'
+  description: 'Risikoprofil eines Partners'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 492eb932-11a5-4c01-acd4-498e5cb33327
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Investment classification'
+    - german:
+        formTitle: 'Klassifikation Anlage-DL'
+    - french:
+        formTitle: 'Classification investisse'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'FIDLEGClassNo'
+    description: ''
+    genericControls:
+      refTable: 'PtInvestmentFIDLEGClass'
+      refField: 'ClassificationNo'
+      defColumnPos: 1
+  - name: 'OptingInOut'
+    description: ''
+    genericControls:
+      refTable: 'PtInvestmentFIDLEGClass'
+      refField: 'ClassificationNo'
+  - name: 'RiskKeyCalculatedTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtInvestmentRiskKey'
+      refField: 'TypeNo'
+      defColumnPos: 2
+  - name: 'RiskKeyManualTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtInvestmentRiskKey'
+      refField: 'TypeNo'
+  - name: 'InvestmentTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtInvestmentType'
+      refField: 'TypeNo'
+      defColumnPos: 3
+  - name: 'RecProductCategoryNo'
+    description: 'Berechnete Anlageberatungskategorie'
+    genericControls:
+      refTable: 'PtInvestmentAdvisoryCategory'
+      refField: 'TypeNo'
+      defColumnPos: 4
+  - name: 'ManProductCategoryNo'
+    description: 'übersteuerte Anlageberatungskategorie'
+    genericControls:
+      refTable: 'PtInvestmentAdvisoryCategoryOv'
+      refField: 'TypeNo'
+  - name: 'InvestmentHorizon'
+    description: 'Anlagehorizont in Jahren'
+  - name: 'InvestmentAmount'
+    description: ''
+  - name: 'InvestmentAmountCurr'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ValidFrom'
+    description: 'Gültig ab'
+    genericControls:
+      defColumnPos: 5
+  - name: 'IsInactiv'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'DateOfCompletion'
+    description: 'Datum, wann Risikoprofile mit Kunde erstellt wurde.'
+  - name: 'Reason'
+    description: 'Begrüdnung zu Feld RecProductCategoryNo'
+    genericControls:
+      multiLine: true
+  - name: 'CustomerQualMIFID'
+    description: 'für SEBA'
+    genericControls:
+      refTable: 'PtInvestmentCustomerQualMIFID'
+      refField: 'CustQualMIFIDNo'
+  - name: 'CustomerQualForeign'
+    description: ''
+    genericControls:
+      refTable: 'PtInvestmentCustQualForeign'
+      refField: 'CustomerQualForeignNo'

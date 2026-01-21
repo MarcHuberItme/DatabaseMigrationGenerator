@@ -1,0 +1,32 @@
+table:
+  name: 'ReBuildingAmountType'
+  description: 'Betragsart für Verbindung Gebäude - Partner'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Amounttype'
+    - german:
+        formTitle: 'Betragsart'
+  columns:
+  - name: 'AmountTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ForRelationType22'
+    description: ''
+  - name: 'ForRelationType24'
+    description: ''
+  - name: 'ForRelationType26'
+    description: ''
+  - name: 'SortNo'
+    description: ''

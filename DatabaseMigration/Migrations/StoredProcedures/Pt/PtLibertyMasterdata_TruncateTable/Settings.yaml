@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtLibertyMasterdata_TruncateTable'
+  description: 'Truncate the Table PtLibertyMasterdata'

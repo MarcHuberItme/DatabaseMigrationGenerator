@@ -1,0 +1,54 @@
+table:
+  name: 'DbIntegrityCheckHistory'
+  description: 'Contains a little history of table DbIntegrityCheck'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6b91ae05-a1a4-4f29-9a23-3235f80f4066
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'DB Integrity Checks Hist'
+    - german:
+        formTitle: 'DB Integrity Checks Hist'
+  columns:
+  - name: 'IntegrityCheckId'
+    description: ''
+    genericControls:
+      refTable: 'DbIntegrityCheck'
+      refField: 'Id'
+  - name: 'ExecutionDate'
+    description: 'Date of last execution'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Errors'
+    description: 'Number of errors found during last execution.'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'ErrorDetail'
+    description: ''
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'ResolvedBy'
+    description: 'Name of the user which resolved the problem'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'ResolvedDate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'ErrorDetailXML'
+    description: 'Detail information about the errors\r\n(Format save ADODB.Recordset adPersistXML)'
+    genericControls:
+      multiLine: true
+      isNoUpdate: true

@@ -1,0 +1,64 @@
+table:
+  name: 'SwMtAccount'
+  description: 'Account Data for MT940 SWIFT MessageType'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'SWIFT MT940'
+        helpText: 'SWIFT MT940'
+    - german:
+        formTitle: 'SWIFT MT940'
+        helpText: 'SWIFT MT940'
+    - french:
+        formTitle: 'SWIFT MT940'
+        helpText: 'SWIFT MT940'
+    - italian:
+        formTitle: 'SWIFT MT940'
+        helpText: 'SWIFT MT940'
+  columns:
+  - name: 'SwSettingId'
+    description: ''
+    genericControls:
+      refTable: 'SwMtSettings'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'AccountId'
+    description: 'AccountBaseId'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'EBankingDetailId'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrEBankingDetail'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'DateFrom'
+    description: 'Report From Date'
+  - name: 'DateTo'
+    description: 'Report To Date'
+  - name: 'LastTransDate'
+    description: 'Latest Transitem Date and Time'
+  - name: 'SWIFT_ADR'
+    description: 'SWIFT Receiver'
+  - name: 'AccountMessageNumber'
+    description: 'AUSZU'
+  - name: 'IsToSendSummary'
+    description: ''
+  - name: 'MessageType'
+    description: 'MessageType either "MT940" or "MT950"'
+  - name: 'LastAdhocTransDateTime'
+    description: ''

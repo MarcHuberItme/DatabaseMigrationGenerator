@@ -1,0 +1,36 @@
+table:
+  name: 'PtPaymentInstantExternalStatus'
+  description: 'Contains field LastResponseStatusReason same as in table PtPaymentInstantExecution. This table has a foreign key to PtPaymentInstantExternalText to make it possible to use the same number for more than one LastResponseStatusReason'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPaymentInstantExtStatus'
+        helpText: 'PtPaymentInstantExternalStatus'
+    - german:
+        formTitle: 'PtPaymentInstantExtStatus'
+        helpText: 'PtPaymentInstantExternalStatus'
+    - french:
+        formTitle: 'PtPaymentInstantExtStatus'
+        helpText: 'PtPaymentInstantExternalStatus'
+    - italian:
+        formTitle: 'PtPaymentInstantExtStatus'
+        helpText: 'PtPaymentInstantExternalStatus'
+  columns:
+  - name: 'LastResponseStatusReason'
+    description: 'this is an attribute that is also available in PtPaymentExecution (but there not explicity defined as foreign key as the values come from SIX and so are therefore not clearly defined for all times.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ExternalReasonNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentInstantExternalText'
+      refField: 'ExternalReasonNo'
+      defColumnPos: 2

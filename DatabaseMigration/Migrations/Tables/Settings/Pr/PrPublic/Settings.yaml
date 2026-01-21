@@ -1,0 +1,348 @@
+table:
+  name: 'PrPublic'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'IsinNo'
+    navigation:
+      isNavigationRoot: true
+      navigationConditionField: 'InstrumentTypeNo,SecurityType'
+      rootTable: 'PrPublic'
+      parentTable: 'ROOT'
+    uiTableDescription:
+    - english:
+        formTitle: 'Instrument'
+    - german:
+        formTitle: 'Instrument'
+  columns:
+  - name: 'FadVdfDocGen'
+    description: 'VDF: FAD.FAD.K801.0813\r\nGeneration of the last FAD-Doc, which was received from VDF'
+  - name: 'FadVdfDocStatusNo'
+    description: 'VDF: FAD.MGA.7895\r\nMessage status of FAD-Doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'FzdVdfDocGen'
+    description: 'VDF: FZD.FZD.0813\r\nGeneration of the last FZD-Doc, which was received from VDF'
+  - name: 'FzdVdfDocStatusNo'
+    description: 'VDF: FZD.MGA.7895\r\nMessage status of FZD-Doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'FtdVdfDocGen'
+    description: 'VDF: FTD.FTD.0813\r\nGeneration of the last FTD-Doc, which was received from VDF'
+  - name: 'FtdVdfDocStatusNo'
+    description: 'VDF: FTD.MGA.7895\r\nMessage status of FTD-Doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'CidVdfDocGen'
+    description: 'VDF: CID.CID.0813\r\nGeneration of the last CID-Doc, which was received from VDF'
+  - name: 'CidVdfDocStatusNo'
+    description: 'VDF: CID.MGA.7895\r\nMessage status of CID-Doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'ProductId'
+    description: 'foreign-key; Id of PrBase'
+    genericControls:
+      refTable: 'PrBase'
+      refField: 'Id'
+  - name: 'VdfInstrumentSymbol'
+    description: 'VDF: FAD.VAI.K981.7842\r\nIdentification of an instrument for VDF-Import'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IssuerId'
+    description: 'VDF: FAD.GEI.K985.3801 (translation with table PtBase)\r\nIssuer of the instrument'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'NamingPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DeleteReasonNo'
+    description: 'VDF: FAD.FMB.7826\r\nReason, why the instrument is no longer maintained by VDF'
+    genericControls:
+      refTable: 'PrPublicDeleteReason'
+      refField: 'DeleteReasonNo'
+  - name: 'InstrumentTypeNo'
+    description: 'VDF: FAD.FMB.7822\r\nType of instrument'
+    genericControls:
+      refTable: 'PrPublicInstrumentType'
+      refField: 'InstrumentTypeNo'
+  - name: 'InstrumentFormNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicInstrumentForm'
+      refField: 'InstrumentFormNo'
+  - name: 'OpeningDate'
+    description: 'VDF: FAD.FMB.2801-A\r\nDate of inclusion in TELEKURS database'
+  - name: 'DeletionDate'
+    description: 'VDF: FAD.FMB.2801-B\r\nThis date indicates when the instrument was set to inactive.\r\n'
+  - name: 'MainLanguageNo'
+    description: 'VDF: FAD.FMB.K982.9981\r\nMain language of the instrument'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'RedemptionCode'
+    description: 'VDF: FAD.FMB.4806'
+    genericControls:
+      refTable: 'PrPublicRedemptionCode'
+      refField: 'RedemptionCode'
+  - name: 'IsinNo'
+    description: 'VDF: FAD.FAS.K831.7803 & FAD.FAS.K831.7802\r\nIsin-No of the instrument'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SecurityType'
+    description: 'VDF: FAD.FMG.7845 (FAD.FMG.7844 = TKT)\r\nTelekurs security type'
+    genericControls:
+      refTable: 'PrPublicSecurityType'
+      refField: 'SecurityType'
+  - name: 'EuInterestTaxCat'
+    description: 'VDF: FAD.FMG.7845 (FAD.FMG.7844 = EUZS)\r\n'
+    genericControls:
+      refTable: 'PrPublicEuInterestTaxCat'
+      refField: 'EuInterestTaxCat'
+  - name: 'FundGroupNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicFundGroup'
+      refField: 'FundGroupNo'
+  - name: 'OptionTypeNo'
+    description: 'VDF: FZD.FMF.7824 or FAD.OFI.7824 (for TOFF)\r\nThe option type indicates the period in which the\r\noption can be exercised. (American/European/Bermuda)'
+    genericControls:
+      refTable: 'PrPublicOptionType'
+      refField: 'OptionTypeNo'
+  - name: 'ToffTypeNo'
+    description: 'VDF: FAD.OFI.7825 (only for TOFF)\r\nThe TOFF type indicates the type of underlying to which the traded option or future relates (e.g. TOFF on interest, etc.).'
+    genericControls:
+      refTable: 'PrPublicToffType'
+      refField: 'ToffTypeNo'
+  - name: 'RankingNo'
+    description: 'VDF: FZD.FMF.7847\r\nRank of this instrument in the case of liquidation'
+    genericControls:
+      refTable: 'PrPublicRanking'
+      refField: 'RankingNo'
+  - name: 'CertificateTypeNo'
+    description: 'VDF: FZD.FMF.4809\r\nCertificate type'
+    genericControls:
+      refTable: 'PrPublicCertificateType'
+      refField: 'CertificateTypeNo'
+  - name: 'InterestTypeNo'
+    description: 'VDF: FZD.FZY.4825\r\nCurrent interest type'
+    genericControls:
+      refTable: 'PrPublicInterestType'
+      refField: 'InterestTypeNo'
+  - name: 'ActualInterest'
+    description: 'VDF: FZD.FZY.5833\r\n         FZD.FZZ.5833\r\nActual interest rate (Unlike the old field FixInterest is ActualInterest also filled, if the interest rate isn''t fix)\r\n'
+  - name: 'NumberTimeUnit'
+    description: 'VDF: FZD.FZY.6921\r\nDistribution frequency: Number of time units (see field TimeUnitNo)'
+  - name: 'TimeUnitNo'
+    description: 'VDF: FZD.FZY.6921\r\nDistribution frequency: Type of time unit (e.g. year, month)'
+    genericControls:
+      refTable: 'PrPublicTimeUnit'
+      refField: 'TimeUnitNo'
+  - name: 'DayCountConvNo'
+    description: 'VDF: FZD.FZY.4824\r\nDay count convention used for the calculation of interest-bearing days on the corresponding annual basis, e.g. 30/360'
+    genericControls:
+      refTable: 'PrPublicDayCountConv'
+      refField: 'DayCountConvNo'
+  - name: 'InterestFromDate'
+    description: 'VDF: FZD.FZY.2801-B\r\nDate from which interest or dividend is calculated'
+  - name: 'IupCode'
+    description: 'VDF: FZD.FZY.4953\r\nIUP code (interet unique predominant)'
+    genericControls:
+      refTable: 'PrPublicIupCode'
+      refField: 'IupCode'
+  - name: 'DistribEarningTypeNo'
+    description: 'VDF: FZD.4951\r\nDistribution of earnings type'
+    genericControls:
+      refTable: 'PrPublicDistribEarningType'
+      refField: 'DistribEarningTypeNo'
+  - name: 'UsIrsIncomeCode'
+    description: 'VDF: FZD.FZM.4985\r\nUS-IRS Income code\r\nThe income code indicates the source of income subject to taxation'
+    genericControls:
+      refTable: 'PrPublicUsIrsIncomeCode'
+      refField: 'UsIrsIncomeCode'
+  - name: 'EquityTypeNo'
+    description: 'VDF: FZD.FME.4834\r\nEquity type\r\n'
+    genericControls:
+      refTable: 'PrPublicEquityType'
+      refField: 'EquityTypeNo'
+  - name: 'SmallDenom'
+    description: 'VDF: FZD.NUS.6912\r\nSmallest Denomination'
+  - name: 'RefTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicRefType'
+      refField: 'RefTypeNo'
+  - name: 'ClassText'
+    description: 'VDF: FZD.FZM.7866'
+  - name: 'SeriesText'
+    description: 'VDF: FZD.FZM.7867'
+  - name: 'ActualDistribFrequencyNo'
+    description: 'VDF: FZD.FME.4948'
+    genericControls:
+      refTable: 'PrPublicDistribFrequency'
+      refField: 'DistribFrequencyNo'
+  - name: 'FundTypeNo'
+    description: 'VDF: FTD.FTA.4849\r\nGeneric term of the fund type'
+    genericControls:
+      refTable: 'PrPublicFundType'
+      refField: 'FundTypeNo'
+  - name: 'OpenFundTypeNo'
+    description: 'VDF: FTD.FTA.4853\r\nThis indicates whether the fund continues to issue units and in what form'
+    genericControls:
+      refTable: 'PrPublicOpenFundType'
+      refField: 'OpenFundTypeNo'
+  - name: 'FundOpenDate'
+    description: 'VDF: FTD.FTA.2801-D'
+  - name: 'InvestmentStyleNo'
+    description: 'VDF: FTD.FTA.4860\r\nPolicy for distribution of dividend'
+    genericControls:
+      refTable: 'PrPublicInvestmentStyle'
+      refField: 'InvestmentStyleNo'
+  - name: 'CompoundTypeNo'
+    description: 'VDF: FUD.FUS.4842\r\n         FQD.FQI. 4842\r\nInstrument composition type'
+    genericControls:
+      refTable: 'PrPublicCompoundType'
+      refField: 'CompoundTypeNo'
+  - name: 'FactorDoubleCurrencyBond'
+    description: 'VDF: CID.CIB.K855-A.5833 / CID.CIB.K855-B.5833\r\nCurrency rate between nominal currency and interest currency (for FIPS bonds)'
+  - name: 'SpecialInterestCurrency'
+    description: 'VDF: CID.CIB.K855-A.6804\r\nInterest currency for FIPS bonds. Is only filled, if the interest currency is other than the nominal currency.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'SpecCommissionCat'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicSpecCommissionCat'
+      refField: 'SpecCommissionCat'
+  - name: 'NoSwissTurnoverTax'
+    description: ''
+  - name: 'InstrumentStatusNo'
+    description: 'Field is redundant to the field in table PrPublicHist\r\nVDF: FAD.FMB.7821\r\nInstrument status, e.g. active, inactive, in default (= notleidend)'
+    genericControls:
+      refTable: 'PrPublicInstrumentStatus'
+      refField: 'InstrumentStatusNo'
+  - name: 'MajorTradingPlaceId'
+    description: 'Field is redundant to the field in table PrPublicHist\r\nVDF: FAD.GEH.K985.3801 (translation with table PrPublicTradingPlace)\r\nMost liquid trading place'
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'NominalCurrency'
+    description: 'Field is redundant to the field in table PrPublicHist\r\nVDF: FAD.FMA.K983.6804 (translation with table CyBase)\r\nNominal currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'ExposureCurrency'
+    description: 'Field is redundant to the field in table PrPublicHist'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'NominalAmount'
+    description: 'Field is redundant to the field in table PrPublicHist\r\nVDF: FAD.FMA.5801\r\nNominal amount'
+  - name: 'Verse'
+    description: 'Field is redundant to the field in table PrPublicHist\r\nVDF: FAD.FMA.5802\r\nIf the instrument is partly paid as opposed to fully paid-up, the currently paid in amount is recorded here'
+  - name: 'UnitNo'
+    description: 'Field is redundant to the field in table PrPublicHist\r\nVDF: FAD.FMA.4802, but if there is one entry in PrReference for this instrument, VDF doesn''t change this field anymore.\r\nCode to denote the unit of measurement assigned to the instrument, e.g. piece, nominal etc.'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'VdfUnitNo'
+    description: 'VDF: FAD.FMA.4802, unlike field UnitNo, VDF can change this field always.\r\nCode to denote the unit of measurement assigned to the instrument, e.g. piece, nominal etc.'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'ContractSize'
+    description: 'VDF: FAD.OFI.6911-A'
+  - name: 'CashMultiplier'
+    description: 'VDF: FAD.OFI.6911-B'
+  - name: 'ToffVersion'
+    description: 'VDF: FAD.OFI.7807'
+  - name: 'MaintenanceStatusNo'
+    description: 'Field is redundant to the field in table PrPublicHist\r\nVDF: -\r\nStatus, wheter an instrument is actually maintained by VDF\r\nThis field will be set to 2 when a new instrument was deliverd from VDF with FAD-Doc.\r\nThe field field be set from Finstar to 4 or 2 in VDFServerLogic.clsInstrumentStatus'
+    genericControls:
+      refTable: 'PrPublicMaintenanceStatus'
+      refField: 'MaintenanceStatusNo'
+  - name: 'CollateralRate'
+    description: ''
+  - name: 'AlwaysVDFRequest'
+    description: 'for VDF request'
+  - name: 'LastVdfCheckRequestDate'
+    description: ''
+  - name: 'DefaultTaxReportClass'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxReportClass'
+      refField: 'TaxReportClass'
+  - name: 'AssetTypeCalculated'
+    description: 'Automatically calculated by Softlogic-Tree ''HauptKlassifikation''\r\nAsset-type is used e.g. for Vermögensauszug in order to group the instruments. It is also used for the calculation of the Lombard-credits.'
+    genericControls:
+      refTable: 'PrPublicAssetType'
+      refField: 'AssetTypeCode'
+  - name: 'AssetTypeManual'
+    description: 'If the automatically calculated Asset-type (see AssetTypeCalculated) failed, manual inputs will be saved here. It would oversteer AssetTypeCalculated.\r\nAsset-type is used e.g. for Vermögensauszug in order to group the instruments. It is also used for the calculation of the Lombard-credits.'
+    genericControls:
+      refTable: 'PrPublicAssetType'
+      refField: 'AssetTypeCode'
+  - name: 'CollateralRateCalculated'
+    description: 'Percentage of the value of a security which is accepted as a collateral for a loan.\r\nThis percentage is calculated by the system and is stored here for speeding up the calculation of the collateral value of a portfolio.'
+  - name: 'CollateralRateManual'
+    description: 'Percentage of the value of a security which is accepted as a collateral for a loan.\r\nThe collateral rate in this field can be edited manually and would oversteer the value in CollateralRateCalculated.'
+  - name: 'NumberPhysicalUnit'
+    description: 'VDF: FZD.FOC.6911'
+  - name: 'PhysicalUnitTypeNo'
+    description: 'VDF: FZD.FOC.4869'
+    genericControls:
+      refTable: 'PrPublicPhysicalUnitType'
+      refField: 'PhysicalUnitTypeNo'
+  - name: 'AssetClassManual'
+    description: 'By default the asset class for PMS is calculated using exposure currency, when needed this can be overriden by manually assigning the asset class.'
+    genericControls:
+      refTable: 'CyAssetClass'
+      refField: 'ClassNo'
+  - name: 'FinfraGObjectTaxRep'
+    description: 'VDF: FSD.FSR.7864 (objectTaxRep)\r\nTaxable object\r\n-->  used for FinfraG'
+    genericControls:
+      refTable: 'PrPublicTaxableObject'
+      refField: 'ObjectTaxRepNo'
+  - name: 'FinfraGApplicTaxRep'
+    description: 'VDF: FSD.FSR.7863 (applicTaxRep)\r\nTax applicability\r\n--> used for FinfraG'
+    genericControls:
+      refTable: 'PrPublicApplicTaxRep'
+      refField: 'ApplicTaxRepNo'
+  - name: 'FundInvestorTargetGroup'
+    description: 'VDF: FTD.VAI.FTA.7845 (FundTargetGr)\r\n--> used for KAG'
+    genericControls:
+      refTable: 'PrPublicFundTargetGroup'
+      refField: 'InvestorTargetGroup'
+  - name: 'FundIsClosed'
+    description: 'VDF: FTD.VAI.FTA.4924 (closedEnd)\r\n--> used for KAG'
+  - name: 'VdfUpdExcludeShortname'
+    description: '1= Exclude PrPublicText.ShortName from VDF-Update'
+  - name: 'VdfUpdExcludeContractSize'
+    description: '1= Exclude PrPublic.ContractSize from VDF-Update.'
+  - name: 'VdfUpdExcludeSmallDenom'
+    description: '1= Exclude PrPublic.SmallDenom and PrPublicIssue.SmallesTradingUnit from VDF-Update.'
+  - name: 'VdfUpdExcludeCashMultiplier'
+    description: '1= Exclude PrPublic.CashMultiplier from VDF-Update.'
+  - name: 'AsHBLFond'
+    description: 'used for AdmCharge'

@@ -1,0 +1,35 @@
+table:
+  name: 'CMFileConfirmation'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'AccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'EbankingIdVisum1'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'EbankingIdVisum2'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'FileImportProcessId'
+    description: ''
+    genericControls:
+      refTable: 'CMFileImportProcess'
+      refField: 'Id'

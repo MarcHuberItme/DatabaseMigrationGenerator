@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DataExport_GetProxies'
+  description: 'Retrieves Proxies for a given Partner.\r\nIs used by DocWiz DataExport.'

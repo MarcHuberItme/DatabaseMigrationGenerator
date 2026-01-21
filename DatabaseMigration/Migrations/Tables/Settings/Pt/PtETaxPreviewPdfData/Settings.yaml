@@ -1,0 +1,32 @@
+table:
+  name: 'PtETaxPreviewPdfData'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtETaxPreviewPdfData'
+        helpText: 'PtETaxPreviewPdfData'
+    - german:
+        formTitle: 'PtETaxPreviewPdfData'
+        helpText: 'PtETaxPreviewPdfData'
+    - french:
+        formTitle: 'PtETaxPreviewPdfData'
+        helpText: 'PtETaxPreviewPdfData'
+    - italian:
+        formTitle: 'PtETaxPreviewPdfData'
+        helpText: 'PtETaxPreviewPdfData'
+  columns:
+  - name: 'TaxReportDataId'
+    description: ''
+    genericControls:
+      refTable: 'PtTaxReportData'
+      refField: 'Id'
+  - name: 'PdfData'
+    description: ''

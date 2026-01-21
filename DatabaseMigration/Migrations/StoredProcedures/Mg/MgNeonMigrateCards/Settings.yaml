@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'MgNeonMigrateCards'
+  description: 'Load import data from MgNeonImport and create new neon cards'

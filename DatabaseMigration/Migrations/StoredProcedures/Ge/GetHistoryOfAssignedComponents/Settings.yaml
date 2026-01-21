@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetHistoryOfAssignedComponents'
+  description: 'Used in FssCredit project. Get a history list of components assigned'

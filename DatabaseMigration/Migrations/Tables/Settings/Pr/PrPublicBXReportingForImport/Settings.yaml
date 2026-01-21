@@ -1,0 +1,14 @@
+table:
+  name: 'PrPublicBXReportingForImport'
+  description: 'this is a temporary table, only used to import the csv-file into the PrPublicSIXReporting'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'IsinNo'
+    description: ''

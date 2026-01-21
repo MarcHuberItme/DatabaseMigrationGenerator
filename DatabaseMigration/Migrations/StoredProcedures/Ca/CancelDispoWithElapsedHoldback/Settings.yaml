@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CancelDispoWithElapsedHoldback'
+  description: 'Cancel all Dispo Bookings with elapsed HoldbackTime.'

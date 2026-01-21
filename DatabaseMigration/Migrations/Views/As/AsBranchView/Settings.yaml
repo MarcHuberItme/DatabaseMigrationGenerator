@@ -1,0 +1,31 @@
+view:
+  name: 'AsBranchView'
+  description: 'Consolidates Branches of hbl for use in OpenAPI.'
+frontendView:
+  name: 'AsBranchView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'BranchNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+  - name: 'TextShort'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 25
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true

@@ -1,0 +1,35 @@
+table:
+  name: 'PtLegalRepStatus'
+  description: 'Legal Representative / gesetzlicher Vertreter (z.B. Vormund, Beirat, Beistand)\r\nbei OERK - Angabe ob Recht zum Steuern erheben oder nicht'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Legal Rep. Status'
+    - german:
+        formTitle: 'Handlungsstatus'
+  columns:
+  - name: 'RepStatusNo'
+    description: 'e.g. patronized person'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IsJudiciously'
+    description: 'false = is not  judiciously\r\ntrue = is judiciously'
+  - name: 'ForLegalPartner'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'WithTaxAuthority'
+    description: 'mit / ohne Recht zur Steuererhebung'
+    genericControls:
+      defColumnPos: 3

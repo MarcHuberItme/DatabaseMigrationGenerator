@@ -1,0 +1,37 @@
+table:
+  name: 'PtMLMapConsultantsToChannel'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Consultants to Channel'
+    - german:
+        formTitle: 'GwG Betreuerteam / Kanal'
+    - french:
+        formTitle: 'ML Consultants / Channel'
+  columns:
+  - name: 'ConsultantTeamName'
+    description: 'Referenz zu AsUserGroup.UserGroupName'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 1
+  - name: 'DefaultCheckChannelNo'
+    description: 'hier kann definiert werden welcher Default Kanal für die periodische GWG Prüfung für diesen Kundenberater-Schlüssel verwendet werden soll'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckChannel'
+      refField: 'ChannelNo'
+      defColumnPos: 2
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

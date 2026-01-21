@@ -1,0 +1,62 @@
+table:
+  name: 'BpPeriodicJob'
+  description: 'Batch Job with periodic execution'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'LogicalName'
+    description: 'Name of Task which must be activated by the Batch Processor Engine'
+    genericControls:
+      refTable: 'AsLogicalTask'
+      refField: 'LogicalName'
+      defColumnPos: 1
+  - name: 'ParameterString'
+    description: 'Parameter String for Job execution'
+    genericControls:
+      multiLine: true
+  - name: 'MinStartDay'
+    description: 'Minimal date and time for first execution of Batch Job'
+  - name: 'MaxStartDay'
+    description: 'Maximal date and time for last execution of Batch Job'
+  - name: 'AttachedEngine'
+    description: 'Name of engine which has to execute this batch job'
+    genericControls:
+      defColumnPos: 3
+  - name: 'JobName'
+    description: 'Name of Job (can be specified for improved monitoring)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'State'
+    description: 'State of Job, indicating if it is waiting or running'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Minutes'
+    description: 'Comma separated list of Minutes for execution'
+  - name: 'Hours'
+    description: 'Comma separated list of Hours for execution (or ''*'' for ''every hour'')'
+  - name: 'WeekDays'
+    description: 'Comma separated list of Weekdays for execution (or ''*'' for ''every weekday'')\r\nMonday: 1\r\nSunday: 7'
+  - name: 'MonthDays'
+    description: 'Comma separated list of Monthdays for execution (or ''*'' for ''every monthday'')'
+  - name: 'Months'
+    description: 'Comma separated list of Months for execution (or ''*'' for ''every month'')'
+  - name: 'LastDayOf'
+    description: 'Last Day of:\r\nM:	Month\r\nQ:	Quarter of a Year\r\nS:	Semester\r\nY:	Year\r\n0:	none'
+  - name: 'NextStartTime'
+    description: 'Date and Time of next execution'
+    genericControls:
+      defColumnPos: 4
+  - name: 'MaxDurationMinutes'
+    description: 'Maximal number of minutes which the process may be running (process is cancelled after this duration). Expected values: 1-2000'
+  - name: 'ForBatchEngineOnly'
+    description: 'Defines if the entry is only for batch engines (process will not be started by JCS)'
+  - name: 'ExecutableProject'
+    description: 'Project Name (of executable) where process method class is implemented.'
+  - name: 'ExecutableClassName'
+    description: 'Class Name (of executable) where process methods are implemented.'

@@ -1,0 +1,44 @@
+table:
+  name: 'IfCamtBalanceDelivery'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'TransformId'
+    description: ''
+    genericControls:
+      refTable: 'IfDeliveryDetailHistory'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'StatementId'
+    description: ''
+    genericControls:
+      refTable: 'IfCamtStatementDelivery'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'BalanceTypeCode'
+    description: ''
+  - name: 'Amount'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CreditDebitIndicator'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Date'
+    description: ''
+    genericControls:
+      defColumnPos: 4

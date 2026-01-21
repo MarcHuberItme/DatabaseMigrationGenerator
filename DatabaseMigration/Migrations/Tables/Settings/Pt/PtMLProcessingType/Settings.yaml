@@ -1,0 +1,36 @@
+table:
+  name: 'PtMLProcessingType'
+  description: 'Verwaltung der Prozesstypen der GWG-Prüfung'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Processing Type'
+    - german:
+        formTitle: 'GWG Prozess Typ'
+    - french:
+        formTitle: 'Type de traitement ML'
+    - italian:
+        formTitle: 'Tipo di elaborazione ML'
+  columns:
+  - name: 'ProcessingTypeNo'
+    description: 'Art der Verarbeitung (manuell, automatisiert)'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Remark'
+    description: 'Bemerkungsfeld'
+    genericControls:
+      multiLine: true
+  - name: 'IsManual'
+    description: 'steuert Button cmdFinishFollowupProc\r\n(enable/disable)'
+    genericControls:
+      defColumnPos: 2

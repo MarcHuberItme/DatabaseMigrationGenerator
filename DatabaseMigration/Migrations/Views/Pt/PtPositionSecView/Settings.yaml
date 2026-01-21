@@ -1,0 +1,101 @@
+view:
+  name: 'PtPositionSecView'
+  description: ''
+frontendView:
+  name: 'PtPositionSecView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'PositionDescription'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'PortfolioNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 13
+    genericControls:
+      defColumnPos: 1
+  - name: 'PublicDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 2
+  - name: 'GroupNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 4
+  - name: 'InterestRate'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+    genericControls:
+      defColumnPos: 5
+  - name: 'MaturityDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'SpecialKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 7
+  - name: 'IsShortToff'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 8
+  - name: 'PoliceSeqNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 9
+  - name: 'ObjectSeqNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 10
+  - name: 'ObligationSeqNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 11
+  - name: 'PositionDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 300
+    genericControls:
+      defColumnPos: 12

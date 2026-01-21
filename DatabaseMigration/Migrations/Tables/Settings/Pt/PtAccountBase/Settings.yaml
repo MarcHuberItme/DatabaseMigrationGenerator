@@ -1,0 +1,351 @@
+table:
+  name: 'PtAccountBase'
+  description: 'account of a partner'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    descField: 'AccountNoEdited'
+    navigation:
+      applicationKey: 'AccountNoEdited'
+      rootTable: 'PtBase'
+      parentTable: 'PtPortfolio'
+      parentRelationField: 'PortfolioId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Account'
+    - german:
+        formTitle: 'Konto'
+    - french:
+        formTitle: 'Compte'
+  columns:
+  - name: 'PrivacyLockId'
+    description: 'foreign-key; Id of AsPrivacyLock'
+    genericControls:
+      refTable: 'AsPrivacyLock'
+      refField: 'Id'
+  - name: 'PortfolioId'
+    description: 'foreign-key; Id of PtPortfolio'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountNo'
+    description: 'candidate-key; account identificationnumber'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'AccountNoText'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'AccountNoEdited'
+    description: 'not for manual input, but for display'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'AccountNoIbanElect'
+    description: 'IBAN Number for electronic use.\r\ne.g.:\r\nCH7208307000123456300'
+  - name: 'AccountNoIbanForm'
+    description: 'Formatted IBAN for paper use.\r\ne.g.: IBAN CH72 0830 7000 1234 563 0\r\n'
+  - name: 'FormerAccountNo'
+    description: 'Previous Account number. (Extended from 15 to 16 characters) to fit Sallfort account number. Further extended from 16 to 30 characters to fit avobis external account numbers.'
+  - name: 'CustomerReference'
+    description: 'Description of Account (View of Partner)\r\n*** Warning: Must remain 30 chars as long as VRX-Migration is active\r\n*** nmu 13.7.2004 : 100 chars for main ledger accounts'
+    genericControls:
+      defColumnPos: 3
+  - name: 'OpeningDate'
+    description: 'Date of Account Opening'
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'MotiveToOpenNo'
+    description: 'foreign-key;  candidate-key of AsMotiveOpenType (MotiveOpenTypeNo)'
+    genericControls:
+      refTable: 'AsMotiveOpenType'
+      refField: 'MotiveOpenTypeNo'
+  - name: 'TerminationDate'
+    description: 'Date of Account closing'
+  - name: 'MotiveToCloseNo'
+    description: 'foreign-key;  candidate-key of AsMotiveCloseType (MotiveCloseTypeNo)'
+    genericControls:
+      refTable: 'AsMotiveCloseType'
+      refField: 'MotiveCloseTypeNo'
+  - name: 'TerminationRemark'
+    description: 'remarks about reasons of termination the account'
+    genericControls:
+      multiLine: true
+  - name: 'TaxationType'
+    description: ''
+  - name: 'MinimumRate'
+    description: 'if filled, the account has a minimum rate (given by the related product)'
+  - name: 'MaximumRate'
+    description: 'if filled, the account has a maximum rate (given by the related product)'
+  - name: 'RoundingType'
+    description: 'ONLY FOR SPECIAL REASONS! Normally the RoundingType of the related product is valid (default)!\r\ndifferent types of rounding (for example eighth rounding, sixteenth rounding, etc.)'
+    genericControls:
+      refTable: 'PrRoundingType'
+      refField: 'TypeNo'
+  - name: 'RoundingRule'
+    description: 'ONLY FOR SPECIAL REASONS! Normally the RoundingRule of the related product is valid (default)!\r\ndefinition of rounding rules (for example round mathematical, always round up, etc.)'
+    genericControls:
+      refTable: 'PrRoundingRule'
+      refField: 'TypeNo'
+  - name: 'VersionNo'
+    description: ''
+  - name: 'PrintDate'
+    description: ''
+  - name: 'ContractId'
+    description: 'foreign-key; Id of PtContractBase'
+    genericControls:
+      refTable: 'PtContract'
+      refField: 'Id'
+  - name: 'SavingsPlanNo'
+    description: 'savings plan number'
+    minValue: '0'
+    maxValue: '999'
+  - name: 'AgentId'
+    description: 'Vermittler'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PaymentInstruction'
+    description: 'This text will be dispayed in a message box as a warning to the cashier in case of cash payments. It''s possible to cancel the transaction or not. \r\nIn case of non cash payments (e.g. SIC) the transaction will be presented over workflow to the consultant team.'
+    genericControls:
+      multiLine: true
+  - name: 'ConformAccountNo'
+    description: 'If the account is an account of Hypothekarbank Lenzburg at an other bank, this is the account no from the other bank.'
+  - name: 'TrusteeDesc'
+    description: 'Treuhänder - Text (Name, Adresse) wenn kein Partnerstamm vorhanden'
+    genericControls:
+      multiLine: true
+  - name: 'TrusteeId'
+    description: 'Treuhänder'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CharacteristicNo'
+    description: 'Main Ledger / Hauptbuch - Feinunterteilung eines Produktes z.B. Sonst.Aktiven\r\nKundenkonto: Marketingbezeichnung eines Produkts, z.B. Maxihypothek'
+    genericControls:
+      refTable: 'PrPrivateCharacteristic'
+      refField: 'CharacteristicNo'
+  - name: 'BuildingLoanFullCosts'
+    description: 'Baukredit - Anlagekosten bzw. Umbaukosten (davon Landkosten -> BuildingLoanLandCosts)'
+  - name: 'BuildingLoanLandCosts'
+    description: 'Baukredit - Landkosten'
+  - name: 'InterestPracticeType'
+    description: ''
+    genericControls:
+      refTable: 'AsInterestPractice'
+      refField: 'PracticeType'
+  - name: 'PublicFlag'
+    description: 'Konto darf öffentlich im E-Banking verwendet werden.\r\n0 = not public\r\n1 = public (alle reinen PC Nummern sind public)'
+  - name: 'MgVrxKey'
+    description: 'FIS-VRX Database Key for Migration'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgSITZ'
+    description: 'branch'
+    genericControls:
+      refTable: 'MgA01'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgZINSKATId'
+    description: 'interest category'
+    genericControls:
+      refTable: 'MgInterestCategory'
+      refField: 'Id'
+      isOnlyForMig: true
+  - name: 'MgSPESKATId'
+    description: 'expenses category'
+    genericControls:
+      refTable: 'MgExpensesCategory'
+      refField: 'Id'
+      isOnlyForMig: true
+  - name: 'MgABSCHLCD'
+    description: 'closing rules\r\nresonable values are for closing\r\n1 (monthly) 2 (bimonthly)\r\n51 (yearly), 52 (sixmonthly), 54 (quarterly);\r\nJust for accrued interest calculation use :\r\n	84 (quarterly),\r\n	89 (not defined period);\r\n	for no action 91 (yearly), \r\n	99 (period not defined).'
+    genericControls:
+      refTable: 'MgClosing'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgFRONTFL'
+    description: 'flag for cash transaction (print balance on cash ticket)\r\n\r\nNEW USAGE: PRINT BALANCE ON ADVICES (if True) 12.2.2009 psk/mwi'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgDKGR1'
+    description: 'portfolio group number'
+    genericControls:
+      refTable: 'MgDKGR'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgZVDETAIL'
+    description: 'Flag used in VRX for EDAK'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgMTAUSZG'
+    description: 'monthly statement\r\n0 = use standard defined in FIS-VRX; 10 = always monthly; 99 = not desired'
+    genericControls:
+      refTable: 'MgK22'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgEINNE'
+    description: 'branch (Zweigbüro)'
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgOBJEKT'
+    description: ''
+    genericControls:
+      refTable: 'MgA21'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgVERKWERT'
+    description: ''
+    minValue: '-99999999999.99'
+    maxValue: '99999999999.99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVERKWERTDAT'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVERKWERTART'
+    description: ''
+    genericControls:
+      refTable: 'MgA68'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgANLWERT'
+    description: ''
+    minValue: '-99999999999.99'
+    maxValue: '99999999999.99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgMAHNCDZNS'
+    description: 'code for interest payment remainder'
+    genericControls:
+      refTable: 'MgH13'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgMAHNCDAMO'
+    description: 'code for amortisation payment remainder'
+    genericControls:
+      refTable: 'MgH13'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgPENDSA'
+    description: 'pending by bank clerk'
+    genericControls:
+      refTable: 'MgA02'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgFRIERZNS'
+    description: 'term of payment extension (interest)'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgFRIERAMO'
+    description: 'term of payment extension (amortisation)'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgBAUJAHR'
+    description: 'Year of construction'
+    minValue: '0'
+    maxValue: '9999'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgKONTRDAT'
+    description: 'control date'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVERBRIEF'
+    description: 'mortgage debenture'
+    genericControls:
+      refTable: 'Mg511'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgOBJPLZ'
+    description: ''
+    minValue: '0'
+    maxValue: '9999'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVERFALL'
+    description: 'Expiration date for fix term mortgage'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgPFANDBRIEF'
+    description: ''
+    genericControls:
+      refTable: 'Mg510'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgZINSTERM'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgFundTypeId'
+    description: 'Field is only used when it is a fund account (ProductNo 1018). It contains the Id of the fond. The fund name is backmigrated in KS10.RUBRIK.'
+    genericControls:
+      refTable: 'MgFundType'
+      refField: 'Id'
+      isOnlyForMig: true
+  - name: 'MgVERMITT'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+      isOnlyForMig: true
+  - name: 'MgIsToClose'
+    description: 'during migration this field will be updated to cause backmigration to vrx.'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'SalaryDebitAdviceTypeNo'
+    description: 'If NULL then PrAdviceControl rule has to be used'
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+  - name: 'SalaryDebitStatementDetails'
+    description: 'defines if the debit salary bookings details have to be printed on \r\nthe account statement. This field is considered only when \r\nSalaryDebitAdviceTypeNo is set. If SalaryDebitAdviceTypeNo is\r\nnot set then the PrAdviceControl rules will be applied.'
+  - name: 'SalaryCreditAdviceTypeNo'
+    description: 'If NULL then PrAdviceControl rule has to be used'
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+  - name: 'SalaryCreditStatementDetails'
+    description: 'defines if the credit salary bookings details have to be printed on \r\nthe account statement. This field is considered only when \r\nSalaryCreditAdviceTypeNo is set. If SalaryCreditAdviceTypeNo is\r\nnot set then the PrAdviceControl rules will be applied.'
+  - name: 'UsageNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountUsagePurpose'
+      refField: 'UsageNo'
+  - name: 'MinimumCapitalViolated'
+    description: 'Only for mortages:\r\nTrue if SBVg selfregulation considering 10% own capital without pension fund is violated.'
+  - name: 'MinimumAmortisationViolated'
+    description: 'Only for mortages:\r\nTrue if SBVg selfregulation for amortisation down to 66% within 20 years is violated.'
+  - name: 'PrioCredit'
+    description: 'Wenn eine Sicherheit mehreren Kreditkonti zugewiesen ist, welches Kreditkonto hat die höchste Priorität (kleinste Zahl)'
+    minValue: '1'
+    maxValue: '99'
+  - name: 'Collclean'
+    description: 'Wenn true wurden alle Sicherheiten in der neuen Sicherheitenverwaltung bereinigt\r\nXSD: Changed it back from CamelCase to stay compatible with PM1 Export package meta data.'
+  - name: 'FormerAccountNoIBANElect'
+    description: 'Previous account number in IBAN format'
+  - name: 'ConformAccountNoIBAN'
+    description: 'External Account number in IBAN format'
+  - name: 'QrIban'
+    description: 'QR IBAN Number for QR Code\r\ne.g.:\r\nCH7230116000123456300'
+  - name: 'QrIbanForm'
+    description: 'Formatted QR IBAN for paper use.\r\ne.g.: CH76 3011 6000 1234 563 0\r\n'
+  - name: 'HasAnnuity'
+    description: '0=There is no annuity on this account\r\n1=Account has annuity'

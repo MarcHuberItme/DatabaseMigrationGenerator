@@ -1,0 +1,21 @@
+table:
+  name: 'WfExternalEvent'
+  description: 'List of external events that can be catched by a workflow ''WaitForEvent'' step.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'External Workfllow Events'
+    - german:
+        formTitle: 'Ext. Workflowereignisse'
+  columns:
+  - name: 'EventName'
+    description: 'Name of the external event.'
+    genericControls:
+      defColumnPos: 1

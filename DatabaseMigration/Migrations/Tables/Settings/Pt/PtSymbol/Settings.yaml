@@ -1,0 +1,48 @@
+table:
+  name: 'PtSymbol'
+  description: 'mnemonic that refers to a partner; individual definable for a user'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Symbol'
+    - german:
+        formTitle: 'Symbol'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key, Id of PtDescriptionView (View to create the descriptionfield of PtBase)'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'UserId'
+    description: 'foreign-key; Id of AsUser\r\nif Null, the Symbol is general for all User'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'Symbol'
+    description: 'mnemonic that refers to a partner; individual definable for a user'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SymbolType'
+    description: ''
+    genericControls:
+      refTable: 'PtSymbolType'
+      refField: 'SymbolType'
+      defColumnPos: 2
+  - name: 'SymbolStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicSymbolStatus'
+      refField: 'SymbolStatusNo'
+      defColumnPos: 3

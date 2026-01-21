@@ -1,0 +1,26 @@
+table:
+  name: 'PrPublicCommodityCat'
+  description: 'VDF-Domaine: 7923 K-426'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - german:
+        formTitle: 'Commodity-Bereich'
+  columns:
+  - name: 'CommodityCatNo'
+    description: 'Maintained by VDF-Metadata'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CommodityDetails'
+    description: 'Agricultural\r\n\n- GO = Grains oilseeds\r\n\n- DA = Dairy\r\n\n- LI = Livestock\r\n\n- FO = Forestry\n\r\n- SO = Softs\n\n\r\nFreights\r\n\n- DR = Dry\n\r\n- WT = Wet\r\n\n\nEnergy\r\n\n- OI = Oil\r\n\n- NG = Natural gas\r\n\n- CO = Coal\r\n\n- EL = Electricity\r\n\n- IE = Inter-energy\r\n\n\nMetals\r\n\n- PR = Precious\r\n\n- NP = Non-precious\n\nEnvironmental\r\n\n- WE = Weather\r\n\n- EM = Emissions\n\nOther\r\n\n- OT = does not fit into any of the other categories\r\n'
+    genericControls:
+      defColumnPos: 2

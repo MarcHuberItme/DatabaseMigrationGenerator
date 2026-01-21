@@ -1,0 +1,62 @@
+table:
+  name: 'PtLogin'
+  description: 'Aufzeichnung des Internet-Login mittels PKI oder Streichliste'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Internet Login'
+    - german:
+        formTitle: 'Internet Login'
+  columns:
+  - name: 'EBankingId'
+    description: 'EBankingId for authentification'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'CertId'
+    description: 'Relation to PKI-Cert. if used for Login'
+    genericControls:
+      refTable: 'PtPKICert'
+      refField: 'Id'
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'SecureListId'
+    description: 'Relation to SecurListId if used for Login'
+    genericControls:
+      refTable: 'PtAgrSecureList'
+      refField: 'Id'
+      defColumnPos: 4
+  - name: 'LoginDate'
+    description: 'Login date'
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'LogoutDate'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'SessionId'
+    description: 'SessionId, Format = yyyymmddhhmmssmmm \r\nyyyy = Year,  mm = Month, dd = Day, \r\nhh = Hour, mm = Minute, ss = Second, mmm = Millisecond'
+    genericControls:
+      defColumnPos: 7
+  - name: 'IsUserLogout'
+    description: 'True if user logged out.'
+    genericControls:
+      defColumnPos: 8
+  - name: 'CCVers'
+    description: 'Contains Clientversion CCVERS of the Software that is installed on the clientside (e.g. NetBannking HBL Edition (Ver: 1 / 0 / 33/ 0) (will be only update through ebaning software automatically)'
+    genericControls:
+      defColumnPos: 9
+      isNoUpdate: true
+  - name: 'PartnerId'
+    description: 'to be removed after software is updated 08.03.2006/mct'
+  - name: 'ContactPersonId'
+    description: 'to be removed after software is updated 08.03.2006/mct'

@@ -1,0 +1,3 @@
+view:
+  name: 'AcFrozenOwnSecurityReportView'
+  description: 'own securities detail data for fire export'

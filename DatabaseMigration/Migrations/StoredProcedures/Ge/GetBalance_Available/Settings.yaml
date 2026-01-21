@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetBalance_Available'
+  description: '--Purpose		: It returns all types of balance information(pending, real, limits availabe, limits granted, net) \r\n--Author			: Abdul Nasir Khan\r\n--Date Created	: 16-May-2003'

@@ -1,0 +1,17 @@
+table:
+  name: 'PtNameComparisonAliases'
+  description: 'Table defines aliases which can be used in certain occasion as an alternative notation in the name matching rules according to the table PtNameComparisonRule.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'BaseTerm'
+    description: ''
+  - name: 'Alias'
+    description: ''

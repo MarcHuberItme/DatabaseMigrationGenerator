@@ -1,0 +1,34 @@
+table:
+  name: 'PtAgrGeneralContrTemplNames'
+  description: 'Agreement general contract: all possible text modules'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Typ of Gen.Contr.Template'
+    - german:
+        formTitle: 'Vertragsvorlagentypen'
+    - french:
+        formTitle: 'Types de modèles de contr'
+  columns:
+  - name: 'ContractTempType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'DocName'
+    description: 'Template Name'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsAllowedToModified'
+    description: ''
+    genericControls:
+      defColumnPos: 3

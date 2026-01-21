@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetWithdrawCommSum'
+  description: 'Returns sum of withdraw commission on a position within specified time range'

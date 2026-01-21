@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'WfGetDefaultUser'
+  description: 'Retrieves the default user of a workflow group'

@@ -1,0 +1,35 @@
+table:
+  name: 'MgBmigDispatcher'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'LogicalName'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ServerName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'QueueName'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ShareQueue'
+    description: ''
+  - name: 'QueueTimeout'
+    description: ''
+  - name: 'MainDestination'
+    description: ''
+    genericControls:
+      refTable: 'MgBmigServer'
+      refField: 'LogicalName'
+      defColumnPos: 4

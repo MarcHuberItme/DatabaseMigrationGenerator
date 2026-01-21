@@ -1,0 +1,64 @@
+table:
+  name: 'PrPublicCfSettlFix'
+  description: 'With the new VDF-Release 104 (6.6.2004) is this table no more used in VDF import (now is table  PrPublicCfCondFixPrice filled).'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublicCf'
+      parentRelationField: 'PublicCfId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+  columns:
+  - name: 'PublicCfId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicCf'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'PublicUnderlyingId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicUnderlying'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CfSettlFixType'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicCfSettlFixType'
+      refField: 'CfSettlFixType'
+      defColumnPos: 1
+  - name: 'CompareOperatorNo'
+    description: 'VDF: XRD.XRB.4866'
+    genericControls:
+      refTable: 'PrPublicCompareOperator'
+      refField: 'CompareOperatorNo'
+      defColumnPos: 2
+  - name: 'Currency'
+    description: 'VDF: XRD.XRB.K821-A.6804\r\n         XRD.XRB.K821-B.6804\r\n         XRD.XRB.K821-C.6804'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'Amount'
+    description: 'VDF: XRD.XRB.K821-A.5833\r\n         XRD.XRB.K821-B.5833\r\n         XRD.XRB.K821-C.5833'
+    genericControls:
+      defColumnPos: 4
+  - name: 'QuoteTypeNo'
+    description: 'VDF: XRD.XRB.K821-A.4812\r\n         XRD.XRB.K821-B.4812\r\n         XRD.XRB.K821-C.4812'
+    genericControls:
+      refTable: 'PrPublicQuoteType'
+      refField: 'QuoteTypeNo'
+  - name: 'BeginDate'
+    description: 'VDF: XRD.XRB.2811-A\r\n         XRD.XRB.2811-B\r\n         XRD.XRB.2811-C'
+  - name: 'EndDate'
+    description: 'VDF: XRD.XRB.2812-A\r\n         XRD.XRB.2812-B\r\n         XRD.XRB.2812-C'

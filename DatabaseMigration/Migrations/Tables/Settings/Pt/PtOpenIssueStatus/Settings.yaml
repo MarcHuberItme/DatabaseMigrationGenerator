@@ -1,0 +1,33 @@
+table:
+  name: 'PtOpenIssueStatus'
+  description: 'different status of open issues'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'status of open issues'
+    - german:
+        formTitle: 'Pendenzenstatus'
+    - french:
+        formTitle: 'Point en suspens statut'
+  columns:
+  - name: 'StatusNo'
+    description: 'candidate-key\r\n(5 = open issue - fix because of migration)'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'OpenIssueTypeNo'
+    description: 'if the issue type is given, the status is only valid for that specific issue type (filter criteria)\r\nNULL = valid for all Issue types'
+    genericControls:
+      refTable: 'PtOpenIssueType'
+      refField: 'TypeNo'
+      defColumnPos: 2

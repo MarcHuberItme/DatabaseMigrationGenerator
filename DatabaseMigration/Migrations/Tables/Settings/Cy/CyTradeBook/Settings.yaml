@@ -1,0 +1,30 @@
+table:
+  name: 'CyTradeBook'
+  description: 'List of all possible Trader Books\r\n\r\nonly one book should be marked as DefaultBook'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'trade book'
+    - german:
+        formTitle: 'Händlerbücher'
+  columns:
+  - name: 'TradeBookNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'DefaultTradeBook'
+    description: 'false = not the default book\r\ntrue = default Book\r\n'
+  - name: 'BranchCode'
+    description: 'Branchcode for which this TradebookNo is used in transactions'
+    genericControls:
+      defColumnPos: 2

@@ -1,0 +1,41 @@
+table:
+  name: 'PtEbNewsfeed'
+  description: 'Table contains news which are displayed after Ebanking-login on the main-page.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Newsfeed'
+        helpText: 'News/Infos displayed after login in header.'
+    - german:
+        formTitle: 'Newsfeed'
+        helpText: 'News/Infos im Kopfteil nach Login.'
+  columns:
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValidUntil'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'MessageHeader'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'MessageBody'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'EventFilter'
+    description: ''
+    genericControls:
+      defColumnPos: 4

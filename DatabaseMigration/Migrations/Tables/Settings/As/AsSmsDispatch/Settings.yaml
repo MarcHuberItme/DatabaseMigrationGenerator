@@ -1,0 +1,37 @@
+table:
+  name: 'AsSmsDispatch'
+  description: 'content of this table will be sent as sms message'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'SMS Dispatcher'
+    - german:
+        formTitle: 'SMS Versand'
+  columns:
+  - name: 'SmsTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsSmsDispatchType'
+      refField: 'SmsTypeNo'
+      defColumnPos: 4
+  - name: 'PhoneNumber'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Subject'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Message'
+    description: ''
+  - name: 'SendDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3

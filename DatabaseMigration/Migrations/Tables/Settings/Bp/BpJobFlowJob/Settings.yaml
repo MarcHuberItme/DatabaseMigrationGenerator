@@ -1,0 +1,45 @@
+table:
+  name: 'BpJobFlowJob'
+  description: 'Job entry of a job flow block'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Jobflow job'
+    - german:
+        formTitle: 'Jobflow job'
+    - french:
+        formTitle: 'Jobflow job'
+    - italian:
+        formTitle: 'Jobflow job'
+  columns:
+  - name: 'JobFlowBlockId'
+    description: 'Reference to job flow block'
+    genericControls:
+      refTable: 'BpJobFlowBlock'
+      refField: 'Id'
+  - name: 'JobBaseId'
+    description: 'Reference to job base'
+    genericControls:
+      refTable: 'BpJobBase'
+      refField: 'Id'
+  - name: 'ParentJobFlowJobId'
+    description: 'Parent job'
+    genericControls:
+      refTable: 'BpJobFlowJob'
+      refField: 'Id'
+  - name: 'ParentJobWaitForStatus'
+    description: 'Parents status to start this job'
+    genericControls:
+      refTable: 'BpTaskStatusWaitRule'
+      refField: 'WaitRule'
+  - name: 'FlowBlockRelevant'
+    description: 'Relevant for endstatus of flowblock'
+  - name: 'AddParam'
+    description: 'Additional job parameters.'

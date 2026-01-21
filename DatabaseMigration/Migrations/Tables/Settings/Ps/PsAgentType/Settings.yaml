@@ -1,0 +1,23 @@
+table:
+  name: 'PsAgentType'
+  description: 'Classification of the machines that have the Printing System Agent installed'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Printing Agent Type'
+    - german:
+        formTitle: 'Druckagent Typ'
+  columns:
+  - name: 'AgentTypeNo'
+    description: 'Number of the Agent agent type'
+    genericControls:
+      defColumnPos: 1

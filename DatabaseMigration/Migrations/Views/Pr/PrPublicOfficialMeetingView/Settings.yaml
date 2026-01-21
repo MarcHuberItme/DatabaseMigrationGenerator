@@ -1,0 +1,88 @@
+view:
+  name: 'PrPublicOfficialMeetingView'
+  description: ''
+frontendView:
+  name: 'PrPublicOfficialMeetingView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'VdfIdentification'
+    uiTableDescription:
+    - english:
+        formTitle: 'Official Meeting'
+    - german:
+        formTitle: 'Versammlung'
+  columns:
+  - name: 'OfficialMeetingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PublicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'VdfDocGen'
+    description: ''
+    dataType: 'int'
+  - name: 'VdfDocStatusNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'VdfIdentification'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 4
+  - name: 'MeetingTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtMeetingType'
+      refField: 'MeetingTypeNo'
+      defColumnPos: 2
+  - name: 'MeetingStatusNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtMeetingStatus'
+      refField: 'MeetingStatusNo'
+      defColumnPos: 3
+  - name: 'MeetingDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 1
+  - name: 'MeetingLocation'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 240
+  - name: 'ParticipantCodeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtParticipantCode'
+      refField: 'ParticipantCode'
+  - name: 'RecDateRegistered'
+    description: ''
+    dataType: 'datetime'
+  - name: 'RecDateBearer'
+    description: ''
+    dataType: 'datetime'

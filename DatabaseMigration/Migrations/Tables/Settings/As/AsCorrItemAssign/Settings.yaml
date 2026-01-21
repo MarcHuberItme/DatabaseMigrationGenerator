@@ -1,0 +1,32 @@
+table:
+  name: 'AsCorrItemAssign'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Relation Item to Group'
+    - german:
+        formTitle: 'Zuordnung Dok. zur Gruppe'
+    - french:
+        formTitle: 'Relation article au group'
+  columns:
+  - name: 'CorrItemGroupNo'
+    description: 'foreign-key;  candidate-key of AsCorrItemGroup  (CorrItemGroupNo)'
+    genericControls:
+      refTable: 'AsCorrItemGroup'
+      refField: 'CorrItemGroupNo'
+      defColumnPos: 1
+  - name: 'CorrItemId'
+    description: 'foreign-key;  Id of AsCorrItem'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+      defColumnPos: 2

@@ -1,0 +1,60 @@
+table:
+  name: 'EtBo'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FsPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'FsSyncNo'
+    description: ''
+    genericControls:
+      refTable: 'EtSync'
+      refField: 'SyncNo'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'FsTransferNo'
+    description: ''
+    genericControls:
+      refTable: 'EtTransfer'
+      refField: 'TransferNo'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'bo_id'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'bo_optional01'
+    description: ''
+  - name: 'bo_optional02'
+    description: ''
+  - name: 'bo_optional03'
+    description: ''
+  - name: 'bo_optional04'
+    description: ''
+  - name: 'bo_optional05'
+    description: ''
+  - name: 'bo_optional06'
+    description: ''
+  - name: 'bo_optional07'
+    description: ''
+  - name: 'bo_optional08'
+    description: ''
+  - name: 'bo_optional09'
+    description: ''
+  - name: 'bo_optional10'
+    description: ''
+  - name: 'status'
+    description: ''

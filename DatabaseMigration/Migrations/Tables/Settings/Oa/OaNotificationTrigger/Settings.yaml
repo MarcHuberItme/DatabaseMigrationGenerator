@@ -1,0 +1,29 @@
+table:
+  name: 'OaNotificationTrigger'
+  description: 'Trigger for OaNotificationRule (e.g. instant payment, documents, ...) used in E-Banking and other apps.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 2
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'IsPortfolioTrigger'
+    description: '0 = trigger can not be used in combination with a portfolio\r\n1 = trigger can be used in combination with a portfolio (default)'
+  - name: 'IsAccountTrigger'
+    description: '0 = trigger can not be used in combination with an account\r\n1 = trigger can be used in combination with an account (default)'
+  - name: 'DetailedTextId'
+    description: 'Detailed text definition of notification (reference to OaNotificationText.Id)'
+    genericControls:
+      refTable: 'OaNotificationText'
+      refField: 'Id'
+  - name: 'SimpleTextId'
+    description: 'Simple  text definition of notification (reference to OaNotificationText.Id)'
+    genericControls:
+      refTable: 'OaNotificationText'
+      refField: 'Id'

@@ -1,0 +1,41 @@
+table:
+  name: 'PtCTMAssignment'
+  description: 'Contains historic and contemporary ConsultantTeam Management data.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'ConsultantTeam Management'
+    - german:
+        formTitle: 'ConsultantTeam Management'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'EvaluationDate'
+    description: 'Date of the last evaluation of corrspnding partner'
+  - name: 'ConsTeam'
+    description: 'ConsultantTeam to which the Partner is automatically assigned by Finstar.'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'AgeGroup'
+    description: 'AgeGroup to which the Partner belonged to at the EvaluationDate.'
+  - name: 'BusinessTypeGroup'
+    description: 'BusinessTypeGroup to which the Partner belonged at the EvaluationDate.'
+  - name: 'RegionGroup'
+    description: 'RegionGroup to which the Partner belonged at the EvaluationDate.'
+  - name: 'SegmentNoEval'
+    description: 'Automatically determined SegmentNo to which the Partner belonged at the EvaluationDate.'
+  - name: 'Changed'
+    description: 'True if the record is different to the last record with the same PartnerId'
+  - name: 'DateRevised'
+    description: 'Date at which the record was revised by an employee.'

@@ -1,0 +1,23 @@
+table:
+  name: 'PtHuntingResult'
+  description: 'Type of reaction, result of a contact or a status of a contact.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Hunt result'
+    - german:
+        formTitle: 'Akquisitionsresultat'
+  columns:
+  - name: 'ResultNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

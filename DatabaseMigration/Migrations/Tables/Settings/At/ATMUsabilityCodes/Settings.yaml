@@ -1,0 +1,42 @@
+table:
+  name: 'ATMUsabilityCodes'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ATMUsabilityCodes'
+        helpText: 'ATMUsabilityCodes'
+    - german:
+        formTitle: 'ATMUsabilityCodes'
+        helpText: 'ATMUsabilityCodes'
+  columns:
+  - name: 'Code'
+    description: ''
+  - name: 'BM'
+    description: ''
+  - name: 'RM'
+    description: ''
+  - name: 'CHFOut'
+    description: ''
+  - name: 'EUROut'
+    description: ''
+  - name: 'Payin'
+    description: ''
+  - name: 'Cash'
+    description: ''
+  - name: 'TextDE'
+    description: ''
+  - name: 'TextFR'
+    description: ''
+  - name: 'TextIT'
+    description: ''

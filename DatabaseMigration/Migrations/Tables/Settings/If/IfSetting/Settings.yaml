@@ -1,0 +1,32 @@
+table:
+  name: 'IfSetting'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'SettingConfigId'
+    description: ''
+    genericControls:
+      refTable: 'IfSettingConfig'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'SettingGroupId'
+    description: ''
+    genericControls:
+      refTable: 'IfSettingGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'Value'
+    description: ''
+    genericControls:
+      defColumnPos: 3

@@ -1,0 +1,34 @@
+table:
+  name: 'PtAgrTermsAndConditions'
+  description: 'The terms and conditions (AGB) related to an announcement e.g a new  feature, new guidlines'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Term and condition'
+    - german:
+        formTitle: 'Nutzungsvereinbahrung'
+    - french:
+        formTitle: 'conditions générales'
+  columns:
+  - name: 'AnnouncementId'
+    description: 'The related announcement to a potential existing term and condition.'
+    genericControls:
+      refTable: 'PtAgrAnnouncement'
+      refField: 'Id'
+  - name: 'ActivatedAt'
+    description: 'Activation date of the term and condition (AGB).'
+  - name: 'ExpiredAt'
+    description: 'Expiration date of the term and condition.'
+  - name: 'Link'
+    description: 'A link to a resource containing the term and condition content (e.x a pdf file with the changes)'

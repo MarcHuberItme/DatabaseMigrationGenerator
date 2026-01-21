@@ -1,0 +1,25 @@
+table:
+  name: 'PtConsCreditStatus'
+  description: 'Konsumkreditstatus\r\nDer Inhalt dieser Tabelle ist vordefiniert und die erfassten Eigenschaften (IsMonitoringStatus, DoNotForwardStatus, IsForwardStatus) steuern das Verhalten der Applikation.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'IsMonitoringStatus'
+    description: 'consumer credits with this status have to be monitored from the consumer credit application. 09.07.09/mct'
+  - name: 'DoNotForwardStatus'
+    description: 'consumer credits with this status have completed the monitoring period and a forwarding is not necessary. 09.07.09/mct'
+  - name: 'IsForwardStatus'
+    description: 'consumer credits with this status have completed the monitoring period and the data has been forwarded or is pending for for forwarding. 09.07.09/mct'

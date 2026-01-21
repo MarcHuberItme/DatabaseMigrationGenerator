@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'NcKdBatchFullShabHrUID'
+  description: 'Deliver all relevant customers for checking against new SHAB HR (Handelsregister -> central business name index) messages. Relevant are all entites, meaning not natural persons, who are eventually registred in the swiss central business name index. Usage only for the UID-Matching-Version. Diffrent SP for the Name-Matching. Therefore Partners without an UID are excluded.'

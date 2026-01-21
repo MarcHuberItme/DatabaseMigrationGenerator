@@ -1,0 +1,37 @@
+table:
+  name: 'ReDwellingValuation'
+  description: 'Valuation relevant data for ReDwelling'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'ValuationId'
+    description: ''
+    genericControls:
+      refTable: 'ReValuation'
+      refField: 'Id'
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+  - name: 'DwellingId'
+    description: ''
+    genericControls:
+      refTable: 'ReDwelling'
+      refField: 'Id'
+  - name: 'RentPerMonthIntLiving'
+    description: ''
+  - name: 'RentPerMonthIntTrade'
+    description: ''
+  - name: 'RentPerMonthExtLiving'
+    description: ''
+  - name: 'RentPerMonthExtTrade'
+    description: ''

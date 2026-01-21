@@ -1,0 +1,3 @@
+view:
+  name: 'CoEinzelWbTagDiffView'
+  description: 'Zeigt die Veränderung der EinzelWB (prev und diff Felder) pro Veragruppe auf (Tagesendstand gegen Tagesendstand)'

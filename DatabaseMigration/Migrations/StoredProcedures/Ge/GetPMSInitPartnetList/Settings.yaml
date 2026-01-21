@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPMSInitPartnetList'
+  description: 'Get list of newly added partners in PMS on a certain "TransDate". This list is used initialize the partner account balances and security positions'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountCommissionPrice'
+  description: 'Get the commission prices for an account.\r\nRead PtAccountCommission for individual account definitions and additionally\r\nproduct standard commission rules. 08.07.2004/mct'

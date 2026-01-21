@@ -1,0 +1,46 @@
+table:
+  name: 'BpTaskBlock'
+  description: 'Executable copy of JobFlowBlock'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Task Block'
+    - german:
+        formTitle: 'Task Block'
+    - french:
+        formTitle: 'Task Block'
+    - italian:
+        formTitle: 'Task Block'
+  columns:
+  - name: 'JobFlowBlockId'
+    description: 'Link to job flowblock'
+    genericControls:
+      refTable: 'BpJobFlowBlock'
+      refField: 'Id'
+  - name: 'ParentTaskBlockId'
+    description: 'Link to parent block'
+    genericControls:
+      refTable: 'BpTaskBlock'
+      refField: 'Id'
+  - name: 'ParentBlockWaitForStatus'
+    description: 'Wait rule for parent task block'
+    genericControls:
+      refTable: 'BpTaskStatusWaitRule'
+      refField: 'WaitRule'
+  - name: 'BlockStatus'
+    description: 'Status of the block'
+    genericControls:
+      refTable: 'BpTaskStatus'
+      refField: 'TaskStatus'
+  - name: 'ExecDate'
+    description: 'Date and Time of planned execution'
+  - name: 'StopDate'
+    description: 'Stop the task at date + time'

@@ -1,0 +1,67 @@
+table:
+  name: 'PrCRMProduct'
+  description: 'Contains the products and the informations related, for CRM use mainly.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    visumLevel: 1
+    cacheLevel: 2
+    navigation:
+      applicationKey: 'MinRating'
+    uiTableDescription:
+    - english:
+        formTitle: 'Products for CRM'
+    - german:
+        formTitle: 'Produkte für CRM'
+  columns:
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      defColumnPos: 1
+  - name: 'DomainId'
+    description: ''
+    genericControls:
+      refTable: 'PrCRMDomain'
+      refField: 'Id'
+      defColumnPos: 3
+  - name: 'MinSegmentNo'
+    description: ''
+    genericControls:
+      refTable: 'PtSegment'
+      refField: 'SegmentNo'
+  - name: 'MaxSegmentNo'
+    description: ''
+    genericControls:
+      refTable: 'PtSegment'
+      refField: 'SegmentNo'
+  - name: 'MinNogaCode'
+    description: 'first two numbers of the NogaCode, the smallest number of the possible economical segment for which this product is applicable.'
+  - name: 'MaxNogaCode'
+    description: 'first two numbers of the NogaCode, the largest number of the possible economical segment for which this product is applicable.'
+  - name: 'MinAge'
+    description: 'maximal age of the customer this product is applicable'
+  - name: 'MaxAge'
+    description: 'maximal age of the customer this product is applicable'
+  - name: 'BranchNo'
+    description: 'for branch dependent products'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+  - name: 'MinRating'
+    description: 'minumum rating required to be applicable for acetain product'
+  - name: 'MinLimit'
+    description: ''
+  - name: 'ServiceLevelNo'
+    description: ''
+    genericControls:
+      refTable: 'PtServiceLevel'
+      refField: 'ServiceLevelNo'
+  - name: 'Comment'
+    description: 'service level required to be applicable for this product'
+    genericControls:
+      multiLine: true

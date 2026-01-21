@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'IbAuth_GetLastLoginDate'
+  description: 'Get the date when the last successful login occurred.'

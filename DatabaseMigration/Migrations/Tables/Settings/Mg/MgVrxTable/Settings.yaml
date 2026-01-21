@@ -1,0 +1,21 @@
+table:
+  name: 'MgVrxTable'
+  description: 'Definitions of Vrx Record'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'VrxTableName'
+    description: 'Name of VrxRecord'
+  - name: 'Migst'
+    description: ''
+    minValue: '32'
+    maxValue: '128'
+  - name: 'RecLenght'
+    description: 'Vrx record lenght'

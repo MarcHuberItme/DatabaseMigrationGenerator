@@ -1,0 +1,52 @@
+table:
+  name: 'AiTaxLOBCodes'
+  description: 'Limitation on Benefits (LOB)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax LOB Codes'
+    - german:
+        formTitle: 'Steuer LOB Codes'
+    - french:
+        formTitle: 'LOB Codes'
+  columns:
+  - name: 'LOBCode'
+    description: 'Limitation on Benefits (LOB)'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'QIStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxQIStatus'
+      refField: 'QIStatusNo'
+      defColumnPos: 2
+  - name: 'TaxRegulationCodeDividend'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+      defColumnPos: 3
+  - name: 'TaxRegulationCodeInterest'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+      defColumnPos: 4
+  - name: 'SwiftMt565'
+    description: 'Code to be used for communication with SIX SIS.'
+    genericControls:
+      refTable: 'SwMT565MsgType'
+      refField: 'MsgType'
+      defColumnPos: 5
+  - name: 'WarningNumber'
+    description: 'Wenn dieses Feld gefüllt ist, wird im Event BeforeSave diese Warnmeldung ausgegeben.\r\n\r\nRefers to AsMessageText.TextNo'

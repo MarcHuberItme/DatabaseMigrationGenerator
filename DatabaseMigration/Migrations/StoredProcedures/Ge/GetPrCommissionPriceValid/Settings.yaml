@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPrCommissionPriceValid'
+  description: 'This SP returns valid PrCommissionPrice'

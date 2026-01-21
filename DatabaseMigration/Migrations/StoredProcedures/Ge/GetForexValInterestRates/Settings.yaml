@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetForexValInterestRates'
+  description: 'Ermitteln der gültigen Zinskurver für die Bewertung der Devisentermingeschäfte'

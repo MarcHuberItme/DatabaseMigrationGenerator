@@ -1,0 +1,62 @@
+table:
+  name: 'MpMargin'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 1b7f657d-bf02-4f66-b37b-cee0cfa5299b
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'PortfolioTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      defColumnPos: 7
+  - name: 'StaffRebate'
+    description: ''
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'IntVal'
+  - name: 'Symbol'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'SourceCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 1
+  - name: 'TargetCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'Margin'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValueType'
+    description: ''
+    genericControls:
+      refTable: 'MpValueType'
+      refField: 'Label'
+      defColumnPos: 4
+  - name: 'CurveId'
+    description: ''
+    genericControls:
+      refTable: 'MpCurve'
+      refField: 'Id'

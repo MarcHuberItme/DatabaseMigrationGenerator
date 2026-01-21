@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPOVATSelection'
+  description: 'Get payment order VAT selection'

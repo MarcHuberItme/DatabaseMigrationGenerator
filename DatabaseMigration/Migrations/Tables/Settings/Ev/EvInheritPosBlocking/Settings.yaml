@@ -1,0 +1,19 @@
+table:
+  name: 'EvInheritPosBlocking'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+  columns:
+  - name: 'InheritPosBlockingNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

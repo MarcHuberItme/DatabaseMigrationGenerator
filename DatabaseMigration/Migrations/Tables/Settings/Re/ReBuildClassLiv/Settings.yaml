@@ -1,0 +1,37 @@
+table:
+  name: 'ReBuildClassLiv'
+  description: 'build class living (1 - 6)'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+  columns:
+  - name: 'BuildClassNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ValueM3EFHFrom'
+    description: ''
+  - name: 'ValueM3EFHTo'
+    description: ''
+  - name: 'ValueM3MFHFrom'
+    description: ''
+  - name: 'ValueM3MFHTo'
+    description: ''
+  - name: 'ValueM3UndergroundParkingFrom'
+    description: ''
+  - name: 'ValueM3UndergroundParkingTo'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 2
+  - name: 'SortNo'
+    description: ''

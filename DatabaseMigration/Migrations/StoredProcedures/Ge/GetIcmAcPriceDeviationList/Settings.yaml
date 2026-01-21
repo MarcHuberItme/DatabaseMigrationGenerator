@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetIcmAcPriceDeviationList'
+  description: 'Retrieves account price deviations\r\nAuthor		: mct\r\nDate Created	: 29.06.2004'

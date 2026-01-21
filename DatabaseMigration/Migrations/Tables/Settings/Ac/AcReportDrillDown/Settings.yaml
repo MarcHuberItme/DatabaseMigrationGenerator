@@ -1,0 +1,55 @@
+table:
+  name: 'AcReportDrillDown'
+  description: 'The purpose of the table is to provide the drill down functionality for ARS Reporting'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'ReportId'
+    description: 'Foreign Key of the generated report from AcReport'
+    genericControls:
+      refTable: 'AcReport'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'CellId'
+    description: 'Foreign Key of the cell (From AcReportCellDefinition)whose data is displayed after generation of ARS Report'
+    genericControls:
+      refTable: 'AcReportCellDefinition'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'PageName'
+    description: 'Name of the work sheet to which the cell belongs.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Col'
+    description: 'Column number of the cell on work sheet'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Row'
+    description: 'Row number of the cell on worksheet'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValueFieldName'
+    description: 'Name of the ValueField , which is selected for the cell under context'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ResultantValue'
+    description: 'The Value of the cell generated after executing the final SQL.\r\nIts type is set VARCHAR, since in case of grid operation the return value is non-numeric.'
+    genericControls:
+      multiLine: true
+      defColumnPos: 7
+  - name: 'ResultantCriteria'
+    description: 'The Composite value of the CriteriaKeyList for the Followings:\r\n1. Report Level\r\n2. Page Level\r\n3. Cell level rule\r\n4. Cell''s criteria'
+    genericControls:
+      multiLine: true
+  - name: 'ResultantWhere'
+    description: 'Result ''Where'' clause of ''Filter'' statement to populate the data for cell from\r\nAcCompression2\r\n*** The main purpose to provide the starting point for the drill down functionality ***'
+    genericControls:
+      multiLine: true

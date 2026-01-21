@@ -1,0 +1,29 @@
+table:
+  name: 'ReBuildingConceptType'
+  description: 'ConceptType\r\n\r\n\r\n\r\nFIS-2000: GBDE_KONZEPT_CD'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'ConceptType'
+    - german:
+        formTitle: 'Gebäude Konzept'
+  columns:
+  - name: 'ConceptTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'SortNo'
+    description: ''
+  - name: 'PfandRegValue'
+    description: ''
+    genericControls:
+      defColumnPos: 2

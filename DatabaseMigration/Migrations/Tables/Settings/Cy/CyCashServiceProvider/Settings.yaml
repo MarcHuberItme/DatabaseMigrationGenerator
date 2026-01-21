@@ -1,0 +1,31 @@
+table:
+  name: 'CyCashServiceProvider'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'DefaultFlag'
+    description: 'Declares if provider is set as default or not.'
+  - name: 'InternalAccount'
+    description: 'Internal Bank-Account.'
+  - name: 'ExternalAccount'
+    description: ''
+  - name: 'BeneficiaryName'
+    description: ''
+  - name: 'BeneficiaryStreetName'
+    description: ''
+  - name: 'BeneficiaryBuildingNo'
+    description: ''
+  - name: 'BeneficiaryPostCode'
+    description: ''
+  - name: 'BeneficiaryTownName'
+    description: ''

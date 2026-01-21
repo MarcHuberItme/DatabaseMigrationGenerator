@@ -1,0 +1,65 @@
+table:
+  name: 'PtMLPeriodicCheckSQL'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML periodic check SQL'
+    - german:
+        formTitle: 'ML periodic check SQL'
+    - french:
+        formTitle: 'ML periodic check SQL'
+    - italian:
+        formTitle: 'ML periodic check SQL'
+  columns:
+  - name: 'SequenceNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Name'
+    description: 'Name of this Query'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Description'
+    description: 'description of this Query'
+    genericControls:
+      multiLine: true
+  - name: 'ValidFrom'
+    description: 'From this date time on this is valid'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidUntil'
+    description: 'The Date Time until this query is Valid'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Active'
+    description: 'Define if this query is active or not. inactive queries will not be executed'
+  - name: 'SqlCommand'
+    description: 'The query that will be executed'
+    genericControls:
+      multiLine: true
+  - name: 'UpdateTableName'
+    description: ''
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 5
+  - name: 'UpdateFieldName'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'UpdateValue'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'ValueFromFieldName'
+    description: ''

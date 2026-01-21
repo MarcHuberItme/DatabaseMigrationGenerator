@@ -1,0 +1,550 @@
+--liquibase formatted sql
+
+--changeset system:create-alter-procedure-DbJobExtract context:any labels:c-any,o-stored-procedure,ot-schema,on-DbJobExtract,fin-13659 runOnChange:true splitStatements:false stripComments:false endDelimiter:GO
+--comment: Create stored procedure DbJobExtract
+CREATE OR ALTER PROCEDURE dbo.DbJobExtract
+@pSOURCE_DB_SERVER				VARCHAR(50)	= '',
+	@pSOURCE_DB						VARCHAR(50)	= '', 
+	@pSOURCE_TABLE_SCHEMA			VARCHAR(3)	= '', 
+
+	@pTARGET_DB_SERVER				VARCHAR(50) = '',
+	@pTARGET_DB						VARCHAR(50) = '',
+	@pTARGET_TABLE_SCHEMA			VARCHAR(3)	= '',
+
+	@pAPPLICATION_CODE				VARCHAR(10) = '',
+	@pJOB_CODE						VARCHAR(4)	= '1000',		-- EXTRACT DATA
+	@pJOB_DATE						VARCHAR(10)	= '',
+	@pTABLE_NAME					VARCHAR(50)	= '',
+	
+	@pFROM_DATETIME					VARCHAR(20) = '',
+	@pTO_DATETIME					VARCHAR(20) = '',
+	
+	@pAPPLICATIONCODE				VARCHAR(50) = '',
+	@pTRANSFERTYPENO				INT = 0,
+	
+	@JOB_REC_COUNT					INT	= 0	OUTPUT
+
+
+AS
+
+	DECLARE @USER 					VARCHAR(20)
+	DECLARE @TEXT					VARCHAR(MAX)
+	DECLARE	@JOB_CODE				VARCHAR(4)	= '1000'
+	DECLARE @EXECUTINGPROCEDURE 	VARCHAR(256)
+	
+	DECLARE	@tmpDate				VARCHAR(25)
+	DECLARE @sSQL					NVARCHAR(4000) = ''
+	DECLARE @INITIAL_REFERENCE_DATE	VARCHAR(20)	= '20010101'
+
+	DECLARE @TABLE_NAME				VARCHAR(50)	= @pTABLE_NAME
+
+	DECLARE @COLUMN_LIST			VARCHAR(MAX) = ''
+	DECLARE @WHERE_CONDITION		VARCHAR(MAX) = ''
+	--DECLARE @DEFAULT_FIELD_LIST		VARCHAR(100) = 'HDCREATEDATE, HDCHANGEDATE, HDVERSIONNO'
+	
+	DECLARE @TABLE_EXISTS			INT = 0
+	DECLARE @INFORMATION_TABLE		VARCHAR(100) = '[' + @pTARGET_DB_SERVER + '].[' + @pTARGET_DB + '].INFORMATION_SCHEMA.TABLES'
+
+	SET 	@USER 					= SUSER_NAME()		-- User who executing the Job
+	SET		@EXECUTINGPROCEDURE 	= '[DbJobExtract]'
+
+	DECLARE @JOB_SEQ_KEY 			INT = 0
+	DECLARE @PROCEED_FURTHER		INT	= 0
+	DECLARE @JOB_STEP 				INT = 0
+	DECLARE @FOR_DATETIME_FROM 		VARCHAR(25)
+	DECLARE @FOR_DATETIME_TO 		VARCHAR(25)
+	DECLARE @RECORD_REF_ID			INT = 0
+	DECLARE @RECORD_REF_GUID		UNIQUEIDENTIFIER
+	DECLARE	@nISJOBCOMPLETED		INT = 0	
+	
+	DECLARE @JOB_REC_INSERT			INT = 0
+	DECLARE @JOB_REC_UPDATE			INT = 0
+
+	DECLARE @JOB_TOTAL_INSERT		INT = 0
+	DECLARE @JOB_TOTAL_UPDATE		INT = 0
+
+	DECLARE @SPROCEDURE_NAME		NVARCHAR(1000)
+	DECLARE @SEQ	INT = 0
+	
+BEGIN
+	SET @tmpDate = CONVERT(VARCHAR(25),GETDATE(),121)
+	
+	IF(@pAPPLICATIONCODE IS NULL OR @pAPPLICATIONCODE = '' OR @pTRANSFERTYPENO = 0 OR @pTRANSFERTYPENO IS NULL )
+	BEGIN 
+		SET @TEXT = @tmpDate + ' : Procedure '+ @EXECUTINGPROCEDURE + 'Mandatory Parameter EXTERNALAPPID AND/OR TRANSFERTYPEID is not provided.'
+		EXEC DbJobWriteInfo @USER, @pJOB_CODE, @EXECUTINGPROCEDURE, 'Log Message', @TEXT, @pJOB_DATE, 1
+		
+		SET @pAPPLICATIONCODE = 'EXT-App-1'
+		SET @pTRANSFERTYPENO = 1
+		RETURN
+	END
+
+	IF(@pSOURCE_DB_SERVER = '' OR @pSOURCE_DB_SERVER IS NULL)
+		SET @pSOURCE_DB_SERVER = @@SERVERNAME
+	
+	IF(@pSOURCE_DB = '' OR @pSOURCE_DB IS NULL)
+		SET @pSOURCE_DB = DB_NAME()
+	
+	IF (@pSOURCE_TABLE_SCHEMA = '' OR @pSOURCE_TABLE_SCHEMA IS NULL)
+		SET @pSOURCE_TABLE_SCHEMA = 'DBO'	
+	
+	IF(@pTARGET_DB_SERVER = '' OR @pTARGET_DB_SERVER IS NULL)
+		SET @pTARGET_DB_SERVER = @@SERVERNAME
+	
+	IF(@pTARGET_DB = '' OR @pTARGET_DB IS NULL)
+		SET @pTARGET_DB = DB_NAME()
+	
+	IF (@pTARGET_TABLE_SCHEMA = '' OR @pTARGET_TABLE_SCHEMA IS NULL)
+		SET @pTARGET_TABLE_SCHEMA = 'DBO'	
+
+	
+	IF(@pJOB_DATE = '' OR @pJOB_DATE IS NULL)
+			SET @pJOB_DATE = CONVERT(VARCHAR(10),GETDATE(),112)
+	
+	
+	SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobPreExecutionProcessing ' 
+													+ ' @pJOB_CODE = ' + @pJOB_CODE  
+													+ ', @pFOR_DATE	= ' + @pJOB_DATE 
+													+ ', @pONCE_PER_DAY = 0'
+													+ ', @pJOB_SEQ_KEY = @JOB_SEQ_KEY_ OUTPUT'
+													+ ', @pPROCEED_FURTHER = @PROCEED_FURTHER_ OUTPUT'
+													+ ', @pJOB_STEP = @JOB_STEP_ OUTPUT'
+													+ ', @pFOR_DATETIME_FROM = @FOR_DATETIME_FROM_ OUTPUT'
+													+ ', @pFOR_DATETIME_TO = @FOR_DATETIME_TO_ OUTPUT'
+													+ ', @pRECORD_REF_ID = @RECORD_REF_ID_ OUTPUT'
+													+ ', @pRECORD_REF_GUID = @RECORD_REF_GUID_ OUTPUT'
+													+ ', @pISJOBCOMPLETED = @ISJOBCOMPLETED_ OUTPUT'
+
+
+
+	EXECUTE sp_executesql @SPROCEDURE_NAME
+						, N'@JOB_SEQ_KEY_ INT OUTPUT, @PROCEED_FURTHER_ INT OUTPUT, @JOB_STEP_ INT OUTPUT, @FOR_DATETIME_FROM_ VARCHAR(25) OUTPUT, @FOR_DATETIME_TO_ VARCHAR(25) OUTPUT, @RECORD_REF_ID_ INT OUTPUT, @RECORD_REF_GUID_ UNIQUEIDENTIFIER OUTPUT, @ISJOBCOMPLETED_ INT OUTPUT' 
+						, @JOB_SEQ_KEY_=@JOB_SEQ_KEY OUTPUT, @PROCEED_FURTHER_ = @PROCEED_FURTHER OUTPUT, @JOB_STEP_= @JOB_STEP OUTPUT, @FOR_DATETIME_FROM_ = @FOR_DATETIME_FROM OUTPUT, @FOR_DATETIME_TO_ = @FOR_DATETIME_TO OUTPUT , @RECORD_REF_ID_ = @RECORD_REF_ID OUTPUT, @RECORD_REF_GUID_ = @RECORD_REF_GUID OUTPUT, @ISJOBCOMPLETED_= @nISJOBCOMPLETED OUTPUT
+
+	IF (@PROCEED_FURTHER = 1)
+		
+		BEGIN TRY
+
+			SET @TEXT = @tmpDate + ' : Procedure '+ @EXECUTINGPROCEDURE + ' started ...'
+
+			EXEC DbJobWriteInfo @USER, @pJOB_CODE, @EXECUTINGPROCEDURE, 'Log Message', @TEXT, @pJOB_DATE, 1
+
+			-- Initial value of @SEQ is 0
+			
+			SET @SEQ = @SEQ + 1	-- Here @SEQ = 1
+			IF(@JOB_STEP < @SEQ)
+				BEGIN
+
+					SET @pTABLE_NAME = 'PTDSPARTNERTRANSFER'
+					-- Call Procedure to Extract data and load in Staging area
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobControlDetailUpdate '
+										+ '  @SEQ_ID=' + CONVERT(VARCHAR,@RECORD_REF_ID)
+										+ ', @RECORD_REF_GUID =''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @JOB_CODE =' + @pJOB_CODE 
+										+ ', @JOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @OBJECT_NAME = ' + @pTABLE_NAME 
+										+ ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR, @JOB_REC_INSERT) 
+										+ ', @JOB_REC_COUNT2 = ' + CONVERT(VARCHAR, @JOB_REC_UPDATE) 
+					--PRINT 'Step 1'
+					EXEC (@SPROCEDURE_NAME)
+					--PRINT 'Step 2'
+					SET @SSQL 		 =  @pSOURCE_TABLE_SCHEMA + '.DbJobExtractPerTable'
+										+ ' @pSOURCE_DB_SERVER=''' + @pSOURCE_DB_SERVER + ''''+
+										+ ', @pSOURCE_DB=' + @pSOURCE_DB 
+										+ ', @pSOURCE_TABLE_SCHEMA=' + @pSOURCE_TABLE_SCHEMA 
+										+ ', @pJOB_CODE=' + @pJOB_CODE 
+										+ ', @pTARGET_DB_SERVER=''' + @pTARGET_DB_SERVER + '''' +
+										+ ', @pTARGET_DB=' + @pTARGET_DB 
+										+ ', @pTARGET_TABLE_SCHEMA=' + @pTARGET_TABLE_SCHEMA 
+										+ ', @pJOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @pTABLE_NAME = ' + @pTABLE_NAME 
+										+ ', @pFROM_DATETIME = ''' + @FOR_DATETIME_FROM + ''''
+										+ ', @pTO_DATETIME = ''' + @FOR_DATETIME_TO  + ''''
+										+ ', @pRECORD_REF_GUID = ''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @pAPPLICATIONCODE = ' + @pAPPLICATIONCODE
+										+ ', @pTRANSFERTYPENO = ' + CONVERT(VARCHAR, @pTRANSFERTYPENO)
+										+ ', @JOB_REC_COUNT = @JOB_REC_INS  OUTPUT'
+
+					--PRINT 'Step 3'
+					PRINT @SSQL
+
+					EXECUTE sp_executesql @SSQL, N'@JOB_REC_INS int OUTPUT' ,@JOB_REC_INS = @JOB_REC_INSERT OUTPUT
+					--PRINT 'Step 4.0'
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobControlDetailUpdate'
+										+ '  @SEQ_ID=' + CONVERT(VARCHAR,@RECORD_REF_ID)
+										+ ', @RECORD_REF_GUID=''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @JOB_CODE=' + @pJOB_CODE 
+										+ ', @JOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @OBJECT_NAME = ' + @pTABLE_NAME 
+										+ ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR, @JOB_REC_INSERT) 
+										+ ', @JOB_REC_COUNT2 = ' + CONVERT(VARCHAR, @JOB_REC_UPDATE) 
+					--PRINT 'Step 4'
+					EXEC (@SPROCEDURE_NAME)
+
+					--PRINT 'Step 4.1'
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobStepSet '
+										+ ' @pJOB_CODE = ' + @pJOB_CODE 
+										+ ', @pJOB_DATE = ''' + @pJOB_DATE + ''''
+										+ ', @pSTEP = ' + CONVERT(VARCHAR,@SEQ)
+										+ ', @pDESCRIPTION = ASETXT' 
+										+ ', @pDETAIL = ''N/A'''
+					--PRINT 'Step 5'
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @JOB_TOTAL_INSERT = @JOB_TOTAL_INSERT + @JOB_REC_INSERT 
+					SET @JOB_TOTAL_UPDATE = @JOB_TOTAL_UPDATE + @JOB_REC_UPDATE
+
+				END
+				
+			SET @SEQ = @SEQ + 1		-- Here @SEQ = 2 
+			IF(@JOB_STEP < @SEQ)
+				BEGIN
+					SET @pTABLE_NAME = 'PTDSCONTACTINFOTRANSFER'
+					-- Call Procedure to Extract data and load in Staging area
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobControlDetailUpdate '
+										+ '  @SEQ_ID=' + CONVERT(VARCHAR,@RECORD_REF_ID)
+										+ ', @RECORD_REF_GUID =''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @JOB_CODE =' + @pJOB_CODE 
+										+ ', @JOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @OBJECT_NAME = ' + @pTABLE_NAME 
+										+ ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR, @JOB_REC_INSERT) 
+										+ ', @JOB_REC_COUNT2 = ' + CONVERT(VARCHAR, @JOB_REC_UPDATE) 
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @SSQL 		 =  @pSOURCE_TABLE_SCHEMA + '.DbJobExtractPerTable'
+										+ ' @pSOURCE_DB_SERVER=''' + @pSOURCE_DB_SERVER + ''''+
+										+ ', @pSOURCE_DB=' + @pSOURCE_DB 
+										+ ', @pSOURCE_TABLE_SCHEMA=' + @pSOURCE_TABLE_SCHEMA 
+										+ ', @pJOB_CODE=' + @pJOB_CODE 
+										+ ', @pTARGET_DB_SERVER=''' + @pTARGET_DB_SERVER + '''' +
+										+ ', @pTARGET_DB=' + @pTARGET_DB 
+										+ ', @pTARGET_TABLE_SCHEMA=' + @pTARGET_TABLE_SCHEMA 
+										+ ', @pJOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @pTABLE_NAME = ' + @pTABLE_NAME 
+										+ ', @pFROM_DATETIME = ''' + @FOR_DATETIME_FROM + ''''
+										+ ', @pTO_DATETIME = ''' + @FOR_DATETIME_TO + ''''
+										+ ', @pRECORD_REF_GUID = ''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @pAPPLICATIONCODE = ' + @pAPPLICATIONCODE
+										+ ', @pTRANSFERTYPENO = ' + CONVERT(VARCHAR, @pTRANSFERTYPENO)
+										+ ', @JOB_REC_COUNT = @JOB_REC_INS  OUTPUT'
+					
+					EXECUTE sp_executesql @SSQL, N'@JOB_REC_INS int OUTPUT' ,@JOB_REC_INS = @JOB_REC_INSERT OUTPUT
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobControlDetailUpdate'
+										+ '  @SEQ_ID=' + CONVERT(VARCHAR,@RECORD_REF_ID)
+										+ ', @RECORD_REF_GUID=''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @JOB_CODE=' + @pJOB_CODE 
+										+ ', @JOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @OBJECT_NAME = ' + @pTABLE_NAME 
+										+ ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR, @JOB_REC_INSERT) 
+										+ ', @JOB_REC_COUNT2 = ' + CONVERT(VARCHAR, @JOB_REC_UPDATE) 
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobStepSet '
+										+ ' @pJOB_CODE = ' + @pJOB_CODE 
+										+ ', @pJOB_DATE = ''' + @pJOB_DATE + ''''
+										+ ', @pSTEP = ' + CONVERT(VARCHAR,@SEQ)
+										+ ', @pDESCRIPTION = ASETXT' 
+										+ ', @pDETAIL = ''N/A'''
+										
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @JOB_TOTAL_INSERT = @JOB_TOTAL_INSERT + @JOB_REC_INSERT 
+					SET @JOB_TOTAL_UPDATE = @JOB_TOTAL_UPDATE + @JOB_REC_UPDATE
+
+				END
+			
+			SET @SEQ = @SEQ + 1		-- Here @SEQ = 3 
+			IF(@JOB_STEP < @SEQ)
+				BEGIN
+					SET @pTABLE_NAME = 'PTDSIDDOCUMENTTRANSFER'
+					-- Call Procedure to Extract data and load in Staging area
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobControlDetailUpdate '
+										+ '  @SEQ_ID=' + CONVERT(VARCHAR,@RECORD_REF_ID)
+										+ ', @RECORD_REF_GUID =''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @JOB_CODE =' + @pJOB_CODE 
+										+ ', @JOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @OBJECT_NAME = ' + @pTABLE_NAME 
+										+ ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR, @JOB_REC_INSERT) 
+										+ ', @JOB_REC_COUNT2 = ' + CONVERT(VARCHAR, @JOB_REC_UPDATE) 
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @SSQL 		 =  @pSOURCE_TABLE_SCHEMA + '.DbJobExtractPerTable'
+										+ ' @pSOURCE_DB_SERVER=''' + @pSOURCE_DB_SERVER + ''''+
+										+ ', @pSOURCE_DB=' + @pSOURCE_DB 
+										+ ', @pSOURCE_TABLE_SCHEMA=' + @pSOURCE_TABLE_SCHEMA 
+										+ ', @pJOB_CODE=' + @pJOB_CODE 
+										+ ', @pTARGET_DB_SERVER=''' + @pTARGET_DB_SERVER + '''' +
+										+ ', @pTARGET_DB=' + @pTARGET_DB 
+										+ ', @pTARGET_TABLE_SCHEMA=' + @pTARGET_TABLE_SCHEMA 
+										+ ', @pJOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @pTABLE_NAME = ' + @pTABLE_NAME 
+										+ ', @pFROM_DATETIME = ''' + @FOR_DATETIME_FROM + ''''
+										+ ', @pTO_DATETIME = ''' + @FOR_DATETIME_TO + ''''
+										+ ', @pRECORD_REF_GUID = ''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @pAPPLICATIONCODE = ' + @pAPPLICATIONCODE
+										+ ', @pTRANSFERTYPENO = ' + CONVERT(VARCHAR, @pTRANSFERTYPENO)
+										+ ', @JOB_REC_COUNT = @JOB_REC_INS  OUTPUT'
+					
+					EXECUTE sp_executesql @SSQL, N'@JOB_REC_INS int OUTPUT' ,@JOB_REC_INS = @JOB_REC_INSERT OUTPUT
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobControlDetailUpdate'
+										+ '  @SEQ_ID=' + CONVERT(VARCHAR,@RECORD_REF_ID)
+										+ ', @RECORD_REF_GUID=''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @JOB_CODE=' + @pJOB_CODE 
+										+ ', @JOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @OBJECT_NAME = ' + @pTABLE_NAME 
+										+ ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR, @JOB_REC_INSERT) 
+										+ ', @JOB_REC_COUNT2 = ' + CONVERT(VARCHAR, @JOB_REC_UPDATE) 
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobStepSet '
+										+ ' @pJOB_CODE = ' + @pJOB_CODE 
+										+ ', @pJOB_DATE = ''' + @pJOB_DATE + ''''
+										+ ', @pSTEP = ' + CONVERT(VARCHAR,@SEQ)
+										+ ', @pDESCRIPTION = ASETXT' 
+										+ ', @pDETAIL = ''N/A'''
+										
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @JOB_TOTAL_INSERT = @JOB_TOTAL_INSERT + @JOB_REC_INSERT 
+					SET @JOB_TOTAL_UPDATE = @JOB_TOTAL_UPDATE + @JOB_REC_UPDATE
+
+				END
+				
+			SET @SEQ = @SEQ + 1		-- Here @SEQ = 4 
+			IF(@JOB_STEP < @SEQ)
+				BEGIN
+					SET @pTABLE_NAME = 'PTDSREFERENCEACCOUNTTRANSFER'
+					-- Call Procedure to Extract data and load in Staging area
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobControlDetailUpdate '
+										+ '  @SEQ_ID=' + CONVERT(VARCHAR,@RECORD_REF_ID)
+										+ ', @RECORD_REF_GUID =''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @JOB_CODE =' + @pJOB_CODE 
+										+ ', @JOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @OBJECT_NAME = ' + @pTABLE_NAME 
+										+ ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR, @JOB_REC_INSERT) 
+										+ ', @JOB_REC_COUNT2 = ' + CONVERT(VARCHAR, @JOB_REC_UPDATE) 
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @SSQL 		 =  @pSOURCE_TABLE_SCHEMA + '.DbJobExtractPerTable'
+										+ ' @pSOURCE_DB_SERVER=''' + @pSOURCE_DB_SERVER + ''''+
+										+ ', @pSOURCE_DB=' + @pSOURCE_DB 
+										+ ', @pSOURCE_TABLE_SCHEMA=' + @pSOURCE_TABLE_SCHEMA 
+										+ ', @pJOB_CODE=' + @pJOB_CODE 
+										+ ', @pTARGET_DB_SERVER=''' + @pTARGET_DB_SERVER + '''' +
+										+ ', @pTARGET_DB=' + @pTARGET_DB 
+										+ ', @pTARGET_TABLE_SCHEMA=' + @pTARGET_TABLE_SCHEMA 
+										+ ', @pJOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @pTABLE_NAME = ' + @pTABLE_NAME 
+										+ ', @pFROM_DATETIME = ''' + @FOR_DATETIME_FROM + ''''
+										+ ', @pTO_DATETIME = ''' + @FOR_DATETIME_TO + ''''
+										+ ', @pRECORD_REF_GUID = ''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @pAPPLICATIONCODE = ' + @pAPPLICATIONCODE
+										+ ', @pTRANSFERTYPENO = ' + CONVERT(VARCHAR, @pTRANSFERTYPENO)
+										+ ', @JOB_REC_COUNT = @JOB_REC_INS  OUTPUT'
+					
+					EXECUTE sp_executesql @SSQL, N'@JOB_REC_INS int OUTPUT' ,@JOB_REC_INS = @JOB_REC_INSERT OUTPUT
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobControlDetailUpdate'
+										+ '  @SEQ_ID=' + CONVERT(VARCHAR,@RECORD_REF_ID)
+										+ ', @RECORD_REF_GUID=''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @JOB_CODE=' + @pJOB_CODE 
+										+ ', @JOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @OBJECT_NAME = ' + @pTABLE_NAME 
+										+ ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR, @JOB_REC_INSERT) 
+										+ ', @JOB_REC_COUNT2 = ' + CONVERT(VARCHAR, @JOB_REC_UPDATE) 
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobStepSet '
+										+ ' @pJOB_CODE = ' + @pJOB_CODE 
+										+ ', @pJOB_DATE = ''' + @pJOB_DATE + ''''
+										+ ', @pSTEP = ' + CONVERT(VARCHAR,@SEQ)
+										+ ', @pDESCRIPTION = ASETXT' 
+										+ ', @pDETAIL = ''N/A'''
+										
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @JOB_TOTAL_INSERT = @JOB_TOTAL_INSERT + @JOB_REC_INSERT 
+					SET @JOB_TOTAL_UPDATE = @JOB_TOTAL_UPDATE + @JOB_REC_UPDATE
+
+				END
+				
+			SET @SEQ = @SEQ + 1		-- Here @SEQ = 5 
+			IF(@JOB_STEP < @SEQ)
+				BEGIN
+					SET @pTABLE_NAME = 'PTDSSERVICEACCOUNTTRANSFER'
+					-- Call Procedure to Extract data and load in Staging area
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobControlDetailUpdate '
+										+ '  @SEQ_ID=' + CONVERT(VARCHAR,@RECORD_REF_ID)
+										+ ', @RECORD_REF_GUID =''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @JOB_CODE =' + @pJOB_CODE 
+										+ ', @JOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @OBJECT_NAME = ' + @pTABLE_NAME 
+										+ ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR, @JOB_REC_INSERT) 
+										+ ', @JOB_REC_COUNT2 = ' + CONVERT(VARCHAR, @JOB_REC_UPDATE) 
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @SSQL 		 =  @pSOURCE_TABLE_SCHEMA + '.DbJobExtractPerTable'
+										+ ' @pSOURCE_DB_SERVER=''' + @pSOURCE_DB_SERVER + ''''+
+										+ ', @pSOURCE_DB=' + @pSOURCE_DB 
+										+ ', @pSOURCE_TABLE_SCHEMA=' + @pSOURCE_TABLE_SCHEMA 
+										+ ', @pJOB_CODE=' + @pJOB_CODE 
+										+ ', @pTARGET_DB_SERVER=''' + @pTARGET_DB_SERVER + '''' +
+										+ ', @pTARGET_DB=' + @pTARGET_DB 
+										+ ', @pTARGET_TABLE_SCHEMA=' + @pTARGET_TABLE_SCHEMA 
+										+ ', @pJOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @pTABLE_NAME = ' + @pTABLE_NAME 
+										+ ', @pFROM_DATETIME = ''' + @FOR_DATETIME_FROM + ''''
+										+ ', @pTO_DATETIME = ''' + @FOR_DATETIME_TO + ''''
+										+ ', @pRECORD_REF_GUID = ''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @pAPPLICATIONCODE = ' + @pAPPLICATIONCODE
+										+ ', @pTRANSFERTYPENO = ' + CONVERT(VARCHAR, @pTRANSFERTYPENO)
+										+ ', @JOB_REC_COUNT = @JOB_REC_INS  OUTPUT'
+					
+					EXECUTE sp_executesql @SSQL, N'@JOB_REC_INS int OUTPUT' ,@JOB_REC_INS = @JOB_REC_INSERT OUTPUT
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobControlDetailUpdate'
+										+ '  @SEQ_ID=' + CONVERT(VARCHAR,@RECORD_REF_ID)
+										+ ', @RECORD_REF_GUID=''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @JOB_CODE=' + @pJOB_CODE 
+										+ ', @JOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @OBJECT_NAME = ' + @pTABLE_NAME 
+										+ ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR, @JOB_REC_INSERT) 
+										+ ', @JOB_REC_COUNT2 = ' + CONVERT(VARCHAR, @JOB_REC_UPDATE) 
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobStepSet '
+										+ ' @pJOB_CODE = ' + @pJOB_CODE 
+										+ ', @pJOB_DATE = ''' + @pJOB_DATE + ''''
+										+ ', @pSTEP = ' + CONVERT(VARCHAR,@SEQ)
+										+ ', @pDESCRIPTION = ASETXT' 
+										+ ', @pDETAIL = ''N/A'''
+										
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @JOB_TOTAL_INSERT = @JOB_TOTAL_INSERT + @JOB_REC_INSERT 
+					SET @JOB_TOTAL_UPDATE = @JOB_TOTAL_UPDATE + @JOB_REC_UPDATE
+
+				END
+
+			SET @SEQ = @SEQ + 1		-- Here @SEQ = 6 
+			IF(@JOB_STEP < @SEQ)
+				BEGIN
+					SET @pTABLE_NAME = 'IFDELIVERYITEM'
+					-- Call Procedure to Extract data and load in Staging area
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobControlDetailUpdate '
+										+ '  @SEQ_ID=' + CONVERT(VARCHAR,@RECORD_REF_ID)
+										+ ', @RECORD_REF_GUID =''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @JOB_CODE =' + @pJOB_CODE 
+										+ ', @JOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @OBJECT_NAME = ' + @pTABLE_NAME 
+										+ ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR, @JOB_REC_INSERT) 
+										+ ', @JOB_REC_COUNT2 = ' + CONVERT(VARCHAR, @JOB_REC_UPDATE) 
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @SSQL 		 =  @pSOURCE_TABLE_SCHEMA + '.DbJobExtractPerTable'
+										+ ' @pSOURCE_DB_SERVER=''' + @pSOURCE_DB_SERVER + ''''+
+										+ ', @pSOURCE_DB=' + @pSOURCE_DB 
+										+ ', @pSOURCE_TABLE_SCHEMA=' + @pSOURCE_TABLE_SCHEMA 
+										+ ', @pJOB_CODE=' + @pJOB_CODE 
+										+ ', @pTARGET_DB_SERVER=''' + @pTARGET_DB_SERVER + '''' +
+										+ ', @pTARGET_DB=' + @pTARGET_DB 
+										+ ', @pTARGET_TABLE_SCHEMA=' + @pTARGET_TABLE_SCHEMA 
+										+ ', @pJOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @pTABLE_NAME = ' + @pTABLE_NAME 
+										+ ', @pFROM_DATETIME = ''' + @FOR_DATETIME_FROM + ''''
+										+ ', @pTO_DATETIME = ''' + @FOR_DATETIME_TO + ''''
+										+ ', @pRECORD_REF_GUID = ''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @pAPPLICATIONCODE = ' + @pAPPLICATIONCODE
+										+ ', @pTRANSFERTYPENO = ' + CONVERT(VARCHAR, @pTRANSFERTYPENO)
+										+ ', @JOB_REC_COUNT = @JOB_REC_INS  OUTPUT'
+					
+					EXECUTE sp_executesql @SSQL, N'@JOB_REC_INS int OUTPUT' ,@JOB_REC_INS = @JOB_REC_INSERT OUTPUT
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobControlDetailUpdate'
+										+ '  @SEQ_ID=' + CONVERT(VARCHAR,@RECORD_REF_ID)
+										+ ', @RECORD_REF_GUID=''' + CONVERT(VARCHAR(255),@RECORD_REF_GUID) + '''' 
+										+ ', @JOB_CODE=' + @pJOB_CODE 
+										+ ', @JOB_DATE =''' + @pJOB_DATE + ''''
+										+ ', @OBJECT_NAME = ' + @pTABLE_NAME 
+										+ ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR, @JOB_REC_INSERT) 
+										+ ', @JOB_REC_COUNT2 = ' + CONVERT(VARCHAR, @JOB_REC_UPDATE) 
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobStepSet '
+										+ ' @pJOB_CODE = ' + @pJOB_CODE 
+										+ ', @pJOB_DATE = ''' + @pJOB_DATE + ''''
+										+ ', @pSTEP = ' + CONVERT(VARCHAR,@SEQ)
+										+ ', @pDESCRIPTION = ASETXT' 
+										+ ', @pDETAIL = ''N/A'''
+										
+					EXEC (@SPROCEDURE_NAME)
+
+					SET @JOB_TOTAL_INSERT = @JOB_TOTAL_INSERT + @JOB_REC_INSERT 
+					SET @JOB_TOTAL_UPDATE = @JOB_TOTAL_UPDATE + @JOB_REC_UPDATE
+
+				END
+									
+				-- At the End, mark the job is completed successfully
+				SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobPostExecutionProcessingSuccess ' 
+					   + '  @pJOB_SEQ_KEY =' + CONVERT(VARCHAR,@JOB_SEQ_KEY )
+					   + ', @pJOB_CODE =' + @pJOB_CODE  
+					   + ', @pJOB_DATE =''' + @pJOB_DATE + ''''
+					   + ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR,@JOB_TOTAL_INSERT ) 
+					   + ', @JOB_REC_COUNT2 = ' + + CONVERT(VARCHAR,@JOB_TOTAL_UPDATE) 
+
+				EXEC (@SPROCEDURE_NAME)
+
+				SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobStepRemove ' 
+											+ '  @pJOB_CODE =' + @pJOB_CODE  
+											+ ', @pJOB_DATE =''' + @pJOB_DATE + ''''
+
+
+				EXEC (@SPROCEDURE_NAME)
+
+				SET @TEXT = CONVERT(VARCHAR(25),GETDATE(),121) + ' : Procedure '+ @EXECUTINGPROCEDURE +' finished.'
+				EXEC DbJobWriteInfo @USER, @pJOB_CODE, @EXECUTINGPROCEDURE, 'Log Message', @TEXT, @pJOB_DATE, 1
+
+		END TRY
+		BEGIN CATCH
+		
+			
+			-- In case of Exception, mark that job as failed
+			SET @SPROCEDURE_NAME =  @pSOURCE_TABLE_SCHEMA + '.DbJobPostExecutionProcessingFailed ' 
+				   + '  @pJOB_SEQ_KEY =' + CONVERT(VARCHAR,@JOB_SEQ_KEY )
+				   + ', @pJOB_CODE =' + @pJOB_CODE  
+				   + ', @pJOB_DATE =''' + @pJOB_DATE + ''''
+				   + ', @JOB_REC_COUNT1 = ' + CONVERT(VARCHAR,@JOB_TOTAL_INSERT ) 
+				   + ', @JOB_REC_COUNT2 = ' + + CONVERT(VARCHAR,@JOB_TOTAL_UPDATE) 
+
+			EXEC (@SPROCEDURE_NAME)
+			
+			DECLARE @ErrorSeverity INT	= 0
+			DECLARE @ErrorState INT		= 0
+			DECLARE @ErrorNumber INT	= 0
+			DECLARE @ErrorMessage VARCHAR(256)	=	'Error'
+			DECLARE @ErrorProcedure VARCHAR(100)=	@EXECUTINGPROCEDURE	
+			DECLARE @ErrorLine INT				= -1
+			
+			SELECT	@ErrorSeverity = ERROR_SEVERITY(),
+					@ErrorState = ERROR_STATE(),
+					@ErrorNumber = ERROR_NUMBER(),
+					@ErrorMessage = ERROR_MESSAGE(),
+					@ErrorLine = ERROR_LINE()		
+			
+			SET @TEXT = 'SQL Error trapped in Procedure: ' + @EXECUTINGPROCEDURE +'. Error: ' + CONVERT(VARCHAR(10), @ErrorNumber) +'. Message: ' + @ErrorMessage + ' Procedure: '+ @ErrorProcedure + '. Line: ' + CONVERT(VARCHAR(10), @ErrorLine)+ '.'
+	
+			EXEC DbJobWriteError @USER, @pJOB_CODE, @EXECUTINGPROCEDURE, 'Log Message', @TEXT, @pJOB_DATE, 1
+			
+			RAISERROR ('SQL Error trapped in Procedure:%s. Error:%d. Message:%s Procedure:%s. Line:%d.', 
+					@ErrorSeverity, @ErrorState, @EXECUTINGPROCEDURE, @ErrorNumber, @ErrorMessage, 
+					@ErrorProcedure, @ErrorLine)
+		END CATCH
+END		

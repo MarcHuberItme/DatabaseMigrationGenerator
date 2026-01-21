@@ -1,0 +1,19 @@
+table:
+  name: 'VaLatestRunRef'
+  description: 'This table references for a given portfolio (by id)  the latest valuation run id available and it''s valuation date. The valuation run id is used to find the latest position/portfolio in the tables VaLatestValuationForPortfolio and VaLatestValuationForPosition.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'VaRunId'
+    description: 'VaRunId for the latest/most recent valuation available.'
+  - name: 'PortfolioId'
+    description: ''
+  - name: 'ValuationDate'
+    description: ''

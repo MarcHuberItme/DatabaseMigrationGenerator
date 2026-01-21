@@ -1,0 +1,63 @@
+table:
+  name: 'PtTransSxExportSQL'
+  description: 'tasks to create staging area for transaction register'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Tasks for trans register'
+    - german:
+        formTitle: 'Tasks für Trans-Register'
+    - french:
+        formTitle: 'Tâche d''analyse transacti'
+  columns:
+  - name: 'FileTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtExportFileType'
+      refField: 'FileTypeNo'
+      defColumnPos: 1
+  - name: 'DataTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtExportDataType'
+      refField: 'DataTypeNo'
+      defColumnPos: 2
+  - name: 'SequenceNo'
+    description: 'Field used for sorting the SQL execution and reverse tracking of records in staging areas (in order backtrack in case of debugging or checking)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TaskName'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'SqlCommand'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IsSuspended'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ReportDate'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'ExecStart'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'ExecCompleted'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+      isNoUpdate: true

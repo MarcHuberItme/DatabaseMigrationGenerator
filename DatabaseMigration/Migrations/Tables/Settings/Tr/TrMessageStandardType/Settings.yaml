@@ -1,0 +1,24 @@
+table:
+  name: 'TrMessageStandardType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Message Standard'
+    - german:
+        formTitle: 'Message Standard'
+  columns:
+  - name: 'Code'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

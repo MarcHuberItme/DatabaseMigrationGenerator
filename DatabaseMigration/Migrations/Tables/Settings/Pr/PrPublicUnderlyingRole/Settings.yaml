@@ -1,0 +1,24 @@
+table:
+  name: 'PrPublicUnderlyingRole'
+  description: 'Telekurs Domain K-513'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Underlying Role'
+    - german:
+        formTitle: 'Underlying Role'
+  columns:
+  - name: 'RoleNo'
+    description: 'Numer of the Telekurs Underlying Role Type'
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,18 @@
+table:
+  name: 'AsAccessType'
+  description: 'Types of function based access permissions'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+  columns:
+  - name: 'AccessTypeNo'
+    description: 'Number of access type\r\n1 = No access\r\n2 = Read only\r\n4 = Full access'
+    genericControls:
+      defColumnPos: 1

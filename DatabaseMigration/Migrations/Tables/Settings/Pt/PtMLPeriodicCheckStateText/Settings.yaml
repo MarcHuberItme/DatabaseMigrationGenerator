@@ -1,0 +1,43 @@
+table:
+  name: 'PtMLPeriodicCheckStateText'
+  description: 'Texte und deren URL für einen offenen GwG Check in verschiedenen Sprachen.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+  columns:
+  - name: 'BaasClientNo'
+    description: 'Nummer des jeweiligen Baas-Partners. Referenz zu PtBaasPartner.BaaSClientNo\r\nkann NULL sein.'
+    genericControls:
+      refTable: 'PtBaaSPartner'
+      refField: 'BaaSClientNo'
+  - name: 'ChannelNo'
+    description: 'Kanal, Referenz zu PtMlPeriodicCheckChannel.ChannelNo'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckChannel'
+      refField: 'ChannelNo'
+  - name: 'CheckStateNo'
+    description: 'Status der Prüfung, Referenz zu PtMlPeriodicCheckState.StateNo'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckState'
+      refField: 'StateNo'
+  - name: 'LanguageNo'
+    description: 'Sprache, Referenz zu AsLanguage.LanguageNo'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'Text'
+    description: 'Text, der angezeigt werden soll. Ist in der jeweiligen Sprache verfasst.'
+  - name: 'URL'
+    description: 'URL, welche zum GWG Portal für diese Kombination führt'
+  - name: 'ValidFrom'
+    description: 'Gültigkeitsdatum des Records'
+  - name: 'ValidTo'
+    description: 'Gültigkeitsdatum des Records'
+  - name: 'Remark'
+    description: 'Bemerkungsfeld, kann NULL sein.'

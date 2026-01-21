@@ -1,0 +1,31 @@
+table:
+  name: 'PsBranchLabelText'
+  description: 'Contains the assignments form Branch to Label. The label-text itself is stored in AsText.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Branch Label Text'
+    - german:
+        formTitle: 'Brachenabhängige Texte'
+  columns:
+  - name: 'BranchId'
+    description: 'Branch to which the text is assigned'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'LabelId'
+    description: 'Id of the label the text belongs to'
+    genericControls:
+      refTable: 'PsBranchLabel'
+      refField: 'Id'
+      defColumnPos: 1

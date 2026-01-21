@@ -1,0 +1,28 @@
+table:
+  name: 'PrPublicCashFlowStatus'
+  description: 'VDF-Domaine: 4929 PAYSTATUS'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Cash flow status'
+    - german:
+        formTitle: 'Cash Flow Status'
+  columns:
+  - name: 'CashFlowStatusNo'
+    description: 'Maintained by VDF-Metadata'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CalcAccruedInterest'
+    description: 'CalcAccruedInterest = True: For cash flows with this status, the accrued interest have to be calculated\r\n\r\nCalcAccruedInterest = False: For cash flows with this status, the accrued interest have to be calculated'
+    genericControls:
+      defColumnPos: 2

@@ -1,0 +1,145 @@
+table:
+  name: 'AcFrozenAccountComponent'
+  description: 'monthly frozen account component information for\r\n"Eigenmittel Berechnung", "ALM" and FireExport'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ReportDate'
+    description: 'Berichtsdatum'
+    genericControls:
+      noUpdatePos: 1
+  - name: 'AccountNo'
+    description: 'Konto Nr.'
+    genericControls:
+      noUpdatePos: 2
+  - name: 'ComponentId'
+    description: 'PtAccountComponentId'
+    genericControls:
+      noUpdatePos: 3
+  - name: 'CompTypeNo'
+    description: 'Komponententyp'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+      noUpdatePos: 4
+  - name: 'IsDebit'
+    description: '1 = Soll / 0 = Haben'
+    genericControls:
+      noUpdatePos: 5
+  - name: 'SecurityLevelNo'
+    description: 'Sicherheit (kurant, unkurant, blanko,...)'
+    genericControls:
+      refTable: 'PrPrivateSecurityLevel'
+      refField: 'SecurityLevelNo'
+      noUpdatePos: 6
+  - name: 'IsFixedDuration'
+    description: 'Feste Laufzeit'
+    genericControls:
+      noUpdatePos: 7
+  - name: 'IsLimitRelevant'
+    description: 'Mit Limite'
+    genericControls:
+      noUpdatePos: 8
+  - name: 'ValidFrom'
+    description: 'Gültig ab (Konditionen)'
+    genericControls:
+      noUpdatePos: 9
+  - name: 'ValidTo'
+    description: 'Gültig bis (Konditionen)'
+    genericControls:
+      noUpdatePos: 10
+  - name: 'ExpirationDate'
+    description: 'Verfall (z.B. bei Festhypothek)'
+    genericControls:
+      noUpdatePos: 11
+  - name: 'ExpirationRecCount'
+    description: 'Anzahl Records in PtAccountPriceDeviation mit Verfallsinformation'
+  - name: 'Priority'
+    description: 'Priorität für die Zinsberechnung'
+    genericControls:
+      noUpdatePos: 12
+  - name: 'InterestRate'
+    description: 'Zinssatz'
+    genericControls:
+      noUpdatePos: 13
+  - name: 'Value'
+    description: 'Wert der Limite in Kontowährung'
+    genericControls:
+      noUpdatePos: 14
+  - name: 'UsedValue'
+    description: 'Beanspruchter Betrag (Kapital) in Kontowährung'
+    genericControls:
+      noUpdatePos: 15
+  - name: 'UsedDueValue'
+    description: 'Beanspruchter Betrag (Zinsen) in Kontowährung'
+  - name: 'MgVBNR'
+    description: 'Migrationsfeld, siehe PtAccountComponent'
+    genericControls:
+      noUpdatePos: 16
+  - name: 'MgVBSUBKTNR'
+    description: 'Migrationsfeld, siehe PtAccountComponent'
+    genericControls:
+      noUpdatePos: 17
+  - name: 'MgVERKWERT'
+    description: 'Migrationsfeld, siehe PtAccountComponent'
+    genericControls:
+      noUpdatePos: 18
+  - name: 'MgVORGANG'
+    description: 'Migrationsfeld, siehe PtAccountComponent'
+    genericControls:
+      noUpdatePos: 19
+  - name: 'MgLIMITE'
+    description: 'Migrationsfeld, siehe PtAccountComponent'
+  - name: 'MgCoverageNo'
+    description: 'Migrationsfeld, siehe PtAccountComponent'
+  - name: 'UsedValueHomeCurrency'
+    description: 'Beanspruchter Betrag (Kapital) in Bilanzwährung'
+  - name: 'UsedDueValueHomeCurrency'
+    description: 'Beanspruchter Betrag (Zinsen) in Bilanzwährung'
+  - name: 'PrReferenceId'
+    description: 'PrReference.Id'
+  - name: 'Currency'
+    description: 'Kontowährung'
+  - name: 'ClosingPeriodRuleNo'
+    description: 'Abschlussperiodizität'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+  - name: 'MgDECKWERT'
+    description: 'Migrationsfeld, siehe PtAccountComponent'
+  - name: 'PriorityOfLegalReporting'
+    description: 'Priorität für SNB-Reporting'
+  - name: 'CreditLimitHoCu'
+    description: 'Kreditlimite'
+  - name: 'SpecProvUsedValueHoCu'
+    description: 'Effektive Einzelwertberichtigung auf Kapital'
+  - name: 'SpecProvUsedDueValueHoCu'
+    description: 'Effektive Einzelwertberichtigung auf Zinsen'
+  - name: 'PledgePortfolioNo'
+    description: 'Verbindung zu verpfändetem Portfolio'
+  - name: 'SubParticipationPosId'
+    description: 'PositionsId für Unterbeteiligung (Verwendung bei Bank Sparhafen)'
+  - name: 'DateFrom'
+    description: 'If the component is based on a MoneyMarket Contract, the start date of the contract is written in DateFrom.'
+  - name: 'Location'
+    description: 'The location (country) of a estate of a building used as collateral.\r\n\r\nActually, this information is taken from PtAccountComponent.MgLocation.\r\nlater on, the source wull be the new collateral managament solution.\r\n\r\nNull = CH'
+  - name: 'DefaultRiskAmount'
+    description: 'latente Wertberichtigung in Produktwährung, aus Tab. PtPositionReportDetail'
+  - name: 'DefaultRiskAmountBasicCurrency'
+    description: 'latente Wertberichtigung in Bilanzwährung, aus Tab. PtPositionReportDetail'
+  - name: 'DefaultRiskSpecificAmountBaCu'
+    description: 'Einzel-WB aus Tab. PtPositionReportDetail'
+  - name: 'DefaultRiskAccrualsAmountBaCu'
+    description: 'Einzel-WB (Rückstellung) aus Tab. PtPositionReportDetail'
+  - name: 'DefaultRiskInterestAmountBaCu'
+    description: 'Zinsausstand aus Tab. PtPositionReportDetail'
+  - name: 'MaxNetWithdrawCompPrCu'
+    description: 'Calculated MaxWithdraw Value on a Component in product currency'
+  - name: 'MaxNetWithdrawCompHoCu'
+    description: 'Calculated MaxWithdraw Value on a Component in home currency'

@@ -1,0 +1,29 @@
+table:
+  name: 'MgK22'
+  description: 'monthly statement (Kontoauszug für Kontokorrent)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    descField: 'Text'
+    uiTableDescription:
+    - english:
+        formTitle: 'Monthly statement'
+    - german:
+        formTitle: 'Kontoauszug KK'
+  columns:
+  - name: 'MigValue'
+    description: '0 = use standard defined in FIS-VRX; 10 = always monthly; 99 = not desired'
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Text'
+    description: ''
+    genericControls:
+      defColumnPos: 2

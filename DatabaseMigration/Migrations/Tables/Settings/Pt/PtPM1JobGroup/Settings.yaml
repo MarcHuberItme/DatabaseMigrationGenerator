@@ -1,0 +1,25 @@
+table:
+  name: 'PtPM1JobGroup'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PM1 Job Groups'
+        helpText: 'PM1 Job Groups'
+    - german:
+        formTitle: 'PM1 Job Groups'
+        helpText: 'PM1 Job Groups'
+  columns:
+  - name: 'JobGroupNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

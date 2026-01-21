@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CyRateRecent_GetFxRates'
+  description: 'Stored procedure provided by slk for exporting fx rates for confluence / intranet.'

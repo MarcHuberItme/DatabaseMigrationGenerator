@@ -1,0 +1,57 @@
+table:
+  name: 'ReSituation'
+  description: 'Description of the real estate or premises situation\r\n\r\nDetaillierte Situationsbeschreibung (pro Grundstück nur eine Beschreibung)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Situation'
+    - german:
+        formTitle: 'Infrastruktur'
+    - french:
+        formTitle: 'Infrastructure'
+    - italian:
+        formTitle: 'Infrastruttura'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'SituationType'
+    description: ''
+    genericControls:
+      refTable: 'ReSituationType'
+      refField: 'SituationType'
+      defColumnPos: 1
+  - name: 'ChoiceType'
+    description: ''
+    genericControls:
+      refTable: 'ReChoiceType'
+      refField: 'ChoiceType'
+      defColumnPos: 2
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 3
+  - name: 'DistanceType'
+    description: ''
+    genericControls:
+      refTable: 'ReSituationDistanceType'
+      refField: 'Id'
+      defColumnPos: 3

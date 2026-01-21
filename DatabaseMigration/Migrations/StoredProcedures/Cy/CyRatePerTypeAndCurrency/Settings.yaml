@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CyRatePerTypeAndCurrency'
+  description: 'Read 90 Rates of one Currency and Type'

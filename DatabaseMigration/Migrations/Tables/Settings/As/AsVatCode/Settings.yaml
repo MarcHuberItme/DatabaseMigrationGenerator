@@ -1,0 +1,32 @@
+table:
+  name: 'AsVatCode'
+  description: 'VAT (Value Added Tax) Codes'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'VAT-Code'
+    - german:
+        formTitle: 'MWst-Code'
+  columns:
+  - name: 'VATTaxTypeNo'
+    description: 'Tax Type e.g.\r\n0 = Tax free (education etc)\r\n1 = Standard tax\r\n2 = Reduced tax for food \r\netc.\r\n\r\n'
+    genericControls:
+      defColumnPos: 1
+  - name: 'IsTaxIncluded'
+    description: 'If False then the VAT is to add to the service amount,\r\nExample: Service amount = 100,00   VAT = 7.60   Invoice amount = 107.60\r\n\r\nIf True then the VAT is included in the service amount\r\nExample: Service amount = 92.94   VAT = 7.06   Invoice amount = 100.00'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsForeign'
+    description: 'This field indicates if the invoice is a domestic one or from foreign country\r\n0: domestic\r\n1:foreign'
+    genericControls:
+      defColumnPos: 3

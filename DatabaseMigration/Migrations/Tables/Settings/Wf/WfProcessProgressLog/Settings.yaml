@@ -1,0 +1,36 @@
+table:
+  name: 'WfProcessProgressLog'
+  description: 'This table records the every single status change happening in the WfProcessProgress table, to keep track what and what happened to every step in each process.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ProcessProgressLog'
+  columns:
+  - name: 'ProcessId'
+    description: ''
+  - name: 'MapNo'
+    description: ''
+  - name: 'StepNo'
+    description: ''
+  - name: 'StepType'
+    description: ''
+  - name: 'Status'
+    description: ''
+  - name: 'StartDate'
+    description: ''
+  - name: 'FinishDate'
+    description: ''
+  - name: 'Timeout'
+    description: ''
+  - name: 'DynamicItems'
+    description: ''
+  - name: 'Agent'
+    description: 'Name of the user who worked on the interactive step.'

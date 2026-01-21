@@ -1,0 +1,24 @@
+table:
+  name: 'PrPublicTaxParticularity'
+  description: 'Tax Particularity \r\nSome issuers of 871(m) relevant products are planning to take care of the withholding tax at their own risk; if so it will be indicated with this attribute. \r\nVDF: FSD.FSE.7905\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax Particularity'
+    - german:
+        formTitle: 'Steuersorgfalt'
+  columns:
+  - name: 'TaxParticularity'
+    description: 'VDF Doamin 7905'
+    genericControls:
+      defColumnPos: 1

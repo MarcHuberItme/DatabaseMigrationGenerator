@@ -1,0 +1,64 @@
+table:
+  name: 'CoBaseasscalc'
+  description: 'Betragsmässige Zuweisung der Berechung  der Sicherheit (Cobasecalc) bei der Deckungsausscheidung zu einem Kreditkonto'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'ass calc colleteral'
+    - german:
+        formTitle: 'Zuw Berechnung Sicherheit'
+  columns:
+  - name: 'Cobasecalcid'
+    description: 'Laufnummer Berechnung'
+    genericControls:
+      refTable: 'CoBasecalc'
+      refField: 'Id'
+  - name: 'AccountId'
+    description: 'Laufnummer Kreditkonto'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+  - name: 'Veragrp'
+    description: 'Laufnummer ist bei einer  Deckungsausscheidung  für alle gleichzeitig verarbeiten Kredit gleich'
+    genericControls:
+      refTable: 'CoVeragrp'
+      refField: 'Veragrp'
+  - name: 'CollateralId'
+    description: 'Laufnummer Sicherheit'
+    genericControls:
+      refTable: 'CoBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'Calcgrp'
+    description: 'Laufnummer der Berechnung (Sicherheit)\r\nLaufnummer wird mit assequence ''CO_Calcgruppe''  vergeben und hat heute eine 1:1 Beziehung zur Veragrp'
+    genericControls:
+      refTable: 'CoCalcgrp'
+      refField: 'Calcgrp'
+  - name: 'Veradate'
+    description: 'Datum der Verarbeitung der Deckungsausscheidung für alle\r\ngleichzeitig verarbeiten Sicherheiten und Kreditkonti gleich\r\n'
+  - name: 'Pricover'
+    description: 'Priorität der Deckung (nach 2-1 Reglement)\r\n'
+    genericControls:
+      refTable: 'CoPricov'
+      refField: 'Pricover'
+  - name: 'SubpriCover'
+    description: 'Subrpriorität innerhalb der PriCover'
+  - name: 'Typecov'
+    description: 'Art der Deckung (nach 2-1 Reglement)'
+    genericControls:
+      refTable: 'CoTypecov'
+      refField: 'Typecov'
+  - name: 'Pledgevalueassign'
+    description: 'Zugewiesener Belehnungswert der Sicherheit hier immer in Bilanzwährung'
+  - name: 'Rate'
+    description: 'rate from account currency to CHF'
+  - name: 'MaxAllocAmount'
+    description: 'copy from cobaseass in the moment of the collateral allocation'

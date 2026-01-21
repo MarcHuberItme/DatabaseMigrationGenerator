@@ -1,0 +1,62 @@
+table:
+  name: 'PtBillerList'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'ConsolidatorNo'
+    description: ''
+    genericControls:
+      refTable: 'PtBillConsolidator'
+      refField: 'ConsolidatorNo'
+      defColumnPos: 1
+  - name: 'BillerPID'
+    description: 'Identification of the biller within the system'
+    genericControls:
+      defColumnPos: 2
+  - name: 'BillerName'
+    description: 'Name of the biller'
+    genericControls:
+      defColumnPos: 3
+  - name: 'BillerType'
+    description: '1 = Shop\r\n2 = Biller'
+    minValue: '1'
+    maxValue: '2'
+  - name: 'BillerStatus'
+    description: ''
+  - name: 'BillerNo'
+    description: 'NOT IN USE ANYMORE - was used for paging through billers list, now solved differently'
+  - name: 'BillerZIP'
+    description: ''
+  - name: 'BillerCity'
+    description: ''
+  - name: 'BillerKanton'
+    description: 'AG, ZH etc...'
+  - name: 'BillerCountry'
+    description: ''
+  - name: 'ActivationDate'
+    description: ''
+  - name: 'URLLogo'
+    description: 'SINCE CCX v2 NOT used anymore! Logo of the biller'
+  - name: 'InformationURL'
+    description: 'PayNet: InfoURL of Biller (since ccx v2)'
+  - name: 'URLRegistration'
+    description: 'URL to register in billers system'
+  - name: 'URLDelegation'
+    description: 'SINCE CCX v2 NOT IN USE ANYMORE.\r\nPayNet: URL of signature delegation to the biller service provider'
+  - name: 'URLDeregistration'
+    description: 'URL to deregister from biller'
+  - name: 'DirectRegistration'
+    description: 'Direct registration possible? (yellowbill)'
+  - name: 'MWSTReady'
+    description: ''
+  - name: 'IndustryID'
+    description: ''

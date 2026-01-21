@@ -1,0 +1,72 @@
+view:
+  name: 'TrMessageTypeView'
+  description: ''
+frontendView:
+  name: 'TrMessageTypeView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isUnique: true
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+  - name: 'HdStatusFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdNoUpdateFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+  - name: 'HdTriggerControl'
+    dataType: 'tinyint'
+  - name: 'MessageStandardId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'TrMessageStandard'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'Prefix'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 2
+  - name: 'Code'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 3
+  - name: 'SubMessageTypeCode'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 4

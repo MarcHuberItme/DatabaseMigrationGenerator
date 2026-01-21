@@ -1,0 +1,77 @@
+table:
+  name: 'ReBaseValues'
+  description: 'Werte zur ganzen Liegenschaft\r\n\r\n\r\nVeränderungen von mehr als 5% vom Verkehrswert lösen bei der Pfandbriefbank eine Neubewertung aus.\r\nUnique Index über ValueTypeNo und Year'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'ReBase'
+      parentRelationField: 'ReBaseId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Values'
+    - german:
+        formTitle: 'Werte'
+    - french:
+        formTitle: 'évaluent'
+  columns:
+  - name: 'ReBaseId'
+    description: ''
+    genericControls:
+      refTable: 'ReBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ValueTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReValueType'
+      refField: 'ValueTypeNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ValueDate'
+    description: 'z.B. Ertragswert PER'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'Amount'
+    description: 'Betrag (z.B. indexierter Gebäudeversicherungswert)\r\nin case of Verkehrswert (fair market value) calculation - it''s a calculated value, depending on RealValueAmount and EarningValueAmount'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 5
+  - name: 'Valuation'
+    description: 'schätzungsrelevant\r\n0 = Nein\r\n1 = Ja'
+  - name: 'BasisYear'
+    description: 'z.B. Basisjahr der Schätzung eines Gebäudeversicherungswertes'
+  - name: 'BasisAmount'
+    description: 'z.B. Basiswert des Gebäudeversicherungswertes (in Amount ist der auf den Stichtag (ValueDate) hin indexierte Wert)'
+  - name: 'CalcMethodeId'
+    description: ''
+    genericControls:
+      refTable: 'ReValueCalcMethode'
+      refField: 'Id'
+  - name: 'STPFlag'
+    description: '1 = Value is calculated by a stored proc - kann nicht manuell geändert werden, bevor die Details gelöscht werden !'
+  - name: 'MemberUniqueKey'
+    description: 'PfB spezifisch: Jede Mitgliedbank vergibt für den gemeldeten Record eine eindeutige Identifikation. Diese benötigt sie um über E-Banking die Daten zu mutieren. Diese eindeutige Kennung muss die Mitgliedbank bei sich speichern.'
+  - name: 'RealValueAmount'
+    description: 'used in case of fair market value calculation (Verkehrswert - Berechnung)'
+  - name: 'EarningValueAmount'
+    description: 'used in case of fair market value calculation (Verkehrswert - Berechnung)'

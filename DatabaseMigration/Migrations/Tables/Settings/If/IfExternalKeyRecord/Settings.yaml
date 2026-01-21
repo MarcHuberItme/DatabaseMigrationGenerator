@@ -1,0 +1,27 @@
+table:
+  name: 'IfExternalKeyRecord'
+  description: 'Table of handling external data values during migration.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FinstarId'
+    description: 'Finstar Id referring of the external record internally.'
+  - name: 'ExternalId'
+    description: 'The corresponding external id to the Finstar id of the external record.'
+  - name: 'ApplicationCode'
+    description: 'Code of the source of the external data.'
+    genericControls:
+      refTable: 'AsExternalApplication'
+      refField: 'ApplicationCode'
+  - name: 'InterfaceObjectType'
+    description: 'Custom type of interface object that is written to Finstar.'
+  - name: 'FinstarTableName'
+    description: 'The Finstar table name where the record with the given Finstar id resides.'
+  - name: 'InactivationTimestamp'
+    description: 'Time of the deletion of the record.'

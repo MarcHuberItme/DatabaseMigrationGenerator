@@ -1,0 +1,46 @@
+table:
+  name: 'PtNationality'
+  description: 'relationship-entity of PtBase and AsCountry'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Nationality'
+    - german:
+        formTitle: 'Nationalität'
+    - french:
+        formTitle: 'nationalité'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key, Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'CountryCode'
+    description: 'foreign-key;  candidate-key of AsCountry (ISO-Code)'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'DateOfNationality'
+    description: 'date since the partner has this nationality'
+  - name: 'MgVrxKey'
+    description: ''
+    genericControls:
+      isOnlyForMig: true

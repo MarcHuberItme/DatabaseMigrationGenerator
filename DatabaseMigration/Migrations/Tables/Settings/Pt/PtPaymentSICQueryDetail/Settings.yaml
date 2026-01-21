@@ -1,0 +1,49 @@
+table:
+  name: 'PtPaymentSICQueryDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'SICQueryId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentSICQuery'
+      refField: 'Id'
+  - name: 'InOutDetailText'
+    description: ''
+  - name: 'PaymentIn'
+    description: ''
+  - name: 'PaymentOut'
+    description: ''
+  - name: 'Balance'
+    description: ''
+  - name: 'EntryNumber'
+    description: ''
+  - name: 'BCOrderingBank'
+    description: ''
+  - name: 'BCBeneficiaryBank'
+    description: ''
+  - name: 'PaymentMessageType'
+    description: ''
+  - name: 'ServiceApplication'
+    description: ''
+  - name: 'PaymentCode'
+    description: ''
+  - name: 'PriorityCode'
+    description: ''
+  - name: 'TransRefNumber'
+    description: ''
+  - name: 'EntryDate'
+    description: ''
+  - name: 'EntryTime'
+    description: ''
+  - name: 'CreditAmount'
+    description: ''
+  - name: 'PaymentStatusCode'
+    description: ''

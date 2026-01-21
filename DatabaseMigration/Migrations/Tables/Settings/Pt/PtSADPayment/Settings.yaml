@@ -1,0 +1,75 @@
+table:
+  name: 'PtSADPayment'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'SAD Payments'
+    - german:
+        formTitle: 'SAD Payments'
+  columns:
+  - name: 'TransMessageId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PaymentAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'OrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtSADOrder'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'SequenceNo'
+    description: ''
+  - name: 'PayeeName'
+    description: ''
+  - name: 'PayeeFurtherInfo'
+    description: ''
+  - name: 'PayeeAddress'
+    description: ''
+  - name: 'PayeePostCode'
+    description: ''
+  - name: 'PayeeCity'
+    description: ''
+  - name: 'InfoBlock1'
+    description: ''
+  - name: 'InfoBlock2'
+    description: ''
+  - name: 'InfoBlock3'
+    description: ''
+  - name: 'OrderIssuerName'
+    description: ''
+  - name: 'OrderIssuerFurtherInfo'
+    description: ''
+  - name: 'OrderIssuerStreet'
+    description: ''
+  - name: 'OrderIssuerPostCode'
+    description: ''
+  - name: 'OrderIssuerCity'
+    description: ''
+  - name: 'BenBankName'
+    description: ''
+  - name: 'BenBankFurtherInfo'
+    description: ''
+  - name: 'BenBankStreet'
+    description: ''
+  - name: 'BenBankPostCode'
+    description: ''
+  - name: 'BenBankCity'
+    description: ''

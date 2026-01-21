@@ -1,0 +1,17 @@
+table:
+  name: 'PtProfileIndustryRisk'
+  description: 'Industrierisikostufen für SEBA'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'IndustryRiskNo'
+    description: ''

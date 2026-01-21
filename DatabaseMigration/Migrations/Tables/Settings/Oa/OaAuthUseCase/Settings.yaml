@@ -1,0 +1,45 @@
+table:
+  name: 'OaAuthUseCase'
+  description: 'Futurae 2FA Use Cases\r\nfor every 2FA use case a 2FA Confirmation will be triggered by e-banking, open banking app or directly from finstar internal module (e.g. payment module). Possible use cases are (login conf., payment conf., confirm password change,...)\r\nTextShort: Internal Text\r\nTextLong: External Text (Title in the Push Screen)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: '2FA Auth Use Case'
+    - german:
+        formTitle: '2FA Auth Use Case'
+    - french:
+        formTitle: '2FA Auth Use Case'
+    - italian:
+        formTitle: '2FA Auth Use Case'
+  columns:
+  - name: 'UseCaseName'
+    description: '2FA Use Case Name\r\nThis value is the same as the value to be provided in the finstar authentication API to send a second factor authentication to the user.\r\nFor more details see Swagger Documentation \r\nb2b2c-two-factor-authentication-api and ebankfing-two-factor-authentication-api'
+    genericControls:
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'UseCaseNo'
+    description: ''
+    minValue: '0'
+    genericControls:
+      defColumnPos: 2
+      noUpdatePos: 2
+  - name: 'IsTriggeredByFinstar'
+    description: 'value = 1 --> 2fa authentication is triggered by internal finstar module\r\nvalue = 2 --> 2fa authentication is triggered by external application'
+    genericControls:
+      defColumnPos: 3
+      noUpdatePos: 3
+  - name: 'Remark'
+    description: 'here the application management or the application owner can document some information about the use case usage.'
+    genericControls:
+      multiLine: true
+      noUpdatePos: 4

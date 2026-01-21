@@ -1,0 +1,31 @@
+table:
+  name: 'SwMT565MsgType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Mt565 Msg Type'
+    - german:
+        formTitle: 'Mt565 Msg Typ'
+    - french:
+        formTitle: 'Mt565 Msg Type'
+  columns:
+  - name: 'MsgType'
+    description: 'Msg Type to be used for communication with SIX SIS.'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IsToReport'
+    description: ''
+    genericControls:
+      defColumnPos: 2

@@ -1,0 +1,144 @@
+table:
+  name: 'CyTrade'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TradeBookId'
+    description: 'Trade Book unique Identification'
+    genericControls:
+      refTable: 'CyTradeBook'
+      refField: 'Id'
+  - name: 'SettlementBookId'
+    description: 'Settlment Book unique indentification'
+    genericControls:
+      refTable: 'CyTradeBook'
+      refField: 'Id'
+  - name: 'ExpirationDate'
+    description: 'CPM makes a time barred offer. Offer is no more valid after Expiration Date. The value in this field is range of function of Currency Pair and Amount. It is calcuated based upon the rule defined in Table CyRateRule. Both Date and Time values are important in this field.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'SettlementDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'PtTransMessageId'
+    description: 'FK : Transaction Message Id (DB Integrity is not set intentionally)\r\n because currency rate can be obtained before insertion of transaction'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+  - name: 'PortfolioId'
+    description: 'FK : Portfolio (Customer / Client Info)\r\nForex Transaction involves transfer of currency from one account to other account. This field stores Portfolio id of first account.'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'TradeType'
+    description: 'Forex:true (1) = credit trade\r\nForex:false (0) = debit trade\r\nBill:true(1) = Disagio (money going to account)\r\nBill:false(0) = Agio (money going from account)'
+    genericControls:
+      defColumnPos: 5
+  - name: 'TradeInstrument'
+    description: 'For the time being following trade instruments are used and handled by CPM\r\n1 - Forex\r\n2 - Bill\r\n'
+    genericControls:
+      refTable: 'CyPaymentInstrument'
+      refField: 'PaymentInstrumentNo'
+  - name: 'SettlementInstrument'
+    description: '1 - Forex\r\n2 - Bill'
+    genericControls:
+      refTable: 'CyPaymentInstrument'
+      refField: 'PaymentInstrumentNo'
+  - name: 'TradeRateType'
+    description: 'It is the selling, buying or middle rate\r\n1 - Bid\r\n2 - Ask\r\n3 - Accountancy'
+    genericControls:
+      refTable: 'CyRateType'
+      refField: 'RateType'
+  - name: 'SettlementRateType'
+    description: 'It is the selling, buying or middle rate\r\n1 - Bid\r\n2 - Ask\r\n3 - Accountancy'
+    genericControls:
+      refTable: 'CyRateType'
+      refField: 'RateType'
+  - name: 'TradeCurrency'
+    description: 'ISIN symbol for currency for Trade'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 7
+  - name: 'SettlementCurrency'
+    description: 'ISIN symbol for currency for Settlement'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 6
+  - name: 'TradeAmount'
+    description: 'Amount to be traded'
+  - name: 'SettlementAmount'
+    description: 'Amount to be settled'
+  - name: 'BookValueTrade'
+    description: 'Value of the trade after applying the conversion rate.'
+  - name: 'BookValueSettlement'
+    description: 'Value of the settlement after applying the conversion'
+  - name: 'AgioAmount'
+    description: 'Agio Amount in NON-CHF Currency. It is the Abs(TargetValue - Source)'
+  - name: 'TraderFactorTrade'
+    description: 'It is trader''s spread/agio factor for the transaction involving the Trade Transaction'
+  - name: 'TraderFactorSettlement'
+    description: 'Trader''s spread/agio factor for the transaction involving the Settlement Transaction'
+  - name: 'TraderSpreadAmountTrade'
+    description: 'Amount Calculated after applying Trader''s Spread/agio Factor for Trading Currency'
+  - name: 'TraderSpreadAmountSettlement'
+    description: 'Amount Calculated after applying Trader''s Spread/agio Factor for Settlement Currency'
+  - name: 'ManagerFactorTrade'
+    description: 'Manager''s spread/agio factor for the transaction involving the Trade Transaction'
+  - name: 'ManagerFactorSettlement'
+    description: 'Manager''s spread/agio factor for the transaction involving the Settlement Transaction'
+  - name: 'ManagerSpreadAmountTrade'
+    description: 'Amount Calculated after applying Manager''s Spread/agio Factor for Trading Currency'
+  - name: 'ManagerSpreadAmountSettlement'
+    description: 'Amount Calculated after applying Manager''s Spread/agio Factor for Settlement Currency'
+  - name: 'MarketRateTrade'
+    description: 'Market Rate for currency conversion for Trade Transaction. It is the rate of Trading Currency with the base currency. Base Currency is CHF for initial Finstar applications.'
+  - name: 'MarketRateSettlement'
+    description: 'Market Rate for currency conversion for Settlement Transaction. It is the rate of Settlement Currency with the base currency. Base Currency is CHF for initial Finstar applications.'
+  - name: 'CrossRate'
+    description: 'Cross rate is direct conversion factor between Trading Currency and Settlement Currency'
+  - name: 'Status'
+    description: 'Trade can be at the following possible states\r\nOffered = 0\r\nRejected = 1\r\nExecuted = 3\r\nExpired = (Status = Initiated And ExpirationDate < CurrentDate)'
+    genericControls:
+      refTable: 'CyTradeStatus'
+      refField: 'Status'
+      defColumnPos: 2
+  - name: 'TradePositionId'
+    description: 'FK to CyPosition for Trade Currency'
+    genericControls:
+      refTable: 'CyPosition'
+      refField: 'Id'
+  - name: 'SettlementPositionId'
+    description: 'FK to CyPosition for Settlement Currency'
+    genericControls:
+      refTable: 'CyPosition'
+      refField: 'Id'
+  - name: 'ReplaceValueTrade'
+    description: 'Used in valuation Module. (The description is to be updated later)'
+  - name: 'ReplaceValueSettlement'
+    description: 'Used in valuation Module. (The description is to be updated later)'
+  - name: 'ReplaceValueCalcFlag'
+    description: 'Used in valuation Module. (The description is to be updated later)'
+  - name: 'DescriptionString'
+    description: ''
+  - name: 'MarketRateTradeCustomer'
+    description: ''
+  - name: 'MarketRateSettlementCustomer'
+    description: ''
+  - name: 'CrossRateCustomer'
+    description: ''
+  - name: 'TradeDate'
+    description: ''
+  - name: 'RoundingOverrides'
+    description: 'NameValue pair for currency''s custom userdefined rounding types\r\ne.g.\r\nCHF=1120,USD=5120'

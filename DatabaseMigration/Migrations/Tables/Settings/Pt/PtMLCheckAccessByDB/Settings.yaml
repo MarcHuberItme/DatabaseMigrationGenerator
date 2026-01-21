@@ -1,0 +1,74 @@
+table:
+  name: 'PtMLCheckAccessByDB'
+  description: 'Personen mit Zugriff via E-Banking-Vertrag\r\nDB = Digital Banking'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccessId'
+    description: 'Id der Zugriffsprüfung'
+    genericControls:
+      refTable: 'PtMLCheckAccess'
+      refField: 'Id'
+  - name: 'AccessedPartnerId'
+    description: 'Id des Partners, auf dessen Objekte via Digital Banking zugegriffen wird. Ist der Partner, unter welchem die periodische Prüfung stattfindet'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'AccessedPartner'
+    description: 'PtDescriptionView,PtDescription\r\nPartnernummer und Name des Kunden, auf dessen Objekte zugegriffen werden. Ist der Partner, unter welchem die periodische Prüfung stattfindet'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'AccessorPartnerId'
+    description: 'Partner Id des Kunden, der via Digital Banking zugreift'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'Accessor'
+    description: 'PtDescriptionView.PtDescription\r\nPartnernummer und Name des Kunden, welcher via Digital Banking zugreift'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'ContractId'
+    description: 'Id des Ebanking Vertrages, welcher Zugriff hat'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'ContractNo'
+    description: 'PtAgrEbanking.MgVtNo\r\nVertragsnummer des Ebanking Vertrages, welcher Zugriff hat'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'AccessorCPId'
+    description: 'd der Kontaktperson, welche via Digital Banking zugreift'
+    genericControls:
+      refTable: 'PtContactPerson'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'AccessorCP'
+    description: 'PtContactPeron.Name + '' '' + PtContactPerson.FirstName\r\nName der Kontaktperson'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsToDelete'
+    description: 'Flag, welches angibt, ob ein Record gelöscht werden darf. Macht bei Stammdaten keinen Sinn'
+  - name: 'Comment'
+    description: 'Kommentar des Kunden'
+    genericControls:
+      multiLine: true
+  - name: 'CheckStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckDetailState'
+      refField: 'CheckDetailStateNo'
+      defColumnPos: 4
+      isNoUpdate: true

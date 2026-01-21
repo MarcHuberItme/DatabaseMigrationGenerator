@@ -1,0 +1,28 @@
+table:
+  name: 'ReObligLienCreation'
+  description: 'Pfandrecht Verarbeitung'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Lien Creation'
+    - german:
+        formTitle: 'Pfandrecht Verarbeitung'
+  columns:
+  - name: 'LienCreationNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'SortNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2

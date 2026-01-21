@@ -1,0 +1,17 @@
+table:
+  name: 'TestFecher'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: ed24bd87-1b5f-4231-b64b-f2cc5ca68d5d
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TimeStamp'
+    description: ''
+    genericControls:
+      defColumnPos: 1

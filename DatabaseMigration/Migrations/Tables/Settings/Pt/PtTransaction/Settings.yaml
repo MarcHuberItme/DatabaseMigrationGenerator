@@ -1,0 +1,167 @@
+table:
+  name: 'PtTransaction'
+  description: 'defines a group of transactions\r\n\r\nwithin a group of transactions it''s possible to place stock exchange orders on various stock exchange places. For all stock exchange places there is a trading order.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'transaction'
+    - german:
+        formTitle: 'Transaktion'
+  columns:
+  - name: 'TransNo'
+    description: 'sequence "TransNo" of FsDataAccess.FsSequence.GetSequence'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TransGroupNo'
+    description: 'Used for ''PaymentTransactions'', designates a group of transactions which belong together, i.e. same sender'
+  - name: 'TransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+      defColumnPos: 3
+  - name: 'OrderNo'
+    description: 'An Order might include several transactions.\r\nIn a ''normal'' transaction the OrderNo will be equal to the TransNo.\r\na forwarding order (after a subclosing) willl get a new TransNo with the OrderNo from the original transaction.\r\na storno will get a new TransNo with the OrderNo from the original transaction.\r\na rectification will also get a new TransNo with the OrderNo from the transaction transaction.\r\nthis means that an order, a storno and a rectification will have the same OrderNo.'
+  - name: 'OrderDate'
+    description: '-> this field will be removed\r\nDate when the order is initiated or modified'
+    genericControls:
+      defColumnPos: 2
+  - name: 'OrderMediaNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransOrderMedia'
+      refField: 'OrderMediaNo'
+  - name: 'TransDate'
+    description: 'Transaction Posting Date'
+  - name: 'TransDateTime'
+    description: 'Transaction Date with time information'
+  - name: 'SettlementAmount'
+    description: 'It is hash total of Settlement Amounts in underlying Messages.\r\nHashTotal is sum of currency amounts (without considering the currency code GBP, CHF etc..)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'QualityCheck'
+    description: 'IMPORTANT NOTICE : \r\nThis field will be removed soon. It is replaced with Field "BadTransMessageCount".\r\n--------------------------------------------------------------------------------------------------------------------\r\nQuality (Correctness of Values in Transaction, Completeness of Values in Transaction).\r\nIf Values in fields of a complete Transaction is complete and correct, it is set to True'
+    genericControls:
+      defColumnPos: 5
+  - name: 'LegalityCheck'
+    description: 'If a person/customer is legal to a transaction or not. This value is initially set to false. After verification, this value is set to True, if custormer,doing transaction, is legal.\r\nFor front desk this value is True (due to presence is person)'
+  - name: 'BadTransMessageCount'
+    description: 'It stores the number of Bad Quality Transmessage Record count. A transaction composes of multiple TransMessages. For a good quality transaction (complete and correct) its value is 0.'
+  - name: 'ValueCheck'
+    description: 'It is important for while debit transaction. Account must have enough money to debit.\r\nOr CPM Trade could not be executed'
+  - name: 'DealerProgress'
+    description: '-> this field will be removed\r\nStockExOrder: flag if the order is in progress by the dealer'
+  - name: 'PlaceStatus'
+    description: '-> this field will be removed\r\nis stock exchange order placed?\r\n1= it is placed (at least partially placed)'
+  - name: 'WaitForEventStatus'
+    description: '-> this field will be removed\r\n(same functionality with placestatus and processid)\r\nis true if the order is in the workflow on the wait for trade/mod event'
+  - name: 'TradeStatus'
+    description: '-> this field will be removed\r\nis there a pttranstrade record on a pttransmessage records? \r\n(the order must not be fully traded)'
+  - name: 'AllocationStatus'
+    description: '-> this field will be removed\r\nis Stock Exchange order allocated?'
+  - name: 'ProcessStatus'
+    description: 'It is status flag of Transaction Process Completeness. A transaction is complete when all its bookings are properly generated. It is initally set to False. After the completion of transaction entry. It is set to True.'
+  - name: 'UpdateStatus'
+    description: 'A batch process takes a transaction items/messages from PtTransItem and updates PtPosition. After a transaction entry is updated from PtTransItem to PtPosition, this flag is set to true.'
+  - name: 'PrintStatus'
+    description: 'True if print process is done'
+  - name: 'CancelledStatus'
+    description: 'if the transaction is cancelled through the user it will never be processed (LegalityCheck or ValueCheck or CPM-Rate not accepted)'
+  - name: 'TradingSystemErrorNo'
+    description: 'this field will be removed.\r\nError code from Trading System, 0 = no error'
+  - name: 'CompletionDate'
+    description: 'As soon as a transaction is completed, a completion date is written along with it. It involves concept of SQL Partioning. Older Transaction are moved to Archive Trables. It is first value is MAXDATE (9999-12-31). It is then later changed by another process responsible for the task of Partioning.'
+  - name: 'PublicId'
+    description: 'For Bond coupon, amount is paid from public accounts. It is the product Id associated with the PublicProducts in PrPublic. These Bonds are public products that are published internationally'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PreferredPublicListingId'
+    description: 'preferred Public Listing and currency ??, may be reassigned later\r\n19.03.04/kgy'
+    genericControls:
+      refTable: 'PrPublicListing'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderTypeNo'
+    description: '-> this field will be removed\r\n[shares]'
+    genericControls:
+      refTable: 'AsTradingOrderType'
+      refField: 'OrderTypeNo'
+  - name: 'PriceLimit'
+    description: '-> this field will be removed\r\n[shares]'
+  - name: 'TriggerPrice'
+    description: '-> this field will be removed\r\nused for stop loss, stop order'
+  - name: 'ValidToRule'
+    description: '-> this field will be removed\r\n[shares]'
+    genericControls:
+      refTable: 'AsValidToRule'
+      refField: 'RuleTypeNo'
+  - name: 'ValidFrom'
+    description: '-> this field will be removed\r\nit''s possible that orders are entered before they are valid (e.g. bonds)'
+  - name: 'ValidTo'
+    description: '-> this field will be removed\r\n[shares]'
+  - name: 'SeriesNo'
+    description: 'Serie-Nummer  FIS-VRX für migrierte Buchungen\r\nin Börse/Corporate Action: ''01000'' + TransTypeNo (zB: 01000601)\r\nin KTB  ''01000'' + TransTypeNo'
+  - name: 'TextToTrader'
+    description: '-> this field cannot be removed cause is used for the delivery transaction (no PtTradingOrder)'
+    genericControls:
+      multiLine: true
+  - name: 'TextToPartner'
+    description: '-> this field cannot be removed cause is used for the delivery transaction (no PtTradingOrder)'
+    genericControls:
+      multiLine: true
+  - name: 'TextToBackOffice'
+    description: '-> his field cannot be removed cause is used for the external reversel text for the delivery transaction (no PtTradingOrder)\r\n'
+    genericControls:
+      multiLine: true
+  - name: 'TextToForexTrader'
+    description: '-> this field cannot be removed cause is used for the delivery transaction (no PtTradingOrder)'
+    genericControls:
+      multiLine: true
+  - name: 'OrderDisposerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'OrderMiddlemanId'
+    description: ''
+    genericControls:
+      refTable: 'PtUserBase'
+      refField: 'Id'
+  - name: 'EventVariantId'
+    description: ''
+    genericControls:
+      refTable: 'EvVariant'
+      refField: 'Id'
+  - name: 'ProcessId'
+    description: ''
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PaymentOrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrder'
+      refField: 'Id'
+  - name: 'ScannedForPosting'
+    description: '0 = not scanned for posting Outoing messages\r\n1 = scanned for posting Outoing messages'
+  - name: 'RejectReasonCode'
+    description: 'The reject reason code specified the reason due to which transaction could not be processed. In addition Value Check will also be set in case of insufficent balance.'
+    genericControls:
+      refTable: 'PtPaymentRejectReason'
+      refField: 'RejectCode'
+  - name: 'FirstTransactionId'
+    description: 'Original Transaction Id for reverse transaction (Storno)'
+  - name: 'CashDeskAccountNo'
+    description: 'In case of a transaction from a cash desk terminal ... the main ledger account no of the cash desk is stored is this field.\r\ne.g. CashDesk1 = 910101108 (dvl db)\r\n'
+  - name: 'RealDate'
+    description: 'Datum wird verwendet für Abschlussbuchungen'

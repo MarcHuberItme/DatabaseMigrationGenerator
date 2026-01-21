@@ -1,0 +1,38 @@
+table:
+  name: 'PtPaymentOverdrawRule'
+  description: 'Rules for payment order overdraw to use in payment order processing'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment Order Overdraw'
+    - german:
+        formTitle: 'Zahlungsauftrag Überzug'
+  columns:
+  - name: 'ProductNo'
+    description: 'account product number'
+    genericControls:
+      multiLine: true
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PaymentOrderTypeNo'
+    description: 'payment order type'
+    genericControls:
+      refTable: 'PtPaymentOrderType'
+      refField: 'OrderTypeNo'
+      defColumnPos: 2
+  - name: 'OverdrawLimit'
+    description: 'amount that can be overdrawed'
+    minValue: '0'
+    maxValue: '99999'
+    genericControls:
+      defColumnPos: 3

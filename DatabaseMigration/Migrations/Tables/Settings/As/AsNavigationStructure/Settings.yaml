@@ -1,0 +1,47 @@
+table:
+  name: 'AsNavigationStructure'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 75acefc4-0a56-4966-97a8-53e8b891ec08
+    visumLevel: 1
+    cacheLevel: 2
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Navigation Structure'
+    - german:
+        formTitle: 'Navigationsstruktur'
+  columns:
+  - name: 'NavigationStructureId'
+    description: '*** Referential DB- Integrity to AsnavigationStructuremaster is temporarly removed until we get the next version of NavigationBuilder (!!! Restored with cascade delete/update enforced now (Imran - Sep. 6, 2001))'
+    genericControls:
+      refTable: 'AsNavigationStructureMaster'
+      refField: 'Id'
+  - name: 'TableName'
+    description: ''
+  - name: 'ApplicationKey'
+    description: ''
+  - name: 'ParentTable'
+    description: ''
+  - name: 'ParentTableApplicationKey'
+    description: ''
+  - name: 'Sequence'
+    description: ''
+  - name: 'NumberOfDetailedNodes'
+    description: ''
+  - name: 'Expanded'
+    description: ''
+  - name: 'FormName'
+    description: ''
+  - name: 'FunctionList'
+    description: ''
+  - name: 'MultiRecordOption'
+    description: ''
+  - name: 'FolderName'
+    description: ''
+  - name: 'ParentConditionKey'
+    description: ''

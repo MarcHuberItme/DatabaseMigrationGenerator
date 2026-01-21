@@ -1,0 +1,32 @@
+table:
+  name: 'NcSanctionTermMatchingType'
+  description: 'Based on MatchingType the term defined in NcSanctionTerm which might consist of multiple words will match if its parts are found\r\n- anywhere in the text\r\n- after each other in any order\r\n- after each other in a fixed order'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0ebe92b4-009e-4d5f-b882-c8d9daf72042
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'NcSanctionTermMatchingTyp'
+        helpText: 'NcSanctionTermMatchingType'
+    - german:
+        formTitle: 'NcSanctionTermMatchingTyp'
+        helpText: 'NcSanctionTermMatchingType'
+    - french:
+        formTitle: 'NcSanctionTermMatchingTyp'
+        helpText: 'NcSanctionTermMatchingType'
+    - italian:
+        formTitle: 'NcSanctionTermMatchingTyp'
+        helpText: 'NcSanctionTermMatchingType'
+  columns:
+  - name: 'MatchingTypeNo'
+    description: 'Based on MatchingTypeNo the term defined in NcSanctionTerm which might consist of multiple words will match if its parts are found\r\n- anywhere in the text\r\n- after each other in any order\r\n- after each other in a fixed order'
+    genericControls:
+      defColumnPos: 1

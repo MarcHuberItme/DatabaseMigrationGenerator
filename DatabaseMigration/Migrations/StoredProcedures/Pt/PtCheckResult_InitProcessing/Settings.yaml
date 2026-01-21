@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtCheckResult_InitProcessing'
+  description: 'Initializes PEP-Check by setting the IsActualized Flag to 0'

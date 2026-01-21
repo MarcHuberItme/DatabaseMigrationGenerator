@@ -1,0 +1,36 @@
+table:
+  name: 'MsGoiOutTraderMsg'
+  description: 'Messages from generic order interface (GOI) for traders (such as GLOX)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdMessageStore'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 6
+    groupId: 47a738e9-4dcb-41bc-8fcc-bb1699c6b097
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'MessageType'
+    description: 'Type of the message (OrderRequest, OrderCancelRequest) ==> Order Data Class (the format of the order data).'
+  - name: 'MessageTypeVersion'
+    description: 'Version of the OutType structure ==> Order Data Class (the format of the order data)'
+  - name: 'App'
+    description: 'App (fix GLOX).\r\nUsed for mapping table (PtTransSxFixMapping).'
+    genericControls:
+      refTable: 'PtTransSxGoiApp'
+      refField: 'App'
+  - name: 'Channel'
+    description: 'Channel (fix FIX).'
+    genericControls:
+      refTable: 'PtTransSxGoiChannel'
+      refField: 'Channel'
+  - name: 'OrderKeyPartner'
+    description: 'OrderKey in Finstar. \r\nPtTradingOrderMessage.BankInternalReference'
+  - name: 'OrderKeyTrader'
+    description: 'OrderKey in GLOX. \r\nPtTradingOrderMessage.StockExRef'
+  - name: 'MessageData'
+    description: 'Data based on the record described in MessageSourceId'
+  - name: 'MessageSourceId'
+    description: 'Id of the record where the MessageData was basically built from.\r\nMessageType ''OrderRequest'' -> PtTradingOrder\r\nMessageType ''OrderCancelRequest'' -> PtTradingOrderMod/PtTradingOrderMessageMod\r\n\r\n'

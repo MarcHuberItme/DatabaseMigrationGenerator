@@ -1,0 +1,3 @@
+view:
+  name: 'MCStateExchangeLimitView'
+  description: 'Limit records from MasterCard CSE report.'

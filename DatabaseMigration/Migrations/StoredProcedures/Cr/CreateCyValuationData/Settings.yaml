@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CreateCyValuationData'
+  description: 'Create data for foreign currency valuation'

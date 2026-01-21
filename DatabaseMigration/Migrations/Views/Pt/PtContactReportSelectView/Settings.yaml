@@ -1,0 +1,74 @@
+view:
+  name: 'PtContactReportSelectView'
+  description: ''
+frontendView:
+  name: 'PtContactReportSelectView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'TopicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsContactTopic'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'CustSpeaker'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+    genericControls:
+      defColumnPos: 2
+  - name: 'BankSpeakerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+  - name: 'BeginTime'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'EndTime'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Text'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 500
+  - name: 'TopicNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsContactTopic'
+      refField: 'TopicNo'
+      defColumnPos: 4
+  - name: 'BankSpeaker'
+    description: ''
+    dataType: 'varchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 5
+  - name: 'Description'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 500
+    genericControls:
+      defColumnPos: 6
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'

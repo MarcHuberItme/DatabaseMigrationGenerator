@@ -1,0 +1,84 @@
+table:
+  name: 'PrSafeDepositChargeSummary'
+  description: 'This table records the summary of the payment issued by safe deposit box application, such as the invoice, debit advice and reminder.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'DepositChargeSummay'
+        helpText: 'PrSafeDepositChargeSummary'
+    - german:
+        formTitle: 'DepositChargeSummay'
+        helpText: 'PrSafeDepositChargeSummary'
+  columns:
+  - name: 'Partner_ID'
+    description: 'PartnerID of the customer.'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'BranchNo'
+    description: 'branch No for the safe deposit box'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 2
+  - name: 'BoxNo'
+    description: 'Safe deposit box number'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PeriodBegin'
+    description: 'the start date for this charge period'
+    genericControls:
+      defColumnPos: 5
+  - name: 'PeriodEnd'
+    description: 'the end date for this charge period'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ChargeType'
+    description: 'this field shows if this payment is a debit advice, an invoice or a reminder'
+    genericControls:
+      defColumnPos: 7
+  - name: 'ChargeAmount'
+    description: 'the total customer charge amount'
+    genericControls:
+      defColumnPos: 8
+  - name: 'ReportDate'
+    description: 'as the report date for printing the charge report'
+    genericControls:
+      defColumnPos: 9
+  - name: 'IsBooked'
+    description: 'This field is used to show if this payment has been booked or not.'
+    genericControls:
+      defColumnPos: 10
+  - name: 'IsManualPrinted'
+    description: 'this field is used to show if this payment is for manually processing, such as printing, and mailing.'
+    genericControls:
+      defColumnPos: 11
+  - name: 'ContractID'
+    description: 'the ContractID of safe deposit box'
+    genericControls:
+      defColumnPos: 12
+  - name: 'DebitAccountNo'
+    description: 'the account number for the debit of service charge'
+    genericControls:
+      defColumnPos: 13
+  - name: 'SafeDepositBoxID'
+    description: 'The SafeDepositBoxID of the safe deposit box'
+    genericControls:
+      defColumnPos: 14
+  - name: 'TransactionID'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      defColumnPos: 15

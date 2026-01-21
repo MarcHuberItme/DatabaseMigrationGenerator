@@ -1,0 +1,43 @@
+table:
+  name: 'PtAccountExpense'
+  description: 'individual account expenses rules'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountBaseId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Expenses'
+    - german:
+        formTitle: 'Spesen'
+    - french:
+        formTitle: 'Frais'
+  columns:
+  - name: 'AccountBaseId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ExpenseRulesetNo'
+    description: 'individual expense ruleset to be used. \r\nIf ExpenseRulesetNo = NULL then use expense rule defined on account level.'
+    genericControls:
+      refTable: 'PrExpenseRuleset'
+      refField: 'ExpenseRulesetNo'
+      defColumnPos: 2

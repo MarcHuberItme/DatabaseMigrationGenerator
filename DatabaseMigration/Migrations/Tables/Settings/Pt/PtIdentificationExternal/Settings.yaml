@@ -1,0 +1,48 @@
+table:
+  name: 'PtIdentificationExternal'
+  description: 'External identification of a partner for example\r\n- LEI (Legal Entity Identifier, Rechtsträger-Kennung)\r\n- BIC (Business Identifier Code)\r\n- UID (Unternehmens Identifikations Nummer)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Identification external'
+    - german:
+        formTitle: 'Identifikation externe'
+    - french:
+        formTitle: 'Identification externe'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key; Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'IdentificationType'
+    description: 'type of identification (exp. LEI, BIC, etc.)'
+    genericControls:
+      refTable: 'PtIdentificationExternalType'
+      refField: 'IdExtType'
+      defColumnPos: 1
+  - name: 'IdentificationCode'
+    description: 'Number of the company'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Remarks'
+    description: 'special notices'
+    genericControls:
+      multiLine: true

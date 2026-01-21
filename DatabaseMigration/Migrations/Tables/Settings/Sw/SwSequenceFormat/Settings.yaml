@@ -1,0 +1,52 @@
+table:
+  name: 'SwSequenceFormat'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'SwSequenceFormat'
+        helpText: 'SwSequenceFormat'
+    - german:
+        formTitle: 'SwSequenceFormat'
+        helpText: 'SwSequenceFormat'
+  columns:
+  - name: 'SWIFTID'
+    description: ''
+    genericControls:
+      refTable: 'SwSWIFT'
+      refField: 'Id'
+  - name: 'SequenceIndexID'
+    description: ''
+    genericControls:
+      refTable: 'SwSequenceIndex'
+      refField: 'Id'
+  - name: 'FieldName'
+    description: ''
+  - name: 'SubSeqFormatID'
+    description: ''
+    genericControls:
+      refTable: 'SwSequenceIndex'
+      refField: 'Id'
+  - name: 'FieldType'
+    description: ''
+  - name: 'FieldTag'
+    description: ''
+  - name: 'Qualifier'
+    description: ''
+  - name: 'Status'
+    description: ''
+  - name: 'Presence'
+    description: ''
+  - name: 'FieldOrderNo'
+    description: ''
+  - name: 'IsSupported'
+    description: ''

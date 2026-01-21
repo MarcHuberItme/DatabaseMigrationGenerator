@@ -1,0 +1,49 @@
+table:
+  name: 'PtPositionDetailShare'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPositionDetailShare'
+        helpText: 'PtPositionDetailShare'
+    - german:
+        formTitle: 'PtPositionDetailShare'
+        helpText: 'PtPositionDetailShare'
+  columns:
+  - name: 'DepotbankID'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ShareholderID'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PortfolioID'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Quantity'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'TradeDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'DeliveryDateTime'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'DeliveryID'
+    description: ''
+    genericControls:
+      defColumnPos: 7

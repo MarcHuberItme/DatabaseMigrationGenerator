@@ -1,0 +1,84 @@
+table:
+  name: 'PrPublicBlocking'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Blocking'
+    - german:
+        formTitle: 'Sperrung'
+    - french:
+        formTitle: 'Blocage'
+  columns:
+  - name: 'PublicId'
+    description: 'foreign-key; Id of PrPublic'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      hasDetailBtn: true
+      noUpdatePos: 7
+      createNavigationIndex: true
+  - name: 'ParentTableName'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'ParentId'
+    description: 'foreign-key;  Id of the referenced table'
+    genericControls:
+      isNoUpdate: true
+  - name: 'BlockDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'BlockIssuer'
+    description: 'Person who initiates the blocking (can be a internal or external person)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'BlockReason'
+    description: 'foreign-key; Id of PtBlockReason\r\n\r\nno updates because of migration / 20.07.05 mct'
+    genericControls:
+      refTable: 'PtBlockReason'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'BlockComment'
+    description: 'reason'
+    genericControls:
+      multiLine: true
+  - name: 'ReleaseDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ReleaseIssuer'
+    description: 'Person who allows us to release the existing blocking instruction (can be a internal or external person)'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ReleaseReason'
+    description: 'foreign-key; Id of PtReleaseReason'
+    genericControls:
+      refTable: 'PtReleaseReason'
+      refField: 'Id'
+      defColumnPos: 4
+  - name: 'ReleaseComment'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IsPermanent'
+    description: ''
+  - name: 'ReleaseDateEstimated'
+    description: 'this date is not used to check the blocking, it''s just for information'

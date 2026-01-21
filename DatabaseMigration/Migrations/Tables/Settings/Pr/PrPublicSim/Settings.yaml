@@ -1,0 +1,27 @@
+table:
+  name: 'PrPublicSim'
+  description: 'Temporary table for public product'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Public product'
+    - german:
+        formTitle: 'Valorenstamm'
+  columns:
+  - name: 'SecurityNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'IsinNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2

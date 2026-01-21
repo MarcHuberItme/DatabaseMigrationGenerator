@@ -1,0 +1,85 @@
+table:
+  name: 'MgXS21'
+  description: 'VRX Listings (periodische Auszüge)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Auszug'
+    - german:
+        formTitle: 'Auszug'
+  columns:
+  - name: 'KdNr'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ArbGeb'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'KtNr'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'SubKtNr'
+    description: ''
+  - name: 'Art'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'PoNr'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'VfPos'
+    description: ''
+  - name: 'MutZyklus'
+    description: ''
+  - name: 'PerDat'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'SeitDat'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'AbschDet'
+    description: ''
+  - name: 'Kond'
+    description: ''
+  - name: 'RBef'
+    description: ''
+  - name: 'Darst'
+    description: ''
+  - name: 'AbRuf'
+    description: ''
+  - name: 'Empf'
+    description: ''
+  - name: 'AdrNr'
+    description: ''
+  - name: 'LeitWeg'
+    description: ''
+  - name: 'AnzEx'
+    description: ''
+  - name: 'BewWrg'
+    description: ''
+  - name: 'DKIgn'
+    description: ''
+  - name: 'DKSel'
+    description: ''
+  - name: 'SteuAnz'
+    description: ''
+  - name: 'VrxKey'
+    description: ''
+  - name: 'MigrationStatus'
+    description: ''
+  - name: 'MigrationDate'
+    description: ''

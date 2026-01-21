@@ -1,0 +1,64 @@
+table:
+  name: 'EvTaxRegulation'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'TaxRegulationCode'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TaxCountry'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 2
+  - name: 'TaxReportRelevanceNo'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxReportRelevance'
+      refField: 'TaxReportRelevanceNo'
+      defColumnPos: 3
+  - name: 'TaxReportClass'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxReportClass'
+      refField: 'TaxReportClass'
+      defColumnPos: 4
+  - name: 'IncomeTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'EvIncomeType'
+      refField: 'IncomeTypeNo'
+  - name: 'ChargeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'ChargeNo'
+      defColumnPos: 5
+  - name: 'ManuallyInput'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'ForEuInterestTax'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'IsNoTax'
+    description: ''
+  - name: 'DefaultTaxCodeForApprox'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'

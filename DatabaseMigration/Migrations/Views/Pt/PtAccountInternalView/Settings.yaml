@@ -1,0 +1,357 @@
+view:
+  name: 'PtAccountInternalView'
+  description: 'It''s a special view for the bank internal partner (No 900.000). Because there are so many accounts a special tree with shared account nodes is necessary.\r\n8-tung: folgenden Update nach Transfer laufen lassen:\r\nUpdate MdTableDataDef Set TableType = 1 Where TableName = ''PtAccountInternalView'''
+frontendView:
+  name: 'PtAccountInternalView'
+  description: 'Benötigt im Nav.Node für die Anzeige der Hauptbücher'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'AccountNoEdited'
+  columns:
+  - name: 'PrivacyLockId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsPrivacyLock'
+      refField: 'Id'
+  - name: 'PortfolioId'
+    description: 'Navigation Rel. - Shared node necessary if you want to change Navigation Tree for main ledger'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    isNotNull: true
+    isUnique: true
+    prec: 11
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'AccountNoText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      isNoUpdate: true
+  - name: 'AccountNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'AccountNoIbanForm'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 31
+  - name: 'AccountNoIbanElect'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 21
+  - name: 'FormerAccountNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 15
+  - name: 'CustomerReference'
+    description: '100 chars for main ledger accounts'
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      multiLine: true
+      defColumnPos: 3
+  - name: 'OpeningDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'MotiveToOpenNo'
+    description: ''
+    dataType: 'int'
+  - name: 'TerminationDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'MotiveToCloseNo'
+    description: ''
+    dataType: 'int'
+  - name: 'TerminationRemark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      multiLine: true
+  - name: 'TaxationType'
+    description: ''
+    dataType: 'int'
+  - name: 'MinimumRate'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'MaximumRate'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'RoundingType'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PrRoundingRule'
+      refField: 'TypeNo'
+  - name: 'RoundingRule'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PrRoundingRule'
+      refField: 'TypeNo'
+  - name: 'VersionNo'
+    description: ''
+    dataType: 'int'
+  - name: 'PrintDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ContractId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtContract'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SavingsPlanNo'
+    description: ''
+    dataType: 'smallint'
+    minValue: '0'
+    maxValue: '999'
+  - name: 'AgentId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PaymentInstruction'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      multiLine: true
+  - name: 'ConformAccountNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'MgVrxKey'
+    description: ''
+    dataType: 'varchar'
+    prec: 28
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgSITZ'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+    defaultValue: '100'
+    genericControls:
+      refTable: 'MgA01'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgZINSKATId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'MgInterestCategory'
+      refField: 'Id'
+      isOnlyForMig: true
+  - name: 'MgSPESKATId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'MgExpensesCategory'
+      refField: 'Id'
+      isOnlyForMig: true
+  - name: 'MgABSCHLCD'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      refTable: 'MgClosing'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgFRONTFL'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '1'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgDKGR1'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'MgDKGR'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgZVDETAIL'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgMTAUSZG'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      refTable: 'MgK22'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgEINNE'
+    description: ''
+    dataType: 'tinyint'
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgOBJEKT'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'MgA21'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgVERKWERT'
+    description: ''
+    dataType: 'money'
+    minValue: '-99999999999.99'
+    maxValue: '99999999999.99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVERKWERTDAT'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVERKWERTART'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'MgA68'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgANLWERT'
+    description: ''
+    dataType: 'decimal'
+    prec: 13
+    scale: 2
+    minValue: '-99999999999.99'
+    maxValue: '99999999999.99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgMAHNCDZNS'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'MgH13'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgMAHNCDAMO'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'MgH13'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgPENDSA'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'MgA02'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgFRIERZNS'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgFRIERAMO'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgBAUJAHR'
+    description: ''
+    dataType: 'smallint'
+    minValue: '0'
+    maxValue: '9999'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgKONTRDAT'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVERBRIEF'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'Mg511'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgOBJPLZ'
+    description: ''
+    dataType: 'smallint'
+    minValue: '0'
+    maxValue: '9999'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVERFALL'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgPFANDBRIEF'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'Mg510'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgZINSTERM'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgFundTypeId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'MgFundType'
+      refField: 'Id'
+      isOnlyForMig: true
+  - name: 'MgVERMITT'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+      isOnlyForMig: true
+  - name: 'QrIban'
+    description: 'QR IBAN Number for QR Code\r\ne.g.:\r\nCH7230116000123456300'
+    dataType: 'nvarchar'
+    prec: 21
+  - name: 'QrIbanForm'
+    description: 'Formatted QR IBAN for paper use.\r\ne.g.: CH76 3011 6000 1234 563 0'
+    dataType: 'nvarchar'
+    prec: 31

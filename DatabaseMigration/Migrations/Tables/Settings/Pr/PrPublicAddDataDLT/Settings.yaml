@@ -1,0 +1,65 @@
+table:
+  name: 'PrPublicAddDataDLT'
+  description: 'Additional data for DLT (Distributed Leger Technologie)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Digital Assets'
+    - german:
+        formTitle: 'Digital Assets'
+    - french:
+        formTitle: 'Digital Assets'
+  columns:
+  - name: 'PublicId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+  - name: 'IsActive'
+    description: '1= es handelt sich um ein digitales Instrument'
+  - name: 'BlockchainNo'
+    description: 'Blockchain'
+    genericControls:
+      refTable: 'PrPublicAddDataDLTBlockchain'
+      refField: 'BlockchainNo'
+  - name: 'SmartContactAddress'
+    description: 'Blockchain Address of the SmartContract of that instrument'
+  - name: 'OmnibusWalletAddress'
+    description: 'Blockchain Address of the HBL Omnibus Wallet\r\n\r\n(Per asset it has to be either segregated or omnibus)\r\n'
+  - name: 'PayingAgentIssuance'
+    description: 'Partner id of the paying Agent of the Issuance'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PayingAgentCorporateAction'
+    description: 'Partner id of the paying agent for Corporate Actions'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CustodyTypeNo'
+    description: 'Verwahrungstyp\r\nDefines if the assets are stored under a HBL Omnibus Wallet or if the assets are under segregated client wallets.'
+    genericControls:
+      refTable: 'PrPublicAddDataDLTCustodyType'
+      refField: 'CustodyTypeNo'
+  - name: 'IssueServiceProvider'
+    description: 'To flag an instrument which has been issued together with HBL.'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true

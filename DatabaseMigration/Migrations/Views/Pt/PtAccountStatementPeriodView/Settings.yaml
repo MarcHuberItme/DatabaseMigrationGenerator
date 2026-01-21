@@ -1,0 +1,66 @@
+view:
+  name: 'PtAccountStatementPeriodView'
+  description: ''
+frontendView:
+  name: 'PtAccountStatementPeriodView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'CorrAccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtCorrAccount'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ActivityRuleCode'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsActivityRule'
+      refField: 'ActivityRuleCode'
+      defColumnPos: 2
+  - name: 'StatementNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ScheduledDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ExecutionDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 5
+  - name: 'IsDailyStatement'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 6
+  - name: 'LastStatementTransDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7
+  - name: 'BeginBalance'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 8

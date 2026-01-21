@@ -1,0 +1,3 @@
+view:
+  name: 'PtSecurityTradesViewOld'
+  description: 'used for the report Börsenjounal (für alte Version von Effektenjournal).'

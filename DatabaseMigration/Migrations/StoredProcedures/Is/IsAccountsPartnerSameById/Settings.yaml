@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'IsAccountsPartnerSameById'
+  description: 'Returns 1 if two accounts belong to same partner'

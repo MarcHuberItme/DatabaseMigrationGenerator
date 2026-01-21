@@ -1,0 +1,34 @@
+table:
+  name: 'ReLegalTrans'
+  description: 'für IAZI'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Legal Transaction Type'
+    - german:
+        formTitle: 'Rechtsgeschäftsart'
+  columns:
+  - name: 'LegalTransNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'IaziValue'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PfandRegValue'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'SortNo'
+    description: ''

@@ -1,0 +1,28 @@
+table:
+  name: 'RePledgeRegisterExtCodeDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Error Codes'
+    - german:
+        formTitle: 'Fehler zu Registereintrag'
+  columns:
+  - name: 'RegisterId'
+    description: ''
+    genericControls:
+      refTable: 'RePledgeRegister'
+      refField: 'Id'
+  - name: 'ExternalTextCode'
+    description: ''
+    genericControls:
+      refTable: 'RePledgeRegisterExtCode'
+      refField: 'ExternalTextCode'
+      defColumnPos: 1

@@ -1,0 +1,82 @@
+table:
+  name: 'PtTransItemTitle'
+  description: 'This table is used to manage certificates/titles'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtTransItemTitle'
+        helpText: 'PtTransItemTitle'
+    - german:
+        formTitle: 'PtTransItemTitle'
+        helpText: 'PtTransItemTitle'
+  columns:
+  - name: 'TitleNo'
+    description: 'The unique number for the title/certificate'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Quantity'
+    description: 'The number of shares assigned to the certificate/title.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ShareholderID'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'DepotbankID'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'DeliveryDateTime'
+    description: ''
+  - name: 'TitleLocType'
+    description: 'The category of depot place "homebank", "otherbank", "shareholder"'
+    genericControls:
+      defColumnPos: 6
+  - name: 'TitlePrintDate'
+    description: 'the print date of the title paper'
+    genericControls:
+      defColumnPos: 7
+  - name: 'TitleCancelDate'
+    description: 'the destroyed date of the printed title paper'
+    genericControls:
+      defColumnPos: 8
+  - name: 'DeliveryID'
+    description: 'this title is linked with a specific delivery'
+    genericControls:
+      refTable: 'PtTransDeliveryShares'
+      refField: 'Id'
+      defColumnPos: 9
+  - name: 'ExtRefNo'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'IsNotOrigin'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'AsPayback'
+    description: ''
+  - name: 'PaybackDueDate'
+    description: ''
+    genericControls:
+      defColumnPos: 13
+  - name: 'HasPaidback'
+    description: ''
+  - name: 'PaybackExecDate'
+    description: ''
+    genericControls:
+      defColumnPos: 15

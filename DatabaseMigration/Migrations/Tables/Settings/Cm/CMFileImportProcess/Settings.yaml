@@ -1,0 +1,63 @@
+table:
+  name: 'CMFileImportProcess'
+  description: 'The table identifies the file import process and stores the relevant information'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FileName'
+    description: 'Name of the file to be imported'
+    genericControls:
+      defColumnPos: 1
+  - name: 'FilePath'
+    description: 'Fully qualified path of the source file'
+  - name: 'ImportDate'
+    description: 'Date when the file is received completly and ready for processing'
+    genericControls:
+      defColumnPos: 2
+  - name: 'FileImportStartTime'
+    description: 'Time when file import process is started.  The process starts reading the data from the file and write to next desired location. e.g  to a database table'
+  - name: 'FileImportCompletionTime'
+    description: 'Time when file import is completed, in case of payroute the file data is imported to a temporary table at this stage'
+  - name: 'FileImportConfirmationTime'
+    description: 'Time when file data is moved to final destination. This marks the confirmation of file import'
+  - name: 'FileImportReleaseTime'
+    description: 'Time when file is released by user.'
+  - name: 'Description'
+    description: ''
+  - name: 'SystemCode'
+    description: 'Payroute, SIC (SIC Backup) , EBanking, etc'
+  - name: 'EBankingId'
+    description: 'EbankingId from the user who has sent the file.'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      defColumnPos: 3
+  - name: 'FileStatus'
+    description: 'FileStatus (for example: in processing,  incorrect, correct)'
+    genericControls:
+      refTable: 'CMFileStatus'
+      refField: 'StatusCode'
+      defColumnPos: 4
+  - name: 'TotalAmountReported'
+    description: 'Amount reported in DTA total record, 890'
+    genericControls:
+      defColumnPos: 6
+  - name: 'CanBeProcessed'
+    description: ''
+  - name: 'HashValue'
+    description: ''
+  - name: 'MessageId'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'TotalTransactions'
+    description: ''
+    genericControls:
+      defColumnPos: 5

@@ -1,0 +1,64 @@
+table:
+  name: 'PtPositionKickback'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'YearMonth'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'PosQuantId'
+    description: ''
+    genericControls:
+      refTable: 'VaPosQuant'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'KickbackAmountCHF'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'TransactionId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      defColumnPos: 6
+  - name: 'BookDate'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'PrintDate'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'PublicKickbackId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicKickback'
+      refField: 'Id'
+      defColumnPos: 9
+  - name: 'ProcessId'
+    description: 'Id of the process to be sure, all selected records will be processed only once...'
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPositionKickbackStatus'
+      refField: 'StatusNo'
+      defColumnPos: 10
+  - name: 'YearOnReport'
+    description: ''
+  - name: 'IsToPrint'
+    description: ''

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetFixedAccCompValue'
+  description: 'Get the newest duration record 05.08.2004/mct'

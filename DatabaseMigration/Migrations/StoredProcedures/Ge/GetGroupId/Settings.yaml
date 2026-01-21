@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetGroupId'
+  description: 'To find out the GroupId by the parameter GroupTypeId and TargetRowId.\r\nIf there is no entry in AsGroupMember, there will be returned the default\r\nGroupId. Only for restricted Grouping!'

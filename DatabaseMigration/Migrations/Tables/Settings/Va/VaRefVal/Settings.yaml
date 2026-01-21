@@ -1,0 +1,49 @@
+table:
+  name: 'VaRefVal'
+  description: 'PrReference Data for Valuation'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+  columns:
+  - name: 'ValRunId'
+    description: ''
+    genericControls:
+      refTable: 'VaRun'
+      refField: 'Id'
+  - name: 'ProdReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PrReference'
+      refField: 'Id'
+  - name: 'PublicPriceId'
+    description: ''
+  - name: 'PriceDate'
+    description: 'prPublicPrice.PriceDate'
+  - name: 'PriceCurrency'
+    description: ''
+  - name: 'PriceQuoteType'
+    description: 'Contains the quote type (percent, piece) of the given price.'
+    genericControls:
+      refTable: 'PrPublicPriceQuoteType'
+      refField: 'PriceQuoteType'
+  - name: 'PricePrCu'
+    description: ''
+  - name: 'MarketValuePrCu'
+    description: 'PrCu = Product Currency and is connected with PrReference ProductId\r\nProductId connects PtPosition with PrPublic. So the join has to be made including PtPosition (ProductId only would potentially lead to multiplication of records since one ISIN can be connected over multiple currencies from PrReference, depends over which POsitionCurrency it was created for a particular client)'
+  - name: 'AccruedInterestPrCu'
+    description: 'PrCu = Product Currency and is connected with PrReference ProductId\r\nProductId connects PtPosition with PrPublic. So the join has to be made including PtPosition (ProductId only would potentially lead to multiplication of records since one ISIN can be connected over multiple currencies from PrReference, depends over which POsitionCurrency it was created for a particular client)'
+  - name: 'AccruedInterestTemp'
+    description: ''
+  - name: 'Delay'
+    description: ''
+  - name: 'NotActual'
+    description: ''
+  - name: 'AcCurrency'
+    description: 'Currency of Position'

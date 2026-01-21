@@ -1,0 +1,3 @@
+view:
+  name: 'AsGroupViewEnglish'
+  description: 'DEPRECATED - Use AsGroupView which is based on labels instead of AsText.\r\n\r\nA view that combines all the AsGroupType, AsGroup, and AsGroupMember tables along with the english text translations for each group type and group. This view is added to support efficient classification of records of various polymorphic tables such as PtPortfolioType, PrPrivate or CoBase for various services of the RESTful Open APIs.\r\nIt only contains undeleted records.'

@@ -1,0 +1,49 @@
+table:
+  name: 'ATMStatus'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ATMStatus'
+        helpText: 'ATMStatus'
+    - german:
+        formTitle: 'ATMStatus'
+        helpText: 'ATMStatus'
+  columns:
+  - name: 'DeviceID'
+    description: ''
+  - name: 'Timestamp'
+    description: ''
+  - name: 'BM'
+    description: ''
+  - name: 'RM'
+    description: ''
+  - name: 'CHF'
+    description: ''
+  - name: 'EUR'
+    description: ''
+  - name: 'CHFIn'
+    description: ''
+  - name: 'EURIn'
+    description: ''
+  - name: 'Support'
+    description: ''
+  - name: 'Warning'
+    description: ''
+  - name: 'TriggerFlag'
+    description: ''
+  - name: 'Signal'
+    description: ''
+  - name: 'StatusTimestamp'
+    description: ''
+  - name: 'Statuscodes'
+    description: ''

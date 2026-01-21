@@ -1,0 +1,39 @@
+table:
+  name: 'AsProcTimeControl'
+  description: 'The entries in this table contains the virtual date/time for the specified process defined in field TypeNo.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'TypeNo'
+    description: '01 = Defines the day closing time for processing and updateing any transaction\r\n02 = Defines the day closing time for processing customer payment orders\r\n03 = Defines the day closing time for processing priority customer payment orders\r\n04 = Defines the day closing time for money transfer (SIC-Schluss)\r\n05 = Defines the day closing time for summary closing report\r\n06 = Defines editing of closing advices and statements\r\n08 = Defines ARS-reporting previous day\r\n09 = Defines ARS-reporting previous period\r\n10 = Generieren ZV-Dokumente\r\n11 = Prointoutput-Steuerung\r\n12 = ESR-Tabelle laden\r\n11 = Defines the day closing time for selection documents to print and\r\n         also the year closing for emailing numbering (In PtAddress.EmailSeqNo)\r\n12 = Defines the day closing time for entering customer payment orders\r\n13 = Defines the day closing time for entering priority customer payment orders\r\n14 = Defines the day closing time for entering money transfer (SIC-Schluss)\r\n15 = Defines the day closing time for scannning and updating/inserting         PtPositionNotify\r\n22 = Defines the day closing time for entering stock exchange orders ?\r\n50 = EndDate of accrued interest calculation\r\n51 = Jahr für Zinsbescheinigung (Tax declaration)\r\n99 = Defines migration status'
+    genericControls:
+      defColumnPos: 1
+  - name: 'EndHour'
+    description: 'The fields EndDate, EndHour and EndMinute define the end date/time of entering or processing transactions defined by TypeNo. e.g. \r\n\r\nTypeNo 02, EndDate 03.05.2005,  End Hour 11, End Minute 00  means\r\nthat a standard payment order entered on 03.05.2005 11:20 has to be saved with TransDate of the next workday that is 04.05.2005.'
+    minValue: '0'
+    maxValue: '23'
+    genericControls:
+      defColumnPos: 2
+  - name: 'EndMinute'
+    description: 'The fields EndDate, EndHour and EndMinute define the end date/time of entering or processing transactions defined by TypeNo. e.g. \r\n\r\nTypeNo 02, EndDate 03.05.2005,  End Hour 11, End Minute 00  means\r\nthat a standard payment order entered on 03.05.2005 11:20 has to be saved with TransDate of the next workday that is 04.05.2005.'
+    minValue: '0'
+    maxValue: '59'
+    genericControls:
+      defColumnPos: 3
+  - name: 'EndDate'
+    description: 'The fields EndDate, EndHour and EndMinute define the end date/time of entering or processing transactions defined by TypeNo. e.g. \r\n\r\nTypeNo 02, EndDate 03.05.2005,  End Hour 11, End Minute 00  means\r\nthat a standard payment order entered on 03.05.2005 11:20 has to be saved with TransDate of the next workday that is 04.05.2005.\r\n'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Status'
+    description: 'Used for specific TypeNo, \r\nExemple: For ARS is to define, if ARS is preparing the data or if reports can be produced'
+  - name: 'IsNotActive'
+    description: 'Used to ignore unused types, e.g. Migration'
+  - name: 'JcsJobName'
+    description: 'JCS Jobname for .Net. This field is used to specify job that has to be executed by new JCS.'

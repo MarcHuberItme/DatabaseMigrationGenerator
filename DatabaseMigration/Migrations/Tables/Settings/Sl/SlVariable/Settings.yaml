@@ -1,0 +1,23 @@
+table:
+  name: 'SlVariable'
+  description: 'Variable defined for pariticular ruleset.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 4acbe022-2230-43ff-8ee9-38f7f0e7a595
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'RulesetId'
+    description: ''
+    genericControls:
+      refTable: 'SlRuleset'
+      refField: 'Id'
+  - name: 'Name'
+    description: ''
+  - name: 'Type'
+    description: ''
+  - name: 'Property'
+    description: ''

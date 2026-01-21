@@ -1,0 +1,17 @@
+table:
+  name: 'AsWatchListStatus'
+  description: 'VDF-Domaine: 4839 WATCHLISTSTATUS'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'WatchListStatusNo'
+    description: ''

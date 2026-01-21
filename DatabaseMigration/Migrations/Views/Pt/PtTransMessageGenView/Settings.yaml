@@ -1,0 +1,111 @@
+view:
+  name: 'PtTransMessageGenView'
+  description: ''
+frontendView:
+  name: 'PtTransMessageGenView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PaymentAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 3
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'DebitPrReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'DebitPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditPrReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'TransactionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+  - name: 'IsStockExOrder'
+    description: 'False = Customer order (default)\r\nTrue    = Order to Stockexchange or broker'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'PaymentDate'
+    description: 'Date of settlement or Scheduled payment date'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CompletionDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'DebitGroupKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 17
+  - name: 'DebitMessageStandard'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'OrderDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'SalaryFlag'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'TransText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      multiLine: true
+  - name: 'DebitTransText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      multiLine: true
+  - name: 'CreditTransText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      multiLine: true

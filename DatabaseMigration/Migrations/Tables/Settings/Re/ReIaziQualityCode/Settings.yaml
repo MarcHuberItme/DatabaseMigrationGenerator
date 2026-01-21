@@ -1,0 +1,21 @@
+table:
+  name: 'ReIaziQualityCode'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Iazi Quality Code'
+    - german:
+        formTitle: 'Iazi Quality Code'
+  columns:
+  - name: 'QualityCode'
+    description: 'Quality Code for IAZI Valuation. \r\n  0 = green\r\n  1 = orange\r\n  2 = red\r\n  3 = no value (Missing)\r\n'

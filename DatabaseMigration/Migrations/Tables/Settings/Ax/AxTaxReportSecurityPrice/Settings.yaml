@@ -1,0 +1,49 @@
+table:
+  name: 'AxTaxReportSecurityPrice'
+  description: 'Enthält Valorenkurse für TaxSource-Export.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'PriceDate'
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax report Security Price'
+    - german:
+        formTitle: 'Steuermeldung Valorenkurs'
+  columns:
+  - name: 'TaxReportId'
+    description: 'Verbindung zur Steuermeldung.'
+    genericControls:
+      refTable: 'AxTaxReport'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Price'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'PriceDate'
+    description: 'Devisenkurs'
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'ISIN'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxReportEntryStatus'
+      refField: 'StatusNo'
+      defColumnPos: 5

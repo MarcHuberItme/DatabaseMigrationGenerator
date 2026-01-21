@@ -1,0 +1,132 @@
+view:
+  name: 'PtOnboardingPolicyValidView'
+  description: 'Returns valid partner onboarding Cases'
+frontendView:
+  name: 'PtOnboardingPolicyValidView'
+  description: 'View that returns valid partneronboarding usecases with usecase label'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'PolicyTypeId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtOnboardingPolicyType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'BaasPartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtBaaSPartner'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'MotiveToOpenNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsMotiveOpenType'
+      refField: 'MotiveOpenTypeNo'
+  - name: 'RelationTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtRelationType'
+      refField: 'RelationTypeNo'
+  - name: 'RelationRoleNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtRelationRole'
+      refField: 'RelationRoleNo'
+  - name: 'SegmentNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtSegment'
+      refField: 'SegmentNo'
+  - name: 'LegalRepStatus'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtLegalRepStatus'
+      refField: 'RepStatusNo'
+  - name: 'NogaCode2008'
+    description: ''
+    dataType: 'varchar'
+    prec: 6
+    genericControls:
+      refTable: 'PtNoga2008'
+      refField: 'NogaCode'
+  - name: 'ServiceLevelNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtServiceLevel'
+      refField: 'ServiceLevelNo'
+  - name: 'Description'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 2000
+    genericControls:
+      multiLine: true
+  - name: 'ValidFrom'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'ValidTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Label'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'ExternalApplicationCode'
+    description: ''
+    dataType: 'varchar'
+    prec: 50
+    genericControls:
+      refTable: 'AsExternalApplication'
+      refField: 'ApplicationCode'
+  - name: 'BaaSOwnPartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'BaaSConsultantTeamName'
+    description: ''
+    dataType: 'varchar'
+    prec: 32
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'BaaSAgentId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'BaaSBranchNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'

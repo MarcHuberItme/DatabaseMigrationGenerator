@@ -1,0 +1,39 @@
+table:
+  name: 'PrComposedPrice'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Composed Price'
+    - german:
+        formTitle: 'Generierte Produktepreise'
+  columns:
+  - name: 'PrivateComponentNo'
+    description: 'foreign-key;  candidate-key of PrPrivateComponent'
+    genericControls:
+      refTable: 'PrPrivateComponent'
+      refField: 'PrivateComponentNo'
+  - name: 'PrivateComponentId'
+    description: 'Id of product component'
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'ValidTo'
+    description: ''
+  - name: 'InterestRate'
+    description: ''
+  - name: 'CommissionRate'
+    description: ''
+  - name: 'ProvisionRate'
+    description: ''
+  - name: 'State'
+    description: 'State of Validity of the ranges'
+  - name: 'IsDebit'
+    description: 'True: Debit Component\r\nFalse: Credit Component'

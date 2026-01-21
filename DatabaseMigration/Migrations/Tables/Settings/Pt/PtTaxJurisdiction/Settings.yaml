@@ -1,0 +1,32 @@
+table:
+  name: 'PtTaxJurisdiction'
+  description: 'Names the jurisdiction for which the withholding tax is calculated'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax Jurisiction'
+    - german:
+        formTitle: 'Steuerhoheit'
+  columns:
+  - name: 'Jurisdiction'
+    description: 'Abbreviation for the jurisiction'
+    genericControls:
+      defColumnPos: 1
+  - name: 'EasyTaxDisclosed'
+    description: 'Code for the jurisiction in EasyTax for disclosed customers, e.g. DE'
+    genericControls:
+      defColumnPos: 2
+  - name: 'EasyTaxUndisclosed'
+    description: 'Code for the jurisdiction in EasyTax for undisclosed customers.\r\ne.g. CH-DE'
+    genericControls:
+      defColumnPos: 3

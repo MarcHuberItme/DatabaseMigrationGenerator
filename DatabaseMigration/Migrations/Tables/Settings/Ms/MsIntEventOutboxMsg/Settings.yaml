@@ -1,0 +1,96 @@
+table:
+  name: 'MsIntEventOutboxMsg'
+  description: 'The event outbox contains events published by finstar which should be routed to one or more nodes (event brokers, processors, etc.)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdMessageStore'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 6
+    groupId: 47a738e9-4dcb-41bc-8fcc-bb1699c6b097
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Event Outbox'
+        helpText: 'The event outbox contains events published by finstar which should be routed to one or more nodes (e'
+    - german:
+        formTitle: 'Ereignis-Ausgang'
+        helpText: 'Enthält Finstar-Ereignisse welche an andere Knoten (Broker, Verarbeiter) weitergeleitet werden.'
+    - french:
+        formTitle: 'Boîte d''envoi d''événement'
+        helpText: 'The event outbox contains events published by finstar which should be routed to one or more nodes (e'
+    - italian:
+        formTitle: 'Casella posta in uscita'
+        helpText: 'The event outbox contains events published by finstar which should be routed to one or more nodes (e'
+  columns:
+  - name: 'Topic'
+    description: 'The topic this event belongs to. This should be a fully qualified name.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CorrelationId'
+    description: 'The correlationId to correlate an event with other events that happened in the same event cascade, starting at the frontend, when a user enters a command to the system. The correlationId is propagated together with the ProcessName from the beginning until the end.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'RequestId'
+    description: 'The id of the last API call that was made in a chain of events and API calls. \r\nThis behaves similarly to the correlationId except there is a new requestId with every  API command or query made.\r\nIn cases where no API call was made, this can be set equal to  the jobId or processId for background processes or similar.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsRealTime'
+    description: 'Whether the first event in the cascade was triggered real-time as part of an active  business process. False means, the event is a replay-event or another type of artificially generated event, For example by polling entities and observing whether their state changed, and if so, inferring events that might have happened since the  last poll. Such events have no guarantee to arrive in the order in which they occurred in the source system. This should only be set to false when interacting with legacy parts of the system that don''t naturally provide events.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsTombStone'
+    description: 'True if this is a so-called "tomb stone event" which indicates that an entity has been deleted permanently so that any occurrence of the entity can be deleted from downstream systems. It indicates that the event history for this entity can be moved to an archive and removed from all transactional systems.\r\nOnce a tomb stone event is published to the broker, all the past events referring to the same key will be deleted at some (maybe undefined yet) point in the future.\r\nWhen this happens, only the tomb stone event should be left in order to indicate that "there was something".\r\nThe archived events could be encrypted with a public key while the private key for decryption remains in a secure place that nobody can access except under highly regulated circumstances.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'EventTime'
+    description: 'The timestamp when the event occurred in the source system.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Branch'
+    description: 'The branch is like a sub-tenant and relevant for routing and authorization.\r\nWhen there are branch-specific consumers (for example fintechs), that consumer shall only see messages of a specific branch.\r\n\r\nWhen there is no branch, a suitable value like ALL or BANK should be used. Hence, the branch should always be set to indicate the target destination.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Process'
+    description: 'Name of the business process or use case that caused a chain of events to happen, including this one. The prcoess name is propagated in a steam processing pipeline along with the correlationId.\r\nThe process name is usually determined at the boundary when a human user enters a command or when an automated time-based trigger causes an event cascade.\r\nThis is typically determined by the first application-layer service that was hit when answering the request of a user.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Producer'
+    description: 'The name of the producer application or service.\r\n\r\nKafka adds this automatically but RabbitMQ does not.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'InitiatorApp'
+    description: 'The name of the application that caused the event to be triggered.\r\nThis is the application which has initiated the first command or query in a cascade of events, the same time when the correlationId should be created. Both propagate through the whole cascade from beginning until the end.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Initiator'
+    description: 'The user (human or machine) that caused the event to happen, directly or indirectly by sending a command and which might have caused a cascade of events to happen, including this one.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'KeyFormat'
+    description: 'The format of the key, such as application/json, Avro, Text, or similar. The format used must be stored together with the event because we might change the format in the future and need to remember how the events had been serialized in the past.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ValueFormat'
+    description: 'Format of the Payload, such as application/json, AVRO etc. The format used must be stored together with the event because we might change the format in the future and need to remember how the events had been serialized in the past.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Type'
+    description: 'the type of the event. It must be unique throughout the system because it is used for message delivery and deserialization. It''s best to use a fully qualified name.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'MessageKey'
+    description: 'The key of the message that is used for partitioning and routing by the event broker.\r\nOften it is the id of the entity or and aggregate which the event is about, so that all the events of a particular entity end up in the same partition and temporarily ordered,  providing sequential consistency within the partition. Keys can also contain more context information and be structured like URIs.\r\nIf such an id  is taken, the key will usually be only a few bytes. They should be small enough so that routing and load balancing can be done efficiently.\r\nThe assignment to a partition is relevant for load balancing in a microservice architecture with a cluster of microservice nodes that distribute the workload. By routing messages with the same key to the same node every time it is possible that the same microservice sees all the events related to the same key.\r\nFor example, a good option for the key could be the PartnerId such that all events having something to do with a particula partner end up in the same partition.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Headers'
+    description: 'Contains any additional metadata that is not covered by the standard set of fields.\r\nThis is a newline (\n) separated list of key:value pairs. Keys should be unique. Like:\r\n\r\nkey1:value1\r\nkey2:value2\r\nkey3:value3'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Value'
+    description: 'The payload of the message in arbitrary format as specified by the Format field.\r\nThe type is image because varbinary can be too small with maximum 8 KB.\r\nEvent brokers like Kafka and RabbitMQ support more, at  east 1 MB or 128 KB respectively.'
+    genericControls:
+      multiLine: true
+      isNoUpdate: true

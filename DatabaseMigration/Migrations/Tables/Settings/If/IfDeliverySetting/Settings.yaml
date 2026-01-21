@@ -1,0 +1,54 @@
+table:
+  name: 'IfDeliverySetting'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Name'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Description'
+    description: ''
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'ValidTo'
+    description: ''
+  - name: 'IsEbankingVisible'
+    description: 'If true: Do show deliveries / created files in e-banking for download.'
+  - name: 'IsEbankingConfigurable'
+    description: 'If true: Allow the user of the e-banking to add or remove delivery items (accounts, portfolios, ...) for automatic delivery of data at day end processing.'
+  - name: 'ExtractSettingGroupId'
+    description: 'Foreign key to a setting group of type “extraction”. In this setting group the values that have to be used for the extraction step are defined.'
+    genericControls:
+      refTable: 'IfSettingGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'TransformSettingGroupId'
+    description: ''
+    genericControls:
+      refTable: 'IfSettingGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'LoadSettingGroupId'
+    description: ''
+    genericControls:
+      refTable: 'IfSettingGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'Type'
+    description: 'Type fo export.'
+  - name: 'LastRun'
+    description: ''

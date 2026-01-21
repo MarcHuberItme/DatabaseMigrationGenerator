@@ -1,0 +1,61 @@
+view:
+  name: 'PtUserReferenceView'
+  description: 'This view is used for the UserReferenceView object of the domain layer.\r\nEntities refering to User do so through a thin UserReferenceView object.'
+frontendView:
+  name: 'PtUserReferenceView'
+  description: 'The Combination of AsUser and PtBase as a ReferenceView that is used in the API domain model when other entities reference users.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'UserId'
+    description: 'Unique id of the AsUser'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'FullName'
+    description: 'FullName of AsUser'
+    dataType: 'varchar'
+    prec: 50
+  - name: 'Department'
+    description: 'Department of AsUser'
+    dataType: 'varchar'
+    prec: 50
+  - name: 'UserName'
+    description: 'UserName of AsUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'PartnerId'
+    description: 'Id of Partner associated with AsUser'
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerNo'
+    description: 'PartnerNo of partner associated with AsUser'
+    dataType: 'decimal'
+    isNotNull: true
+    isUnique: true
+    prec: 8
+  - name: 'PartnerNoEdited'
+    description: 'PartnerNo of partner associated with AsUser'
+    dataType: 'nvarchar'
+    isNotNull: true
+    isUnique: true
+    prec: 10
+  - name: 'PartnerNoText'
+    description: 'PartnerNoText of partner associated with AsUser'
+    dataType: 'nvarchar'
+    isNotNull: true
+    isUnique: true
+    prec: 8
+  - name: 'ReportAdrLine'
+    description: 'ReportAdr Line of partner''s main address which is associated with AsUser'
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'NameLine'
+    description: 'NameLine of partner''s main address associated with AsUser'
+    dataType: 'nvarchar'
+    prec: 70

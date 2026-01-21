@@ -1,0 +1,210 @@
+view:
+  name: 'AsDocumentMetaDataView'
+  description: 'Contains essential data about a document.'
+frontendView:
+  name: 'AsDocumentMetaDataView'
+  description: 'Contains essential metadata for documents including file metada and last file access date. Joined AsDocument, AsDocumentData_O, AsDocumentDataAccessLog, AsCorrItem, AsDocumentGroup, PtBase, PtPortfolio, PtAccountBase, PtAddress, AsText, PrReference, PrPrivate'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Document Metadata View'
+        helpText: 'Essential metadata for documents'
+    - german:
+        formTitle: 'Document Metadata View'
+        helpText: 'Wichtige Daten von Dokumenten'
+    - french:
+        formTitle: 'Document Metadata View'
+    - italian:
+        formTitle: 'Document Metadata View'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsDocument'
+      refField: 'Id'
+  - name: 'Location'
+    description: 'Archive state of the document. 1 = Operative, 2 = Archived'
+    dataType: 'tinyint'
+  - name: 'PartnerId'
+    description: 'Id of the owner partner.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'AddressId'
+    description: 'Address that was potentially given on creating the metadata.'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAddress'
+      refField: 'Id'
+  - name: 'PortfolioId'
+    description: 'Id of related portfolio. Optional.'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'AccountBaseId'
+    description: 'Id of the related account. Optional.'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'Amount'
+    description: 'Money amount the document optionally shows. Used for sorting purposes.'
+    dataType: 'money'
+  - name: 'DocumentNo'
+    description: 'Number of the document.'
+    dataType: 'int'
+  - name: 'ExpirationStart'
+    description: 'Start of the expiration of the document.'
+    dataType: 'datetime'
+  - name: 'NumPages'
+    description: 'Number of pages the document consists of.'
+    dataType: 'smallint'
+  - name: 'DocumentTypeId'
+    description: 'Id of the related AsCorrItem record indicating the type of the document.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+  - name: 'DocumentTypeNo'
+    description: 'Number of relevant document type.'
+    dataType: 'smallint'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'ItemNo'
+  - name: 'DocumentTypeName'
+    description: 'AsText.TextLong record of the document type.'
+    dataType: 'nvarchar'
+    prec: 1000
+  - name: 'DocumentGroupNo'
+    description: 'Group number of the document category (or else named group).'
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'AsDocumentGroup'
+      refField: 'GroupCode'
+  - name: 'DocumentGroupId'
+    description: 'Id of the document category record.'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsDocumentGroup'
+      refField: 'Id'
+  - name: 'DocumentGroupName'
+    description: 'Name of the document category.'
+    dataType: 'nvarchar'
+    prec: 1000
+  - name: 'VirtualDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'FileId'
+    description: 'Id of the file that belongs to the document.'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsDocumentData_O'
+      refField: 'Id'
+  - name: 'FileExpirationStart'
+    description: ''
+    dataType: 'datetime'
+  - name: 'FileFormat'
+    description: 'Format of the file that belongs to the document.'
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'RecordDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Comments'
+    description: 'Comment on the file.'
+    dataType: 'nvarchar'
+    prec: 1000
+  - name: 'FileArchiveState'
+    description: 'Location of the file. 1 = Operative, 2 = Archived'
+    dataType: 'tinyint'
+  - name: 'StatusNumber'
+    description: 'StatusNumber of the file. Draft, completed, signed, retained mail (banklagernd) and others that are configured.'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsDocumentStatus'
+      refField: 'StatusNo'
+  - name: 'Replaceable'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LastFileAccess'
+    description: 'Date when the file was last time accesessed.'
+    dataType: 'datetime'
+  - name: 'PartnerNo'
+    description: 'Partner number of the partner the document belongs to.'
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 38
+    scale: 38
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'PartnerNoText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'PartnerDescriptionFromMainAddr'
+    description: 'ReportAddrLine field of the main address of the partner the document belongs to.'
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'PortfolioNo'
+    description: 'Portfolio number of the ptentially related portfolio.'
+    dataType: 'decimal'
+    prec: 38
+    scale: 38
+  - name: 'PortfolioNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'PortfolioNoText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 26
+  - name: 'PortfolioCustomerReference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 200
+  - name: 'AccountNo'
+    description: 'Account number of the potentially related account.'
+    dataType: 'decimal'
+    prec: 38
+    scale: 38
+  - name: 'AccountNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'AccountNoText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'AccountCustomerReference'
+    description: 'Customer reference from PtAccountBase'
+    dataType: 'nvarchar'
+    prec: 200
+  - name: 'ProductNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+  - name: 'PortfolioTypeNo'
+    description: ''
+    dataType: 'int'
+  - name: 'ForEBanking'
+    description: 'Relevant information for authorization / selection in e-banking or b2c, b2b2c API context. Only documents with ForEBanking = 1 can be shown to clients through APIs or E-Banking.'
+    dataType: 'bit'
+    isNotNull: true

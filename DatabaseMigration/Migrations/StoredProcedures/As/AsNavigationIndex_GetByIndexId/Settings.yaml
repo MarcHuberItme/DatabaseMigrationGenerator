@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AsNavigationIndex_GetByIndexId'
+  description: 'Used to quickly access the NavigationIndex for updates of shared or hidden nodes'

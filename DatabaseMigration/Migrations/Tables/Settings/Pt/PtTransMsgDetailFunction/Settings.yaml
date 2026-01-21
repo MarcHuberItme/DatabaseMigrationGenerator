@@ -1,0 +1,19 @@
+table:
+  name: 'PtTransMsgDetailFunction'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'FunctionCode'
+    description: '1 = Emission\r\n2 = Einbuchung\r\n3 = Ausbuchung\r\n4 = Splitt Einbuchung\r\n5 = Splitt Ausbuchung\r\n6 = Kapitalrückzahlung\r\n7 = Couponzahlung\r\n8 = Handel\r\n...'
+    genericControls:
+      defColumnPos: 1

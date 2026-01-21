@@ -1,0 +1,19 @@
+table:
+  name: 'AcFireReportStatus'
+  description: 'Status Fireexport Prozess'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

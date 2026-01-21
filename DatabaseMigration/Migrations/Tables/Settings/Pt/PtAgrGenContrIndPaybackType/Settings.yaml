@@ -1,0 +1,38 @@
+table:
+  name: 'PtAgrGenContrIndPaybackType'
+  description: 'detailled type of indirect payback used for choosing the correct auto text while creating a financing contract. \r\n\r\nDetailtyp der indirekten Amortisation. Wird verwendet um pro indirekte Amortisation die korrekte Textkonserve im rahmenvertrag abzudrucken.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Payback - AutoText'
+        helpText: 'Payback - AutoText'
+    - german:
+        formTitle: 'Payback - AutoText'
+        helpText: 'Payback - AutoText'
+    - french:
+        formTitle: 'Payback - AutoText'
+        helpText: 'Payback - AutoText'
+    - italian:
+        formTitle: 'Payback - AutoText'
+        helpText: 'Payback - AutoText'
+  columns:
+  - name: 'IndirectPaybackTypeNo'
+    description: 'Type of indirect amortization\r\n\r\n for example 848 = Liberty 3a, 815 = Privor 3a, 828 = Vorsorge LVP 3a, 806 = LVP 3b'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ContractTemplateName'
+    description: 'number of the text templates to be used in this case'
+    genericControls:
+      refTable: 'PtAgrGeneralContrTemplNames'
+      refField: 'ContractTempType'
+      defColumnPos: 2

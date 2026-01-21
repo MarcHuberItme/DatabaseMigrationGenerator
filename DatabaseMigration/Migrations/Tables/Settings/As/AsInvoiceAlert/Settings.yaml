@@ -1,0 +1,23 @@
+table:
+  name: 'AsInvoiceAlert'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'InvoiceType'
+    description: ''
+    genericControls:
+      refTable: 'AsInvoiceType'
+      refField: 'InvoiceType'
+      isNoUpdate: true
+  - name: 'SendDate'
+    description: ''
+  - name: 'CompletionDate'
+    description: 'date when send alert was completed'

@@ -1,0 +1,33 @@
+table:
+  name: 'AsUserAccessToOtherPartner'
+  description: 'relationship-entity of PtBase'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'User Access other partner'
+    - german:
+        formTitle: 'Zugriff auf Partner'
+    - french:
+        formTitle: 'utilisateur autre partner'
+  columns:
+  - name: 'UserId'
+    description: 'foreign-key, candidate-key of AsUser'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1

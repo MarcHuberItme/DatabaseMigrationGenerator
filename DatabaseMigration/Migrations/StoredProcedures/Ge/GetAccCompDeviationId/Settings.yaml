@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccCompDeviationId'
+  description: 'Get all AccountPriceDeviation.Ids for a specific component.'

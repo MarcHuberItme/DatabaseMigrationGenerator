@@ -1,0 +1,37 @@
+table:
+  name: 'ReBuildingSit'
+  description: 'Situierung der Eigentumswohnung innerhalb des Gebäudes (nur für Eigentumswohnungen)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Situation Within Building'
+    - german:
+        formTitle: 'Situierung in Gebäude'
+  columns:
+  - name: 'BuildingSitNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'IaziValue'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PfandRegValue'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'SortNo'
+    description: ''
+  - name: 'IAZIStartValue'
+    description: 'IAZi start Value to define the range for situation within building'
+  - name: 'IAZIEndVAlue'
+    description: 'IAZi END Value to define the range for situation within building'

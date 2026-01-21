@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountsForPaymentsInTransaction'
+  description: 'Get account info for all payments in a transaction'

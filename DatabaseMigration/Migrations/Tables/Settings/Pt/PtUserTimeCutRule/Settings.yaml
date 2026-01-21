@@ -1,0 +1,33 @@
+table:
+  name: 'PtUserTimeCutRule'
+  description: 'Überstundenlimit nach Regeln'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Time Cut Rule'
+    - german:
+        formTitle: 'Überzeitregelart'
+  columns:
+  - name: 'RuleNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'OvertimeLimit'
+    description: 'Erlaubter Mehrstundensaldo (wenn überschritten, wir die Stundenzahl gestrichen - Alarm wird ausgelöst)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'NegativeLimit'
+    description: 'Erlaubter Minussaldo bis Alarm ausgelöst wird (Stunden werden weiterhin kumuliert)'
+    genericControls:
+      defColumnPos: 3

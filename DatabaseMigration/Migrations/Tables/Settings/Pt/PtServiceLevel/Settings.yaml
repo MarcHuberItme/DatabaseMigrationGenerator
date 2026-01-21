@@ -1,0 +1,56 @@
+table:
+  name: 'PtServiceLevel'
+  description: 'Marketing, Savings, Commercial, Financial, Officials without active relations to the bank'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Service Level'
+    - german:
+        formTitle: 'Partnerprofil'
+  columns:
+  - name: 'ServiceLevelNo'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'InactiveFlag'
+    description: '0 (Default) = aktiver Partner\r\n1 = inaktiver Partner (z.B. Werbekunde)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'NeedsLegalStatus'
+    description: '1 = if a partner has this servicelevel, the legalstatus must be defined (not 99)'
+  - name: 'ForNaturalPartner'
+    description: 'All ServiceLevels having set this flag to true will appear in the GUI-Profile for NaturalPartners.'
+  - name: 'ForLegalPartner'
+    description: 'All ServiceLevels having set this flag to true will appear in the GUI-Profile for LegalPartners.'
+  - name: 'ForAnonymous'
+    description: 'All ServiceLevels having set this flag to true will appear in the GUI-Profile for Anonymous-Partners.'
+  - name: 'ForMarriedCouple'
+    description: 'All ServiceLevels having set this flag to true will appear in the GUI-Profile for MarriedCouples.'
+  - name: 'QuestionGroupId'
+    description: 'QuestionGroup to use for Question Dialog Task'
+    genericControls:
+      refTable: 'PtQuestionGroup'
+      refField: 'Id'
+  - name: 'QuestionGroupIdForOrg'
+    description: 'QuestionGroup to use for Question Dialog Task'
+    genericControls:
+      refTable: 'PtQuestionGroup'
+      refField: 'Id'
+  - name: 'ForAML'
+    description: 'Used for AML Transaction Checks'
+  - name: 'ForAiA'
+    description: 'Used for Tax Program (Indicia search)'
+  - name: 'NewAccountsAllowed'
+    description: ''
+  - name: 'IsForPMS'
+    description: ''

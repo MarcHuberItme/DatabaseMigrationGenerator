@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CyRateArchive_GetSingleRate'
+  description: 'Proc to quickly retrieve a archived rate from CSS'

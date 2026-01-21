@@ -1,0 +1,170 @@
+table:
+  name: 'FaLeaverTransaction'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FaBaseId'
+    description: ''
+    genericControls:
+      refTable: 'FaBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Direction'
+    description: '1 = IN\r\n2 = OUT'
+    genericControls:
+      refTable: 'FaTransDirection'
+      refField: 'Direction'
+      defColumnPos: 2
+  - name: 'TransactionType'
+    description: '101 = Cash Deposit\r\n102 = Cash Withdrawal\r\n111 = Wire Receipt\r\n112 = Wire Payment\r\n121 = Gold Deposit\r\n122 = Gold Withdrawak\r\n131 = Security Receipt\r\n132 = Security Delivery'
+    genericControls:
+      refTable: 'FaTransType'
+      refField: 'TransactionType'
+      defColumnPos: 3
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 4
+  - name: 'Amount'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'SI_Name'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'SI_CountryCode'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 7
+  - name: 'SI_BIC'
+    description: ''
+  - name: 'SI_BC'
+    description: ''
+  - name: 'CB_Name'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'CB_CountryCode'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 9
+  - name: 'CB_BIC'
+    description: ''
+  - name: 'CB_BC'
+    description: ''
+  - name: 'RI1_Name'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'RI1_CountryCode'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 11
+  - name: 'RI1_BIC'
+    description: ''
+  - name: 'RI1_BC'
+    description: ''
+  - name: 'RI2_Name'
+    description: ''
+    genericControls:
+      defColumnPos: 12
+  - name: 'RI2_CountryCode'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 13
+  - name: 'RI2_BIC'
+    description: ''
+  - name: 'RI2_BC'
+    description: ''
+  - name: 'Intermediary'
+    description: ''
+    genericControls:
+      defColumnPos: 14
+  - name: 'IMNameAndFunc'
+    description: ''
+    genericControls:
+      defColumnPos: 15
+  - name: 'CounterParty'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'CounterPartyAccount'
+    description: ''
+  - name: 'MessageId'
+    description: ''
+  - name: 'BookingText'
+    description: ''
+  - name: 'BeneficiaryMessage'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SwiftInstruction'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Source'
+    description: ''
+  - name: 'IsExternalFlow'
+    description: ''
+    genericControls:
+      defColumnPos: 16
+  - name: 'IsRelevant'
+    description: ''
+    genericControls:
+      defColumnPos: 17
+  - name: 'Verified'
+    description: ''
+    genericControls:
+      defColumnPos: 18
+  - name: 'AmountCHF'
+    description: ''
+  - name: 'AmountUSD'
+    description: ''
+    genericControls:
+      defColumnPos: 19
+  - name: 'AccountNo'
+    description: ''
+  - name: 'IBIS_ID'
+    description: ''
+  - name: 'Quantity'
+    description: ''
+  - name: 'SecurityRate'
+    description: ''
+  - name: 'Isin'
+    description: ''
+  - name: 'Comment'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'QuoteType'
+    description: '1 = Betrag\r\n2 = Prozent'
+    genericControls:
+      refTable: 'EvAmountQuoteType'
+      refField: 'AmountQuoteTypeNo'
+  - name: 'SNF_TransId'
+    description: ''
+    genericControls:
+      defColumnPos: 20

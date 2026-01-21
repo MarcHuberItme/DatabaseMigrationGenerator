@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxCreateTaxReportEndOfYearBalance'
+  description: 'select all account balances of a date'

@@ -1,0 +1,39 @@
+table:
+  name: 'CyRateArchive'
+  description: 'Historical currency rates'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Historical currency rates'
+    - german:
+        formTitle: 'Währungskurse Archiv'
+  columns:
+  - name: 'CySymbolOriginate'
+    description: 'Symbol of originate currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'CySymbolTarget'
+    description: 'Symbol of target currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'RateType'
+    description: 'Type of currency rate'
+    genericControls:
+      refTable: 'CyRateType'
+      refField: 'RateType'
+  - name: 'ValidFrom'
+    description: 'Date from which the rate is valid'
+  - name: 'ValidTo'
+    description: 'Expiry date of the rate'
+  - name: 'Rate'
+    description: 'Currency rate'

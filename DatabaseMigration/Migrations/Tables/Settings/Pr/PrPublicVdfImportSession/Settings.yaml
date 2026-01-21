@@ -1,0 +1,31 @@
+table:
+  name: 'PrPublicVdfImportSession'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Vdf import session'
+    - german:
+        formTitle: 'VDF Import Session'
+  columns:
+  - name: 'ImportSession'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ProcessedPrdDoc'
+    description: ''
+  - name: 'EdifactFileName'
+    description: ''
+  - name: 'IsImportdone'
+    description: ''
+  - name: 'SelectStatement'
+    description: ''
+    genericControls:
+      multiLine: true

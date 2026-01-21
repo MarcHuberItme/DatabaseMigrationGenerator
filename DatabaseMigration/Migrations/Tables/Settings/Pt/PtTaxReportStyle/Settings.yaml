@@ -1,0 +1,32 @@
+table:
+  name: 'PtTaxReportStyle'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'StyleNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'StyleName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsDefault'
+    description: ''
+  - name: 'HasNoCharge'
+    description: ''
+  - name: 'HasNoSecurity'
+    description: ''
+  - name: 'SelectSql'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IsSuspended'
+    description: ''

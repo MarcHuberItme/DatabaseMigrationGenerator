@@ -1,0 +1,104 @@
+table:
+  name: 'PtMoneyLaunderDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      applicationKey: 'ReportDate'
+      rootTable: 'PtBase'
+      parentTable: 'PtProfile'
+      parentRelationField: 'ProfileId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Money Laundering Detail'
+    - german:
+        formTitle: 'Hintergrundbericht'
+    - french:
+        formTitle: 'Rapport de base'
+  columns:
+  - name: 'ProfileId'
+    description: ''
+    genericControls:
+      refTable: 'PtProfile'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'HasAddInfo'
+    description: '0 = no addidtional Information\r\n1 = additional Information is present (e.g. scanned documents)'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ProcessId'
+    description: 'Wokflow Process Id for specific WF to check changes in MoneyLauderSuspect Category'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'ReportDate'
+    description: 'Hintergrundbericht erstell per xx.xx.xx Datum'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ReasonTypeNo'
+    description: 'Grund, warum ein Hintergrundbericht erstellt worden ist'
+    genericControls:
+      refTable: 'PtMLReasonType'
+      refField: 'ReasonTypeNo'
+  - name: 'BackgroundGeneral'
+    description: 'Hintergrund der Geschäftsbeziehung (Warum HBL) ?\r\nWarum geht der wirtschaftlich Berechtigte die Geschäftsbeziehung nicht selber ein ?\r\nWarum erhält ein Bevollmächtigter eine Vollmacht ?'
+    genericControls:
+      multiLine: true
+  - name: 'BackgroundPersonal1'
+    description: 'Persönlicher Hintergrund des Kunden (Familie)'
+    genericControls:
+      multiLine: true
+  - name: 'BackgroundPersonal2'
+    description: 'Persönlicher Hintergrund des Kunden (Umfeld)'
+    genericControls:
+      multiLine: true
+  - name: 'BackgroundEconomic1'
+    description: 'wirtschaftlicher Hintergrund des Kunden (Herkunft und Umfang des Vermögens)'
+    genericControls:
+      multiLine: true
+  - name: 'BackgroundEconomic2'
+    description: 'wirtschaftlicher Hintergrund des Kunden (Herkunft und Umfang des Einkommens)'
+    genericControls:
+      multiLine: true
+  - name: 'BackgroundBusiness1'
+    description: 'wirtschaftlicher Hintergrund der Geschäftsbeziehung (Herkunft und Verwendungszweck der bei der Bank liegenden Vermögenswerte)'
+    genericControls:
+      multiLine: true
+  - name: 'BackgroundBusiness2'
+    description: 'wirtschaftlicher Hintergrund der Geschäftsbeziehung (Text zum "plausiblen" Höchstbetrag für Zahlungseingänge)'
+    genericControls:
+      multiLine: true
+  - name: 'PlausibleMaxAmount'
+    description: 'Plausibler Höchstbetrag für Zahlungseingänge'
+  - name: 'ProductRemark'
+    description: 'aktuelle und zu erwartende Produkte'
+    genericControls:
+      multiLine: true
+  - name: 'OtherRemark'
+    description: 'Weitere Feststellungen zum Kunden'
+    genericControls:
+      multiLine: true
+  - name: 'Relation1'
+    description: 'andere Bankbeziehungen (soweit bekannt)'
+    genericControls:
+      multiLine: true
+  - name: 'Relation2'
+    description: 'Beziehungen zu anderen Kunden, soweit bekannt'
+    genericControls:
+      multiLine: true
+  - name: 'ComplianceCheck'
+    description: 'Compliance Officer has accepted the report ... as soon as this is done, the report can not be changed anymore -> display only.'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      hasDetailBtn: true

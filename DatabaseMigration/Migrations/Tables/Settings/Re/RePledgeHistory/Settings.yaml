@@ -1,0 +1,60 @@
+table:
+  name: 'RePledgeHistory'
+  description: 'Contains historized data of the tables ''RePledgeRegister'', ''RePledgeRegisterAccount'' and ''ReObligPremisesRelation'' for historized pledge inventory. \r\nRecords are introduced and updated by triggers associated with the tables \r\n''RePledgeRegister'', ''RePledgeRegisterAccount'' and ''ReObligPremisesRelation'''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Pledge data historized'
+    - german:
+        formTitle: 'Pänderdaten historisiert'
+  columns:
+  - name: 'PledgeRegisterId'
+    description: 'Corresponds to the Id of the table ''RePledgeRegister'''
+    genericControls:
+      refTable: 'RePledgeRegister'
+      refField: 'Id'
+  - name: 'DateHistory'
+    description: 'Date when the record got written into the table. As there is only one record per day and PaledgeRegisterId the date has the form "yyyymmdd" time is omitted \r\n(TSQL-Statment: "CONVERT( CHAR(10), GETDATE(), 112 )" ).'
+  - name: 'BcNumber'
+    description: 'Swiss bank number of the bank'
+  - name: 'PledgeRegisterNo'
+    description: 'PledgeRegisterNo and PledgeRegisterPartNo build a key of this table'
+  - name: 'PledgeRegisterPartNo'
+    description: 'PledgeRegisterNo and PledgeRegisterPartNo build a key of this table'
+  - name: 'PledgeTypeId'
+    description: 'Type of pledge, refers to RePledgeType.Id'
+    genericControls:
+      refTable: 'RePledgeType'
+      refField: 'Id'
+  - name: 'StatusNo'
+    description: 'status of processing as number, refers to the field ''RePledgeRegisterStatus.StatusNo'''
+    genericControls:
+      refTable: 'RePledgeRegisterStatus'
+      refField: 'StatusNo'
+  - name: 'StatusNoPfB'
+    description: 'status of processing at the PfB as number, refers to the field ''RePledgeRegisterStatus.StatusNo'''
+    genericControls:
+      refTable: 'RePledgeRegisterStatus'
+      refField: 'StatusNo'
+  - name: 'ValueDate'
+    description: 'Date of acceptance of the value amount - on that date the ValueAmount was accepted'
+  - name: 'DebitAmount'
+    description: 'Sum of the debitamounts of the corrsponding pledgeregister accounts (DebitAmount in the table RePledgeRegisterAccount)'
+  - name: 'PledgeAmount'
+    description: 'Pfandforderung - Field isentered by the user bank oer the internet (original value)'
+  - name: 'PledgeAmountAdjusted'
+    description: 'reduced PledgAmount after repayments'
+  - name: 'ValueAmount'
+    description: 'accepted ValueAmount (original value)'
+  - name: 'ValueAmountAdjusted'
+    description: 'ValueAmount reduced by repayments'
+  - name: 'ObligationAmount'
+    description: 'Sum of all accountable obligation amount (field ObligAmountChargeable in the table ReObligPremisesRelation) of the obligations (= nominal values)'

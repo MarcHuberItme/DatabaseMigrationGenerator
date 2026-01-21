@@ -1,0 +1,52 @@
+table:
+  name: 'PtEvent'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Marketing-Event'
+    - german:
+        formTitle: 'Marketing-Event'
+  columns:
+  - name: 'Date'
+    description: 'event date / target'
+  - name: 'TemplateId'
+    description: ''
+    genericControls:
+      refTable: 'AsTemplate'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CorrItemId'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+  - name: 'UseForHunting'
+    description: '0= Partner Serial Letter\r\n1= Akquisition'
+    genericControls:
+      defColumnPos: 1
+  - name: 'WithStoringOnBank'
+    description: '0= carrier type ''storing on bank'' not include (--> PtCorrPartner.CarrierTypeNo)\r\n1= carrier type ''storing on bank'' include'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsAccountSelection'
+    description: 'Kontoselektion: PtAccountBase.Id wird in Tab. PtEventEntity gespeichert'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsPortfolioSelection'
+    description: 'Depotselektion: PtPortfolio.Id wird in Tab. PtEventEntity gespeichert'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Query'
+    description: 'used sql command line'
+    genericControls:
+      multiLine: true

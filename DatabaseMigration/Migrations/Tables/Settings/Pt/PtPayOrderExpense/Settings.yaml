@@ -1,0 +1,48 @@
+table:
+  name: 'PtPayOrderExpense'
+  description: 'defines the expenses for a payment order.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'OrderTypeNo'
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment Order Expenses'
+    - german:
+        formTitle: 'ZV Auftragsspesen'
+  columns:
+  - name: 'ExpenseRulesetNo'
+    description: 'Ruleset it belongs to'
+    genericControls:
+      refTable: 'PrExpenseRuleset'
+      refField: 'ExpenseRulesetNo'
+      defColumnPos: 1
+  - name: 'OrderTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderType'
+      refField: 'OrderTypeNo'
+      defColumnPos: 2
+  - name: 'OrderExpenseTypeNo'
+    description: 'defines the expense type no to use\r\nif an expense has to be applied for the order\r\n'
+    genericControls:
+      refTable: 'PrExpenseType'
+      refField: 'ExpenseTypeNo'
+      defColumnPos: 3
+  - name: 'DebitExternalFees'
+    description: 'debit external fees (e.g. from incomming external fees)\r\nthat are entered in PtPaymentOrder.SenderChargeAmount\r\nor in PtPaymentOrderDetail.PayInChargeAmount\r\n'
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'BoolVal'
+      defColumnPos: 4
+  - name: 'Remarks'
+    description: 'remarks to explain the used rules may be entered here'
+    genericControls:
+      multiLine: true

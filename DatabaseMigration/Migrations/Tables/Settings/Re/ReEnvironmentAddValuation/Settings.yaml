@@ -1,0 +1,38 @@
+table:
+  name: 'ReEnvironmentAddValuation'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ReEnvironmentAddValutaion'
+    - german:
+        formTitle: 'Schätzungsrel.Zuschlag'
+  columns:
+  - name: 'ValuationNo'
+    description: 'FIS-2000: STZ_RELE_CD'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SortNo'
+    description: ''
+  - name: 'ForType01'
+    description: ''
+  - name: 'ForType02'
+    description: ''
+  - name: 'ForType03'
+    description: ''
+  - name: 'ForType04'
+    description: ''
+  - name: 'ForType05'
+    description: ''
+  - name: 'IsValuationRelevant'
+    description: 'Flag used for automatic update of Repremises.HasServitute in the case valuation relevant servitutes exist. \r\nThe flag is used to mark the servitute as valuation relevant.'

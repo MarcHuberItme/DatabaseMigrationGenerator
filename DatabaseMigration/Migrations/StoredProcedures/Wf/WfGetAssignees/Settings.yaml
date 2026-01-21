@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'WfGetAssignees'
+  description: 'Get the user names matching the criterias UserGroupName and RoleGroupName'

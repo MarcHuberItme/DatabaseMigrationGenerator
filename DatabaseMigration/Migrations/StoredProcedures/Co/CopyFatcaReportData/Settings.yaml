@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CopyFatcaReportData'
+  description: 'Copy existing report data for correction message.'

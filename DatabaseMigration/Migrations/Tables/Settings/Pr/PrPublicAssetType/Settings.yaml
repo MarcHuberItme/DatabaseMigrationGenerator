@@ -1,0 +1,19 @@
+table:
+  name: 'PrPublicAssetType'
+  description: 'Contains all kind of asset-types of the instruments. And is connected with AssetTypes (Anlagekategorien) in PMS. The table PtPMSAssetType is used for mapping Finstar AssetTypes with PMS (currently PM1 from Expersoft).'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'AssetTypeCode'
+    description: ''
+  - name: 'Sequence'
+    description: 'Order field for the Asset Type in the Report.'

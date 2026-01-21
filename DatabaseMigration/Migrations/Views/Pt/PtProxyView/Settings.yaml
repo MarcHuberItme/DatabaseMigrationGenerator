@@ -1,0 +1,3 @@
+view:
+  name: 'PtProxyView'
+  description: 'Simpifies the report for proxies. (Vollmachtenregister)'

@@ -1,0 +1,35 @@
+table:
+  name: 'AsInterfaceTable'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'InterfaceId'
+    description: ''
+    genericControls:
+      refTable: 'AsInterface'
+      refField: 'Id'
+  - name: 'TableName'
+    description: 'Name of the table, that is involved in interface'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'FieldId'
+    description: 'Id of the finstar field in that the external Code must be mapped'
+    genericControls:
+      refTable: 'MdField'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DefaultValue'
+    description: 'Default value, that is used, if the external code doesn''t found in the table AsInterfaceConv'

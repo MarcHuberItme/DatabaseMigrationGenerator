@@ -1,0 +1,23 @@
+table:
+  name: 'MCStateExchangeDataType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Data Type'
+        helpText: 'Data Type'
+    - german:
+        formTitle: 'Datentyp'
+        helpText: 'Datentyp'
+  columns:
+  - name: 'Type'
+    description: ''

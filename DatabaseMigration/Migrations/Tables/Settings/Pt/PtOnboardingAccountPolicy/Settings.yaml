@@ -1,0 +1,69 @@
+table:
+  name: 'PtOnboardingAccountPolicy'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'BaasUseCaseAccount'
+        helpText: 'Baas UseCase Account'
+    - german:
+        formTitle: 'BaasUseCaseAccount'
+        helpText: 'Baas UseCase Account'
+    - french:
+        formTitle: 'BaasUseCaseAccount'
+        helpText: 'Baas UseCase Account'
+  columns:
+  - name: 'PortfolioPolicyId'
+    description: ''
+    genericControls:
+      refTable: 'PtOnboardingPortfolioPolicy'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      defColumnPos: 2
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'CustomerReference'
+    description: ''
+  - name: 'MotiveToOpenNo'
+    description: ''
+    genericControls:
+      refTable: 'AsMotiveOpenType'
+      refField: 'MotiveOpenTypeNo'
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'ValidTo'
+    description: ''
+  - name: 'DigitalBankingAgrPolicyId'
+    description: ''
+    genericControls:
+      refTable: 'PtOnboardingDbAgrPolicy'
+      refField: 'Id'
+  - name: 'ExternalReferenceIbanType'
+    description: ''
+    genericControls:
+      refTable: 'PtOnboardingPolicyExtIbanType'
+      refField: 'ReferenceIbanTypeNo'
+  - name: 'FixedExternalReferenceIban'
+    description: ''

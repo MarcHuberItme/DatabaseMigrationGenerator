@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPendingBalance'
+  description: '--- MARKED TO BE REMOVED --- (if no one is using it)'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AsNavigationIndex_GetBySubId'
+  description: 'Retrieves an AsNavigationIndex by the Id of AsNavigationIndexSub'

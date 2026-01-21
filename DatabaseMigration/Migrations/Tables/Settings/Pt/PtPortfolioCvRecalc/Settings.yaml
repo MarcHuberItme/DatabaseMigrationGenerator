@@ -1,0 +1,26 @@
+table:
+  name: 'PtPortfolioCvRecalc'
+  description: 'Working table for Recalculation of Cost Value.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PortfolioNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'PortfolioNo'
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'Status'
+    description: '0 = Unprocessed\r\n1 = Sucessfull\r\n-1 = Error\r\n'
+  - name: 'ErrorText'
+    description: ''

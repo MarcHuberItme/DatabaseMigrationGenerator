@@ -1,0 +1,79 @@
+table:
+  name: 'MgSHRegister'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'MgSHRegister'
+        helpText: 'MgSHRegister'
+    - german:
+        formTitle: 'MgSHRegister'
+        helpText: 'MgSHRegister'
+  columns:
+  - name: 'SHPartnerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'DBPartnerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'DPST'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'PortfolioNo'
+    description: 'for Wynigen migration'
+    genericControls:
+      defColumnPos: 4
+  - name: 'SubDepotNo'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'TitleNo'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'Quantity'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'TitleLocType'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'TitlePrintDate'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'ExtRefText'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'RefNo'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'MgSeqNo'
+    description: ''
+  - name: 'BankName'
+    description: ''
+    genericControls:
+      defColumnPos: 12
+  - name: 'IsBooked'
+    description: 'For initial booking during migration'
+  - name: 'RegisterDate'
+    description: ''
+  - name: 'RegisterNo'
+    description: ''
+  - name: 'IsNotOrigin'
+    description: ''

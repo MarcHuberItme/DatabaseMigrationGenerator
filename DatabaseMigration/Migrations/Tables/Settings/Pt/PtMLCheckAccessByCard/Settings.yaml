@@ -1,0 +1,101 @@
+table:
+  name: 'PtMLCheckAccessByCard'
+  description: 'Personen mit Zugriff via Karte\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccessId'
+    description: 'Id der Zugriffsprüfung'
+    genericControls:
+      refTable: 'PtMLCheckAccess'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'CardOwnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'CardOwner'
+    description: 'PtDescriptionView,PtDescription\r\n'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'CardContactPersonId'
+    description: 'Id der Kontaktperson'
+    genericControls:
+      refTable: 'PtContactPerson'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'CardContactPerson'
+    description: 'Kontaktperson Name + '' '' + Vorname'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CardAccountNoEdited'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'CardAccountIBAN'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'CardNumber'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'AccountOwnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'AccountOwner'
+    description: 'PtDescriptionView,PtDescription'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CardTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtCardType'
+      refField: 'CardType'
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'CardType'
+    description: 'AsText.TextShort'
+  - name: 'CardStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtCardStatus'
+      refField: 'CardStatus'
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'CardStatus'
+    description: 'AsText.TextShort'
+  - name: 'CardExpirationDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'IsToDelete'
+    description: 'Flag, welches angibt, ob ein Record gelöscht werden darf. Macht bei Stammdaten keinen Sinn'
+  - name: 'HasChanges'
+    description: ''
+  - name: 'Comment'
+    description: 'Kommentar des Kunden'
+    genericControls:
+      multiLine: true
+  - name: 'CheckStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckDetailState'
+      refField: 'CheckDetailStateNo'
+      defColumnPos: 6
+      isNoUpdate: true

@@ -1,0 +1,20 @@
+table:
+  name: 'CoCalcgrp'
+  description: 'Berechnungsgruppe der Belehnung der Sicherheit'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'colleteral pledge calc'
+    - german:
+        formTitle: 'Belehnugnsgruppe'
+  columns:
+  - name: 'Calcgrp'
+    description: 'Laufnummer wird mit assequence ''CO_Calcgruppe''  vergeben und hat heute eine 1:1 Beziehung zur Veragrp'

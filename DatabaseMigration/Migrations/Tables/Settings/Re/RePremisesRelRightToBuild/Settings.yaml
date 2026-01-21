@@ -1,0 +1,97 @@
+table:
+  name: 'RePremisesRelRightToBuild'
+  description: 'Baurecht\r\n\r\nFIS-2000: GR_BRCT_STWE (nur BRCT)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Right to Build'
+    - german:
+        formTitle: 'Baurecht'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'PremisesRelationId'
+    description: 'assigned premise'
+    genericControls:
+      refTable: 'ReGbDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PremisesIdReceivingRight'
+    description: ''
+  - name: 'ValueDate'
+    description: 'Stichtag der erfassten Werte'
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValidTo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'TerminationDate'
+    description: 'Fristdatum (gekündigt per)\r\n\r\nFIS-2000:GR_BRCE_STWE.KUEND_DAT'
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Amount'
+    description: 'Betrag Baurechtszins (jährlich)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'AmountBasis'
+    description: 'Basiswert für Baurechtszinsberechnung\r\n\r\nFIS-2000:GR_BRCT_STWE.BAS_WERT'
+  - name: 'InterestTypeNo'
+    description: 'z.B. Realzins, Hypozins der KB etc.'
+    genericControls:
+      refTable: 'ReInterestType'
+      refField: 'InterestTypeNo'
+  - name: 'InterestRate'
+    description: 'ZINSSATZ_EFF'
+  - name: 'InterestDeviation'
+    description: 'FIS-2000:ZU_ABSCHLAG_SATZ'
+  - name: 'InterestBasis'
+    description: 'Zinssatzbasis'
+  - name: 'IndexTypeId'
+    description: ''
+    genericControls:
+      refTable: 'ReIndexType'
+      refField: 'Id'
+  - name: 'AdaptionPeriode'
+    description: 'Anpassungsperiode in Jahren - nach welcher eine Anpassung des Baurechtszinses vorgenommen wird.\r\nFIS-2000:GR_BRCT_STWE.ANP_PERI_JJ'
+  - name: 'AdaptionRate'
+    description: 'Satz der Anpassung (des Zinses)'
+  - name: 'InterestSecured'
+    description: 'Baurechtzins ist sichergestellt ?\r\n0 = Nein\r\n1 = Ja'
+  - name: 'Prolongation'
+    description: 'Option auf Verlängerung besteht ?  Option on extension exists? \r\n0 = no\r\n1 = Yes'
+  - name: 'ReversionClause'
+    description: 'Heimfallklausel vorhanden J/N\r\n0 = Nein\r\n1 = Ja'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ValuationNo'
+    description: ''
+    genericControls:
+      refTable: 'ReEnvironmentAddValuation'
+      refField: 'ValuationNo'

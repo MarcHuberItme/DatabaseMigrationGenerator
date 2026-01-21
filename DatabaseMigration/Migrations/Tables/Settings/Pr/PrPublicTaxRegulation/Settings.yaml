@@ -1,0 +1,82 @@
+table:
+  name: 'PrPublicTaxRegulation'
+  description: 'TaxReportings / Regulations from VDF TKFSD'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax / Regulation'
+    - german:
+        formTitle: 'Steuer / Regulierung'
+  columns:
+  - name: 'PublicId'
+    description: 'Relation to PrPublic'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'Domicile'
+    description: 'Location identifier\r\nVDF: TKFSD.VAI:LRI.3991'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 2
+  - name: 'TaxNameNo'
+    description: 'Tax Name\r\nVDF FSD.VAI.LRI.FSE.7862'
+    genericControls:
+      refTable: 'PrPublicTaxName'
+      refField: 'TaxNameNo'
+      defColumnPos: 1
+  - name: 'ApplicTaxRepNo'
+    description: 'Tax Applicability\r\nVDF FSD.VAI.LRI.FSE.7863'
+    genericControls:
+      refTable: 'PrPublicApplicTaxRep'
+      refField: 'ApplicTaxRepNo'
+      defColumnPos: 3
+  - name: 'ObjectTaxRepNo'
+    description: 'Taxable Object\r\nVDF FSD.VAI.LRI.FSE.2811'
+    genericControls:
+      refTable: 'PrPublicTaxableObject'
+      refField: 'ObjectTaxRepNo'
+      defColumnPos: 4
+  - name: 'ValidFrom'
+    description: 'VDF: FSD.VAI.LRI.FSE.2811'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValidTo'
+    description: 'VDF: FSD.VAI.LRI.FSE.2812'
+  - name: 'NonResCode'
+    description: 'VDF: FSD.VAI.LRI.FSE.FST.4983'
+    genericControls:
+      refTable: 'PrPublicNonResCode'
+      refField: 'NonResCode'
+  - name: 'Currency'
+    description: 'VDF: FSD.VAI.LRI.FSE.FST.K816.6804'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Amount'
+    description: 'VDF: FSD.VAI.LRI.FSE.FST.K816.5833'
+  - name: 'UnitNo'
+    description: 'VDF: FSD.VAI.LRI.FSE.FST.K816.4802'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'QuoteTypeNo'
+    description: 'VDF: FSD.VAI.LRI.FSE.FST.K816.4812'
+    genericControls:
+      refTable: 'PrPublicQuoteType'
+      refField: 'QuoteTypeNo'

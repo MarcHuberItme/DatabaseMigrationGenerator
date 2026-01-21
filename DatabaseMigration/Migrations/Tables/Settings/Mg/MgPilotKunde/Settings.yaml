@@ -1,0 +1,26 @@
+table:
+  name: 'MgPilotKunde'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Pilot partner'
+        helpText: 'Pilot partner'
+    - german:
+        formTitle: 'Pilot-Kunde'
+        helpText: 'Pilot-Kunde'
+  columns:
+  - name: 'MigValue'
+    description: ''
+    minValue: '0'
+    maxValue: '99'

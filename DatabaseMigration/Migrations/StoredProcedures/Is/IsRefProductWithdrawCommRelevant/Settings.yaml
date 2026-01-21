@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'IsRefProductWithdrawCommRelevant'
+  description: 'Return of PrReference linked product is relevant for Withdraw limit and non-termination commission (NKK) relevant'

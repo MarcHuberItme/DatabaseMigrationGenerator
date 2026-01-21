@@ -1,0 +1,35 @@
+table:
+  name: 'CyInterestType'
+  description: 'Type table for interst rates'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    descField: 'InterestCarrierNo'
+    uiTableDescription:
+    - english:
+        formTitle: 'interest type'
+    - german:
+        formTitle: 'Zinstyp'
+  columns:
+  - name: 'InterestTypeNo'
+    description: 'SWAP or LIBOR'
+    genericControls:
+      visNumber: 1
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'InterestCarrierNo'
+    description: 'Carrier type, vdf or datascope'
+    genericControls:
+      refTable: 'CyInterestCarrier'
+      refField: 'InterestCarrierNo'
+      visNumber: 2
+      defColumnPos: 2
+      noUpdatePos: 2

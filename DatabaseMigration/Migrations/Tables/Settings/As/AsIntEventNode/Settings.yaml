@@ -1,0 +1,37 @@
+table:
+  name: 'AsIntEventNode'
+  description: 'Event nodes can be applications, processors or brokers which publish and subscribe to events. Generally nodes act as sources and/or sinks of events.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Event Node'
+        helpText: 'Event nodes can be applications, processors or brokers which produce and consume events.'
+    - german:
+        formTitle: 'Ereignisknoten'
+        helpText: 'Knoten sind Applikationen, Prozessoren oder Broker, welche Ereignisse produzieren oder konsumieren'
+    - french:
+        formTitle: 'Noeud d''événement'
+        helpText: 'Event nodes can be applications, processors or brokers which produce and consume events.'
+    - italian:
+        formTitle: 'Nodo Evento'
+        helpText: 'Event nodes can be applications, processors or brokers which produce and consume events.'
+  columns:
+  - name: 'Name'
+    description: 'The unique name of the event node\r\nThe name is taken as a key to lookup the configuration of the event node such as URL, credentials etc. if required.'
+  - name: 'NodeType'
+    description: 'The event node type, such as Kafka, RabbitMQ, specific applications, processors, APIs for direct internal processing from outbox or inbox etc.'
+    genericControls:
+      refTable: 'AsIntEventNodeType'
+      refField: 'TypeName'
+  - name: 'IsEnabled'
+    description: 'Use as a feature toggle. Completely turn on or off a broker as both source and sink for all topics.\r\nThis can be used when a new broker is being installed. Or when we migrate from one broker to another. It can also be used to turn off any interaction with the broker while the broker is temporarily unavailable. After re-enabling the broker, the producers and consumers will continue where they left off before the broker was turned off.\r\nConsider that it might take a moment until the change takes effect. The producers and consumers will check this state every few minutes in case there is no real-time signal implement to request a stop.\r\nGenerally the producers and consumers will first finish the work they started before stopping.'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetBalanceForCompoundBookings_OnADate'
+  description: 'This stored procedure returns the balance on or before a date\r\nHow to calculate the balance for compound bookings (PtAccountMovementDetailView - PtTransItem)\r\n 1. Calculate the real balance\r\n 2. Calculate the delta amount - see where condition\r\n 3. Calculate the Balance = RealBalance - DeltaBalance'

@@ -1,0 +1,30 @@
+table:
+  name: 'PtShareholderMTType'
+  description: 'Table where the different Types of the persons to be announced for the management transactions'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Management Trans Type'
+        helpText: 'Management Trans Type'
+    - german:
+        formTitle: 'Management Trans Typ'
+        helpText: 'Management Trans Type'
+    - french:
+        formTitle: 'Management Trans Type'
+        helpText: 'Management Trans Type'
+  columns:
+  - name: 'TypeNo'
+    description: ''
+    minValue: '1'
+    genericControls:
+      defColumnPos: 1

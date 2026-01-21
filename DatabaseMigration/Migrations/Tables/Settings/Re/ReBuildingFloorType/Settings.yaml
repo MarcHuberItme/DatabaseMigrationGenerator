@@ -1,0 +1,26 @@
+table:
+  name: 'ReBuildingFloorType'
+  description: 'Etagentyp / Floor Type\r\n\r\nz.B. Untergeschoss / Erdgeschoss / Dachgeschoss .....\r\ne.g. basement/ground floor/attic..... \r\n\r\nFIS-2000: GR1ETA_TYP'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Floor Type'
+    - german:
+        formTitle: 'Etagentyp'
+  columns:
+  - name: 'FloorType'
+    description: 'entspricht 1:1 den Werten aus FIS-2000 GR_ETA_TYP_CD'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SortNo'
+    description: ''

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetBalance_OnATransDate'
+  description: '--This stored procedure returns the balance on or before a TransDate'

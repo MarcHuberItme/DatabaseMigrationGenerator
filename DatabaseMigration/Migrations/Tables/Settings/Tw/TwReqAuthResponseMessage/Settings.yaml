@@ -1,0 +1,49 @@
+table:
+  name: 'TwReqAuthResponseMessage'
+  description: 'Contains the data for  the response of a RequestAuthorization message.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: bad6dd0b-5ed3-4cee-b419-0b3faf9ddacc
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Response Authorization M.'
+    - german:
+        formTitle: 'Response Authorization M.'
+  columns:
+  - name: 'HeaderMessageId'
+    description: 'Id of TwHeaderMessage'
+    genericControls:
+      refTable: 'TwHeaderMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'AuthorizationId'
+    description: 'An AuthorizationId to use as identifier to this authorization. This may be overridden by the HBL'
+  - name: 'AuthorizedAmount'
+    description: 'The amount that we have authorized'
+    genericControls:
+      defColumnPos: 1
+  - name: 'AuthorizedAmountCurrency'
+    description: 'The currency of the authorized amount'
+    genericControls:
+      defColumnPos: 2
+  - name: 'AuthorizationStatusType'
+    description: 'The Issuer determines the status of the Authorization to signal to TWINT if the Authorization Request succeeded or not.'
+    genericControls:
+      refTable: 'TwAuthorizationStatusType'
+      refField: 'AuthorizationStatusType'
+      defColumnPos: 3
+  - name: 'KycCheckResult'
+    description: 'Contains the result of KycCheck as Html Output.'
+  - name: 'Comment'
+    description: 'Reason why a certain payment was accepted or declined'
+    genericControls:
+      multiLine: true
+      defColumnPos: 4

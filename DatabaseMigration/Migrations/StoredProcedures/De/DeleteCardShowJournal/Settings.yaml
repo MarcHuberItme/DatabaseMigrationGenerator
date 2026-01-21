@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DeleteCardShowJournal'
+  description: 'Deletes all entries in Table PtCardShowJournal'

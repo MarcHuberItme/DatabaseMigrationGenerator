@@ -1,0 +1,34 @@
+table:
+  name: 'OaAgrAppConsentDetailRole'
+  description: 'Adds a specific Resource or Entity as a "detail" to a Consent (OaAgrApp).'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'API-App Consent Agr. Det.'
+    - german:
+        formTitle: 'API-App Zust. Detail'
+  columns:
+  - name: 'ConsentDetailId'
+    description: 'Foreign Key to OaAgrAppConsentDetail'
+    genericControls:
+      refTable: 'OaAgrAppConsentDetail'
+      refField: 'Id'
+  - name: 'RoleName'
+    description: 'Foreign key to OaResourceRole.RoleName'
+    genericControls:
+      refTable: 'OaResourceRole'
+      refField: 'Name'
+  - name: 'ValidFrom'
+    description: 'A date time, denoting when this role was granted. This date should always be in the past or at most "now".'
+  - name: 'ValidTo'
+    description: 'A date time, denoting when this consent was revoked or deactivated by the user. This date should also be in the past or null if it was not revoked yet.'

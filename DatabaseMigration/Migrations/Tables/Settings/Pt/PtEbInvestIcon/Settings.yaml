@@ -1,0 +1,27 @@
+table:
+  name: 'PtEbInvestIcon'
+  description: 'Icon to show in the list for an E-Banking Investment Product'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'E-Banking Invest Icon'
+        helpText: 'E-Banking Invest Icon'
+    - german:
+        formTitle: 'E-Banking Invest Icon'
+        helpText: 'E-Banking Invest Icon'
+  columns:
+  - name: 'IconTypeNo'
+    description: 'Icon Identifier'
+    genericControls:
+      defColumnPos: 1
+      noUpdatePos: 1

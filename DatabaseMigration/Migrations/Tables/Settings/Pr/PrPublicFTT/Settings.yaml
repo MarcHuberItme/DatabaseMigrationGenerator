@@ -1,0 +1,31 @@
+table:
+  name: 'PrPublicFTT'
+  description: 'Security with Financial Transaction Tax'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Financial Transaction Tax'
+        helpText: 'Security with Financial Transaction Tax'
+    - german:
+        formTitle: 'Finanz-Transaktionssteuer'
+        helpText: 'Instrument mit Finanz-Transaktionssteuer'
+  columns:
+  - name: 'VdfInstrumentSymbol'
+    description: ''
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'FTTCode'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicFTTCode'
+      refField: 'FTTCode'

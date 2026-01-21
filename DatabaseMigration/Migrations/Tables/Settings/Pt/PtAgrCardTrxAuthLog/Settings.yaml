@@ -1,0 +1,81 @@
+table:
+  name: 'PtAgrCardTrxAuthLog'
+  description: 'Contains all card transactions authorization results.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Card Trx Auth Log'
+    - german:
+        formTitle: 'Karten Trx Auth Log'
+    - french:
+        formTitle: 'Cartes Trx Auth Log'
+  columns:
+  - name: 'CardId'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrCard'
+      refField: 'Id'
+  - name: 'MessageId'
+    description: ''
+    genericControls:
+      refTable: 'PtCardTrxAuthMessage'
+      refField: 'Id'
+  - name: 'TrxDate'
+    description: 'Date and time of the card transaction'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TransactionAmount'
+    description: 'Transaction amount'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TransactionCurrency'
+    description: 'Transaction currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'CardholderBillingAmount'
+    description: 'Transaction amount in cardholder account currency'
+  - name: 'CardholderBillingCurrency'
+    description: 'Cardholder account currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'AvailableAmount'
+    description: 'Calculated maximum available amount.'
+  - name: 'AvailableBalance'
+    description: 'Maximum available balance according to GetBalance_AvailableExtended'
+  - name: 'AvailableCardLimitMonth'
+    description: 'Maximum available amount according to the monthly card limit (GetCardAvailableAmounts).'
+  - name: 'AvailableCardLimitDay'
+    description: 'Maximum available amount according to the daily card limit (GetCardAvailableAmounts).'
+  - name: 'CardLimitMonth'
+    description: 'Stored monthly card limit (PtAgrCard)'
+  - name: 'CardLimitDay'
+    description: 'Stored daily card limit (PtAgrCard)'
+  - name: 'CardExpenseCashMonthly'
+    description: 'Total spent cash amount for the current month.'
+  - name: 'CardExpenseRetailMonthly'
+    description: 'Total spent retail amount for the current month.'
+  - name: 'CardExpenseCashDaily'
+    description: 'Total spent cash amount for the current day.'
+  - name: 'CardExpenseRetailDaily'
+    description: 'Total spent retail amount for the current day.'
+  - name: 'CardTrxLimitType'
+    description: 'Card transaction limit type according to the value stored on PtPartnerConditionsExceptions.CardTrxLimitType. If there''s no such record the system parameter (PtAgrCard.CardTrxLimitType) is used as fallback value.'
+    genericControls:
+      refTable: 'PtCardLimitType'
+      refField: 'CardLimitType'
+      defColumnPos: 4
+  - name: 'ResponseCode'
+    description: ''
+    genericControls:
+      defColumnPos: 5

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AiTaxReportAiaTransSelection'
+  description: 'Selects transactions classified as reportable for AIA (CRS) Report'

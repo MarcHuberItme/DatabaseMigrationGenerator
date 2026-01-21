@@ -1,0 +1,159 @@
+table:
+  name: 'PtConsCreditMonitorOld'
+  description: 'Konsumentendaten der Konsumkredite werden hier gespeichert und während ca. 1 Monat überwacht und aktualisiert.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'MonitorBatchId'
+    description: ''
+    genericControls:
+      refTable: 'PtConsCreditMonitorBatch'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'Name'
+    description: 'Name retrieved from PtBase and copied here'
+    genericControls:
+      isNoUpdate: true
+  - name: 'FirstName'
+    description: 'Value retrieved from PtBase and copied here'
+    genericControls:
+      isNoUpdate: true
+  - name: 'DateOfBirth'
+    description: 'Value retrieved from PtBase and copied here'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Zip'
+    description: 'Value retrieved from PtAddress (11) and copied here'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Town'
+    description: 'Value retrieved from PtAddress (11) and copied here'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Street'
+    description: 'Value retrieved from PtAddress (11) and copied here'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HouseNo'
+    description: 'Value retrieved from PtAddress (11) and copied here'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CountryCode'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      isNoUpdate: true
+  - name: 'DomicileDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Nationality'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      isNoUpdate: true
+  - name: 'ReferenceDate'
+    description: 'Referenzdatum des Kredits (= Eröffnungsdatum des Kunden)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'SexStatusNo'
+    description: 'Geschlecht m/f/Ehepaar'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+      isNoUpdate: true
+  - name: 'LegalStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtLegalStatus'
+      refField: 'LegalStatusNo'
+      isNoUpdate: true
+  - name: 'NogaCode2008'
+    description: ''
+    genericControls:
+      refTable: 'PtNoga2008'
+      refField: 'NogaCode'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'StatusNo'
+    description: 'Überwachungsstatus des Konsumkredits'
+    genericControls:
+      refTable: 'PtConsCreditStatus'
+      refField: 'StatusNo'
+      isNoUpdate: true
+  - name: 'CreditBalanceHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'ConsCreditTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtConsCreditType'
+      refField: 'TypeNo'
+      isNoUpdate: true
+  - name: 'FirstForward'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'ForwardDate'
+    description: 'Datum der erfolgten Meldung an IKO'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ForwardUser'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      defColumnPos: 6
+  - name: 'ForwardTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtConsCreditForwardType'
+      refField: 'TypeNo'
+  - name: 'LastDataRefresh'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'InternalRemark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 7
+  - name: 'MonitoringProcessId'
+    description: ''
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DataCheckUserName'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      hasDetailBtn: true
+      defColumnPos: 8
+      isNoUpdate: true
+  - name: 'IkoCustomerId'
+    description: 'Identification for the credit customer\r\n\r\nevery natural person has a own identification in the iko database'
+    genericControls:
+      defColumnPos: 9

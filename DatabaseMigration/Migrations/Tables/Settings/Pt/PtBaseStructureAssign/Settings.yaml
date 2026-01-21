@@ -1,0 +1,35 @@
+table:
+  name: 'PtBaseStructureAssign'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBaseStructure'
+      parentRelationField: 'StructureId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+  columns:
+  - name: 'StructureId'
+    description: ''
+    genericControls:
+      refTable: 'PtBaseStructure'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ForeignKeyId'
+    description: ''
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Amount'
+    description: ''

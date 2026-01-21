@@ -1,0 +1,39 @@
+table:
+  name: 'PrPublicOfficialMeeting'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtOfficialMeeting'
+      parentRelationField: 'OfficialMeetingId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Involved instruments'
+    - german:
+        formTitle: 'Beteiligte Wertpapiere'
+  columns:
+  - name: 'OfficialMeetingId'
+    description: ''
+    genericControls:
+      refTable: 'PtOfficialMeeting'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'PublicId'
+    description: 'VDF: IGD.GAI.MGG.VAI.K981.7842 (translate with PrPublic)'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1

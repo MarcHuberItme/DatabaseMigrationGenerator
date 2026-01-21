@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PMSGetPortfolioTransactions'
+  description: 'This procedure returns any transaction from or to a portfolio within a given interval (from/to).'

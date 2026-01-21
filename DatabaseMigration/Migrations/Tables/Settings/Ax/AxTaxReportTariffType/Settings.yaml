@@ -1,0 +1,27 @@
+table:
+  name: 'AxTaxReportTariffType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'AxTaxReportTariffType'
+        helpText: 'AxTaxReportTariffType'
+    - german:
+        formTitle: 'AxTaxReportTariffType'
+        helpText: 'AxTaxReportTariffType'
+    - french:
+        formTitle: 'AxTaxReportTariffType'
+        helpText: 'AxTaxReportTariffType'
+  columns:
+  - name: 'TypeNo'
+    description: ''

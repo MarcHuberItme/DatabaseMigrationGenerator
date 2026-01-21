@@ -1,0 +1,39 @@
+table:
+  name: 'IfDeliveryHistory'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'DeliverySettingId'
+    description: ''
+    genericControls:
+      refTable: 'IfDeliverySetting'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'DeliveryItemId'
+    description: ''
+    genericControls:
+      refTable: 'IfDeliveryItem'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'StartDateTime'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'EndDateTime'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'State'
+    description: '1=Running\r\n2=Completed'
+    genericControls:
+      defColumnPos: 5

@@ -1,0 +1,21 @@
+table:
+  name: 'DbCleanupToDelete'
+  description: 'This table contains all row id''s that will be deleted, as soon as they''re approved'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+  columns:
+  - name: 'RowId'
+    description: 'row id of an entry'
+  - name: 'GroupId'
+    description: 'Fk of Group'
+    genericControls:
+      refTable: 'DbCleanupGroup'
+      refField: 'Id'

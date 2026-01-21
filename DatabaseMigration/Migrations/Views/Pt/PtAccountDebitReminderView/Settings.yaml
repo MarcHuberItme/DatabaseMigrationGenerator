@@ -1,0 +1,143 @@
+view:
+  name: 'PtAccountDebitReminderView'
+  description: ''
+frontendView:
+  name: 'PtAccountDebitReminderView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+    isNotNull: true
+    defaultValue: '(GetDate())'
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+    isNotNull: true
+    defaultValue: '(GetDate())'
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'ReminderIssueDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ReminderSeqNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ReminderAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 3
+  - name: 'OpenAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 4
+  - name: 'InvoiceNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 5
+  - name: 'InvoiceTransDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'InvoiceType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsInvoiceType'
+      refField: 'InvoiceType'
+      defColumnPos: 7
+  - name: 'InvoiceCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 8
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 9
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      defColumnPos: 10
+  - name: 'PartnerDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 300
+    genericControls:
+      defColumnPos: 11
+  - name: 'SuppressReminder'
+    description: ''
+    dataType: 'varchar'
+    prec: 5
+    genericControls:
+      defColumnPos: 12
+  - name: 'BranchNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 13
+  - name: 'MgSACHB'
+    description: ''
+    dataType: 'varchar'
+    prec: 3
+    genericControls:
+      defColumnPos: 14
+  - name: 'PrintDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 15

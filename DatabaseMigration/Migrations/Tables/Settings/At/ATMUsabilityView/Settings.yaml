@@ -1,0 +1,83 @@
+table:
+  name: 'ATMUsabilityView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'ATMUsabilityView'
+        helpText: 'ATMUsabilityView'
+    - german:
+        formTitle: 'ATMUsabilityView'
+        helpText: 'ATMUsabilityView'
+  columns:
+  - name: 'DeviceId'
+    description: ''
+    genericControls:
+      refTable: 'AsATMConfig'
+      refField: 'DeviceID'
+      defColumnPos: 1
+  - name: 'EventCode'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'EventCounts'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'TimeTotal'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'IsCritical'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'IsBM'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'IsRM'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'OnOffStatus'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'BM'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'RM'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'CHFOut'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'EUROut'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'PayIn'
+    description: ''
+    genericControls:
+      defColumnPos: 12
+  - name: 'Cash'
+    description: ''
+    genericControls:
+      defColumnPos: 13
+  - name: 'Text'
+    description: ''
+    genericControls:
+      defColumnPos: 14
+  - name: 'ViewId'
+    description: ''

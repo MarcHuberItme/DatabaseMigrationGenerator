@@ -1,0 +1,49 @@
+table:
+  name: 'ReBuildingSubType'
+  description: 'subypes for certain building types'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Building sub type'
+    - german:
+        formTitle: 'Gebäudeuntertypen'
+  columns:
+  - name: 'BuildingSubTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ForBuildingType01'
+    description: ''
+  - name: 'ForBuildingType02'
+    description: ''
+  - name: 'ForBuildingType03'
+    description: ''
+  - name: 'ForBuildingType04'
+    description: ''
+  - name: 'ForBuildingType05'
+    description: ''
+  - name: 'ForBuildingType06'
+    description: ''
+  - name: 'ForBuildingType07'
+    description: ''
+  - name: 'ForBuildingType10'
+    description: ''
+  - name: 'ForBuildingType13'
+    description: ''
+  - name: 'ForBuildingType15'
+    description: ''
+  - name: 'ForBuildingType90'
+    description: ''
+  - name: 'SortNo'
+    description: ''

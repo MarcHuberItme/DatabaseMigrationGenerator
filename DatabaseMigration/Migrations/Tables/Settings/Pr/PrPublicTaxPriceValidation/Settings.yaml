@@ -1,0 +1,28 @@
+table:
+  name: 'PrPublicTaxPriceValidation'
+  description: 'VDF-Domaine: 3990 K-29'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - german:
+        formTitle: 'Gültigkeit Steuerkurse'
+  columns:
+  - name: 'TaxPriceValidation'
+    description: 'Maintained by VDF-Metadata'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CantonSymbol'
+    description: ''
+    genericControls:
+      refTable: 'AsCanton'
+      refField: 'CantonSymbol'
+      defColumnPos: 2

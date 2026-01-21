@@ -1,0 +1,28 @@
+table:
+  name: 'PtInvestmentCustomerQualMIFID'
+  description: 'Kundenqualifikation MIFID (SEBA)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 492eb932-11a5-4c01-acd4-498e5cb33327
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Kundenqual MIFID SEBA'
+        helpText: 'Kundenqual MIFID SEBA'
+    - german:
+        formTitle: 'Kundenqual MIFID SEBA'
+        helpText: 'Kundenqual MIFID SEBA'
+    - french:
+        formTitle: 'Kundenqual MIFID SEBA'
+        helpText: 'Kundenqual MIFID SEBA'
+  columns:
+  - name: 'CustQualMIFIDNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

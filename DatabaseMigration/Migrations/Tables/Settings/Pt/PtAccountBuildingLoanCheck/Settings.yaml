@@ -1,0 +1,58 @@
+table:
+  name: 'PtAccountBuildingLoanCheck'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Building Loan Check'
+    - german:
+        formTitle: 'Baukreditkontrolle'
+  columns:
+  - name: 'AccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'CheckGroupPos'
+    description: ''
+    genericControls:
+      refTable: 'PtBuildingLoanCheckGroup'
+      refField: 'CheckGroupPos'
+      defColumnPos: 1
+  - name: 'Calculation'
+    description: 'Kostenvoranschlag (KV)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'InvoiceDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'CompanyName'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'InternalActivity'
+    description: 'Eigenleistung \r\n0 = Nein\r\n1 = Ja'
+  - name: 'ContractAmount'
+    description: 'Vetrag / Offerte'
+    genericControls:
+      defColumnPos: 5
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

@@ -1,0 +1,32 @@
+table:
+  name: 'AsMailConfigParam'
+  description: 'This table contains the information of parameter and their values for the configuration of mail system.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    visumLevel: 1
+    cacheLevel: 3
+    descField: 'ParamName'
+    uiTableDescription:
+    - english:
+        formTitle: 'Mail Config Params'
+        helpText: 'Mail Configuration Parameters'
+    - german:
+        formTitle: 'Mail Config Params'
+        helpText: 'Mail Configuration Parameters'
+  columns:
+  - name: 'PageItemId'
+    description: ''
+    genericControls:
+      refTable: 'AsMailConfigPageItem'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ParamName'
+    description: 'Name of the parameter.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Value'
+    description: 'Value of the parameter.'

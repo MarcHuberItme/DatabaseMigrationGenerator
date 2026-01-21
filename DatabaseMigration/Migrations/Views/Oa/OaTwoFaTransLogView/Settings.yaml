@@ -1,0 +1,120 @@
+view:
+  name: 'OaTwoFaTransLogView'
+  description: ''
+frontendView:
+  name: 'OaTwoFaTransLogView'
+  description: 'Created for code generation purposes.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'TwoFaTransLogId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'TwoFaTransResultLogId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'LogVersionNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+  - name: 'SessionId'
+    description: 'Referring to two-factor authentication session.'
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'Factor'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 50
+  - name: 'EbankingAgreementId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'InitiationDateTime'
+    description: 'Datetime when the two-factor request was initiated.'
+    dataType: 'datetime'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 1
+  - name: 'TwoFaUserId'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 200
+  - name: 'MessageContent'
+    description: 'Content of the two-factor authentication request.'
+    dataType: 'nvarchar'
+    prec: 4000
+    genericControls:
+      multiLine: true
+      defColumnPos: 7
+  - name: 'UseCase'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 50
+    genericControls:
+      defColumnPos: 6
+  - name: 'TwoFaProviderTenantId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'Provider'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 3
+  - name: 'Tenant'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 4
+  - name: 'DeviceId'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'ResultDateTime'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 2
+  - name: 'OriginalResult'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 100
+  - name: 'ResultTypeNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ResultType'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 5
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdPendingChanges'
+    dataType: 'int'
+  - name: 'HdPendingSubChanges'
+    dataType: 'int'
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'

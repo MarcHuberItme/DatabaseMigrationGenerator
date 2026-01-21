@@ -1,0 +1,58 @@
+table:
+  name: 'ReIaziEAPXMLSchema'
+  description: 'the xml model of Iazi EAP'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ReIaziEAPXMLSchema'
+        helpText: 'ReIaziEAPXMLSchema'
+    - german:
+        formTitle: 'ReIaziEAPXMLSchema'
+        helpText: 'ReIaziEAPXMLSchema'
+  columns:
+  - name: 'Sector'
+    description: ''
+  - name: 'Factor'
+    description: ''
+  - name: 'Category'
+    description: ''
+  - name: 'FieldDesc'
+    description: ''
+  - name: 'XMLElement'
+    description: ''
+  - name: 'FieldLoc'
+    description: ''
+  - name: 'DataType'
+    description: ''
+  - name: 'ListRefNo'
+    description: ''
+  - name: 'AsEFH'
+    description: ''
+  - name: 'AsMFH'
+    description: ''
+  - name: 'AsStwE'
+    description: ''
+  - name: 'LanguageNo'
+    description: ''
+  - name: 'ReXMLElement'
+    description: ''
+  - name: 'AsEFHCall'
+    description: ''
+  - name: 'AsMFHCall'
+    description: ''
+  - name: 'AsStwECall'
+    description: ''
+  - name: 'AsReRet'
+    description: ''
+  - name: 'AllowChange'
+    description: ''

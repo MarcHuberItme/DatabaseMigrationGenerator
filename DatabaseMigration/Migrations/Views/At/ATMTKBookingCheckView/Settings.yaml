@@ -1,0 +1,98 @@
+view:
+  name: 'ATMTKBookingCheckView'
+  description: ''
+frontendView:
+  name: 'ATMTKBookingCheckView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ATMTKBookingCheckView'
+        helpText: 'ATMTKBookingCheckView'
+    - german:
+        formTitle: 'ATMTKBookingCheckView'
+        helpText: 'ATMTKBookingCheckView'
+  columns:
+  - name: 'DeviceID'
+    description: ''
+    dataType: 'varchar'
+    prec: 8
+    genericControls:
+      refTable: 'AsATMConfig'
+      refField: 'DeviceID'
+      defColumnPos: 1
+  - name: 'ATMorKTB'
+    description: ''
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      defColumnPos: 3
+  - name: 'TransDateTime'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 4
+  - name: 'PaymentAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 5
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      defColumnPos: 6
+  - name: 'CardNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 7
+  - name: 'ATMAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'Transport'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'TKAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      defColumnPos: 9
+  - name: 'SNBAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'CardAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'CardClearingNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'ValueDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 13
+  - name: 'TransText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100

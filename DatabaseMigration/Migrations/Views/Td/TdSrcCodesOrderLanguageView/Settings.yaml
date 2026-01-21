@@ -1,0 +1,21 @@
+view:
+  name: 'TdSrcCodesOrderLanguageView'
+  description: 'Hilfs-View zur Selektion der Report Language Werte'
+frontendView:
+  name: 'TdSrcCodesOrderLanguageView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 83458b04-5fa9-42c9-a46e-a39780ca3259
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ReportLanguage'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    isUnique: true
+    prec: 50

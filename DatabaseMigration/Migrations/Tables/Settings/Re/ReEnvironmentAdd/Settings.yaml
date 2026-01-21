@@ -1,0 +1,79 @@
+table:
+  name: 'ReEnvironmentAdd'
+  description: 'environment addition \r\n\r\nFIS-2000: GR_UMGZUSC'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'environment addition'
+    - german:
+        formTitle: 'Umgebungszuschläge'
+    - french:
+        formTitle: 'ajout d''environnement'
+    - italian:
+        formTitle: 'aggiunta dell''ambiente'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'EnvironmentAddType'
+    description: '\r\nUmgebungszuschlag, z.B. Swimmingpool, Pergola etc.\r\n\r\nFIS-2000: GR_UMGZUSC_CD'
+    genericControls:
+      refTable: 'ReEnvironmentAddType'
+      refField: 'EnvironmentAddType'
+      defColumnPos: 1
+  - name: 'ValuationNo'
+    description: 'FIS-2000: STZ_RELE_CD'
+    genericControls:
+      refTable: 'ReEnvironmentAddValuation'
+      refField: 'ValuationNo'
+  - name: 'Number'
+    description: 'Anzahl\r\n\r\nFIS-2000: GR_UMGZUSC.ANZ'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValueDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ValueAmount'
+    description: 'Standardpreis kommt aus der Tabelle ReEnvironmentAddType, dieser Preis kann manuell übersteuert werden (Übersteuerung nur möglich, wenn in ReEnvironmentAddType dies so erlaubt wird).'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsRented'
+    description: ''
+  - name: 'IsTrade'
+    description: ''
+  - name: 'IsRealValueRelevant'
+    description: ''
+  - name: 'IsEarningValueRelevant'
+    description: ''
+  - name: 'IsMarketValueRelevant'
+    description: ''
+  - name: 'ValueAmount2'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 4

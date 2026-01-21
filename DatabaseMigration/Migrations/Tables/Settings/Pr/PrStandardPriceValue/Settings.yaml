@@ -1,0 +1,42 @@
+table:
+  name: 'PrStandardPriceValue'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Standard Price Value'
+    - german:
+        formTitle: 'Standard Preis Wert'
+  columns:
+  - name: 'StandardPriceNo'
+    description: 'foreign-key;  Candidate-key of PrStandardPriceType'
+    genericControls:
+      refTable: 'PrStandardPriceType'
+      refField: 'StandardPriceNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'InterestRate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'CommissionRate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ProvisionRate'
+    description: ''
+    genericControls:
+      defColumnPos: 6

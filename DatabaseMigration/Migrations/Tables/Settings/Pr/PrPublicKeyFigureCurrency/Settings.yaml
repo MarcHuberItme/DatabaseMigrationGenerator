@@ -1,0 +1,36 @@
+table:
+  name: 'PrPublicKeyFigureCurrency'
+  description: 'list of all currencies available for the type (e.g. PRC) by the provider (e.g. Edgelab)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'key figures currencies'
+        helpText: 'key figures currencies'
+    - german:
+        formTitle: 'Kennzahl Währungen'
+        helpText: 'Kennzahl Währungen'
+  columns:
+  - name: 'KeyFigureMappingId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicKeyFigureMapping'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'Currency'
+    description: 'available currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'UseForInstruments'
+    description: 'flag if this currency is needed for the instruments (PrPublicKeyFigure)'
+    genericControls:
+      defColumnPos: 3

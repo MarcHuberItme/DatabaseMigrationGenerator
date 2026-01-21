@@ -1,0 +1,149 @@
+table:
+  name: 'AsSwissTownPartAdditions'
+  description: 'real estate relevant additions to parts of AsSwissTown'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Additions to AsSwissTown'
+    - german:
+        formTitle: 'Zusatzdaten zu Gemeinde'
+  columns:
+  - name: 'SwissTownNo'
+    description: ''
+    genericControls:
+      refTable: 'AsSwissTown'
+      refField: 'SwissTownNo'
+      defColumnPos: 1
+  - name: 'TownTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReTownType'
+      refField: 'TownTypeNo'
+      defColumnPos: 2
+  - name: 'TownCategory'
+    description: ''
+    genericControls:
+      refTable: 'ReTownCategory'
+      refField: 'TownCategory'
+      defColumnPos: 3
+  - name: 'SituationGeneral'
+    description: ''
+  - name: 'SituationTraffic'
+    description: ''
+  - name: 'Rating'
+    description: 'Rating: A, B or C'
+  - name: 'ValueM2LandLivHBLFrontFrom'
+    description: ''
+  - name: 'ValueM2LandLivHBLFrontTo'
+    description: ''
+  - name: 'ValueM2LandLivCommunityFrom'
+    description: ''
+  - name: 'ValueM2LandLivCommunityTo'
+    description: ''
+  - name: 'ValueM2LandLivTaxFrom'
+    description: ''
+  - name: 'ValueM2LandLivTaxTo'
+    description: ''
+  - name: 'ValueM2LandLivHBLModelFrom'
+    description: ''
+  - name: 'ValueM2LandLivHBLModelTo'
+    description: ''
+  - name: 'ValueM2LandLivFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValueM2LandLivTo'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValueM2LandLiv'
+    description: ''
+  - name: 'ValueM2LandLivTraHBLFrontFrom'
+    description: ''
+  - name: 'ValueM2LandLivTraHBLFrontTo'
+    description: ''
+  - name: 'ValueM2LandLivTraCommunityFrom'
+    description: ''
+  - name: 'ValueM2LandLivTraCommunityTo'
+    description: ''
+  - name: 'ValueM2LandLivTraTaxFrom'
+    description: ''
+  - name: 'ValueM2LandLivTraTaxTo'
+    description: ''
+  - name: 'ValueM2LandLivTraFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'ValueM2LandLivTraTo'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'ValueM2LandTraIndHBLFrontFrom'
+    description: ''
+  - name: 'ValueM2LandTraIndHBLFrontTo'
+    description: ''
+  - name: 'ValueM2LandTraIndCommunityFrom'
+    description: ''
+  - name: 'ValueM2LandTraIndCommunityTo'
+    description: ''
+  - name: 'ValueM2LandTraIndTaxFrom'
+    description: ''
+  - name: 'ValueM2LandTraIndTaxTo'
+    description: ''
+  - name: 'ValueM2LandTraIndFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'ValueM2LandTraIndTo'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'ValueM2LandCultivHBLFrontFrom'
+    description: ''
+  - name: 'ValueM2LandCultivHBLFrontTo'
+    description: ''
+  - name: 'ValueM2LandCultivCommunityFrom'
+    description: ''
+  - name: 'ValueM2LandCultivCommunityTo'
+    description: ''
+  - name: 'ValueM2LandCultivTaxFrom'
+    description: ''
+  - name: 'ValueM2LandCultivTaxTo'
+    description: ''
+  - name: 'ValueM2LandCultivFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'ValueM2LandCultivTo'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'ValueM2RentSTWELivFrom'
+    description: ''
+  - name: 'ValueM2RentSTWELivTo'
+    description: ''
+  - name: 'ValueM2SellSTWELivFrom'
+    description: ''
+  - name: 'ValueM2SellSTWELivTo'
+    description: 'ValueM2SellSTWELivFrom'
+  - name: 'ValueUndergroundParkingFrom'
+    description: ''
+  - name: 'ValueUndergroundParkingTo'
+    description: ''
+  - name: 'ValueHobbyRoomFrom'
+    description: ''
+  - name: 'ValueHobbyRoomTo'
+    description: ''
+  - name: 'SwissTownPartNo'
+    description: ''
+    genericControls:
+      refTable: 'AsSwissTownPart'
+      refField: 'SwissTownPartNo'

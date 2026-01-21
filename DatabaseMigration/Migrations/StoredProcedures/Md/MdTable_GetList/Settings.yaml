@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'MdTable_GetList'
+  description: 'GetBrowseList für Tab. MdTable definiert als View Frontend'

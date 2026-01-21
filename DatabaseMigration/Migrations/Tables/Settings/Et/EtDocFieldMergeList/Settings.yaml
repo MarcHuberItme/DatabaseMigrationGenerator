@@ -1,0 +1,23 @@
+table:
+  name: 'EtDocFieldMergeList'
+  description: 'List of fields that have to be updated for document type'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'DocumentType'
+    description: ''
+    genericControls:
+      refTable: 'EtDocumentType'
+      refField: 'DocumentType'
+      defColumnPos: 1
+  - name: 'FieldName'
+    description: ''
+    genericControls:
+      defColumnPos: 2

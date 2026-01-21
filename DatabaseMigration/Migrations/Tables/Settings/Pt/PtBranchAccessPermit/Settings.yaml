@@ -1,0 +1,47 @@
+table:
+  name: 'PtBranchAccessPermit'
+  description: 'Contains additional numbers of branches which are allowed to view and modifiy a certain partner, even if the partner is not assigned to that branch in PtBase.BranchNo.\r\n\r\nThis check is only active if the branch security flag in the registry is set to true.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 2
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Permitted branches'
+    - german:
+        formTitle: 'Zugelassene GST'
+    - french:
+        formTitle: 'Bureau approuvé'
+  columns:
+  - name: 'PartnerId'
+    description: 'Relation to PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'BranchNo'
+    description: 'Branch which is also allowed to view and modifiy the partner'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 1
+  - name: 'Comment'
+    description: 'Comment field related to the customer instruction'
+    genericControls:
+      multiLine: true
+  - name: 'MgVrxKey'
+    description: ''
+    genericControls:
+      isOnlyForMig: true

@@ -1,0 +1,47 @@
+table:
+  name: 'ReIaziUserInput'
+  description: 'To store the Input from the User for creation of Real Estate portfolio in Finstar.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Iazi User Input'
+        helpText: 'Iazi User Input'
+    - german:
+        formTitle: 'Iazi User Input'
+        helpText: 'Iazi User Input'
+  columns:
+  - name: 'IaziReoDataId'
+    description: ''
+    genericControls:
+      refTable: 'ReIaziReoData'
+      refField: 'Id'
+  - name: 'GBNo'
+    description: ''
+  - name: 'GBNoAdd'
+    description: ''
+  - name: 'GBPlanNo'
+    description: ''
+  - name: 'GBNoStpz'
+    description: ''
+  - name: 'GBNoAddStpz'
+    description: ''
+  - name: 'GBPLanNoStpz'
+    description: ''
+  - name: 'UseExistingStpz'
+    description: ''
+  - name: 'HasBuildRight'
+    description: 'Flag will be true if the IAZi data has BuildRight (Baurecht) information.'
+  - name: 'GBNoBR'
+    description: 'GBNo for BildRight Premises.'
+  - name: 'GbNoAddBR'
+    description: 'for BildRight Premises.'
+  - name: 'GBPlanNoBR'
+    description: 'for BildRight Premises.'

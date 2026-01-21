@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CyRateArchive_DayEndRoutine'
+  description: 'Selects data from CyRateArchive which has to bee removed from CyRateArchive at day end.'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPaymentRules'
+  description: 'Get the Payment Rules for one AccountBase ID\r\n2013-03-15/ram: add select for table PtAgrRetainedMail, PtAgrSafeDepositBox and PtAgrNightCashBox'

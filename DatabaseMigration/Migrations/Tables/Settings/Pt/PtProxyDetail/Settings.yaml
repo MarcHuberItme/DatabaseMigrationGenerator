@@ -1,0 +1,69 @@
+table:
+  name: 'PtProxyDetail'
+  description: 'detail information of a slave-record; for example include/exclude of accounts/portfolios by a proxy - HISTORY darf auf keinen Fall ausgeschaltet werden ! Nachweis des Bevollmächtigten Registers.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'RelationSlaveId'
+    description: 'foreign-key;  Id of PtRelationSlave'
+    genericControls:
+      refTable: 'PtRelationSlave'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PortfolioId'
+    description: 'foreign-key;  Id of PtPortfolioView (PtPortfolio)\r\nNo updates because of Migration 13.02.2002/mct'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'AccountId'
+    description: 'foreign-key;  Id of PtAccountView (PtAccountBase)\r\nNo updates because of Migration 13.02.2002/mct'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'SafeDepositId'
+    description: 'if filled, proxy is only valid for this Safe Deposit Box\r\n(a Partner-Proxy includes all Safe Deposit Boxes)'
+    genericControls:
+      refTable: 'PtAgrSafeDepositView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'ValidFrom'
+    description: 'in case of proxy (Vollmacht) it''s not allowed to modify a onces given date'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValidTo'
+    description: 'in case of proxy (Vollmacht) it''s not allowed to modify a onces given date'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ProxyRightNo'
+    description: 'foreign-key;  candidate-key of PtProxyRight (PtProxyRightNo)\r\nauthority to represent somebody else alone (singleproxy) or with others (collectiveproxy)'
+    genericControls:
+      refTable: 'PtProxyRight'
+      refField: 'ProxyRightNo'
+      defColumnPos: 3
+  - name: 'DisposalRightNo'
+    description: 'foreign-key;  candidate-key of PtDisposalRight (DisposalRightNo)\r\nin what way the accounts of the master are available for use'
+    genericControls:
+      refTable: 'PtDisposalRight'
+      refField: 'DisposalRightNo'
+      defColumnPos: 6
+  - name: 'Instruction'
+    description: 'statements telling what is to do'
+    genericControls:
+      multiLine: true
+  - name: 'InstructionVerifyFlag'
+    description: 'if true, the workflow-process will stop and the user has to check the instructions'

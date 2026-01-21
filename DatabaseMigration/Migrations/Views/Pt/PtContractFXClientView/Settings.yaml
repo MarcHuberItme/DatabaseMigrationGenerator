@@ -1,0 +1,137 @@
+view:
+  name: 'PtContractFXClientView'
+  description: 'Porject: FXClientAdvisor'
+frontendView:
+  name: 'PtContractFXClientView'
+  description: 'View - Base Table = PtContrat'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ContractType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtContractType'
+      refField: 'ContractType'
+      defColumnPos: 2
+  - name: 'AgentId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'InternalRemark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+    genericControls:
+      multiLine: true
+  - name: 'OrderDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'Amount'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+  - name: 'DateFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'DateTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Status'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtContractStatus'
+      refField: 'ContractStatusNo'
+  - name: 'FxSellCurrency'
+    description: ''
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'FxBuyCurrency'
+    description: ''
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ContractNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'FxDebitAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtAccountAllView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'FxCreditAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtAccountAllView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'ExternalRemark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      multiLine: true
+  - name: 'ContactMediaNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsContactMedia'
+      refField: 'MediaNo'
+  - name: 'AdditionalInfo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+    genericControls:
+      multiLine: true
+  - name: 'FxSellCurrMktRate'
+    description: ''
+    dataType: 'float'
+  - name: 'FxBuyCurrMktRate'
+    description: ''
+    dataType: 'float'
+  - name: 'FxTransId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true

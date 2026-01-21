@@ -1,0 +1,30 @@
+table:
+  name: 'AsEventSubscription'
+  description: 'List of Subscriptions to a specific event'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Event Subscriptions'
+    - german:
+        formTitle: 'Ereignis Abonnements'
+  columns:
+  - name: 'EventName'
+    description: 'Event Name the subscription is for'
+  - name: 'MachineName'
+    description: 'Network name of the client machine'
+  - name: 'UserName'
+    description: 'User name who subscribed for the event'
+  - name: 'ClientIP'
+    description: 'IP Addresss of the subscribing client'
+  - name: 'ClientPort'
+    description: 'Port number on which the client is listening'
+  - name: 'SubscriptionTime'
+    description: 'Date and Time of the subscription'

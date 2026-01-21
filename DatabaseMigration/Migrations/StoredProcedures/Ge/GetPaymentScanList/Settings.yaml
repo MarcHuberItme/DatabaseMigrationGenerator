@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPaymentScanList'
+  description: 'retrieve payment scan information to process transfer to PtPaymentOrder/PtPaymentOrderDetail'

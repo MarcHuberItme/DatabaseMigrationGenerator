@@ -1,0 +1,22 @@
+table:
+  name: 'IfSettingGroupConfig'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'Name'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Type'
+    description: '1: Extraction\r\n2: Transformation\r\n3: Load'
+    genericControls:
+      defColumnPos: 2

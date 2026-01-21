@@ -1,0 +1,3 @@
+function:
+  name: 'MMClosingReportsPendingPrint'
+  description: 'Function to get list of pending money market closing reports'

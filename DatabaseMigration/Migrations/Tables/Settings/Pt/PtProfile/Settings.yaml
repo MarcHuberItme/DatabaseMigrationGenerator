@@ -1,0 +1,394 @@
+table:
+  name: 'PtProfile'
+  description: 'information about a partner, e.g. future potentia, money laudering'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    navigation:
+      navigationConditionField: 'MoneyLaunderSuspect'
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'partner profile'
+    - german:
+        formTitle: 'Profil'
+    - french:
+        formTitle: 'Profil partenaire'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'MoneyLaunderSuspect'
+    description: 'NO Update, weil der Wert über einen Batchprozess gesetzt wird\r\n0 = Keine Anhaltspunkte (Default) \r\n1 = Ein Verdachtskriterium erfüllt \r\n2 = Mehrer Verdachtskriterien erfüllt'
+    genericControls:
+      refTable: 'PtProfileMoneyLaunderSuspect'
+      refField: 'MoneyLaunderSuspect'
+      isNoUpdate: true
+  - name: 'PoliticalExposedPerson'
+    description: 'MoneyLaunderSuspect = 2\r\nTrue 1 = the partner is political exposed person (PEP)\r\nFalse  0 = the partner is not a political exposes person (PEP)\r\n\r\nNicht mehr in Gebrauch, wurde durch Feld PEPTypeNo ersetzt.'
+  - name: 'FinancialAffaires'
+    description: 'RK1\r\nTrue 1 = Geschäftsbeziehung wird auf Grund anderer Umstände (nicht abschliessend definiert) als erhöhtes Risiko betrachtet.\r\nFalse 0 = keines'
+  - name: 'SuspectRelations'
+    description: 'MoneyLaunderSuspect = 2 \r\nTrue 1 = Meldung nach Art. 9 oder Art. 305 erstattet .... Verdachtsmomente sind noch nicht vollständig ausgeräumt.\r\nFalse 0 = there are no information'
+  - name: 'MoneyLaunderRemark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SuppressAllEvents'
+    description: 'If True all events have to be suppressed.\r\nDefault = 0 = False\r\n1 = True = Yes'
+  - name: 'Event01'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event02'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event03'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event04'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event05'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event06'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event07'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event08'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event09'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event10'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event11'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event12'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event13'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event14'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event15'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event16'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event17'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event18'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event19'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event20'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event21'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event22'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event23'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event24'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event25'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event26'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event27'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event28'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event29'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'Event30'
+    description: ''
+    genericControls:
+      refTable: 'AsDigit0To9'
+      refField: 'Digit'
+  - name: 'RiskAbilityNo'
+    description: 'Risikofähigkeit / Risk Ability\r\n\r\n'
+    genericControls:
+      refTable: 'PtProfileRiskAbility'
+      refField: 'RiskAbilityNo'
+  - name: 'RiskReadinessNo'
+    description: 'Risk Readiness / Risikobereitschaft'
+    genericControls:
+      refTable: 'PtProfileRiskReadiness'
+      refField: 'RiskReadinessNo'
+  - name: 'InvestmentStrategyNo'
+    description: 'Recommaned Investment strategy / Anlagestrategie empfohlen'
+    genericControls:
+      refTable: 'PtProfileInvestmentStrategy'
+      refField: 'InvestmentStrategyNo'
+  - name: 'IsQualifiedInvestor'
+    description: 'flag if a customer is a qualified investor (used for fonds stockexorders (KAG))'
+  - name: 'FreeAvailableCapital'
+    description: 'Frei verfügbares Vermögen (im Rahmen der Risikobereitschaft, -fähigkeit und Anlagestrategie zu erheben).'
+  - name: 'IsOffshoreCompany'
+    description: 'WILL BE DELETED / FELD WIRD GELÖSCHT'
+  - name: 'OffshoreCompanyRemark'
+    description: 'remark concerning offshore company'
+    genericControls:
+      multiLine: true
+  - name: 'TelerateNo'
+    description: 'unique number from orell fuessli - telerate - used for elektronic message exchange (has to be updated automatically through data delivering of ofa)'
+  - name: 'CompanyNo'
+    description: 'Verbindung zum HR-Auszug\r\nFeld nicht mehr verwenden!'
+    genericControls:
+      hasDetailBtn: true
+  - name: 'CompanyStatusNo'
+    description: 'Status des HR Eintrags\r\nFeld nicht mehr verwenden!'
+    genericControls:
+      refTable: 'PtProfileCompanyStatus'
+      refField: 'CompanyStatusNo'
+  - name: 'CompanyIncorporated'
+    description: 'Gesellschaft wurde im Register eingetragen (Inkorporiert)\r\nFeld nicht mehr verwenden!'
+  - name: 'ProfessionId'
+    description: 'Privat Persons (male / female) can have a profession'
+    genericControls:
+      refTable: 'PtProfession'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'EducationLevelNo'
+    description: ''
+    genericControls:
+      refTable: 'PtEducationLevel'
+      refField: 'EducationLevelNo'
+  - name: 'MarriageLawTypeNo'
+    description: 'Eherecht\r\n- Gütertrennung / - Gütergemeinschaft / - Errungenschaftsbeteiligung'
+    genericControls:
+      refTable: 'PtMarriageLawType'
+      refField: 'MarriageLawTypeNo'
+  - name: 'ProxySuspectFactor'
+    description: 'The purpose of the field is to reduce the database activity as well as to maintain the original data as long as necessary in the field MoneyLaunderSuspect, before the new defintion of the Partners is ready. While setting the MoneyLaunderSuspect.\r\n'
+  - name: 'SuspectEditing'
+    description: '0 - Edited by the Generic Editor or by the Batch process ''FsAmlSuspectUpdation''\r\n1 - Edited by the Partner Administration \r\n(e.g. by some Manager to override the editing of BatchProcess) \r\nWhile Editing made by any Manager the field ''ExemptionEndDate'' is recommended to fill. This partner will be exempted from scanning and upation of suspect factor until the ExemptionEndDate and if ExemptionEndDate is null then the partner will   be exempted for unlimited period of time.\r\n'
+  - name: 'ResidentPermit'
+    description: 'Resident Permit Types like B, C, ...etc.'
+  - name: 'ExemptionEndDate'
+    description: 'FsAMLSuspectUpdation Process will not include the record for scanning and updation of Suspect Identifier until the exemption date reaches or  If it is Null.'
+  - name: 'CertificationTypeNo'
+    description: 'Zertifizierung, z.B. ISO'
+    genericControls:
+      refTable: 'PtProfileCertificationType'
+      refField: 'CertificationTypeNo'
+  - name: 'VatNo'
+    description: 'MwST Nummer'
+  - name: 'IsKnownPersonally'
+    description: 'WILL BE DELETED / FELD WIRD GELÖSCHT'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'HasRelRoot'
+    description: 'FELD WIRD GELÖSCHT / WILL BE DELETED'
+    minValue: ' '
+  - name: 'RelRootNo'
+    description: 'Definiert, welche Beziehung der Partner, welcher nicht im Einzugsgebiet (Land) EZG domiziliert ist, zur Region / Bank hat.'
+    genericControls:
+      refTable: 'PtProfileRelRoot'
+      refField: 'RelRootNo'
+  - name: 'HasRelMonitored'
+    description: '0 = Nein\r\n1 = Ja (Partner unterhält persönliche Beziehungen zur OST-Länder)'
+  - name: 'HasRelBusinessMonitored'
+    description: '0 = Nein\r\n1 = Ja (Partner unterhält auch geschäftliche Beziehungen zu OST)'
+  - name: 'OpenedAsCorr'
+    description: 'Eröffnung auf dem Korrespondenzweg\r\n0 = Nein\r\n1 = Ja (Formular A ist obligatorisch)'
+  - name: 'ProcessId'
+    description: 'The ProcessId to lock the record when a AML workflow is under process'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'PurposeTypeNo'
+    description: 'Zweck der Geschäftsbeziehung'
+    genericControls:
+      refTable: 'PtProfilePurposeType'
+      refField: 'PurposeTypeNo'
+  - name: 'OffshoreStatusNo'
+    description: 'NULL = unknown offshore status\r\n0 = not an offshore company\r\n1 = offshore company'
+    genericControls:
+      refTable: 'PtOffshoreStatus'
+      refField: 'StatusNo'
+  - name: 'SuspectCount'
+    description: 'The counter of suspect factor'
+  - name: 'AllowsInfoFullAge'
+    description: '0 = No\r\n1 = Yes (Informationen bei Volljährigkeit erlaubt)'
+  - name: 'TaxReportSubscriptionEndYear'
+    description: ''
+    minValue: '2000'
+    maxValue: '9999'
+  - name: 'ManualTaxReportBeginDate'
+    description: ''
+  - name: 'TaxService'
+    description: 'Tax Service (Steuerdienstleistung wird erbracht) (J/N)'
+  - name: 'WillAdmin'
+    description: 'Willensvollstrecker Mandat vorhanden (J/N)'
+  - name: 'NoBvg'
+    description: 'true, if customer does not pay in a BVG retirement plan.'
+  - name: 'FatcaStatusNo'
+    description: 'Fatca Status'
+    genericControls:
+      refTable: 'FaStatus'
+      refField: 'StatusNo'
+  - name: 'CrossBorderRebate'
+    description: 'rebate for the crossborder charge'
+  - name: 'HasSecurityWaiver'
+    description: 'flag used to check the stockex-orderrestriction for SAL. In some countries a buy of an instrument is only allowed if the customer has this waiver.\r\ntrue= the customer allowed the banc to give out informations about his securities.'
+  - name: 'ReferenceCurrency'
+    description: 'Mainly used for portfolio management system to specify partner reference currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'PEPTypeNo'
+    description: 'Typisierung politisch exponierter Personen'
+    genericControls:
+      refTable: 'PtProfilePEPType'
+      refField: 'PEPTypeNo'
+  - name: 'NonProfitOrganization'
+    description: 'Definiert, ob eine Organisation gemeinnützig ist oder nicht (ja/nein)'
+  - name: 'FinfraGClassType'
+    description: 'FinfraG: Klassifizierer der Gegenpartei'
+    genericControls:
+      refTable: 'PtCounterpartyClassType'
+      refField: 'ClassType'
+  - name: 'Remarks'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'VIPCustomer'
+    description: ''
+  - name: 'CryptoCompany'
+    description: ''
+  - name: 'IsAssetRisk'
+    description: ''
+  - name: 'AssetRiskTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsRiskAssetType'
+      refField: 'RiskTypeNo'
+  - name: 'SoWTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsRiskSoWType'
+      refField: 'SoWTypeNo'
+  - name: 'IsIndustryRisk'
+    description: ''
+  - name: 'LargeClient'
+    description: 'SEBA'
+  - name: 'Structures'
+    description: 'Strukturen für Sitzgesellschaften (SEBA)'
+  - name: 'IndustryRiskNo'
+    description: ''
+    genericControls:
+      refTable: 'PtProfileIndustryRisk'
+      refField: 'IndustryRiskNo'
+  - name: 'MoneyLaunderSuspectManual'
+    description: 'Field for manual Risk for SEBA'
+    genericControls:
+      refTable: 'PtProfileMoneyLaunderSuspect'
+      refField: 'MoneyLaunderSuspect'
+  - name: 'HasCountryRisk'
+    description: ''
+  - name: 'CountryRiskNo'
+    description: 'For Seba'
+    genericControls:
+      refTable: 'AsCountryRisk'
+      refField: 'RiskNo'
+  - name: 'TaxReportRebate'
+    description: ''
+  - name: 'ComplexStructure'
+    description: 'SEBA'
+  - name: 'ComplexRelationship'
+    description: 'SEBA'

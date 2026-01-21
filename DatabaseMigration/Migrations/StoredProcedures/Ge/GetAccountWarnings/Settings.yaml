@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountWarnings'
+  description: 'read account blockings, warnings and remarks from PtInfoPoolAccount that contain words related to blockings - same as GetAccountWarnings, but uses PtInfoPoolAccount instead of MgXS40'

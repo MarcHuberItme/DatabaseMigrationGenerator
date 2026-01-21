@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PMSGetTransactionDetails'
+  description: 'Get transaction details like cost/fee/coupon/dividends/interrest...'

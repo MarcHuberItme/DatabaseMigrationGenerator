@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'IsAuthorized'
+  description: 'Read all GroupIds in AsGroupMember where the GroupTypeId is equal to InputParameter GroupTypeId and the UserId is equal to InputParameter UserId.\r\nIf there is any entry in AsUserAccess with one of the readed GroupIds and the InputParameter PrivacyLock return true.\r\n'

@@ -1,0 +1,26 @@
+table:
+  name: 'FaLeaverPartner'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FaLeaverId'
+    description: ''
+    genericControls:
+      refTable: 'FaLeaver'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1

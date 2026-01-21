@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetProductCompByCurrency'
+  description: 'Get a list of components for a specified product in the desired currency'

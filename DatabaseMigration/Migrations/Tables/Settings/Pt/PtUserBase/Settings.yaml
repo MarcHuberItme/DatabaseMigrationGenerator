@@ -1,0 +1,60 @@
+table:
+  name: 'PtUserBase'
+  description: 'Mitarbeiterstamm'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'User Base'
+    - german:
+        formTitle: 'Mitarbeiterstamm'
+    - french:
+        formTitle: 'Données employé'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AdmissionDate'
+    description: 'Eintrittsdatum'
+  - name: 'LeavingDate'
+    description: 'Austrittsdatum'
+  - name: 'RankNo'
+    description: 'Rang'
+    genericControls:
+      refTable: 'PtUserTimeRank'
+      refField: 'RankNo'
+  - name: 'RankDate'
+    description: 'Rang seit'
+  - name: 'BranchNo'
+    description: 'Benötigt für das Erstellen des offiziellen Unterschriftenverzeichnis der Bank. Die Unterschriftsberechtigung des Mitarbeiters ist abhängig von der Zuordnung zur gewählten Geschäftsstelle.'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+  - name: 'HasStaffRebate'
+    description: 'Checkbox if the user has staff rebate or not\r\nused for the spread of the currency rate.\r\n0= with spread\r\n1= without spread'
+  - name: 'ShareholderMTTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtShareholderMTType'
+      refField: 'TypeNo'
+  - name: 'PersNo'
+    description: 'für SBB: Personalnummer der Pensionskasse'
+  - name: 'HugoNo'
+    description: 'für SBB: Nr. aus der Pensionskasse'
+  - name: 'HasStaffRebateForSx'
+    description: 'Checkbox if the user has staff rebate or not. \r\nused for stockex owncommission and foreign courtage.\r\n0= no special commission\r\n1= special commission'

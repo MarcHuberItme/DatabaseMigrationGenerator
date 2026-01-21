@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetBalance_OnARealDate'
+  description: 'Saldo per Real-Date (vor allem verwendet bei Verbuchung von Erfolgskonti per Ende Jahr) - Saldo Umbuchungen (FsLedgerClosing.exe)\r\n'

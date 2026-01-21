@@ -1,0 +1,24 @@
+table:
+  name: 'EvAmountQuoteType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Amount quote type'
+    - german:
+        formTitle: 'Notierungsart Betrag'
+  columns:
+  - name: 'AmountQuoteTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,38 @@
+table:
+  name: 'PtCardTrxAuthDataElement'
+  description: 'Data elements for card transaction authorization requests/responses.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Data Element'
+        helpText: 'Data Element'
+    - german:
+        formTitle: 'Datenelement'
+        helpText: 'Datenelement'
+  columns:
+  - name: 'Name'
+    description: 'Element name'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Type'
+    description: 'DE, SE or PDS'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Position'
+    description: 'Data element position within the message'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ParentPosition'
+    description: 'Self reference to parent data element position'
+  - name: 'Format'
+    description: 'Format of the element''s content (e.g. n3, var ans 2..11, etc.)'
+  - name: 'Description'
+    description: ''

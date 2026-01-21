@@ -1,0 +1,41 @@
+table:
+  name: 'ReIaziCriteriaAdjust'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ReIaziCriteriaAdjust'
+        helpText: 'ReIaziCriteriaAdjust'
+    - german:
+        formTitle: 'ReIaziCriteriaAdjust'
+        helpText: 'ReIaziCriteriaAdjust'
+  columns:
+  - name: 'Criteria'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'MinYears'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'MaxYears'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Value'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'NewValue'
+    description: ''
+    genericControls:
+      defColumnPos: 5

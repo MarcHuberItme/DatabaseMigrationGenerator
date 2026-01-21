@@ -1,0 +1,37 @@
+table:
+  name: 'AcBalanceStructureAL5'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Balance Structure Level 5'
+    - german:
+        formTitle: 'Bilanzstruktur Level 5'
+    - french:
+        formTitle: 'Structure du bilan Level5'
+  columns:
+  - name: 'AL5'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'BalanceSheetTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceSheetType'
+      refField: 'BalanceSheetTypeNo'
+      defColumnPos: 2
+  - name: 'WithinAL4'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceStructureAL4'
+      refField: 'AL4'
+      defColumnPos: 3

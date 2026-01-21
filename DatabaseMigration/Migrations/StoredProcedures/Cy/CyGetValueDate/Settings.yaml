@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CyGetValueDate'
+  description: 'Get next payment Value Date'

@@ -1,0 +1,35 @@
+table:
+  name: 'ReGBRegisterType'
+  description: 'GB = Grundbuch\r\nIR = IterimsRegister\r\nLB = Lose Blatt'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Registertype'
+    - german:
+        formTitle: 'Grundbuchtyp'
+  columns:
+  - name: 'GBRegisterType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'GBRegisterTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'SortNo'
+    description: ''
+  - name: 'PfandRegValue'
+    description: ''
+    genericControls:
+      defColumnPos: 3

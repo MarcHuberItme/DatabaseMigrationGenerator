@@ -1,0 +1,22 @@
+table:
+  name: 'OaNotificationText'
+  description: 'Text definitions for notifications used in E-Banking and other apps. Each text is linked to a OaNotificationTrigger.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'LanguageNo'
+    description: 'Language number from AsLanguage (default: 1)'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'TextShort'
+    description: 'Short text for notification (title)'
+  - name: 'TextLong'
+    description: 'Long text for notification (body)'

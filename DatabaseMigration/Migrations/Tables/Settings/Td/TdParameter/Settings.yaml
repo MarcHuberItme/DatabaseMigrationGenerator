@@ -1,0 +1,47 @@
+table:
+  name: 'TdParameter'
+  description: 'Parameter Table - to be moved to AsParameter'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 83458b04-5fa9-42c9-a46e-a39780ca3259
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax Staging Parameter'
+        helpText: 'Tax Staging Parameter'
+    - german:
+        formTitle: 'Tax Staging Parameter'
+        helpText: 'Tax Staging Parameter'
+    - french:
+        formTitle: 'Tax Staging Parameter'
+        helpText: 'Tax Staging Parameter'
+    - italian:
+        formTitle: 'Tax Staging Parameter'
+        helpText: 'Tax Staging Parameter'
+  columns:
+  - name: 'ParameterGroup'
+    description: 'To group and handle multiple Parameters together'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ParameterName'
+    description: 'Name of the Parameter'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ParameterValue'
+    description: 'Value of the Parameter'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ParameterDescription'
+    description: 'Additional Description of the Parameter'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ParameterType'
+    description: 'Data Type of the Parameter'
+  - name: 'RecStatus'
+    description: ''

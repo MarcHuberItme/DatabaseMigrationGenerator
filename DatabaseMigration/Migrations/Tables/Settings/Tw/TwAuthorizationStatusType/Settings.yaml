@@ -1,0 +1,16 @@
+table:
+  name: 'TwAuthorizationStatusType'
+  description: 'AuthorizationStatusType for TWINT Sanction Check'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: bad6dd0b-5ed3-4cee-b419-0b3faf9ddacc
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'AuthorizationStatusType'
+    description: '0 = Authorized,\r\n1 = Declined,\r\n2 = Pending,\r\n3 = Hide,\r\n4 = InsufficientUserAuthorization,\r\n5 = Canceled\r\n'

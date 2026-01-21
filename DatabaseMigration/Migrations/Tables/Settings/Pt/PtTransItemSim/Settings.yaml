@@ -1,0 +1,72 @@
+table:
+  name: 'PtTransItemSim'
+  description: 'prov. für Test der Verbuchung'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Item Simulation'
+    - german:
+        formTitle: 'Buchung Simulation'
+  columns:
+  - name: 'TransId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransactionSim'
+      refField: 'Id'
+  - name: 'TransItemTextId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'TransDate'
+    description: ''
+  - name: 'ValueDate'
+    description: ''
+  - name: 'MgBNr'
+    description: ''
+  - name: 'MgBDatum'
+    description: ''
+  - name: 'MgBStatus'
+    description: ''
+  - name: 'MgBCd'
+    description: ''
+  - name: 'MgTxCd'
+    description: ''
+  - name: 'MgValuta'
+    description: ''
+  - name: 'MgBetrag'
+    description: ''
+  - name: 'MgZText'
+    description: ''
+  - name: 'MgBetragSFr'
+    description: ''
+  - name: 'MgTransCd'
+    description: ''
+  - name: 'MgKdWrg'
+    description: ''
+  - name: 'MgSpesen'
+    description: ''
+  - name: 'MgKurs'
+    description: ''
+  - name: 'MgChange'
+    description: ''
+  - name: 'MgPraemie'
+    description: ''
+  - name: 'MgEndBetr'
+    description: ''
+  - name: 'MgCourtage'
+    description: ''
+  - name: 'MgStueck1'
+    description: ''
+  - name: 'MgNKK'
+    description: ''
+  - name: 'MgZins'
+    description: ''

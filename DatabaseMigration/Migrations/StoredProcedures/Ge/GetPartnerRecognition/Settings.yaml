@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPartnerRecognition'
+  description: '--Purpose : Partner''s Recognition Documents'

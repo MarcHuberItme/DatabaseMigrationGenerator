@@ -1,0 +1,60 @@
+table:
+  name: 'ReIAZIFsTables'
+  description: 'Tables and hierarchy used to trasfer data for IAZi and Finstar Integration'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'IAZI FinstarTables'
+        helpText: 'IAZI FinstarTables'
+    - german:
+        formTitle: 'IAZI FinstarTables'
+        helpText: 'IAZI FinstarTables'
+  columns:
+  - name: 'TableName'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ForeignKeyField'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'isChildTable'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ParentTableName'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ParentTableKeyField'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'isMultipleRecords'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'SortNo'
+    description: ''
+  - name: 'AdditionalWhere'
+    description: 'Addition Condition to retrive the specific Record. For example, in case of building the main building should be updated.'
+  - name: 'isForStpz'
+    description: 'This flag will be true if this Table will be used to create Stpz to connect with a STWE.'
+    genericControls:
+      defColumnPos: 7
+  - name: 'isForEFH'
+    description: ''
+  - name: 'isForMFH'
+    description: ''
+  - name: 'isForSTWE'
+    description: ''
+  - name: 'isForBuildRight'
+    description: ''

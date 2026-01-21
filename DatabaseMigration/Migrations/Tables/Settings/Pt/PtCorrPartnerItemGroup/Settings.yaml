@@ -1,0 +1,38 @@
+table:
+  name: 'PtCorrPartnerItemGroup'
+  description: 'relationsship-entity of PtCorrPartner and AsCorrItemGroup'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtCorrPartner'
+      parentRelationField: 'CorrPartnerId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+  columns:
+  - name: 'CorrPartnerId'
+    description: 'foreign-key;  Id of PtCorrPartner'
+    genericControls:
+      refTable: 'PtCorrPartner'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'CorrItemGroupNo'
+    description: 'foreign-key;  candidate-key of AsCorrItemGroup  (CorrItemGroupNo)\r\n(Update Group darf aus Migrationsgründen nicht mutiert werden 24.9.01/MCT)'
+    genericControls:
+      refTable: 'AsCorrItemGroup'
+      refField: 'CorrItemGroupNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'CopyNumber'
+    description: 'number of copies, default value is ''1''.\r\nif the value ''0'' is set, the selected CorrItem is undesired!\r\n(Max Value 9 wird aus Migrationsgründen gesetzt 24.9.01/MCT)'
+    maxValue: '9'
+    genericControls:
+      defColumnPos: 2

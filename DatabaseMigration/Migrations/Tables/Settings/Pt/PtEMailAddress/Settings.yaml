@@ -1,0 +1,59 @@
+table:
+  name: 'PtEMailAddress'
+  description: 'EMailAddresses of a certain partner'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'EMailAddress'
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'E-Mail Address'
+    - german:
+        formTitle: 'E-Mail Adresse'
+    - french:
+        formTitle: 'Adresse e-mail'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key, Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'EMailAddressTypeNo'
+    description: 'foreign-key;  candidate-key of PtEMailAddressType  (PtEMailAddressType)'
+    genericControls:
+      refTable: 'PtEMailAddressType'
+      refField: 'EMailAddressTypeNo'
+      defColumnPos: 2
+  - name: 'EMailAddress'
+    description: 'virtuell address to an internet service provider\r\n(Must be 60 char long because of VRX and FIS-2000 16.11.2001/mct)'
+    genericControls:
+      defColumnPos: 1
+  - name: 'MgVrxKey'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'HasSignedWaiver'
+    description: 'Flag, welches kennzeichnet, ob für diese Mailadresse ein Waiver unerzeichnet wurde'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ReferencedProxy'
+    description: ''
+    genericControls:
+      refTable: 'PtProxySlaveContactPersonView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3

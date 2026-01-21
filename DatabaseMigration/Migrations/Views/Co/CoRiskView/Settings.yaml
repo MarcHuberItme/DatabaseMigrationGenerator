@@ -1,0 +1,3 @@
+view:
+  name: 'CoRiskView'
+  description: 'View f¨ür CreditRiskoffice (chystal report)\r\nReferenz cobase entfernt\r\nVeragruppen werden nur ausgewiesen wenn mindestens ein Konto vorhanden ist'

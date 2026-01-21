@@ -1,0 +1,161 @@
+view:
+  name: 'PtContractFXClientBlotterView'
+  description: ''
+frontendView:
+  name: 'PtContractFXClientBlotterView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'PortfolioNo'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 10
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+      hasDetailBtn: true
+  - name: 'ContractNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ContractType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtContractType'
+      refField: 'ContractType'
+      defColumnPos: 2
+  - name: 'AgentId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Amount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 8
+  - name: 'DateFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'DateTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Status'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtContractStatus'
+      refField: 'ContractStatusNo'
+      defColumnPos: 5
+  - name: 'FxSellCurrency'
+    description: 'Buy Currency'
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'FxBuyCurrency'
+    description: 'Sell Currency'
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'CustBuyCurrency'
+    description: 'PtContractPartner.IsFxBuyer=1 Then ptContract.FxBuyCurrency ELSE Ptcontract.FxSellCurrency END'
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 8
+  - name: 'CustSellCurrency'
+    description: 'PtContractPartner.IsFxBuyer=1 Then ptContract.FxSellCurrency ELSE Ptcontract.FxBuyCurrency END'
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 9
+  - name: 'FxTransId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'FxDebitAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+  - name: 'FxCreditAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+  - name: 'IsFxBuyer'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 10
+  - name: 'OrderCreator'
+    description: ''
+    dataType: 'varchar'
+    prec: 20
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      hasDetailBtn: true
+      defColumnPos: 2

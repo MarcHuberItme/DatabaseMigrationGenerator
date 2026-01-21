@@ -1,0 +1,37 @@
+table:
+  name: 'AcEmployeeNoGroup'
+  description: 'Grouping of employees'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Employee Group'
+    - german:
+        formTitle: 'Mitarbeiteranzahlgruppe'
+  columns:
+  - name: 'GroupNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'RangeFrom'
+    description: 'employee number from'
+    genericControls:
+      defColumnPos: 3
+  - name: 'RangeTo'
+    description: 'Employee number to'
+    genericControls:
+      defColumnPos: 4
+  - name: 'GroupName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'FireValue'
+    description: ''

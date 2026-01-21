@@ -1,0 +1,48 @@
+table:
+  name: 'EvTaxRate'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'TaxPeriodId'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxPeriod'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'TaxTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxType'
+      refField: 'TaxTypeNo'
+      defColumnPos: 1
+  - name: 'ChargeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'ChargeNo'
+      defColumnPos: 2
+  - name: 'TaxRateDebit'
+    description: 'taxrate to debit (total)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TaxRateDa'
+    description: 'tax rate gemäss Doppelbesteuerungsabkommen (Rückforderbar von EStV)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'TaxRateReclaim'
+    description: 'tax rate Rückforderbar vom Ausland'
+    genericControls:
+      defColumnPos: 5
+  - name: 'Comment'
+    description: ''
+    genericControls:
+      multiLine: true

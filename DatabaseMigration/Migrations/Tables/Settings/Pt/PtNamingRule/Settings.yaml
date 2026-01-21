@@ -1,0 +1,26 @@
+table:
+  name: 'PtNamingRule'
+  description: 'Namensrecht vor und nach 1.1.2013'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Naming Rule'
+    - german:
+        formTitle: 'Namensregel'
+  columns:
+  - name: 'RuleNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ChangeNameOrder'
+    description: 'when this field is TRUE, then field ChangeNameOrder in table PtBase is set to TRUE'

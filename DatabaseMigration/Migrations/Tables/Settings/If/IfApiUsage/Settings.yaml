@@ -1,0 +1,30 @@
+table:
+  name: 'IfApiUsage'
+  description: 'API Usage Control Table.\r\nThis is a contorl table table that keeps track of APIs onboarding on external systems.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'ApplicationCode'
+    description: 'Code of the source of the external data.'
+    genericControls:
+      refTable: 'AsExternalApplication'
+      refField: 'ApplicationCode'
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'InterfaceObjectType'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      noUpdatePos: 2
+  - name: 'IsInvokedByExternalApplication'
+    description: ''
+    genericControls:
+      noUpdatePos: 3

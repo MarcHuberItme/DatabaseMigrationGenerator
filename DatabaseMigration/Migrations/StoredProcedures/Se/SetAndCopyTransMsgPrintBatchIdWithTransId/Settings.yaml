@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'SetAndCopyTransMsgPrintBatchIdWithTransId'
+  description: 'Merged SetTransMsgPrintBatchIdWithTransactionId) and CopyTransMsgPrintBatch to one Stored Procedure.'

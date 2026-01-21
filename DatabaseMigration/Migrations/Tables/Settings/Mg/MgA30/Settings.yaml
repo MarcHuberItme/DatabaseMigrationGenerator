@@ -1,0 +1,32 @@
+table:
+  name: 'MgA30'
+  description: 'FIS VRX Sperrcodes'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 3
+    physicalDelete: true
+    isGroupable: true
+    descField: 'MigValue;Text'
+    uiTableDescription:
+    - english:
+        formTitle: 'Sperrcodes'
+    - german:
+        formTitle: 'Sperrcodes'
+  columns:
+  - name: 'MigValue'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      defColumnPos: 1
+      isOnlyForMig: true
+  - name: 'Text'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isOnlyForMig: true

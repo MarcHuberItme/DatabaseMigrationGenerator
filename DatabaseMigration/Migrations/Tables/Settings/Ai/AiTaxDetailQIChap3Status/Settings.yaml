@@ -1,0 +1,38 @@
+table:
+  name: 'AiTaxDetailQIChap3Status'
+  description: 'Stati gemäss IRS-Formular W-8BEN-E'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Detail QI Chapter 3'
+    - german:
+        formTitle: 'Detail QI Chapter 3'
+    - french:
+        formTitle: 'Détails QI chapter 3'
+  columns:
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'MessageNo'
+    description: 'Warn- oder Sperrmeldung, Nummer gemäss AsMessageText'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsWarning'
+    description: 'True = Warning\r\nFalse = Error'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsMandatoryLOBCode'
+    description: ''
+    genericControls:
+      defColumnPos: 4

@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: Tables.sql
+      relativeToChangelogFile: true
+  - include:
+      file: ForeignKeys.sql
+      relativeToChangelogFile: true
+  - include:
+      file: Triggers.sql
+      relativeToChangelogFile: true
+  - include:
+      file: ../../Functions/Ec/ECH0196SecurityTypeMapping/SchemaChangeLog.sql
+      relativeToChangelogFile: true

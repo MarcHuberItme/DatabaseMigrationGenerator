@@ -1,0 +1,44 @@
+table:
+  name: 'PtProtectionAmountDetails'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtProtectionAmountDetails'
+        helpText: 'PtProtectionAmountDetails'
+    - german:
+        formTitle: 'PtProtectionAmountDetails'
+        helpText: 'PtProtectionAmountDetails'
+  columns:
+  - name: 'ProtectionAmountId'
+    description: ''
+    genericControls:
+      refTable: 'PtProtectionAmount'
+      refField: 'Id'
+  - name: 'PartnerId'
+    description: 'PartnerId, Id from PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'PartnerNo'
+    description: ''
+  - name: 'MainPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'MainPartnerNo'
+    description: ''
+  - name: 'ProtectedAmount'
+    description: ''
+  - name: 'UnprotectedAmount'
+    description: ''
+  - name: 'PrivilegedAmount'
+    description: 'Summe from Privit and Revor'

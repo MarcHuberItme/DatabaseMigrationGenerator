@@ -1,0 +1,3 @@
+view:
+  name: 'coKreditView'
+  description: 'Diese View stellt alle Kundennummern eines Kreditnehmers zu Verfügung (z.b, bei Sombo) sofern ein Kunde keine Verknüpfung mit Typ 90: mit Rolle vom Type 7 (gleicher Partner) hat, wird seine eigene Kundennummer geliefert (siehe acuh CoEngCLiSameView).\r\n'

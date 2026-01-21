@@ -1,0 +1,26 @@
+table:
+  name: 'PtTransSxGoiCheckLevel'
+  description: 'Possible check levels (e.g. for CheckShortSell).\r\nIt also can be used to define what with an OrderRestriction result should be done.\r\n'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'GOI Check Level'
+        helpText: 'GOI Check Level'
+    - german:
+        formTitle: 'GOI Check Level'
+        helpText: 'GOI Check Level'
+  columns:
+  - name: 'CheckLevel'
+    description: '0= no check (order saved)\r\n10= check and warning to trader (order saved, trader gets warning during placement)\r\n20= check and warning (order not saved, exception severity= warning)\r\n30= check and error (order not saved, exception severity= error)\r\n40= check and update (value updated, order saved, no exception) -> at the moment only used for CheckOrderDateValidity'
+    genericControls:
+      defColumnPos: 1

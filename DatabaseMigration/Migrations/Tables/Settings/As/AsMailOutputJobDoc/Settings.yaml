@@ -1,0 +1,76 @@
+table:
+  name: 'AsMailOutputJobDoc'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'JobId'
+    description: ''
+    genericControls:
+      refTable: 'AsMailOutputJob'
+      refField: 'Id'
+  - name: 'JobFileNo'
+    description: 'Number of according XML-file within job'
+  - name: 'VolumeGroup'
+    description: ''
+  - name: 'InsetGroup'
+    description: ''
+  - name: 'CountryOrder'
+    description: 'To order local and abroad mail separately.\r\nFor now, 0 is for CH and 1 for else. May be refined later; higher number comes first in ordering, lower comes later.'
+  - name: 'InternalMail'
+    description: 'Ordering field to separate the internal mail from rest. 1 for internal, 0 otherwise.'
+  - name: 'DetourGroupName'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'CarrierTypeNo'
+    description: ''
+  - name: 'Sheets'
+    description: ''
+  - name: 'FirstClassMail'
+    description: ''
+  - name: 'ReceiverPartnerNo'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+  - name: 'ReceiverAddressTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAddressType'
+      refField: 'AddressTypeNo'
+  - name: 'ReceiverCountry'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'ReceiverZip'
+    description: ''
+  - name: 'ReceiverEmailAddress'
+    description: ''
+  - name: 'InsetItemsList'
+    description: 'Comma separated list of inset items.'
+  - name: 'MailOutputIdList'
+    description: 'List of IDs of records of table AsMailout for backreference.'
+  - name: 'DocumentsList'
+    description: 'List of IDs of documents relevant to this mail and the number of pages in each document are saved in this field as a structured string.'
+  - name: 'DocIdsList'
+    description: 'Comma separated list of DocumentIds. Note that the DocumentList string contains the IDs of DocumentData and not Document.'
+  - name: 'Processed'
+    description: ''
+  - name: 'NoOfDocs'
+    description: 'Number of documents packed in this dossier. (Just for statistical analysis, No real usage).'
+  - name: 'InsetFlags'
+    description: 'Array of flags for Insets.\r\n1 = Inset on this Position.\r\nPositionNo is equal to inset station no.\r\n(Actually, there are max. 8 positions possible)'
+  - name: 'SlaNo'
+    description: 'Number of the SPS SLA No.'
+    genericControls:
+      refTable: 'AsMailOutputExternalSla'
+      refField: 'SlaNo'

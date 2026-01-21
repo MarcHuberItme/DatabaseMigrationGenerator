@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'IbAuth_GetContractsByCertWithoutContactPerson'
+  description: 'Returns E-Banking agreements associated with a certain partner (PKI Login) (used by EbAuthService .NET).'

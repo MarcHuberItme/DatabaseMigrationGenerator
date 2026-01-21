@@ -1,0 +1,44 @@
+table:
+  name: 'PtOstaMessage'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'OSTA Message'
+    - german:
+        formTitle: 'OSTA Meldung'
+  columns:
+  - name: 'MessageId'
+    description: ''
+  - name: 'MessageDate'
+    description: ''
+  - name: 'MessageVersion'
+    description: ''
+  - name: 'TimestampHost'
+    description: ''
+  - name: 'AtmId'
+    description: ''
+  - name: 'TimestampAtm'
+    description: ''
+  - name: 'TransactionNumberAtm'
+    description: ''
+  - name: 'Status'
+    description: '0 - registered\r\n1 - processed\r\n2 - erroneous'
+  - name: 'MessageType'
+    description: '0 - Single transaction\r\n1 - Inventory change\r\n2 - Inventory\r\n3 - Daily closure'
+    genericControls:
+      refTable: 'PtOstaMessageType'
+      refField: 'Value'
+  - name: 'MessageInId'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaMessageIn'
+      refField: 'Id'

@@ -1,0 +1,49 @@
+table:
+  name: 'AxTaxReportExchangeValue'
+  description: 'Enthält Devisenkurs für TaxSource-Export.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'ExchangeRate'
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax report exchange value'
+    - german:
+        formTitle: 'Steuermeldung Devisenkurs'
+  columns:
+  - name: 'TaxReportId'
+    description: 'Verbindung zur Steuermeldung.'
+    genericControls:
+      refTable: 'AxTaxReport'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'Currency'
+    description: 'Währung'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ExchangeDate'
+    description: 'Devisenkurs-Datum'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ExchangeRate'
+    description: 'Devisenkurs'
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'BaseCurrency'
+    description: 'Basiswährung (EUR)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxReportEntryStatus'
+      refField: 'StatusNo'
+      defColumnPos: 5

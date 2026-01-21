@@ -1,0 +1,44 @@
+table:
+  name: 'PtRatingImCriteria'
+  description: 'Immaterielles Rating -  Bewertung der einzelnen Kriterien'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'rating criteria'
+    - german:
+        formTitle: 'Ratingkriterium'
+  columns:
+  - name: 'FunctionId'
+    description: ''
+    genericControls:
+      refTable: 'PtRatingImFunction'
+      refField: 'Id'
+  - name: 'CriteriaId'
+    description: ''
+    genericControls:
+      refTable: 'AsRatingImCriteria'
+      refField: 'Id'
+  - name: 'Plus'
+    description: ''
+    minValue: '0'
+    maxValue: '5'
+  - name: 'Minus'
+    description: ''
+    minValue: '0'
+    maxValue: '5'
+  - name: 'Irrelevant'
+    description: '0 = relevant\r\n1 = irrelevant'
+  - name: 'InfoAbsent'
+    description: '0 = information exist\r\n1 = no information exist'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPortfolioOverview'
+  description: '2022-04-28/ram: Möglichkeit geschaffen, um Portfolio zu unterdrücken, analog Konto'

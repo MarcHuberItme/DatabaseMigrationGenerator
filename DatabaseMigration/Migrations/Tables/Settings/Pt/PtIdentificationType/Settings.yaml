@@ -1,0 +1,55 @@
+table:
+  name: 'PtIdentificationType'
+  description: 'type of identification (exp. driver licence, passport, etc.)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Identification Type'
+    - german:
+        formTitle: 'Identifikation Typ'
+    - french:
+        formTitle: 'type d''identification'
+  columns:
+  - name: 'MigValue'
+    description: 'default = 1 ... weil das im VRX ID vorhanden heisst.'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'StartOpenIssueNo'
+    description: 'if it has a value - an open Issue is created automatically out of the identification!!  the value represents the OpenIssueTypeNo of the automatically created OpenIssue!'
+    genericControls:
+      refTable: 'PtOpenIssueType'
+      refField: 'TypeNo'
+  - name: 'UserIdActivate'
+    description: 'if checked, the UserId on PtIdentification will be activated (used in case of "Nummernkunden")'
+  - name: 'ForNaturalPerson'
+    description: 'All IdentificationTypes having set this flag to true will appear in the GUI-Profile for NaturalPersons.'
+  - name: 'ForOrganization'
+    description: 'All IdentificationTypes having set this flag to true will appear in the GUI-Profile for Organizations.'
+  - name: 'ForAnonymous'
+    description: 'All IdentificationTypes having set this flag to true will appear in the GUI-Profile for Anonymous. -> NOT USED until NOW ! too complex to integrate ... BFE'
+  - name: 'PartnerIdActivate'
+    description: 'if checked, the PartnerId on PtIdentification will be activated (used in case of "Identifikation durch mündige Drittperson")'
+  - name: 'IsValidPkiIdentification'
+    description: 'If True, the Identification is accepted as valid by the PKI - Workflow'
+  - name: 'RemarkMandatory'
+    description: ''
+  - name: 'IsMediaNoMandatory'
+    description: 'concerns field IdentificationMediaNo in form frmIdentification'
+  - name: 'IssuanceActivate'
+    description: 'Activate (display) fields:\r\n-IssuingAuthority\r\n-IssuanceTroughEmbassy\r\n-CountryOfIssuance\r\n\r\nin form frmIdentification'
+  - name: 'AddrCheckCboActivate'
+    description: 'Activate (display) field:\r\n-cboAddrCheckStatusNo\r\n\r\nin form frmIdentification'
+  - name: 'ForMros'
+    description: ''
+  - name: 'RefNoIsOrderNo'
+    description: 'PtIdentification.ReferenceNo means PtPaymentOrder.OrderNo'

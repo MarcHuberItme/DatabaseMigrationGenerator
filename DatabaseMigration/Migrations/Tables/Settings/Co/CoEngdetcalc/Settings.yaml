@@ -1,0 +1,62 @@
+table:
+  name: 'CoEngdetcalc'
+  description: 'Berechnetes Gesamtengagement für ein Kreditkonto (Verknüpfung über Veragruppe) oder generell erfasste Abweichungen für ein Gesamtengagamenet auf Stufe Kreditkonto oder Sicherheit\r\nWird neu auch beim der Deckungsausscheidung gefüllt'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'account engagement'
+    - german:
+        formTitle: 'account Gesamtengagement'
+  columns:
+  - name: 'Clientid'
+    description: 'Kunde für den das Gesamtengagement gerechnet wurde'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+  - name: 'Veragrp'
+    description: 'Laufnummer ist bei einer Deckungsausscheidung für alle gleichzeitig verarbeiten Sicherheiten und Kreditkonti gleich, für das Gesamtengagement wird diese Laufnummer auch für die Historisierung der Kontoseite (Tabellen coeng...) verwendet'
+    genericControls:
+      refTable: 'CoVeragrp'
+      refField: 'Veragrp'
+  - name: 'Veradate'
+    description: 'Datum der Verarbeitung'
+  - name: 'Accountid'
+    description: 'Laufnummer Kreditkonto'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+  - name: 'Engtype'
+    description: 'Art des Betrages in Feld amount , steuert ob \r\nFeld dateamount , Feld Typecof , Feld Compwbbez gefült sind'
+    genericControls:
+      refTable: 'CoTypeeng'
+      refField: 'Coengtype'
+  - name: 'Amount'
+    description: 'siehe Feld engtype, immer in Bilanzwährung'
+  - name: 'Amountkw'
+    description: 'siehe Feld engtype, geführt in currency (z.B. Kontowährung)'
+  - name: 'Currency'
+    description: 'Währung, bezieht sich auf Feld Amountkw'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Dateamount'
+    description: 'siehe Feld engtype'
+  - name: 'Typecov'
+    description: 'Art der Deckung'
+    genericControls:
+      refTable: 'CoTypecov'
+      refField: 'Typecov'
+  - name: 'Compwbbez'
+    description: 'Bezeichung der Komponente für einzel Wertberichtigungen (heute BL15 oder BL15F)'
+  - name: 'Remark'
+    description: 'Bemerkung auf Stufe Einzelposition'
+  - name: 'IsGeneralSummary'
+    description: 'when true, is for credit account (Deckungsausscheidung) summary. when false, is only for OveralEngagement client summary.  (Gesamtengagement)\r\nBe aware that for Gesamtengagament for the same accountid and for the same engtype two records exists one with isGeneralsummary = 0 and the other IsGeneralsummary = 1.\r\nFor the Deckungsausscheidung only IsGeneralsummary = 1 exisits.'

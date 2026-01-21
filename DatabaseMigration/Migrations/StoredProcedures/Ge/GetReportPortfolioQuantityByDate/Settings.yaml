@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetReportPortfolioQuantityByDate'
+  description: 'Retrieve the Quantity for an deposit by date\r\n\r\n--Author		: Rolf Amstad\r\n--Date Created	: 29-April-2005\r\n--Date Modified        : 2007-05-02  berücksichtigen DetailCounter aus PtTransItem\r\n                                : 2007-12-04  PtTransItem.RealDate wird nun auch berücksichtigt\r\n                                : 2023-08-02/FIN-9318/daga Condition added for PtTransItem HdVersionNo between 1 and 999999998'

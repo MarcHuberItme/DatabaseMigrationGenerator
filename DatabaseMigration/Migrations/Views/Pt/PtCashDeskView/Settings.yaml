@@ -1,0 +1,3 @@
+view:
+  name: 'PtCashDeskView'
+  description: 'Used to create the ''CashDeskJournal'' (Kassenjounal), it is made according to the PtAccountView but also closed accounts are shown.'

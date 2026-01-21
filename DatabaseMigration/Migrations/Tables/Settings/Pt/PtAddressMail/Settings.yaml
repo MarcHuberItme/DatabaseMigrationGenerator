@@ -1,0 +1,82 @@
+table:
+  name: 'PtAddressMail'
+  description: 'Mails sent to this address'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'DeliveryDate'
+    uiTableDescription:
+    - english:
+        formTitle: 'Sent mail'
+    - german:
+        formTitle: 'Versandte Mails'
+  columns:
+  - name: 'AddressId'
+    description: 'Relation to the used address'
+    genericControls:
+      refTable: 'PtAddressView'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'MailOutputJobId'
+    description: 'Relation to the mail job table in which this mail was sent. This is used in rolling back database if there was some error during the processing of job.'
+    genericControls:
+      refTable: 'AsMailOutputJob'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'JobFileNo'
+    description: 'Number of according XML-file within job.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CarrierTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsCarrierType'
+      refField: 'CarrierTypeNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'SeqNo'
+    description: 'The sequence number of email sent to a particular address. In case of print mail, this field is not maintained and is NULL.'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'DeliveryDate'
+    description: 'DeliveryDate'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'MailSubject'
+    description: 'Subject of the E-Mail text. Usefull for resending.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'MailBody'
+    description: 'Body of the E-Mail text. Useful for resending.'
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'PackingCost'
+    description: 'The cost of packaging (envelop, paper etc) on this mail.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'MailingCost'
+    description: 'Cost of postal tax for this mail.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'DetourGroupName'
+    description: 'If the envelope was routed by a detour group, the detour group name has to be listed here.'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      isNoUpdate: true
+  - name: 'AVZPeriodNo'
+    description: 'No for the SwissPost AVZ (Aufgabenverzeichnis)\r\n\r\nFormat: \r\nYYYYxxxxx   (YYYY = Year 4 Digits, xxxxx = JobNo of AsMailOutputJob, 5 digits)\r\n\r\nIn the AVZ, only the right 6 digits are used, e.g. 600123 for JobNo 123 in 2006'
+  - name: 'JobPageNo'
+    description: 'Number of the page receiveing the ppStamp within the entiere JobNo'
+  - name: 'PPVap'
+    description: 'Product-No (Verarbeitungsprodukt) of the Swiss Post:\r\n\r\n001 = A-Post\r\n002 = B1-Post Einzelsendung\r\n004 = B2-Post Massensendung'

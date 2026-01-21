@@ -1,0 +1,27 @@
+table:
+  name: 'PtPortfolioFinancing'
+  description: 'Sub-Entität auf dem Portfolio um alle Finanzierungsportfolio relevanten Informationen zu gruppieren'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Finanzierungsportfolio'
+    - german:
+        formTitle: 'Finanzierungsportfolio'
+    - french:
+        formTitle: 'Finanzierungsportfolio'
+    - italian:
+        formTitle: 'Finanzierungsportfolio'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'

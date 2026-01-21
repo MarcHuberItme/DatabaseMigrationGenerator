@@ -1,0 +1,124 @@
+table:
+  name: 'PtTransMessageCharge'
+  description: 'Any type of charges assigned to PtTransMessage records, e.g.\r\n- expences, fees\r\n- taxes\r\n- agio/disago\r\nthe value may be included in the calculation of this message or \r\nmay be remarked for charging at closing of the account\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Charges'
+        helpText: 'Charges'
+    - german:
+        formTitle: 'Spesen'
+        helpText: 'Spesen'
+  columns:
+  - name: 'TransMessageId'
+    description: 'Relation to PtTransMessage\r\n\r\nStockEx: this id will be getted by the inserting of the PtTradingOrderMessage record. \r\nThis gives the possibility to enter PtTransMessageCharge records \r\nbefore the record in the PtTransMessage exists. That means thats an existing PtTransMessage record is not necessary (=no DB Integrity)\r\n'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransItemId'
+    description: 'Relation to PtTransItem and PtTransItemDetail,\r\nused for closing the account and reporting for tax declaration!\r\nAttention: While updating PtPosition,  Id of PtTransItem must be used as Id of PtTransItemDetail'
+    genericControls:
+      refTable: 'PtTransItem'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'PositionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPositionAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'TransChargeTypeId'
+    description: 'Relation to PtTransChargeType'
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'Id'
+      defColumnPos: 6
+  - name: 'ValueDate'
+    description: 'Value Date of Charge'
+    genericControls:
+      defColumnPos: 5
+  - name: 'RelatedToDebit'
+    description: 'If True the charge is related to debit\r\nIf False the charge is related to credit'
+    genericControls:
+      defColumnPos: 5
+  - name: 'RelatedToDebitCv'
+    description: 'This field is used for the portfolio bookeeping (also called cost value system)\r\nIf True the charge is related to debit position\r\nIf False the charge is related to credit position'
+  - name: 'IsDebitAmount'
+    description: 'True= the amount is to debit\r\nFalse= the amount is to credit'
+  - name: 'Currency'
+    description: 'Currency of the amount (field AmountChargeCurrency).\r\nThis field could be different to the account currency, normally this currency is printed on the statement.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'AmountChargeCurrency'
+    description: 'Charge amount in charge currency (field Currency of this table).'
+  - name: 'RateToAcCu'
+    description: 'Rate between charge currency (field currency of this table) (original curr.) and account currency (target currency)'
+  - name: 'Amount'
+    description: 'Charge amount in account currency. This amount is booked directly or indirectly to the account.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'AmountValue'
+    description: 'Value of the amount in CHF'
+    genericControls:
+      defColumnPos: 3
+  - name: 'BaseAmount'
+    description: 'i.e. for the taxable return in BaseAmountCurrency (for EU interest taxation)'
+  - name: 'BaseAmountCurrency'
+    description: 'Currency of the base amount'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ImmediateCharge'
+    description: '1 = If True the amount is included in the transaction process\r\n0 = If False the amount has to be charged at closing of the account (Kontoabschluss oder Saldierung)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'TextMasterId'
+    description: 'If this field is filled, the reporttext comes form AsText with condition AsText.MasterId = PtTransMessageCharge.TextMasterId\r\nOtherwise the reporttext comes from AsText with condition AsText.MasterId = PtTransMessageCharge.TransChargeTypeId'
+  - name: 'Comment'
+    description: 'Comment to explain the charge if necessary'
+    genericControls:
+      multiLine: true
+  - name: 'CompletionDate'
+    description: 'Concept of SQL Data Partioning.\r\nIt is first value is MAXDATE (9999-12-31). It is then later changed by another process responsible for the task of Partioning.'
+  - name: 'TransSxTariffNo'
+    description: 'StockEx: Relation to the tariff tables PtTransSxTariff, PtTransSxTariffScale'
+    genericControls:
+      refTable: 'PtTransSxTariff'
+      refField: 'TariffNo'
+  - name: 'IsBackOfficeFixed'
+    description: 'StockEx: the calculated content of the field AmountChargeCurrency was overruled by the backoffice'
+  - name: 'MailOutputJobDocId'
+    description: 'A reference used in mail charging module to track the charging.'
+    genericControls:
+      refTable: 'AsMailOutputJobDoc'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'VatCode'
+    description: 'refers AsVATCode.VATTaxType, but not one to one'
+    genericControls:
+      refTable: 'AsVatCode'
+      refField: 'VATTaxTypeNo'
+  - name: 'SourcePosAmountAcCu'
+    description: 'Amount in account currency of source position'
+  - name: 'PaymentOrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrder'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransDate'
+    description: 'If the application saving record does not fill this field, trigger will update it to value date'
+    genericControls:
+      defColumnPos: 8

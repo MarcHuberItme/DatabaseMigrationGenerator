@@ -1,0 +1,36 @@
+table:
+  name: 'PtBLinkCaasPermission'
+  description: 'Permission for the provider'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Provider Permission'
+    - german:
+        formTitle: 'Provider Permission'
+    - french:
+        formTitle: 'Provider Permission'
+    - italian:
+        formTitle: 'Provider Permission'
+  columns:
+  - name: 'PermissionId'
+    description: 'The permissionId of b-link'
+  - name: 'AgreementObProviderId'
+    description: 'Reference to connected provider to agreement'
+    genericControls:
+      refTable: 'PtAgrEBankingObProvider'
+      refField: 'Id'
+  - name: 'StatusNo'
+    description: 'Reference to status'
+    genericControls:
+      refTable: 'PtBLinkCaasPermissionStatus'
+      refField: 'StatusNo'
+  - name: 'LastRefreshedPermissionDate'
+    description: ''

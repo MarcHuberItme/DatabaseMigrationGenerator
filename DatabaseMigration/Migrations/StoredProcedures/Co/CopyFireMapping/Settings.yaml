@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CopyFireMapping'
+  description: 'Temporary procedure to support the copying of one accounts field mapping to another.\r\nCalled manually, not used in Finstar programs.'

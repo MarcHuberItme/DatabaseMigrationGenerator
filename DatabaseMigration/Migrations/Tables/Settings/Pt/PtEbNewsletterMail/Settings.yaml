@@ -1,0 +1,38 @@
+table:
+  name: 'PtEbNewsletterMail'
+  description: 'Contains information about the Mails sent'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'E-News Mail'
+    - german:
+        formTitle: 'E-News Mail'
+    - french:
+        formTitle: 'E-News Mail'
+    - italian:
+        formTitle: 'E-News Mail'
+  columns:
+  - name: 'NewsletterId'
+    description: ''
+    genericControls:
+      refTable: 'PtEbNewsletter'
+      refField: 'Id'
+  - name: 'EmailAddress'
+    description: 'Address of the receiver'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SendDate'
+    description: 'Date the mail was sent'
+    genericControls:
+      defColumnPos: 2
+  - name: 'FailedToSend'
+    description: ''

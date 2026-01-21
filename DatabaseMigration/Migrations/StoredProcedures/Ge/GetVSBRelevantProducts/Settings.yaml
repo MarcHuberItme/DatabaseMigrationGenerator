@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetVSBRelevantProducts'
+  description: 'Get VSB relevant products'

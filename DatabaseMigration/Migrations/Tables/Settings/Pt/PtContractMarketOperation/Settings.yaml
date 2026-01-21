@@ -1,0 +1,57 @@
+table:
+  name: 'PtContractMarketOperation'
+  description: 'List of market operations performed over a contract. This will enable the ability to peform cancelation of operations.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Contract Market Operation'
+        helpText: 'Contract Market Operation'
+    - german:
+        formTitle: 'Contract Market Operation'
+        helpText: 'Contract Market Operation'
+    - french:
+        formTitle: 'Contract Market Operation'
+        helpText: 'Contract Market Operation'
+  columns:
+  - name: 'ContractId'
+    description: ''
+    genericControls:
+      refTable: 'PtContract'
+      refField: 'Id'
+  - name: 'OperationTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtContractMarketOperationType'
+      refField: 'OperationTypeNo'
+      defColumnPos: 1
+  - name: 'InternalRemarks'
+    description: 'Remarks for the trader to review'
+    genericControls:
+      multiLine: true
+  - name: 'ExternalRemarks'
+    description: 'Remarks that must go on customer advice.'
+    genericControls:
+      multiLine: true
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtContractMarketOperationState'
+      refField: 'StatusNo'
+      defColumnPos: 2
+  - name: 'StatusDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'MktOpUser'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'

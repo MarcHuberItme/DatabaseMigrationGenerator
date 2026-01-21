@@ -1,0 +1,98 @@
+table:
+  name: 'PtTransSxPM1Order'
+  description: 'this table contains the trading order or mod data of the order sent from PM1.\r\nBased on this data the tables PtTradingOrder/PtTradingOrderMessage (order) or PtTradingOrderMod/PtTradingOrderMessageMod (mod) will be created\r\nthis table is also used for communcation back to PM1 (send status).\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'TradingOrder PM1'
+    - german:
+        formTitle: 'Börsenauftrag PM1'
+  columns:
+  - name: 'PK'
+    description: 'ITF_OCS_SECURITY.INT_PK\r\nPrimary Key of the RTW table'
+  - name: 'RequestType'
+    description: 'ITF_OCS_SECURITY.STR_TYPE\r\nR= Request for change\r\nO= Order creation'
+  - name: 'OrderNr'
+    description: 'ITF_OCS_SECURITY.NUM_ORDERNR \r\nOrderNr from PM1 \r\n--> PtTradingOrderMessage.BankInternalReferencePartner'
+    genericControls:
+      defColumnPos: 1
+  - name: 'BlockNr'
+    description: 'ITF_OCS_SECURITY.NUM_BLOCKNR\r\nused for listing orders: all customer orders have the same BlockNr'
+  - name: 'ActionCode'
+    description: 'ITF_OCS_SECURITY.STR_ACTION_CODE\r\nBUY/ SELL\r\n--> PtTradingOrder.TransTypeNo'
+  - name: 'OrderedAmount'
+    description: 'ITF_OCS_SECURITY.DBL_ORDERED_AMOUNT\r\n--> PtTradingOrderMessage.OrderQuantity'
+  - name: 'TitleIsin'
+    description: 'ITF_OCS_SECURITY.STR_TITLE_ISIN\r\n--> PtTradingOrder.IsinNo'
+  - name: 'ActionTriggerCode'
+    description: 'ITF_OCS_SECURITY.STR_ACTION_TRIGGER_CODE\r\nLimit, Best, StopBuy etc..\r\n--> PtTradingOrder.OrderTypeNo'
+  - name: 'Limit'
+    description: 'ITF_OCS_SECURITY.DBL_LIMIT\r\n--> PtTradingOrder.PriceLimit'
+  - name: 'StopLimit'
+    description: 'ITF_OCS_SECURITY.DBL_STOP_LIMIT\r\n--> PtTradingOrder.TriggerPrice'
+  - name: 'ValidFrom'
+    description: 'ITF_OCS_SECURITY.DAT_VALID_FROM\r\n--> PtTradingOrder.ValidFrom'
+  - name: 'ValidTo'
+    description: 'ITF_OCS_SECURITY.DAT_VALID_TO\r\n--> PtTradingOrder.ValidTo'
+  - name: 'PortfolioNr'
+    description: 'ITF_OCS_SECURITY.STR_PORTFOLIONR\r\n--> PtTradingOrderMessage.SecurityPortfolioId'
+  - name: 'Account'
+    description: 'ITF_OCS_SECURITY.STR_ACCOUNT\r\n--> PtTradingOrderMessage.AccountPrReferenceId'
+  - name: 'DateOfReceipt'
+    description: 'ITF_OCS_SECURITY.DAT_DATE_OF_RECEIPT\r\n--> PtTradingOrder.OrderDate'
+  - name: 'EntryType'
+    description: 'ITF_OCS_SECURITY.STR_ENTRYTYPE'
+  - name: 'OrderTime'
+    description: 'ITF_OCS_SECURITY.DAT_ORDER_TIME'
+  - name: 'MarketCode'
+    description: 'ITF_OCS_SECURITY.STR_MARKETCODE\r\nCode of the market \r\n--> PtTradingOrderMessage.PublicTradingPlaceId'
+  - name: 'CodeCurrency'
+    description: 'ITF_OCS_SECURITY.STR_CODECURRENCY\r\n--> PtTradingOrderMessage.PaymentCurrency'
+  - name: 'OrderDirection'
+    description: 'ITF_OCS_SECURITY.NUM_ORDER_DIRECTION\r\nused for options\r\n1= to close\r\n-1= to open'
+  - name: 'CountOrderToSammel'
+    description: 'ITF_OCS_SECURITY.NUM_COUNT_ORDER_TO_SAMMEL\r\nlisting order: number of single orders'
+  - name: 'OldLimit'
+    description: 'ITF_OCS_SECURITY.DBL_OLD_LIMIT'
+  - name: 'OldStopLimit'
+    description: 'ITF_OCS_SECURITY.DBL_OLD_STOP_LIMIT'
+  - name: 'OldOrderedAmount'
+    description: 'ITF_OCS_SECURITY.DBL_OLD_ORDERED_AMOUNT'
+  - name: 'TheComment'
+    description: 'ITF_OCS_SECURITY.STR_THE_COMMENT\r\n--> PtTradingOrder.TextToTrader'
+    genericControls:
+      multiLine: true
+  - name: 'FreeText1'
+    description: 'ITF_OCS_SECURITY.STR_FREETEXT_1'
+    genericControls:
+      multiLine: true
+  - name: 'FreeText2'
+    description: 'ITF_OCS_SECURITY.STR_FREETEXT_2'
+    genericControls:
+      multiLine: true
+  - name: 'FreeText3'
+    description: 'ITF_OCS_SECURITY.STR_FREETEXT_3'
+    genericControls:
+      multiLine: true
+  - name: 'FreeText4'
+    description: 'ITF_OCS_SECURITY.STR_FREETEXT_4'
+    genericControls:
+      multiLine: true
+  - name: 'Status'
+    description: 'ITF_OCS_SECURITY.STR_STATUS'
+  - name: 'RequestStatus'
+    description: 'ITF_OCS_SECURITY.STR_REQUEST_STATUS'
+  - name: 'ToPM1Status'
+    description: '--> ITF_ORDER_STATUS.STR_STATUS'
+  - name: 'ToPM1StatusRequest'
+    description: '--> ITF_ORDER_STATUS.STR_STATUS_REQUEST'
+  - name: 'ToPM1Msg'
+    description: '--> ITF_ORDER_STATUS.STR_MSG'

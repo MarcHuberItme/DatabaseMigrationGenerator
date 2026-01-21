@@ -1,0 +1,56 @@
+table:
+  name: 'PtHobby'
+  description: 'relationship-entity of PtBase and PtHobbyType'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Hobby'
+    - german:
+        formTitle: 'Interessen'
+    - french:
+        formTitle: 'Intérêts'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key; Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'HobbyTypeId'
+    description: 'foreign-key; Id of PtHobbyType (Group of Hobbies)'
+    genericControls:
+      refTable: 'PtHobbyType'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'HobbySubTypeId'
+    description: ''
+    genericControls:
+      refTable: 'PtHobbySubType'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'HobbySubDetailId'
+    description: ''
+    genericControls:
+      refTable: 'PtHobbySubDetail'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

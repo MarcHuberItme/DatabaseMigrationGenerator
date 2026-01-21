@@ -1,0 +1,49 @@
+table:
+  name: 'ReTownTypeRoomCat'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Ortstyp / Raumkategorie'
+    - german:
+        formTitle: 'Ortstyp / Raumkategorie'
+  columns:
+  - name: 'TownTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReTownType'
+      refField: 'TownTypeNo'
+      defColumnPos: 1
+  - name: 'RoomCategory'
+    description: ''
+    genericControls:
+      refTable: 'ReRoomTypeCategory'
+      refField: 'RoomCategory'
+      defColumnPos: 2
+  - name: 'M2From'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'M2To'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'RentAmountM2From'
+    description: 'Mietpreis pro m2 und Jahr von'
+    genericControls:
+      defColumnPos: 5
+  - name: 'RentAmountM2To'
+    description: 'Mietpreis pro m2 und Jahr bis'
+    genericControls:
+      defColumnPos: 6
+  - name: 'SortNo'
+    description: ''

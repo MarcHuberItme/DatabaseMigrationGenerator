@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountCommissionValid'
+  description: 'This SP returns Valid PtAccountCommissions for a specific account.\r\nAuthor : ANasir'

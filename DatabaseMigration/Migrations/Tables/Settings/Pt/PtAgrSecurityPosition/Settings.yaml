@@ -1,0 +1,70 @@
+table:
+  name: 'PtAgrSecurityPosition'
+  description: 'Relation to the security on \r\n- partner level\r\n- portfolio level\r\n- position level'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAgrSecurityVersion'
+      parentRelationField: 'SecurityVersionId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Relation to Security'
+    - german:
+        formTitle: 'Verbindung zu Deckung'
+  columns:
+  - name: 'SecurityVersionId'
+    description: 'Relation to component'
+    genericControls:
+      refTable: 'PtAgrSecurityVersion'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'PartnerId'
+    description: 'Relation to the Id of the partner that represents the security'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PortfolioId'
+    description: 'Relation to the Id of the portfolio that represents the security'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'PositionId'
+    description: 'Relation to the Id of the position that represents the security'
+    genericControls:
+      refTable: 'PtPositionAllView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'UsedByMarriedCouple'
+    description: 'To set True if the pledge is a house or an appartement used by a married couple because in this case both partners have to sign the agreement.'
+  - name: 'Currency'
+    description: 'Currency of the value of the field LimitAmount\r\nThe currency may be different from the currency of the security!'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 4
+  - name: 'LimitAmount'
+    description: 'Given amount limit in the defined currency \r\n(valuated if different from product currency) as outlined in the agreement.\r\n<Null> if no limit is given, that means that the entire value my be taken'
+    genericControls:
+      defColumnPos: 5
+  - name: 'AvailableAmount'
+    description: 'Available amount in basic currency (CHF) of the PtPosition as security\r\nCannot be > than value in basic currency of the PtPosition\r\nCannot be > than value in basic currency of LimitAmount if LimitAmount is not <Null>'
+  - name: 'UsedAmount'
+    description: 'Used amount in basic currency (CHF) to cover the credit limit,\r\nmay not be greater than the value in field AvailableAmount'
+  - name: 'ValidationDate'
+    description: 'date when AvailableAmount and UsedAmount was last calculated'
+  - name: 'InclusiveCoPartners'
+    description: ''

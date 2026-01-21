@@ -1,0 +1,32 @@
+table:
+  name: 'ReImmissionSourceType'
+  description: 'Sorce for the Immission'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Immission Source'
+        helpText: 'Immission Source'
+    - german:
+        formTitle: 'Verursacher'
+        helpText: 'Verursacher'
+  columns:
+  - name: 'ImmissionTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReImmissionType'
+      refField: 'ImmissionTypeNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'SourceType'
+    description: ''
+  - name: 'IaziValue'
+    description: ''

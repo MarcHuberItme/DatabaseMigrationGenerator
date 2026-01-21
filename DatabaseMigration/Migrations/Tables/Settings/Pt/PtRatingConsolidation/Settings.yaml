@@ -1,0 +1,114 @@
+table:
+  name: 'PtRatingConsolidation'
+  description: 'In dieser Tabelle werden Rating Zahlen berechnet, die sich aus einzelnen Detail-Ratings ergeben, z.B. das Gesamtrating ((Kreditrating/Kreditvolumen + Bonität)/2), welches aus Bonität und allen vorhandenen Kreditratings eines Kunden besteht.\r\n\r\nBonität ergibt PD (Probability of Default)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Complete Rating'
+    - german:
+        formTitle: 'Bonität/Gesamtrating'
+    - french:
+        formTitle: 'Rating total'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      createNavigationIndex: true
+  - name: 'RatingDate'
+    description: 'Rating per'
+    genericControls:
+      defColumnPos: 1
+  - name: 'RatingTypeNo'
+    description: 'z.B. Gesamtrating\r\n\r\nno Update während der Migrationsphase der Daten aus Excel'
+    genericControls:
+      refTable: 'PtRatingConsType'
+      refField: 'RatingTypeNo'
+      defColumnPos: 3
+  - name: 'HardFactorId'
+    description: 'Verbindung zum Finanz. Rating (Hard Factors)'
+    genericControls:
+      refTable: 'PtBusinessRatio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'SoftFactorId'
+    description: ''
+    genericControls:
+      refTable: 'PtRatingStandard'
+      refField: 'Id'
+      defColumnPos: 5
+  - name: 'Weighting'
+    description: 'Gewichtung'
+    genericControls:
+      defColumnPos: 6
+  - name: 'FreezeText'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IsFrozen'
+    description: '0 = no\r\n1 = Yes\r\n\r\n'
+  - name: 'Result'
+    description: 'Rating Resultat, z.b. Bonität oder Gesamtrating\r\n\r\n'
+    genericControls:
+      defColumnPos: 7
+  - name: 'MgSeqNo'
+    description: 'Laufnummer aus Excel, zum Datenübernehmen'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgUser'
+    description: 'Kurzzeichen (1 - n)'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVol1'
+    description: 'blanko schwach'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVol2'
+    description: 'Blanko'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVol3'
+    description: 'unkurant'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVol4'
+    description: 'kurant'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVol5'
+    description: 'kurant Grundpfand'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVol6'
+    description: 'örk'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgAccountNo'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'ManualOverride'
+    description: 'manuelle Übersteuerung'
+  - name: 'ManualOverrideText'
+    description: ''
+    genericControls:
+      multiLine: true

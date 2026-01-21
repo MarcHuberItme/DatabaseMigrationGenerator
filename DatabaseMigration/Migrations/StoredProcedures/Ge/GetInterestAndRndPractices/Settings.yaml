@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetInterestAndRndPractices'
+  description: 'This SP obtains Interest & Rounding Practices for an Account'

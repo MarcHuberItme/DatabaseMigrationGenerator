@@ -1,0 +1,35 @@
+view:
+  name: 'PrCommissionTypeView'
+  description: 'nur als workaround während migration verwendet ! sobald ein spezielles erfassungsform für kommissionen und spesen in finstar erstellt wird, kann dieser View ersetzt werden.'
+frontendView:
+  name: 'PrCommissionTypeView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Mg Commission Type'
+    - german:
+        formTitle: 'Migrationskommissionsart'
+  columns:
+  - name: 'CommissionTypeNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    isUnique: true
+    genericControls:
+      refTable: 'PrCommissionType'
+      refField: 'CommissionTypeNo'
+      defColumnPos: 1
+  - name: 'TextShort'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 2

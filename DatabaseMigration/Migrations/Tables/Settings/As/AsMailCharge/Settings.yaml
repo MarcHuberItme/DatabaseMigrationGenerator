@@ -1,0 +1,24 @@
+table:
+  name: 'AsMailCharge'
+  description: 'Table to record outgoing mail charging information.\r\nA single record here corresponds to one outgoing dossier.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'MailOutputJobDocId'
+    description: ''
+    genericControls:
+      refTable: 'AsMailOutputJobDoc'
+      refField: 'Id'
+  - name: 'PackingCost'
+    description: ''
+  - name: 'MailingCost'
+    description: ''
+  - name: 'Processed'
+    description: '0 = Not processed.\r\n1 = Processed.'

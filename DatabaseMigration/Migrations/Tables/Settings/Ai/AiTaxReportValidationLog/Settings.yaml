@@ -1,0 +1,75 @@
+table:
+  name: 'AiTaxReportValidationLog'
+  description: 'Table to store validation logs of the procedure AiTaxReportAiaValidateData. The procedure is usualy run upon loading AIA (en: CRS) data into the staging area AiTAxReport* (see procedure: AiTAxReportAiaCollectData).'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Aia Data Validation Logs'
+    - german:
+        formTitle: 'Aia Data Validation Logs'
+    - french:
+        formTitle: 'Aia Data Validation Logs'
+  columns:
+  - name: 'TaxReportId'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxReport'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'CheckName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'TableName'
+    description: ''
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'IssueName'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'PartnerNoEdited'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'Name'
+    description: ''
+  - name: 'FirstName'
+    description: ''
+  - name: 'TextField01'
+    description: ''
+  - name: 'TextField02'
+    description: ''
+  - name: 'TextField03'
+    description: ''
+  - name: 'PartnerTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxReportPartnerType'
+      refField: 'PartnerTypeNo'
+      defColumnPos: 6
+  - name: 'CntrlPersonCount'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'IsError'
+    description: 'this flag shows if the current record is an error'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsWarning'
+    description: 'this flag shows if the current record is a warning'
+    genericControls:
+      isNoUpdate: true

@@ -1,0 +1,27 @@
+table:
+  name: 'PtStandingOrderStyle'
+  description: 'used for investment standing order. for multiple orders,\r\n0, default, any one order can be created\r\n1, all or none, wait until all orders can be created!'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'PtStandingOrderStyle'
+        helpText: 'PtStandingOrderStyle'
+    - german:
+        formTitle: 'PtStandingOrderStyle'
+        helpText: 'PtStandingOrderStyle'
+    - french:
+        formTitle: 'PtStandingOrderStyle'
+        helpText: 'PtStandingOrderStyle'
+  columns:
+  - name: 'OrderStyleNo'
+    description: '0, default, any\r\n1, all or none'
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,45 @@
+view:
+  name: 'PtStandingOrderPaymentView'
+  description: ''
+frontendView:
+  name: 'PtStandingOrderPaymentView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'PaymentAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'PaymentAmountMin'
+    description: ''
+    dataType: 'money'
+  - name: 'SalaryFlag'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ChargeBorneTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtChargeBorneType'
+      refField: 'ChargeBorneTypeNo'
+  - name: 'PaymentInformation'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true

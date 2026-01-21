@@ -1,0 +1,30 @@
+table:
+  name: 'PrCRMDomain'
+  description: 'Contains the Product Groups, for CRM-use mainly.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'CRM Product Groups'
+    - german:
+        formTitle: 'Produktegruppen für CRM'
+  columns:
+  - name: 'MinNogaCode'
+    description: 'first two numbers of the NogaCode, the smallest number of the possible economical segment for which these products are applicable.'
+  - name: 'MaxNogaCode'
+    description: 'first two numbers of the NogaCode, the largest number of the possible economical segment for which these products are applicable.'
+  - name: 'MinAge'
+    description: 'minimal age of the customer these products are applicable'
+  - name: 'MaxAge'
+    description: 'maximal age of the customer these products are applicable'
+  - name: 'Comment'
+    description: 'comments concering the product group'
+    genericControls:
+      multiLine: true

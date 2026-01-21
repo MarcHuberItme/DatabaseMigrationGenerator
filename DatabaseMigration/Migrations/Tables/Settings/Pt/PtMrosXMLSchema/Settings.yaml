@@ -1,0 +1,66 @@
+table:
+  name: 'PtMrosXMLSchema'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtMrosXMLSchema'
+        helpText: 'PtMrosXMLSchema'
+    - german:
+        formTitle: 'PtMrosXMLSchema'
+        helpText: 'PtMrosXMLSchema'
+    - french:
+        formTitle: 'PtMrosXMLSchema'
+        helpText: 'PtMrosXMLSchema'
+  columns:
+  - name: 'DocType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ParentElement'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Element'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Sequence'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'SeqAdded'
+    description: ''
+  - name: 'ChoiceMode'
+    description: ''
+  - name: 'DataType'
+    description: ''
+  - name: 'TypeName'
+    description: ''
+  - name: 'minInclusiveValue'
+    description: ''
+  - name: 'maxInclusiveValue'
+    description: ''
+  - name: 'minLength'
+    description: ''
+  - name: 'maxLength'
+    description: ''
+  - name: 'minOccurs'
+    description: ''
+  - name: 'maxOccurs'
+    description: ''
+  - name: 'Description'
+    description: ''
+  - name: 'Req'
+    description: ''
+  - name: 'DataFieldName'
+    description: ''

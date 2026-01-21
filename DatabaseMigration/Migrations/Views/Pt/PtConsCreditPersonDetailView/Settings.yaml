@@ -1,0 +1,84 @@
+view:
+  name: 'PtConsCreditPersonDetailView'
+  description: ''
+frontendView:
+  name: 'PtConsCreditPersonDetailView'
+  description: 'Konsumentendaten der Konsumkredite für die Übersicht im finstar'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'HdPendingSubChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+  - name: 'ConsCreditMonitorId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 3
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 4
+  - name: 'DateOfBirth'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+    genericControls:
+      defColumnPos: 5
+  - name: 'IkoCustomerId'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+    genericControls:
+      defColumnPos: 6
+  - name: 'IsMainCreditor'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 1

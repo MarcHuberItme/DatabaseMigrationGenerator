@@ -1,0 +1,41 @@
+table:
+  name: 'PtTransMessageTemp'
+  description: 'This table will be used to store  records temprorarily, imported from file or some other backup medium, like mini-sic or back mode input from SIC.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'MessageStandardCode'
+    description: 'Code of the messge standard'
+  - name: 'Message'
+    description: 'Single record imported from the file'
+    genericControls:
+      multiLine: true
+  - name: 'ImportDate'
+    description: 'The date on which the import process is being execute. Normally its the current date'
+  - name: 'ImportFile'
+    description: 'Fully qualified file name from which the message has been imported'
+  - name: 'ImportPurpose'
+    description: 'Purpose of import\r\n1. MiniSIC\r\n2. Backup\r\n3. General\r\n4. FileTransfer'
+  - name: 'Status'
+    description: 'Importing = 5\r\nImported = 6\r\nPendingParsing = 7\r\nPtPaymentOrderStatus.StatusNo'
+    genericControls:
+      refTable: 'PtPaymentOrderStatus'
+      refField: 'StatusNo'
+  - name: 'PaymentOrderId'
+    description: 'Payment Order Id.  In case a file has pre-defined Payment Orders, the correspending Payment Orders are generated at this stage and the this field containts the OrderId'
+    genericControls:
+      refTable: 'PtPaymentOrder'
+      refField: 'Id'
+  - name: 'PDEKey'
+    description: 'The unique key for the record as specified in the input file. (If any)'
+  - name: 'ImportProcessId'
+    description: 'Id of the file import process'
+    genericControls:
+      refTable: 'CMFileImportProcess'
+      refField: 'Id'

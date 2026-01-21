@@ -1,0 +1,33 @@
+table:
+  name: 'AiTaxAIAStatus'
+  description: 'Hier kann festgelegt werden, welche Steuerstatus es im Rahmen von AIA gibt.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax AIA status'
+    - german:
+        formTitle: 'Steuer AIA Status'
+    - french:
+        formTitle: 'Statut fiscal AIA'
+  columns:
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PartnerTypeNo'
+    description: 'Information if a person or company is relevant for FATCA reporting. Value 1 is for an individual person and Value 2 for companies. Value empty means nor relevance for FATCA reporting.'
+    genericControls:
+      refTable: 'AiTaxReportPartnerType'
+      refField: 'PartnerTypeNo'
+  - name: 'BlockingNewAccount'
+    description: 'when 1, create new account/portfolio is blocked!'

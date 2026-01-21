@@ -1,0 +1,3 @@
+function:
+  name: 'GetOtherCounterParty'
+  description: 'FinfraG: ermitteln des wirtschaftlich Berechtigten aufgrund der Portfolio-Id\r\n15.10.2024/wwo: add HdVersionNo between 1 and 999999998 in Left Outer Join PtIdentificationExternal'

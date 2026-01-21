@@ -1,0 +1,61 @@
+table:
+  name: 'PtTransSxFixMapping'
+  description: 'FIX mapping configuration'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'FIX mapping configuration'
+        helpText: 'FIX mapping configuration'
+    - german:
+        formTitle: 'FIX Mapping Konfiguration'
+        helpText: 'FIX Mapping Konfiguration'
+  columns:
+  - name: 'App'
+    description: 'Application specific FIX mapping configuration. Usually the Application/FIX client that is calling the GOI (e.g. AssetMax, GLOX, ...)\r\nNull can be used for a "default" FIX configuration that can be used by multiple Apps.\r\nApp specific configuration overrides values from default configuration.'
+    genericControls:
+      refTable: 'PtTransSxGoiApp'
+      refField: 'App'
+      defColumnPos: 1
+  - name: 'FinstarField'
+    description: 'The Finstar field (e.g. "TransTypeNo")'
+    genericControls:
+      refTable: 'PtTransSxFixMappingFinstarFld'
+      refField: 'FinstarField'
+      defColumnPos: 2
+  - name: 'FinstarValue'
+    description: 'The Finstar value (e.g. "621")'
+    genericControls:
+      defColumnPos: 3
+  - name: 'FixTag'
+    description: 'The FIX tag (e.g. 54)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'FixValue'
+    description: 'The FIX value (e.g. "D")'
+    genericControls:
+      defColumnPos: 5
+  - name: 'FinstarGroupField'
+    description: 'The Finstar group field if this mapping is for a field that belongs to a group (e.g. NoPartySubIDs)'
+    genericControls:
+      refTable: 'PtTransSxFixMappingGroupFld'
+      refField: 'FinstarGroupField'
+  - name: 'UseForFixToFinstar'
+    description: 'If set, this mapping entry is considered for mapping from FIX to Finstar.\r\nThe combination FinstarField, FixValue, FixTag has to be unique for all entries with UseForFixToFinstar set.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'UseForFinstarToFix'
+    description: 'If set, this mapping entry is considered for mapping from Finstar to FIX.\r\nThe combination FinstarField, FinstarValue, FixTag has to be unique for all entries with UseForFinstarToFix set.'
+    genericControls:
+      defColumnPos: 7
+  - name: 'Description'
+    description: 'A not mandatory (human readable) description of the mapping entry.'
+    genericControls:
+      multiLine: true

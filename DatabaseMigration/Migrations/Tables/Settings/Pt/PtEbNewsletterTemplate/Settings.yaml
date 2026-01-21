@@ -1,0 +1,44 @@
+table:
+  name: 'PtEbNewsletterTemplate'
+  description: 'template for newsletter configuration'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Newsletter Template'
+    - german:
+        formTitle: 'Newsletter Vorlage'
+  columns:
+  - name: 'TemplateNo'
+    description: 'template no (template identification)'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Subject'
+    description: 'Subject of the mail'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Body'
+    description: 'Body of the mail'
+    genericControls:
+      multiLine: true
+  - name: 'SenderEmailAddress'
+    description: 'Address to display'
+    genericControls:
+      defColumnPos: 3
+  - name: 'AsHtml'
+    description: '0 = Body contains plain text\r\n1 = Body contains html'
+  - name: 'ConfirmationReceiver'
+    description: 'Address to send the confirmation to'
+  - name: 'DisplayName'
+    description: ''
+  - name: 'AttachmentMandatory'
+    description: ''

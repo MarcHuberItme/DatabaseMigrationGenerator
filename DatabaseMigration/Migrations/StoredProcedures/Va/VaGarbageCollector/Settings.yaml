@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaGarbageCollector'
+  description: 'CleanUp the Valuation Tables\r\n07.04.2020/wwo: use new systemparameter to delete daily and adhoc VaRun.\r\n03.10.2024/rohn: clean-up tables VaLatestValuationForPosition/VaLatestValuationForPortfolio/VaLatestRunRef (using system parameter ''KeepingDailyRun'') \r\n28.1.2025/rohn: Inactivate  ''Cleanup VaPortfolio & ''CleanUp VaPosQuant'' to align with HBL PRD \r\n31.3.2025/rohn: Any clean-up jobs moved to DBCleanUpRule!'

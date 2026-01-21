@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'NcKdBatchDelta'
+  description: 'Deliver new and changed partner for cheking with the KycCheck'

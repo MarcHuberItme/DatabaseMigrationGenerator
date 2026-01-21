@@ -1,0 +1,3 @@
+view:
+  name: 'MCStateExchangeFileHeaderView'
+  description: 'File header records from MasterCard CSE report'

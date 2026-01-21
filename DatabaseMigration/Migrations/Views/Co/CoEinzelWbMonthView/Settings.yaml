@@ -1,0 +1,3 @@
+view:
+  name: 'CoEinzelWbMonthView'
+  description: 'Zeigt alle gerechneten Einzel Wb auf (Monatsende und aktueller Stand)'

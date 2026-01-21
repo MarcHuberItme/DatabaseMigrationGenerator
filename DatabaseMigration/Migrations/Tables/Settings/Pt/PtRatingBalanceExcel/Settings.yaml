@@ -1,0 +1,23 @@
+table:
+  name: 'PtRatingBalanceExcel'
+  description: 'saves balance excel template'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtRatingBalanceExcel'
+        helpText: 'PtRatingBalanceExcel'
+    - german:
+        formTitle: 'PtRatingBalanceExcel'
+        helpText: 'PtRatingBalanceExcel'
+  columns:
+  - name: 'ExcelTemplate'
+    description: ''

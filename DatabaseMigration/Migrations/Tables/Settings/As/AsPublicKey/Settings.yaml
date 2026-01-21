@@ -1,0 +1,21 @@
+table:
+  name: 'AsPublicKey'
+  description: 'Pubic Keys for encrypt (Document-Archive)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Public Keys'
+    - german:
+        formTitle: 'Öffentliche Schlüssel'
+  columns:
+  - name: 'XmlKey'
+    description: 'Public Key in XML Format'

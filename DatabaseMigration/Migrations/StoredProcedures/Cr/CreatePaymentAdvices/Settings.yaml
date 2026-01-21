@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CreatePaymentAdvices'
+  description: 'insert payment advices in PtPaymentAdvice and associate PtPrintTransMessage to PtPaymentAdvice'

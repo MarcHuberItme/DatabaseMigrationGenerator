@@ -1,0 +1,26 @@
+table:
+  name: 'PtIsoRejectionCode'
+  description: 'Table containing SIC ISO rejection codes. \r\nUsed for SIC IP rejections for now.\r\n'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtIsoRejectionCodes'
+        helpText: 'PtIsoRejectionCodes'
+    - german:
+        formTitle: 'PtIsoRejectionCodes'
+        helpText: 'PtIsoRejectionCodes'
+  columns:
+  - name: 'Code'
+    description: 'ISO Code'
+  - name: 'Description'
+    description: ''

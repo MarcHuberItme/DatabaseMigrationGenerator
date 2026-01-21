@@ -1,0 +1,21 @@
+table:
+  name: 'MgTestPosUpdate'
+  description: 'Diese Tabelle wird nur dann gelesen, wenn in den Systemparameter folgender Posten vorhanden ist:\r\nBatchProcessBehaviour: TestMode = 1'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Test PositionUpdate'
+    - german:
+        formTitle: 'Test PositionUpdate'
+  columns:
+  - name: 'TransNo'
+    description: 'Damit testhalber einzelne Transaktionen mit dem PositionUpdate-Prozess verarbeitet werden, können diese in diesem Feld gespeichert werden.'
+    genericControls:
+      defColumnPos: 1

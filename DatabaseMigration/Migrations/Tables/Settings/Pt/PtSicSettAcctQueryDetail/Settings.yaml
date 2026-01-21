@@ -1,0 +1,33 @@
+table:
+  name: 'PtSicSettAcctQueryDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PaymentQueryId'
+    description: ''
+    genericControls:
+      refTable: 'PtSicSettAcctQuerySummary'
+      refField: 'Id'
+  - name: 'BalanceAmount'
+    description: ''
+  - name: 'CreditDebitIndicator'
+    description: ''
+  - name: 'GenericBalanceTypeCode'
+    description: ''
+  - name: 'PaymentType'
+    description: ''
+  - name: 'StatusCode'
+    description: ''
+  - name: 'SettlementDate'
+    description: ''
+  - name: 'NumberOfPayments'
+    description: ''
+  - name: 'ErrorCode'
+    description: ''

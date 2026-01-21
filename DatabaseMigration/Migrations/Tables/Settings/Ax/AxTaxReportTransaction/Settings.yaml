@@ -1,0 +1,97 @@
+table:
+  name: 'AxTaxReportTransaction'
+  description: 'Enthält Transaktionen für TaxSource-Export.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax report Transaktionen'
+    - german:
+        formTitle: 'Steuermeldung Transaktion'
+  columns:
+  - name: 'TaxReportId'
+    description: 'Verbindung zur Steuermeldung.'
+    genericControls:
+      refTable: 'AxTaxReport'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'OwnerIdentification'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'AccountType'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Currency'
+    description: ''
+  - name: 'AccCurrency'
+    description: ''
+  - name: 'Amount'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'AccAmount'
+    description: ''
+  - name: 'ExchangeRate'
+    description: ''
+  - name: 'AccExchangeRate'
+    description: ''
+  - name: 'ISIN'
+    description: ''
+  - name: 'RecordNr'
+    description: ''
+  - name: 'ExtBusinessRef'
+    description: ''
+  - name: 'TradeEvent'
+    description: ''
+  - name: 'Nominal'
+    description: ''
+  - name: 'ExecTime'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'Valuta'
+    description: ''
+  - name: 'ExpCost'
+    description: ''
+  - name: 'AccExpCost'
+    description: ''
+  - name: 'AccruedInterest'
+    description: ''
+  - name: 'AccAccruedInterest'
+    description: ''
+  - name: 'WithholdingTax'
+    description: ''
+  - name: 'AccWithholdingTax'
+    description: ''
+  - name: 'VAT'
+    description: ''
+  - name: 'AccVAT'
+    description: ''
+  - name: 'EUTax'
+    description: ''
+  - name: 'AccEUTax'
+    description: ''
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxReportEntryStatus'
+      refField: 'StatusNo'
+  - name: 'FinstarPortfolioNo'
+    description: 'The original Field from PtPortfolio (since the AccountNo may contain PortfolioNo or IBAN)'
+  - name: 'FinstarAccountNo'
+    description: 'The original Field from PtAccountBase (since the AccountNo may contain PortfolioNo or IBAN)'
+  - name: 'Language'
+    description: 'Language of Report. In TaxSource data model it is on each transaction level.'

@@ -1,0 +1,42 @@
+table:
+  name: 'PtRatingCompany'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'Symbol'
+  columns:
+  - name: 'RatingBaseId'
+    description: ''
+    genericControls:
+      refTable: 'PtRatingBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Symbol'
+    description: 'Short name of the company which bought the assessments from the distrubutor'
+  - name: 'Address'
+    description: 'Company address'
+    genericControls:
+      multiLine: true
+  - name: 'PIN'
+    description: 'encrypted (MD5 algorithm) password signature!\r\nThis value has always 32 characters!'
+  - name: 'PUK'
+    description: 'encrypted (MD5 algorithm) password signature!\r\nThis value has always 32 characters!'
+  - name: 'InitialPIN'
+    description: 'PIN which is set initially and is used if the company master has lost or forgotten the PUK, to restore the initiall PIN. It is stored as plaintext.'
+  - name: 'InitialPUK'
+    description: 'PIN which is set initially and is used if the company master has lost or forgotten the PUK, to restore the initiall PIN. It is stored as plaintext.'
+  - name: 'PINWrongCounter'
+    description: 'Counter which indicates if this assessment is still valid whith that PIN.'
+  - name: 'PUKWrongCounter'
+    description: 'Counter which indicates if this assessment is still valid whith that PUK.'
+  - name: 'AllowProvider'
+    description: 'Flag which indicates if the QQ-provider is allowed to see the details or not.'
+  - name: 'AdvancedPayment'
+    description: ''

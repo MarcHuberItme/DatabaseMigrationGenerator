@@ -1,0 +1,101 @@
+view:
+  name: 'PtAccountReferenceListView'
+  description: 'A relatively thin view containing only fields relevant for identifying/referencing the account entity within the domain layer.\r\nCan also be used for generic account search and list views.'
+frontendView:
+  name: 'PtAccountReferenceListView'
+  description: 'Account Reference View for the domain layer. Used when other entities are referencing accounts or for account list views.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccountId'
+    description: 'Unique id of the account'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'PortfolioId'
+    description: 'Unique id of the portfolio this account belong to.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'AccountNo'
+    description: 'Account number numeric'
+    dataType: 'decimal'
+    isNotNull: true
+    isUnique: true
+    prec: 11
+  - name: 'AccountNoEdited'
+    description: 'Account number edited (formatted)'
+    dataType: 'nvarchar'
+    isNotNull: true
+    isUnique: true
+    prec: 20
+  - name: 'AccountNoText'
+    description: 'Account number text for sort'
+    dataType: 'nvarchar'
+    isNotNull: true
+    isUnique: true
+    prec: 20
+  - name: 'AccountNoIbanElect'
+    description: 'IBAN of the account in electronic format'
+    dataType: 'nvarchar'
+    isNotNull: true
+    isUnique: true
+    prec: 21
+  - name: 'AccountNoIbanForm'
+    description: 'Formatted IBAN of the account'
+    dataType: 'nvarchar'
+    isNotNull: true
+    isUnique: true
+    prec: 31
+  - name: 'AccountNoQrIbanElect'
+    description: 'Qr IBAN without formatting for electonic usage'
+    dataType: 'nvarchar'
+    prec: 21
+  - name: 'AccountNoQrIbanForm'
+    description: 'Qr IBAN formatted'
+    dataType: 'nvarchar'
+    prec: 31
+  - name: 'AccountCustomerReference'
+    description: 'A name given to the account by the customer.'
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'OpeningDate'
+    description: 'Date when the account was opened.'
+    dataType: 'datetime'
+  - name: 'TerminationDate'
+    description: 'Date when the account was terminated.'
+    dataType: 'datetime'
+  - name: 'ProductReferenceCurrency'
+    description: 'Currency of the account'
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+  - name: 'ProductReferenceId'
+    description: 'Id of the ProductReference'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'PrivateProductId'
+    description: 'Id of the private product of the account'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'ProductId'
+    description: 'Id of the product of this account'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'ProductNo'
+    description: 'Product number of the account''s product.'
+    dataType: 'int'
+    isNotNull: true
+  - name: 'ProductClass'
+    description: 'The domain class of the product and the account.\r\nDetermines which C# class to instantiate in the domain model.'
+    dataType: 'nvarchar'
+    prec: 32
+  - name: 'ProductNameTranslationKey'
+    description: 'The translationKey for the product name.\r\nThis is temporarily implemented as the english AsText (LanguageNo=1) but in the future this should be replaced with the AsText, once the translationKey mechanism is built.'
+    dataType: 'nvarchar'
+    prec: 500

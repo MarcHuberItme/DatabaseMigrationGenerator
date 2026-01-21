@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtAccountAnnuityBooking_Upsert'
+  description: ''

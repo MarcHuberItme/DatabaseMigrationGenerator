@@ -1,0 +1,33 @@
+table:
+  name: 'PtPaymentSanctionWhiteList'
+  description: 'White list for sanction screening'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment sanct. white list'
+    - german:
+        formTitle: 'ZA Sanktions-Whitelist'
+    - french:
+        formTitle: 'Liste blanche des sanctio'
+  columns:
+  - name: 'FullAddress'
+    description: 'Full address of ordering party or beneficiary'
+    genericControls:
+      multiLine: true
+      defColumnPos: 1
+  - name: 'AccountNoIban'
+    description: 'Iban no of ordering party or beneficiary'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ESRParticipantNo'
+    description: ''
+    genericControls:
+      defColumnPos: 3

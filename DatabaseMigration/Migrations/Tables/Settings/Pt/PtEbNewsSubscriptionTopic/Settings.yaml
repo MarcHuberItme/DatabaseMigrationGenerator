@@ -1,0 +1,37 @@
+table:
+  name: 'PtEbNewsSubscriptionTopic'
+  description: 'contains the desired news topics for a newsletter subscription account'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'E-News subscribed topic'
+    - german:
+        formTitle: 'E-News subscribed topic'
+    - french:
+        formTitle: 'E-News subscribed topic'
+    - italian:
+        formTitle: 'E-News subscribed topic'
+  columns:
+  - name: 'NewsSubscriptionId'
+    description: ''
+    genericControls:
+      refTable: 'PtEbNewsSubscription'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'NewsTopicNo'
+    description: ''
+    genericControls:
+      refTable: 'PtEbNewsTopic'
+      refField: 'TopicNo'
+      defColumnPos: 1

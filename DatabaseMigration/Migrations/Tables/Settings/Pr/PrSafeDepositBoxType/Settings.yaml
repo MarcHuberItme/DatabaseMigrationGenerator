@@ -1,0 +1,37 @@
+table:
+  name: 'PrSafeDepositBoxType'
+  description: 'Beschreibung der Tresorfächer'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Save deposit box type'
+    - german:
+        formTitle: 'Tresorfachtyp'
+  columns:
+  - name: 'TypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Width'
+    description: 'Box width by cm'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Height'
+    description: 'Box height by cm'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Depth'
+    description: 'Box depth by cm'
+    genericControls:
+      defColumnPos: 4

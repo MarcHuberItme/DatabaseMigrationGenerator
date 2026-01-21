@@ -1,0 +1,30 @@
+table:
+  name: 'PtAccountClosingType'
+  description: 'Closing type accounts\r\n0 = VRX Migrated Data\r\n1 = periodical interest calculation, results are to debit/credit \r\n2 = accrued interest for internal profit and loss calculation \r\n3 = special interest calculation needs, e.g. until date of dead'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Closing type'
+    - german:
+        formTitle: 'Abschluss Art'
+  columns:
+  - name: 'PeriodTypeNo'
+    description: '0 = VRX Migrated Data\r\n1 = periodical interest calculation, results are to debit/credit \r\n2 = accrued interest for internal profit and loss calculation \r\n3 = special interest calculation needs, e.g. until date of dead'
+    minValue: '0'
+    maxValue: '3'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SortNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2

@@ -1,0 +1,19 @@
+table:
+  name: 'PrPublicIbtType'
+  description: 'Domain for IBT-Type (SIX CONNEXOR typ of instruments)\r\nDelivered from VDF TKMED'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'IbtType'
+    description: 'IBT Type-No  for structured products.\r\nThe IBT-Type is assigned by SIS in the CONNEXOR-System.\r\nActually, it is fully numeric.'
+    genericControls:
+      defColumnPos: 1

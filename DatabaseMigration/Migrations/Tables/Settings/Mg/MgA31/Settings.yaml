@@ -1,0 +1,29 @@
+table:
+  name: 'MgA31'
+  description: 'FIS-VRX Vollmachtstypen'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 2
+    physicalDelete: true
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Vollmachtstypen'
+    - german:
+        formTitle: 'Vollmachtstypen'
+  columns:
+  - name: 'MigValue'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'Text'
+    description: ''
+    genericControls:
+      isOnlyForMig: true

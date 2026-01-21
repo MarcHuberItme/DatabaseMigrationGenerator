@@ -1,0 +1,27 @@
+table:
+  name: 'CyInterestCarrier'
+  description: 'Data carrier for interest rates, VDF, Datascope'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    descField: 'InterestCarrierNo'
+    uiTableDescription:
+    - english:
+        formTitle: 'interest carrier'
+    - german:
+        formTitle: 'Zins Lieferant'
+  columns:
+  - name: 'InterestCarrierNo'
+    description: 'Carrier Type'
+    genericControls:
+      visNumber: 1
+      defColumnPos: 1
+      noUpdatePos: 1

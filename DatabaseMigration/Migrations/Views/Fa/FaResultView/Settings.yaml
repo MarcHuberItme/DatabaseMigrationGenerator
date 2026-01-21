@@ -1,0 +1,3 @@
+view:
+  name: 'FaResultView'
+  description: 'View as common basis for several reports for the US-Program'

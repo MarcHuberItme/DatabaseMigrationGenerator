@@ -1,0 +1,37 @@
+table:
+  name: 'TrMessageType'
+  description: 'List of message types per message standard'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'MessageStandardId'
+    description: ''
+    genericControls:
+      refTable: 'TrMessageStandard'
+      refField: 'Id'
+  - name: 'Prefix'
+    description: ''
+  - name: 'Code'
+    description: ''
+  - name: 'TableName'
+    description: ''
+  - name: 'SequencesExist'
+    description: ''
+  - name: 'ValidateFieldFormat'
+    description: ''
+  - name: 'ValidateCondFields'
+    description: ''
+  - name: 'SubMessageTypeCode'
+    description: ''
+  - name: 'ParseText'
+    description: 'The flag indicates that text part should be parsed or not. This feature is used to handle the data in non-parseable format. For example SIS Reports in Print Format'
+  - name: 'Scope'
+    description: 'Scope of the message\r\n0 = both Input and Output\r\n1 = Input only'
+  - name: 'IsEnabled'
+    description: ''

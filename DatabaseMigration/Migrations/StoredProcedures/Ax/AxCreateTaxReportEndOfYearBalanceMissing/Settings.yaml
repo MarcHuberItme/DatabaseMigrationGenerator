@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxCreateTaxReportEndOfYearBalanceMissing'
+  description: 'List of all missing account balance. Missing because the position was not already open at StartDate or was already closed at EndDate.'

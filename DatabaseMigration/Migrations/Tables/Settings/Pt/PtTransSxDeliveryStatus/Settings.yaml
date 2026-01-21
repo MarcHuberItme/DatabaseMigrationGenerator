@@ -1,0 +1,19 @@
+table:
+  name: 'PtTransSxDeliveryStatus'
+  description: '1= open\r\n2= in progress\r\n3= security booking completed\r\n4= account bookings completed\r\n8= reversed\r\n9= deleted'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+  columns:
+  - name: 'DeliveryStatusNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,53 @@
+table:
+  name: 'AsLanguage'
+  description: 'All languages that are active in finstar.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Language'
+    - german:
+        formTitle: 'Sprache'
+  columns:
+  - name: 'LanguageNo'
+    description: 'Number of the language.'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'UserDialog'
+    description: 'True if selectable in FinStar as user language'
+  - name: 'CustomerOutput'
+    description: 'True if language is used for customer correpondence.'
+  - name: 'MigValue'
+    description: ''
+    minValue: '00'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'LocaleId'
+    description: 'This is a  ***temporary*** field for the navigation builder. It will be removed as soon as the navigation builder''s functionality is completely based on language numbers instead of locale id''s.'
+  - name: 'PostLanguageNo'
+    description: 'Language number used from the post office. Is used to mapp the language number when importing data in AsZip 19.11.2002/mct'
+  - name: 'ATMLanguageNo'
+    description: 'The language no used by ATM'
+    genericControls:
+      refTable: 'PtCardLanguage'
+      refField: 'LanguageNo'
+  - name: 'IsCorrespondenceLanguage'
+    description: ''
+  - name: 'PMSLanguageNo'
+    description: 'Language code used by PMS'
+  - name: 'PMSLanguageCode'
+    description: 'EN/DE'
+  - name: 'IsRelevantForPMS'
+    description: ''
+  - name: 'IsoCode'
+    description: 'ISO-639-1 2 letter code'

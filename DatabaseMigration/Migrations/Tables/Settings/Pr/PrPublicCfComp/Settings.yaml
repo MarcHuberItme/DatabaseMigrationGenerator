@@ -1,0 +1,52 @@
+table:
+  name: 'PrPublicCfComp'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublicCfSet'
+      parentRelationField: 'PublicCfParentSetId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Cash flow set component'
+    - german:
+        formTitle: 'Cash Flow Set Komponente'
+  columns:
+  - name: 'PublicCfParentSetId'
+    description: 'VDF: XND.XNI.7820'
+    genericControls:
+      refTable: 'PrPublicCfSet'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'PublicCfId'
+    description: 'VDF: XND.XZS.7820 (translate with PrPublicCf)'
+    genericControls:
+      refTable: 'PrPublicCf'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PublicCfSetId'
+    description: 'VDF: XND.XZS.7820 (translate with PrPublicCfSet)'
+    genericControls:
+      refTable: 'PrPublicCfSet'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'DefaultCf'
+    description: 'VDF: XND.XZT.4924'
+    genericControls:
+      defColumnPos: 3

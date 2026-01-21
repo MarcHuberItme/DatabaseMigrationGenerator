@@ -1,0 +1,55 @@
+table:
+  name: 'PtMlCheckFollowUpProcesses'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PeriodicCheckId'
+    description: 'Id der periodischen Prüfung'
+    genericControls:
+      refTable: 'PtMLPeriodicCheck'
+      refField: 'Id'
+  - name: 'ProcessNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMlFollowUpProcesses'
+      refField: 'ProcessNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ProcessingTypeNo'
+    description: 'Art der Verarbeitung'
+    genericControls:
+      refTable: 'PtMLProcessingType'
+      refField: 'ProcessingTypeNo'
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'ProcessingStateNo'
+    description: 'Status der Verarbeitung'
+    genericControls:
+      refTable: 'PtMLProcessingStateNo'
+      refField: 'ProcessingStateNo'
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'CompletionUser'
+    description: 'User, welcher den Task abgeschlossen hat'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'CompletionDate'
+    description: 'Datum an welchem der Prozess abgeschlossen wurde'
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'Remark'
+    description: 'Bemerkungsfeld'
+    genericControls:
+      multiLine: true

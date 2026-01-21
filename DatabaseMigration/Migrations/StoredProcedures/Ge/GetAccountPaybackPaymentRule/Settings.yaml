@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountPaybackPaymentRule'
+  description: 'retrieve the account to debit the account paypack installment'

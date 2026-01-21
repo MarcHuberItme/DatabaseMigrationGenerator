@@ -1,0 +1,42 @@
+table:
+  name: 'PtCardShowJournalOneCard'
+  description: 'Displays information to certain card as selected in Finstar'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'RefNoProcessor'
+    description: ''
+  - name: 'JournalEntrySeqNo'
+    description: ''
+  - name: 'DateTime'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'JournalEntryOrigin'
+    description: ''
+    genericControls:
+      refTable: 'PtCardJournalOrigin'
+      refField: 'Origin'
+      defColumnPos: 2
+  - name: 'UserID'
+    description: ''
+  - name: 'MessageType'
+    description: ''
+    genericControls:
+      refTable: 'PtCardJournalMessageType'
+      refField: 'MessageType'
+      defColumnPos: 1
+  - name: 'ResponseCode'
+    description: ''
+  - name: 'ResponseText'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 4

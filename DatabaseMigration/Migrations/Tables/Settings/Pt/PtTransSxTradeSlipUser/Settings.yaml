@@ -1,0 +1,25 @@
+table:
+  name: 'PtTransSxTradeSlipUser'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+  columns:
+  - name: 'UserNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'UserId'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2

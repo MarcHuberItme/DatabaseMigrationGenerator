@@ -1,0 +1,22 @@
+table:
+  name: 'PtTabuType'
+  description: 'sort/type of tabus'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Tabu type'
+    - german:
+        formTitle: 'Tabutyp'
+    - french:
+        formTitle: 'Tabou type'
+  columns: []

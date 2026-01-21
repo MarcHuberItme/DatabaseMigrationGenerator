@@ -1,0 +1,58 @@
+table:
+  name: 'TrMsgFieldRelationship'
+  description: 'List of fields included in in MessageType (Text Block)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'MessageTypeId'
+    description: ''
+    genericControls:
+      refTable: 'TrMessageType'
+      refField: 'Id'
+  - name: 'FieldId'
+    description: ''
+    genericControls:
+      refTable: 'TrField'
+      refField: 'Id'
+  - name: 'Presence'
+    description: 'Optional in in-comng messages (Message from SIC)= 2\r\n    Mandatory in in-comng messages = 4\r\n    Conditional in in-comng messages = 8\r\n    Should not present iin-comng messages = 16\r\n    Optional in out going messages (Messages to SIC) = 32\r\n    Mandatory in out going messages = 64\r\n    Conditional in out going messages= 128\r\n    Should not present in out going messages = 256'
+  - name: 'FieldIndex'
+    description: ''
+  - name: 'AddToOutPut'
+    description: ''
+  - name: 'SubTableName'
+    description: ''
+  - name: 'ConditionActionCode'
+    description: ''
+  - name: 'SequenceId'
+    description: ''
+    genericControls:
+      refTable: 'TrSequence'
+      refField: 'Id'
+  - name: 'GroupId'
+    description: ''
+    genericControls:
+      refTable: 'TrGroup'
+      refField: 'Id'
+  - name: 'InGroupOrder'
+    description: ''
+  - name: 'IsRepetitive'
+    description: ''
+  - name: 'SubSequenceIndication'
+    description: '0 = None\r\n1 = Field Indicates Start of Sub-Sequence\r\n2.= Field Indicate End of Sub-Sequence'
+  - name: 'SubSeqIndicationValue'
+    description: 'The value of the field that should indicate the Start or End  of the sub-sequence'
+  - name: 'SubSeqCode'
+    description: ''
+  - name: 'SubSeqIsMandatory'
+    description: 'Sub sequece is mandatory or optional'
+  - name: 'ParentTableName'
+    description: ''
+  - name: 'SkipFieldOnParseError'
+    description: ''

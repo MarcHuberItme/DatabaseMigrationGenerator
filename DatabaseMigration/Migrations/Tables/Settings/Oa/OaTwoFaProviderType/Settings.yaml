@@ -1,0 +1,17 @@
+table:
+  name: 'OaTwoFaProviderType'
+  description: 'Table representing two-factor authentication provider type.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'TypeNo'
+    description: 'Number representing the type of the two-factor authentication provider.'

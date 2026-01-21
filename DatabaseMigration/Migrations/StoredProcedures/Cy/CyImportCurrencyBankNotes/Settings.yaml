@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CyImportCurrencyBankNotes'
+  description: 'Get recordset for banknote rate import\r\n20241219/wwo: Read CyCommission with HdVersionNo between 1 and 999999998 (FIN-12262)'

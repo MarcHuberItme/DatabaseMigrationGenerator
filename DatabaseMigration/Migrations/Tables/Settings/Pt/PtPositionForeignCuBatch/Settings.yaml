@@ -1,0 +1,42 @@
+table:
+  name: 'PtPositionForeignCuBatch'
+  description: 'Bewertunglauf für Fremdwährungskonti.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'ValuationDate'
+    uiTableDescription:
+    - english:
+        formTitle: 'Bewertungslauf Fwg-Konti'
+        helpText: 'Bewertungslauf Fwg-Konti'
+    - german:
+        formTitle: 'Bewertungslauf Fwg-Konti'
+        helpText: 'Bewertungslauf Fwg-Konti'
+  columns:
+  - name: 'DateFrom'
+    description: 'Startdatum für die Bewertung'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'ValuationDate'
+    description: 'Datum der Bewertung'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PeriodEndDate'
+    description: 'Datum Jahresabschluss'
+    genericControls:
+      defColumnPos: 3
+  - name: 'JobStartDate'
+    description: 'Startdatum des Jobs'
+    genericControls:
+      defColumnPos: 4
+  - name: 'JobEndDate'
+    description: 'Enddatum des Jobs'
+    genericControls:
+      defColumnPos: 5

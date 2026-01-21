@@ -1,0 +1,65 @@
+table:
+  name: 'PtAccountPaybackAccountList'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Account list amortisation'
+    - german:
+        formTitle: 'Kontoliste Amortisation'
+    - french:
+        formTitle: 'Amo liste des comptes'
+    - italian:
+        formTitle: 'Lista dei conti ammo'
+  columns:
+  - name: 'PaybackId'
+    description: 'Reference to PtAccountPayback which is the indirect amortisation paid via the account below\r\n--\r\nReferenz zu PtAccountPayback, Referenz zur indirekten Amortisation welche über das untenstehende Konto geleistet wird'
+    genericControls:
+      refTable: 'PtAccountPayback'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PaybackIntAccountNo'
+    description: 'Reference to internal account\r\n--\r\nReferenz zum internen Konto (PtAccountBase.Id) über welche indirekt amortisiert werden soll. Soll über ein Dropdown selektiert werden können, indem entweder direkt die Kontonummer eingegeben wird, oder via Eingabe der Partnernummer alle in Frage kommenden Konti angezeigt werden. Für die Einschränkung der Produkte sollte eine Gruppierung verwendet werden, da die Kontonummern je nach Bank varieren können. Abgelegt ist die ID des Kontos, auf dem UI wird aber ein String aus "PtAccountBase.AccountNoEdited", "PrPrivate.ProductNo" und sofern vorhanden "PtAccountBase.CustomerReference" oder ansonsten der Produktbeschreibung.'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PaybackIntAccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'PaybackExtAccountNo'
+    description: 'Account No of referenced external Account (IBAN). If IsExtPayback = 1 then at least the external Reference is mandatory; best case: IBAN of external account.\r\n--\r\nKontonummer des referenzierten Externen Kontos (IBAN). Wenn IsExtPayback = 1 muss hier mindestens die externe Referenz erfasst werden; optimal ist die IBAN des externen Kontos, über das indirekt amortisiert wird'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PaybackYearToDateAmount'
+    description: 'Amount paid/amortized to this account in the current year\r\n--\r\nWieviel wurde im laufenden Jahr auf dieses Konto einbezahlt. Wird nicht erfasst, reine Anzeige und errechnet durch das System.'
+  - name: 'LastControlDate'
+    description: 'Date of last check regarding this amortization\r\n--\r\nDatum der letzten Kontrolle der Einzahlungen. Wird nicht erfasst, reine Anzeige'
+    genericControls:
+      defColumnPos: 3
+  - name: 'StandingOrderId'
+    description: 'Reference to Standing Order (PtStandingOrder.Id)\r\n--\r\nReferenz zu PtStandingOrder.Id, Selektionsmöglichkeit für einen Dauerauftrag mittels SearchForm.'
+    genericControls:
+      refTable: 'PtStandingOrder'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsExtPayback'
+    description: 'If = 1 this amo works via an external account\r\n--\r\nFlag welches für indirekte Amortisationen verwendet wird, welche über eine externe Lösung (Konto bei anderem Institut, Versicherungslösung, Fondslösung) einbezahlt werden. In diesem Fall ist eine Kontrolle nicht möglich.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'PaybackCollatId'
+    description: ''
+    genericControls:
+      refTable: 'CoBaseAssignCreditView'
+      refField: 'Id'
+      hasDetailBtn: true

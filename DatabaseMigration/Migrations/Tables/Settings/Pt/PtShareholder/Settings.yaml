@@ -1,0 +1,57 @@
+table:
+  name: 'PtShareholder'
+  description: 'records all shareholder'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Shareholder'
+    - german:
+        formTitle: 'Aktionär'
+    - french:
+        formTitle: 'Registre des actionnaires'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ShareholderNo'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'RemainingQuantity'
+    description: 'Total number of shares assigned to the shareholder'
+    genericControls:
+      defColumnPos: 2
+  - name: 'RegisterDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'RemoveDate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'DepotbankID'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'TransferredQuantity'
+    description: 'the quantity has been transferred to other'
+    genericControls:
+      defColumnPos: 6

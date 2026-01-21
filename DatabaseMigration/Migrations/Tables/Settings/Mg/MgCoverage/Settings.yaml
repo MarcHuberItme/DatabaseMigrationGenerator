@@ -1,0 +1,24 @@
+table:
+  name: 'MgCoverage'
+  description: 'This table contains the possible coverages for FIS-VRX (Deckungsrecords)\r\n\r\nThey are:	Grundpfand XS30\r\n	Faustpfand XS32\r\n	Bürgschaft XS34\r\n	Andere Deckung XS36\r\n	Blanko XS38'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Coverage Records for VRX'
+    - german:
+        formTitle: 'Deckungsrecords für VRX'
+  columns:
+  - name: 'CoverageNo'
+    description: 'VRX RECID that identifies the coverage record type'
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      defColumnPos: 1

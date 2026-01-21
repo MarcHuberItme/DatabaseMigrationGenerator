@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'NcKdBatchFull2'
+  description: 'Deliver all partners for checking with the KycCheck (KycSpider).'

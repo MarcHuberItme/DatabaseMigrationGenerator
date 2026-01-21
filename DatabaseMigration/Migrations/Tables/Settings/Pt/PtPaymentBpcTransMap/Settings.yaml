@@ -1,0 +1,29 @@
+table:
+  name: 'PtPaymentBpcTransMap'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'OperationCode'
+    description: ''
+    genericControls:
+      refTable: 'PtBpcOperationCode'
+      refField: 'OperationCode'
+  - name: 'KtbTransType'
+    description: ''
+  - name: 'KtbSystemCodeDomestic'
+    description: ''
+  - name: 'KtbSystemCodeInternational'
+    description: ''
+  - name: 'IsDebit'
+    description: ''
+  - name: 'RecordTypeID'
+    description: 'TX (Transaction record from Scheme)\r\nMF (Miscellaneous fee applied by MPE)\r\nCB (Chargeback record)\r\nFC (Fee collection record from Scheme)\r\nCT (Clearing total record from Scheme)'

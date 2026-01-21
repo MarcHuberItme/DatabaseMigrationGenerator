@@ -1,0 +1,126 @@
+view:
+  name: 'CoBaseAssignCreditView'
+  description: 'remove B.InactFlag=0, msn, 19.08.2015'
+frontendView:
+  name: 'CoBaseAssignCreditView'
+  description: 'View to show the collaterals applied'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'CoBaseAssignCreditView'
+        helpText: 'CoBaseAssignCreditView'
+    - german:
+        formTitle: 'CoBaseAssignCreditView'
+        helpText: 'CoBaseAssignCreditView'
+  columns:
+  - name: 'CreditPartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'CreditAccountNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 2
+  - name: 'CreditAccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'CollPartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'CollSubType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'CoSubtype'
+      refField: 'Collsubtype'
+      defColumnPos: 6
+  - name: 'CollNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 7
+  - name: 'CollateralId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'CoBase'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ExtKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 8
+  - name: 'Description'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 9
+  - name: 'AssignNullValue'
+    description: ''
+    dataType: 'char'
+    prec: 1
+    genericControls:
+      defColumnPos: 10
+  - name: 'CreditAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      defColumnPos: 3
+  - name: 'PrioCredit'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 4
+  - name: 'OwnerDesc'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 103
+    genericControls:
+      defColumnPos: 5
+  - name: 'CreditDesc'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 103
+    genericControls:
+      defColumnPos: 2
+  - name: 'MaxAllocAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 12
+  - name: 'InactFlag'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 12

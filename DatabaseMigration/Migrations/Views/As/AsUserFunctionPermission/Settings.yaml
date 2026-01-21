@@ -1,0 +1,3 @@
+view:
+  name: 'AsUserFunctionPermission'
+  description: 'Returns the FunctionGroupNo and AccessTypeNo together with the associated users'

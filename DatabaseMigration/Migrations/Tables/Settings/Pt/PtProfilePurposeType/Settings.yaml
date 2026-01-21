@@ -1,0 +1,34 @@
+table:
+  name: 'PtProfilePurposeType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Purpose of Business Rela'
+    - german:
+        formTitle: 'Zweck der Geschäftsbez.'
+    - french:
+        formTitle: 'Objet relation d''affaires'
+  columns:
+  - name: 'PurposeTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ValidFrom'
+    description: 'Zeitliche Gültigkeit des Records, Startdatum'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValidTo'
+    description: 'Zeitliche Gültigkeit des Records, Enddatum'
+    genericControls:
+      defColumnPos: 3

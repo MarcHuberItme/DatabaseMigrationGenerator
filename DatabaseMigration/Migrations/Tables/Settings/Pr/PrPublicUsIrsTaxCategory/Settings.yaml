@@ -1,0 +1,24 @@
+table:
+  name: 'PrPublicUsIrsTaxCategory'
+  description: 'Reporting-Details for US - Tax'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'US IRS Tax Category'
+    - german:
+        formTitle: 'US IRS Tax Category'
+  columns:
+  - name: 'UsIrsTaxCategory'
+    description: 'VDF FZD.VAI.FZM\r\n\r\nDomain 4980'
+    genericControls:
+      defColumnPos: 1

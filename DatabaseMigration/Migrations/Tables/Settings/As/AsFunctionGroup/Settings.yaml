@@ -1,0 +1,23 @@
+table:
+  name: 'AsFunctionGroup'
+  description: 'Permission group for function- and field-based permissions'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Function Permission Group'
+    - german:
+        formTitle: 'Berechtigungen Funktionen'
+  columns:
+  - name: 'FunctionGroupNo'
+    description: 'Number of the function group.'
+    genericControls:
+      defColumnPos: 1

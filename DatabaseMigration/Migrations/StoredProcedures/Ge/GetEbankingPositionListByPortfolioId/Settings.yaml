@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetEbankingPositionListByPortfolioId'
+  description: 'Retrieve List of Securities Portfolio Positions to show in E-Banking with pagination and dynamic sort field as input parameter.\r\nRemoved HdVersionNo filter in some cases to optimize data read\r\n--AND (VaRun.HdVersionNo BETWEEN 1 AND 999999998) not necessary and impacts performance\r\n--AND (Pub.HdVersionNo BETWEEN 1 AND 999999998)   not necessary and impacts performance\r\n'

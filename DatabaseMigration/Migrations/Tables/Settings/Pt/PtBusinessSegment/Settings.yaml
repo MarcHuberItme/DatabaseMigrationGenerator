@@ -1,0 +1,28 @@
+table:
+  name: 'PtBusinessSegment'
+  description: 'Erweitertes Kundensegment zur Plausibilisierung von Fatca/QI (SEBA)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Business Segment'
+        helpText: 'Business Segment'
+    - german:
+        formTitle: 'Business Segment'
+        helpText: 'Business Segment'
+    - french:
+        formTitle: 'Business Segment'
+        helpText: 'Business Segment'
+  columns:
+  - name: 'BusinessSegmentNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

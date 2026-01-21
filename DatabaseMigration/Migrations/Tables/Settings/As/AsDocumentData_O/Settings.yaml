@@ -1,0 +1,66 @@
+table:
+  name: 'AsDocumentData_O'
+  description: 'binary documents (.doc, .tif, .img etc);\r\n\r\nEin Dokument kann mit gleicher Dokument-Nummer mehrmals in der Datenbank gespeichert werden. Allerdings muss das Format (PDF, BMP etc.) unterschiedlich sein. d.h. Original im PDF - gescannte unterschriebene Version als JPG.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 2
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'binary document'
+    - german:
+        formTitle: 'Originaldokument'
+  columns:
+  - name: 'DocumentId'
+    description: 'foreign-key;  Id of AsDocument\r\nn single document files (AsDocumentData) are related to one document (AsDocument)'
+    genericControls:
+      refTable: 'AsDocument'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'Format'
+    description: 'Format of Document (like .jpg / .bmp / .tif - or Winword95, Winword97)'
+    genericControls:
+      refTable: 'AsDocumentFormat'
+      refField: 'Format'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'RecordDate'
+    description: 'date of ''recording'' (scanndate or printdate) the document. \r\ne.g.: a document can be scanned on the 5.12.200X but only saved on the 6.12.200X because it has first to be edited.'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'Location'
+    description: '1 = Operativ\r\n2 = Archiv'
+    genericControls:
+      isNoUpdate: true
+  - name: 'StatusNo'
+    description: 'Document status (draft, completed, signed, retained mail (banklagernd),...)'
+    genericControls:
+      refTable: 'AsDocumentStatus'
+      refField: 'StatusNo'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'Comments'
+    description: 'Comments of the document.\r\nWhen a document can no more be modified, because it as no more the status draft then there can be added here a remark or description of the error.'
+    genericControls:
+      multiLine: true
+  - name: 'Datastring'
+    description: 'binary data of a single document'
+  - name: 'Replaceable'
+    description: 'If true the file can be replaced when the returned document is scanned'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ExpirationStart'
+    description: ''
+  - name: 'Sign'
+    description: 'In diesem Feld werden die Verschlüsstelten Daten des Dokumentes abgelegt.\r\nHASH, Dokumentengrösse, TimeStamp der Erstellung und TimeStamp der Verschlüsselung'
+  - name: 'PublicKeyId'
+    description: 'PublicKeyId for asPublicKey'
+  - name: 'SignStatusNo'
+    description: 'NEW_DOCUMENT = 0\r\nIN_PROGRESS = 1\r\nSIGNED = 2\r\nINTEGRITY_CHECKED = 3\r\nHASH_FAILURE = 91\r\nTIMESTAMP_FAILURE = 92\r\nSIZE_FAILURE = 93\r\nCHECK_ERROR = 9999\r\n'

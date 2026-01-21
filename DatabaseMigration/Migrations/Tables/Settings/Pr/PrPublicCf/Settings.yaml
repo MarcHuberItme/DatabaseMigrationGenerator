@@ -1,0 +1,315 @@
+table:
+  name: 'PrPublicCf'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Cash Flow'
+    - german:
+        formTitle: 'Cash Flow'
+  columns:
+  - name: 'VdfDocType'
+    description: 'VDF: XBD.XBD.0804\r\n         XCD.XCD.0804\r\n         XPD.XPD.0804\r\n         XRD.XRD.0804\r\n         FAD.FAD.0804\r\nDoctype: XBD, XCD, XPD or XRD (also it can be an FAD because TOFF-Position)'
+  - name: 'VdfDocGen'
+    description: 'VDF: XBD.XBD.0813\r\n         XCD.XCD.0813\r\n         XPD.XPD.0813\r\n         XRD.XRD.0813\r\n         FAD.FAD.0813\r\nGeneration of the last Doc, which was received from VDF'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: X_D.MGA.7895\r\nMessage status of the doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'PublicId'
+    description: 'VDF: X_D.VAI.K981.7842'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'ProdReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PrReference'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'VdfIdentification'
+    description: 'VDF: X_D.MGG.7820\r\nTelekurs internal reference'
+    genericControls:
+      defColumnPos: 7
+  - name: 'PublicEventId'
+    description: ''
+  - name: 'PublicCorpActSubId'
+    description: 'VDF: X_D.ZAA.7820-B\r\nReference to the subevent (table PrPublicCorpActSub, doctype ZAD) within the corporate action event to which this single message belongs.'
+  - name: 'AllotmentTypeNo'
+    description: 'VDF: XCD.XCZ.4969\r\nInstrument allotment/ placement type\r\n'
+    genericControls:
+      refTable: 'PrPublicAllotmentType'
+      refField: 'AllotmentTypeNo'
+  - name: 'AllotmentNewInstrNo'
+    description: 'VDF: XCD.XCZ.4987\r\nDistribution new instruments\r\n'
+    genericControls:
+      refTable: 'PrPublicAllotmentNewInstr'
+      refField: 'AllotmentNewInstrNo'
+  - name: 'CashFlowFuncNo'
+    description: 'VDF: X_D.XAB.4926\r\nFunction of cash flow in terms of securities administration'
+    genericControls:
+      refTable: 'PrPublicCashFlowFunc'
+      refField: 'CashFlowFuncNo'
+      defColumnPos: 2
+  - name: 'PaymentFuncNo'
+    description: 'VDF: X_D.XAB.4927\r\nSpecific and commonly used classification for the type of payment function (e.g. maturity)'
+    genericControls:
+      refTable: 'PrPublicPaymentFunc'
+      refField: 'PaymentFuncNo'
+      defColumnPos: 3
+  - name: 'PaymentTypeNo'
+    description: 'VDF: X_D.XAB.4928\r\nClassification used for the type of payment (e.g. fixed payment)'
+    genericControls:
+      refTable: 'PrPublicPaymentType'
+      refField: 'PaymentTypeNo'
+  - name: 'PlannedStartDate'
+    description: 'VDF: X_D.XAB.2811\r\nPlanned start of payment/ subscription period'
+  - name: 'PlannedEndDate'
+    description: 'VDF: X_D.XAB.2812\r\nPlanned end of payment/ subscription period'
+  - name: 'CashFlowStatusNo'
+    description: 'VDF: X_D.XAB.4929\r\nStatus of payment in its life cycle (e.g. planned).'
+    genericControls:
+      refTable: 'PrPublicCashFlowStatus'
+      refField: 'CashFlowStatusNo'
+      defColumnPos: 4
+  - name: 'NumberInitialInstr'
+    description: 'VDF: X_D.XAB.6911\r\nNumber of initial instruments'
+  - name: 'DueDate'
+    description: 'VDF: \r\n- XCD:                    XAA.2801-C\r\n- XBD, XPD, XRD: XAB.2801\r\nDate on which the payment was to be due'
+    genericControls:
+      defColumnPos: 1
+  - name: 'AffidavitNo'
+    description: 'VDF: X_D.XAB.4944 (filled only in XCD-Doctype)\r\nPayment validity range (affidavit)\r\nThis indicates whether this is an alternative payment for instruments (e.g. loco Johannesburg or loco London).'
+    genericControls:
+      refTable: 'PrPublicAffidavit'
+      refField: 'AffidavitNo'
+  - name: 'EarningPerBeginDate'
+    description: 'VDF: XCD.XCA.2811\r\nIndicates the starting date of the period for which the cash flow is achieved'
+  - name: 'EarningPerEndDate'
+    description: 'VDF: XCD.XCA.2812\r\nIndicates the last date of the period for which the cash flow is achieved'
+  - name: 'DividendTypeNo'
+    description: 'VDF: XCD.XCC.4888\r\nType of payment of the ''Latent Payment'' type or the ''Fixed Payment'' type. It expresses the origin of the distribution (e.g. ordinary dividend)'
+    genericControls:
+      refTable: 'PrPublicDividendType'
+      refField: 'DividendTypeNo'
+  - name: 'DistribFrequencyNo'
+    description: 'VDF: XCD.XCC.4948\r\nThis describes the frequency of payments (e.g. monthly)'
+    genericControls:
+      refTable: 'PrPublicDistribFrequency'
+      refField: 'DistribFrequencyNo'
+  - name: 'ValidationTypeNo'
+    description: 'VDF: X_D.XAA.4865\r\nProof of entitlement required from claimant (e.g. with coupon)'
+    genericControls:
+      refTable: 'PrPublicValidationType'
+      refField: 'ValidationTypeNo'
+  - name: 'RecordDate'
+    description: 'VDF: X_D.XAA.2801-B\r\nDate on which the owner of the instrument must be recorded in the company''s register in order to be entitled to receive the payment'
+  - name: 'SettlementTypeNo'
+    description: 'VDF: X_D.XAA.4827\r\nIndicates the form in which instruments are settled, e.g. in cash, stock or a combination thereof'
+    genericControls:
+      refTable: 'PrPublicSettlementType'
+      refField: 'SettlementTypeNo'
+  - name: 'MinimumExercQuant'
+    description: 'VDF: X_D.XAA.6901\r\nMinimum quantity of the instrument required in order to\r\nvalidate the claim (usually ''1'')'
+  - name: 'FrequenceTimeUnitsNo'
+    description: 'VDF: X_D.XAA.K828-A.6921'
+  - name: 'FrequenceTimeUnitTypeNo'
+    description: 'VDF: X_D.XAA.K828-A.2902'
+    genericControls:
+      refTable: 'PrPublicTimeUnit'
+      refField: 'TimeUnitNo'
+  - name: 'DayCountConvNo'
+    description: 'VDF: X_D.XAA.4824\r\nDay count convention used for the calculation of interest-bearing days on the corresponding annual basis, e.g. 30/360. The day count convention reported for the interest calculation is based on the prospectus or on what is common practice in the respective country.'
+    genericControls:
+      refTable: 'PrPublicDayCountConv'
+      refField: 'DayCountConvNo'
+  - name: 'EntitledPartyNo'
+    description: 'VDF: X_D.XAA.4933\r\nThis indicates who is entitled to determine the date on which the payment is to be made'
+    genericControls:
+      refTable: 'PrPublicEntitledParty'
+      refField: 'EntitledPartyNo'
+  - name: 'FractionSettlementNo'
+    description: 'VDF: X_D.XCP.4877\r\nProcedure applied to the settlement of fractions/ odd lots. Settlement amounts, if any, are included in the field "cash settlement proceeds"'
+    genericControls:
+      refTable: 'PrPublicFractionType'
+      refField: 'FractionTypeNo'
+  - name: 'HasDistibutionInKind'
+    description: 'Instrument has distribution in kind (Naturalauschüttungen)'
+  - name: 'ExDate'
+    description: 'VDF: XCD.XVE.2801'
+  - name: 'CouponNo'
+    description: 'VDF: XCD.COU.4858'
+  - name: 'RightTypeNo'
+    description: 'VDF: XRD.XCO.4815, 1= Call, 2=Put, 3 = Conversion Right, 4. Mandatory Conversion'
+    genericControls:
+      refTable: 'PrPublicRightType'
+      refField: 'RightTypeNo'
+  - name: 'NumberUnderlying'
+    description: 'VDF: XCD.XCL.6911\r\n         XRD.XCO.6911-A'
+  - name: 'DilutionProtectionNo'
+    description: 'VDF: XRD.XCO.4818-B'
+    genericControls:
+      refTable: 'PrPublicDilutionProtection'
+      refField: 'DilutionProtectionNo'
+  - name: 'CfUnderlTypeNo'
+    description: 'VDF: X_D'
+    genericControls:
+      refTable: 'PrPublicCfUnderlType'
+      refField: 'CfUnderlTypeNo'
+  - name: 'PublicUnderlyingId'
+    description: 'VDF: XCD.XCL.7820 (translate with PrPublicUnderlying)\r\n         XRD.XCO.7820 (translate with PrPublicUnderlying)'
+    genericControls:
+      refTable: 'PrPublicUnderlying'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'RepaymentReasonNo'
+    description: 'VDF: XPD.XPA.4940'
+    genericControls:
+      refTable: 'PrPublicRepaymentReason'
+      refField: 'RepaymentReasonNo'
+  - name: 'AmortizationTypePlanned'
+    description: 'VDF: XBD.XBA.4886-A'
+    genericControls:
+      refTable: 'PrPublicAmortizationType'
+      refField: 'AmortizationTypeNo'
+  - name: 'AmortizationTypeEffective'
+    description: 'VDF: XBD.XBA.4886-B'
+    genericControls:
+      refTable: 'PrPublicAmortizationType'
+      refField: 'AmortizationTypeNo'
+  - name: 'CfAmountTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicCfAmountType'
+      refField: 'CfAmountTypeNo'
+  - name: 'DistributedPublicId'
+    description: 'VDF: X_D.XAB.K981.7842 (translate with PrPublic)'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Currency'
+    description: 'VDF: X_D.XAB.K981.7842 (translate with CyBase)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'PlannedAmount'
+    description: 'VDF: X_D.XAB.5833-A'
+  - name: 'Amount'
+    description: 'VDF: X_D.XAB.5833-B'
+    genericControls:
+      defColumnPos: 6
+  - name: 'QuoteTypeNo'
+    description: 'VDF: X_D.XAB.4812-A'
+    genericControls:
+      refTable: 'PrPublicQuoteType'
+      refField: 'QuoteTypeNo'
+  - name: 'PaymentDirectionNo'
+    description: 'VDF: X_D.XAB.4930'
+    genericControls:
+      refTable: 'PrPublicPaymentDirection'
+      refField: 'PaymentDirectionNo'
+  - name: 'CondFixPriceUnderlyingId'
+    description: 'VDF: XRD.XRB.7820 (translate with PrPublicUnderlying)'
+    genericControls:
+      refTable: 'PrPublicUnderlying'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'InfoStateGrossAmount'
+    description: 'VDF: XCD.MGB.7897 (XCD.MGB.7898 = 1)'
+    genericControls:
+      refTable: 'PrPublicInfoStatus'
+      refField: 'InfoStatusCode'
+  - name: 'InfoStateExDate'
+    description: 'VDF: XCD.MGB.7897 (XCD.MGB.7898 = 2)'
+    genericControls:
+      refTable: 'PrPublicInfoStatus'
+      refField: 'InfoStatusCode'
+  - name: 'InfoStateRecordDate'
+    description: 'VDF: XCD.MGB.7897 (XCD.MGB.7898 = 3)'
+    genericControls:
+      refTable: 'PrPublicInfoStatus'
+      refField: 'InfoStatusCode'
+  - name: 'InfoStateDueDate'
+    description: 'VDF: XCD.MGB.7897 (XCD.MGB.7898 = 4)'
+    genericControls:
+      refTable: 'PrPublicInfoStatus'
+      refField: 'InfoStatusCode'
+  - name: 'InfoStateNumberInstrument'
+    description: 'VDF: XCD.MGB.7897 (XCD.MGB.7898 = 5)'
+    genericControls:
+      refTable: 'PrPublicInfoStatus'
+      refField: 'InfoStatusCode'
+  - name: 'InfoStateInterestRate'
+    description: 'VDF: XCD.MGB.7897 (XCD.MGB.7898 = 6)'
+    genericControls:
+      refTable: 'PrPublicInfoStatus'
+      refField: 'InfoStatusCode'
+  - name: 'DeferredPaymentDate'
+    description: 'VDF:\r\nXRD.XAB.2801-B\r\nXBD.XAA.2801-C (only isn''t equal to XBD.XAB.2801)'
+  - name: 'PartialDivTypeNo'
+    description: 'VDF: XCD.XCC.7881'
+    genericControls:
+      refTable: 'PrPublicPartialDivType'
+      refField: 'PartialDivTypeNo'
+  - name: 'DivSupplyInfoNo'
+    description: 'VDF: XCD.XCC.7882'
+    genericControls:
+      refTable: 'PrPublicDivSupplyInfo'
+      refField: 'DivSupplyInfoNo'
+  - name: 'DividendFixingDate'
+    description: 'VDF: XCD.XAB.2801-C'
+  - name: 'FloaterUnderlyingPublicId'
+    description: 'Underlying Instrument of floaters and trackers.\r\nVDF XRD.XAG.7820'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'FloaterCapCurrency'
+    description: 'Currency of floater  / tracker cap.\r\nVDF: XRD.XAG.K821-A.0983'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'FloaterCap'
+    description: 'Cap of a floater / tracker.\r\nVDF: XRD.XAG.K821-A.6804\r\n'
+  - name: 'FloaterCapQuoteType'
+    description: 'VDF: XRD.XAG.K821-A.4812'
+    genericControls:
+      refTable: 'PrPublicQuoteType'
+      refField: 'QuoteTypeNo'
+  - name: 'FloaterFloorCurrency'
+    description: 'Currency of floater  / tracker floor.\r\nVDF: XRD.XAG.K821-B.0983'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'FloaterFloor'
+    description: 'Cap of a floater / tracker.\r\nVDF: XRD.XAG.K821-B.6804'
+  - name: 'FloaterFloorQuoteType'
+    description: 'VDF: XRD.XAG.K821-B.4812'
+    genericControls:
+      refTable: 'PrPublicQuoteType'
+      refField: 'QuoteTypeNo'
+  - name: 'ParticipationScale'
+    description: 'VDF: XRD.XAG.6911-A'
+  - name: 'AnnualOffsetRate'
+    description: 'VDF: XRD.XAG.5835-A'

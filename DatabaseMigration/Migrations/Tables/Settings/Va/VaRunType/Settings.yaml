@@ -1,0 +1,19 @@
+table:
+  name: 'VaRunType'
+  description: 'Code Table for Run Type\r\n(0) Tägliche Bewertung\r\n(1) Monatliche Bewertung\r\n(2) Quartal Bewertung\r\n(99) AdHoc Bewertung'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    physicalDelete: true
+    isGroupable: true
+  columns:
+  - name: 'RunTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AsNavigationIndex_GetIndex'
+  description: '- Is only used for the temporary workflow. Can be deleted as soon as we have the final one.'

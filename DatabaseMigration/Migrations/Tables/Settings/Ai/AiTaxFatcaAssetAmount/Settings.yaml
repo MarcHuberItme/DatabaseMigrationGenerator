@@ -1,0 +1,25 @@
+table:
+  name: 'AiTaxFatcaAssetAmount'
+  description: 'Informationsarten Grösse vorbestehendes Kundenvermögen im Fatca-Programm'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Asset Amount'
+    - german:
+        formTitle: 'Vermögenswert'
+    - french:
+        formTitle: 'Montant de l''actif'
+  columns:
+  - name: 'AssetCode'
+    description: ''
+    genericControls:
+      defColumnPos: 1

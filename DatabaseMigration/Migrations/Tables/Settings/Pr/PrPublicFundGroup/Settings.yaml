@@ -1,0 +1,31 @@
+table:
+  name: 'PrPublicFundGroup'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Fund group'
+    - german:
+        formTitle: 'Fondsgruppe'
+  columns:
+  - name: 'FundGroupNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'WithDistributorshipAgr'
+    description: 'Our bank has with this fund group a distributorship agreement (Vertriebsvertrag)'
+  - name: 'GroupId'
+    description: ''
+    genericControls:
+      refTable: 'AsGroup'
+      refField: 'Id'

@@ -1,0 +1,43 @@
+table:
+  name: 'TwReqAuthP2PTransDetailMessage'
+  description: 'Contains the detailed data of the P2P transaction. It could be connected to TwRequestAuthorizationMessage or TwFinancialAdviceMessage.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: bad6dd0b-5ed3-4cee-b419-0b3faf9ddacc
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Detail P2P Message'
+    - german:
+        formTitle: 'Detail P2P Message'
+  columns:
+  - name: 'ReqAuthMessageId'
+    description: 'Id of TwReqAuthMessage'
+    genericControls:
+      refTable: 'TwReqAuthMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'FinancialAdviceMessageId'
+    description: 'Id of TwFinancialAdviceMessage'
+    genericControls:
+      refTable: 'TwFinancialAdviceMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PeerPhoneNumber'
+    description: 'The mobile phone number of the other party in the P2P Payment in international display according to E123 (without blanks).'
+  - name: 'PeerName'
+    description: 'The name of the other party in this P2P Payment, as given by the users local address book. If the other party has not been chosen from the address book, the entered phone number is given.'
+  - name: 'PeerMessage'
+    description: 'The message the other party attached to the P2P Payment. In case no message was entered, this element is omitted (optional).'
+  - name: 'RequestMessage'
+    description: 'The message sent with the initial P2P Money Request. If the P2P Order didn’t start with a Money Request this element is omitted (optional).'
+  - name: 'OrderImage'
+    description: 'The Picture added to the P2P Order by the initiator. The image is sent in jpg Format. If no picture was added this element is omitted.\r\nMUST NOT exceed 500 kB in length (optional).'

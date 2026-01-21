@@ -1,0 +1,39 @@
+table:
+  name: 'PrPublicInstrumentType'
+  description: 'VDF-Domaine: 7822 INSTRTYPE'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Instrument type'
+    - german:
+        formTitle: 'Instrumententyp'
+  columns:
+  - name: 'InstrumentTypeNo'
+    description: 'Maintained by VDF-Metadata'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ForDebt'
+    description: ''
+  - name: 'ForEquity'
+    description: ''
+  - name: 'ForFonds'
+    description: ''
+  - name: 'ForDerivate'
+    description: ''
+  - name: 'ForOthers'
+    description: ''
+  - name: 'DefaultRefTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicRefType'
+      refField: 'RefTypeNo'

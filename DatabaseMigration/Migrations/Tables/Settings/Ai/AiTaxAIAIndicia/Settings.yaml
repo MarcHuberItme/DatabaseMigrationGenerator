@@ -1,0 +1,82 @@
+table:
+  name: 'AiTaxAIAIndicia'
+  description: 'Diese Tabelle enthält alle für AIA relevanten Indizien'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax AIA Indicia'
+    - german:
+        formTitle: 'Indizien AIA'
+    - french:
+        formTitle: 'Taxe AIA Indicia'
+  columns:
+  - name: 'TaxStatusId'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxStatus'
+      refField: 'Id'
+  - name: 'ReportDate'
+    description: 'Datum der Indiziensuche'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IndiciaStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxIndiciaStatus'
+      refField: 'StatusNo'
+      defColumnPos: 2
+  - name: 'HasAIAAddress'
+    description: 'True if one of the customer''s addresses is outside CH/USA'
+    genericControls:
+      isNoUpdate: true
+  - name: 'VaCustomerIsLegalEntity'
+    description: 'True if there is one Portfoliotype flaged with IsAssetManagement = True and NogaCode <> ''970000'''
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasAIAPhoneNumber'
+    description: 'True if one of the customer''s phone numbers is not from Switzerland.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'MailsToAIAAddress'
+    description: 'True if there is a correpondence receiver outside CH/USA.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'GrantsToAIAPerson'
+    description: 'True if there are power of attorney or signature authority granted to an outside CH/USA domiciled person.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasStandingOrder'
+    description: 'Dauerauftrag'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasStandingOrderManually'
+    description: 'Dauerauftrag manuell'
+  - name: 'IndiciaFromRM'
+    description: 'Indiz aus KuBe-Befragung. Das Indiz wird nur manuell gepflegt.'
+  - name: 'HasAIAIssuanceIdDoc'
+    description: 'Identifikations-Dokument (Typ egal) nicht ausgestellt in CH/USA. Selektion von PtIdentification.CountryOfIssuance'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasEmbassyIdDoc'
+    description: 'Identifications-Dokument ausgestellt in Botschaft. Selektion PtIdentification.IssuanceThroughEmbassy = True'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IndiciaAssessmentType'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxIndiciaAssessmentType'
+      refField: 'IndiciaAssessmentType'
+      defColumnPos: 3
+  - name: 'Comment'
+    description: ''
+    genericControls:
+      multiLine: true

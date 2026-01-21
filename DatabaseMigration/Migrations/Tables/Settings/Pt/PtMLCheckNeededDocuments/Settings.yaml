@@ -1,0 +1,44 @@
+table:
+  name: 'PtMLCheckNeededDocuments'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'ML needed documents'
+    - german:
+        formTitle: 'GWG nötige Dokumente'
+    - french:
+        formTitle: 'ML documents nécessaires'
+    - italian:
+        formTitle: 'ML documenti necessari'
+  columns:
+  - name: 'TableName'
+    description: 'Configtabelle auf welcher das Corrected Feld liegt, für welches ein Dokument benötigt wird'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 1
+  - name: 'FiieldName'
+    description: 'Feldname des Felds der Configtabelle für welche ein Dokument benötigt wird'
+    genericControls:
+      defColumnPos: 2
+  - name: 'CorrItemNo'
+    description: 'Nummer des Korrespondenz-Items'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'ItemNo'
+      defColumnPos: 3
+  - name: 'TemplateNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckTemplates'
+      refField: 'TemplateNo'
+      defColumnPos: 4

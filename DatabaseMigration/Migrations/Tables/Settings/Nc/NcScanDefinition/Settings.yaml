@@ -1,0 +1,50 @@
+table:
+  name: 'NcScanDefinition'
+  description: 'A definition of a name matching scan.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0ebe92b4-009e-4d5f-b882-c8d9daf72042
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'ScanId'
+    uiTableDescription:
+    - english:
+        formTitle: 'NameMatching Scan Def.'
+    - german:
+        formTitle: 'Namematching Scan-Def.'
+  columns:
+  - name: 'ScanId'
+    description: 'Id of the scan.'
+    genericControls:
+      refTable: 'NcScan'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'IndexId'
+    description: 'Id of the index which should be used for this scan.'
+    genericControls:
+      refTable: 'NcIndex'
+      refField: 'Id'
+  - name: 'RecordsSelectionStatement'
+    description: 'Statement for the records selection. The value depends on the scan type. Most likely it is the name of a database view or the name of a stored procedure.'
+  - name: 'ScanType'
+    description: 'Scan type. Determines what kind of scan it is.'
+    genericControls:
+      refTable: 'NcScanType'
+      refField: 'Type'
+      defColumnPos: 2
+  - name: 'ValidFrom'
+    description: 'Time from when this scan definition is valid to use.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsActiv'
+    description: 'Specifies whether this definition is activ or not.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ProcessorName'
+    description: ''
+  - name: 'IsIncremental'
+    description: ''

@@ -1,0 +1,20 @@
+table:
+  name: 'EvSelectControl'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'EventSessionNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'StartDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2

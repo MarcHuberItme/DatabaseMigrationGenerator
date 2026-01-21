@@ -1,0 +1,3 @@
+view:
+  name: 'VaPublicPriceView'
+  description: 'Price / Currency View for PublicId''s'

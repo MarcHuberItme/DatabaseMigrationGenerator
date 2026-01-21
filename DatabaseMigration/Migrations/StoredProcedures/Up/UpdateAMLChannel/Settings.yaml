@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'UpdateAMLChannel'
+  description: 'Updates the field ChannelNoCalculated in table PtMLPeriodicCheckOverview for all partners'

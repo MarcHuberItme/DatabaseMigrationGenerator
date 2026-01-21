@@ -1,0 +1,3 @@
+view:
+  name: 'PtTaxReportView'
+  description: '04.02.2011/ram: Datentyp geändert wegen BSZ:  CAST(Pos.AccountNo As varchar(12)) End As BigInt) As ValorNo \r\n03.02.2012/msn, exclude closed portfolio in earlier years than tax year for no positions\r\n20.01.2015/msn, append "(Anteil Depotgeb. & Verwaltungskost.)" for VA Gebühren'

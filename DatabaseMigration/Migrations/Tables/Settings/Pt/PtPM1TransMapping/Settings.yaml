@@ -1,0 +1,72 @@
+table:
+  name: 'PtPM1TransMapping'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PM1 Transaction Mapping'
+        helpText: 'PM1 Transaction Mapping'
+    - german:
+        formTitle: 'PM1 Transaction Mapping'
+        helpText: 'PM1 Transaction Mapping'
+    - french:
+        formTitle: 'PM1 Transaction Mapping'
+        helpText: 'PM1 Transaction Mapping'
+  columns:
+  - name: 'TransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PM1TransTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PrivateProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'InstrumentTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicInstrumentType'
+      refField: 'InstrumentTypeNo'
+      defColumnPos: 4
+  - name: 'SecurityType'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicSecurityType'
+      refField: 'SecurityType'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'EvTemplateNo'
+    description: ''
+    genericControls:
+      refTable: 'EvTemplate'
+      refField: 'TemplateNo'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'HasCounterBooking'
+    description: ''
+  - name: 'MainBookingIsCredit'
+    description: 'If a transactions is has counter booking,\r\nMainBookingIsCredit = 1 --> Credit side is used to fill main booking\r\nMainBookingIsCredit = 0 --> Debit side is used to fill main booking\r\n'
+  - name: 'IsActive'
+    description: ''
+  - name: 'PM1FeeCode'
+    description: 'The field is relevant only for PM1 Transaction type 13 -  Charges. this give fruther detials on type of charge.'
+  - name: 'DeliveryCostPriceSteering'
+    description: 'Null = Default logic - Send value when available\r\n0 = 0 (No value)\r\n1 = Null (Value is calculate by PM1)\r\n\r\n'

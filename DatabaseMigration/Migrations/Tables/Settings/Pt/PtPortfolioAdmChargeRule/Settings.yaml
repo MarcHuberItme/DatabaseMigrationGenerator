@@ -1,0 +1,54 @@
+table:
+  name: 'PtPortfolioAdmChargeRule'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPortfolioAdmChargeRule'
+        helpText: 'PtPortfolioAdmChargeRule'
+    - german:
+        formTitle: 'PtPortfolioAdmChargeRule'
+        helpText: 'PtPortfolioAdmChargeRule'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'AdmChargeType'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeSubType'
+      refField: 'SubTypeNo'
+      defColumnPos: 2
+  - name: 'EffectiveRate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Rebate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'HasMinimumCharge'
+    description: ''
+  - name: 'EffectiveAmount'
+    description: ''
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValidTo'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'PercentageWithoutVAT'
+    description: 'for Flat group, percentage without MwSt calculation'

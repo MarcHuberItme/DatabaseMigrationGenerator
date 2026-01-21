@@ -1,0 +1,19 @@
+table:
+  name: 'PtCardJournalSalutation'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Salutation'
+    description: '0 = not Set\r\n1 = Mr\r\n2 = Ms\r\n3 = Firm'
+    genericControls:
+      defColumnPos: 1

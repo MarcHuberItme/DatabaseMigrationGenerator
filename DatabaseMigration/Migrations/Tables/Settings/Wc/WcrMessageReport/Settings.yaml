@@ -1,0 +1,38 @@
+table:
+  name: 'WcrMessageReport'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'WcrMessageReport'
+    - german:
+        formTitle: 'WcrMessageReport'
+    - french:
+        formTitle: 'WcrMessageReport'
+    - italian:
+        formTitle: 'WcrMessageReport'
+  columns:
+  - name: 'ReportDate'
+    description: ''
+  - name: 'ReportSeqNo'
+    description: 'SeqNo for whole report'
+  - name: 'PledgeRegisterId'
+    description: ''
+    genericControls:
+      refTable: 'RePledgeRegister'
+      refField: 'Id'
+  - name: 'MessageTableName'
+    description: ''
+  - name: 'NoOfMessages'
+    description: ''
+  - name: 'PledgedObjectProcessed'
+    description: 'PFB object message processed'
+  - name: 'Description'
+    description: ''

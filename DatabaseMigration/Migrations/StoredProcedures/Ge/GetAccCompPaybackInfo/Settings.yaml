@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccCompPaybackInfo'
+  description: 'Get account component information for payback\r\n01.04.2004/mct'

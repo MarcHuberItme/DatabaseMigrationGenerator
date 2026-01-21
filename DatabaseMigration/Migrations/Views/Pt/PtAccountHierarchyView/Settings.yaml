@@ -1,0 +1,128 @@
+view:
+  name: 'PtAccountHierarchyView'
+  description: 'A view to enable searching and displaying accounts within the partner-portfolio-account hierarchy, including all the identifying and descriptive fields such as id, numbers, iban, customerReference, product information, currency. The view includes as well partners without portfolios and portfolios without accounts. Logically deleted records are not included. If there are multiple currencies for an account (PrReference), multiple records for the same account are shown.\r\n\r\nPartner\r\n |---- Portfolio\r\n     |---- Account\r\n          |---- Product Reference (private product, currency)'
+frontendView:
+  name: 'PtAccountHierarchyView'
+  description: 'A view to enable searching and displaying accounts within the partner-portfolio-account hierarchy, including all the identifying and descriptive fields such as id, numbers, iban, customerReference, product information, currency. The view includes as well partners without portfolios and portfolios without accounts. Logically deleted records are not included. If there are multiple currencies for an account (PrReference), multiple records for the same account are shown.\r\n\r\nPartner\r\n |---- Portfolio\r\n     |---- Account\r\n          |---- Product Reference (private product, currency)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PartnerId'
+    description: 'PartnerId of the account owner.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'PartnerNo'
+    description: 'PartnerNo of the account owner'
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 8
+  - name: 'PartnerNoText'
+    description: 'PartnerNo of the account owner, text for sort'
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 8
+  - name: 'PartnerNoEdited'
+    description: 'PartnerNo of the account owner, formatted'
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 10
+  - name: 'PortfolioId'
+    description: 'PortfolioId of the portfolio where the account belongs to.'
+    dataType: 'uniqueidentifier'
+  - name: 'PortfolioNo'
+    description: 'PortfolioNo of the portfolio where the account belongs to.'
+    dataType: 'decimal'
+    prec: 11
+  - name: 'PortfolioNoText'
+    description: 'PortfolioNo of the portfolio where the account belongs to. Text reoresebtation suitable for sorting (potentially with leading 0)'
+    dataType: 'nvarchar'
+    prec: 13
+  - name: 'PortfolioNoEdited'
+    description: 'PortfolioId of the portfolio where the account belongs to, formatted (with dots)'
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'PortfolioTypeId'
+    description: 'Unique FinstarId of the portfolio type.'
+    dataType: 'uniqueidentifier'
+  - name: 'PortfolioTypeNo'
+    description: 'PortfolioTypeNo of the portfolio where the account belongs to.'
+    dataType: 'int'
+  - name: 'PortfolioClass'
+    description: 'The domain class of the portfolio type (money, mortgage, investment)'
+    dataType: 'nvarchar'
+    prec: 32
+  - name: 'PortfolioTypeTranslationKey'
+    description: 'A translation key for the portfolio type name (this is not yet implemented correctly because translation keys are generally not implemented. It serves as a preview and place-holder of a future implementation)'
+    dataType: 'nvarchar'
+    prec: 500
+  - name: 'PortfolioCustomerReference'
+    description: 'An optional name given by the customer for the portfolio where the account belongs to.'
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'PortfolioCurrency'
+    description: 'Currency of the portfolio where the account belongs to.'
+    dataType: 'char'
+    prec: 3
+  - name: 'AccountId'
+    description: 'Unique Id of the account.\r\nNote that this view can contain multiple entries for each account, depending on how many PrReference and PrPrivate are attached to the account.'
+    dataType: 'uniqueidentifier'
+  - name: 'AccountNo'
+    description: 'AccountNo of the account.'
+    dataType: 'decimal'
+    prec: 11
+  - name: 'AccountNoText'
+    description: 'AccountNo of the account, text for sort (with possible leading zeros)'
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'AccountNoEdited'
+    description: 'AccountNo of the account, formatted (with dots)'
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'AccountNoIbanElect'
+    description: 'The unformatted IBAN of the account, for electronic processing.'
+    dataType: 'nvarchar'
+    prec: 21
+  - name: 'AccountNoIbanForm'
+    description: 'The formatted IBAN of the account, for human consumption.'
+    dataType: 'nvarchar'
+    prec: 31
+  - name: 'AccountCustomerReference'
+    description: 'An optional name given by the customer to identify the account.'
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'OpeningDate'
+    description: 'OpeningDate of the account.'
+    dataType: 'datetime'
+  - name: 'TerminationDate'
+    description: 'TerminationDate of the account.'
+    dataType: 'datetime'
+  - name: 'ProductReferenceId'
+    description: 'Id of the product reference relation which connects accounts and products.'
+    dataType: 'uniqueidentifier'
+  - name: 'ProductReferenceCurrency'
+    description: 'Currency used with the account and product.'
+    dataType: 'char'
+    prec: 3
+  - name: 'ProductId'
+    description: 'The id of the product used with the account.'
+    dataType: 'uniqueidentifier'
+  - name: 'ProductNo'
+    description: 'The productNo of the product used with the account.'
+    dataType: 'int'
+  - name: 'PrivateProductId'
+    description: 'Id of the private product used with the account.'
+    dataType: 'uniqueidentifier'
+  - name: 'ProductClass'
+    description: 'The domain class of this product and account (money, mortgage, investment, ...)'
+    dataType: 'nvarchar'
+    prec: 32
+  - name: 'ProductNameTranslationKey'
+    description: 'A translation key for the product name (this is not yet implemented correctly because translation keys are generally not implemented. It serves as a preview and place-holder of a future implementation)'
+    dataType: 'nvarchar'
+    prec: 500

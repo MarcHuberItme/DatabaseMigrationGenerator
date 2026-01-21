@@ -1,0 +1,66 @@
+table:
+  name: 'AsMailOutputJobExternal'
+  description: 'Contains information about mail print jobs sent to the print outsourcer.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'External Print Job'
+    - german:
+        formTitle: 'Externer Druckauftrag'
+  columns:
+  - name: 'JobId'
+    description: ''
+    genericControls:
+      refTable: 'AsMailOutputJob'
+      refField: 'Id'
+  - name: 'SequenceNo'
+    description: 'Number of the external job. Must be unique. Is taken frm AsSequence->SPSJobNo'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SlaNo'
+    description: 'References the external sla-number (sla = general print job sprcification)'
+    genericControls:
+      refTable: 'AsMailOutputExternalSla'
+      refField: 'SlaNo'
+      defColumnPos: 2
+  - name: 'FileNo'
+    description: 'Sequential number of the processed file within JobId'
+    genericControls:
+      defColumnPos: 3
+  - name: 'SentEnvelopes'
+    description: 'Number of packing units in the file.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'SentPages'
+    description: 'Number of the print pages in the file.'
+    genericControls:
+      defColumnPos: 5
+  - name: 'SentBytes'
+    description: 'Size of the sent PDF-File'
+  - name: 'TransferDate'
+    description: 'Date and time when the file was sent to print outsourcing provider.'
+  - name: 'ReceiptConfDate'
+    description: 'Date and time when the receipt arrived from the print outsourcing provider.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ReceivedKBytes'
+    description: 'File size in kbytes as confirmed by the print outsourcing provider.'
+  - name: 'ProcessingDate'
+    description: 'Date and time of printing and packing the documents as statet by the print outsourcing provider.'
+  - name: 'ProcessedEnvelopes'
+    description: 'Number of envelopes counted by the print outsourcing provider.'
+    genericControls:
+      defColumnPos: 7
+  - name: 'ProcessedPages'
+    description: 'Number of print pages as confirmed by the print outsorcing provider.'
+    genericControls:
+      defColumnPos: 8
+  - name: 'SPSErrorCodes'
+    description: 'ErrorCodes aus dem Fehlertelegramm (XX) der SPS. Mehrere Codes möglich, werden durch das Zeichen ; getrennt.'

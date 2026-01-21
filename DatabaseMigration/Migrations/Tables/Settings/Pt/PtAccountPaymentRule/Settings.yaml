@@ -1,0 +1,67 @@
+table:
+  name: 'PtAccountPaymentRule'
+  description: 'Defines the account to debit or credit interests payments and/or capital refund.\r\nIf no record is given, a default rule is applied.\r\nFor current accounts: Same account will be debited or credited\r\nFor morgages: An invoice is to print instead of debit an account'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountBaseId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment rule'
+    - german:
+        formTitle: 'Buchungsvorschrift'
+  columns:
+  - name: 'AccountBaseId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'PaymentTypeNo'
+    description: 'Defines the payment type, e.g. interest, capital, both'
+    genericControls:
+      refTable: 'AsPaymentType'
+      refField: 'PaymentTypeNo'
+      defColumnPos: 1
+  - name: 'PayeeAccountId'
+    description: 'Defines the account to debit/credit interest and/or capital payments.\r\n\r\n(wegen Migrationsproblem auf NoUpdate gesestzt - Migration hat nur INS und DEL korrekt an VRX gesendet. 15.6.05/MWI)'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'PayeeId'
+    description: 'used if interest is to transfer to an external payee\r\n'
+    genericControls:
+      refTable: 'AsPayee'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'BookingSide'
+    description: 'C= Credit\r\nD= Debit\r\nNull= Credit or Debit is possible'
+    genericControls:
+      refTable: 'PtBookingSide'
+      refField: 'BookingSide'
+  - name: 'OverdrawAllowed'
+    description: 'if true the payee account can be overdrawed for the payment'
+  - name: 'MgVBART'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+      isNoUpdate: true
+  - name: 'MgVrxKey'
+    description: ''
+    genericControls:
+      isOnlyForMig: true

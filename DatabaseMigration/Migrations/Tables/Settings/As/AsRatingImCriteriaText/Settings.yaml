@@ -1,0 +1,78 @@
+table:
+  name: 'AsRatingImCriteriaText'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'CriteriaId'
+    description: ''
+    genericControls:
+      refTable: 'AsRatingImCriteria'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'LanguageNo'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+      defColumnPos: 2
+  - name: 'CriteriaText'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 3
+  - name: 'Plus5Text'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Plus4Text'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Plus3Text'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Plus2Text'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Plus1Text'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Plus0Text'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Minus0Text'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Minus1Text'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Minus2Text'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Minus3Text'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Minus4Text'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Minus5Text'
+    description: ''
+    genericControls:
+      multiLine: true

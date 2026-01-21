@@ -1,0 +1,43 @@
+view:
+  name: 'PtDispoBookingReferenceView'
+  description: 'Used to display aggregated reference data for a single dispo booking.'
+frontendView:
+  name: 'PtDispoBookingReferenceView'
+  description: 'View for retrieving reference information for dispo bookings'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Dispo booking references'
+    - german:
+        formTitle: 'Dispobuchung Referenzen'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'DispoBookingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'RefDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'SourceTableName'
+    description: ''
+    dataType: 'varchar'
+    isNotNull: true
+    prec: 30
+  - name: 'SourceRecordId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ReferenceInfo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000

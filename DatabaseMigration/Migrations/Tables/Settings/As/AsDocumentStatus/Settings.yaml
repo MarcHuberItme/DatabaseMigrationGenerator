@@ -1,0 +1,30 @@
+table:
+  name: 'AsDocumentStatus'
+  description: 'Document Data Status.\r\nDuring his live cycle a document data can have several status.\r\nFirst it is generated (Status draft), then it when the content of the document is ok it will be printed (status definitly printed) or sent by mail (status completed)...'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Document Status'
+    - german:
+        formTitle: 'Dokument Status'
+    - french:
+        formTitle: 'Statut du document'
+  columns:
+  - name: 'StatusNo'
+    description: 'document status number\r\n1: Entwurf\r\n100: definitiv gedruckt\r\n150: banklagernd\r\n200: abgeschlossen'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ForTemplateDefault'
+    description: 'If = 1 then it can be used as default in template'
+  - name: 'ForScanner'
+    description: 'Allowed Document status for scanner outputs'

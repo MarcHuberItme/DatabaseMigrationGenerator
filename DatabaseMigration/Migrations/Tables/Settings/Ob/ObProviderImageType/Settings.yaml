@@ -1,0 +1,25 @@
+table:
+  name: 'ObProviderImageType'
+  description: 'Image type'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 4de0d3b7-95d8-473e-be4c-1d37a958d353
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Image Type'
+    - german:
+        formTitle: 'Image Type'
+    - french:
+        formTitle: 'Image Type'
+    - italian:
+        formTitle: 'Image Type'
+  columns:
+  - name: 'TypeNo'
+    description: 'Unique number for the type'
+  - name: 'Type'
+    description: 'Readable type'

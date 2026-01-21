@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetNameComparisonData'
+  description: 'returns partener information for the account number and rule limits for the rule number'

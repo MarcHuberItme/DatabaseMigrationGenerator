@@ -1,0 +1,54 @@
+view:
+  name: 'PrPublicFundCatView'
+  description: ''
+frontendView:
+  name: 'PrPublicFundCatView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'FundCatSchemeCode'
+    description: ''
+    dataType: 'varchar'
+    prec: 8
+    genericControls:
+      refTable: 'PrPublicFundCatScheme'
+      refField: 'FundCatSchemeCode'
+      defColumnPos: 1
+  - name: 'FundCatCode'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+    genericControls:
+      defColumnPos: 2
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'FundCatDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 200
+    genericControls:
+      defColumnPos: 3
+  - name: 'TextShort'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 3

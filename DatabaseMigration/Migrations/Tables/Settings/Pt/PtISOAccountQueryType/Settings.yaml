@@ -1,0 +1,18 @@
+table:
+  name: 'PtISOAccountQueryType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'QueryTypeCode'
+    description: 'ACCQRY - Settlement account balances query\r\nPMTQRY - Payment type balances query'
+    genericControls:
+      defColumnPos: 1

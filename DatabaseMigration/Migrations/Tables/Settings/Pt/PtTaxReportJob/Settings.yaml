@@ -1,0 +1,45 @@
+table:
+  name: 'PtTaxReportJob'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TaxReportJobNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'PeriodBeginDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PeriodEndDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'TaxReportStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTaxReportStatus'
+      refField: 'TaxReportStatusNo'
+      defColumnPos: 4
+  - name: 'IsBatchJob'
+    description: ''
+  - name: 'IsForInternalUse'
+    description: ''
+  - name: 'SuppressCharge'
+    description: ''
+  - name: 'SuppressPrinting'
+    description: ''
+  - name: 'EStvzStatus'
+    description: ''
+    genericControls:
+      refTable: 'PtETaxProcessStatus'
+      refField: 'StatusNo'
+  - name: 'StyleNo'
+    description: ''

@@ -1,0 +1,35 @@
+table:
+  name: 'SwCorrespondBank'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'BicId'
+    description: ''
+    genericControls:
+      refTable: 'AsBICIndex'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'FinstarAccountNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 3

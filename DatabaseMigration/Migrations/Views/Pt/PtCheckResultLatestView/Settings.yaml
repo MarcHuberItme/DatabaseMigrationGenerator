@@ -1,0 +1,3 @@
+view:
+  name: 'PtCheckResultLatestView'
+  description: 'Presents the latest matches from PtCheckResult'

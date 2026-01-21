@@ -1,0 +1,131 @@
+table:
+  name: 'AsInvoiceType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Invoice type'
+    - german:
+        formTitle: 'Rechnungstyp'
+    - french:
+        formTitle: 'Type de facture'
+  columns:
+  - name: 'InvoiceType'
+    description: 'Type of the invoice, e.g.\r\nmortgage interest\r\nmortgage payback\r\nfees for safedepositbox'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'InvoiceCorrItemId'
+    description: 'CorrItem to use for the invoice'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+  - name: 'InvoiceAdviceCorrItemId'
+    description: 'optional additional advice to send to the other correspondence addresses'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+  - name: 'FixCarrierTypeNo'
+    description: 'fix carrier type to use for that invoice,\r\noverrides the defined carriertype of PtCorrAccount/PtCorrPortfolio/PtCorrPartner'
+    genericControls:
+      refTable: 'AsCarrierType'
+      refField: 'CarrierTypeNo'
+  - name: 'ReminderCorrItemId'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+  - name: 'ReminderAdviceCorrItemId'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+  - name: 'IsInterestPayment'
+    description: ''
+  - name: 'MgUseFisVrxRefStructure'
+    description: 'this flag marks the invoice type to be used with fis vrx compatible payment slip reference no structure (type 1)\r\nfor future use the finstar application will use a different reference no structure (type 2)\r\nthe specification document "Payment Slip ReferencNo Structures" gives detailed information about the different types of structures.\r\n27.03.2006 / mct\r\n\r\n'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'TransTypeNo'
+    description: 'TransTypeNo to use for the transfer once there is enough balance'
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+  - name: 'TransOrderMediaNo'
+    description: 'TransOrderMediaNo to use for the transfer once there is enough balance'
+    genericControls:
+      refTable: 'PtTransOrderMedia'
+      refField: 'OrderMediaNo'
+  - name: 'DebitMsgType'
+    description: 'Value to put in PtTransMessage.DebitMessageType in case the\r\ninvoice was NOT PRINTED 10.10.2007/mct'
+  - name: 'CreditMsgType'
+    description: 'Value to put in PtTransMessage.CreditMessageType in case the\r\ninvoice was NOT PRINTED 10.10.2007/mct'
+  - name: 'TransTypeNoPrinted'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+  - name: 'DebitMsgTypePrinted'
+    description: 'Value to put in PtTransMessage.DebitMessageType in case the\r\ninvoice was ALREADY PRINTED 10.10.2007/mct'
+  - name: 'CreditMsgTypePrinted'
+    description: 'Value to put in PtTransMessage.CreditMessageType in case the\r\ninvoice was ALREADY PRINTED 10.10.2007/mct'
+  - name: 'CreditPaymentInformation'
+    description: 'Text to put in PtTransMessage.CreditPaymentInformation.\r\nThe following constant expressions will be replaced dinamically if contained in the text:\r\n{InvoiceNo}\r\n{TargetAccountNo}\r\n{DebitAccountNo}\r\n{InvoiceValueDate}\r\n'
+    genericControls:
+      multiLine: true
+  - name: 'SendEmailAlert'
+    description: 'send email alert to bank staff'
+  - name: 'AlertSettings'
+    description: ''
+  - name: 'InvoicePrintDateDays'
+    description: 'InvoicePrintDate = current date + defined day value'
+    minValue: '0'
+    maxValue: '180'
+  - name: 'InvoiceDueDateCalcMode'
+    description: 'see AsInvoiceDueDateCalcMode table description.'
+    genericControls:
+      refTable: 'AsInvoiceDueDateCalcMode'
+      refField: 'CalcModeNo'
+  - name: 'InvoiceDueDateDays'
+    description: 'number of days for invoice due date calculation'
+    minValue: '0'
+    maxValue: '180'
+  - name: 'ReminderPrintDateDays'
+    description: 'PtAccountDebitReminder.ScheduledPrintDate = currentdate + ReminderPrintDateDays'
+    minValue: '0'
+    maxValue: '180'
+  - name: 'Reminder1DueDateDays'
+    description: 'PtAccountDebitReminder.ReminderDueDate = PtAccountDebitReminder.ScheduledPrintDate + this value'
+    minValue: '0'
+    maxValue: '60'
+  - name: 'Reminder2DueDateDays'
+    description: 'PtAccountDebitReminder.ReminderDueDate = PtAccountDebitReminder.ScheduledPrintDate + this value'
+    minValue: '0'
+    maxValue: '45'
+  - name: 'Reminder3DueDateDays'
+    description: 'PtAccountDebitReminder.ReminderDueDate = PtAccountDebitReminder.ScheduledPrintDate + this value'
+    minValue: '0'
+    maxValue: '30'
+  - name: 'UseQRBill'
+    description: ''
+  - name: 'ReminderTransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+  - name: 'ReminderCreditAccountNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true

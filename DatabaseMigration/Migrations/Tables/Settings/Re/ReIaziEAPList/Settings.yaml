@@ -1,0 +1,32 @@
+table:
+  name: 'ReIaziEAPList'
+  description: 'EAP list selections'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ReIaziEAPList'
+        helpText: 'ReIaziEAPList'
+    - german:
+        formTitle: 'ReIaziEAPList'
+        helpText: 'ReIaziEAPList'
+  columns:
+  - name: 'ListRefNo'
+    description: ''
+  - name: 'Fielddesc'
+    description: ''
+  - name: 'Value'
+    description: ''
+  - name: 'ItemText'
+    description: ''
+  - name: 'LanguageNo'
+    description: ''

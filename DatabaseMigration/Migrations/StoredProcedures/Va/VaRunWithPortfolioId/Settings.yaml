@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaRunWithPortfolioId'
+  description: 'Return valuations for one Partner'

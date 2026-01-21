@@ -1,0 +1,62 @@
+table:
+  name: 'AiTaxProgram'
+  description: 'Diese Tabelle umfasst alle notwendigen Informationen und Parametrisierungen die für ein Steuerprogramm (bspw. FATCA) notwendig sind.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax program'
+    - german:
+        formTitle: 'Steuerprogramm'
+    - french:
+        formTitle: 'Programme fiscal'
+  columns:
+  - name: 'TaxProgramNo'
+    description: 'Nummerierung der verschiedenen Steuerprogramme'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ValidFrom'
+    description: 'Datum, ab wann das Steuerprogramm für die Bank effektiv zur Anwendung kommt'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValidTo'
+    description: 'Datum, ab wann das Steuerprogramm nicht mehr zum Einsatz kommt'
+    genericControls:
+      defColumnPos: 3
+  - name: 'DetailTableName'
+    description: 'Name der Tabelle, in welcher die Details zum Steuerstatus gespeichert werden.'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 5
+  - name: 'IndicationTableName'
+    description: 'Name der Tabelle, in welcher die Indizien für den Steuerstatus gespeichert werden'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'ExternalBankId'
+    description: 'Id, welche die Bank gegenüber einem Empfänger (bspw. GIIN gegenüber dem IRS) identifiziert.\r\nFür Fatca: Global Intermediary Identifying Number (GIIN)\r\nFür Aia: Die Steueridentifikationsnummer (SIN) des FI entspricht seiner UID.\r\nFür QI: Global Intermediary Identifying Number (GIIN)'
+  - name: 'SenderBankId'
+    description: 'Identifikationsnummer des meldenden FI.\r\nFür Fatca: Global Intermediary Identifying Number (GIIN)\r\nFür AIA: ESTV-ID\r\nFür QI: QI-EIN: QI Employer Identification Number'
+  - name: 'Country'
+    description: 'Ländercode (ISO Alpha-2) des Landes, von welchem das Steuerprogramm stammt (bspw. US für FATCA oder US-QI).'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'MessageTyp'
+    description: 'Typ (Name) mit welchem die Meldungen gekennzeichnet werden. Für FATCA bspw. einfach "FATCA".'
+  - name: 'Contact'
+    description: 'Kontaktzeile, welche bei Meldungen als "Kontakt" angegeben werden (i.d.R. Name, Adresse, E-Mail/Telefon).'
+    genericControls:
+      multiLine: true

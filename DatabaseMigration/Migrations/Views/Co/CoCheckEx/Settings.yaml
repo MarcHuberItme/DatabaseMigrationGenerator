@@ -1,0 +1,3 @@
+view:
+  name: 'CoCheckEx'
+  description: 'Checks if a product is ex balance sheet based on the acbalance....tables\r\nacbalancestructure .aL1 = 20  wird als ExBilanzposition vorausgesetzt !'

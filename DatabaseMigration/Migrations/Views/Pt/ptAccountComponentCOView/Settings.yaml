@@ -1,0 +1,3 @@
+view:
+  name: 'ptAccountComponentCOView'
+  description: 'Liest Komponenten aus der alten und neuen Sicherheitenverwaltung. Sofern ein Konto in der neuen Sicherheitenverwaltung geführt wird (ptaccountbase.collclean = true) , werden die neuen Komponenten (welche durch die Sicherheitenverwaltung emuliert wird) genommen.\r\nFür Auswertungen müssen immer die drei Views PTAccountComponentCoView, PtAccountCompValueCoView und PTAccountPriceDeviationCoView genommen werden !\r\nDie Felder ptaccountbase.Collclean, cobasecalc.veragrp und originaccountcomponentid (z.b. FEST) werden zusätzlich im Output übernommen.'

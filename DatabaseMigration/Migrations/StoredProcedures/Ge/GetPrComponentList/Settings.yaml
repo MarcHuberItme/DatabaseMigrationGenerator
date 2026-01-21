@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPrComponentList'
+  description: 'select all components for a specified product in the desired region and currency\r\n\r\n07.06.2004 / mct'

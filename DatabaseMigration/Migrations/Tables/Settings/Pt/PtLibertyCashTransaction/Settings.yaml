@@ -1,0 +1,70 @@
+table:
+  name: 'PtLibertyCashTransaction'
+  description: 'Temporary table for importing data from Liberty with CSV files'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Liberty import cash trans'
+    - german:
+        formTitle: 'Liberty import cash trans'
+  columns:
+  - name: 'SequenceNo'
+    description: 'increment numeration of each row starting at 1'
+  - name: 'Identification'
+    description: 'Identification of the transaction (Finnova)'
+  - name: 'Portfolio'
+    description: 'portfolio number'
+  - name: 'PortfolioCurrency'
+    description: 'portfolio currency'
+  - name: 'Account'
+    description: 'cash account number'
+  - name: 'AccountCurrency'
+    description: 'cash account currency'
+  - name: 'BookingDate'
+    description: 'booking date'
+  - name: 'ValueDate'
+    description: 'value date'
+  - name: 'BookingTypeCode'
+    description: 'booking type code (Finnova)'
+  - name: 'BookingType'
+    description: 'booking type'
+  - name: 'DebitCreditCode'
+    description: 'debit / credit code (1 = debit, 2 = credit)'
+  - name: 'Amount'
+    description: 'Amount (always positive - debit or credit is handled in own field)'
+  - name: 'Price'
+    description: 'price'
+  - name: 'GrossAmountAcc'
+    description: 'gross amount in account currency'
+  - name: 'FeesAcc'
+    description: 'fees in account currency'
+  - name: 'NetAmountAcc'
+    description: 'net amount in account currency'
+  - name: 'ExternalBookingText'
+    description: 'external booking text'
+  - name: 'FoundationCode'
+    description: 'foundation code'
+  - name: 'Foundation'
+    description: 'foundation'
+  - name: 'BookingType2Code'
+    description: 'booking type 2 code (Finnova; 1=savings deposit, 2=correction current year)'
+  - name: 'BookingType2'
+    description: 'booking type 2'
+  - name: 'RunId'
+    description: 'every entry belongs to a run group'
+    genericControls:
+      refTable: 'PtLibertyRun'
+      refField: 'Id'
+  - name: 'StatusNo'
+    description: 'Status Number of Record so we can keep track of each record that has been processed.\r\nImportDone = 10,\r\nMappingStart = 20,\r\nMappingErrorMissingAccount = 21,\r\nMappingErrorInvalidData = 22,\r\nMappingError = 23,\r\nMappingEnd = 30,'
+  - name: 'StatusText'
+    description: 'Status Information'
+  - name: 'SecurityTransactionId'
+    description: 'this field is used to match a generated cash transaction, with its counter part in security transaction'

@@ -1,0 +1,27 @@
+table:
+  name: 'PtStandingOrderUsage'
+  description: 'to define the standing order as payment, cover and invest'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'PtStandingOrderUsage'
+        helpText: 'PtStandingOrderUsage'
+    - german:
+        formTitle: 'PtStandingOrderUsage'
+        helpText: 'PtStandingOrderUsage'
+    - french:
+        formTitle: 'PtStandingOrderUsage'
+        helpText: 'PtStandingOrderUsage'
+  columns:
+  - name: 'UsageNo'
+    description: '0, payment\r\n10, cover\r\n20, invest'
+    genericControls:
+      defColumnPos: 1

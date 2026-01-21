@@ -1,0 +1,37 @@
+view:
+  name: 'KYCCheckResultsView'
+  description: ''
+frontendView:
+  name: 'KYCCheckResultsView'
+  description: 'Underlying Table for KYCCheckResultsView'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'NameCont'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'

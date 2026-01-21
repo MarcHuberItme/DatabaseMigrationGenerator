@@ -1,0 +1,49 @@
+table:
+  name: 'AsLogicalTask'
+  description: 'Maps logical function names to their physical implemetation.\r\nThe logical names are used by the Workflow System and the BatchProcessor.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 2
+    physicalDelete: true
+    descField: 'LogicalName'
+    uiTableDescription:
+    - english:
+        formTitle: 'Logical Function Names'
+    - german:
+        formTitle: 'Logische Funktionsnamen'
+  columns:
+  - name: 'LogicalName'
+    description: 'Logical name of the function (form or Job) as it is presented in the workflow builder.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'FunctionType'
+    description: '0 = Detail Form\r\n1 = List Form\r\n2 = BatchJob'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ProjectName'
+    description: 'Physical name of the Project (in fact: name of the default type library) which contains the function.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ClassName'
+    description: 'Physical Name of the class that implements the function.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'FunctionCode'
+    description: 'String that is passed to the form- or job-object, to determin which function the object has to execute.'
+    genericControls:
+      defColumnPos: 5
+  - name: 'UseForWorkFlow'
+    description: '1 = Function can be accessed by workflow system\r\n0 = Not for workflow'
+    genericControls:
+      defColumnPos: 6
+  - name: 'UseForBatchProcessor'
+    description: '1 = Function can be used by the BatchProcessor system.\r\n0 = Function is not intended for batch processing\r\n\r\nThis field is only relevant if FunctionType = 2 (Batch Job).'
+    genericControls:
+      defColumnPos: 7
+  - name: 'UseForPrintProcessing'
+    description: 'Indicates that the job may be used for print pre- or post processing\r\n\r\nOnly relevant if function type is 2  (Batch Processing)'

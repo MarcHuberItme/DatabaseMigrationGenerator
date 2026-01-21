@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AsNavigationKey_GetByMaster'
+  description: 'Retriefes all entries in AsNavigationStructureKey for a given MasterId'

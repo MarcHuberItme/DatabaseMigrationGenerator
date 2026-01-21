@@ -1,0 +1,88 @@
+table:
+  name: 'CoDokFieldass'
+  description: 'Zuweisung Felder zum Kreditdokument'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Assigment Field / documen'
+    - german:
+        formTitle: 'Assigment Field / documen'
+  columns:
+  - name: 'Creditdoktype'
+    description: 'Nummer vom Kreditdokument'
+    genericControls:
+      refTable: 'CoDokBase'
+      refField: 'Creditdoktype'
+      defColumnPos: 1
+  - name: 'Fieldnameass'
+    description: 'Zugewiesenes Feld'
+    genericControls:
+      refTable: 'CoDokField'
+      refField: 'Fieldname'
+      defColumnPos: 2
+  - name: 'Screenprio'
+    description: 'Priorität auf dem Screen'
+    minValue: '1'
+    maxValue: '3000'
+    genericControls:
+      defColumnPos: 3
+  - name: 'MainDok'
+    description: ''
+  - name: 'Subdok1'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok2'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok3'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok4'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok5'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok6'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok7'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok8'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok9'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok10'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok11'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok12'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok13'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok14'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok15'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok16'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok17'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok18'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok19'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok20'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok21'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok22'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok23'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok24'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'
+  - name: 'Subdok25'
+    description: 'Wenn True gilt dieses Feld für das Subdokument n'

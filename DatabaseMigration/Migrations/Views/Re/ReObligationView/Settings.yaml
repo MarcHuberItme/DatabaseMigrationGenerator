@@ -1,0 +1,186 @@
+view:
+  name: 'ReObligationView'
+  description: 'This view is used to show the obligation amounts in the PledgeAdministration system.  (Wurde am 13.6. - 17:00 Uhr - als BUG-FIX in Produktion genommen).'
+frontendView:
+  name: 'ReObligationView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ReBaseId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReBase'
+      refField: 'Id'
+  - name: 'ObligAmountChargeable'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'AntAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'RankRivAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 5
+  - name: 'ObligAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 6
+  - name: 'ObligTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReObligType'
+      refField: 'ObligTypeNo'
+      defColumnPos: 2
+  - name: 'ObligDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7
+  - name: 'ObligRank'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 1
+  - name: 'AntecedentAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'RankRivalryAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'PremisesOrigId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ComplexObligation'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 8
+  - name: 'LienCreationId'
+    description: 'Pfandrecht Status'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReObligLienCreation'
+      refField: 'Id'
+  - name: 'LienStatusId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReObligLienStatus'
+      refField: 'Id'
+  - name: 'Description'
+    description: ''
+    dataType: 'varchar'
+    prec: 500
+    genericControls:
+      multiLine: true
+  - name: 'ObjectSeqNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PfBFlag'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 11
+  - name: 'MaxInterestRate'
+    description: ''
+    dataType: 'float'
+  - name: 'Zitat'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'Advance'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ObligeeId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'ObligeeRightType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReObligObligeeRight'
+      refField: 'RightType'
+  - name: 'ObligeeStatusNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'ReObligObligeeStatus'
+      refField: 'ObligeeStatusNo'
+  - name: 'InternRatingCodeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsInternRatingCode'
+      refField: 'InternRatingCodeNo'
+  - name: 'ObligationId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReObligDescription'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 9
+  - name: 'PRId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PremisesId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReBasePremisesView'
+      refField: 'PremisesId'
+      hasDetailBtn: true
+  - name: 'ObligDescription'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 100
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'ObligeeTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReObligObligeeType'
+      refField: 'ObligeeTypeNo'
+      defColumnPos: 10

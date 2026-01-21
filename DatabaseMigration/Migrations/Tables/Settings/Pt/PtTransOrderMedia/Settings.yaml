@@ -1,0 +1,37 @@
+table:
+  name: 'PtTransOrderMedia'
+  description: 'Method of giving order e.g. Letter, Quick, E-Mail, E-Banking, Standing order etc.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Order media'
+    - german:
+        formTitle: 'Auftragsart'
+  columns:
+  - name: 'OrderMediaNo'
+    description: 'Number of the order media'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ProfileName'
+    description: ''
+  - name: 'TransSxRebateNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxRebate'
+      refField: 'TransSxRebateNo'
+  - name: 'IsSxOrderAuthValueSpecial'
+    description: 'if this flag is true:\r\nuse the field PtPortfolio.SxOrderAuthValueSpecial (if null use PtSegment.SxOrderAuthValueSpecial)\r\n\r\nif this flag is false:\r\nuse the field PtPortfolio.SxOrderAuthValue\r\n(if null use PtSegment.SxOrderAuthValue)\r\n'
+  - name: 'IsForStockExOrder'
+    description: 'flag if the item will be showed on the stockexorder-form'
+  - name: 'IsForOwnBond'
+    description: 'tells if this order media is allowed in the own bond application'

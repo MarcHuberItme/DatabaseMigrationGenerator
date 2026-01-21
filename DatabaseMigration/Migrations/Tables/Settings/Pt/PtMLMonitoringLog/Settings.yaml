@@ -1,0 +1,173 @@
+table:
+  name: 'PtMLMonitoringLog'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'AML Monitoring'
+    - german:
+        formTitle: 'GwG Monitoring'
+    - french:
+        formTitle: 'Surveillance LBA'
+  columns:
+  - name: 'LogDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PartnerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'RuleText'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'TransitemId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItemViewAml'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'RuleNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLRules'
+      refField: 'RuleNo'
+      isNoUpdate: true
+  - name: 'ProcessId'
+    description: ''
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      createNavigationIndex: true
+  - name: 'LegalStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtLegalStatus'
+      refField: 'LegalStatusNo'
+      isNoUpdate: true
+  - name: 'SegmentNo'
+    description: ''
+    genericControls:
+      refTable: 'PtSegment'
+      refField: 'SegmentNo'
+      isNoUpdate: true
+  - name: 'BusinessTypeCode'
+    description: ''
+    genericControls:
+      refTable: 'PtBusinessType'
+      refField: 'NogaCode'
+      isNoUpdate: true
+  - name: 'SexStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+      isNoUpdate: true
+  - name: 'MoneyLaunderSuspect'
+    description: ''
+    genericControls:
+      refTable: 'PtProfileMoneyLaunderSuspect'
+      refField: 'MoneyLaunderSuspect'
+      isNoUpdate: true
+  - name: 'LogDescription'
+    description: ''
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'ReferenceDate'
+    description: 'Relevent for monthly analysis. For example if we run monthly analysis for end of January in 2006, the reference date will be 31. 01.2006'
+  - name: 'SequenceNo'
+    description: 'Sequence No from AsSequence'
+  - name: 'Amount'
+    description: 'Debit- or CreditAmount of the PtTransItem'
+  - name: 'IsReportMROSPossible'
+    description: 'Soll eventuell ein MROS Report (Report an Meldestelle für Geldwäscherei) erfolgen?'
+  - name: 'IsReportMROS'
+    description: 'MROS Report (Report an Meldestelle für Geldwäscherei) muss erfolgen.'
+  - name: 'Target01'
+    description: 'z.B. Anlagen werden getätigt'
+  - name: 'Target02'
+    description: 'z.B. Eröffnung , Gutschrift Bonuskonto'
+  - name: 'Target03'
+    description: ''
+  - name: 'Target04'
+    description: ''
+  - name: 'Target05'
+    description: ''
+  - name: 'Target06'
+    description: ''
+  - name: 'Target07'
+    description: ''
+  - name: 'Target08'
+    description: ''
+  - name: 'Target09'
+    description: ''
+  - name: 'Target10'
+    description: ''
+  - name: 'Target11'
+    description: ''
+  - name: 'Target12'
+    description: ''
+  - name: 'Target13'
+    description: ''
+  - name: 'Target14'
+    description: ''
+  - name: 'Target15'
+    description: ''
+  - name: 'Target16'
+    description: ''
+  - name: 'Target17'
+    description: ''
+  - name: 'Target18'
+    description: ''
+  - name: 'Target19'
+    description: ''
+  - name: 'Target20'
+    description: ''
+  - name: 'TargetRemark'
+    description: 'z.B. Abklärung Verwendungszweck'
+    genericControls:
+      multiLine: true
+  - name: 'IsFalsePositive'
+    description: ''
+  - name: 'NogaCode2008'
+    description: 'New noga codes launched in 2008'
+    genericControls:
+      refTable: 'PtNoga2008'
+      refField: 'NogaCode'
+      isNoUpdate: true

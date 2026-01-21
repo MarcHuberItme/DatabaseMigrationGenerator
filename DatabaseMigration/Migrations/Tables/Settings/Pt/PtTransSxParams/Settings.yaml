@@ -1,0 +1,213 @@
+table:
+  name: 'PtTransSxParams'
+  description: 'Table with the params to evaluate the TransSxTariff'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Params for SxTariff-Tree'
+    - german:
+        formTitle: 'Paramter für SxTariff-Bau'
+    - french:
+        formTitle: 'Params pour SxTariff'
+  columns:
+  - name: 'TestCaseNo'
+    description: 'Sequence number'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ParamsStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxTestStatusNo'
+      refField: 'TestStatusNo'
+      defColumnPos: 4
+  - name: 'ResultsStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxTestStatusNo'
+      refField: 'TestStatusNo'
+      defColumnPos: 5
+  - name: 'CalculationDate'
+    description: ''
+  - name: 'IsBroker'
+    description: ''
+  - name: 'IsinNo'
+    description: ''
+  - name: 'SecurityTypeId'
+    description: 'Telekurs security type'
+    genericControls:
+      refTable: 'PrPublicSecurityType'
+      refField: 'Id'
+  - name: 'SecurityTypeGroupNo'
+    description: ''
+  - name: 'TradingPlaceId'
+    description: 'Trading place'
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TradingSystem'
+    description: 'this field will be removed\r\nnew field is TradingSystemId'
+    genericControls:
+      refTable: 'PtTradingSystem'
+      refField: 'TradingSystemCode'
+  - name: 'Market'
+    description: ''
+    genericControls:
+      refTable: 'PtClearingSystem'
+      refField: 'ClearingSystem'
+  - name: 'TradingSystemId'
+    description: ''
+    genericControls:
+      refTable: 'PtTradingSystem'
+      refField: 'Id'
+  - name: 'IsBuyOrder'
+    description: ''
+  - name: 'ListingStatusId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicListingStatus'
+      refField: 'Id'
+  - name: 'CountryRiskSocietyId'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'Id'
+  - name: 'TransTypeId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'Id'
+  - name: 'ToffTypeId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicToffType'
+      refField: 'Id'
+  - name: 'FundTypeId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicFundType'
+      refField: 'Id'
+  - name: 'FundTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicFundType'
+      refField: 'FundTypeNo'
+  - name: 'FundPartner'
+    description: ''
+  - name: 'GreyMarket'
+    description: ''
+  - name: 'IsEffectsTrader'
+    description: ''
+  - name: 'PartnerDomicile'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'BrokerNationality'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'SecurityCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'IsTradingPosition'
+    description: ''
+  - name: 'IsNostroPosition'
+    description: ''
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PublicId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'PreferredPublicListingId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicListingView'
+      refField: 'Id'
+  - name: 'BasketNo'
+    description: ''
+    genericControls:
+      refTable: 'PtUSBasket'
+      refField: 'BasketNo'
+  - name: 'OwnCommission'
+    description: ''
+  - name: 'BrokerageCommission'
+    description: ''
+  - name: 'SWXVirtXFee'
+    description: ''
+  - name: 'EurexFee'
+    description: ''
+  - name: 'UKStampDuty'
+    description: ''
+  - name: 'FedTurnoverTax'
+    description: ''
+  - name: 'USBackupWithholdingTax'
+    description: ''
+  - name: 'EuTax'
+    description: ''
+  - name: 'Description'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PortfolioTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+  - name: 'OrderMedia'
+    description: ''
+    genericControls:
+      refTable: 'PtTransOrderMedia'
+      refField: 'Id'
+  - name: 'OrderRebateId'
+    description: 'Id of OrderRebate'
+    genericControls:
+      refTable: 'PtTransSxRebate'
+      refField: 'Id'
+  - name: 'OrderRebate'
+    description: 'Field Rebate of OrderRebateId'
+  - name: 'SpecialTariffNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxTariff'
+      refField: 'TariffNo'
+  - name: 'SpecialFeeRule'
+    description: ''
+  - name: 'PortfolioRebate'
+    description: ''
+  - name: 'HasStaffRebate'
+    description: ''
+  - name: 'HasDifferentNat'
+    description: ''
+  - name: 'Rebate'
+    description: 'Output RB'
+  - name: 'ToffTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicToffType'
+      refField: 'ToffTypeNo'

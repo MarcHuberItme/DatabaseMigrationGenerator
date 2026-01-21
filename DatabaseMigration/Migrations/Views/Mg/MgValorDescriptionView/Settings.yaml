@@ -1,0 +1,78 @@
+view:
+  name: 'MgValorDescriptionView'
+  description: ''
+frontendView:
+  name: 'MgValorDescriptionView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'VrxValNrTk'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 1
+  - name: 'VrxValAnr'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 2
+  - name: 'VrxTitArt'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'ToffVerfall'
+    description: ''
+    dataType: 'varchar'
+    prec: 4
+    genericControls:
+      defColumnPos: 3
+  - name: 'ToffBasis'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+    genericControls:
+      defColumnPos: 4
+  - name: 'VrxShortText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 24
+    genericControls:
+      defColumnPos: 5
+  - name: 'FinstarValNr'
+    description: ''
+    dataType: 'varchar'
+    prec: 8
+    genericControls:
+      defColumnPos: 6
+  - name: 'ShortName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 19
+    genericControls:
+      defColumnPos: 7
+  - name: 'MappingChecked'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 8

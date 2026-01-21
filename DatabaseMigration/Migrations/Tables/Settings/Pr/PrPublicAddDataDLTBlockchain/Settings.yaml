@@ -1,0 +1,26 @@
+table:
+  name: 'PrPublicAddDataDLTBlockchain'
+  description: 'Blockchain of the digital asset\r\n1= Ethereum\r\n2= Polygon'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Blockchain'
+    - german:
+        formTitle: 'Blockchain'
+    - french:
+        formTitle: 'Blockchain'
+  columns:
+  - name: 'BlockchainNo'
+    description: 'number of the blockchain'
+    genericControls:
+      defColumnPos: 1

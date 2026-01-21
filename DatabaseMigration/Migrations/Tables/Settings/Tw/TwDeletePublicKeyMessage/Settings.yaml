@@ -1,0 +1,40 @@
+table:
+  name: 'TwDeletePublicKeyMessage'
+  description: 'Contains the message to delete a specific CustomerCA certificate when status is in PendingForInvalidation.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: bad6dd0b-5ed3-4cee-b419-0b3faf9ddacc
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Delete public key Message'
+    - german:
+        formTitle: 'Delete public key Message'
+  columns:
+  - name: 'HeaderMessageId'
+    description: 'Id of TwHeaderMessage'
+    genericControls:
+      refTable: 'TwHeaderMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PartnerId'
+    description: 'Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PrivateCustomerId'
+    description: 'TWINT contract id'
+  - name: 'CustomerCaCert'
+    description: 'The public key that matches the private key used by the client for the private key used for the signature (base64 encoded)'
+  - name: 'CustomerBusinessKey'
+    description: 'Customer identification for Twint'

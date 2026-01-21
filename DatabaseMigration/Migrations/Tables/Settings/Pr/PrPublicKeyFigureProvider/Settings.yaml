@@ -1,0 +1,28 @@
+table:
+  name: 'PrPublicKeyFigureProvider'
+  description: 'this table contains the provider of the key figure (i.e. edgelab)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Key Figure Provider'
+        helpText: 'Key Figure Provider'
+    - german:
+        formTitle: 'Kennzahl Lieferanten'
+        helpText: 'Kennzahl Lieferanten'
+  columns:
+  - name: 'ProviderNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ProviderName'
+    description: ''
+    genericControls:
+      defColumnPos: 2

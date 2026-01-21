@@ -1,0 +1,29 @@
+table:
+  name: 'PtPaymentInstantExecStatus'
+  description: 'Status for PtPaymentInstantExecution'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPaymentInstantExecStatu'
+        helpText: 'PtPaymentInstantExecStatus'
+    - german:
+        formTitle: 'PtPaymentInstantExecStatu'
+        helpText: 'PtPaymentInstantExecStatus'
+    - french:
+        formTitle: 'PtPaymentInstantExecStatu'
+        helpText: 'PtPaymentInstantExecStatus'
+    - italian:
+        formTitle: 'PtPaymentInstantExecStatu'
+        helpText: 'PtPaymentInstantExecStatus'
+  columns:
+  - name: 'StatusNo'
+    description: 'Status of instant payment execution'

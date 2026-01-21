@@ -1,0 +1,22 @@
+table:
+  name: 'WfNotificationType'
+  description: 'Translation Table for Notification types'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Notification Type'
+    - german:
+        formTitle: 'Benachrichtigunstyp'
+  columns:
+  - name: 'NotificationTypeNo'
+    description: 'Number of the notification type.'

@@ -1,0 +1,30 @@
+table:
+  name: 'MdStatusFlag'
+  description: 'Contains the subjects of the status Flags'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: d18c2bae-7838-4b83-a18e-29041114c63e
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Status Flag Name'
+    - german:
+        formTitle: 'Bezeichnung Statusflag'
+  columns:
+  - name: 'TableName'
+    description: 'Id of the table the statusfield belongs to.\r\nDon''t add Foreign Key Constraint to MdTable.tableName, otherwise transfer of MetaData from DataDefinition-Tool might fail'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 1
+  - name: 'FlagPos'
+    description: 'Position of the status flag in field StatusFlag'
+    genericControls:
+      defColumnPos: 2

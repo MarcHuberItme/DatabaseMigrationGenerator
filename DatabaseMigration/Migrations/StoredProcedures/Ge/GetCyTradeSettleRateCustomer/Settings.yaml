@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetCyTradeSettleRateCustomer'
+  description: 'Effective settlement rate relevant ot the customer after applying spread'

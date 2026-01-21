@@ -1,0 +1,37 @@
+table:
+  name: 'VaCurrencyRate'
+  description: 'Currency Rate for each Valuation Run'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 3
+    physicalDelete: true
+    isGroupable: true
+  columns:
+  - name: 'ValRunId'
+    description: ''
+    genericControls:
+      refTable: 'VaRun'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'AccountCurrency'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValuationCurrency'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'RatePrCuVaCu'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'NotActual'
+    description: ''
+    genericControls:
+      defColumnPos: 5

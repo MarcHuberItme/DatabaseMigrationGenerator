@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtAccountAnnuity_SetFlagAndRule'
+  description: 'Sets Annuity-Flag on PtAccountBase and inserts / updates payment rules for this account if there is an annuity'

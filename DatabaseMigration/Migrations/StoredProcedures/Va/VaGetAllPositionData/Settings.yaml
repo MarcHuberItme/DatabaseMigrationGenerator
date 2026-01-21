@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaGetAllPositionData'
+  description: '14.2.2025 rohn: curved out from VB function GetAllPositionData (ValueAssessment/Toff Margin)'

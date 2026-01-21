@@ -1,0 +1,89 @@
+view:
+  name: 'PtPositionDetailCfView'
+  description: ''
+frontendView:
+  name: 'PtPositionDetailCfView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+  - name: 'PaymentDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7
+  - name: 'PtPositionDetailId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPositionDetail'
+      refField: 'Id'
+  - name: 'PrPublicCfId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicCf'
+      refField: 'Id'
+  - name: 'PublicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+  - name: 'Amount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      defColumnPos: 2
+  - name: 'DueDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'CashFlowFuncNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicCashFlowFunc'
+      refField: 'CashFlowFuncNo'
+      defColumnPos: 4
+  - name: 'PaymentFuncNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicPaymentFunc'
+      refField: 'PaymentFuncNo'
+      defColumnPos: 5
+  - name: 'PaymentTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicPaymentType'
+      refField: 'PaymentTypeNo'
+      defColumnPos: 6

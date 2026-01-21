@@ -1,0 +1,42 @@
+table:
+  name: 'AsATMTempTrans'
+  description: 'This table is used to record the transaction information temporally. one use of this table is, if a transaction is cancelled, the application can roll back. another use is to manage the ATM cash account.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'DeviceID'
+    description: 'The device ID of ATM. Every ATM has a unique ID. This ID references the DeviceID field in Table MsnATMInfo.'
+    genericControls:
+      refTable: 'AsATMConfig'
+      refField: 'DeviceID'
+  - name: 'TransNo'
+    description: 'The transaction no circulated only by Message 9510.'
+  - name: 'MessageType'
+    description: 'Message type, either 9510 or 9511'
+  - name: 'ECode'
+    description: 'The ECode contained in the message'
+  - name: 'TransDate'
+    description: 'The date contained in the message, which is a string with the format of "JJJJMMTT".'
+  - name: 'TransTime'
+    description: 'The time contained in the message, which is a string of format "HHMMSS"'
+  - name: 'TransactionID'
+    description: 'The transaction ID used in Table PtTransaction'
+  - name: 'WithdrawalCurrency'
+    description: 'The currency code used for the money withdrawal.'
+  - name: 'WithdrawalAmount'
+    description: 'The amount of money withdrawal'
+  - name: 'BEDorPSV'
+    description: '0: the withdrawal goes through BED\r\n1: the withdrawal goes through PSV'
+  - name: 'CancelStatus'
+    description: '0: normal\r\n1: this transaction is canceled'
+  - name: 'BM9010AppDataHex'
+    description: 'This field is used to record the encypted data sent to PSV in Message 9586. but in this field, it has been changed Hex string.'

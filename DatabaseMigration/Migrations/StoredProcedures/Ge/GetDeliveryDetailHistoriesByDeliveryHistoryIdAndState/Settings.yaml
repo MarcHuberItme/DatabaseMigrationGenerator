@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetDeliveryDetailHistoriesByDeliveryHistoryIdAndState'
+  description: 'Load DeliveryHistoryDetails with given State for given DeliveryHistoryId'

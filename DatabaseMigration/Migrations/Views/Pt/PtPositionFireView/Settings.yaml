@@ -1,0 +1,3 @@
+view:
+  name: 'PtPositionFireView'
+  description: 'details about securities positions for fire'

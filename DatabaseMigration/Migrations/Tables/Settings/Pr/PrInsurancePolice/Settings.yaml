@@ -1,0 +1,122 @@
+table:
+  name: 'PrInsurancePolice'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Insurance Police'
+    - german:
+        formTitle: 'Versicherungspolice'
+  columns:
+  - name: 'ObjectSeqNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'PoliceNo'
+    description: 'Police no within the insurance company.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'InsurancePartnerId'
+    description: 'PartnerId of the insurance company (optional)'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'MaturityDate'
+    description: 'maturity date of the insurance police'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Description'
+    description: 'Description of the insurance police'
+    genericControls:
+      multiLine: true
+  - name: 'DescManual'
+    description: 'if true, the description is manual updated'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Comment'
+    description: 'Interal comments concerning this police.'
+    genericControls:
+      multiLine: true
+  - name: 'IssueDate'
+    description: ''
+  - name: 'InsuranceHolder'
+    description: 'Versicherungsnehmer'
+  - name: 'InsuredPerson'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'PolicyAddendum'
+    description: 'Nachträge zu einer Versicherungspolice'
+  - name: 'NotificationDate'
+    description: ''
+  - name: 'NotificationReleaseDate'
+    description: ''
+  - name: 'MgVrxNo'
+    description: 'Object identification in  VRX\r\nFormat: ddddddddddssvvvvvvvvaazzzzzzzzzz\r\nd=DepotNr,ss=SubdepotNr,v=ValorenNr,a=Anrecht,z=Valorenzusatz'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgDescription'
+    description: ''
+    genericControls:
+      multiLine: true
+      isOnlyForMig: true
+  - name: 'MgSUBKTNR'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'Currency'
+    description: 'Währung der folgenden Betragsfelder'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Value'
+    description: 'aktueller Rückkaufwert der Versicherung'
+  - name: 'Vdate'
+    description: 'Datum der letzten Nachführung vom Rückkaufwert'
+  - name: 'Collsubtype'
+    description: 'Subtyp der Sicherheit (Nur in der Domäne von 5000 - 5999 erlaubt)'
+    genericControls:
+      refTable: 'CoSubtype'
+      refField: 'Collsubtype'
+  - name: 'Valueins'
+    description: 'Versicherungssumme'
+  - name: 'Feeperyear'
+    description: 'Jahresprämie'
+  - name: 'Garcap'
+    description: 'garantiertes Erlebnisfallkapital'
+  - name: 'NGarcap'
+    description: 'Nicht garantiertes Erlebnisfallkapital'
+  - name: 'Paymod'
+    description: 'Auszahlungsmodus'
+  - name: 'Adinrent'
+    description: 'Zusatzrente pro Jahr'
+  - name: 'Adinday'
+    description: 'Taggeld'
+  - name: 'Adindaywaitdays'
+    description: 'Anzahl Tage bevor Taggeld ausgezahlt wird'
+  - name: 'AdinAccident'
+    description: 'Betrag für Unfalltod (Zusatz)'
+  - name: 'Adinremark'
+    description: 'Sonstige Zusatzleistungen'
+    genericControls:
+      multiLine: true
+  - name: 'deathkaprem1'
+    description: 'Todesfallkapital, Bemerkung 1'
+    genericControls:
+      multiLine: true
+  - name: 'deathkaprem2'
+    description: 'Todesfallkapital, Bemerkung 2'
+    genericControls:
+      multiLine: true

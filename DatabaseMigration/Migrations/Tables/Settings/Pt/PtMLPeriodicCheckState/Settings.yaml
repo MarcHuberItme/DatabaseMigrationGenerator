@@ -1,0 +1,48 @@
+table:
+  name: 'PtMLPeriodicCheckState'
+  description: 'Verwaltung der Stati einer GWG-Prüfung'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Check Status'
+    - german:
+        formTitle: 'GWG Prüfungsstatus'
+    - french:
+        formTitle: 'Statut de vérification ML'
+  columns:
+  - name: 'StateNo'
+    description: 'Nummer der Periodizität:\r\n\r\n- 10 Gestartet\r\n- 20 Bei Kunde\r\n- 30 Gemahnt\r\n- 40 Exception\r\n- 50 Freigabe\r\n- 90 Abgeschlossen'
+    genericControls:
+      defColumnPos: 1
+  - name: 'IsFinalState'
+    description: 'Gibt an, ob es sich um einen abschliessenden Status handelt. Kann bei mehreren Stati = true sein.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsDefaultStartState'
+    description: 'Status, welcher zu Beginn gesetzt wird. Kann nur bei einem Status = true sein.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'OpenIssueStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtOpenIssueStatus'
+      refField: 'StatusNo'
+      defColumnPos: 4
+  - name: 'Description'
+    description: 'Beschreibender Text'
+    genericControls:
+      multiLine: true
+  - name: 'ValidFrom'
+    description: 'Zeitliche Gültigkeit des Records, Startdatum'
+  - name: 'ValidTo'
+    description: 'Zeitliche Gültigkeit des Records, Enddatum'

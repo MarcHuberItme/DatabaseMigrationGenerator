@@ -1,0 +1,79 @@
+table:
+  name: 'PrPublicCfAmount'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublicCf'
+      parentRelationField: 'PublicCfId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Cash Flow Amount'
+    - german:
+        formTitle: 'Cash Flow Beträge'
+  columns:
+  - name: 'PublicCfId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicCf'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'VdfIdentification'
+    description: 'VDF: X_D.XVB.7820'
+  - name: 'CfAmountTypeNo'
+    description: 'VDF: X_D.XVB.4942'
+    genericControls:
+      refTable: 'PrPublicCfAmountType'
+      refField: 'CfAmountTypeNo'
+      defColumnPos: 1
+  - name: 'Currency'
+    description: 'VDF: X_D.XVB.6804\r\n         XRD.XCO. K816-A.6804 \r\n         XCD.XCC.6804\r\n         XRD.XRA.6804\r\n         XBD.XBA.K983.6804\r\n         XRD.XCO.XRE.K983.6804'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'Amount'
+    description: 'VDF: X_D.XVB.5833\r\n         XCD.XCA.5833 \r\n         XRD.XCO.K816-A.5833\r\n         XCD.XCC.K821.5833\r\n         XCD.XCC.5835\r\n         XRD.XRA.5833\r\n         XCD.XCL.5835\r\n         FAD.OFI.5841\r\n         XBD.XBA.5833-B\r\n         XBD.XBA.5833-C \r\n         XBD.XBA.5833-D\r\n         XBD.XBA.5833-E\r\n         XRD.XCO.XRE.5833-A \r\n         XRD.XCO.XRE.5833-B'
+    genericControls:
+      defColumnPos: 3
+  - name: 'QuoteTypeNo'
+    description: 'VDF: X_D.XVB.4812\r\n         XRD.XCO.K816-A.4812\r\n         XCD.XCC.K821.4812\r\n         XRD.XRA.4812\r\n         XBD.XBA.4812\r\n         XRD.XCO.XRE.4812'
+    genericControls:
+      refTable: 'PrPublicQuoteType'
+      refField: 'QuoteTypeNo'
+  - name: 'UnitNo'
+    description: 'VDF: XRD.XCO.XRE.4802'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'PaymentDirectionNo'
+    description: 'VDF: X_D.XVB.4930\r\n         XRD.XCO.4930'
+    genericControls:
+      refTable: 'PrPublicPaymentDirection'
+      refField: 'PaymentDirectionNo'
+  - name: 'SpreadDirectionNo'
+    description: 'VDF: XRD.XRA.4821\r\n         XCD.XCL.4935.'
+    genericControls:
+      refTable: 'PrPublicSpreadDirection'
+      refField: 'SpreadDirectionNo'
+  - name: 'Denominations'
+    description: 'VDF: X_D.XVB.6912'
+  - name: 'DenomNominalCurrency'
+    description: 'VDF: X_D.XVB.K983.6804'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true

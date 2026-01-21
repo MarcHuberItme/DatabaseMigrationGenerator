@@ -1,0 +1,129 @@
+view:
+  name: 'ReObligationSearchView'
+  description: 'View for select obligation in Credit2'
+frontendView:
+  name: 'ReObligationSearchView'
+  description: 'Used for the main SearchController of the form frmReObligation'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ObjectSeqNo'
+    description: 'ReObligation.ObjectSeqNo'
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ObligAmount'
+    description: 'ReObligation.ObligAmount'
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 2
+  - name: 'ObligTypeNo'
+    description: 'ReObligation.ObligTypeNo'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReObligType'
+      refField: 'ObligTypeNo'
+      defColumnPos: 3
+  - name: 'ObligDate'
+    description: 'Reobligation.ObligDate'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ObligRank'
+    description: 'Reobligation.ObligRank'
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 5
+  - name: 'LienCreationId'
+    description: 'Reobligation.LienCreationId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReObligLienCreation'
+      refField: 'Id'
+  - name: 'LienStatusId'
+    description: 'Reobligation.LienStatusId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReObligLienStatus'
+      refField: 'LienStatusNo'
+  - name: 'ObligeeTypeNo'
+    description: 'Reobligation.ObligeeTypeNo'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReObligObligeeType'
+      refField: 'ObligeeTypeNo'
+      defColumnPos: 11
+  - name: 'Zip'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 6
+    genericControls:
+      defColumnPos: 13
+  - name: 'SwissTownNo'
+    description: 'RePremises.SwissTownPartNo'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsSwissTown'
+      refField: 'SwissTownNo'
+      hasDetailBtn: true
+      defColumnPos: 13
+  - name: 'GBNo'
+    description: 'RePremises.GBNo'
+    dataType: 'nvarchar'
+    prec: 15
+    genericControls:
+      defColumnPos: 14
+  - name: 'GBNoAdd'
+    description: 'RePremises.GBNoAdd'
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 15
+  - name: 'GBPlanNo'
+    description: 'RePremises.GBPlanNo'
+    dataType: 'nvarchar'
+    prec: 15
+    genericControls:
+      defColumnPos: 17
+  - name: 'Street'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+    genericControls:
+      defColumnPos: 18
+  - name: 'Houseno'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 15
+    genericControls:
+      defColumnPos: 19
+  - name: 'PremisesCountObligation'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'ObligationCountPremises'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'OwnerCount'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      defColumnPos: 22
+  - name: 'OwnerPartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      defColumnPos: 23
+  - name: 'WarningText'
+    description: ''
+    dataType: 'varchar'
+    prec: 120
+    genericControls:
+      defColumnPos: 25

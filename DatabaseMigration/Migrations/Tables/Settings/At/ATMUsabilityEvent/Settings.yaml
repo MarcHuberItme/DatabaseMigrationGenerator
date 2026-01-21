@@ -1,0 +1,57 @@
+table:
+  name: 'ATMUsabilityEvent'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ATMUsabilityEvent'
+        helpText: 'ATMUsabilityEvent'
+    - german:
+        formTitle: 'ATMUsabilityEvent'
+        helpText: 'ATMUsabilityEvent'
+  columns:
+  - name: 'DeviceId'
+    description: ''
+    genericControls:
+      refTable: 'AsATMConfig'
+      refField: 'DeviceID'
+      defColumnPos: 1
+  - name: 'EventTime'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsCritical'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsBM'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'IsRM'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'EventCode'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'OnOffStatus'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'Description'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'JournalId'
+    description: ''

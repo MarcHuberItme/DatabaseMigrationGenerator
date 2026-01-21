@@ -1,0 +1,57 @@
+table:
+  name: 'VaMarginClass'
+  description: 'class for margin calculation'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'HasInlandRisk'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'SecurityType'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicSecurityType'
+      refField: 'SecurityType'
+      defColumnPos: 2
+  - name: 'UnderlyingInstrumentTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicInstrumentType'
+      refField: 'InstrumentTypeNo'
+      defColumnPos: 3
+  - name: 'InTheMoneyMargin'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'OutOfTheMoneyMargin'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ContractSize'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'AdditionalMarginComponentNo'
+    description: ''
+    genericControls:
+      refTable: 'VaMarginComponent'
+      refField: 'MarginComponentNo'
+      defColumnPos: 7
+  - name: 'InitialMarginAmountHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'MinimumMarginAmountHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 9

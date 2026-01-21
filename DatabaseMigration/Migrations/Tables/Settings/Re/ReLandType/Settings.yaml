@@ -1,0 +1,26 @@
+table:
+  name: 'ReLandType'
+  description: 'Landtyp (nur verwendet für "Nicht Bauland"'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Country Type'
+    - german:
+        formTitle: 'Landtyp'
+  columns:
+  - name: 'LandTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'SortNo'
+    description: ''

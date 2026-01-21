@@ -1,0 +1,49 @@
+table:
+  name: 'PtFiscalDomicile'
+  description: 'Fiscal Domicile of Partner; relationship-entity of PtBase and AsSwissTown'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Fiscal Domicile'
+    - german:
+        formTitle: 'Domizilort'
+    - french:
+        formTitle: 'domizil place'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key, Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'SwissTownNo'
+    description: 'foreign-key;  candidate-key of AsSwissTown (SwissTownNo)'
+    genericControls:
+      refTable: 'AsSwissTown'
+      refField: 'SwissTownNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IsPrimaryDomicile'
+    description: '1 = Primary fiscal domicile'
+  - name: 'Remarks'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'GenBecauseOf11Address'
+    description: '1 = this record was created automatic by saving 11 address'

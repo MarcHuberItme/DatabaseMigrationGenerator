@@ -1,0 +1,33 @@
+table:
+  name: 'AcFrozenAccCompPrice'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'AccountComponentId'
+    description: 'Reference to Account Component'
+  - name: 'Priority'
+    description: 'Interest Calculation Priority'
+  - name: 'ValidFrom'
+    description: 'Start date of price validtiy range'
+  - name: 'ValidTo'
+    description: ''
+  - name: 'InterestRate'
+    description: 'Interest Rate for specified value and date range'
+  - name: 'CommissionRate'
+    description: 'Commission Rate for specified value and date range'
+  - name: 'ProvisionRate'
+    description: 'Provision Rate for specified value and date range'
+  - name: 'Value'
+    description: ''
+  - name: 'PrivateComponentNo'
+    description: ''
+  - name: 'IsDebit'
+    description: 'True: Debit Component\r\nFalse: Credit Component'

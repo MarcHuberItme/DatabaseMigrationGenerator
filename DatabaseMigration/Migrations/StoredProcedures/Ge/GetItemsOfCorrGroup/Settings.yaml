@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetItemsOfCorrGroup'
+  description: 'to get all assigned items of an CorrItemGroup'

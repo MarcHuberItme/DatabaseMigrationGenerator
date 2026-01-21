@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxCreateTaxReportTransaction1'
+  description: 'Export to Alpha Tax.\r\nIn this stored procedure the transactions with account included (stockexorder, dividend, payments) will be selected.\r\n2023-08-02/FIN-9318/daga: condition added for PtTransItem HdVersionNo between 1 and 999999998'

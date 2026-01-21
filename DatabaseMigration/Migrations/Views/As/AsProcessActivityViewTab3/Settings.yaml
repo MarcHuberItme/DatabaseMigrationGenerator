@@ -1,0 +1,39 @@
+view:
+  name: 'AsProcessActivityViewTab3'
+  description: ''
+frontendView:
+  name: 'AsProcessActivityViewTab3'
+  description: 'Current State (Read Only)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ActualState'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+  - name: 'ActuallyHandledDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'LastStartTime'
+    description: ''
+    dataType: 'datetime'
+  - name: 'LastEndTime'
+    description: ''
+    dataType: 'datetime'
+  - name: 'LastAliveTime'
+    description: ''
+    dataType: 'datetime'
+  - name: 'MaxAliveTimeCount'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+  - name: 'MaxMissingAliveMessages'
+    description: ''
+    dataType: 'int'
+    isNotNull: true

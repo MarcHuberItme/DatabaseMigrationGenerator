@@ -1,0 +1,77 @@
+table:
+  name: 'PrReference'
+  description: 'precise characteristic of a product'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'Currency'
+    uiTableDescription:
+    - english:
+        formTitle: 'Product Reference'
+    - german:
+        formTitle: 'Produkt Referenz'
+  columns:
+  - name: 'ProductId'
+    description: 'foreign-key; Id of PrBase'
+    genericControls:
+      refTable: 'PrBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'Currency'
+    description: 'foreign-key; candidate-key of CyBase\r\n(in Case of Hauptbuch - banks own accounts - it''s only allowed to open references in currencies that have the flag AccountAcceptance (Devisen) or BillAcceptance(Noten) = true) - the reference for CHF will be opened automatically during the opening of the PtAccountBase)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      isNoUpdate: true
+  - name: 'MaturityDate'
+    description: 'Date of expiration'
+    genericControls:
+      defColumnPos: 1
+  - name: 'InterestRate'
+    description: '(for example for ''Certificates of Deposits'' ?)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsShortToff'
+    description: 'For Traded options and financial fututes\r\nTrue = short TOFF position / False = long TOFF position\r\nFor all other positions always False'
+  - name: 'SpecialKey'
+    description: 'For example: information, if usual Funds or Funds for savings'
+  - name: 'AccountId'
+    description: 'foreign-key; Id of PtAccountBase.\r\nThis field is NULL in the case References are associated to Products of Public domain\r\nIf PtAccountBase is deleted physically , then the associated PrReference also has to be deleted.'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'ContractId'
+    description: 'Product Reference Can also be created against a Contract instead of an account. This is extremely useful in the case of Fixed-Term Money Market Products.'
+    genericControls:
+      refTable: 'PtContract'
+      refField: 'Id'
+  - name: 'ObligationId'
+    description: 'foreign-key; Id of PrMortgageNote'
+    genericControls:
+      refTable: 'ReObligation'
+      refField: 'Id'
+  - name: 'InsurancePoliceId'
+    description: 'foreign-key; Id of PrInsurancePolice'
+    genericControls:
+      refTable: 'PrInsurancePolice'
+      refField: 'Id'
+  - name: 'ObjectId'
+    description: 'foreign-key; Id of PrObject (real object with value)'
+    genericControls:
+      refTable: 'PrObject'
+      refField: 'Id'
+  - name: 'MgVrxKeyDepot'
+    description: 'Depotnr. incl. Subdepot\r\nField is only filled, if MortgageNoteId, InsurancePoliceId or ObjectId is filled.\r\nddddddddddss\r\ndddddddddd = Depotnummer, ss = Subdepotnummer'
+  - name: 'MgVrxKey'
+    description: 'Format: vvvvvvvvaazzzzzzzzzz\r\nvvvvvvvv = Valorennr, aa = Anrechtscode, zzzzzzzzzz = Valorenzusatz\r\nDo not change the lenght (28) of the field. This field contains also the account vrx key. 12.09.2003/mct'
+    genericControls:
+      isOnlyForMig: true

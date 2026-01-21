@@ -1,0 +1,43 @@
+table:
+  name: 'PrPublicSIXReporting'
+  description: 'this table contains the instruments have to be reported to SIX based on a stockex order.\r\nLogic for reporting:\r\n- Isin only in SWX-Reportingfile: report to SIX\r\n- Isin only in BX-Reportingfile: report to BX\r\n- Isin in SWX- and BX-ReportingFile: report to SIX\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'SIX Reporting'
+        helpText: 'SIX Reporting'
+    - german:
+        formTitle: 'SIX Reporting'
+        helpText: 'SIX Reporting'
+  columns:
+  - name: 'PublicId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'DateFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'DateTo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'HasToBeReported'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'SIXUnknownInstrument'
+    description: '1= Instrument is not in the ImportFile from SIX but has to be reported (in this case the record should not be updated with HasToBeReported = false after importing the file).\r\nAdditional Remark (29.07.2024/wwo):\r\n1= Can also be used for TOFF-Instruments which not has to be reported (in this case set HasToBeReported = false). If SIXUnknownInstrument = 1 the record will be maintained manually and not by the normal way (loading the csv from SIX)..'
+    genericControls:
+      defColumnPos: 5

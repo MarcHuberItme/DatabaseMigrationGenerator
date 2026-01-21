@@ -1,0 +1,33 @@
+table:
+  name: 'PtTransSxCOMReference'
+  description: 'Transfer-Tabelle für COM+Call ReferenceList (FsStockExOrder.FsTsxGetData).\r\n\r\nReferenceList will call GetPrReferenceList (with PtTransSxCOMGetPrReference) and GetAccountFromPortfolioList (with PtTransSxCOMGetAccFromPf).'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtTransSxCOMReference'
+    - german:
+        formTitle: 'PtTransSxCOMReference'
+  columns:
+  - name: 'SecurityPortfolioId'
+    description: 'Input\r\nSecurityPortfolioId from the customer'
+    genericControls:
+      hasDetailBtn: true
+  - name: 'SecurityPrReferenceId'
+    description: 'Output\r\nField of PtTransSxCOMGetPrReference'
+  - name: 'AccountSelectionType'
+    description: 'Output\r\nField of PtTransSxCOMGetAccFromPf'
+  - name: 'AccountPrReferenceId'
+    description: 'Output\r\nField of PtTransSxCOMGetAccFromPf'
+  - name: 'AccountAccountId'
+    description: 'Output\r\nField of PtTransSxCOMGetAccFromPf'
+  - name: 'AccountAccountNo'
+    description: 'Output\r\nField of PtTransSxCOMGetAccFromPf'
+  - name: 'AsPayeeId'
+    description: 'Output\r\nField of PtTransSxCOMGetAccFromPf'

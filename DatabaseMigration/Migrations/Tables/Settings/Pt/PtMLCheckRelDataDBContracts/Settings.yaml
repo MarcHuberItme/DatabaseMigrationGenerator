@@ -1,0 +1,45 @@
+table:
+  name: 'PtMLCheckRelDataDBContracts'
+  description: 'Tabelle, um die mit einem Kunden verbundenen E-Banking Verträge zu speichern'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'ML E-Banking contracts'
+    - german:
+        formTitle: 'GWG E-Banking Verträge'
+  columns:
+  - name: 'CheckOverviewRelDataId'
+    description: 'ForeignKey'
+    genericControls:
+      refTable: 'PtMLCheckOverviewRelData'
+      refField: 'Id'
+  - name: 'ContractId'
+    description: 'Id des Ebanking Vertrages'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'ContractNo'
+    description: 'PtAgrEbanking.MgVtNo\r\nVertragsnummer des Ebanking Vertrages'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ContactPerson'
+    description: 'Concatenate aus "Name" und "Vorname" einer allfälligen Kontaktperson'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'LastLoginDate'
+    description: 'Datum des letzten Logins'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'hasAccess'
+    description: 'zeigt an, ob der Vertrag Zugriff hat auf die Konti des zu prüfenden Kunden, 1 = ja, 0 = nein'

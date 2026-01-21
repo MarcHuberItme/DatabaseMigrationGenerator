@@ -1,0 +1,19 @@
+table:
+  name: 'PtCardJournalContactlessInfo'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'ContactlessInfo'
+    description: '0 = Unknown\r\n1 = Activated (confirmed)\r\n2 = Card without contactless\r\n3 = Deactivated (unconfirmed)\r\n4 = Deactivated (confirmed)\r\n5 = Deactivation pending\r\n7 = Activated (unconfirmed)\r\n8 = Activation pending\r\n9 = Never activated\r\n'
+    genericControls:
+      defColumnPos: 1

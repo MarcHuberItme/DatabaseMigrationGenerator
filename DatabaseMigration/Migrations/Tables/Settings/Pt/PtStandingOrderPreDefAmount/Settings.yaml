@@ -1,0 +1,32 @@
+table:
+  name: 'PtStandingOrderPreDefAmount'
+  description: 'Standardpreise mit Datum gültig ab für Daueraufträge'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'St. order default price'
+    - german:
+        formTitle: 'DA Standardpreise'
+  columns:
+  - name: 'PreDefTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtStandingOrderPreDefType'
+      refField: 'PreDefTypeNo'
+      defColumnPos: 1
+  - name: 'ValidFrom'
+    description: 'valid from / gültig ab'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PaymentAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 3

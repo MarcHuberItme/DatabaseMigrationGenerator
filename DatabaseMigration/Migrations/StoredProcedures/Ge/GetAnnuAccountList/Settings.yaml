@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAnnuAccountList'
+  description: 'Stored Procedure to get the Account List for Annuity-Booking and Calculation'

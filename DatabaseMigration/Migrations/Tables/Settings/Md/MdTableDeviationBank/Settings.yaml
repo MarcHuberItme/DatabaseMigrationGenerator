@@ -1,0 +1,40 @@
+table:
+  name: 'MdTableDeviationBank'
+  description: 'Table metadata for generic editor, deviation of banks'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: d18c2bae-7838-4b83-a18e-29041114c63e
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Table Meta Data Deviation'
+    - german:
+        formTitle: 'Tab-Kontrolle Abweichung'
+    - french:
+        formTitle: 'Écart métadonnées table'
+  columns:
+  - name: 'TableName'
+    description: ''
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 1
+  - name: 'VisumLevel'
+    description: 'Level of confirmation\r\n1=No confirmation\r\n2=Process group\r\n4=Single row\r\n8=None, group activation'
+    genericControls:
+      refTable: 'MdVisumLevel'
+      refField: 'VisumLevel'
+      defColumnPos: 2
+  - name: 'FunctionGroupNo'
+    description: 'Number of the function group (used for table administration)'
+    genericControls:
+      refTable: 'AsFunctionGroup'
+      refField: 'FunctionGroupNo'
+      defColumnPos: 3
+  - name: 'ChangeNoticeLevel'
+    description: '0 = none\r\n1 = update and insert'

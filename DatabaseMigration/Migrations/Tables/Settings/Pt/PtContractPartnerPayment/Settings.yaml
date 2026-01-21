@@ -1,0 +1,26 @@
+table:
+  name: 'PtContractPartnerPayment'
+  description: 'Payments for contract partners'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ContractPartnerId'
+    description: 'PtContractPartner.Id'
+    genericControls:
+      refTable: 'PtContractPartner'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderIdCapitalPayment'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrder'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PreviousCapital'
+    description: ''

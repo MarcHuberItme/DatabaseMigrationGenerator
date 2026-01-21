@@ -1,0 +1,25 @@
+table:
+  name: 'PtDocumentStatus'
+  description: 'different possible status of an agreement'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'agreement status'
+    - german:
+        formTitle: 'Vertragstatus'
+  columns:
+  - name: 'DocumentStatusNo'
+    description: '10: Entwurf\r\n20: gedruckt/ überreicht\r\n32: gedruckt/ versandt\r\n30: gescanned\r\n40: unvollständig\r\n80: annuliert\r\n90: akzeptiert'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

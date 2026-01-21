@@ -1,0 +1,125 @@
+view:
+  name: 'PrPublicRelationView'
+  description: 'This view is used in form frmInstrumentRelTarget instead the table PrPublicRelation. The Table PrPublicRelation can''t use, because the reference from field TargetPublicId can''t set to View PrPublicDescriptionView. The reference to PrPublicDescriptionView is necessary for display instrument infomations (ISIN and shortname). In the table PrPublicRelation must the reference from SourcePublicId be set to PrPublic for the navigation builder.'
+frontendView:
+  name: 'PrPublicRelationView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Relation'
+    - german:
+        formTitle: 'Beziehung'
+  columns:
+  - name: 'VdfDocType'
+    description: ''
+    dataType: 'varchar'
+    prec: 3
+  - name: 'VdfDocGen'
+    description: ''
+    dataType: 'int'
+  - name: 'VdfDocStatusNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'SourcePublicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TargetPublicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'NumberSource'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 3
+  - name: 'NumberTarget'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 4
+  - name: 'DependencyTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicDependencyType'
+      refField: 'DependencyTypeNo'
+      defColumnPos: 5
+  - name: 'AssimilationDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'IsAssimilDateAssumed'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'SeparationFromDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'SeparationToDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'IsPrincipal'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsIncome'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsPaymentLeg'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'UnderlyingCoverRatio'
+    description: ''
+    dataType: 'float'
+  - name: 'CurrentWeight'
+    description: ''
+    dataType: 'float'
+  - name: 'CurrentAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'CurrentAmountUnitNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'UnderlyingRoleNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicUnderlyingRole'
+      refField: 'RoleNo'
+  - name: 'DeltaAtIssuance'
+    description: ''
+    dataType: 'float'
+  - name: 'InstrInInitialHedge'
+    description: ''
+    dataType: 'float'
+  - name: 'EffDateDeltaHedge'
+    description: ''
+    dataType: 'datetime'

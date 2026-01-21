@@ -1,0 +1,32 @@
+table:
+  name: 'PtPaymentReturnMessageText'
+  description: 'Texts for SIC returns, defined in AsText.TextLong'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPaymentReturnMessageTex'
+        helpText: 'PtPaymentReturnMessageText'
+    - german:
+        formTitle: 'PtPaymentReturnMessageTex'
+        helpText: 'PtPaymentReturnMessageText'
+    - french:
+        formTitle: 'PtPaymentReturnMessageTex'
+        helpText: 'PtPaymentReturnMessageText'
+    - italian:
+        formTitle: 'PtPaymentReturnMessageTex'
+        helpText: 'PtPaymentReturnMessageText'
+  columns:
+  - name: 'RejectCode'
+    description: 'References PtPaymentRejectReason'
+    genericControls:
+      defColumnPos: 1

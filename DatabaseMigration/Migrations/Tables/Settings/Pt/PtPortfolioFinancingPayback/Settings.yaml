@@ -1,0 +1,57 @@
+table:
+  name: 'PtPortfolioFinancingPayback'
+  description: 'Table to store the summarized informations about paybacks within a FinancingPortfolio. Is needed to create the credit contract before accounts and paybacks are exisiting. Is manually entered or written through API by FinancingSuite. \r\n\r\nSummarische Darstellung der Amortisationen innerhalb eines Rahmenvertrags. Wird für die Vertragserstellung benötigt, da zu diesem Zeitpunkt noch keine Konti und Detail-Amortisation vorhanden sind. Wird manuell erfasst oder via API geschrieben.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PortfolioFinancingPayback'
+        helpText: 'PortfolioFinancingPayback'
+    - german:
+        formTitle: 'PortfolioFinancingPayback'
+        helpText: 'PortfolioFinancingPayback'
+    - french:
+        formTitle: 'PortfolioFinancingPayback'
+        helpText: 'PortfolioFinancingPayback'
+    - italian:
+        formTitle: 'PortfolioFinancingPayback'
+        helpText: 'PortfolioFinancingPayback'
+  columns:
+  - name: 'PortfolioFinancingId'
+    description: 'Referenz zu PtPortfolioFinancing'
+    genericControls:
+      refTable: 'PtPortfolioFinancing'
+      refField: 'Id'
+  - name: 'PaybackTypeNo'
+    description: 'Reference to PtAccountPaybackType.PaybackTypeNo. Shows if this is a direct amortisation, an indirect amortisation or an annuity.\r\n--\r\nReferenz zu PtAccountPaybackType.PaybackTypeNo. Wir werden zukünftig verschieden Amortisationsarten haben (aktuell: direkt, indirekt, Annuität) welche wiederum unterschiedliche Pflichtfelder / optionale Felder haben.'
+    genericControls:
+      refTable: 'PtAccountPaybackType'
+      refField: 'AccountPaybackTypeNo'
+      defColumnPos: 1
+  - name: 'IndirectPaybackType'
+    description: 'agreed type of indirect amortization (mandatory entry for indirect amortization) - reference to PtAgrGenContrIndirectPaybackType to get the belonging auto text for the contract creation'
+    genericControls:
+      refTable: 'PtAgrGenContrIndPaybackType'
+      refField: 'IndirectPaybackTypeNo'
+      defColumnPos: 2
+  - name: 'PeriodRuleNo'
+    description: 'Reference to AsPeriodRule.PeriodRuleNo\r\n\r\nPeriodicity of the amortization payment (according to table AsPeriodRule)\r\n(30 = monthly, 60 = bimonthly, 90 = quarterly, 180 = half-yearly, 360 = annually)'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 3
+  - name: 'DueAmount'
+    description: 'Amortization amount to be paid for the agreed period\r\n\r\n'
+    genericControls:
+      defColumnPos: 4
+  - name: 'FirstPayableOnDate'
+    description: 'Payable for the first time on this date - mandatory for all types of payback\r\n\r\nFür eine indirekte Amo wird entsprechend 31.12.2021 (Jahresende) eingetragen. Theoretisch kann dann die Bank immer noch in Auftrag geben, dass nur \r\nYear(31.12.2021) im Vertrag angezeigt wird.'
+    genericControls:
+      defColumnPos: 5

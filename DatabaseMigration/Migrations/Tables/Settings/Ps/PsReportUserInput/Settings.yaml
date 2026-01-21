@@ -1,0 +1,70 @@
+table:
+  name: 'PsReportUserInput'
+  description: 'Defines the input parameters for ad hoc reports'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Report User Input'
+    - german:
+        formTitle: 'Report Benutzereingaben'
+  columns:
+  - name: 'ReportId'
+    description: 'Relation to the report.'
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'Id'
+  - name: 'ParameterName'
+    description: 'Name of the parameter, is also the field to replace for parameter type ''replace'''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ParameterType'
+    description: 'Type of th input parameter:\r\n1 = Replace (Replaces field anywhere in query and is input parameter for the report)\r\n2 = Append Mandatory (is always appended with ''and'' to the main query)\r\n3 = Append Optional (is appended with ''and'' to the main query, if given)'
+    minValue: '1'
+    maxValue: '3'
+    genericControls:
+      refTable: 'PsReportParameterType'
+      refField: 'ParameterType'
+  - name: 'DataType'
+    description: 'Datatype of the field in SQL-Server syntax'
+    genericControls:
+      refTable: 'PsReportParamDataType'
+      refField: 'DataType'
+  - name: 'AsCrystalRptParamBag'
+    description: 'if true, input parameter passed to crystal report as ParamsBag'
+  - name: 'AsCrystalRptParamRec'
+    description: 'if true, input parameter passed to crystal report from SelectClause'
+  - name: 'SearchTableName'
+    description: 'Name of the table prefix in the search expression. Only necessary for ParameterType 2 and 3'
+  - name: 'SearchFieldName'
+    description: 'Name of the field in the search expression. Only necessary for ParameterType 2 and 3'
+  - name: 'SequenceNo'
+    description: 'Order no of the parameters.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'RefTableName'
+    description: 'Name of the translation table. Is used only for combo boxes.'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'RefFieldName'
+    description: 'Name of the field which contians the primary / candidate key of the filed to be translated.'
+  - name: 'DescFieldName'
+    description: 'Name of the description field'
+  - name: 'HasDetailButton'
+    description: 'Only for combo boxes.\r\nTrue for select-form combos, false for drop-down.'
+  - name: 'IsOrderField'
+    description: 'If True, the field can be used to generate the order-by clause'
+  - name: 'AdditionalWhere'
+    description: 'Additional where-statement for combo-boxes'
+    genericControls:
+      multiLine: true
+  - name: 'DateShiftWithScheduler'
+    description: 'Date should shift with scheduler'

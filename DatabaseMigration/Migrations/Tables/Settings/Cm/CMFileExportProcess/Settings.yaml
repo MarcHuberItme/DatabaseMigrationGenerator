@@ -1,0 +1,24 @@
+table:
+  name: 'CMFileExportProcess'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'SystemCode'
+    description: ''
+  - name: 'ExportDate'
+    description: ''
+  - name: 'ExportFile'
+    description: ''
+  - name: 'ExportStartTime'
+    description: ''
+  - name: 'ExportEndTime'
+    description: ''
+  - name: 'ProcessStatus'
+    description: '0, to be sent, 2, ok'

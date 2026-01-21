@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'InitSecuritiesPledgeInfo'
+  description: 'init pledge information for lombard loans'

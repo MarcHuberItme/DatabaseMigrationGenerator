@@ -1,0 +1,47 @@
+table:
+  name: 'ReParkingType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'ParkingType'
+    - german:
+        formTitle: 'Parkiermöglichkeitstyp'
+    - french:
+        formTitle: 'parking type'
+  columns:
+  - name: 'ParkingType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'StdPrice'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'OverrideStdPrice'
+    description: 'übersteuern des Standardpreises erlaubt\r\n0 = ja\r\n1 = Nein'
+  - name: 'ForValuation'
+    description: ''
+    genericControls:
+      refTable: 'ReEnvironmentAddValuation'
+      refField: 'ValuationNo'
+      defColumnPos: 3
+  - name: 'EarningValueRate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'SortNo'
+    description: ''
+  - name: 'IsParking'
+    description: ''
+  - name: 'IaziValue'
+    description: 'Zuordnung zu den IAZI Felder:\r\n1= GarageNo\r\n2 = ParkingPlaceNo\r\n3 = UndergroundNo\r\n(Addieren per Type in die Felder in ReBuilding)'

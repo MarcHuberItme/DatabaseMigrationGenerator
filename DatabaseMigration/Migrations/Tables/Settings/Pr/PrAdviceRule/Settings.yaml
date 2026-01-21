@@ -1,0 +1,49 @@
+table:
+  name: 'PrAdviceRule'
+  description: 'advice controle transaction rule'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'advice controle (trans.)'
+    - german:
+        formTitle: 'Anzeigesteuerung (Trans.)'
+  columns:
+  - name: 'AdviceControlId'
+    description: ''
+    genericControls:
+      refTable: 'PrAdviceControl'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'DebitAdviceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+      defColumnPos: 3
+  - name: 'CreditAdviceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+      defColumnPos: 4
+  - name: 'DebitStatementDetails'
+    description: ''
+  - name: 'CreditStatementDetails'
+    description: ''

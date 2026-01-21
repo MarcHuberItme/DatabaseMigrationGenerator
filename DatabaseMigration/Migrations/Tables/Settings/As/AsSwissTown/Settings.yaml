@@ -1,0 +1,43 @@
+table:
+  name: 'AsSwissTown'
+  description: 'all (political) cities/villages in Switzerland'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    descField: 'Town'
+    uiTableDescription:
+    - english:
+        formTitle: 'Swiss Town'
+    - german:
+        formTitle: 'Ortschaften'
+  columns:
+  - name: 'SwissTownNo'
+    description: 'candidate-key  (BFSNo)'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'CantonSymbol'
+    description: 'candidate-key'
+    genericControls:
+      refTable: 'AsCanton'
+      refField: 'CantonSymbol'
+      defColumnPos: 3
+  - name: 'Population'
+    description: ''
+  - name: 'Surface'
+    description: ''
+  - name: 'Town'
+    description: 'political city'
+    genericControls:
+      defColumnPos: 2
+  - name: 'LanguageNo'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'

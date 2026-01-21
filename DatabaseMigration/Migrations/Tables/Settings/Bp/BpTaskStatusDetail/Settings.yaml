@@ -1,0 +1,28 @@
+table:
+  name: 'BpTaskStatusDetail'
+  description: 'JCS detailed task status.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'JCS detailed task status'
+    - german:
+        formTitle: 'JCS detailed task status'
+    - french:
+        formTitle: 'JCS detailed task status'
+    - italian:
+        formTitle: 'JCS detailed task status'
+  columns:
+  - name: 'TaskStatusDetail'
+    description: 'Current detail status of the task:\r\n0 = Initial\r\n1 = StartPending\r\n2 = Running\r\n3 = PausePending\r\n4 = Paused\r\n5 = ResumePending\r\n6 = StopPending\r\n7 = JobStopPending\r\n8 = Stopped\r\n9 = AbortPending\r\n10 = Aborted\r\n11 = JobAborted\r\n12 = Faulted\r\n13 = JobFaulted'
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetUserGroupMembers'
+  description: 'Returns the user names of a certain user group.\r\nIs used by the workflow property access interface FsWFSIPropertyAccess.PropertyAccess.GetUserGroupMembers'

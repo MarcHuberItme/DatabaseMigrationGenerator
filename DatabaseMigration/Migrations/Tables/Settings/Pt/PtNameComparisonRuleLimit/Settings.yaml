@@ -1,0 +1,40 @@
+table:
+  name: 'PtNameComparisonRuleLimit'
+  description: 'Name comparison configurations for different amount lmits under a comparison rule'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'RuleNo'
+    description: ''
+    genericControls:
+      refTable: 'PtNameComparisonRule'
+      refField: 'RuleNo'
+      defColumnPos: 1
+  - name: 'SexStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+      defColumnPos: 2
+  - name: 'IsToCompareName'
+    description: 'If this flag is not set to 1, the name comparison will be simply skipped, irresprctive of any other limit'
+  - name: 'IsToCompareFirstName'
+    description: 'If this flag is not set to 1, the first name comparison will be simply skipped, irresprctive of any other limit'
+  - name: 'MinPercentPartsMatched'
+    description: 'if name or first name have parts, the fields specifies the acceptable percentage of total parts matched'
+    minValue: '0'
+    maxValue: '100'
+  - name: 'AmountLimit'
+    description: ''
+  - name: 'NameAcceptedMatchLen'
+    description: 'it can be specifed that if first ''n'' characters of name match, then the whole name  or part of name is considered matched'
+  - name: 'FirstNameAcceptedMatchLen'
+    description: 'it can be specifed that if first ''n'' characters of first name match, then the whole first name  or part of first name is considered matched'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPortfolioPledgeInfo'
+  description: 'Get Pledge Info for Portfolio (new add coll from cobase check for portfolio)'

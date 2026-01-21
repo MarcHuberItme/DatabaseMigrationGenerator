@@ -1,0 +1,53 @@
+view:
+  name: 'PtBillPresentationView'
+  description: 'This view is used in conjunction with the FrontEnd table PtBillPresentationView to display E-Bill (Paynet and YellowBill) Payments'
+frontendView:
+  name: 'PtBillPresentationView'
+  description: 'FrontEnd View for View PtBillPresentationView'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'PartnerNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ConsolidatorNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtBillConsolidator'
+      refField: 'ConsolidatorNo'
+      defColumnPos: 5
+  - name: 'BillerName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 255
+    genericControls:
+      defColumnPos: 3
+  - name: 'BillAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 4
+  - name: 'PresentmentState'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 2
+  - name: 'BillDueDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 5

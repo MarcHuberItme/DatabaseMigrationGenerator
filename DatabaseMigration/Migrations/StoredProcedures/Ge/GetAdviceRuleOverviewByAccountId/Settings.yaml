@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAdviceRuleOverviewByAccountId'
+  description: 'Show an overview of all advices rules for an account'

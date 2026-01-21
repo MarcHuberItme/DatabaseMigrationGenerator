@@ -1,0 +1,25 @@
+table:
+  name: 'SwBankOperation'
+  description: 'Swift Bank Operation Code'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Swift Bank Operation Code'
+    - german:
+        formTitle: 'Swift Bank Operation Code'
+  columns:
+  - name: 'OperationCode'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

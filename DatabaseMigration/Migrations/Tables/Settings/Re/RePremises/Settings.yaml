@@ -1,0 +1,233 @@
+table:
+  name: 'RePremises'
+  description: 'Grundstück (Eine Liegenschaft (ReBase) kann 1 - n Grundstücke haben\r\n\r\nWenn sich die Liegenschaft aus mehreren Landteilen zusammensetzt, werden diese als RePremises erfasst und mittels Grundstücktyp klassiert. Daher wird nicht mehr eine 1:n Beziehung wie im FIS-2000 aufgebaut.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'GBNo'
+    navigation:
+      applicationKey: 'GBNo'
+      navigationConditionField: 'ForBuildRight,HasServitute,IsPriceRelevant,PremisesType,UseTypeNo'
+      rootTable: 'ReBase'
+      parentTable: 'ReBase'
+      parentRelationField: 'ReBaseId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Premises/Situation'
+    - german:
+        formTitle: 'Grundstück/Lage'
+    - french:
+        formTitle: 'terrain/situation'
+  columns:
+  - name: 'ReBaseId'
+    description: 'relation to ReBase (Liegenschaft)'
+    genericControls:
+      refTable: 'ReBase'
+      refField: 'Id'
+  - name: 'PremisesType'
+    description: 'Grundstücktyp (gemäss ZGB)  e.g. Bauland, Baurecht, bebautes Grundstück, Miteigentumsanteil an Grundstück \r\nFIS-2000: GR_STAMM.GR_DEFI_ZGB_CD (GR_TYP_CD wird nicht migriert)'
+    genericControls:
+      refTable: 'RePremisesType'
+      refField: 'PremisesType'
+      defColumnPos: 1
+  - name: 'GBRegisterType'
+    description: 'GB = Grundbuch\r\nIR = Interimsregister\r\nLR = Lose Blatt'
+    genericControls:
+      refTable: 'ReGBRegisterType'
+      refField: 'GBRegisterType'
+  - name: 'EGRID'
+    description: 'electronic GRID (Grundbuch)'
+  - name: 'GBNo'
+    description: 'GB number (ist nicht mehr applikationsschlüssel, weil diese Nummer vielmals ummutiert werden muss, und dann der navigationtree nicht angepasst wird.)\r\n\r\nIm Gegensatz zu FIS-2000 (GR_STAMM.*STRKT_CD*)wird keine Struktur der GB-Nummern vorgegeben. Die Verwendung der einzlnen Felder wird im Helpsystem beschrieben.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'GBNoAdd'
+    description: 'additional information to GB number, z.B. Parzellennummer'
+    genericControls:
+      defColumnPos: 3
+  - name: 'GBPlanNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'Designation'
+    description: 'Bezeichnung des Grundstücks - e.g. "Sonnenschein"\r\n\r\nFIS-2000: GR_STAMM.GR_BEZ'
+  - name: 'Street'
+    description: 'road in a village / town (default value for all buildings on that premises)\r\n\r\nFIS-2000:GR_STAMM.STRASSE_GR'
+    genericControls:
+      defColumnPos: 6
+  - name: 'HouseNo'
+    description: 'number of a building  (default value for all buildings on that premises)'
+  - name: 'AreaM2'
+    description: 'area in square meters\r\n\r\nFIS-2000: GR_STAMM.FLAECHE'
+    minValue: '0'
+    genericControls:
+      isNoUpdate: true
+  - name: 'PriceM2'
+    description: 'Price per square meter'
+  - name: 'IsPriceRelevant'
+    description: 'Dieses Grundstück hat wesentliche Servitute (IAZI), die preisrelevant sind., dh. wertvermindernd (1=ja)'
+  - name: 'ConstructionZoneId'
+    description: 'Bauzone\r\n(Gültigkeit abhängig von der Gemeinde)'
+    genericControls:
+      refTable: 'ReConstructionZone'
+      refField: 'Id'
+  - name: 'OutOfConstructionZone'
+    description: '0 = No - innerhalb der Bauzone\r\n1 = Yes - ausserhalb der Bauzone\r\n(Feld für Wuest und Partner - Schätzungsinterface)'
+  - name: 'UtilizationNo'
+    description: 'utilization number / Ausnützungsziffer (automatisch übernehmen als Default aus Tabelle ReConstructionZone)'
+  - name: 'InfrastructureId'
+    description: 'Lage in der Gemeinde (FIS-2000: GR_STAMM.GR_INFRA_STRKT_CD)'
+    genericControls:
+      refTable: 'ReInfrastructure'
+      refField: 'Id'
+  - name: 'NegotiabilityId'
+    description: 'Verkäuflichkeit, wenn abweichend zur ganzen Liegenschaft  (if this field is NULL, the negotiability of the ReBase is valid)\r\nFIS-2000: GR_STAMM.GBDE_VERKFL_CD'
+    genericControls:
+      refTable: 'ReNegotiability'
+      refField: 'Id'
+      defColumnPos: 7
+  - name: 'DevelopmentRate'
+    description: 'Erschliessungsgrad des Grundstücks /  Development degree of property (IAZI)'
+    genericControls:
+      refTable: 'ReDevelopmentRate'
+      refField: 'Id'
+  - name: 'UseTypeNo'
+    description: 'Type of Use (Nutzungsart), e.g. private use (Eigennutzung), rent (Miete), Lease (Pacht) of the whole premises (Gesamtgrundstücks)\r\nFIS-2000: GR_STAMM.GR_NUTZ_ART_CD (dann muss im Gebäude RentRatePrivate erfasst werden - Anteil Privat am Ertrag)'
+    genericControls:
+      refTable: 'ReUseType'
+      refField: 'UseTypeNo'
+  - name: 'HasServitute'
+    description: 'substantial easements / wesentliche Servitute vorhanden (IAZI)  - nur PfB\r\n0 = No\r\n1 = Yes'
+  - name: 'UndergroundNo'
+    description: 'number of parking places in an underground bulding (for IAZI) - nur PfB'
+  - name: 'GarageNo'
+    description: 'number of separate garages (for IAZI) - nur PfB'
+  - name: 'ParkingPlaceNo'
+    description: 'number of parking places / Abstellplätze (for IAZI)  - nur PfB'
+  - name: 'Remark'
+    description: 'Freitext\r\nFIS-2000:GR_STAMM.BEM'
+    genericControls:
+      multiLine: true
+  - name: 'RemarkSituation'
+    description: 'GR_LAGE.BEM und GR_LAGBEUR(.BEM) aus FIS-2000 (konkatiniert)'
+    genericControls:
+      multiLine: true
+  - name: 'IsLiving'
+    description: 'für Wohnen J/N    / for Living purposes\r\nFIS-2000 Wert wird in Business% verrechnet - muss auf 100% aufgehen\r\n(mandatory to have a %-rate for the RentRateBusiness part)'
+  - name: 'IsTrade'
+    description: 'für Gewerbe (J/N)  / for trade purposes\r\n\r\n(mandatory to have a %-rate for the RentRateBusiness part)'
+  - name: 'IsIndustry'
+    description: 'für Industrie (J/N) / for industry purposes'
+  - name: 'IsAgriculture'
+    description: 'für Landwirtschaft / for agriculture purposes'
+  - name: 'SituationAllocationId'
+    description: 'Lagezuordnung (FIS-2000)\r\n (FIS-2000: GR_STAMM.GR_LAGE_ZUW_CD)'
+    genericControls:
+      refTable: 'ReSituationAllocation'
+      refField: 'Id'
+  - name: 'GBDescription'
+    description: 'GR_GB_BESCR aus FIS-2000'
+    genericControls:
+      multiLine: true
+  - name: 'MemberUniqueKey'
+    description: 'PfB spezifisch: Jede Mitgliedbank vergibt für den gemeldeten Record eine eindeutige Identifikation. Diese benötigt sie um über E-Banking die Daten zu mutieren. Diese eindeutige Kennung muss die Mitgliedbank bei sich speichern.'
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SoftProfileUsed'
+    description: ''
+  - name: 'ReleaseProcessId'
+    description: 'intended for use with release workflow'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'VisitDate'
+    description: 'date of the last locally visit of employee'
+  - name: 'VisitUserId'
+    description: 'employee who visited the real estate on the visit date'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'VisitMode'
+    description: 'Besichtigungsart (Innen, Aussen, Innen und Aussen)'
+    genericControls:
+      refTable: 'ReBaseVisitMode'
+      refField: 'Id'
+  - name: 'HasPfBQuality'
+    description: '0 = nicht pfandbrieffähig\r\n1 = Pfandbrieffähig\r\nObjekt ist Pfandbriefbank fähig (der Wert wird aufgrund gewisser Bedingungen in einem Job über Nacht gesetzt)'
+  - name: 'PfBDate'
+    description: 'Datum, wann die Liegenschaft das letzte Mal an die Pfandbriefbank gemeldet wurde (ChangeDate, d.h. wir gesetzt bei Neuanmeldung und mutiert, wenn das Objekt als Update nochmals geliefert wurde).'
+  - name: 'PfBReason'
+    description: 'Grund, warum ein Objekt nicht pfandbrieffähig ist, auch wenn es von der Konstellation wäre.'
+    genericControls:
+      multiLine: true
+  - name: 'SwissTownNo'
+    description: 'Politische Gemeinde, wo das Grundstück sich befindet. Über eine Zuordnung der pol. Gemeinden zu den Grundbuchämtern, findet man das passende GB-Amt. Dieses wird nicht gespeichert.\r\nFIS-2000: GR_STAMM.PLZ_GR'
+    genericControls:
+      refTable: 'AsSwissTown'
+      refField: 'SwissTownNo'
+      hasDetailBtn: true
+  - name: 'Zip'
+    description: ''
+  - name: 'Town'
+    description: ''
+  - name: 'CountryCode'
+    description: 'FIS-2000: GR_STAMM.LAND_LNR_GR'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+  - name: 'SwissTownPartNo'
+    description: ''
+    genericControls:
+      refTable: 'AsSwissTownPart'
+      refField: 'SwissTownPartNo'
+  - name: 'TerminationDate'
+    description: 'Aufhebungsdatum'
+  - name: 'PremisesIdMaster'
+    description: 'unselbständige GB-Nummern müssen einem anderen Grundstück zugeordnet werden.'
+    genericControls:
+      refTable: 'ReBasePremisesView'
+      refField: 'PremisesId'
+      hasDetailBtn: true
+  - name: 'ObjectType'
+    description: ''
+    genericControls:
+      refTable: 'ReParkingType'
+      refField: 'ParkingType'
+  - name: 'ObjectNo'
+    description: ''
+  - name: 'ObjectAmount'
+    description: ''
+  - name: 'ObjectAmount2'
+    description: ''
+  - name: 'IsRealValueRelevant'
+    description: ''
+  - name: 'IsEarningValueRelevant'
+    description: ''
+  - name: 'IsMarketValueRelevant'
+    description: ''
+  - name: 'ForBuildRight'
+    description: '0 = kein Baurecht (benötigt LAND Node)\r\n1 = im Baurecht (darf keinen LAND Node haben)'
+  - name: 'Canton'
+    description: ''
+    genericControls:
+      refTable: 'AsCanton'
+      refField: 'CantonSymbol'
+  - name: 'PurchaseInfoId'
+    description: ''
+    genericControls:
+      refTable: 'RePurchaseInfo'
+      refField: 'Id'
+      hasDetailBtn: true

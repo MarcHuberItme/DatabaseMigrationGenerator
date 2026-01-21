@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CalculateTransChargesOnClosing'
+  description: 'This SP returns the sum of charges to be applied upon closing'

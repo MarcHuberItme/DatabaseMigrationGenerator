@@ -1,0 +1,65 @@
+table:
+  name: 'PrPublicFundSelfDeclDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublicFundSelfDecl'
+      parentRelationField: 'PublicFundSelfDeclId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Details fund selb decl.'
+    - german:
+        formTitle: 'Details Fonds Selbstdekl.'
+  columns:
+  - name: 'PublicFundSelfDeclId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicFundSelfDecl'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'RegionCountryCode'
+    description: 'VDF.ERD.EUL.3988'
+    genericControls:
+      refTable: 'PrPublicRegionCountry'
+      refField: 'RegionCountryCode'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'CountryTaxDefinitionNo'
+    description: 'VDF.ERD.EUL.4915'
+    genericControls:
+      refTable: 'PrPublicCountryTaxDefinition'
+      refField: 'CountryTaxDefinitionNo'
+      defColumnPos: 2
+  - name: 'ProspectusProportionClassNo'
+    description: 'VDF.ERD.ERL.4921-A'
+    genericControls:
+      refTable: 'PrPublicProportionClass'
+      refField: 'ProportionClassNo'
+      defColumnPos: 3
+  - name: 'AssetPropCalcMethNo'
+    description: 'VDF.ERD.ERL.4914'
+    genericControls:
+      refTable: 'PrPublicAssetPropCalcMeth'
+      refField: 'AssetPropCalcMethNo'
+      defColumnPos: 4
+  - name: 'CalcMethProportionClassNo'
+    description: 'VDF.ERD.ERL.4921-B'
+    genericControls:
+      refTable: 'PrPublicProportionClass'
+      refField: 'ProportionClassNo'
+      defColumnPos: 5
+  - name: 'ProportionNonGrandfathBond'
+    description: 'VDF.ERD.ERL.5835'

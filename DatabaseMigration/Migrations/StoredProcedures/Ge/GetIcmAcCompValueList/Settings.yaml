@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetIcmAcCompValueList'
+  description: 'Retrieves account component value information for interest calculation\r\nAuthor		: mct\r\nDate Created	: 29.06.2004'

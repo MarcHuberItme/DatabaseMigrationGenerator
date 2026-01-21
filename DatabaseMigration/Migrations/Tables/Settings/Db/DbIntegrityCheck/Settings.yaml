@@ -1,0 +1,87 @@
+table:
+  name: 'DbIntegrityCheck'
+  description: 'Contains queries to check the db-integrity rules not defiend in the database'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6b91ae05-a1a4-4f29-9a23-3235f80f4066
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'DB Integrity Checks'
+    - german:
+        formTitle: 'Database Integrity Checks'
+  columns:
+  - name: 'SeqNo'
+    description: 'Sequence to execute the queries'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Name'
+    description: 'Short name for the check'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'CheckQuery'
+    description: 'Query to execute for the main test'
+    genericControls:
+      multiLine: true
+  - name: 'DetailQuery'
+    description: 'Query to retrieve detail information about the detected errors'
+    genericControls:
+      multiLine: true
+  - name: 'LastExecution'
+    description: 'Date of last execution'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Errors'
+    description: 'Number of errors found during last execution.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ErrorDetail'
+    description: 'Detail information about the errors'
+    genericControls:
+      multiLine: true
+  - name: 'WorkflowMapName'
+    description: 'Name of the workflow map which is started if there are errors detected.'
+  - name: 'WorkflowUserGroup'
+    description: 'Name of the workflow group which has to handle the detected problem'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'ProcessId'
+    description: 'Id of the Process which is used to solve a detected problem'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ResolvedBy'
+    description: 'Name of the user which resolved the problem'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      defColumnPos: 5
+  - name: 'ResolvedDate'
+    description: 'Date when a problem was resolved'
+    genericControls:
+      defColumnPos: 6
+  - name: 'FunctionGroupNo'
+    description: 'Permission group with access rights to this report.\r\n0 or null = full access for everybody'
+    genericControls:
+      refTable: 'AsFunctionGroup'
+      refField: 'FunctionGroupNo'
+      hasDetailBtn: true
+  - name: 'ReportName'
+    description: ''
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'ReportName'
+  - name: 'ErrorDetailXML'
+    description: 'Detail information about the errors\r\n(Format save ADODB.Recordset adPersistXML)'
+    genericControls:
+      multiLine: true

@@ -1,0 +1,80 @@
+table:
+  name: 'RePledgeRegisterAccount'
+  description: 'Pro Pfandregister können mehrere Konti / Hypotheken hinterlegt werden.\r\n\r\nDie Saldi dieses Records werden laufend durch die Mitgliedbank aktualisiert. Es sind aber keine manuellen Bearbeitungsschritte notwendig.\r\n(Ausgewiesen muss der jährliche Amortbetrag, der aufgrund der Periode und des Periodenbetrags kalkuliert wird).'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Accountinformation'
+    - german:
+        formTitle: 'Kontoinformationen'
+    - french:
+        formTitle: 'Information compte'
+  columns:
+  - name: 'NotificationDate'
+    description: 'Datum per'
+    genericControls:
+      defColumnPos: 7
+  - name: 'AccountNo'
+    description: 'internal account number of the bank (used for Pfandbriefbank)'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 6
+  - name: 'DebitAmount'
+    description: 'Soll-Saldo des Kontos'
+    genericControls:
+      defColumnPos: 5
+  - name: 'AccountCategory'
+    description: 'Kontoart / -rubrik'
+    genericControls:
+      defColumnPos: 2
+  - name: 'OutstandingInterest'
+    description: 'Zinsausstand'
+    genericControls:
+      defColumnPos: 3
+  - name: 'OutstandingInterestDueDate'
+    description: ''
+  - name: 'OutstandingInterestPaidDate'
+    description: ''
+  - name: 'InterestAverage'
+    description: 'Die Pfandbriefbank kumuliert alle den Banken bezahlte Zinsen und vergleicht diese mit den durch die Bank an die Pfandbriefbank bezahlten Zinsen der Darlehen. Dabei müssen die Einnahmen der Mitgliedbank aus den verpfändeten Hypotheken grösser sein als die bezahlten Zinsen für die Pfandbriefdarlehen. Hier wird der durchschnittliche jährliche Zinsbetrag verlangt'
+    genericControls:
+      defColumnPos: 7
+  - name: 'AmortAmount'
+    description: 'amortisation amount (per periode)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'AmortPeriodId'
+    description: 'period for amort payments - Multiplied with the amount the result has to be shown on the user form, e.g. period x amount = annual amount for amortisation)'
+    genericControls:
+      refTable: 'RePledgeRegisterAccAmortPeriod'
+      refField: 'Id'
+      defColumnPos: 6
+  - name: 'AccountId'
+    description: 'wenn Finstar komplett installiert .... Verbindung zum Hypothekenstamm (Darf nicht mutierte werden, wegen Interface zur Pfandbriefbank).'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'PledgeRegisterId'
+    description: ''
+    genericControls:
+      refTable: 'RePledgeRegister'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'MemberUniqueKey'
+    description: 'PfB spezifisch: Jede Mitgliedbank vergibt für den gemeldeten Record eine eindeutige Identifikation. Diese benötigt sie um über E-Banking die Daten zu mutieren. Diese eindeutige Kennung muss die Mitgliedbank bei sich speichern.'

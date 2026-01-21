@@ -1,0 +1,48 @@
+table:
+  name: 'AxTaxReportEndOfYearBalance'
+  description: 'Enthält End of year balances für TaxSource-Export.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax report EOY balances'
+    - german:
+        formTitle: 'Steuermeldung EOY Balance'
+  columns:
+  - name: 'TaxReportId'
+    description: 'Verbindung zur Steuermeldung.'
+    genericControls:
+      refTable: 'AxTaxReport'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'OwnerIdentification'
+    description: ''
+  - name: 'AccountNo'
+    description: ''
+  - name: 'AccountType'
+    description: ''
+  - name: 'AccCurrency'
+    description: ''
+  - name: 'AccAmount'
+    description: ''
+  - name: 'EURAmount'
+    description: 'balance in EUR'
+  - name: 'ValueDate'
+    description: 'Valuation Date of the End of Year Balance (e.g. 31.12.2016)'
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxReportEntryStatus'
+      refField: 'StatusNo'
+  - name: 'FinstarPortfolioNo'
+    description: ''
+  - name: 'FinstarAccountNo'
+    description: ''

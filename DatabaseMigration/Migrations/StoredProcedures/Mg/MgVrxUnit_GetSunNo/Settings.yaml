@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'MgVrxUnit_GetSunNo'
+  description: 'Procedure to find a vrx unit number that is not used. Units with a SignOnDate < today are also asumed as not used!'

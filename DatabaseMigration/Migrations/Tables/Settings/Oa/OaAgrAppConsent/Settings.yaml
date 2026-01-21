@@ -1,0 +1,29 @@
+table:
+  name: 'OaAgrAppConsent'
+  description: 'Extension of OaAgrApp table, allowing multiple consents between a pair of (E-Banking Agreement, App/Client). This is a requirement from the multi-banking project.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'API-App Consent Agreement'
+    - german:
+        formTitle: 'API-App Zustimmungsver.'
+  columns:
+  - name: 'AgrAppId'
+    description: 'Foreign Key to OaAgrApp'
+    genericControls:
+      refTable: 'OaAgrApp'
+      refField: 'Id'
+  - name: 'ValidFrom'
+    description: 'A date time, denoting when this consent was activated. This date should always be in the past or at most "now".'
+  - name: 'ValidTo'
+    description: 'A date time, denoting when this consent was revoked or deactivated by the user. This date should also be in the past or null if it was not revoked yet.'

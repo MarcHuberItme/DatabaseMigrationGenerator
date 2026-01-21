@@ -1,0 +1,68 @@
+table:
+  name: 'AcBalanceAcctAssignment'
+  description: 'Kontonummern aus PrPrivate gelten für Bilanzierung'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Balance Relations'
+    - german:
+        formTitle: 'Bilanznummer Zuordnung'
+  columns:
+  - name: 'BalanceSheetTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceSheetType'
+      refField: 'BalanceSheetTypeNo'
+      defColumnPos: 8
+  - name: 'AmountType'
+    description: '1 = Kapital / Capital\r\n2 = offene Zinsen / Interests\r\n3 = Marchzinsen / Accrued Interest\r\n4 = Gegenseite von Marchzins (nur Pseudo) - inkl. Commissionen und Spesen'
+    genericControls:
+      refTable: 'AcAmountType'
+      refField: 'AmountType'
+      defColumnPos: 1
+  - name: 'ValueSign'
+    description: ''
+    genericControls:
+      refTable: 'AsValueSign'
+      refField: 'ValueSign'
+      defColumnPos: 2
+  - name: 'PrivateProductNo'
+    description: 'Wenn NULL, dann gilt er für alle Produkte, die nicht selber einen Eintrag haben. z.B. gibt es Eintrag für 1001 .... aber für alle anderen Produkte gilt der NULL Posten.'
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      defColumnPos: 3
+  - name: 'ComponentNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+      defColumnPos: 4
+  - name: 'MaturityDateGroup'
+    description: ''
+    genericControls:
+      refTable: 'AcMaturityGroup'
+      refField: 'GroupNo'
+      defColumnPos: 5
+  - name: 'MainLedgerOrigNo'
+    description: 'falls eine effektive Hauptbuchnummer in eine Pseudonummer umgesetzt werden muss, muss in diesem Feld die Original-HB Nummer aufgenommen werden.\r\nSomit könnte die Soll-Seite eines effektiven Hauptbuchs an einem anderen Platz ausgewiesen werden als die Habenseite.'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'BalanceAccountNo'
+    description: 'fiktive Kontonummer (im Fall von Marchzins wird hier das Zins-HB erfasst)'
+    genericControls:
+      defColumnPos: 7
+  - name: 'BalanceAccountNoCommission'
+    description: '(m Fall von Marchzins wird hier das Kommissions-HB erfasst)'
+  - name: 'BalanceAccountNoExpenses'
+    description: '(m Fall von Marchzins wird hier das Spesen-HB erfasst)'

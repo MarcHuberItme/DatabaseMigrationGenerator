@@ -1,0 +1,27 @@
+table:
+  name: 'AsErrorNo'
+  description: 'Contains the details of ''AsErrorCatalog'', the specific ErrorNo''s to each errortype'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Error Numbers'
+    - german:
+        formTitle: 'Fehlernummern'
+  columns:
+  - name: 'ErrorCatalogId'
+    description: 'Connection to table ''ErrorCatalog''.'
+    genericControls:
+      refTable: 'AsErrorCatalog'
+      refField: 'Id'
+  - name: 'ErrorNo'
+    description: 'Integer representation of the enumaration'
+  - name: 'MemberKey'
+    description: 'Text representation of the enumeration'

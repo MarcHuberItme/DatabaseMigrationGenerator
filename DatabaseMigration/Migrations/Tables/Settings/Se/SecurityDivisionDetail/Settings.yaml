@@ -1,0 +1,15 @@
+table:
+  name: 'SecurityDivisionDetail'
+  description: 'Information received about Security Division Detail, as part of 598-601 message is saved in this table.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns: []

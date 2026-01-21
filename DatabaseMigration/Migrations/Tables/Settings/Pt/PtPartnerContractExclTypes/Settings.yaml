@@ -1,0 +1,38 @@
+table:
+  name: 'PtPartnerContractExclTypes'
+  description: 'Table to define the bankspeicific allowed contract exclusion types for PtPartnerConditionsExceptions'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Contract Exclusion Types'
+    - german:
+        formTitle: 'Vertragsausschlussarten'
+    - french:
+        formTitle: 'Types d''exclusion contrat'
+    - italian:
+        formTitle: 'Tipi esclusione contratto'
+  columns:
+  - name: 'TypeNo'
+    description: 'Contract exclusion clause. The following types are currently intended:\r\n\r\n 10 = TransferExclusion: Client does not permit the transfer of its credit obligations to third parties.\r\n\r\n 20 = PledgeExclusion: Client does not permit loan collateral provided by him to be pledged to third parties.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ContractTemplate'
+    description: 'reference to the template that has to be excluded'
+    genericControls:
+      refTable: 'PtAgrGeneralContrTemplNames'
+      refField: 'ContractTempType'
+      defColumnPos: 2
+  - name: 'Description'
+    description: 'description / remark'
+    genericControls:
+      multiLine: true

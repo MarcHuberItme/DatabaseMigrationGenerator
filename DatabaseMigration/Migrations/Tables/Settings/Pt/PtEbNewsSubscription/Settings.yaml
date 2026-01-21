@@ -1,0 +1,80 @@
+table:
+  name: 'PtEbNewsSubscription'
+  description: 'main table for newsletter subscriptions. Contains the newsletter subscription accounts. 18.05.2005'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'E-News Subscription'
+    - german:
+        formTitle: 'E-News Subscription'
+    - french:
+        formTitle: 'E-News Subscription'
+    - italian:
+        formTitle: 'E-News Subscription'
+  columns:
+  - name: 'EmailAddress'
+    description: 'email address is the unique identification key for the newsletter subscription. \r\n'
+    genericControls:
+      defColumnPos: 1
+  - name: 'FirstName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Name'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Street'
+    description: ''
+  - name: 'HouseNo'
+    description: ''
+  - name: 'CountryCode'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 4
+  - name: 'Zip'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'Town'
+    description: ''
+  - name: 'DateOfBirth'
+    description: ''
+  - name: 'Company'
+    description: ''
+  - name: 'SexStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+  - name: 'LastLoginDate'
+    description: ''
+  - name: 'BadTrialCount'
+    description: ''
+  - name: 'Closed'
+    description: ''
+  - name: 'SubscriptionKey'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SubscriptionExpiration'
+    description: 'Time when they subcription needs to be activated'
+    genericControls:
+      isNoUpdate: true
+  - name: 'SubscriptionDate'
+    description: ''
+  - name: 'HashValue'
+    description: 'Password Hash'
+  - name: 'Password'
+    description: ''

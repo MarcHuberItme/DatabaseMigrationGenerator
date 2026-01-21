@@ -1,0 +1,31 @@
+table:
+  name: 'AsInvoiceAlertMail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'AlertId'
+    description: ''
+    genericControls:
+      refTable: 'AsInvoiceAlert'
+      refField: 'Id'
+  - name: 'BranchNo'
+    description: ''
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+  - name: 'Receiver'
+    description: ''
+  - name: 'Text'
+    description: ''
+  - name: 'SendDate'
+    description: ''

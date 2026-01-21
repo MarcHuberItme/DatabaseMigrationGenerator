@@ -1,0 +1,19 @@
+table:
+  name: 'AsDocScanFailureFile'
+  description: 'contains the file that failed to be imported'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ScanFailureId'
+    description: 'foreign key of the failed document'
+    genericControls:
+      refTable: 'AsDocScanFailure'
+      refField: 'Id'
+  - name: 'FileData'
+    description: 'contains the scanned file'

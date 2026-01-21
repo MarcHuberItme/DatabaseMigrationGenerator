@@ -1,0 +1,25 @@
+table:
+  name: 'AsWebApi'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 4
+  columns:
+  - name: 'Label'
+    description: ''
+  - name: 'Method'
+    description: 'Get / Post / Put / Delete'
+  - name: 'ResourceUrl'
+    description: ''
+  - name: 'ContentType'
+    description: ''
+  - name: 'Body'
+    description: ''
+    genericControls:
+      multiLine: true

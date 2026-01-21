@@ -1,0 +1,61 @@
+table:
+  name: 'AiTaxReport'
+  description: 'Beinhaltet die Headerinformationen für die Steuermeldung. Entspricht einem XML-File.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax report'
+    - german:
+        formTitle: 'Steuermeldung'
+    - french:
+        formTitle: 'Rapport d''impôt'
+  columns:
+  - name: 'TaxProgramNo'
+    description: 'Verbindung zum Steuerprogramm'
+    genericControls:
+      refTable: 'AiTaxProgram'
+      refField: 'TaxProgramNo'
+      defColumnPos: 1
+  - name: 'ReportDate'
+    description: 'Entspricht dem Datum der Meldung (bspw. 30.06.2015)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ReportingPeriod'
+    description: 'Entspricht dem Zeitraum bzw. Jahr welches die Meldung abdeckt. Z.B. falls Kontoinformationen für das Jahr 2014 gesendet werden, soll das Datum den 31.12.2014 enthalten.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ReportTypeNo'
+    description: 'Typ der Meldung'
+    genericControls:
+      refTable: 'AiTaxReportType'
+      refField: 'ReportTypeNo'
+      defColumnPos: 4
+  - name: 'ReportStatusNo'
+    description: 'Status der Meldung'
+    genericControls:
+      refTable: 'AiTaxReportStatus'
+      refField: 'ReportStatusNo'
+      defColumnPos: 5
+  - name: 'RefTaxReportId'
+    description: 'Referenz zur vorhergehenden Steuermeldung falls Korrekturen erfolgen.'
+    genericControls:
+      refTable: 'AiTaxReport'
+      refField: 'Id'
+  - name: 'FileName'
+    description: ''
+  - name: 'LastValidationRun'
+    description: 'Time stamp when the last validation runs was done'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ValidationRunStatus'
+    description: 'last validation run was:\r\n1 - successull\r\n0 - failed'
+    genericControls:
+      isNoUpdate: true

@@ -1,0 +1,24 @@
+table:
+  name: 'BpIntervalType'
+  description: 'Interval types for JCS'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Interval types'
+    - german:
+        formTitle: 'Interval types'
+    - french:
+        formTitle: 'Interval types'
+    - italian:
+        formTitle: 'Interval types'
+  columns:
+  - name: 'IntervalType'
+    description: 'Type of interval'

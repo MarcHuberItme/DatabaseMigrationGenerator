@@ -1,0 +1,35 @@
+table:
+  name: 'BpJobFlowBlock'
+  description: 'JCS Job Flow Block'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'JCS Job Flow Block'
+    - german:
+        formTitle: 'JCS Job Flow Block'
+    - french:
+        formTitle: 'JCS Job Flow Block'
+    - italian:
+        formTitle: 'JCS Job Flow Block'
+  columns:
+  - name: 'FlowName'
+    description: 'Name of the job flow block'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ParentJobFlowBlockId'
+    description: 'Link to parent job flow block'
+    genericControls:
+      refTable: 'BpJobFlowBlock'
+      refField: 'Id'
+  - name: 'ParentBlockWaitForStatus'
+    description: 'Wait rule for parent job flow block'
+    genericControls:
+      refTable: 'BpTaskStatusWaitRule'
+      refField: 'WaitRule'

@@ -1,0 +1,31 @@
+table:
+  name: 'MgXS20Relation'
+  description: 'PtCorrAccount can only be build when the Account exists and when the partner that receives the correspondance is in the db. At the time when both partner are in db PtCorrAccount is build! This technical table guaranties that this happens proper and without any lose of data! Only for forward migration use!'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'VRX Tabelle XS20'
+    - german:
+        formTitle: 'VRX Tabelle XS20'
+  columns:
+  - name: 'AccountNo'
+    description: ''
+  - name: 'VPartnerNo'
+    description: ''
+  - name: 'AddressNo'
+    description: ''
+  - name: 'AccountId'
+    description: ''
+  - name: 'VAddressId'
+    description: ''
+  - name: 'FisDbKey'
+    description: ''

@@ -1,0 +1,60 @@
+table:
+  name: 'PtTransMessageDetail'
+  description: 'Bookings on own bond titles.\r\nBalance on PtPositionDetail will be modified according to the information saved\r\nin PtTransMessageDetail.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransMessageId'
+    description: 'related PtTransMessage detail'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'RelatedToDebit'
+    description: '1 = detail belongs to debit side of the referenced PtTransMessage\r\n0 = detail belongs to credit side of the referenced PtTransMessage'
+  - name: 'ClassificationTypeNo'
+    description: '1 = Inhaberkassenobligation\r\n2 = Namenkassenobligation'
+    genericControls:
+      refTable: 'PtPositionClassificationType'
+      refField: 'ClassificationTypeNo'
+  - name: 'DebitQuantity'
+    description: 'Debit nominal'
+  - name: 'CreditQuantity'
+    description: 'Credit nominal'
+  - name: 'TitleNo'
+    description: ''
+    genericControls:
+      refTable: 'PtOwnBond'
+      refField: 'TitleNo'
+  - name: 'FunctionCode'
+    description: 'function code of the transaction'
+    genericControls:
+      refTable: 'PtTransMsgDetailFunction'
+      refField: 'FunctionCode'
+  - name: 'PositionDetailId'
+    description: 'foreign key to PtPositionDetail\r\nthe value of this field is set by transaction access when the booking\r\nhas been processed definitly.'
+    genericControls:
+      refTable: 'PtPositionDetail'
+      refField: 'Id'
+  - name: 'Processed'
+    description: 'Flag indicates if this detail has been processed by transaction access.'
+  - name: 'OwnBondCfId'
+    description: ''
+    genericControls:
+      refTable: 'PtOwnBondCf'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OwnBondCfProcessDate'
+    description: ''
+  - name: 'OwnBondCfPaymentDate'
+    description: ''
+  - name: 'CancelDate'
+    description: ''
+  - name: 'OrigTransMsgDetailId'
+    description: ''

@@ -1,0 +1,58 @@
+table:
+  name: 'PrPublicVdfMetaField'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'VDF Meta data field'
+    - german:
+        formTitle: 'Metadaten VDF Feld'
+  columns:
+  - name: 'VdfMetaSegId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicVdfMetaSeg'
+      refField: 'Id'
+  - name: 'ElementName'
+    description: 'VDF: MEA.0861'
+    genericControls:
+      defColumnPos: 1
+  - name: 'FieldPosition'
+    description: 'VDF: MES.6922'
+  - name: 'ComponentPosition'
+    description: 'VDF: MES.6922'
+  - name: 'FieldName'
+    description: 'VDF: (if MEM.0904 = 6) MEM.9990 \r\nField identification for the VDF-Import'
+  - name: 'IsAvailable'
+    description: 'VDF: (if MEM.0904 = 2) MEM.9990 = ''H'' -> True, else = False\r\nIndication, wether the field is deliverd form Vdf (True) or not (False)'
+  - name: 'DocKey'
+    description: 'VDF: (if MEM.0904 = 9) MEM.9990 and key for doc\r\n'
+  - name: 'SegKey'
+    description: 'VDF: (if MEM.0904 = 9) MEM.9990 and key for segment'
+  - name: 'DataType'
+    description: 'VDF: MEA.0858\r\na = alphanumeric\r\nn = numeric'
+  - name: 'DataLength'
+    description: 'VDF: MEA.0858\r\nLength of datafield'
+  - name: 'ParentCompositeElement'
+    description: 'VDF: MEA.0861 \r\nIf field is a component data element, this field indicate the name of parent (composite data element)'
+  - name: 'Path'
+    description: 'VDF: (if MEM.0904 = 14) MEM.9990 \r\nPath of VDF-Field'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Domainname'
+    description: 'VDF: MEA.0902\r\nDomain name'
+  - name: 'IsMandatory'
+    description: 'VDF: MEA.K834.0854\r\nif true, the field is mandatory'
+  - name: 'FieldText'
+    description: ''
+  - name: 'ElementIndex'
+    description: 'Corresponds with the VDF-field K991.0992 element qualifier'

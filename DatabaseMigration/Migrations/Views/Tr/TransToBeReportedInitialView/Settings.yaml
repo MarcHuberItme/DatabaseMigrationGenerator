@@ -1,0 +1,3 @@
+view:
+  name: 'TransToBeReportedInitialView'
+  description: 'View used in the SSIS (Finstar_DBA) used for Transparency Transaction Reporting (aka SWX Meldungen). It is planned to be deployed with Release 3.18. For the 3.16 and 3.17 it is cretaed manually.\r\nThe view was implemented due to issues with Deadlock of the original query (within the SSIS Package)'

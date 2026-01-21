@@ -1,0 +1,34 @@
+table:
+  name: 'RePremisesRelStwEBuilding'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'RePremisesRelStwEBuilding'
+        helpText: 'RePremisesRelStwEBuilding'
+    - german:
+        formTitle: 'RePremisesRelStwEBuilding'
+        helpText: 'RePremisesRelStwEBuilding'
+  columns:
+  - name: 'PremisesRelStwEId'
+    description: ''
+    genericControls:
+      refTable: 'RePremisesRelSTWE'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'StpzBuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2

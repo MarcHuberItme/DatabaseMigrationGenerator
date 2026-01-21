@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'InitializeSpecificProvisions'
+  description: 'Initialize Specifi Provisions for FiRE (insert initial records in table AcFrozenSpecificProvision)\r\n'

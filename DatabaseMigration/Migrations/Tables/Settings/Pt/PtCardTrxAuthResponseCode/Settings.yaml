@@ -1,0 +1,29 @@
+table:
+  name: 'PtCardTrxAuthResponseCode'
+  description: 'Supported response codes for card authorization requests'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Response Code'
+        helpText: 'Response Code'
+    - german:
+        formTitle: 'Antwortcode'
+        helpText: 'Antwortcode'
+  columns:
+  - name: 'Code'
+    description: 'response code value'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Protocol'
+    description: 'referenced protocol'
+    genericControls:
+      defColumnPos: 2

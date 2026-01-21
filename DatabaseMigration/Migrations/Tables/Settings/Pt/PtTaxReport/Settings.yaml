@@ -1,0 +1,49 @@
+table:
+  name: 'PtTaxReport'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtTaxReport'
+        helpText: 'PtTaxReport'
+    - german:
+        formTitle: 'PtTaxReport'
+        helpText: 'PtTaxReport'
+  columns:
+  - name: 'JobNo'
+    description: ''
+  - name: 'StatementID'
+    description: ''
+  - name: 'IsBatchJob'
+    description: ''
+  - name: 'IsTemporary'
+    description: ''
+  - name: 'PartnerID'
+    description: ''
+  - name: 'PartnerNoEdited'
+    description: ''
+  - name: 'IsPartnerReport'
+    description: ''
+  - name: 'PortfolioID'
+    description: ''
+  - name: 'PortfolioNoEdited'
+    description: ''
+  - name: 'OldDepotNo'
+    description: ''
+  - name: 'PortfolioCurrency'
+    description: ''
+  - name: 'ReportYear'
+    description: ''
+  - name: 'ReportPrintDate'
+    description: ''
+  - name: 'PeriodEndDate'
+    description: ''

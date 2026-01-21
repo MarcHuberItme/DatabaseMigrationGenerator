@@ -1,0 +1,41 @@
+table:
+  name: 'PtOnboarding'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Partner Onboarding'
+    - german:
+        formTitle: 'Partner Onboarding'
+    - french:
+        formTitle: 'Intégration des partenair'
+  columns:
+  - name: 'ApplicationCode'
+    description: ''
+    genericControls:
+      refTable: 'AsExternalApplication'
+      refField: 'ApplicationCode'
+  - name: 'ExternalReference'
+    description: ''
+  - name: 'JsonRequest'
+    description: ''
+  - name: 'TypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtOnboardingType'
+      refField: 'TypeNo'
+  - name: 'Status'
+    description: ''
+  - name: 'PartnerId'
+    description: 'Reference to Partner after the onboarding has completed'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'

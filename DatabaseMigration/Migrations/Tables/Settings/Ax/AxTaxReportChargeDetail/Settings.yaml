@@ -1,0 +1,42 @@
+table:
+  name: 'AxTaxReportChargeDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'AxTaxReportChargeDetail'
+        helpText: 'AxTaxReportChargeDetail'
+    - german:
+        formTitle: 'AxTaxReportChargeDetail'
+        helpText: 'AxTaxReportChargeDetail'
+    - french:
+        formTitle: 'AxTaxReportChargeDetail'
+        helpText: 'AxTaxReportChargeDetail'
+  columns:
+  - name: 'SummaryId'
+    description: ''
+    genericControls:
+      refTable: 'PtServiceChargePeriod'
+      refField: 'Id'
+  - name: 'ATXId'
+    description: ''
+    genericControls:
+      refTable: 'AxTaxDetailATX'
+      refField: 'Id'
+  - name: 'Currency'
+    description: ''
+  - name: 'ChargeAmount'
+    description: ''
+  - name: 'TaxAmount'
+    description: ''
+  - name: 'Rebate'
+    description: ''

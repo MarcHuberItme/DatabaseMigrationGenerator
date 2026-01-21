@@ -1,0 +1,44 @@
+table:
+  name: 'PtMLDetectionResult'
+  description: 'Contains the results of money mule detection for each run. Note that only cases with probabilities above a certain threshold (typically 0.5) are recorded.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'AML Detection Result'
+    - german:
+        formTitle: 'GwG Erkennungsergebnis'
+    - french:
+        formTitle: 'Résultat de LBA détection'
+    - italian:
+        formTitle: 'AML Risultato di rilevame'
+  columns:
+  - name: 'RunNo'
+    description: 'Run number of the associated run'
+  - name: 'PartnerId'
+    description: 'Foreign-key; Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'PartnerNo'
+    description: 'Partner number'
+  - name: 'Prob'
+    description: 'Detection probability, the higher the probability, the higher the chance that a case is a true positive'
+  - name: 'TransDateTimeMin'
+    description: 'Min  datetime of the selected transactions'
+  - name: 'TransDateTimeMax'
+    description: 'Max  datetime of the selected transactions'
+  - name: 'TransItemIds'
+    description: 'List of record Ids of the transactions selected for analysis (in JSON format)'
+  - name: 'FeatureImportance'
+    description: 'Feature Importance ranking list (in JSON format). It is Optional. \r\n\r\nExample:  "{''closetozero_count'':0.2, ''avg_payment_amount'':0.1, ''std_rolling_debit_sum'': 0.01}"'
+  - name: 'Comments'
+    description: 'Free text'
+  - name: 'LastProcessingDateTime'
+    description: 'Last processing date time, it will filled through the job.'

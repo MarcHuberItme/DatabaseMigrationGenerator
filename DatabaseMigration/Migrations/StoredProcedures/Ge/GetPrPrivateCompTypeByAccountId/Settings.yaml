@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPrPrivateCompTypeByAccountId'
+  description: 'Get PrPrivateCompType data and text by account id and vera group'

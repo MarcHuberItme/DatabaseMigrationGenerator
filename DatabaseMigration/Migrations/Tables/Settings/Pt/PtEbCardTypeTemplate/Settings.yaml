@@ -1,0 +1,29 @@
+table:
+  name: 'PtEbCardTypeTemplate'
+  description: 'The mapping table for card type and card template. ebankIT stores the card templates on Umbracco.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Cardtype template'
+    - german:
+        formTitle: 'Kartensuject'
+  columns:
+  - name: 'CardType'
+    description: 'Card type e.g. EC, Visa, MasterCard'
+    genericControls:
+      refTable: 'PtCardType'
+      refField: 'CardType'
+      defColumnPos: 1
+  - name: 'CardTemplate'
+    description: 'Card template name - ebankIT stores the card template on Umbracco. This text is equal to the card template name on Umbracco.'
+    genericControls:
+      defColumnPos: 2

@@ -1,0 +1,71 @@
+view:
+  name: 'AcFrozenOwnBondView'
+  description: 'own bonds detail data for fire export'
+frontendView:
+  name: 'AcFrozenOwnBondView'
+  description: 'Diese Tabelle enthält den monatlichen Snapshot der Wertschriftenbestände'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Frozen security balance'
+        helpText: 'Frozen security balance'
+    - german:
+        formTitle: 'Snapshot der WS-Bestände'
+        helpText: 'Snapshot der WS-Bestände'
+  columns:
+  - name: 'ReportDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'MaturityDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'InterestRate'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+  - name: 'InstrumentCountryCode'
+    description: ''
+    dataType: 'char'
+    prec: 2
+  - name: 'Description'
+    description: ''
+    dataType: 'varchar'
+    prec: 100
+  - name: 'CodeC510'
+    description: ''
+    dataType: 'int'
+  - name: 'Quantity'
+    description: ''
+    dataType: 'money'
+  - name: 'NogaCode2008'
+    description: ''
+    dataType: 'varchar'
+    prec: 6
+    genericControls:
+      refTable: 'PtNoga2008'
+      refField: 'NogaCode'
+  - name: 'LargeExpGroupNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+  - name: 'SexStatusNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'

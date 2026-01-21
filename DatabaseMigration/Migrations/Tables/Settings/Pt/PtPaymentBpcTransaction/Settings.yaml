@@ -1,0 +1,69 @@
+table:
+  name: 'PtPaymentBpcTransaction'
+  description: 'BPC Transaction'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'BPC Transaction'
+        helpText: 'BPC Transaction'
+    - german:
+        formTitle: 'BPC Transaktion'
+        helpText: 'BPC Transaktion'
+  columns:
+  - name: 'OperationId'
+    description: 'Reference to operation'
+    genericControls:
+      refTable: 'PtPaymentBpcOperation'
+      refField: 'Id'
+  - name: 'TransactionId'
+    description: 'Internal identifier of transaction'
+  - name: 'TransactionType'
+    description: 'Type of transaction'
+  - name: 'PostingDate'
+    description: 'Transaction posting date'
+  - name: 'DebitEntryEntryId'
+    description: 'Internal identifier of entry'
+  - name: 'DebitEntryStatus'
+    description: 'Entry status'
+  - name: 'DebitEntryAccountAccountNumber'
+    description: 'Account number\r'
+  - name: 'DebitEntryAccountCurrency'
+    description: 'Account currency\r'
+  - name: 'DebitEntryAccountBalanceType'
+    description: 'Balance type'
+  - name: 'DebitEntryAccountAgentNumber'
+    description: 'Agent number when account was opened\r'
+  - name: 'DebitEntryAmountValue'
+    description: 'Transaction amount value'
+  - name: 'DebitEntryAmountCurrency'
+    description: 'Transaction amount currency'
+  - name: 'CreditEntryEntryId'
+    description: 'Internal identifier of entry'
+  - name: 'CreditEntryStatus'
+    description: 'Entry status'
+  - name: 'CreditEntryAccountAccountNumbe'
+    description: 'Account number\r'
+  - name: 'CreditEntryAccountCurrency'
+    description: 'Account currency'
+  - name: 'CreditEntryAccountBalanceType'
+    description: 'Balance type'
+  - name: 'CreditEntryAccountAgentNumber'
+    description: 'Agent number when account was opened'
+  - name: 'CreditEntryAmountValue'
+    description: 'Transaction amount value'
+  - name: 'CreditEntryAmountCurrency'
+    description: 'Transaction amount currency'
+  - name: 'ConversionRate'
+    description: 'Conversion rate'
+  - name: 'RateType'
+    description: 'Conversion rate type'
+  - name: 'AmountPurpose'
+    description: 'Amount purpose. Fee type.'

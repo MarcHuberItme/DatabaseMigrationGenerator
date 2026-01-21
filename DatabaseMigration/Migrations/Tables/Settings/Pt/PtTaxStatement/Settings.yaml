@@ -1,0 +1,177 @@
+table:
+  name: 'PtTaxStatement'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtTaxStatement'
+        helpText: 'PtTaxStatement'
+    - german:
+        formTitle: 'PtTaxStatement'
+        helpText: 'PtTaxStatement'
+  columns:
+  - name: 'PartnerID'
+    description: ''
+  - name: 'PositionID'
+    description: ''
+    genericControls:
+      defColumnPos: 40
+  - name: 'PrReferenceID'
+    description: ''
+    genericControls:
+      defColumnPos: 41
+  - name: 'TaxType'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'JobNo'
+    description: ''
+  - name: 'ReportCurrency'
+    description: ''
+  - name: 'PositionCurrency'
+    description: ''
+  - name: 'PortfolioID'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PortfolioNoEdited'
+    description: ''
+  - name: 'PortfolioCurrency'
+    description: ''
+  - name: 'AccountID'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'AccountNoEdited'
+    description: ''
+  - name: 'AccountType'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'AccountBalance'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'AcctSeqNo'
+    description: ''
+  - name: 'ISINNo'
+    description: ''
+  - name: 'SecurityNo'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'Abv'
+    description: ''
+  - name: 'Preffix'
+    description: ''
+  - name: 'SecurityDescription'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'MaturityDate'
+    description: ''
+  - name: 'InterestRate'
+    description: ''
+  - name: 'InstrumentTypeNo'
+    description: ''
+  - name: 'DepotSeqNo'
+    description: ''
+  - name: 'Quantity'
+    description: ''
+    genericControls:
+      defColumnPos: 12
+  - name: 'SecurityPrice'
+    description: ''
+  - name: 'MarketValue'
+    description: ''
+  - name: 'MVCurrency'
+    description: ''
+  - name: 'MarketValueCHF'
+    description: ''
+    genericControls:
+      defColumnPos: 20
+  - name: 'ExchangeRate'
+    description: ''
+  - name: 'PriceInfo'
+    description: ''
+  - name: 'DepotQuantity'
+    description: ''
+  - name: 'TransDate'
+    description: ''
+    genericControls:
+      defColumnPos: 21
+  - name: 'TransDateTime'
+    description: ''
+    genericControls:
+      defColumnPos: 21
+  - name: 'TextNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      defColumnPos: 22
+  - name: 'DebitQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 26
+  - name: 'CreditQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 27
+  - name: 'TradeQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 25
+  - name: 'MgHandelsWrg'
+    description: ''
+  - name: 'TradeCurrency'
+    description: ''
+  - name: 'MgKurs'
+    description: ''
+  - name: 'TradePrice'
+    description: ''
+    genericControls:
+      defColumnPos: 26
+  - name: 'InterestWithTax'
+    description: ''
+    genericControls:
+      defColumnPos: 23
+  - name: 'InterestNoTax'
+    description: ''
+    genericControls:
+      defColumnPos: 24
+  - name: 'CountryCode'
+    description: ''
+  - name: 'TaxAmountDaHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 33
+  - name: 'TaxAmountReclaimHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 32
+  - name: 'TaxBaseQuantity'
+    description: ''
+  - name: 'TaxBaseAmountHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 31
+  - name: 'TaxRegulationCode'
+    description: ''
+  - name: 'PeriodEndDate'
+    description: ''

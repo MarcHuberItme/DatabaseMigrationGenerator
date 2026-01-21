@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountPaymentInfo'
+  description: 'Get AccountInfo for PtPaymentOrderEntry\r\n2023-01-24/ram: add variable @AccountCurrency'

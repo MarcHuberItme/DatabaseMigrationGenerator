@@ -1,0 +1,3 @@
+function:
+  name: 'getFXrate'
+  description: 'function to get FXrate from one currency (fromCurrency) to another (toCurrency) per given date'

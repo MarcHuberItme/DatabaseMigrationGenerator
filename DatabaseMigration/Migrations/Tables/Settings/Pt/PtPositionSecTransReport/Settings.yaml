@@ -1,0 +1,153 @@
+table:
+  name: 'PtPositionSecTransReport'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPositionSecTransReport'
+        helpText: 'PtPositionSecTransReport'
+    - german:
+        formTitle: 'PtPositionSecTransReport'
+        helpText: 'PtPositionSecTransReport'
+  columns:
+  - name: 'JobNo'
+    description: ''
+  - name: 'PartnerID'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'PartnerNoEdited'
+    description: ''
+  - name: 'BranchNo'
+    description: ''
+  - name: 'PortfolioID'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PortfolioNoEdited'
+    description: ''
+  - name: 'PortfolioCurrency'
+    description: ''
+  - name: 'IsPartnerReport'
+    description: ''
+  - name: 'PeriodFrom'
+    description: ''
+  - name: 'PeriodTo'
+    description: ''
+  - name: 'IsTransDateBased'
+    description: ''
+  - name: 'IsTemporary'
+    description: ''
+  - name: 'IsBatchJob'
+    description: ''
+  - name: 'ISINNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Description'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'InstrumentTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicInstrumentType'
+      refField: 'InstrumentTypeNo'
+      defColumnPos: 4
+  - name: 'TransDate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'TransDateTime'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'TextNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'ValueDate'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'DebitQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'CreditQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'TradeQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'MgHandelsWrg'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'TradeCurrency'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'MgKurs'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'TradePrice'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'Quantity'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'PositionCurrency'
+    description: ''
+  - name: 'ReferenceData'
+    description: ''
+  - name: 'PublicID'
+    description: ''
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+  - name: 'NominalCurrency'
+    description: ''
+  - name: 'VDFInstrumentSymbol'
+    description: ''
+  - name: 'UnitNo'
+    description: ''
+  - name: 'ProdReferenceID'
+    description: ''
+    genericControls:
+      refTable: 'PrReference'
+      refField: 'Id'
+  - name: 'LanguageNo'
+    description: ''
+  - name: 'BankInternalReference'
+    description: ''
+  - name: 'PositionID'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+      defColumnPos: 11
+  - name: 'LocGroupNo'
+    description: ''
+    genericControls:
+      defColumnPos: 3

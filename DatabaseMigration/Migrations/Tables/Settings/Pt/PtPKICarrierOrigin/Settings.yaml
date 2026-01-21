@@ -1,0 +1,21 @@
+table:
+  name: 'PtPKICarrierOrigin'
+  description: 'Translates the origin of the PKI Carrier'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'PKI Carrier origin'
+    - german:
+        formTitle: 'PKI Trägerherkunft'
+  columns:
+  - name: 'CarrierOriginNo'
+    description: 'Candidate key for the carrier origin translation'

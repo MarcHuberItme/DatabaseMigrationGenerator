@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'InsertFireReportEntry'
+  description: 'Neuer Datensatz in Tabelle AcFireReport einfügen'

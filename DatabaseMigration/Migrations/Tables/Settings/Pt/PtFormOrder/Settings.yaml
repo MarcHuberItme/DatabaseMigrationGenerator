@@ -1,0 +1,105 @@
+table:
+  name: 'PtFormOrder'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Form Order'
+    - german:
+        formTitle: 'Formularbestellung'
+    - french:
+        formTitle: 'Commande de formulaires'
+  columns:
+  - name: 'OrderNo'
+    description: 'Auftragsnummer, mit welcher ein alter Auftrag kopiert werden kann'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'AccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountAllView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 9
+  - name: 'FormTypeNo'
+    description: 'Formularart'
+    genericControls:
+      refTable: 'PtFormOrderType'
+      refField: 'FormTypeNo'
+      defColumnPos: 1
+  - name: 'AddressId'
+    description: 'Adresse, welche auf dem Formular angezeigt werden soll'
+    genericControls:
+      refTable: 'PtAddressView'
+      refField: 'Id'
+  - name: 'AddressIdReceiver'
+    description: 'Empfängeradresse für die Formulare.\r\nÜbersteuert Empfänger gemäss Kontoinstruktion.'
+    genericControls:
+      refTable: 'PtAddressView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DetourGroup'
+    description: 'foreign-key; candidate-key of AsUserGroup (UserGroupName)'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'StartNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'LastNo'
+    description: 'letzte gedruckte ESR-Nr.'
+    genericControls:
+      defColumnPos: 5
+  - name: 'Quantity'
+    description: 'Anzahl ES / ESR'
+    genericControls:
+      defColumnPos: 6
+  - name: 'QuantityBooklet'
+    description: 'Anzahl Hefte'
+  - name: 'Amount'
+    description: 'falls ein Betrag vorgedruckt wird'
+    genericControls:
+      defColumnPos: 7
+  - name: 'InfoText'
+    description: 'Zahlungszweck\r\n3 Zeilen à 10 Zeichen bei roten ES\r\n1 Zeile à 140 Zeichen bei QR-ES'
+    genericControls:
+      multiLine: true
+  - name: 'Instruction'
+    description: 'Instrucktion, wie die Formulare an den Kunden zu senden sind'
+    genericControls:
+      defColumnPos: 8
+  - name: 'Address'
+    description: 'Empfängeradresse'
+    genericControls:
+      multiLine: true
+  - name: 'PrintDate'
+    description: 'gedruckt am'
+  - name: 'IsToInkrement'
+    description: 'Inkrement StartNo'
+  - name: 'IsToPrintLabel'
+    description: 'Versandetikette drucken (ja/nein)'
+  - name: 'IsToPrintOrdercard'
+    description: 'Bestellkarte drucken (ja/nein)'
+  - name: 'WithAccountReference'
+    description: '1= Kontorubrik auf ES andrucken'

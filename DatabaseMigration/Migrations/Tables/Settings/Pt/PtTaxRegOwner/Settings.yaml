@@ -1,0 +1,56 @@
+table:
+  name: 'PtTaxRegOwner'
+  description: 'Data for witholding tax for a specific beneficial owner'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtTaxRegulation'
+      parentRelationField: 'TaxRegulationId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+  columns:
+  - name: 'TaxRegulationId'
+    description: 'Foreign key of PtTaxRegulation'
+    genericControls:
+      refTable: 'PtTaxRegulation'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'Owner'
+    description: 'Beneficial Owner'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'Percentage'
+    description: 'Share of ownership (in percent)'
+  - name: 'BeginDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'EndDate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'Jurisdiction'
+    description: ''
+    genericControls:
+      refTable: 'PtTaxJurisdiction'
+      refField: 'Jurisdiction'
+      defColumnPos: 1
+  - name: 'ChurchTax'
+    description: 'True: BO opted for church tax in witholding tax\r\nFalse: No church tax applies'
+  - name: 'Status'
+    description: ''
+    genericControls:
+      refTable: 'PtTaxRegStatus'
+      refField: 'Status'

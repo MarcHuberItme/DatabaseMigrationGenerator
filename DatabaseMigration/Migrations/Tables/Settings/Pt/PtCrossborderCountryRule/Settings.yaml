@@ -1,0 +1,69 @@
+table:
+  name: 'PtCrossborderCountryRule'
+  description: 'Authorisation for crossborder activities'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    descField: 'TargetCountry'
+    uiTableDescription:
+    - english:
+        formTitle: 'Crossborder Authorisation'
+    - german:
+        formTitle: 'Cross-Border Bewilligung'
+  columns:
+  - name: 'TargetCountry'
+    description: 'Zielmarkt, entspricht dem Kundendomizil zum Zeitpunkt der Bewilligung\r\n\r\nNULL = Standardregel (Rest der Welt)'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 2
+  - name: 'AllowCashPayment'
+    description: 'Kassageschäfte zulassen'
+  - name: 'AllowCustomerAccount'
+    description: 'Kundenkonti in CHF und FWG zulassen'
+  - name: 'AllowOwnBond'
+    description: 'Kassenobligationen zulassen'
+  - name: 'AllowMoneyMarket'
+    description: 'Festgeld- und Treuhandanlagen zulassen'
+  - name: 'AllowPillar3aAccount'
+    description: 'Säule 3a Konto (Privor)'
+  - name: 'AllowPillar3aFund'
+    description: 'Säule 3a mit Fondsanlagen'
+  - name: 'AllowPrivit'
+    description: 'Vorsorgelösung Privit zulassen'
+  - name: 'AllowBVG'
+    description: 'Säule 2, berufliche Vorsorge zulassen'
+  - name: 'AllowFundAccount'
+    description: 'Fondssparen zulassen'
+  - name: 'AllowLoan'
+    description: 'Kredite, Leasing, Darlehen und Auslandhypotheken zulassen'
+  - name: 'AllowMortgageCH'
+    description: 'Hypotheken und Baukredite (Grundpfand CH) zulassen'
+  - name: 'AllowCard'
+    description: 'Debit- und Kreditkarten inkl. Maestro zulassen'
+  - name: 'AllowDomesticPayment'
+    description: 'Zahlungsverkehr Inland zulassen'
+  - name: 'AllowAbroadPayment'
+    description: 'Zahlungsverkehr Ausland zulassen'
+  - name: 'AllowStandingOrder'
+    description: 'Daueraufträge zulassen'
+  - name: 'EbankingRestrictionCode'
+    description: 'Ebanking Zugriffsberechtigung\r\n1 - keine Berechtigung\r\n2 - nur Abfragen\r\n3 - Aufträge erfassen (ZV + Börse)'
+    genericControls:
+      refTable: 'PtCrossborderEbRestriction'
+      refField: 'RestrictionCode'
+  - name: 'AllowSafeDepositBox'
+    description: 'Tresorfach erlaubt'
+  - name: 'AllowStockExchange'
+    description: ''
+  - name: 'AllowPortfolio'
+    description: ''
+  - name: 'AllowAssetManagement'
+    description: ''

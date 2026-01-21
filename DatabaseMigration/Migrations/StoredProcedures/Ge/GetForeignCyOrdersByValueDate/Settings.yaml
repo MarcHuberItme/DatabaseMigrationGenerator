@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetForeignCyOrdersByValueDate'
+  description: 'select paymentorder virtual bookings for forex position calculation'

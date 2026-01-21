@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaRunAll'
+  description: 'All Records from VaRun with LanguageNo as Input'

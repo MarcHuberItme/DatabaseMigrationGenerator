@@ -1,0 +1,139 @@
+view:
+  name: 'PtConsTeamMgmtView'
+  description: 'Used for the FrontEnd of FsConsTeamMgmt.'
+frontendView:
+  name: 'PtConsTeamMgmtView'
+  description: 'Used to show the data of the table PtCTMAssignment and other for the \r\nConsultant Team Management significant data.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      applicationKey: 'PartnerNo'
+      navigationConditionField: 'PartnerNo'
+    uiTableDescription:
+    - english:
+        formTitle: 'Cons Team Management'
+    - german:
+        formTitle: 'Cons. Team Management'
+  columns:
+  - name: 'PartnerNo'
+    description: 'PartnerNo as integer'
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 3
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 2
+  - name: 'YearOfBirth'
+    description: 'necessary for AgeGroup Assignment'
+    dataType: 'int'
+    genericControls:
+      isNoUpdate: true
+  - name: 'DateOfDeath'
+    description: 'Control if Partner still valuable'
+    dataType: 'datetime'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CountryCode'
+    description: 'Country code for the address 11'
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      isNoUpdate: true
+  - name: 'ZIP'
+    description: 'ZIP Code of the Address 11'
+    dataType: 'nvarchar'
+    prec: 14
+    genericControls:
+      isNoUpdate: true
+  - name: 'BusinessTypeCode'
+    description: 'Noga Code'
+    dataType: 'nvarchar'
+    prec: 6
+    genericControls:
+      isNoUpdate: true
+  - name: 'SegmentNo'
+    description: 'Customer Segment assigned currently'
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtSegment'
+      refField: 'SegmentNo'
+      defColumnPos: 9
+  - name: 'ConsultantTeamName'
+    description: 'Consultant Team the partner is assigned currently, not necessarily the same as the by FinStar evaluated  Consultant Team.'
+    dataType: 'nvarchar'
+    prec: 32
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 8
+  - name: 'EvaluationDate'
+    description: 'last evaluation date (evaluation by FinStar)'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 10
+      isNoUpdate: true
+  - name: 'SegmentNoEval'
+    description: 'Customer segment evaluated by FinStar'
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'AgeGroup'
+    description: 'Assigned age group'
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'BusinessTypeGroup'
+    description: 'Assigned businesstype group'
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'RegionGroup'
+    description: 'Assigned region group'
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'ConsTeam'
+    description: 'Consutant team evaluated by FinStar, suggested consultant team.'
+    dataType: 'nvarchar'
+    prec: 32
+    genericControls:
+      defColumnPos: 11
+      isNoUpdate: true
+  - name: 'Changed'
+    description: 'Record is differemt from previously determined record'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'DateRevised'
+    description: 'Record is revised by employee.'
+    dataType: 'datetime'
+  - name: 'CtmId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ConsultantTeam'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100

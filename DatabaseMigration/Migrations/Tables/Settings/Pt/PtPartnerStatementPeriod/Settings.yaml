@@ -1,0 +1,45 @@
+table:
+  name: 'PtPartnerStatementPeriod'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPartnerStatementPeriod'
+        helpText: 'PtPartnerStatementPeriod'
+    - german:
+        formTitle: 'PtPartnerStatementPeriod'
+        helpText: 'PtPartnerStatementPeriod'
+  columns:
+  - name: 'PartnerID'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'CorrPartnerID'
+    description: ''
+    genericControls:
+      refTable: 'PtCorrPartner'
+      refField: 'Id'
+  - name: 'ActivityRuleCode'
+    description: ''
+    genericControls:
+      refTable: 'AsActivityRule'
+      refField: 'ActivityRuleCode'
+  - name: 'StatementNo'
+    description: ''
+  - name: 'ScheduledDate'
+    description: ''
+  - name: 'ExecutionDate'
+    description: ''
+  - name: 'LastStatementDate'
+    description: ''
+  - name: 'TerminationDate'
+    description: ''

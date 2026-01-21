@@ -1,0 +1,38 @@
+table:
+  name: 'PtBillCustomerPID'
+  description: 'Consolidators bill account'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Customer PID'
+    - german:
+        formTitle: 'Kunden PID'
+  columns:
+  - name: 'EBankingId'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'ConsolidatorNo'
+    description: ''
+    genericControls:
+      refTable: 'PtBillConsolidator'
+      refField: 'ConsolidatorNo'
+      defColumnPos: 1
+  - name: 'CustomerPID'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CustomerShortcut'
+    description: 'UserID, used only for yellowbill'
+  - name: 'AllowNotification'
+    description: 'If True then billstatus will be forwarded to the biller'

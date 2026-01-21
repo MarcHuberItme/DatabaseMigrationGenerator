@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DeleteTransItemAndDetails'
+  description: 'Deletes record from PtTransItem and all corresponding records in PtTransItemDetail. Used in ''Rollback'' operation for precalculated closing.'

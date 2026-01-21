@@ -1,0 +1,43 @@
+table:
+  name: 'OaAuthUcAppMapping'
+  description: 'Assign Usage of Use Case to an app.\r\n'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: '2FA Auth Use Case Mapping'
+    - german:
+        formTitle: '2FA Auth Use Case Mapping'
+    - french:
+        formTitle: '2FA Auth Use Case Mapping'
+    - italian:
+        formTitle: '2FA Auth Use Case Mapping'
+  columns:
+  - name: 'AppId'
+    description: ''
+    genericControls:
+      refTable: 'OaApp'
+      refField: 'Id'
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'UseCaseNo'
+    description: ''
+    minValue: '0'
+    genericControls:
+      refTable: 'OaAuthUseCase'
+      refField: 'UseCaseNo'
+      defColumnPos: 2
+      noUpdatePos: 2
+  - name: 'Remark'
+    description: 'here the application management or the application owner can document some information about the use case usage.'
+    genericControls:
+      multiLine: true
+      noUpdatePos: 3

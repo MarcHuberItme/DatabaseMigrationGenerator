@@ -1,0 +1,118 @@
+table:
+  name: 'PtConsCreditMonitor'
+  description: 'Konsumentendaten der Konsumkredite werden hier gespeichert und während ca. 1 Monat überwacht und aktualisiert.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'MonitorBatchId'
+    description: ''
+    genericControls:
+      refTable: 'PtConsCreditMonitorBatch'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'ReferenceDate'
+    description: 'Referenzdatum des Kredits (= Eröffnungsdatum des Kunden)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'SexStatusNo'
+    description: 'Geschlecht m/f/Ehepaar'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+      isNoUpdate: true
+  - name: 'LegalStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtLegalStatus'
+      refField: 'LegalStatusNo'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'NogaCode2008'
+    description: ''
+    genericControls:
+      refTable: 'PtNoga2008'
+      refField: 'NogaCode'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'StatusNo'
+    description: 'Überwachungsstatus des Konsumkredits'
+    genericControls:
+      refTable: 'PtConsCreditStatus'
+      refField: 'StatusNo'
+      isNoUpdate: true
+  - name: 'CreditBalanceHoCu'
+    description: 'Sollsaldo Konsumkredit'
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'ConsCreditTypeNo'
+    description: 'Art des Konsumkredits (FK PtConsCreditType)\r\n10 = stillschweigender Überzugskredit'
+    genericControls:
+      refTable: 'PtConsCreditType'
+      refField: 'TypeNo'
+      isNoUpdate: true
+  - name: 'FirstForward'
+    description: '1 = Erstmeldung'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ForwardDate'
+    description: 'Datum der erfolgten Meldung an IKO'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ForwardUser'
+    description: 'User, welcher die Meldung an IKO vorgenommen hat.'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      defColumnPos: 6
+  - name: 'ForwardTypeNo'
+    description: '(FK PtConsCreditForwardType)'
+    genericControls:
+      refTable: 'PtConsCreditForwardType'
+      refField: 'TypeNo'
+  - name: 'LastDataRefresh'
+    description: 'Datum letzter Refresh.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'InternalRemark'
+    description: 'Interne Bemerkung.'
+    genericControls:
+      multiLine: true
+      defColumnPos: 7
+  - name: 'MonitoringProcessId'
+    description: 'Workflow Process Identifikation. Ist ein Workflow in Bearbeitung wird die Id in diesem Feld gespeichert.'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DataCheckUserName'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      hasDetailBtn: true
+      defColumnPos: 8
+      isNoUpdate: true
+  - name: 'MainPersonPartnerId'
+    description: 'Hauptschuldner'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IkoContractId'
+    description: 'IKO Vertrags Identifikation, 12 stellige nummer'

@@ -1,0 +1,28 @@
+table:
+  name: 'PrPublicCommodityType'
+  description: 'VDF-Domaine: 4808 COMMODITYTYPE'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Commodity-Type'
+    - german:
+        formTitle: 'Commodity-Typ'
+  columns:
+  - name: 'CommodityTypeNo'
+    description: 'Maintained by VDF-Metadata'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CommodityBase'
+    description: '- AG = Agricultural\r\n\n- EN = Energy\r\n\n- FR = Freights\n\r\n- ME = Metals\r\n\n- IN = Index\n\r\n- EV = Environmental\n\r\n- EX = Exotic or doesn‘t fit into any of the other categories\n\r\n'
+    genericControls:
+      defColumnPos: 2

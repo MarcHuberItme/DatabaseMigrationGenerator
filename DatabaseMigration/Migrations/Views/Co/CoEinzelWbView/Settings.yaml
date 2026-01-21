@@ -1,0 +1,3 @@
+view:
+  name: 'CoEinzelWbView'
+  description: 'Zeigt alle Kreditkonti auf, denen EinzelWB (Cosubtype = 6100) zugewiesen waren, und zwar so lange, wie die Einzelwb aktiv ist,\r\ndie flags dayendflag, monthendflag,actflag zeigen jeweils an, ob es sich um die letzte Deckungsausschiedung vom Tag oder der gesicherte Stand vom Monat oder die aktuelleste Deckungsuasscheidung handelt'

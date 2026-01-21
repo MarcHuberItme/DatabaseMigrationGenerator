@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'LookUpSystemProfile'
+  description: 'Procedure to check wheter a system profile exists. Is called from Data Access Components, Class FsProfileWrite, Function SaveProfile.'

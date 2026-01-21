@@ -1,0 +1,27 @@
+view:
+  name: 'PtAccountStatementView2'
+  description: ''
+frontendView:
+  name: 'PtAccountStatementView2'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccountId2'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'CorrItemId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'

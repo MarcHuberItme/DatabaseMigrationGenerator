@@ -1,0 +1,39 @@
+table:
+  name: 'ReConstructionZone'
+  description: 'Bauzone\r\nDiese Tabelle soll gemäss Bundesamt für Statistik geladen werden.\r\n(Gemeinde / Bauzone / Ausnützungsziffer)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Construction Zone'
+    - german:
+        formTitle: 'Bauzone'
+  columns:
+  - name: 'SwissTownNo'
+    description: 'gemäss Bundesamt für Statistik'
+  - name: 'ConstructionZone'
+    description: ''
+  - name: 'IaziValue'
+    description: ''
+  - name: 'PfandRegValue'
+    description: ''
+  - name: 'UtilizationNo'
+    description: 'Maximale Ausnützungsziffer / Utilization number (abhängig von der Bauzone)'
+  - name: 'PlausiTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'RePlausiType'
+      refField: 'PlausiTypeNo'
+  - name: 'ConstructionZoneNo'
+    description: ''
+  - name: 'SortNo'
+    description: ''

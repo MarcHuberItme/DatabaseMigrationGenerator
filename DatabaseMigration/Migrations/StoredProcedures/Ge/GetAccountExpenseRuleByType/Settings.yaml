@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountExpenseRuleByType'
+  description: 'get the expense rule definition of an account by expensetypeno'

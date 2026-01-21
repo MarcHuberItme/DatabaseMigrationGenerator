@@ -1,0 +1,73 @@
+table:
+  name: 'AcBalanceSource'
+  description: 'Input from AcCompression2 (without Security Portfolios)\r\nSORT by: Produkt, Komponente, Währung, Vorzeichen, Kontonummer, Verfall'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      isNavigationRoot: true
+      rootTable: 'AcBalanceSource'
+      parentTable: 'ROOT'
+    uiTableDescription:
+    - english:
+        formTitle: 'Balance Source'
+    - german:
+        formTitle: 'Bilanz Inputdata'
+  columns:
+  - name: 'AmountType'
+    description: '1 = Kapital / Capital\r\n2 = Zinsausstand / Open Interest\r\n3 = Marchzins / Accrud Interest (aus diesem Typ müssen 2 Einträge in der Bilanz generiert werden ! Weil Finstar gar keine Buchungen für Marchzins macht ! -> dieser zusätzliche Record hat AmountType 4\r\n'
+    genericControls:
+      refTable: 'AcAmountType'
+      refField: 'AmountType'
+      defColumnPos: 1
+  - name: 'ValueSign'
+    description: ''
+  - name: 'BalanceAccountNo'
+    description: 'fiktive Bilanzkontonummer (tiefster Bilanzlevel)\r\n-> enthält entweder die effektive HB Nummer (=AccountNo) oder die fiktive, generiert aus AcAcctAssignment.'
+  - name: 'AccountNo'
+    description: 'Wenn NULL, dann ist die Position eine Kundenposition (Sammelkonto) - Wenn <> NULL, dann ist es ein effektives Hauptbuch -> Nummer wird ins Feld BalanceAccountNo übertragen'
+  - name: 'Currency'
+    description: ''
+  - name: 'PrivateProductNo'
+    description: ''
+  - name: 'ComponentNo'
+    description: ''
+  - name: 'MaturityDateGroup'
+    description: ''
+  - name: 'KeyString'
+    description: 'From AcCompression2 as KeyStringGrouped'
+  - name: 'ValueProductCurrency'
+    description: ''
+  - name: 'ValueBasicCurrency'
+    description: ''
+  - name: 'AverageBalance'
+    description: ''
+  - name: 'AverageBalanceMoney'
+    description: ''
+  - name: 'AverageBalanceCoins'
+    description: ''
+  - name: 'EvaluationDate'
+    description: 'per this date the figures in the balance sheet are valid'
+  - name: 'VirtualDate'
+    description: 'on this date the balance sheet was created'
+  - name: 'ProcessId'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceSheetProcess'
+      refField: 'Id'
+  - name: 'DefaultRiskAmountBasicCurrency'
+    description: ''
+  - name: 'DefaultRiskSpecificAmountBaCu'
+    description: ''
+  - name: 'DefaultRiskAccrualsAmountBaCu'
+    description: ''
+  - name: 'DefaultRiskInterestAmountBaCu'
+    description: ''

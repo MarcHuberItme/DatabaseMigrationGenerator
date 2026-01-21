@@ -1,0 +1,52 @@
+table:
+  name: 'PtStandingOrderDetail'
+  description: 'orders with reference number (z.B. Leasingraten)\r\nor\r\nsingle payments (instead of the standing order or in addition)\r\n\r\nDate of last selection / last execution will only be changed in the main\r\ntable PtStandingOrder'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtStandingOrder'
+      parentRelationField: 'StandingOrderId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'payment order'
+    - german:
+        formTitle: 'Dauerauftrag ESR'
+  columns:
+  - name: 'StandingOrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtStandingOrder'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'Sequence'
+    description: 'the stored ESR instructions have to be paid in a certain sequence.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PaymentAmount'
+    description: 'payment amount (automatically filled up in case of ESR) manual input in case of various payment amounts'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ReferenceNo'
+    description: 'ESR Reference number\r\n15 / 16 or 27 digits'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ExecutedDate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'OverwriteFlag'
+    description: ''
+  - name: 'ReferenceType'
+    description: 'Referenztyp (QR, ISO)\r\nDie folgenden Codes sind zugelassen:\r\nQRR: QR-Referenz\r\nSCOR: Creditor Reference (ISO 11649)\r\nNON: ohne Referenz'

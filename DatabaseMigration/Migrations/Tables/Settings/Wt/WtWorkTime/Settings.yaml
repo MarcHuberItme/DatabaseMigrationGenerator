@@ -1,0 +1,54 @@
+table:
+  name: 'WtWorkTime'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: b4ef08a8-5ddd-4342-8dd4-9468bd7539de
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'WorkTime'
+    - german:
+        formTitle: 'Arbeitszeit'
+  columns:
+  - name: 'Workday'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'Employee'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      defColumnPos: 6
+  - name: 'ProjectId'
+    description: ''
+    genericControls:
+      refTable: 'WtProject'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ActivityId'
+    description: ''
+    genericControls:
+      refTable: 'WtActivity'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'Hours'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Comment'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 4
+  - name: 'AreaNo'
+    description: 'Redundant information for simpifying search'
+    genericControls:
+      refTable: 'WtArea'
+      refField: 'AreaNo'
+      defColumnPos: 5

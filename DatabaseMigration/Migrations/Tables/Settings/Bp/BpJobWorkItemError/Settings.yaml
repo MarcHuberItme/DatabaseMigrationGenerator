@@ -1,0 +1,31 @@
+table:
+  name: 'BpJobWorkItemError'
+  description: 'Error entry for failed Job Work Item'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'JCS Job Work Item Error'
+    - german:
+        formTitle: 'JCS Job Work Item Error'
+    - french:
+        formTitle: 'JCS Job Work Item Error'
+    - italian:
+        formTitle: 'JCS Job Work Item Error'
+  columns:
+  - name: 'JobWorkItemId'
+    description: ''
+    genericControls:
+      refTable: 'BpJobWorkItem'
+      refField: 'Id'
+  - name: 'ExecDate'
+    description: 'Date of execution'
+  - name: 'ErrorText'
+    description: 'Error description'

@@ -1,0 +1,69 @@
+view:
+  name: 'PtTransFrontDeskBondsView'
+  description: '/Author : Abdul Nasir khan\r\n/FrontEndView just to populate the form controls. Saving is done by separate Application Server Component\r\nThis helps in reduced form controls.'
+frontendView:
+  name: 'PtTransFrontDeskBondsView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'DebitPrReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ValueDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'PaymentAmount'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'DebitAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'CreditAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'TransText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      multiLine: true
+  - name: 'TransRemark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true

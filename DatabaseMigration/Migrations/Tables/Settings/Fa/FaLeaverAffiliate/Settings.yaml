@@ -1,0 +1,50 @@
+table:
+  name: 'FaLeaverAffiliate'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FaLeaverId'
+    description: ''
+    genericControls:
+      refTable: 'FaLeaver'
+      refField: 'Id'
+  - name: 'PartnerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'AccountPartyName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'AccountPartyNo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'FunctionRole'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'FunctionNo'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'USPerson'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'UsCiticen'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'UsResident'
+    description: ''
+    genericControls:
+      defColumnPos: 8

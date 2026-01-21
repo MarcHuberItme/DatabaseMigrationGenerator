@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'FreezeTransItemSupplement'
+  description: 'Retrieve closing bookings that where booked after report date and have a realdate <= report date\r\nsave this bookings to table AcFrozenTransItemSupplement and recalculate the balance\r\n2023-08-02/FIN-9318/daga: condition added for PtTransItem HdVersionNo between 1 and 999999998'

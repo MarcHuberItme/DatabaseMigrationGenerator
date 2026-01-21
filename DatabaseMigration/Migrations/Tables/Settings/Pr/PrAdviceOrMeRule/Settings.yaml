@@ -1,0 +1,49 @@
+table:
+  name: 'PrAdviceOrMeRule'
+  description: 'transaction order media exeptions for advice control rule'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Advice order media rule'
+    - german:
+        formTitle: 'Anzeigesteuerung Transart'
+  columns:
+  - name: 'AdviceRuleId'
+    description: ''
+    genericControls:
+      refTable: 'PrAdviceRule'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'OrderMediaNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransOrderMedia'
+      refField: 'OrderMediaNo'
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'CreditAdviceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+      defColumnPos: 3
+  - name: 'DebitAdviceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+      defColumnPos: 4
+  - name: 'DebitStatementDetails'
+    description: ''
+  - name: 'CreditStatementDetails'
+    description: ''

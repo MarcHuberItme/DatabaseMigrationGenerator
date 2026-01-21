@@ -1,0 +1,81 @@
+table:
+  name: 'ReDwelling'
+  description: 'only used in case of MFH (bei EFH und STWE Node unterdrücken)\r\n\r\n(Summenfelder, z.B. Mieter werden über Stored Proc kumuliert und ins Gebäude ReBuilding übertragen)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'ReBuilding'
+      parentRelationField: 'BuildingId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Dwellings'
+    - german:
+        formTitle: 'Wohnungen'
+    - french:
+        formTitle: 'Logements'
+    - italian:
+        formTitle: 'Abitazioni'
+  columns:
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'DwellingTypeNo'
+    description: 'Wohnungstyp z.B. 5 1/2 Zimmer, 4 Zimmer etc. (FIS-2000: WHG_TYP_CD)\r\nSPEZIALFALL: 90 = Einzelräume'
+    genericControls:
+      refTable: 'ReDwellingType'
+      refField: 'DwellingTypeNo'
+      defColumnPos: 1
+  - name: 'FloorType'
+    description: 'Etage / Geschoss (GR_ETA.GR_ETA_TYP_CD)'
+    genericControls:
+      refTable: 'ReBuildingFloorType'
+      refField: 'FloorType'
+      defColumnPos: 2
+  - name: 'AreaM2'
+    description: 'Fläche der Wohnung (Nutzfläche bei Büro- und Geschäftswohnungen)\r\n\r\nFIS-2000:GR_ETA1.FLAECHE_WHG'
+  - name: 'NettoFlag'
+    description: 'Fläche Netto J/N\r\n0 = Nein / 1 = Ja\r\nFIS-2000:GR_ETA1.BRUTTO_NETTO_FLAG'
+  - name: 'SurfaceM2'
+    description: 'Surface of the balconies/terraces  in m2 (bei STWE) IAZI\r\nFIS-2000: NNF_TERRASSE'
+  - name: 'WetCellsNo'
+    description: 'Number of wet cells / Anzahl Nasszellen (IAZI)'
+  - name: 'IsRented'
+    description: ''
+  - name: 'RentPartnerRelId'
+    description: 'Mieter der Wohnung / Tenant of the dwelling'
+    genericControls:
+      refTable: 'RePremisesPtRel'
+      refField: 'Id'
+  - name: 'RentAmount'
+    description: 'annual Rent Amount / Mietzins pro Jahr'
+  - name: 'EmptyAmount'
+    description: 'Leerstandbetrag'
+  - name: 'SupportAmount'
+    description: 'z.B. WEG'
+  - name: 'AddExpAmount'
+    description: 'Nebenkosten'
+  - name: 'ApartmentNo'
+    description: 'Appartment Nummer, z.B. 15 A etc.'
+  - name: 'BuildingStyleNo'
+    description: ''
+    genericControls:
+      refTable: 'ReBuildingStyle'
+      refField: 'BuildingStyleNo'
+      defColumnPos: 3
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

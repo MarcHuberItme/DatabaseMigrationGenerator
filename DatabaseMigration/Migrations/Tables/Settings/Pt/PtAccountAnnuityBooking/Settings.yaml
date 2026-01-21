@@ -1,0 +1,67 @@
+table:
+  name: 'PtAccountAnnuityBooking'
+  description: 'Annuity Bookings for PaybackType 30 (Annuity)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Annuity bookings'
+        helpText: 'Annuity bookings'
+    - german:
+        formTitle: 'Buchungen Annuität'
+        helpText: 'Buchungen Annuität'
+    - french:
+        formTitle: 'Comptabilisations annuité'
+        helpText: 'Comptabilisations annuité'
+    - italian:
+        formTitle: 'Contabilizzazioni annuità'
+        helpText: 'Contabilizzazioni annuità'
+  columns:
+  - name: 'PaybackId'
+    description: 'Reference to PtAccountPayback which is the amortisation/annuity record paid via this bookings.'
+    genericControls:
+      refTable: 'PtAccountPayback'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'AnnuityAmount'
+    description: 'Installment von PtAccountPayback für die Annuität'
+  - name: 'InterestAmount'
+    description: 'The interest amount for this period'
+  - name: 'PaybackAmount'
+    description: 'Berechnet aufgrund des Annuitäten-Betrags (PtAccountPayback.Installment) abzüglich des Zinsbetrags (PtAccountPaybackAnnuityBooking.InterestAmount).'
+  - name: 'BookingDate'
+    description: 'Tag der effektiven Verbuchung, ist nur gefüllt wenn Verbuchung effektiv stattgefunden hat. Wird erst gesetzt, wenn bei Rechnungserstellung die Zahlung eintrifft.'
+  - name: 'MortgageAccountId'
+    description: 'Referenz zur Hypothek für welche die Annuität gilt'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+  - name: 'MortgageCurrency'
+    description: ''
+  - name: 'DebitAccountInterest'
+    description: 'Referenz zum Belastungskonto für  den Zins'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+  - name: 'DebitAccountCapital'
+    description: 'Referenz zum Belastungskonto für die Amortisation'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+  - name: 'IsTaxStatementDone'
+    description: 'Flag, welches Records kennzeichnet, welche bereits in einer Zins- und Kapitalbescheinigung berücksichtigt wurden'
+  - name: 'TaxStatementDate'
+    description: 'Datum, an welchem die Zins- und Kapitalbescheinigung erstellt wurde'
+  - name: 'BillingId'
+    description: 'Referenz zu PtAccountDebitOverview.Id, Id der Rechnung, welche erstellt wurde sofern keine Direktbelastung möglich wa'
+    genericControls:
+      refTable: 'PtAccountDebitOverview'
+      refField: 'Id'
+  - name: 'Status'
+    description: ''

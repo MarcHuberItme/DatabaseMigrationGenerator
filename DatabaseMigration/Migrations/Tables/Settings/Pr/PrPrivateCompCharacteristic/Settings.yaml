@@ -1,0 +1,31 @@
+table:
+  name: 'PrPrivateCompCharacteristic'
+  description: 'z.B. Patronatserklärung, Rangrücktritt, Mietzinsabtretung'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Component Characterist'
+    - german:
+        formTitle: 'Komponentenausprägung'
+  columns:
+  - name: 'CharacteristicNo'
+    description: 'z.B. Komponententyp = Blanko Zusatzdeckung / Charakterisitk wäre z.B. Mietzinsabtretung oder Rangrücktritt, Patronatserklärung etc.'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'CompTypeNo'
+    description: 'Ausprägung gilt für diesen Komponenten Typ'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+      defColumnPos: 2

@@ -1,0 +1,35 @@
+table:
+  name: 'MgZS11Relation'
+  description: 'Technical Table for Migration use. Guaranies that Master Slave Relations can be postponed to the point of time when both Partner are in Database! Only for forward migration use!'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'VRX Tabelle ZS11'
+    - german:
+        formTitle: 'VRX Tabelle ZS11'
+  columns:
+  - name: 'PartnerNo'
+    description: ''
+  - name: 'VPartnerNo'
+    description: ''
+  - name: 'VBART'
+    description: 'Verbindungsart code'
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'VPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'

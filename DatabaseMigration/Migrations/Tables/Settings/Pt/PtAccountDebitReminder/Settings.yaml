@@ -1,0 +1,70 @@
+table:
+  name: 'PtAccountDebitReminder'
+  description: 'This table is used to record all reminders issued.\r\n\r\ncomponent FsDebitControl.FsDebitInvoice should be used to save new invoice reminders.\r\n27.03.2006/mct'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'DebitReminder'
+        helpText: 'DebitReminder'
+    - german:
+        formTitle: 'DebitReminder'
+        helpText: 'DebitReminder'
+  columns:
+  - name: 'AccountDebitControlId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountDebitControl'
+      refField: 'Id'
+  - name: 'ReminderIssueDate'
+    description: 'the date issuing the reminder'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ReminderDueDate'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'ReminderSeqNo'
+    description: 'the sequence no of reminder for the same invoice'
+    minValue: '1'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'PendingAmount'
+    description: 'the pending amount when this reminder is issued'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'ReminderCharge'
+    description: ''
+  - name: 'EsrCodeLine'
+    description: 'EsrCodeline to print on payment slip. It is necessary to have an additional esr code line for the reminder, because the amount can change (e.g. partial payment) and then the original esr line would not be the same.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'EsrNoEdited'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SuppressReminder'
+    description: 'suppress printing of this reminder.'
+  - name: 'ScheduledPrintDate'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'AlertId'
+    description: 'time when the notification was send to the bank staff'
+    genericControls:
+      refTable: 'AsInvoiceAlert'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'UseQrBill'
+    description: ''

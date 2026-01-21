@@ -1,0 +1,47 @@
+table:
+  name: 'AsDocImportSettings'
+  description: 'Contains the settings that have to be used when importing a picture to AsDocument'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'SettingsName'
+    description: 'Name of the import settings'
+    genericControls:
+      defColumnPos: 2
+  - name: 'OutputFormat'
+    description: 'output file format that is generated and saved to AsDocumentData'
+    genericControls:
+      refTable: 'AsDocumentFormat'
+      refField: 'Format'
+      defColumnPos: 3
+  - name: 'BitsPerPixel'
+    description: 'bits per pixel (e.g.: 24, 16, 8, 4, 2, 1)'
+  - name: 'CompressionFactor'
+    description: 'Value from 2 to 255\r\n2 = highest quality / 255 = most compression\r\nuse 0 for lossless JPEG files'
+  - name: 'MaxCompressionFactor'
+    description: ''
+    minValue: '0'
+    maxValue: '255'
+  - name: 'MaxFileSize'
+    description: 'maximum file size in kilobytes'
+    genericControls:
+      noUpdatePos: 4
+  - name: 'LeadFormatCode'
+    description: 'lead tools control file format code used to produce document\r\nFILE_GIF = 2\r\nFILE_TIF 	= 3\r\nFILE_BMP = 6\r\nFILE_JFIF = 10\r\nFILE_JTIF = 11\r\nFILE_TIFLZW = 17\r\nFILE_CCITT = 25\r\nFILE_TIF_PACKBITS = 87'
+    genericControls:
+      defColumnPos: 5
+  - name: 'PictureWidth'
+    description: 'Picture width in pixel'
+  - name: 'PictureHeight'
+    description: 'picture height in pixel'
+  - name: 'ForcePictureSize'
+    description: '0 --> User is asked if he wants to save the picture also if it correponds not to the desired Width or Height.\r\n1 --> Picture must be of the specified size'

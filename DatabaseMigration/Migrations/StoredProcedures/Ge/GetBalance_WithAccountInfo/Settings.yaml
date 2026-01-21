@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetBalance_WithAccountInfo'
+  description: 'This stored procedure returns the account balance including the transitems with detailcounter = 0\r\nIt returns also some account information like accountno, product, terminationdate, currency, customerreference'

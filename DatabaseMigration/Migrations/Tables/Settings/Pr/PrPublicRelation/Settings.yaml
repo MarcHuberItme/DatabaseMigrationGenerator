@@ -1,0 +1,100 @@
+table:
+  name: 'PrPublicRelation'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'SourcePublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Relation'
+    - german:
+        formTitle: 'Beziehung'
+  columns:
+  - name: 'VdfDocType'
+    description: 'VDF: FHD.FHD.0804\r\n         FUD.FUD.0804\r\n         FQD.FQD.0804\r\nDoctype: FUD or FHD or FQD'
+  - name: 'VdfDocGen'
+    description: 'VDF: FHD.FHD.0813\r\n         FUD.FUD.0813\r\n         FQD.FQD.0813\r\nGeneration of the last FUD-Doc respectivly FHD-Doc, which was received from VDF'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: FHD.MGA.7895\r\n         FUD.MGA.7895\r\n         FQD.MGA.7895\r\nMessage status of Doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'SourcePublicId'
+    description: 'VDF: FHD.Gr3.VAI.K981.7842\r\n         FUD.Gr2.VAI.K981.7842\r\n         FQD.Gr2.VAI.K981.7842'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'TargetPublicId'
+    description: 'VDF: FHD.Gr2.VAI.K981.7842\r\n         FUD.Gr3.VAI.K981.7842\r\n         FQD.Gr5.VAI.K981.7842'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'NumberSource'
+    description: 'VDF: FHD.FHA.6911-B\r\n         FUD: leer\r\nNumber of ordinary instruments'
+    genericControls:
+      defColumnPos: 3
+  - name: 'NumberTarget'
+    description: 'VDF: FHD.FHA.6911-A\r\n         FUD.FUA.6911\r\nNumber of component/dependent  instruments'
+    genericControls:
+      defColumnPos: 4
+  - name: 'DependencyTypeNo'
+    description: 'VDF: FHD.FHA.4843\r\n         FUD: leer \r\n         FQD: leer\r\nInstrument dependency type'
+    genericControls:
+      refTable: 'PrPublicDependencyType'
+      refField: 'DependencyTypeNo'
+      defColumnPos: 5
+  - name: 'AssimilationDate'
+    description: 'VDF: FHD.FHA.2801\r\n         FUD: leer \r\n         FQD: leer\r\nDate by when the instrument must be assimilated with the original instrument'
+  - name: 'IsAssimilDateAssumed'
+    description: 'VDF: FHD.FHA.4924\r\n         FUD: leer \r\n         FQD: leer\r\nIndicates whether the assimilation date is an assumed date (Y) or fixed (N).'
+  - name: 'SeparationFromDate'
+    description: 'VDF: FHD: leer\r\n         FUD.FUA.2801-B\r\n         FQD: leer\r\nDate from which a separation can be made.'
+  - name: 'SeparationToDate'
+    description: 'VDF: FHD: leer\r\n         FUD.FUA.2801-A\r\n         FQD: leer\r\nDate by which a compulsory separation must be made.'
+  - name: 'UnderlyingRoleNo'
+    description: 'VDF:  FQD.GR5.FQU.7948\r\nRole of the underlying.'
+    genericControls:
+      refTable: 'PrPublicUnderlyingRole'
+      refField: 'RoleNo'
+  - name: 'IsPrincipal'
+    description: 'VDF:  FQD.GR5.FQU.4924\r\nTrue, if principal cash flow (Rückzahlung, Ausübung) depends on this underlying.'
+  - name: 'IsIncome'
+    description: 'VDF:  FQD.GR5.FQU.4924\r\nTrue, if income (interest payment) depends on this underlying.'
+  - name: 'IsPaymentLeg'
+    description: 'VDF:  FQD.GR5.FQU.4924\r\nTrue, if the underlying is a leg of a swap.'
+  - name: 'UnderlyingCoverRatio'
+    description: 'VDF:  FQD.GR5.FQU.5833\r\nAmount of underlyings that can be acquired or sold with the instrument.'
+  - name: 'CurrentWeight'
+    description: 'VDF:  FQD.GR5.FQU.5835\r\nActual weight of the underlying in the basket in %'
+  - name: 'CurrentAmount'
+    description: 'VDF:  FQD.GR5.FQU.5833\r\nActual amount of underlying in the basket'
+  - name: 'CurrentAmountUnitNo'
+    description: 'VDF:  FQD.GR5.FQU.4802\r\nUnit for CurrentAmount'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'DeltaAtIssuance'
+    description: 'VDF:  FQD.GR5.FQU.5833-G\r\nDelta at Issuance'
+  - name: 'InstrInInitialHedge'
+    description: 'VDF:  FQD.GR5.FQU.5833-H\r\nnumber of instruments of the initial hedge'
+  - name: 'EffDateDeltaHedge'
+    description: 'VDF:  FQD.GR5.FQU.2801-B\r\neffective date of delta/Hedge'

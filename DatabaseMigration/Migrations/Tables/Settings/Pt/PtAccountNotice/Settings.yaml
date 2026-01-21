@@ -1,0 +1,53 @@
+table:
+  name: 'PtAccountNotice'
+  description: 'Notice definition'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountBaseId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Notice'
+    - german:
+        formTitle: 'Kündigung'
+    - french:
+        formTitle: 'Noter'
+  columns:
+  - name: 'AccountBaseId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'TargetDate'
+    description: 'Target Date ("Termin")'
+    genericControls:
+      defColumnPos: 1
+  - name: 'NoticeAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'TargetAccountId'
+    description: 'Defines account for capital repayment (e.g. bonus account)'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'HasWithdrawTimeFrame'
+    description: 'when 0, the noticed amount  is available on Target date.\r\nwhen 1, the noticed amount is available  from target date till end of time frame defined at product/component withdraw rule'

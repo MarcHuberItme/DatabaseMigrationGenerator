@@ -1,0 +1,123 @@
+view:
+  name: 'PtOpenIssueView'
+  description: 'Query all open issues of the partners\r\n2014-04-24/ram: deleted Field MgSACHB\r\n2025-07-09/ram: add fields ResponsibleId, StateNo'
+frontendView:
+  name: 'PtOpenIssueView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 5
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 2
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 1
+  - name: 'NameCont'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 3
+  - name: 'DateOfBirth'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ConsultantTeamName'
+    description: ''
+    dataType: 'varchar'
+    prec: 32
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 7
+  - name: 'TypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtOpenIssueType'
+      refField: 'TypeNo'
+      defColumnPos: 8
+  - name: 'StatusNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtOpenIssueStatus'
+      refField: 'StatusNo'
+      defColumnPos: 9
+  - name: 'TargetDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 10
+  - name: 'ActivationDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 11
+  - name: 'InitiatorId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      defColumnPos: 12
+  - name: 'MoneyLaunderSuspect'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtProfileMoneyLaunderSuspect'
+      refField: 'MoneyLaunderSuspect'
+      defColumnPos: 13
+  - name: 'TerminationDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 15
+  - name: 'CompletionDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 16
+  - name: 'NogaCode2008'
+    description: ''
+    dataType: 'varchar'
+    prec: 6
+    genericControls:
+      refTable: 'PtBusinessType'
+      refField: 'NogaCode'
+      defColumnPos: 4
+  - name: 'ResponsibleId'
+    description: 'foreign-key;  Id of AsUser - Mitarbeiter, der für die Pendenz verantwortlich ist'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      defColumnPos: 17
+  - name: 'MLCheckState'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckState'
+      refField: 'StateNo'
+      defColumnPos: 18

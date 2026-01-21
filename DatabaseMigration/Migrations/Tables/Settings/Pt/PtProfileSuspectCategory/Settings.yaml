@@ -1,0 +1,46 @@
+table:
+  name: 'PtProfileSuspectCategory'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    descField: 'SuspectCategoryNo'
+    uiTableDescription:
+    - english:
+        formTitle: 'Suspect category'
+    - german:
+        formTitle: 'Verdächtigungsart'
+  columns:
+  - name: 'SuspectCategoryNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'MinWeighting'
+    description: 'Definiert, welches Mindestgewicht für die GmeR-Einstufung diese Kategorie hat.\r\n\r\nWert 0 bedeutet, dieses Feld wird für diese Kategorie im Programmcode nicht verwendet!'
+    minValue: '0'
+    maxValue: '2'
+    genericControls:
+      defColumnPos: 2
+  - name: 'MaxWeighting'
+    description: 'Definiert, welches Maximumgewicht für die GmeR-Einstufung diese Kategorie hat.\r\n\r\nWert 0 bedeutet, dieses Feld wird für diese Kategorie im Programmcode nicht verwendet!'
+    minValue: '0'
+    maxValue: '2'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsNotUsed'
+    description: 'Kategorie wird für GmeR-Gewichtung wird nicht verwendet'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true

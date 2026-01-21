@@ -1,0 +1,29 @@
+table:
+  name: 'ReObligLienStatus'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Lien Status'
+    - german:
+        formTitle: 'Pfandrecht Status'
+  columns:
+  - name: 'LienStatusNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'SetNominal'
+    description: 'wenn dieser Status gewählt wird, wird der anrechenbare Betrag (ReObligPremisesRel) für die Pfandbriefbank auf verändert.\r\n0 = setzt den Betrag auf 0   / 1 = setzt den Betrag aufs SB Nominal'
+  - name: 'SortNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2

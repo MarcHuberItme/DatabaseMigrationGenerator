@@ -1,0 +1,109 @@
+table:
+  name: 'PrPublicEuTax'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'EU interest tax'
+    - german:
+        formTitle: 'EU Steuerrückbehalt'
+  columns:
+  - name: 'VdfDocGen'
+    description: 'VDF: EUD.EUD.K801.0813'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: EUD.MGA.7895'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'PublicId'
+    description: 'VDF: EUD.VAI.K981.7842 (transformation with table PrPublic)'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'EuInterestTaxScopeNo'
+    description: 'VDF: EUD.EUA.4923'
+    genericControls:
+      refTable: 'PrPublicEuInterestTaxScope'
+      refField: 'EuInterestTaxScopeNo'
+      defColumnPos: 2
+  - name: 'EuTaxProcStatusNo'
+    description: 'VDF: EUD.EUZ.4917'
+    genericControls:
+      refTable: 'PrPublicEuTaxProcStatus'
+      refField: 'EuTaxProcStatusNo'
+  - name: 'Grandfathered'
+    description: 'VDF: EUD.EUB.4920'
+    genericControls:
+      refTable: 'PrPublicHistoryFlag'
+      refField: 'HistoryFlagNo'
+  - name: 'GrossUpAfter2011'
+    description: 'VDF: EUD.EUB.4924-A'
+    genericControls:
+      refTable: 'PrPublicFlag'
+      refField: 'Flag'
+  - name: 'CapitalisedInterest'
+    description: 'VDF: EUD.EUB.4924-B'
+    genericControls:
+      refTable: 'PrPublicFlag'
+      refField: 'Flag'
+  - name: 'ReopeningTranche'
+    description: 'VDF: EUD.EUB.4924-C'
+    genericControls:
+      refTable: 'PrPublicFlag'
+      refField: 'Flag'
+  - name: 'ReopeningDate'
+    description: 'VDF: EUD.EUB.2801-A'
+  - name: 'ReopeningTranchePublicId'
+    description: 'VDF: EUD.EUB.K981.7842'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'GrandfatheredCorrectDate'
+    description: 'VDF: EUD.EUB.2801-B'
+  - name: 'StateIssuedBond'
+    description: 'VDF: EUD.EUB.4924-D'
+    genericControls:
+      refTable: 'PrPublicFlag'
+      refField: 'Flag'
+  - name: 'NoRetentionTaxCH'
+    description: 'VDF: if EUD.EUL.3988 = 1 & \r\n            EUD.EUL.4915 = 1\r\n               = True\r\n          other\r\n               = False\r\n\r\n'
+  - name: 'FundProvideDetail'
+    description: 'VDF: EUD.ERC.4924'
+    genericControls:
+      refTable: 'PrPublicFlag'
+      refField: 'Flag'
+  - name: 'NavCalcNumberTimeUnit'
+    description: 'VDF: EUD.ERC.K828.6921'
+  - name: 'NavCalcTimeUnitNo'
+    description: 'VDF: EUD.ERC.K828.2902'
+    genericControls:
+      refTable: 'PrPublicTimeUnit'
+      refField: 'TimeUnitNo'
+  - name: 'DiscountTypeNo'
+    description: 'VDF: EUD.EUB.4905'
+    genericControls:
+      refTable: 'PrPublicDiscountType'
+      refField: 'DiscountTypeNo'
+  - name: 'FutureEuInterestTaxCat'
+    description: 'VDF: EUD.FMG.7845 (FMG.7844 = EUZS)'
+    genericControls:
+      refTable: 'PrPublicEuInterestTaxCat'
+      refField: 'EuInterestTaxCat'
+  - name: 'EuInterestTaxCatValidFrom'
+    description: ''

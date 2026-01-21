@@ -1,0 +1,222 @@
+view:
+  name: 'PtPaymentOrderSingleOrderView'
+  description: 'View to get information for the payment API for an single payment order.'
+frontendView:
+  name: 'PtPaymentOrderSingleOrderView'
+  description: 'Table for view to get information for the payment API for an single payment order.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        helpText: 'Table for view to get information for the payment API for an single payment order.'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'PaymentOrderId'
+    description: 'PtPaymentOrder.Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtPaymentOrder'
+      refField: 'Id'
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+  - name: 'DebtorIban'
+    description: 'AccountNoIbanElect from PtAccountBase'
+    dataType: 'nvarchar'
+    prec: 21
+  - name: 'InternalCreditorIban'
+    description: 'AccountNoIbanElect from PtAccountBase if the creditor is a partner internally'
+    dataType: 'nvarchar'
+    prec: 21
+  - name: 'InternalCreditorQrIban'
+    description: 'QrIban from PtAccountBase'
+    dataType: 'nvarchar'
+    prec: 21
+  - name: 'ExternalCreditorAccountNo'
+    description: 'AccountNoExt from PtPaymentOrderDetail. Can be any kind of identifier of the creditor account that is not part of the internal system.'
+    dataType: 'nvarchar'
+    prec: 34
+  - name: 'ExternalCreditorIban'
+    description: 'AccountNoExtIBAN from PtPaymentOrderDetail. Can be an IBAN in case the creditor is not a partner in the internal system.'
+    dataType: 'nvarchar'
+    prec: 21
+  - name: 'ESRParticipantNo'
+    description: 'ESRParticipantNo from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 21
+  - name: 'PaymentAmount'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'money'
+    scale: 4
+  - name: 'PaymentCurrency'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'char'
+    prec: 3
+  - name: 'BeneficiaryName'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'BeneficiaryStreetName'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'BeneficiaryBuildingNo'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'BeneficiaryPostCode'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'BeneficiaryTownName'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'BeneficiaryCountry'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'OriginalSenderName'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'OriginalSenderStreetName'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'OriginalSenderBuildingNo'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'OriginalSenderPostCode'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'OriginalSenderTownName'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'OriginalSenderCountry'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'EndBeneficiaryName'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'EndBeneficiaryStreetName'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'EndBeneficiaryBuildingNo'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'EndBeneficiaryPostCode'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'EndBeneficiaryTownName'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'EndBeneficiaryCountry'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'InitiatingPartyId'
+    description: 'Initiating Party identifier. (from PtPaymentOrderDetail)'
+    dataType: 'nvarchar'
+    prec: 36
+  - name: 'OrderingPartyReference'
+    description: 'Some kind of reference to the ordering party, also called EndToEnd id. (from PtPaymentOrderDetail)'
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'ScheduledDate'
+    description: 'Scheduled date for execution. (from PtPaymentOrder)'
+    dataType: 'datetime'
+  - name: 'NotificationCode'
+    description: 'Describing if the payment is a salary payment for the purpose of potentially notifying the creditor. (from PtPaymentOrderDetail)'
+    dataType: 'tinyint'
+  - name: 'BeneficiaryMessage'
+    description: 'Message from the beneficiary to the creditor. (from PtPaymentOrderDetail)'
+    dataType: 'nvarchar'
+    prec: 500
+  - name: 'QrOrEsrReferenceNo'
+    description: 'ReferenceNo can be either Qr or ESR Reference no as the same fireld is used to store both values. (from PtPaymentOrderDetail)'
+    dataType: 'nvarchar'
+    prec: 27
+  - name: 'ScoReferenceNo'
+    description: 'StructuredCreditorReference from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'SlipType'
+    description: 'Shows the type of the payment. E.g. a payment is a foreign payment or a domestic one. (from PtPaymentOrderDetail)'
+    dataType: 'smallint'
+  - name: 'StandingOrderId'
+    description: 'Reference to the PtStandingOrder table if the payment was created from a tempate that PtStandingOrder table describes. (from PtPaymentOrderDetail)'
+    dataType: 'uniqueidentifier'
+  - name: 'AccountNoPost'
+    description: 'SwissPost Account Number if the payment is a SwissPost Account number. (from PtPaymentOrderDetail)'
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'BeneficiaryBIC'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'BeneficiaryFinalBIC'
+    description: 'from PtPaymentOrderDetail'
+    dataType: 'nvarchar'
+    prec: 22
+  - name: 'Status'
+    description: 'Status of the execution cycle. (from PtPaymentOrder)'
+    dataType: 'tinyint'
+  - name: 'ChargeBearerCode'
+    description: 'Code that shows who bears the charges of the payment for a Foreign Payment. (from PtPaymentOrderDetail)'
+    dataType: 'tinyint'
+  - name: 'DebtorRemark'
+    description: 'Remark from the debtor to the Bank in case there is something special to be added to the payment execution. (from PtPaymentOrderDetail)'
+    dataType: 'nvarchar'
+    prec: 250
+  - name: 'DebtorAccountId'
+    description: 'Account id of the debtor.'
+    dataType: 'uniqueidentifier'
+  - name: 'DebtorPortfolioId'
+    description: 'Portfolio id of the debtor.'
+    dataType: 'uniqueidentifier'
+  - name: 'PaymentOrderHdVersionNo'
+    description: 'from PtPaymentOrder'
+    dataType: 'int'
+    isNotNull: true
+  - name: 'IsCustomerConfirmationPending'
+    description: 'If customer 2FA is pending for payment.'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'CreatorAgreementId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'AgreementIdThatApproved2'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'AgreementIdThatApproved1'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CheckOutPaymentScan'
+  description: 'checkout payment scan details to allow user to edit payment scan details'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'RunToFilePtTransSxRegisterPlus'
+  description: 'Procedure to export data from the table PtTransSxRegisterPlus to file\r\n2021-04-21 / TSH+WWO New field UnderlyingISIN4 added.\r\n2021-11-18 / TSH+WWO New field BankInternalReference added, just for ordering.\r\n2022-05-10 / TSH+WWO TrdMatchId increased from 52 to 200'

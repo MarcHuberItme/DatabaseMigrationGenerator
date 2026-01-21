@@ -1,0 +1,71 @@
+table:
+  name: 'BpJobLog'
+  description: 'Log entries for each execution of a Job by a Batch Processor Engine'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Batch Job Log'
+    - german:
+        formTitle: 'Batch Job Log'
+  columns:
+  - name: 'JobId'
+    description: 'Id of Job whose execution is logged'
+    genericControls:
+      isNoUpdate: true
+  - name: 'LogicalName'
+    description: 'Name of Task which was activated by the Batch Processor Engine'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'JobName'
+    description: 'Name of Job (can be specified for improved monitoring)'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'RestartLevel'
+    description: 'Level of job restarts. The default (0) means that this job is not a restarted one, ''1'' means that this is the first restart entry of the job and so on.\r\nThis field is copied from table ''BpSingleJob'' for each job.'
+  - name: 'OriginalJobId'
+    description: 'Information is only used for restarted jobs. It defines the Id of the original Job in this table.\r\nThis field is copied from table ''BpSingleJob'' for each job.'
+  - name: 'PeriodicJob'
+    description: 'Specifies if the logged job is a periodic job or not'
+    genericControls:
+      isNoUpdate: true
+  - name: 'AttachedEngine'
+    description: 'Name of engine which has to execute this batch job'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'ExecutingEngine'
+    description: 'Name of Batch Processor Engine which executed the Job'
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'StartTime'
+    description: 'Start Time of Job execution\r\n'
+    genericControls:
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'EndTime'
+    description: 'End Time of Job execution'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Result'
+    description: 'Resulting effect of Job execution:\r\n	0: successful\r\n	else: unsuccessful (Coded)'
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'ResultText'
+    description: 'Text describing the result of job execution'
+    genericControls:
+      multiLine: true
+  - name: 'ErrorInformation'
+    description: 'Information about errors. This field is only set for unsuccessful jobs. If possible the ID of the main record in table ''AsError'' is mentioned.'
+  - name: 'StationName'
+    description: 'Name of station where job is executed'

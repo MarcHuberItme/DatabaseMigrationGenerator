@@ -1,0 +1,3 @@
+view:
+  name: 'AcSecuritiesView'
+  description: 'The Purpose of this view is to enlist the Public Description for securities by the matching the position in the KeyString'

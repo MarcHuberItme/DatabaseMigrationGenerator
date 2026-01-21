@@ -1,0 +1,35 @@
+table:
+  name: 'CoPtAccountCompValue'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'CoPtAccountCompValue'
+        helpText: 'CoPtAccountCompValue'
+    - german:
+        formTitle: 'CoPtAccountCompValue'
+        helpText: 'CoPtAccountCompValue'
+    - french:
+        formTitle: 'CoPtAccountCompValue'
+        helpText: 'CoPtAccountCompValue'
+  columns:
+  - name: 'AccountComponentId'
+    description: ''
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'Value'
+    description: ''
+  - name: 'IsFixed'
+    description: ''
+  - name: 'IsDurationRecord'
+    description: ''
+  - name: 'StartRecordId'
+    description: ''

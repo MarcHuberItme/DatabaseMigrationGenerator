@@ -1,0 +1,34 @@
+table:
+  name: 'WfNotificationDetail'
+  description: 'This table duplicates requited data for the notifications from the WfStepInstanceAssignee table.\r\nIt is required to do so because WfStepInstanceAssignee table loses the entries when the process in which they were created gets completed. But life span of notifications is independent from the process life span. Therefore, the required data is put in this table. The data in this table is deleted as soon as there is no reffering notification is there in the WfNotification table.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'NotificationDetail'
+  columns:
+  - name: 'NotificationId'
+    description: ''
+  - name: 'TaskId'
+    description: ''
+  - name: 'UserName'
+    description: ''
+  - name: 'ProcessId'
+    description: ''
+  - name: 'MapNo'
+    description: ''
+  - name: 'StepNo'
+    description: ''
+  - name: 'Status'
+    description: ''
+  - name: 'UserGroup'
+    description: ''
+  - name: 'RoleGroup'
+    description: ''

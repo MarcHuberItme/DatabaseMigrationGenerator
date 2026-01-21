@@ -1,0 +1,65 @@
+table:
+  name: 'PtMLCheckLimit'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'PtMlCheckLimit'
+    - german:
+        formTitle: 'GwG Regel Limiten'
+  columns:
+  - name: 'RuleNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLRules'
+      refField: 'RuleNo'
+      defColumnPos: 1
+  - name: 'SegmentNo'
+    description: ''
+    genericControls:
+      refTable: 'PtSegment'
+      refField: 'SegmentNo'
+      defColumnPos: 2
+  - name: 'MoneyLaunderSuspect'
+    description: ''
+    genericControls:
+      refTable: 'PtProfileMoneyLaunderSuspect'
+      refField: 'MoneyLaunderSuspect'
+      defColumnPos: 3
+  - name: 'Amount'
+    description: 'in CHF (can be used in combination with Deviation % up or/and down)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'DebitAmount'
+    description: 'in CHF'
+    genericControls:
+      defColumnPos: 5
+  - name: 'CreditAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'ForCompany'
+    description: '0 = Private Persons\r\n1 = Companies'
+    genericControls:
+      defColumnPos: 7
+  - name: 'AmountDeviationDown'
+    description: '% Deviation of the Amount to select (e.g. 10 % = Amounts between 22''500 and 25''000 (=Amount) have to be selected).'
+    genericControls:
+      defColumnPos: 8
+  - name: 'AmountDeviationUp'
+    description: '% Deviation of the Amount to select (e.g. 10 % = Amounts between  25''000 (=Amount) and 27''500 have to be selected).'
+    genericControls:
+      defColumnPos: 9
+  - name: 'AlertDivisor'
+    description: 'rule has to be reported all the times if the count (e.g. of bookings) can be divided by the AlertDivisor.\r\ne.g. 6 => WF will be startet with 6 bookings, 12 bookings, 18 ..... (used for rule no 2)'
+    genericControls:
+      defColumnPos: 10

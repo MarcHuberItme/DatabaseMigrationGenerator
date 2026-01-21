@@ -1,0 +1,3 @@
+view:
+  name: 'EvBaseCorrPortfolioView'
+  description: '2012-05-25/ram: join auf PtCorrPortfolioViewLang (alt:PtCorrPortfolioView), zusätzlich CPV.CorrLanguageNo'

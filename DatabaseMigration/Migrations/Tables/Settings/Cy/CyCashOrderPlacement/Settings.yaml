@@ -1,0 +1,47 @@
+table:
+  name: 'CyCashOrderPlacement'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'EbankingId'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'PaymentOrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrder'
+      refField: 'Id'
+  - name: 'ExternalPaymentOrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrder'
+      refField: 'Id'
+  - name: 'ProviderId'
+    description: ''
+    genericControls:
+      refTable: 'CyCashServiceProvider'
+      refField: 'Id'
+  - name: 'TotalAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ApiPlacementId'
+    description: 'ID the order registered from API.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'LogMessage'
+    description: ''
+    genericControls:
+      defColumnPos: 3

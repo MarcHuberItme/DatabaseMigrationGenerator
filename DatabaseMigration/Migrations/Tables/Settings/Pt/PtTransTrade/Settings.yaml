@@ -1,0 +1,81 @@
+table:
+  name: 'PtTransTrade'
+  description: 'Security trades and assignments to customer order.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Trade'
+    - german:
+        formTitle: 'Abschlüsse'
+  columns:
+  - name: 'TransMessageId'
+    description: 'Relation to PtTransMessage\r\nthis id will be getted by the inserting of the PtTradingOrderMessage record. \r\nThis gives the possibility to enter PtTransTrade records \r\nbefore the record in the PtTransMessage exists. That means thats an existing PtTransMessage record is not necessary (=no DB Integrity)\r\n'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PortfolioId'
+    description: 'PortfolioId of the broker\r\nis null if the order is a listorder (averageprice) with several brokers.'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Quantity'
+    description: 'For shares = number of traded shares\r\nFor bonds  = nominal traded amount'
+    genericControls:
+      defColumnPos: 2
+  - name: 'CompletionDate'
+    description: 'Concept of SQL Data Partioning. \r\nIt is first value is MAXDATE (9999-12-31). It is then later changed by another process responsible for the task of Partioning.'
+  - name: 'Currency'
+    description: 'Currency of the price'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'Price'
+    description: 'Price based on unit or percentage of nominal value\r\n'
+    genericControls:
+      defColumnPos: 4
+  - name: 'PriceDate'
+    description: 'Date and time of the trade'
+    genericControls:
+      defColumnPos: 1
+  - name: 'StockExRef'
+    description: 'StockExRef\r\nSWX/VirtX = Trade_Id\r\nOthers may be a string value'
+  - name: 'MarketValueTrCu'
+    description: 'MarketValue in TradeCurrency'
+    genericControls:
+      defColumnPos: 5
+  - name: 'AccruedInterestAmount'
+    description: 'Accrued interest in the currency of the trade (field Currency).'
+  - name: 'IsBackOfficeFixed'
+    description: 'checkbox if the AccruedInterestAmount is fixed \r\ntrue= the amount in the field AccruedInterestAmount is used\r\nfalse= the amount will be calculated'
+  - name: 'RateTrCuHoCu'
+    description: 'middle rate between tradecurrency and homecurrency'
+  - name: 'MarketValueHoCu'
+    description: ''
+  - name: 'AccruedInterestAmountHoCu'
+    description: 'Accrued interest in CHF'
+  - name: 'IsCaEvent'
+    description: ''
+  - name: 'LastMkt'
+    description: 'Field used for orders traded over XSWM (Swiss@Mid) and for Vontobel trades.\r\nIt is possible that in one order (PtTradingOrderMessage) there are PtTransTrade with different LastMkt. \r\nThis field never contains the value ''Multiple'' because it is used for the SIX-Reporting'
+  - name: 'PriceDateExtern'
+    description: 'In this field we will save the datetime of the trade getted from glox (also in PriceDate).\r\nThis field is used because it is not possible to save milliseconds in VB6 in a datetime-field. It is possible to store it in the DB but the milliseconds will be "rounded" (xx0, xx3, xx7).'
+  - name: 'OrigId'
+    description: 'used for SIX-Reporting of reversal transaction. With this field it is possible to refer to the original transaction.'
+    genericControls:
+      refTable: 'PtTransTrade'
+      refField: 'Id'
+  - name: 'TransTradeIdBroker'
+    description: 'Id of the corresponding Broker-PtTransTrade.\r\nIt''s used to left outer join the PtTransTradePreSettlement of the Broker-PtTransTrade to get the detail trades for the customer.\r\nThis field is only filled it it''s a singleorder. In case of a listingorder it makes no sense to read the PtTransTradePreSettlement because you don''t know to which customer they are related.\r\nIf it''s a PtTransTrade of a reversal this field contains the Id of the customer PtTransTrade, because of a singleside-reversal.'
+  - name: 'LastMktPreSettlement'
+    description: 'Broker:\r\n- in this field the PtTransTradePreSettlement.LastMkt will be saved. \r\n- if there are multiple values the value ''Multiple'' will be used.\r\n- iIf there is no PtTransTradePreSettlement this field contains null.\r\n\r\nCustomer, singleorder:\r\n- this field contains the value of the Broker-PtTransTrade.LastMktPreSettlement (see Broker).\r\nCustomer, listingorder:\r\nfirst customer:\r\n- if there are multiple Broker-Trades this field contains the value of the first Broker-Trade otherwise the value of the Broker-Trade (see singleorder).\r\nother customers:\r\n- if there are multiple Broker-Trades this field contains the value of the lastBroker-Trade otherwise the value of the Broker-Trade (see singleorder).'

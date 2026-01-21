@@ -1,0 +1,39 @@
+table:
+  name: 'PtPortfolioTaxRegulation'
+  description: 'This field is used for intermediary portfolios which are locgroup for the partner.(PtPortfolioType.IsIntermediary = true).\r\n'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'QITax Codes Portfolio'
+    - german:
+        formTitle: 'QI Steuercodes Portfolio'
+    - french:
+        formTitle: 'QITax Codes Portfolio'
+  columns:
+  - name: 'TaxRegulationCodeDividend'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+      defColumnPos: 3
+  - name: 'TaxRegulationCodeInterest'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+      defColumnPos: 4
+  - name: 'SwiftMt565'
+    description: 'Code to be used for communication with SIX SIS.'
+    genericControls:
+      refTable: 'SwMT565MsgType'
+      refField: 'MsgType'
+      defColumnPos: 5

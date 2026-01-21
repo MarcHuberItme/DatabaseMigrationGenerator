@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AiTaxReportAiaSelectContracts'
+  description: 'Procedure is part of the CRS (Common Reporting Standard aka AIA Meldung, Proc: AiTaxReportAiaCollectData) and focus on Contracts (Forex aka Devisentermingeschäfte - DTG)'

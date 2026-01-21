@@ -1,0 +1,41 @@
+table:
+  name: 'PtConsCreditMonitorBatch'
+  description: 'Batchinformationen für die Konsumkreditüberwachung'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'KKG Überwachungsbatch'
+    - german:
+        formTitle: 'Consumercredit Batch'
+  columns:
+  - name: 'MonitoringDate'
+    description: 'Frist für die Überwachung der Kundendaten'
+    genericControls:
+      isNoUpdate: true
+  - name: 'InitStartDate'
+    description: 'Batch initial load start datum'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'InitCompletionDate'
+    description: 'Completion Datum der Initialdaten'
+  - name: 'DataRefreshStopDate'
+    description: ''
+  - name: 'LastDataRefresh'
+    description: ''
+  - name: 'PlannedForwardDate'
+    description: 'Geplantes Meldungsdatum (PlannedForwardDate > MonitoringDate)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ForwardPreparationDate'
+    description: ''
+  - name: 'BatchStatusNo'
+    description: '0 = Batch gestartet\r\n10 = Daten geladen\r\n20 = Konsumkredite überwachen\r\n30 = Meldungen vorbereitet'

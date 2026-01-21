@@ -1,0 +1,25 @@
+table:
+  name: 'PtPaymentType'
+  description: 'defines the types of payments\r\n\r\nthis table is relevant for expenses calculation.\r\na more precise classification related to the message type of a payment \r\nis in PtPaymentOrderMsgType'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment Type'
+    - german:
+        formTitle: 'Zahlungsart'
+  columns:
+  - name: 'PaymentTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

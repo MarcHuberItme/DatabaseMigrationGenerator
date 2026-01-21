@@ -1,0 +1,19 @@
+table:
+  name: 'PtCardJournalOrigin'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Origin'
+    description: '0 = Debit Online Web\r\n 1 = Debit Online XML\r\n 2 = Batch process (SIX-generated journal entry)\r\n 3 = Blocking application (SIX-generated journal entry)\r\n 4 = Card producer\r\n 6 = XML file input\r\n 7 = Online\r\n16 = 3-D Secure Portal\r\n18 = Mobile Services\r\n'
+    genericControls:
+      defColumnPos: 1

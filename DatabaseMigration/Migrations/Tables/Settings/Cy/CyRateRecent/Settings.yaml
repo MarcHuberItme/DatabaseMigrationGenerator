@@ -1,0 +1,52 @@
+table:
+  name: 'CyRateRecent'
+  description: 'Actual currency rates'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Recent Currency Rates'
+    - german:
+        formTitle: 'Aktuelle Währungskurse'
+  columns:
+  - name: 'CySymbolOriginate'
+    description: 'Symbol of originate currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 1
+  - name: 'CySymbolTarget'
+    description: 'Symbol of target currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'RateType'
+    description: 'Type of the currency rate'
+    genericControls:
+      refTable: 'CyRateType'
+      refField: 'RateType'
+      defColumnPos: 3
+  - name: 'ValidFrom'
+    description: 'Date from which the rate is valid'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValidTo'
+    description: 'Expiry of rate.'
+    genericControls:
+      defColumnPos: 5
+  - name: 'Rate'
+    description: 'Currency Rate'
+    genericControls:
+      defColumnPos: 6
+  - name: 'SourceName'
+    description: 'Name of the source, e.g. a trading place'
+  - name: 'PublisherName'
+    description: 'Name of the rate publischer, e.g. Reuters, Telekurs etc.'

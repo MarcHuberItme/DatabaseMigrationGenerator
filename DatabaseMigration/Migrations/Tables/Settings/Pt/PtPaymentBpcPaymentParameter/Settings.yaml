@@ -1,0 +1,29 @@
+table:
+  name: 'PtPaymentBpcPaymentParameter'
+  description: 'BPC Payment Parameter'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'BPC Payment Parameter'
+        helpText: 'BPC Payment Parameter'
+    - german:
+        formTitle: 'BPC Zahlungsparameter'
+        helpText: 'BPC Zahlungsparameter'
+  columns:
+  - name: 'PaymentOrderId'
+    description: 'Reference to payment order'
+    genericControls:
+      refTable: 'PtPaymentBpcPaymentOrder'
+      refField: 'Id'
+  - name: 'PaymentParameterName'
+    description: 'Name of parameter\r'
+  - name: 'PaymentParameterValue'
+    description: 'Parameter value'

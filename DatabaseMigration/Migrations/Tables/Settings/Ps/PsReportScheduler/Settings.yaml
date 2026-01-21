@@ -1,0 +1,82 @@
+table:
+  name: 'PsReportScheduler'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PsReportProcRule'
+        helpText: 'PsReportProcRule'
+    - german:
+        formTitle: 'PsReportProcRule'
+        helpText: 'PsReportProcRule'
+  columns:
+  - name: 'ReportID'
+    description: ''
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'SchedulerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'PeriodRuleNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 10
+  - name: 'PeriodRuleBase'
+    description: ''
+    genericControls:
+      defColumnPos: 12
+  - name: 'InputParams'
+    description: ''
+  - name: 'InputWhere'
+    description: ''
+  - name: 'InputOrderBy'
+    description: ''
+  - name: 'DeActivate'
+    description: ''
+  - name: 'ForArchive'
+    description: ''
+  - name: 'ForMail'
+    description: ''
+  - name: 'ForPrint'
+    description: ''
+  - name: 'PartnerID'
+    description: 'PartnerID for archive'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SubscriberUserList'
+    description: ''
+  - name: 'SubscriberEmailList'
+    description: ''
+  - name: 'ScheduledDate'
+    description: ''
+    genericControls:
+      defColumnPos: 30
+  - name: 'ScheduledHour'
+    description: ''
+  - name: 'ExecuteDate'
+    description: ''
+    genericControls:
+      defColumnPos: 40
+  - name: 'LastExecDate'
+    description: ''

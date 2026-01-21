@@ -1,0 +1,32 @@
+table:
+  name: 'PtBlockingOverride'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'BlockingId'
+    description: 'foreign-key; Id of PtBlocking'
+    genericControls:
+      refTable: 'PtBlocking'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OverrideUserId'
+    description: 'foreign-key; Id of AsUser\r\nuser overrides the blocking'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Comment'
+    description: 'comment why the user has to override the blocking'
+  - name: 'TriggerTableName'
+    description: ''
+  - name: 'TriggerTableId'
+    description: ''

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxCreateTaxReportExchangeValue'
+  description: 'select all necessery CyRateRecent and insert them into AxTaxReportSecurity\r\n\r\nFXrate is constructed as follows: EURAmount * ExchangeRate = CurrencyAmount'

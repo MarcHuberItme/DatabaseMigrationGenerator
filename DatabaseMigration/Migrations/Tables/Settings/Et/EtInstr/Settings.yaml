@@ -1,0 +1,93 @@
+table:
+  name: 'EtInstr'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'FsPrPrivateId'
+    description: 'Relation to internal product.'
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'Id'
+  - name: 'FsPrPublicId'
+    description: 'Relation to public product.'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+  - name: 'FsChangeDate'
+    description: 'Last change in the according PrPublic / prPrivate'
+  - name: 'FsSyncNo'
+    description: ''
+    genericControls:
+      refTable: 'EtSync'
+      refField: 'SyncNo'
+      hasDetailBtn: true
+  - name: 'FsTransferNo'
+    description: ''
+    genericControls:
+      refTable: 'EtTransfer'
+      refField: 'TransferNo'
+      hasDetailBtn: true
+  - name: 'instr_id'
+    description: ''
+  - name: 'isin'
+    description: ''
+  - name: 'valor_ch'
+    description: ''
+  - name: 'instr_type'
+    description: ''
+  - name: 'instr_name'
+    description: ''
+  - name: 'instr_name_de'
+    description: ''
+  - name: 'instr_name_en'
+    description: ''
+  - name: 'instr_name_fr'
+    description: ''
+  - name: 'instr_name_it'
+    description: ''
+  - name: 'instr_name_nl'
+    description: ''
+  - name: 'cmnt'
+    description: ''
+  - name: 'fn'
+    description: ''
+  - name: 'qn_type'
+    description: ''
+  - name: 'ccy_code'
+    description: ''
+  - name: 'cnt_code'
+    description: ''
+  - name: 'call_put'
+    description: ''
+  - name: 'date_issue'
+    description: ''
+  - name: 'date_rdmp'
+    description: ''
+  - name: 'price_issue'
+    description: ''
+  - name: 'price_rdmp'
+    description: ''
+  - name: 'int_rate'
+    description: ''
+  - name: 'eusd_scope'
+    description: ''
+  - name: 'dpy_cust_cnt'
+    description: ''
+  - name: 'grdfth_bond'
+    description: ''
+  - name: 'fd_legal_form'
+    description: ''
+  - name: 'fd_eu_pass'
+    description: ''
+  - name: 'status'
+    description: ''

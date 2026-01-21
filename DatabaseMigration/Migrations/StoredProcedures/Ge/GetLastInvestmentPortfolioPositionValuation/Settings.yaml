@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetLastInvestmentPortfolioPositionValuation'
+  description: 'Returns list of valuations for last valuation date for a portfolio.'

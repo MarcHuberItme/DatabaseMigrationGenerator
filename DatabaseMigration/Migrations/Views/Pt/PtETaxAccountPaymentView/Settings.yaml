@@ -1,0 +1,90 @@
+view:
+  name: 'PtETaxAccountPaymentView'
+  description: ''
+frontendView:
+  name: 'PtETaxAccountPaymentView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtETaxAccountPaymentView'
+        helpText: 'PtETaxAccountPaymentView'
+    - german:
+        formTitle: 'PtETaxAccountPaymentView'
+        helpText: 'PtETaxAccountPaymentView'
+    - french:
+        formTitle: 'PtETaxAccountPaymentView'
+        helpText: 'PtETaxAccountPaymentView'
+    - italian:
+        formTitle: 'PtETaxAccountPaymentView'
+        helpText: 'PtETaxAccountPaymentView'
+  columns:
+  - name: 'TaxReportJobNo'
+    description: ''
+    dataType: 'int'
+  - name: 'TaxReportDataId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'PositionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'HasPayment'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PaymentDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'AmountCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'Amount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ExchangeRate'
+    description: ''
+    dataType: 'float'
+  - name: 'GrossRevenueA'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'GrossRevenueB'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'WithHoldingTaxClaim'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'HelpTaxReportClass'
+    description: ''
+    dataType: 'char'
+    prec: 1

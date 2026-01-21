@@ -1,0 +1,45 @@
+table:
+  name: 'PtAccountPaybackType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Payback Type'
+        helpText: 'Type of payback (direct, indirect, etc.)'
+    - german:
+        formTitle: 'Amortisationstypen'
+        helpText: 'Amortisationstypen (direkt, indirekt etc.)'
+    - french:
+        formTitle: 'Types d''amortisation'
+        helpText: 'Types d''amortisations (direct, indirect, etc.)'
+    - italian:
+        formTitle: 'Typo d''ammortamento'
+        helpText: 'Typo d''ammortamento (diretto, indiretto etc.)'
+  columns:
+  - name: 'AccountPaybackTypeNo'
+    description: '10 = direct payback\r\n20 = indirect payback\r\n30 = annuity\r\n'
+    genericControls:
+      defColumnPos: 1
+  - name: 'HasAccountList'
+    description: 'Describing if this Type needs an account list "PtAccountPaybackAccountList") which is shown on the Form. For indirect paybacks the account list has to be shown.\r\n--\r\nFlag welches beschreibt, ob die Sub-Entität Kontoliste ("PtAccountPaybackAccountList") notwendig ist oder nicht. Für indirekte Amortisationen. Steuert, ob die Sub-Entität Kontoliste für diesem PaybackTyp angezeigt wird'
+  - name: 'HasAnnuity'
+    description: 'Discribes if this Paybacktype has Annuity-Bookings and if those are visible on the screen ("PtAccountPaybackAnnuityBookings") \r\n--\r\nFlag welches beschreibt, ob die Sub-Entität Annuitäts-Buchungen ("PtAccountPaybackAnnuityBookings") notwendig ist oder nicht. Steuert, ob diese auf dem Bildschirm sichtbar sind für diesen Paybacktype.'
+  - name: 'CanHaveExtPayback'
+    description: 'Flag describing if external paybacks (i.e. paybacks on third party accounts such as insurance policies 3. Säule) are possible and if the Flag PtAccountPayback.IsExtPayback is shown. In case of indirect amortisations the indirect payments might work with third parties such as insurance companies or other banks than ours.\r\n--\r\nFlag welches beschreibt, ob das zusätzliche Flag PtAccountPayback.IsExtPayback) angezeigt wird oder nicht. Im Falle der indirekten Ammo kann der Account bei Drittbanken oder Versicherungen extern amortisiert werden.'
+  - name: 'CanHaveAutoMaxAmount'
+    description: 'If = 1, then the maximum amount for indirect amortisation can be taken for this PaybackType and the flags UseMaxAmount and UseMaxAmountSelfEmpl (table PtAccountPayback) are shown on the screen.\r\n--\r\nFlag welches beschreibt, ob bei indirekten Amortisation automatisch der Maximalbetrag eingesetzt werden kann. Steuert, ob die Flags UseMaxAmount und UseMaxAmountSelfEmpl aus der Tabelle PtAccountPayback bei diesem PaybackType angezeigt wird.'
+  - name: 'HasStatus'
+    description: 'Flag shows if the payback status is relevant and has to be shown on the screen. For indirect amortisations.\r\n--\r\nFlag welches beschreibt, ob die Sub-Entität Status (PtAccountPaybackStatus) angezeigt wird. Für Indirekte Amortisationen.'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

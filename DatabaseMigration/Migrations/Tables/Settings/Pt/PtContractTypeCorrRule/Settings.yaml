@@ -1,0 +1,54 @@
+table:
+  name: 'PtContractTypeCorrRule'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Conract Correspondence'
+        helpText: 'Conract Correspondence Rules'
+    - german:
+        formTitle: 'Kontaktkorrespondenz'
+    - french:
+        formTitle: 'Contact la correspondance'
+  columns:
+  - name: 'ContractTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtContractType'
+      refField: 'ContractType'
+      defColumnPos: 1
+  - name: 'AddressTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAddressType'
+      refField: 'AddressTypeNo'
+  - name: 'CarrierTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsCarrierType'
+      refField: 'CarrierTypeNo'
+  - name: 'DeliveryRuleNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+  - name: 'DetourGroup'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'CorrItemGroupNo'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItemGroup'
+      refField: 'CorrItemGroupNo'
+  - name: 'CopyNumber'
+    description: ''

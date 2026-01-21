@@ -1,0 +1,19 @@
+table:
+  name: 'PtPaymentScanTemplateType'
+  description: 'Different template types of payment slips.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'TypeNo'
+    description: ''
+  - name: 'IsOrderTemplate'
+    description: '0 = Payment slip template\r\n1 = Order slip template'
+  - name: 'IsPayeeIdMandatory'
+    description: 'Defines if the payee must be identified from AsPayee for this type of template or not.'

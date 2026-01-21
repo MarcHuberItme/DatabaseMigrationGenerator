@@ -1,0 +1,32 @@
+table:
+  name: 'AsExtAppTransferProcessDetail'
+  description: 'AsExtAppTransferProcessDetail'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ExternAppTransferProcessSeqId'
+    description: ''
+  - name: 'JobCode'
+    description: ''
+  - name: 'JobDate'
+    description: ''
+  - name: 'ExeActualStart'
+    description: ''
+  - name: 'ExeActualEnd'
+    description: ''
+  - name: 'ObjectName'
+    description: ''
+  - name: 'Status'
+    description: ''
+  - name: 'JobCount1'
+    description: ''
+  - name: 'JobCount2'
+    description: ''
+  - name: 'Detail'
+    description: ''

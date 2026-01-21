@@ -1,0 +1,25 @@
+table:
+  name: 'PrPublicPriceStaticType'
+  description: 'Codetabel for Static Prices'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+  columns:
+  - name: 'PriceStaticTypeNo'
+    description: 'Code how static is this Price'
+    genericControls:
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'Delay'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      noUpdatePos: 1

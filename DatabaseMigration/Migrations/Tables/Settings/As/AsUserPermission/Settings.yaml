@@ -1,0 +1,26 @@
+table:
+  name: 'AsUserPermission'
+  description: 'Denormalized table to hold a user''s permission'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'User Permissions'
+    - german:
+        formTitle: 'Benutzerberechtigungen'
+  columns:
+  - name: 'UserName'
+    description: 'Name of the user.'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+  - name: 'PermissionTypeNo'
+    description: '1 = Function based Permission \r\n2 = Data based Permission'
+  - name: 'PermissionArray'
+    description: 'Byte Array with permission info on each position.'

@@ -1,0 +1,71 @@
+view:
+  name: 'PtAgrEBankingSearchView'
+  description: 'Search for e-banking contracts.'
+frontendView:
+  name: 'PtAgrEBankingSearchView'
+  description: 'Only for table generation purpose.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AgreementId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'AgreementNumber'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'PartnerNumber'
+    description: ''
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 38
+    scale: 38
+  - name: 'ValidFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ValidTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'AcceptanceDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'SequenceNumber'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+  - name: 'IsBLinkAllowed'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'BLinkTermsConditionsAcceptedAt'
+    description: ''
+    dataType: 'datetime'
+  - name: 'InstantDomesticPaymentsAllowed'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Remark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'IsInternetBankingAllowed'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AGBAcceptedByCustomerDateTime'
+    description: ''
+    dataType: 'datetime'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true

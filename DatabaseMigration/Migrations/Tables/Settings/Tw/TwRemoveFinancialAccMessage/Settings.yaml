@@ -1,0 +1,34 @@
+table:
+  name: 'TwRemoveFinancialAccMessage'
+  description: 'Contains the message to remove account from the list of available TWINT accounts.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: bad6dd0b-5ed3-4cee-b419-0b3faf9ddacc
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Remove Account Message'
+    - german:
+        formTitle: 'Remove Account Message'
+  columns:
+  - name: 'HeaderMessageId'
+    description: 'Id of TwHeaderMessage'
+    genericControls:
+      refTable: 'TwHeaderMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PrivateCustomerId'
+    description: 'TWINT contract id'
+  - name: 'Iban'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true

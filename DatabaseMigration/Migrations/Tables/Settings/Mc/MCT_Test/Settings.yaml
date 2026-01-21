@@ -1,0 +1,39 @@
+table:
+  name: 'MCT_Test'
+  description: 'asdfsadf'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'test'
+    - german:
+        formTitle: 'test'
+    - french:
+        formTitle: 'test'
+  columns:
+  - name: 'Notes'
+    description: 'sdfsadf'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'CountryCode'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+      isNoUpdate: true

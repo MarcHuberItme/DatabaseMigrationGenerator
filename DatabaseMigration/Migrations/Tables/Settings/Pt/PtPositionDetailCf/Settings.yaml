@@ -1,0 +1,38 @@
+table:
+  name: 'PtPositionDetailCf'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PublicCfId'
+    description: 'Foreign key to cashflow present in PrPublicCf'
+    genericControls:
+      refTable: 'PrPublicCf'
+      refField: 'Id'
+  - name: 'PositionDetailId'
+    description: 'FK to the PtPositionDetail'
+    genericControls:
+      refTable: 'PtPositionDetail'
+      refField: 'Id'
+  - name: 'DueDate'
+    description: 'Date on which this particular CF is due to be paid to customer'
+  - name: 'ProcessDate'
+    description: 'Date on which this particular CF is processed through the corporate actions application'
+  - name: 'PaymentDate'
+    description: 'Date value in this field represents if a payment to the client has been made. NULL value means no payment has been made'
+  - name: 'ProcessTransMsgId'
+    description: 'It is the position where the particular CashFlow is processed'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+  - name: 'PaymentTransMsgId'
+    description: 'It is the position where the particular CashFlow is payed to the customer'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'

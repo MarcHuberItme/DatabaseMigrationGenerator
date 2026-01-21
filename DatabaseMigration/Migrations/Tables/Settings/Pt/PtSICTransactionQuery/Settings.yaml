@@ -1,0 +1,56 @@
+table:
+  name: 'PtSICTransactionQuery'
+  description: 'SIC online query for transactions.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'SettlementDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'AccountOwnerId'
+    description: ''
+  - name: 'SystemCode'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'SettlementAccount'
+    description: ''
+  - name: 'PaymentCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'QueryType'
+    description: ''
+    genericControls:
+      refTable: 'PtSicISOQueryType'
+      refField: 'IsoCode'
+      defColumnPos: 3
+  - name: 'InstructingParticipant'
+    description: ''
+  - name: 'InstructedParticipant'
+    description: ''
+  - name: 'NextPageNumber'
+    description: ''
+  - name: 'DebitCreditInd'
+    description: ''
+    genericControls:
+      refTable: 'PtSicIsoPayDirection'
+      refField: 'PayDirectCode'
+  - name: 'TransactionId'
+    description: ''
+  - name: 'PaymentFrom'
+    description: ''
+  - name: 'PaymentTo'
+    description: ''

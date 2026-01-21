@@ -1,0 +1,87 @@
+table:
+  name: 'MdFieldData'
+  description: 'Meta Data for field definitions'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: d18c2bae-7838-4b83-a18e-29041114c63e
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Field Definition'
+    - german:
+        formTitle: 'Felddefinition'
+  columns:
+  - name: 'TableId'
+    description: 'Id of the Table the Field belongs to'
+    genericControls:
+      refTable: 'MdTableDataDef'
+      refField: 'Id'
+  - name: 'TableName'
+    description: 'Id of the table the field belongs to'
+    genericControls:
+      refTable: 'MdTableDataDef'
+      refField: 'TableName'
+  - name: 'FieldName'
+    description: 'Name of the Field'
+    genericControls:
+      defColumnPos: 1
+  - name: 'DataType'
+    description: 'Datatype of the field in SQL-Server syntax'
+  - name: 'IsNotNull'
+    description: 'Not null flag.\r\nTrue = Null value forbidden\r\nFalse = Null value allowed\r\n'
+  - name: 'IsUnique'
+    description: 'Flag whether the field is unique within the table.\r\nTrue = Field is unique\r\nFalse = Field is not unique'
+  - name: 'Prec'
+    description: 'Precision of number or length of string'
+  - name: 'Scale'
+    description: 'Specifies the maximum numbers of decimal digits that can be stored to the right of the decomal point.'
+  - name: 'MinValue'
+    description: 'Minimum value of the field'
+  - name: 'MaxValue'
+    description: 'Maximum Value of the field'
+  - name: 'DefaultValue'
+    description: 'Default value if not other value is assigned'
+  - name: 'MultiLine'
+    description: 'Flag which specifies whether a character field has to be displayed as multi-line field or not.'
+  - name: 'RefTable'
+    description: 'Table which is referenced by that field'
+    genericControls:
+      refTable: 'MdTableDataDef'
+      refField: 'TableName'
+  - name: 'RefField'
+    description: 'Fiels which is referenced by the actual field'
+    genericControls:
+      refTable: 'MdField'
+      refField: 'FieldName'
+  - name: 'HasDetailBtn'
+    description: 'Flag\r\nTrue = There must be a detail Button for a selection\r\nFalse = No detail buttn'
+  - name: 'VisNumber'
+    description: 'Number of confirmations needed for that field.'
+  - name: 'DefSizeX'
+    description: 'obsolete'
+  - name: 'DefSizeY'
+    description: 'obsolete'
+  - name: 'DefPosX'
+    description: 'obsolete'
+  - name: 'DefPosY'
+    description: 'obsolete'
+  - name: 'TabOrder'
+    description: 'obsolete'
+  - name: 'DefColumnPos'
+    description: 'Default position of column if table is displayed in a grid.'
+  - name: 'DefColumnWidth'
+    description: 'obsolete'
+  - name: 'NoUpdatePos'
+    description: 'Position of field in NoUpdateFlag of header hdStandard'
+  - name: 'IsOnlyForMig'
+    description: 'Flag which marks a field to be used only for migration. The generic editor will generate these fields in a separated container. These fields may not be used for application logic, because they will be dropped after the migration period.'
+  - name: 'IsNoUpdate'
+    description: 'Prevents the field from beeing updated with the generic controls.'
+  - name: 'IsIdentity'
+    description: 'IDENTITY attribute for numeric data types'

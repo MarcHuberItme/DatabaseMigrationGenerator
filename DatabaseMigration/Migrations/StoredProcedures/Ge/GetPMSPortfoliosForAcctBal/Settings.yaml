@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPMSPortfoliosForAcctBal'
+  description: 'Retrieve list of PMS portfolios to request account balances from Netfolio'

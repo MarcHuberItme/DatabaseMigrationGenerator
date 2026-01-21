@@ -1,0 +1,42 @@
+table:
+  name: 'DbJob'
+  description: 'Db Scripts/Jobs, eventually executed via JCS. Pilot jobs are Deposit Solution data extraction jobs'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'JobCode'
+    description: ''
+  - name: 'JobName'
+    description: ''
+  - name: 'DependentJobCode1'
+    description: ''
+  - name: 'WaitTimeForDependent1'
+    description: ''
+  - name: 'DependentJobCode2'
+    description: ''
+  - name: 'WaitTimeForDependent2'
+    description: ''
+  - name: 'SuccessorJobCode1'
+    description: ''
+  - name: 'WaitTimeForSuccessor1'
+    description: ''
+  - name: 'SuccessorJobCode2'
+    description: ''
+  - name: 'WaitTimeForSuccessor2'
+    description: ''
+  - name: 'JobStatus'
+    description: ''
+  - name: 'PlanStartTime'
+    description: ''
+  - name: 'JobExeFrequency'
+    description: ''
+  - name: 'Description'
+    description: ''
+  - name: 'SeqId'
+    description: ''

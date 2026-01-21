@@ -1,0 +1,37 @@
+table:
+  name: 'PtTransItemIsoTransactionCode'
+  description: 'Relation between TransItem and IsoTransactionCode'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'TransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+      defColumnPos: 1
+  - name: 'TextNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      defColumnPos: 2
+  - name: 'DebitIsoTransactionCodeId'
+    description: ''
+    genericControls:
+      refTable: 'PtIsoTransactionCode'
+      refField: 'Id'
+      defColumnPos: 3
+  - name: 'CreditIsoTransactionCodeId'
+    description: ''
+    genericControls:
+      refTable: 'PtIsoTransactionCode'
+      refField: 'Id'
+      defColumnPos: 4

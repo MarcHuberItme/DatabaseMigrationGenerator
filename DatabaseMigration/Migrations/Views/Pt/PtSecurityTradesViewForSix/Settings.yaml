@@ -1,0 +1,3 @@
+view:
+  name: 'PtSecurityTradesViewForSix'
+  description: 'this view is based on PtSecurityTradeView (which is used for Effektenjournal) and is for SIX-Reporting'

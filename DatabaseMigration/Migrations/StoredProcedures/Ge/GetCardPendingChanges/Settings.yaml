@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetCardPendingChanges'
+  description: 'get pending changes for a given card.'

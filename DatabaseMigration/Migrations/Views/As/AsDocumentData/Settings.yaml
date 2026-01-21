@@ -1,0 +1,89 @@
+view:
+  name: 'AsDocumentData'
+  description: 'Access Archiv-Documents\r\nProductiion : Fs (BankCode) Arch.AsDocumentData_All\r\nDevelopemnt / Test : AsDocumentData_O'
+frontendView:
+  name: 'AsDocumentData'
+  description: 'bitte diese Tabelle nicht aus dem datadefiner löschen. MdFields werden benötigt im DataAccess.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'binary document'
+    - german:
+        formTitle: 'Dokument'
+  columns:
+  - name: 'DocumentId'
+    description: 'foreign-key;  Id of AsDocument\r\nn single document files (AsDocumentData) are related to one document (AsDocument)'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsDocument'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'Format'
+    description: 'Format of Document (like .jpg / .bmp / .tif - or Winword95, Winword97)'
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 20
+    genericControls:
+      refTable: 'AsDocumentFormat'
+      refField: 'Format'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'RecordDate'
+    description: 'date of ''recording'' (scanndate or printdate) the document. \r\ne.g.: a document can be scanned on the 5.12.200X but only saved on the 6.12.200X because it has first to be edited.'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'Location'
+    description: '1 = Operativ\r\n2 = Archiv'
+    dataType: 'tinyint'
+    defaultValue: '1'
+    genericControls:
+      isNoUpdate: true
+  - name: 'StatusNo'
+    description: 'Document status (draft, completed, signed, retained mail (banklagernd),...)'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsDocumentStatus'
+      refField: 'StatusNo'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'Comments'
+    description: 'Comments of the document.\r\nWhen a document can no more be modified, because it as no more the status draft then there can be added here a remark or description of the error.'
+    dataType: 'nvarchar'
+    prec: 500
+    genericControls:
+      multiLine: true
+  - name: 'Datastring'
+    description: 'binary data of a single document'
+    dataType: 'varbinary'
+  - name: 'Replaceable'
+    description: 'If true the file can be replaced when the returned document is scanned'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ExpirationStart'
+    description: 'On this date, the legally required keeping and retention period for this document starts.\r\nFor documents that may never be deleted, this field contains the date of 31.12.9999 (but just 9999-12-31 00:00:00.000, no time!)'
+    dataType: 'datetime'
+  - name: 'Sign'
+    description: 'In diesem Feld werden die Verschlüsstelten Daten des Dokumentes abgelegt.\r\nHASH, Dokumentengrösse, TimeStamp der Erstellung und TimeStamp der Verschlüsselung'
+    dataType: 'varbinary'
+    prec: 1024
+  - name: 'PublicKeyId'
+    description: 'PublicKeyId for asPublicKey'
+    dataType: 'uniqueidentifier'
+  - name: 'SignStatusNo'
+    description: 'NEW_DOCUMENT = 0\r\nIN_PROGRESS = 1\r\nSIGNED = 2\r\nINTEGRITY_CHECKED = 3\r\nHASH_FAILURE = 91\r\nTIMESTAMP_FAILURE = 92\r\nSIZE_FAILURE = 93\r\nCHECK_ERROR = 9999\r\n'
+    dataType: 'smallint'
+    defaultValue: '0'

@@ -1,0 +1,61 @@
+table:
+  name: 'PtShadowPerformance'
+  description: 'Performance of a shadow account'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'ShadowAccountId'
+    description: 'reference to shadowaccount'
+    genericControls:
+      refTable: 'PtShadowAccount'
+      refField: 'Id'
+  - name: 'Portfolio'
+    description: 'portfolio number'
+  - name: 'StartDate'
+    description: 'start date of the period'
+  - name: 'EndDate'
+    description: 'end date of the period'
+  - name: 'Year'
+    description: 'year of the corresponding period'
+  - name: 'EndingCapital'
+    description: 'Ending capital of the period (without accrued interest)'
+  - name: 'EndingCapitalFlag'
+    description: '1 = time series contains an end capital with 0; 0 = time series complete. datatype should be bit / bool, but input of csv is string / int.'
+  - name: 'RORGrossGross'
+    description: 'time-weighted rate of return gross/gross'
+  - name: 'RORNetGross'
+    description: 'time-weighted rate of return net/gross'
+  - name: 'RORNetNet'
+    description: 'time-weighted rate of return net/gross'
+  - name: 'RORGrossGrossYtd'
+    description: 'time-weighted rate of return gross/gross ytd'
+  - name: 'RORGrossGrossAll'
+    description: 'time-weighted rate of return gross/gross over all'
+  - name: 'RORNetGrossYtd'
+    description: 'time-weighted rate of return net/gross ytd'
+  - name: 'RORNetGrossAll'
+    description: 'time-weighted rate of return net/gross over all'
+  - name: 'RORNetNetYtd'
+    description: 'time-weighted rate of return net/net ytd'
+  - name: 'RORNetNetAll'
+    description: 'time-weighted rate of return net/net over all'
+  - name: 'CashflowGrossGross'
+    description: 'cashflow gross/gross'
+  - name: 'CashflowGrossGrossAll'
+    description: 'cashflow gross/gross over all'
+  - name: 'CashflowNetGross'
+    description: 'cashflow net/gross'
+  - name: 'CashflowNetGrossAll'
+    description: 'cashflow net/gross over all'
+  - name: 'CashflowNetNet'
+    description: 'cashflow net/net'
+  - name: 'CashflowNetNetAll'
+    description: 'cashflow net/net over all'

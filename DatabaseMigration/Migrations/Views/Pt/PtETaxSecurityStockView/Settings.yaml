@@ -1,0 +1,112 @@
+view:
+  name: 'PtETaxSecurityStockView'
+  description: ''
+frontendView:
+  name: 'PtETaxSecurityStockView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtETaxSecurityStockView'
+        helpText: 'PtETaxSecurityStockView'
+    - german:
+        formTitle: 'PtETaxSecurityStockView'
+        helpText: 'PtETaxSecurityStockView'
+    - french:
+        formTitle: 'PtETaxSecurityStockView'
+        helpText: 'PtETaxSecurityStockView'
+    - italian:
+        formTitle: 'PtETaxSecurityStockView'
+        helpText: 'PtETaxSecurityStockView'
+  columns:
+  - name: 'TaxReportJobNo'
+    description: ''
+    dataType: 'int'
+  - name: 'TaxReportDataId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 11
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'DepotNumber'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 11
+  - name: 'TaxPosId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ElementType'
+    description: ''
+    dataType: 'varchar'
+    prec: 18
+  - name: 'ReferenceDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Mutation'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'QuotationType'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+  - name: 'Quantity'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'BalanceCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'UnitPrice'
+    description: ''
+    dataType: 'decimal'
+    prec: 28
+    scale: 10
+  - name: 'Balance'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ReductionCost'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ExchangeRate'
+    description: ''
+    dataType: 'float'
+  - name: 'Value'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'Blocked'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'BlockingTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'HelpPosSequence'
+    description: ''
+    dataType: 'int'
+  - name: 'HelpTaxDetailId'
+    description: ''
+    dataType: 'uniqueidentifier'

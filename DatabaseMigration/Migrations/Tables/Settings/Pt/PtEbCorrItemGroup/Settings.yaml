@@ -1,0 +1,32 @@
+table:
+  name: 'PtEbCorrItemGroup'
+  description: 'Junction table contains PK of AsCorrItem and PtEbDocumentGroup'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Document group'
+    - german:
+        formTitle: 'Dokumentengruppe'
+  columns:
+  - name: 'DocumentId'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'DocumentGroupId'
+    description: ''
+    genericControls:
+      refTable: 'PtEbDocumentGroup'
+      refField: 'Id'
+      defColumnPos: 2

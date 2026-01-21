@@ -1,0 +1,44 @@
+table:
+  name: 'PtMLDetResultForTmeR'
+  description: 'Contains the results of selected partner following the rules of 111 or 112'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'TmeR Detection Result'
+    - german:
+        formTitle: 'TmeR Erkennungsergebnis'
+    - french:
+        formTitle: 'Résultat de TmeR dét.'
+    - italian:
+        formTitle: 'TmeR Risultato rilevame'
+  columns:
+  - name: 'PaymentDate'
+    description: 'Payment date'
+  - name: 'PartnerNo'
+    description: 'Partner number'
+  - name: 'NumberOfPayments'
+    description: 'Number of payments'
+  - name: 'Currency'
+    description: ''
+  - name: 'Volume'
+    description: 'Total amount of selected transaction per partner'
+  - name: 'RuleNo'
+    description: 'Number of the rule'
+  - name: 'TransDateTimeMin'
+    description: 'Min  datetime of the selected transactions'
+  - name: 'TransDateTimeMax'
+    description: 'Max  datetime of the selected transactions'
+  - name: 'MonitoringLogId'
+    description: 'Id to the Monitoring record'
+    genericControls:
+      refTable: 'PtMLMonitoringLog'
+      refField: 'Id'
+  - name: 'LastProcessingDateTime'
+    description: 'Last processing date time, it will filled through the job.'

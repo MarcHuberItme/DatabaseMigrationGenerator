@@ -1,0 +1,34 @@
+table:
+  name: 'AcFireMappingType'
+  description: 'Codetabelle für Migrationsregeln'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Migrationsregel Typ'
+        helpText: 'Migrationsregel Typ'
+    - german:
+        formTitle: 'Migrationsregel Typ'
+        helpText: 'Migrationsregel Typ'
+    - french:
+        formTitle: 'Migrationsregel Typ'
+        helpText: 'Migrationsregel Typ'
+    - italian:
+        formTitle: 'Migrationsregel Typ'
+        helpText: 'Migrationsregel Typ'
+  columns:
+  - name: 'MappingTypeNo'
+    description: '10	Gem. Bilanzzuordnung HB\r\n20	Gem. Bilanzzuord. Konti\r\n30	Münzen positiv\r\n31	Münzen negativ\r\n40	Eigene Kassenobligatione\r\n50	Kundenportfolio\r\n60	unused\r\n70	Eigene WS Handelsbestand\r\n71	Eigene WS Finanzanlagen\r\n72	Eigene WS Beteiligungen\r\n80	Einzel-WB Spez. Details\r\n90	Manuelle Datenerfassung'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ViewName'
+    description: 'View für Fileexport (Datapreparation)'

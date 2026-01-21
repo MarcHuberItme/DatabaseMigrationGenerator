@@ -1,0 +1,35 @@
+table:
+  name: 'ReBuildingInsuranceType'
+  description: 'z.B. Feuer, Wasser, Feuer und Wasser etc.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Insurance Type'
+    - german:
+        formTitle: 'Versicherungsart'
+  columns:
+  - name: 'InsuranceTypeNo'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'IncludesFireRisk'
+    description: ''
+  - name: 'IncludesWaterRisk'
+    description: ''
+  - name: 'IncludesExplosionRisk'
+    description: ''
+  - name: 'IncludesElementaryDamageRisk'
+    description: ''
+  - name: 'IncludesLightningRisk'
+    description: ''
+  - name: 'SortNo'
+    description: ''

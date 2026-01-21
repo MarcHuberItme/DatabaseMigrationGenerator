@@ -1,0 +1,129 @@
+table:
+  name: 'PtAgrEBanking'
+  description: 'agreement between a partner and the bank about EBanking business.\r\ncan be a stand-alone agreement or a component of the BaseAgreement HISTORY darf auf keinen Fall ausgeschaltet werden ! Nachweis des Bevollmächtigten Registers.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'MgVTNo'
+    navigation:
+      applicationKey: 'SeqNo'
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'E-Banking agreement'
+    - german:
+        formTitle: 'E-Banking Vereinbarung'
+    - french:
+        formTitle: 'Contrat e-banking'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key; Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ContactPersonId'
+    description: 'This field is for example used when a contact person (for example Chief Financial Officer) within a company (PtBase) should have an own InternetBankingAgreement and the contact person has no PtBase.'
+    genericControls:
+      refTable: 'PtContactPersonView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'SeqNo'
+    description: 'Sequential numbering of agreements, unique within a partner.'
+  - name: 'VersionNo'
+    description: 'document version of the agreement'
+  - name: 'PrintDate'
+    description: ''
+  - name: 'BeginDate'
+    description: ''
+  - name: 'ExpirationDate'
+    description: ''
+  - name: 'PeriodOfNotice'
+    description: 'period of time to cancel the deal; in days, month or years'
+  - name: 'Interval'
+    description: 'foreign-key;  candidate-key of AsInterval (Interval)\r\n(VB-function DateAdd)  d, m, yyyy of the PeriodOfNotice'
+    genericControls:
+      refTable: 'AsInterval'
+      refField: 'Interval'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'CorrByEmail'
+    description: 'If true, the E-Banking-User wants his correspondence by E-Mail.'
+  - name: 'SelectAll'
+    description: 'If true, the E-Banking-Access is generally effective for all proxies the user has. It''s possible to define excpetions in table PtAgrEBankingDetail.\r\nIf false, the E-Banking-Access is selective, that means it''s only effective for Accounts/Portfolios that are defined in PtAgrEBankingDetail.'
+  - name: 'QueryRestriction'
+    description: 'If true then it''s not possible to see a statement of account.'
+  - name: 'QueryDetailRestriction'
+    description: 'If true then it''s not possible to see details of a payment.'
+  - name: 'BalanceRestriction'
+    description: 'If true then it''s not possible to see the balance.'
+  - name: 'OrderRestriction'
+    description: 'If true then it''s not possible to make an order (payment or stock market) by E-Banking.'
+  - name: 'AmountLimit'
+    description: 'If filled, the E-Banking-User has defined an amount-limit for E-Banking-Payments.'
+  - name: 'MgVTNo'
+    description: 'Vertragsnummer aus FIS-2000 (z.B. 555973)'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgStatus'
+    description: 'Information about Migration status.'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'AcceptanceDate'
+    description: ''
+  - name: 'InternetbankingAllowed'
+    description: 'If true, the E-Banking agreement can be used for internet banking'
+  - name: 'PhonebankingAllowed'
+    description: 'If true, the E-Banking agreement can be used for phone-banking'
+  - name: 'EsrFileFormat'
+    description: 'False: EsrFiles are created with CrLF\r\nTrue: EsrFiles are created without CrLf'
+  - name: 'AGBacceptedByCustomer'
+    description: 'If this field is NULL, the customer is forced to accept the AGB (Allgemeine Geschäftsbedingungen) in the E-Banking frontend.'
+  - name: 'IsForMammut'
+    description: ''
+  - name: 'CustomerReference'
+    description: 'CustomerReference (Rubrik) to display in the contract chooser dialog'
+  - name: 'PFMSequenceNo'
+    description: 'Sequence number for PFM. This is used for the login/identification to PFM.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PFMAGBacceptedByCustomer'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'CanActivateNewEbanking'
+    description: ''
+  - name: 'ConfirmTransactions'
+    description: ''
+  - name: 'CashOrderAGBacceptedByCustomer'
+    description: 'If this field is NULL, the customer is forced to accept the AGB (Allgemeine Geschäftsbedingungen) when he wants to use the Cashorder functionality in eBanking.'
+  - name: 'IsBLinkAllowed'
+    description: 'Flag if blink is allowed'
+  - name: 'BLinkTermsConditionsAcceptedAt'
+    description: 'If this field is NULL, the customer is forced to accept the terms and conditions in the E-Banking frontend.'
+  - name: 'InstantDomesticPaymentsAllowed'
+    description: 'Flag whether agreement is able to create domestic instant payments or not'
+  - name: 'CurrencyRef'
+    description: 'Currency Reference to CyBase - decomissioned'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Id'
+  - name: 'Currency'
+    description: 'Currency Symbol'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'

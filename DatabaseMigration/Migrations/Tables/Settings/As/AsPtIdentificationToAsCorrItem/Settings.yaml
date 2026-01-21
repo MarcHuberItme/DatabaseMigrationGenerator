@@ -1,0 +1,33 @@
+table:
+  name: 'AsPtIdentificationToAsCorrItem'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'IdentificationTypeId'
+    description: 'type of identification (exp. driver licence, passport, etc.)'
+    genericControls:
+      refTable: 'PtIdentificationType'
+      refField: 'Id'
+  - name: 'AsCorrItemId'
+    description: 'Type of a document with other characteristics'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+  - name: 'DocumentTypeNo'
+    description: 'Type No to which AsDocument table refers.'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'ItemNo'
+  - name: 'IsUsedForNaturalPerson'
+    description: 'If identification is used for natural person or not.'
+  - name: 'IsUsedForLegalPerson'
+    description: 'If identification is used for legal person or not.'

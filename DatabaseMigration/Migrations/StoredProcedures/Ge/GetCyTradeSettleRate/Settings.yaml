@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetCyTradeSettleRate'
+  description: ''

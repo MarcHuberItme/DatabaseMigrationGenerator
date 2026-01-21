@@ -1,0 +1,19 @@
+table:
+  name: 'PtDsRequest'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Status'
+    description: 'enum { \r\nInitialized,\r\nSent, \r\nPending,\r\nProcessed,\r\nFailed\r\n}'
+    genericControls:
+      defColumnPos: 1
+  - name: 'StatusUrl'
+    description: 'API Endpoint to check for all PtDsPartnerTransfer with this PtDsRequest.Id'

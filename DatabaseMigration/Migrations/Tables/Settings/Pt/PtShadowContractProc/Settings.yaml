@@ -1,0 +1,37 @@
+table:
+  name: 'PtShadowContractProc'
+  description: 'Processing control for the reading and posting process.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Processing control'
+    - german:
+        formTitle: 'Verarbeitungsprozess'
+    - french:
+        formTitle: 'contrôle de traitement'
+  columns:
+  - name: 'FileName'
+    description: 'name of inventory file'
+    genericControls:
+      defColumnPos: 1
+  - name: 'StartTime'
+    description: 'start of processing'
+    genericControls:
+      defColumnPos: 2
+  - name: 'EndTime'
+    description: 'End of processing'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ProcState'
+    description: 'status of the import process:\r\n 0 = initialized\r\n10 = File imported\r\n20 = in process\r\n30 = processed OK (build contracts)\r\n40 = Payments done\r\n90 = defective'
+    genericControls:
+      defColumnPos: 4

@@ -1,0 +1,32 @@
+table:
+  name: 'ReLandValuation'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Land Valuation'
+    - german:
+        formTitle: 'Land Schätzung'
+  columns:
+  - name: 'ValuationId'
+    description: ''
+    genericControls:
+      refTable: 'ReValuation'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'LandId'
+    description: ''
+    genericControls:
+      refTable: 'ReLand'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PriceM2'
+    description: ''

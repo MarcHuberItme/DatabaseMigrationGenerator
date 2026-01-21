@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AsMessageText_GetText'
+  description: 'Get Message Text for MessageBox'

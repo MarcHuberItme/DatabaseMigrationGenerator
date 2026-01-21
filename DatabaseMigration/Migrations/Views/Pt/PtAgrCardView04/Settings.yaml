@@ -1,0 +1,289 @@
+view:
+  name: 'PtAgrCardView04'
+  description: ''
+frontendView:
+  name: 'PtAgrCardView04'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'CardId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'CardNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+    genericControls:
+      defColumnPos: 2
+  - name: 'SerialNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 3
+  - name: 'CardType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtCardType'
+      refField: 'CardType'
+      defColumnPos: 1
+  - name: 'LineA'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 24
+    genericControls:
+      defColumnPos: 4
+  - name: 'LineAFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LineB'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 24
+    genericControls:
+      defColumnPos: 5
+  - name: 'LineBFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ContactPersonId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'AddressTypeNo'
+    description: ''
+    dataType: 'int'
+  - name: 'AddressTypeNoFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'AccountNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'TerminationDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'AuthorizationNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'OrderDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'IssueDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ExpirationDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ReturnDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ServiceBancomat'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ServiceBancomatFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ServicePos'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ServicePosFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ServiceBank'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ServiceBankFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ServiceCash'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ServiceCashFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ServiceEMV'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ServiceEMVFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LimitMonthTotal'
+    description: ''
+    dataType: 'money'
+  - name: 'LimitMonthTotalFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LimitMonthCash'
+    description: ''
+    dataType: 'money'
+  - name: 'LimitMonthCashFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LimitMonthOffline'
+    description: ''
+    dataType: 'money'
+  - name: 'LimitMonthOfflineFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LimitMonthOnline'
+    description: ''
+    dataType: 'money'
+  - name: 'LimitMonthOnlineFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LimitDayTotal'
+    description: ''
+    dataType: 'money'
+  - name: 'LimitDayTotalFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LimitDayCash'
+    description: ''
+    dataType: 'money'
+  - name: 'LimitDayCashFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LimitCashCard'
+    description: ''
+    dataType: 'money'
+  - name: 'LimitCashCardFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'TransferPinCode'
+    description: ''
+    dataType: 'smallint'
+  - name: 'TransferPinCodeFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'CashBoxLanguageNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'CashBoxLanguageNoFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ChipType'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ChipTypeFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'MailCode'
+    description: ''
+    dataType: 'smallint'
+  - name: 'MailCodeFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ExpressCode'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ExpressCodeFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'EMVProfileNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'EMVProfileNoFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'EMVProfile'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 250
+  - name: 'EMVProfileFlagInd'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LockStatus'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtCardLockStatus'
+      refField: 'LockStatus'
+      defColumnPos: 7
+  - name: 'LockDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'CardStatus'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 7
+  - name: 'TransactionType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtCardTransactionType'
+      refField: 'TransactionType'
+      defColumnPos: 8
+  - name: 'CardNoPrevious'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'SerialNoPrevious'
+    description: ''
+    dataType: 'smallint'
+  - name: 'OrderDatePrevious'
+    description: ''
+    dataType: 'datetime'
+  - name: 'IssueDatePrevious'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ExpirationDatePrevious'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ReturnDatePrevious'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Branchno'
+    description: ''
+    dataType: 'int'
+  - name: 'CardHolderDestFlag'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AgentId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'

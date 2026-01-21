@@ -1,0 +1,3 @@
+view:
+  name: 'PtCheckResultOverviewUnsolved'
+  description: 'View to display the results of a Pep-Check (BankVerificationResultNo Null)'

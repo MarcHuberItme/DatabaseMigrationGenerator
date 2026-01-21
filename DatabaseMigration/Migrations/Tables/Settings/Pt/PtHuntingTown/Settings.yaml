@@ -1,0 +1,39 @@
+table:
+  name: 'PtHuntingTown'
+  description: 'Is used to assign the ConsultantTeam and User according to the Branch. The Field GroupLabel is used to find the branch according to the Zip.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Branch Assignment'
+    - german:
+        formTitle: 'Zuweisung der Zweigstelle'
+  columns:
+  - name: 'ConsultantTeamName'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 1
+  - name: 'GroupLabel'
+    description: ''
+    genericControls:
+      refTable: 'AsGroupLabel'
+      refField: 'Name'
+      defColumnPos: 2
+  - name: 'UserName'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+  - name: 'BranchNo'
+    description: ''
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'

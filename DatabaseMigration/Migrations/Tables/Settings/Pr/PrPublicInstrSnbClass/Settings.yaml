@@ -1,0 +1,35 @@
+table:
+  name: 'PrPublicInstrSnbClass'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+  columns:
+  - name: 'VdfDocGen'
+    description: 'VDF: FSD.FSD.0813\r\nGeneration of the last Doc, which was received from VDF'
+  - name: 'PublicId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'SnbClassNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicSnbClass'
+      refField: 'SnbClassNo'
+      defColumnPos: 1
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: FSD.MGA.7895\r\nMessage status of the doc'

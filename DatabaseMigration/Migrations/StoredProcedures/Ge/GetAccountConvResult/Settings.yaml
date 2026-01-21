@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountConvResult'
+  description: 'get a summary of the processed accounts'

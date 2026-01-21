@@ -1,0 +1,55 @@
+table:
+  name: 'PrPublicEuTaxStartVal'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublicEuTax'
+      parentRelationField: 'PublicEuTaxId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'EU tax start value'
+    - german:
+        formTitle: 'Startwerte EU-Steuern'
+  columns:
+  - name: 'PublicEuTaxId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicEuTax'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'StartValueType'
+    description: 'VDF: EUD.EUC.4922'
+    genericControls:
+      refTable: 'PrPublicStartValueType'
+      refField: 'StartValueType'
+      defColumnPos: 1
+  - name: 'Currency'
+    description: 'VDF: EUD.EUC.K816.6804'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'Amount'
+    description: 'VDF: EUD.EUC.K816.5833'
+    genericControls:
+      defColumnPos: 3
+  - name: 'QuoteTypeNo'
+    description: 'VDF: EUD.EUC.K816.4812'
+    genericControls:
+      refTable: 'PrPublicQuoteType'
+      refField: 'QuoteTypeNo'
+      defColumnPos: 4

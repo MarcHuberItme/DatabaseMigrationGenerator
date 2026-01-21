@@ -1,0 +1,116 @@
+table:
+  name: 'PtPositionHoCu'
+  description: 'Bewertete Fremdwährungsposition.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Bewertete Fwg-Position'
+        helpText: 'Bewertete Fwg-Position'
+    - german:
+        formTitle: 'Bewertete Fwg-Position'
+        helpText: 'Bewertete Fwg-Position'
+  columns:
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'PositionId'
+    description: 'Fremdschlüssel zu PtPosition'
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'PositionCurrency'
+    description: 'Kontowährung'
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'ProductNo'
+    description: 'Produkt Nr. zum Zeitpunkt der Bewertung (Fremdschlüssel zu PrPrivate)'
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      hasDetailBtn: true
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'ValuationDate'
+    description: 'Datum der Bewertung'
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'BatchRunId'
+    description: 'Fremdschlüssel zu PtPositionForeignCuVal'
+    genericControls:
+      refTable: 'PtPositionForeignCuBatch'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'BeginValueAcCu'
+    description: 'Anfangssaldo in Kontowährung'
+    genericControls:
+      defColumnPos: 6
+  - name: 'BeginValueHoCu'
+    description: 'Anfangssaldo in CHF'
+    genericControls:
+      defColumnPos: 7
+  - name: 'DebitValueAcCu'
+    description: 'Sollumsatz in Kontowährung'
+    genericControls:
+      defColumnPos: 8
+  - name: 'CreditValueAcCu'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'DebitValueHoCu'
+    description: 'Sollumsatz in CHF'
+    genericControls:
+      defColumnPos: 10
+  - name: 'CreditValueHoCu'
+    description: 'Habenumsatz in CHF'
+    genericControls:
+      defColumnPos: 11
+  - name: 'EndValueAcCu'
+    description: 'Endsaldo in Kontowährung'
+    genericControls:
+      defColumnPos: 12
+  - name: 'EndValueHoCu'
+    description: 'Endsaldo in CHF vor Bewertung'
+    genericControls:
+      defColumnPos: 13
+  - name: 'ValuatedEndValueHoCu'
+    description: 'Endsaldo in CHF nach Bewertung'
+    genericControls:
+      defColumnPos: 14
+  - name: 'VariationHoCu'
+    description: 'Gewinn/Verlust aus Bewertung'
+    genericControls:
+      defColumnPos: 15
+  - name: 'Status'
+    description: '0 = Positionsdaten übernommen\r\n1 = TransItemHoCu generiert\r\n2 = Startsaldo in CHF ermittelt\r\n3 = Umsatz berechnet\r\n4 = Position bewertet\r\n5 = Gewinn/Verlust berechnet\r\n6 = Gewinn verbucht'
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      defColumnPos: 16
+  - name: 'LatestTransDate'
+    description: 'Letztes Buchungsdatum'
+    genericControls:
+      defColumnPos: 17
+  - name: 'EndValueValuationRate'
+    description: ''
+    genericControls:
+      defColumnPos: 18
+  - name: 'BeginValueValuationRate'
+    description: ''
+    genericControls:
+      defColumnPos: 19

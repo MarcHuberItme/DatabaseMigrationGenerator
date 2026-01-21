@@ -1,0 +1,109 @@
+table:
+  name: 'PtMLCheckTaxStatus'
+  description: 'In dieser Tabelle werden beim Start einer Prüfung die selektierten Werte gespeichert. Diese werden dem Kunden präsentiert (via Formular, BeratungsSuite, SelfService via API)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'CheckMasterDataId'
+    description: 'Id des zugehörigen MasterData Records.'
+    genericControls:
+      refTable: 'PtMLCheckMasterData'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'TaxStatusId'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxStatus'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'TaxResidenceCode'
+    description: 'foreign-key;  candidate-key of PtEMailAddressType  (PtEMailAddressType)'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'TaxResidenceCodeCorrected'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'TaxResidenceText'
+    description: 'AsText.TextShort'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TaxProgramNo'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxProgram'
+      refField: 'TaxProgramNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TaxProgramText'
+    description: 'AsText.TextShort'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TaxStatusDetailSource'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'TaxStatusDetailId'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'TaxStatusNo'
+    description: 'Status im jeweiligen Steuerprogramm'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TaxStatusNoCorrected'
+    description: ''
+  - name: 'TaxStatusText'
+    description: 'AsText.TextLong'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TaxStatusFatcaTranslated'
+    description: 'Steuerstatus Fatca mit Übersetzung welche für den kunden interpretierbar ist da zum Teil kryptische Abkürzungen verwendet wurden'
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'TaxStatusRemark'
+    description: ''
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'TaxStatusTIN'
+    description: 'Steuernummer (Tax identification number)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TaxStatusTINCorrected'
+    description: ''
+  - name: 'TaxStatusGIIN'
+    description: 'Steht für "Global Intermediary Identification Number" und ist die Steuernummer, welche für Finanzinstitute verwendet wird'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TaxStatusGIINCorrected'
+    description: ''
+  - name: 'IsToDelete'
+    description: ''
+  - name: 'HasChanges'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'Comment'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'CheckStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckDetailState'
+      refField: 'CheckDetailStateNo'
+      defColumnPos: 3
+      isNoUpdate: true

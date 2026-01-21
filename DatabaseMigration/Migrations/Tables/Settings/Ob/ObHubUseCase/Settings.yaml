@@ -1,0 +1,34 @@
+table:
+  name: 'ObHubUseCase'
+  description: 'Use case for specific open banking hub'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 4de0d3b7-95d8-473e-be4c-1d37a958d353
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Hub Use Case'
+    - german:
+        formTitle: 'Hub Use Case'
+    - french:
+        formTitle: 'Hub Use Case'
+    - italian:
+        formTitle: 'Hub Use Case'
+  columns:
+  - name: 'HubId'
+    description: 'Reference to specific hub'
+    genericControls:
+      refTable: 'ObHub'
+      refField: 'Id'
+  - name: 'Name'
+    description: 'Name of the usecase like ais, pss'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Version'
+    description: 'Version of the use case'
+    genericControls:
+      defColumnPos: 2

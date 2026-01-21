@@ -1,0 +1,189 @@
+view:
+  name: 'PtContactReportSearchView'
+  description: 'b2b-parter-master-data-contact-report-api'
+frontendView:
+  name: 'PtContactReportSearchView'
+  description: 'View for searching contact report based on different criteria.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ContactReportId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'TopicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsContactTopic'
+      refField: 'Id'
+  - name: 'TopicNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsContactTopic'
+      refField: 'TopicNo'
+  - name: 'TopicGroupNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsContactTopicGroup'
+      refField: 'TopicGroupNo'
+  - name: 'BeginTime'
+    description: ''
+    dataType: 'datetime'
+  - name: 'EndTime'
+    description: ''
+    dataType: 'datetime'
+  - name: 'TriggerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsContactTrigger'
+      refField: 'Id'
+  - name: 'TriggerNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'MeetingPlace'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+  - name: 'Expenses'
+    description: ''
+    dataType: 'money'
+  - name: 'BankSpeakerUserId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+  - name: 'BankSpeakerUsername'
+    description: ''
+    dataType: 'varchar'
+    prec: 20
+  - name: 'BankSpeakerFullName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'BankSpeakerPartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 8
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'PartnerNoText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'PtDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 122
+  - name: 'PartnerFirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'PartnerMiddleName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'PartnerLastName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'MediaId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsContactMedia'
+      refField: 'Id'
+  - name: 'MediaNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ResultNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtContactResult'
+      refField: 'ResultNo'
+  - name: 'CustSpeaker'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+  - name: 'Text'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 500
+  - name: 'ReasonId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtContactResultReason'
+      refField: 'Id'
+  - name: 'ReasonNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ReportText'
+    description: ''
+    dataType: 'text'
+  - name: 'ConsultantTeamName'
+    description: ''
+    dataType: 'varchar'
+    prec: 32
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'InitiatorId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsContactInitiator'
+      refField: 'Id'
+  - name: 'InitiatorNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'InitiatorGroupNo'
+    description: ''
+    dataType: 'int'
+  - name: 'OpenIssueId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtOpenIssue'
+      refField: 'Id'
+  - name: 'OpenIssueIdForNextContact'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtOpenIssue'
+      refField: 'Id'
+  - name: 'OpenIssueNextContactTargetDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'OpenIssueNextContactRemark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 2000

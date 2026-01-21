@@ -1,0 +1,26 @@
+table:
+  name: 'AiTaxReportType'
+  description: 'Typ der Meldung (normale Meldung, Test, Korrektur etc.)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax report type'
+    - german:
+        formTitle: 'Steuermeldung Typ'
+    - french:
+        formTitle: 'Type de décl. fiscale'
+  columns:
+  - name: 'ReportTypeNo'
+    description: '1 = New data (FATCA1)\r\n2 = Corrected data (FATCA2)\r\n3 = Void data (FATCA3)\r\n4 = Amended data (FATCA4)'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

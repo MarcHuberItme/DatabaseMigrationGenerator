@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetForeignCyBookingsByValueDateCust'
+  description: 'Read customer bookings in foreign currencies and group them by ValueDate'

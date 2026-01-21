@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'swMtAccounts'
+  description: 'Read all needed Accounts for SWIFT File\r\n2012-01-09/ram: Add field LastTransDate\r\n2012-02-06/msn: exclude those deleted subscribe accounts, and adds MessageType'

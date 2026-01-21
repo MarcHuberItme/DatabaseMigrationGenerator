@@ -1,0 +1,77 @@
+table:
+  name: 'AsAccountClosingSet'
+  description: 'Speicherung von Scripts für Konto- oder Hypothekenabschluss:\r\n- Anzahl abzuschliessende Konti ermitteln\r\n- Check und Korrektur vom Valutasaldo\r\n- SQL Insert von SingleJobs für Interestcalculation der betroffenen Konti\r\n- SQL Insert von SingleJobs für ClosingExecute der abzuschliessenden Konti\r\n- Insert eines Printjobs gem. ReportName und PrintJobName'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Account Closing Sets'
+    - german:
+        formTitle: 'Kontoabschluss Sets'
+  columns:
+  - name: 'SetNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ReportId'
+    description: 'Id of the report definition which is to print in the actual job'
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'Id'
+  - name: 'PrintJobName'
+    description: ''
+  - name: 'AgentType'
+    description: ''
+    genericControls:
+      refTable: 'PsAgentType'
+      refField: 'AgentTypeNo'
+  - name: 'ReportIdAdd'
+    description: 'Id of the report definition which is to print in the actual job additionally'
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'Id'
+  - name: 'PrintJobNameAdd'
+    description: ''
+  - name: 'AgentTypeAdd'
+    description: ''
+    genericControls:
+      refTable: 'PsAgentType'
+      refField: 'AgentTypeNo'
+  - name: 'SqlCountAccounts'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SqlCheckBalanceValueBegin'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SqlResultCheckBalValBeg'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SqlUpdateBalanceValueBegin'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SqlInsIntCalCorrBalValueBegin'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SqlInsBatchJobClosingExec'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Status'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'LastScheduledDate'
+    description: ''

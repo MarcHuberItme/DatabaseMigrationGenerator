@@ -1,0 +1,70 @@
+table:
+  name: 'AsUserGroup'
+  description: 'Special Table to group users into user groups.\r\nThis table must contain a unique name field, because workflow clients are not able to translate an ID into its representation in AsText.\r\nThe link to AsText is still there to support multilingual group names, eg. for standard consulting teams.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'User Grouping'
+    - german:
+        formTitle: 'Benutzergruppierung'
+  columns:
+  - name: 'UserGroupName'
+    description: 'Name of the user group. This field must be unique because workflow client use it for displaying users and for querying a certain user.'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IsStandardConsTeam'
+    description: 'All groups having set this field to true will appear in the dropdown list for assigning a standard consulting team to a partner.'
+  - name: 'IsIndividualConsTeam'
+    description: 'Groups having set this flag to true are assigned to only one partner as its individual consulting team. This teams can not be grouped by the standard user grouping forms, the grouping form is called only from the partner form.\r\nIf this flag is set, the other flags are not relevant.'
+  - name: 'IsWorkflowGroup'
+    description: 'All groups having set this flag to true will appear in the the step properties of the workflow map designer.'
+  - name: 'IsPrivacyGroup'
+    description: 'All groups with this flag set to true will appear in the list to assign groups to individual or standard privacy locks.'
+  - name: 'IsPermissionGroup'
+    description: 'Setting this flag to true causes the group to appear in the assignment of form permissions to user groups.'
+  - name: 'IsDetourGroup'
+    description: 'All groups with this flag set to true will appear in the list to assign groups to Correspondence-Rules to define detours.'
+  - name: 'IsSingleUserGroup'
+    description: '- Marks the Groups that are intended to represent only a single user'
+  - name: 'IsCrossborderTeam'
+    description: ''
+  - name: 'Description'
+    description: 'Description of UserGroup.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'MgDetourNo'
+    description: 'FIS-VRX Detour number (Leitweg Nummer)'
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'GroupPhoneNumber'
+    description: 'phone number of a group / not for a single person'
+  - name: 'PrivacyGroupNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPrivacyGroup'
+      refField: 'PrivacyGroupNo'
+      defColumnPos: 3
+  - name: 'MainBranchNo'
+    description: 'Das ConsultantTeam ist diesem Sitz mehrheitlich zugeordnet'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 4
+  - name: 'GroupEmail'
+    description: 'External e-mail address of the counsultant team'
+  - name: 'PMSUserId'
+    description: ''
+  - name: 'IsRestrictedToOwnCustomers'
+    description: 'If true, the member of the consultant team can only access customers of the same team.'

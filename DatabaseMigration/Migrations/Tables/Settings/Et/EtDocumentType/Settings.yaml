@@ -1,0 +1,31 @@
+table:
+  name: 'EtDocumentType'
+  description: 'Customer document types from Easy tax, for example booking tickets, annual tax statements'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'DocumentType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'SourceXMLFilePath'
+    description: 'path for reading word xml files from EasyTax'
+  - name: 'MergedXMLPath'
+    description: 'destination path where merged xml files are placed'
+  - name: 'TypeIdentifier'
+    description: 'Document type identifier in file name\r\n'
+  - name: 'CorrItemNo'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'ItemNo'
+      hasDetailBtn: true

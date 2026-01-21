@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetIcmPrCompList'
+  description: 'Retrieves product details and prices for the given Account\r\nAuthor		: mct\r\nDate Created	: 29.06.2004'

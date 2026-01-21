@@ -1,0 +1,144 @@
+view:
+  name: 'PtAgrCardView03'
+  description: 'add fields CardNoNew, CardTransferDate'
+frontendView:
+  name: 'PtAgrCardView03'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'CardNo'
+    description: 'PtAgrCardBase.CardNo'
+    dataType: 'nvarchar'
+    prec: 16
+    genericControls:
+      defColumnPos: 2
+  - name: 'CardType'
+    description: 'PtAgrCardBase.CardType'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtCardType'
+      refField: 'CardType'
+      defColumnPos: 1
+  - name: 'PartnerId'
+    description: 'PtAgrCardBase.PratenerId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ContactPersonId'
+    description: 'PtAgrCardBase.ContactPersonId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtContactPersonView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountId'
+    description: 'PtAgrCardBase.AccountId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountNoEdited'
+    description: 'PtAccountBase.AccountNoEdited'
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 4
+  - name: 'PartnerNoEdited'
+    description: 'PtBase.PartnerNoEdited'
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'Name'
+    description: 'PtBase.Name'
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 5
+  - name: 'FirstName'
+    description: 'PtBase.FirstName'
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 6
+  - name: 'IssueDate'
+    description: 'PtAgrCard.IssueDate'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7
+  - name: 'ExpirationDate'
+    description: 'PtAgrCard.ExpirationDate'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 8
+  - name: 'SerialNo'
+    description: 'PtAgrCard.SerialNo'
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 3
+  - name: 'CardStatus'
+    description: 'PtAgrCard.Card.Status'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtCardStatus'
+      refField: 'CardStatus'
+      defColumnPos: 9
+  - name: 'VersionNo'
+    description: 'PtAgrCardBase.VersionNo'
+    dataType: 'int'
+  - name: 'PrintDate'
+    description: 'PtAgrCardBase.PrintDate'
+    dataType: 'datetime'
+  - name: 'BeginDate'
+    description: 'PtAgrCardBase.PrintDate'
+    dataType: 'datetime'
+  - name: 'PeriodOfNotice'
+    description: 'PtAgrCardBase.PeriodOfNotice'
+    dataType: 'int'
+  - name: 'TimeInterval'
+    description: 'PtAgrCardBase.TimeInterval'
+    dataType: 'nvarchar'
+    prec: 5
+  - name: 'Remark'
+    description: 'PtAgrCardBase.Remark'
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'AuthorizationNo'
+    description: 'PtAgrCardBase.AuthorizationNo'
+    dataType: 'smallint'
+  - name: 'LastChargeDate'
+    description: 'PtAgrCardBase.LastChargeDate'
+    dataType: 'datetime'
+  - name: 'ChargePrintDate'
+    description: 'PtAgrCardBase.ChargePrintDate'
+    dataType: 'datetime'
+  - name: 'AgrCardId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 10
+  - name: 'CardNoNew'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'CardTransferDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'CardExtendedInformation'
+    description: 'Extended card information'
+    dataType: 'varchar'
+    prec: 100
+  - name: 'IsPhysicalCard'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true

@@ -1,0 +1,51 @@
+table:
+  name: 'PtGeneralLimit'
+  description: 'Limiten erfassen (gelten für den ganzen Kunden) z.B. für Bankenlimiten (welche nicht pro Konto erfasst werden können. Sie können Haben- wie auch Soll-seitig sein. (Limiten müssen für die SNB Auswertung der Adressausfallrisiken erfasst werden)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      applicationKey: 'LimitTypeNo'
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'general limits'
+    - german:
+        formTitle: 'Generelle Limiten'
+    - french:
+        formTitle: 'general limits'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      createNavigationIndex: true
+  - name: 'LimitTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtGeneralLimitType'
+      refField: 'LimitTypeNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'AmountHoCu'
+    description: ''
+    minValue: '0'
+    genericControls:
+      defColumnPos: 3

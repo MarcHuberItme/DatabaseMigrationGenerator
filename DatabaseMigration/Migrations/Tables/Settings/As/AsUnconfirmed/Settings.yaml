@@ -1,0 +1,41 @@
+table:
+  name: 'AsUnconfirmed'
+  description: 'Contains all the pending changes wich are not confirmed yet.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Unconfirmed changes'
+    - german:
+        formTitle: 'Unvisierte Änderungen'
+  columns:
+  - name: 'Id'
+    description: 'ID of the unconfirmed changes, same as Id of the main record'
+  - name: 'TableName'
+    description: 'Name of the table the unconfirmed changes belong to.\r\nThe Id is the same as the Id of the referenced record in <TableName>'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'VersionNo'
+    description: 'Version the main record will have after this changes became active.'
+  - name: 'ChangeAction'
+    description: 'Kind of changes:\r\n1 = update\r\n2 = delete\r\n3 = undelete'
+  - name: 'ConfStatus'
+    description: 'Status of confirmation\r\n1 = unconfirmed\r\n2 = Row partially unconfirmed\r\n3 = Row confirmed, but unconfirmed changes in group\r\n4 = Confirmation ok, but not activated yet'
+  - name: 'ActivationDate'
+    description: 'Date when the changes shold become active (if they are completely signed)'
+  - name: 'ProcessId'
+    description: 'Id of worflow process if several confirmations are included in one workflow process'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'CreateDate'
+    description: ''
+  - name: 'MutField'
+    description: 'Text field with update information:\r\n\r\n<FieldName>|<SubTable>|<SubKey>|<NewValue>|<MutUser>|<MutDat>|\r\n<Necessary Confirmations>|<Signer1>|<SignDat1>|<Signer2>|<SignDat2>|...|<CrLf>\r\n\r\n<FieldName>	Name of the field which changes\r\n<SubTable>	If field belongs to a subtable, this field contains the name of it,\r\n		e.g. syText. Empty if field belongs to main table. \r\n<SubId>		Contains the Id to identify the entry in a subtable, Empty if field \r\n		belongs to main table.\r\n<NewValue>	New value for the above field\r\n<OldValue>	Old value of th above field\r\n<MutUser>	Id of the user who made the changes\r\n<MutDate>	Date and time when changes were made\r\n<Necessary Confirmations>	Number of confirmations (different signers) necessary for this\r\n		field before record can become active.\r\n		Usually 0, 1 or 2.\r\n<Signer1>	Id of the user who made the first confirmation\r\n<SignDate1>	Date of the first confirmation\r\n<Signer2>	As <Signer1>, but for the second confirmation\r\n<SignDate2>	As <SignDate1>, but for the second confirmation\r\n		The number of signers is limited to 255\r\n<CrLf>		Main delimiter, marks the end of the signer list\r\n \r\n'

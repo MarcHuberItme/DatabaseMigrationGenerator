@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetBookingDays'
+  description: 'Counts the Transaction Days for expense calculation.'

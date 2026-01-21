@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'RecitePositionReportDetail'
+  description: '2014-04-02: add field ConsultantTeamName\r\n2016-11-15: add fields RatingCode, RatingResult, DefaultRiskRate, DefaultRiskAmount, DefaultRiskAmountBasicCurrency\r\n2016-12-02: add fields DefaultRiskSpecificAmountBaCu, DefaultRiskAccrualsAmountBaCu, DefaultRiskInterestAmountBaCu\r\n2017-01-03: add field AccountComponentId'

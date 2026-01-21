@@ -1,0 +1,43 @@
+table:
+  name: 'PtOstaInventoryChange'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'OSTA Inventory Change'
+    - german:
+        formTitle: 'OSTA Bestandsänderung'
+  columns:
+  - name: 'MessageId'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaMessage'
+      refField: 'Id'
+  - name: 'Kind'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaMoneyKind'
+      refField: 'Value'
+  - name: 'InventoryPeriod'
+    description: ''
+  - name: 'Amount'
+    description: ''
+  - name: 'Currency'
+    description: 'Numeric ISO4217 currency code'
+  - name: 'Type'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaInventoryChangeType'
+      refField: 'Value'
+  - name: 'SourceAccount'
+    description: ''
+  - name: 'DestinationAccount'
+    description: ''

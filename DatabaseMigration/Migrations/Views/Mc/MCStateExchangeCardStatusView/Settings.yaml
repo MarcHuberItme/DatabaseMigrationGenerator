@@ -1,0 +1,3 @@
+view:
+  name: 'MCStateExchangeCardStatusView'
+  description: 'Card status records from MasterCard CSE report.'

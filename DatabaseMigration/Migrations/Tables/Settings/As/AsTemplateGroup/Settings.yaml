@@ -1,0 +1,27 @@
+table:
+  name: 'AsTemplateGroup'
+  description: 'Groups of templates used in AsTemplate'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Template groups'
+    - german:
+        formTitle: 'Vorlagengruppen'
+  columns:
+  - name: 'IsFileGroup'
+    description: ''
+  - name: 'IsLabelGroup'
+    description: '0= keine Etikettenvorlagen (default)\r\n1= Diese Gruppe beinhaltet Vorlagen für den Etikettendruck'
+  - name: 'IsListGroup'
+    description: '0= keine Listenvorlagen (default)\r\n1= Diese Gruppe beinhaltet Vorlagen für den Listendruck'
+  - name: 'IsPaymentSlipGroup'
+    description: '0= keine Einzahlungsscheine (default)\r\n1= Diese Gruppe beinhaltet Vorlagen für den Einzahlungsscheindruck'

@@ -1,0 +1,42 @@
+table:
+  name: 'PtHomePlace'
+  description: 'Homeplace of Partner; relationship-entity of PtBase and AsCity'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Home Place'
+    - german:
+        formTitle: 'Heimatort'
+    - french:
+        formTitle: 'lieu de résidence'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key, Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'SwissTownNo'
+    description: ''
+    genericControls:
+      refTable: 'AsSwissTownView'
+      refField: 'SwissTownNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'DateOfHomeplace'
+    description: 'date since the partner has this homeplace'

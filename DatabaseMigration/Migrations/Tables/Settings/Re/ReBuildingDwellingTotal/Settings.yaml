@@ -1,0 +1,55 @@
+table:
+  name: 'ReBuildingDwellingTotal'
+  description: 'only used for Pfandbriefbank Interface (because of IAZI)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'ReBuilding'
+      parentRelationField: 'BuildingId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Dwelling No'
+    - german:
+        formTitle: 'Wohnungen Total'
+  columns:
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+      defColumnPos: 1
+      createNavigationIndex: true
+  - name: 'DwellingNo'
+    description: ''
+    genericControls:
+      refTable: 'ReDwellingType'
+      refField: 'DwellingTypeNo'
+      defColumnPos: 3
+  - name: 'TotalNo'
+    description: 'Total Anzahl pro Wohnungstyp'
+    genericControls:
+      defColumnPos: 2
+  - name: 'WetCellsNo'
+    description: 'Anzahl der Nasszellen PRO Wohnung (Summe für IAZI wird dann gerechnet WetCellNo x TotalNo)'
+  - name: 'MemberUniqueKey'
+    description: 'PfB spezifisch: Jede Mitgliedbank vergibt für den gemeldeten Record eine eindeutige Identifikation. Diese benötigt sie um über E-Banking die Daten zu mutieren. Diese eindeutige Kennung muss die Mitgliedbank bei sich speichern.'
+  - name: 'BusinessTypeCode'
+    description: ''
+    genericControls:
+      refTable: 'PtBusinessType'
+      refField: 'NogaCode'
+      hasDetailBtn: true
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

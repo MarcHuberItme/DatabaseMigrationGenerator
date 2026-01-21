@@ -1,0 +1,62 @@
+table:
+  name: 'AcFireDepositType'
+  description: 'Codetabelle für die Mappingregeln bei Kundenportfolios und Deckungen'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Firecode für Deckungen'
+        helpText: 'Firecode für Deckungen'
+    - german:
+        formTitle: 'Firecode für Deckungen'
+        helpText: 'Firecode für Deckungen'
+    - french:
+        formTitle: 'Firecode für Deckungen'
+        helpText: 'Firecode für Deckungen'
+    - italian:
+        formTitle: 'Firecode für Deckungen'
+        helpText: 'Firecode für Deckungen'
+  columns:
+  - name: 'DepositTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'InvestmentFireAccountNo'
+    description: ''
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+      defColumnPos: 2
+  - name: 'TradingFireAccountNo'
+    description: ''
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+      defColumnPos: 3
+  - name: 'CustomerUnpledgedFireAccountNo'
+    description: ''
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+  - name: 'CustomerPledgedFireAccountNo'
+    description: ''
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+  - name: 'InvestmentFireAccountNoOld'
+    description: ''
+  - name: 'TradingFireAccountNoOld'
+    description: ''
+  - name: 'CustUnpledgedFireAccountNoOld'
+    description: ''
+  - name: 'CustPledgedFireAccountNoOld'
+    description: ''

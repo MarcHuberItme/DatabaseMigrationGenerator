@@ -1,0 +1,24 @@
+table:
+  name: 'PrRoundingType'
+  description: 'different types of rounding (for example eighth rounding, sixteenth rounding, etc.)'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Rounding Type'
+    - german:
+        formTitle: 'Rundungstyp'
+  columns:
+  - name: 'TypeNo'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1

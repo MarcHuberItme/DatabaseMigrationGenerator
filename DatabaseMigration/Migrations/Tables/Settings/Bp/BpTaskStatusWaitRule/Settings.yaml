@@ -1,0 +1,28 @@
+table:
+  name: 'BpTaskStatusWaitRule'
+  description: 'JCS task status waiting rules.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'JCS task status wait'
+    - german:
+        formTitle: 'JCS Task Status Warten'
+    - french:
+        formTitle: 'JCS task status wait'
+    - italian:
+        formTitle: 'JCS task status wait'
+  columns:
+  - name: 'WaitRule'
+    description: 'Task wait for status rules\r\n0 = No waiting\r\n1 = Running or Finished\r\n2 = Running, Finished or Failed\r\n3 = Finished\r\n4 = Finished or Failed\r\n5 = Failed'
+    genericControls:
+      defColumnPos: 1

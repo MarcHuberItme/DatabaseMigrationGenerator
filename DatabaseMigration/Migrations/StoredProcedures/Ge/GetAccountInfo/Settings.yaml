@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountInfo'
+  description: 'retrieve information about the product and find out if account is pledged (new add coll from cobase check for account)\r\n2021-01-07/ram: Der Parameter @LanguageNo wird nun für den Zugriff auf AsText der Tabellen CyBase und PrPrivate verwendet. Alt: Es wurde fix mit LanguageNo = 2 selektiert.'

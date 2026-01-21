@@ -1,0 +1,26 @@
+table:
+  name: 'PtPaymentOrderGroupTypeRule'
+  description: 'PtPaymentOrderGroupType Rule assignment'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'OrderGroupTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderGroupType'
+      refField: 'OrderGroupTypeNo'
+      defColumnPos: 1
+  - name: 'RuleNo'
+    description: ''
+    genericControls:
+      refTable: 'AsBusinessRule'
+      refField: 'RuleNo'
+      defColumnPos: 2

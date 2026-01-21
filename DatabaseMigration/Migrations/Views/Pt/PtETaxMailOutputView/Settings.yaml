@@ -1,0 +1,76 @@
+view:
+  name: 'PtETaxMailOutputView'
+  description: ''
+frontendView:
+  name: 'PtETaxMailOutputView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtETaxMailOutputView'
+        helpText: 'PtETaxMailOutputView'
+    - german:
+        formTitle: 'PtETaxMailOutputView'
+        helpText: 'PtETaxMailOutputView'
+    - french:
+        formTitle: 'PtETaxMailOutputView'
+        helpText: 'PtETaxMailOutputView'
+    - italian:
+        formTitle: 'PtETaxMailOutputView'
+        helpText: 'PtETaxMailOutputView'
+  columns:
+  - name: 'TaxReportJobNo'
+    description: ''
+    dataType: 'int'
+  - name: 'TaxReportDataId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'AddressId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'IsPrimaryCorrAddress'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AttentionOf'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+  - name: 'DeliveryRuleNo'
+    description: ''
+    dataType: 'int'
+  - name: 'DetourGroup'
+    description: ''
+    dataType: 'varchar'
+    prec: 32
+  - name: 'CarrierTypeNo'
+    description: ''
+    dataType: 'int'
+  - name: 'CorrItemId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'CopyNumber'
+    description: ''
+    dataType: 'tinyint'

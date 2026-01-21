@@ -1,0 +1,55 @@
+view:
+  name: 'WfActiveProcessView'
+  description: 'Used as FrontEnd-View by the WorkflowManager to superview the active processes.'
+frontendView:
+  name: 'WfActiveProcessView'
+  description: 'Used as FrontEnd-View by the WorkflowManager to superview the active processes'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Active Workflow Processes'
+    - german:
+        formTitle: 'Aktive Workflow Prozesse'
+  columns:
+  - name: 'CreationDate'
+    description: 'CreationDate of the Wf-Process'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Name'
+    description: 'MapName'
+    dataType: 'varchar'
+    prec: 32
+    genericControls:
+      defColumnPos: 2
+  - name: 'FullName'
+    description: 'FullName from AsUser'
+    dataType: 'nvarchar'
+    prec: 32
+    genericControls:
+      defColumnPos: 4
+  - name: 'DynamicDescription'
+    description: ''
+    dataType: 'varchar'
+    prec: 4000
+    genericControls:
+      defColumnPos: 3
+  - name: 'MapNo'
+    description: 'MapNo from WfMap to the corresponding name'
+    dataType: 'int'
+  - name: 'Instanciator'
+    description: 'userId of the user starting the workflow process'
+    dataType: 'varchar'
+    prec: 50
+  - name: 'ProcessId'
+    description: 'To make the Id searchable in the form.'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 4

@@ -1,0 +1,72 @@
+table:
+  name: 'TwReqAuthMessage'
+  description: 'Contains the data for a RequestAuthorization message. This is called from TWINT before every financial transaction that is performed on a customers account. TWINT creates this request upon interaction of a customer. The direction of the subsequent money transfer is advised within the Authorization request.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: bad6dd0b-5ed3-4cee-b419-0b3faf9ddacc
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Request Authorization Msg'
+    - german:
+        formTitle: 'Request Authorization Msg'
+  columns:
+  - name: 'HeaderMessageId'
+    description: 'Id of TwHeaderMessage'
+    genericControls:
+      refTable: 'TwHeaderMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PrivateCustomerId'
+    description: 'TWINT contract id'
+  - name: 'FinancialAccountId'
+    description: 'TWINT account identification'
+  - name: 'IssuerId'
+    description: 'The Id identifying the Issuer in TWINT'
+  - name: 'UserAcceptedAmount'
+    description: 'The amount the user has signed in the Request and thus acknowledged to authorize'
+  - name: 'UserAcceptedCurrency'
+    description: 'The currency of the accepted amount'
+  - name: 'RequestedAmount'
+    description: 'The amount that TWINT is actually requesting for Authorization through the Issuer (may be lower or equal than UserAcceptedAmount)'
+  - name: 'RequestedAmountCurrency'
+    description: 'The currency of the requested amount'
+  - name: 'Operation'
+    description: 'Signals whether this authorization is for a Withdrawal or a Deposit:\r\n0 = Deposit\r\n1 = Withdrawal'
+  - name: 'AuthorizationId'
+    description: 'An AuthorizationId to use as identifier to this authorization. This may be overridden by the HBL'
+  - name: 'AuthorizationTimestamp'
+    description: 'The Date and time at which the User signed the Authorization Request. The String is formatted in simple ISO-8601 format: YYYY-MMDDTHH:MM:SS.\r\n'
+  - name: 'AuthorizationDuration'
+    description: 'The duration of the authorization given as an ISO-8601 duration. The duration of the authorization is determined by the type of payment performed by TWINT and MAY range up to 90 days\r\n(sample: P3Y6M4DT12H30M5S, represents a duration of three years, six months, four days, twelve hours, thirty minutes, and five seconds).'
+  - name: 'PartialAuthorizationSupported'
+    description: 'Signals whether the other party in the payment operation is able to accept partial authorizations. In case this flag is set to false the Issuer SHOULD not respond with available funds in case not all funds can be provided.\r\n'
+  - name: 'CustomerInformationText'
+    description: 'A descriptive text that MAY be shown to the Customer as a reference for the authorization. The text is provided by TWINT and contains information allowing to find the associated payment.'
+  - name: 'UserAuthorizationMode'
+    description: 'Signals to the Issuer, whether the User has seen and accepted the final amount of the Payment in the Issuers Mobile Application (ONLINE), has accepted a preset maximum amount (OFFLINE) or the request was sent by an authorized merchant (AUTHORIZED_MERCHANT).'
+  - name: 'AcquirerReferenceNumber'
+    description: 'An ID provided by the Acquirer to identify the Authorization for later referencing purposes. This Element is omitted on non Acquirer triggered payments.'
+  - name: 'OrderId'
+    description: 'An identifier for the TWINT internal process that covers the authorization and the subsequent FinancialAdvice message.'
+  - name: 'ReferenceOrderId'
+    description: 'An identifier for a TWINT Order that is referenced by this new Order. TWINT will set this field, in case the current Request is based on a Reversal (of a previous TWINT Order) to the UUID of the original Order (optional).'
+  - name: 'RequestSignature'
+    description: 'The signature on the relevant parts of the authorization request, as calculated by the Customers app on the customers device. The signature is delivered as the raw bytes and only base64 encoded for the transport in the SOAP Message. This field is only sent for WITHDRAWAL Authorizations.'
+  - name: 'RequestKey'
+    description: 'The Certificate containing the public key of the key pair that was used for the signature. The Certificate is provided as PEM encoded X509 Certificate and MUST be used by the Issuer to verify the authenticity and validity of the Request. This field is only sent for WITHDRAWAL Authorizations. The length of this Field is depends on the Data in the Certificate created by the Issuer.'
+  - name: 'AdditionalIssuerAuthorization'
+    description: 'This Element MAY be used to transport additional Authorization elements deemed necessary by an Issuer. Creating the content of such additional Element is up to the Issuers mobile App.\r\nIf e.g. an Issuer expects a specific type of authorization for large payments, the Issuers app may perform that authorization and then provide according information in such an element so the Banking System can later on verify the existence of such an authorization (optional).\r\n'
+  - name: 'Iban'
+    description: ''
+  - name: 'TransactionType'
+    description: 'The type of transaction that builds the context for this authorization. This may currently be one of a number of possible values showing whether a payment is made between individual persons, between a customer and a merchant and details on different merchant payments (e-commerce, m-commerce, attended, unattended, …) or a reversal or credit.'
+  - name: 'PreauthorizedRequest'
+    description: 'Signals that the requested Amount has already provided to the customer, as the Issuer had been offline at the time of the initial request. The authorization thus MUST be granted.'

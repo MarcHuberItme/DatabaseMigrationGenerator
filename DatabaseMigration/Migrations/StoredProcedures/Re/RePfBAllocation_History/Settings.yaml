@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'RePfBAllocation_History'
+  description: 'Stores the sum of the loans allocatied with each bank into the table ''RePfBAllocationHistory'' and is controlled by SQL Server Agent; should run daily at 23:55'

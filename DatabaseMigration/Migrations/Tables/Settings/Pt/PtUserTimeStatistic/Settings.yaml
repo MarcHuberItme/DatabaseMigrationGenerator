@@ -1,0 +1,68 @@
+table:
+  name: 'PtUserTimeStatistic'
+  description: 'Statistiken'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtUserBase'
+      parentRelationField: 'UserBaseId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'User Time Statistic'
+    - german:
+        formTitle: 'Statistik Zeitabrechnung'
+  columns:
+  - name: 'UserBaseId'
+    description: ''
+    genericControls:
+      refTable: 'PtUserBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'PeriodDate'
+    description: 'Enddatum der Periode z.B. 15.4.2003'
+  - name: 'StartBalanceTimeDue'
+    description: 'Sollsaldo am Anfang der Periode'
+  - name: 'StartBalanceTimeVacation'
+    description: 'Feriensaldo am Anfang der Periode'
+  - name: 'WorkingHoursDue'
+    description: 'Sollzeit aktuelle Periode (=Monat)'
+  - name: 'VacationHoursDue'
+    description: 'Ferienanspruch aktuelle Periode'
+  - name: 'OvertimeHoursDue'
+    description: 'Angeordnete Überstunden'
+  - name: 'WorkingHoursInhouse'
+    description: 'Arbeitszeit am Arbeitsplatz im Hause\r\n(Die Stunden werden aufgrund von "TimeFrom" und "TimeTo" errechnet)'
+  - name: 'WorkingHoursExternal'
+    description: 'Arbeitszeit ausser Hause'
+  - name: 'MilitaryServiceHours'
+    description: 'Militärdienst\r\n(Die Stunden werden aufgrund von "TimeFrom" und "TimeTo" errechnet)'
+  - name: 'IllnessHours'
+    description: 'Krankheit\r\n(Die Stunden werden aufgrund von "TimeFrom" und "TimeTo" errechnet)'
+  - name: 'OffHours'
+    description: 'Andere bezahlte Abwesenheiten'
+  - name: 'VacationHoursDone'
+    description: 'bezogene Ferien \r\n(Die Stunden werden aufgrund von "TimeFrom" und "TimeTo" errechnet)'
+  - name: 'OvertimeHoursPaid'
+    description: 'ausbezahlte Überstunden'
+  - name: 'CuttedHours'
+    description: 'Abgeschnittene / gestrichene Stunden'
+  - name: 'PaidOffHours'
+    description: 'Bezahlter Urlaub oder Freitage\r\n(Die Stunden werden aufgrund von "TimeFrom" und "TimeTo" errechnet)'
+  - name: 'NonPaidOffHours'
+    description: 'Unbezahlter Urlaub\r\n(Die Stunden werden aufgrund von "TimeFrom" und "TimeTo" errechnet)'
+  - name: 'BalanceTimeDue'
+    description: 'Sollsaldo auf Ende der Periode'
+  - name: 'BalanceTimeVacation'
+    description: 'Ferienanspruch auf Ende der Periode'
+  - name: 'ClosingDate'
+    description: 'Ausführungsdatum des Abschlusses der Periode und Eröffnung der neuen Periode'

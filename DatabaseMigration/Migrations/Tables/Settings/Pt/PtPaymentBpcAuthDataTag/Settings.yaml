@@ -1,0 +1,33 @@
+table:
+  name: 'PtPaymentBpcAuthDataTag'
+  description: 'Authorization tag'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'BPC Auth Tag'
+        helpText: 'BPC Auth Tag'
+    - german:
+        formTitle: 'BPC Auth Tag'
+        helpText: 'BPC Auth Tag'
+  columns:
+  - name: 'AuthDataId'
+    description: 'Reference to auth data'
+    genericControls:
+      refTable: 'PtPaymentBpcAuthData'
+      refField: 'Id'
+  - name: 'TagId'
+    description: 'Tag identifier. This tag optional if present tag_name'
+  - name: 'TagName'
+    description: 'Tag name. This tag optional if present tag_id'
+  - name: 'TagValue'
+    description: 'Tag value'
+  - name: 'SeqNumber'
+    description: 'Sequential number of tag occurrence in operation'

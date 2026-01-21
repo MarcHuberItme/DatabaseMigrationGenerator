@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetForeignCyItemsByProduct'
+  description: 'select bookins on the specified range of valuedate for the given currency and productno'

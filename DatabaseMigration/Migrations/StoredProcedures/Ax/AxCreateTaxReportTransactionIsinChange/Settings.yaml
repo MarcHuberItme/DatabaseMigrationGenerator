@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxCreateTaxReportTransactionIsinChange'
+  description: 'In- and out-transaction for all security-transactions the isin has changed between the start- and enddate.'

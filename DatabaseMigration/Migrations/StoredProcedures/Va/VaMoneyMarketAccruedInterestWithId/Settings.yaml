@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaMoneyMarketAccruedInterestWithId'
+  description: 'Get all Money Market Accounts to calc Accrued Interest'

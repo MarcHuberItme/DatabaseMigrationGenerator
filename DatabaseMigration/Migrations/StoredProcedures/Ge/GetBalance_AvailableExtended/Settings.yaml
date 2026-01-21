@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetBalance_AvailableExtended'
+  description: 'This procedure returns available balanced based on actual balance, limits and withdraw rules. This re-implements functionality from GerBalance_Available and extends it to account for withdraw rules. GetBalance_Available will be removed later on.'

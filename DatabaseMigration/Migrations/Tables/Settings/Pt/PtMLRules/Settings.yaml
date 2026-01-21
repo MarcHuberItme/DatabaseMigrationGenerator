@@ -1,0 +1,76 @@
+table:
+  name: 'PtMLRules'
+  description: 'To store the definition of Anti Money Laundering Rules'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'AML Rules'
+    - german:
+        formTitle: 'GwG Regeln'
+  columns:
+  - name: 'RuleNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'RuleName'
+    description: 'Name of the Rule.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'WFMap'
+    description: 'Name of the work flow map, which will be launched on failure of this rule.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'AlertCounter'
+    description: '1 = start WF only once .. if rule is broken\r\n0 = start WF more than once ..... if rule is broken\r\n\r\nin case value is > 1 .... indicates how often the rule should be alerted.\r\n\r\n'
+    minValue: '0'
+    genericControls:
+      defColumnPos: 8
+  - name: 'AlertToConsTeam'
+    description: '0 = no\r\n1 = yes (PtBase.ConsultantTeam is used) -> if is NULL -> StandardConsTeam'
+    genericControls:
+      defColumnPos: 9
+  - name: 'StandardConsTeam'
+    description: 'Name of the Standard Consultat Team .... used for WF Step'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      hasDetailBtn: true
+      defColumnPos: 10
+  - name: 'DayCounter'
+    description: 'Transactions that took place within the mentioned Days. e.g. 180 ... the transactions of the last 180 days are under consideration.'
+  - name: 'PeriodType'
+    description: 'zu löschen.\r\nThe periodicity of the rules, how frequent the rule will be executed.\r\nThe definition of the Period Type corresponds as FinStar Date Calculation Module. (if the Field is NULL ... the rule will be applied as soon as a transaction took place)'
+    genericControls:
+      defColumnPos: 7
+  - name: 'NextExecDate'
+    description: 'zu löschen !\r\nThe Next execution date of the rule.  This is also in correspondence with the logic of Date calculation module.'
+  - name: 'Enabled'
+    description: '1 = Rule can be overwritten manually in PtMLRecommandations\r\n0 = the rule parameters are fixed no individual recommandations possible'
+    genericControls:
+      defColumnPos: 3
+  - name: 'RiskFactor'
+    description: 'The Risk Factor indicating the suspiciousness of the transaction. It can have three values. (0, 1, 2)\r\n0 - Safe\r\n1 - Slightly Suspicious\r\n2 - Risky'
+  - name: 'AMLIdentifier'
+    description: 'This is the identifier of the Anti Money Laundering, which indicates the rules which are voilates or deviated. Recommended Indentifiers by Tvt Compliance AG.'
+  - name: 'DisplayProfileName'
+    description: 'The name of display profile for the form that user sees after getting workflow in ''Task Box'''
+  - name: 'IsForRealtimeAnalysis'
+    description: ''
+  - name: 'AmountToCheck'
+    description: 'Used in the workflow:\r\nIf the amount is bigger than this value the workflow will send the transaction to the compliance or GwG-Fachstelle.'
+  - name: 'ExceptionGroupLabel'
+    description: ''
+  - name: 'ExceptionHandlingBehaviour'
+    description: 'CURRENTLY NOT USED - FALLBACK FIN-8756 (15.04.2023/daga)\r\n\r\nThe ExceptionHandlingBehaviour can currently have two values:\r\n0 - Standard Behaviour\r\n1 - Random Behaviour \r\n'
+  - name: 'IsInactive'
+    description: 'If set to true the Rule will not show up as checked in AML Manager'

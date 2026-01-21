@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtSetDefaultMLPeriodicCheckOverview'
+  description: 'Sets a Default in Table PtMLPeriodicCheckOverview on Insertion of a new Partner'

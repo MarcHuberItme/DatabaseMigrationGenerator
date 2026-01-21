@@ -1,0 +1,55 @@
+table:
+  name: 'PtPaymentBpcParticipant'
+  description: 'Operation participant'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'BPC Participant'
+        helpText: 'BPC Participant'
+    - german:
+        formTitle: 'BPC Teilnehmer'
+        helpText: 'BPC Teilnehmer'
+  columns:
+  - name: 'OperationId'
+    description: 'Reference to operation'
+    genericControls:
+      refTable: 'PtPaymentBpcOperation'
+      refField: 'Id'
+  - name: 'ParticipantType'
+    description: 'Custom participant type'
+  - name: 'ClientIdType'
+    description: 'Type of customer identification'
+  - name: 'ClientIdValue'
+    description: 'Customer identifier in accordance with identification type\r'
+  - name: 'CardNumber'
+    description: 'Card number'
+  - name: 'CardId'
+    description: 'Internal card identifier'
+  - name: 'CardInstanceId'
+    description: 'Internal card instance identifier'
+  - name: 'CardSeqNumber'
+    description: 'Card sequential number'
+  - name: 'CardExpirDate'
+    description: 'Card expiration date'
+  - name: 'CardCountry'
+    description: 'Card country\r'
+  - name: 'InstId'
+    description: 'Identifier of participant institution'
+  - name: 'NetworkId'
+    description: 'Network id'
+  - name: 'AuthCode'
+    description: 'Auth code'
+  - name: 'AccountNumber'
+    description: 'Account number\r'
+  - name: 'AccountAmount'
+    description: 'Amount addressed to participant account\r'
+  - name: 'AccountCurrency'
+    description: 'Account currency'

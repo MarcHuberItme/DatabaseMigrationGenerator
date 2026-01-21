@@ -1,0 +1,71 @@
+table:
+  name: 'PtRelationRole'
+  description: 'to specify a relation of a Slave (table PtRelationSlave)'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Role in Relation'
+    - german:
+        formTitle: 'Rolle innerhalb Beziehung'
+    - french:
+        formTitle: 'Role in Relation'
+  columns:
+  - name: 'RelationRoleNo'
+    description: 'is equivalent to VRX-Tabelle A25 respectively supplemented'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'MigValue'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'ForRelationType10'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox on the form of RelationSlaves which have RelationType 10 (co-partner).'
+  - name: 'ForRelationType12'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox of the form of RelationSlaves which have RelationType 12 ().'
+  - name: 'ForRelationType14'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox of the form of RelationSlaves which have RelationType 14 ().'
+  - name: 'ForRelationType20'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox on the form of RelationSlaves which have RelationType 20 (financial beneficary).'
+  - name: 'ForRelationType22'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox of the form of RelationSlaves which have RelationType 22 (beneficiary use).'
+  - name: 'ForRelationType30'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox on the form of RelationSlaves which have RelationType 30 (proxy).'
+  - name: 'ForRelationType40'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox of the form of RelationSlaves which have RelationType 40 (other relations).'
+  - name: 'ForRelationType42'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox of the form of RelationSlaves which have RelationType 42 (foreign investments).'
+  - name: 'ForRelationType50'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox of the form of RelationSlaves which have RelationType 50 (concern).'
+  - name: 'ForRelationType60'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox of the form of RelationSlaves which have RelationType 60 (FATCA/AIA)'
+  - name: 'ForRelationType70'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox of the form of RelationSlaves which have RelationType 70 (VSB)'
+  - name: 'ForRelationType80'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox of the form of RelationSlaves which have RelationType 80 (VDF roles).\r\nVDF domain: InstiInstiRoleType'
+  - name: 'ForRelationType90'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox of the form of RelationSlaves which have RelationType 90 (technical purpose).'
+  - name: 'ForRelationType92'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox of the form of RelationSlaves which have RelationType 92 (''Gesamtengagement'').'
+  - name: 'ForRelationType94'
+    description: 'All RelationRoles having set this flag to true will appear in the Combobox of the form of RelationSlaves which have RelationType 94 (''Art.21c/Organe'').'
+  - name: 'CompositeFlagDefault'
+    description: 'wenn diese Checkbox gewählt wird, wird bei der gewählten Rolle im Record PtRelationSlave automatisch die Checkbox CompositeFlag gecheckt.'
+  - name: 'RelationPassiveRoleNo'
+    description: 'Passive Role of the current Relation Role No\r\ne.g. RelationRoleNo = Father / RelationPassiveRoleNo = child'
+    genericControls:
+      refTable: 'PtRelationRole'
+      refField: 'RelationRoleNo'
+      defColumnPos: 2

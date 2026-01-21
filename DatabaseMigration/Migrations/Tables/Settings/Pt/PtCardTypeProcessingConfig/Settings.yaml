@@ -1,0 +1,52 @@
+table:
+  name: 'PtCardTypeProcessingConfig'
+  description: 'Card type change processing configuration. Used for change card processing in Finstar and for self management services in E-/Mobile-Banking.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Card type processing conf'
+        helpText: 'Card type processing configuration'
+    - german:
+        formTitle: 'Verarbeitungskonfiguratio'
+        helpText: 'Karten Verarbeitungskonfiguration'
+    - french:
+        formTitle: 'Configuration de traiteme'
+        helpText: 'Configuration de traitement'
+  columns:
+  - name: 'CardType'
+    description: 'Referenced card type'
+    genericControls:
+      refTable: 'PtCardType'
+      refField: 'CardType'
+      defColumnPos: 1
+  - name: 'OrderCard'
+    description: 'Defines whether cards can be ordered in E-/Mobile-Banking.'
+  - name: 'BlockCard'
+    description: 'Defines whether cards can be blocked in E-/Mobile-Banking.'
+  - name: 'UnblockCard'
+    description: 'Defines whether cards can be unblocked in E-/Mobile-Banking.'
+  - name: 'Contactless'
+    description: 'Defines whether the contactless feature of a card can be activated/deactivated in E-/Mobile-Banking.'
+  - name: 'ChangeLimits'
+    description: 'Defines whether card limits can be changed in E-/Mobile-Banking.'
+  - name: 'ChangeFraudConfig'
+    description: 'Defines whether card fraud configuration can be changed in E-/Mobile-Banking.'
+  - name: 'DeleteCard'
+    description: 'Defines whether cards can be deleted in E-/Mobile-Banking.'
+  - name: 'NewPin'
+    description: 'Defines whether a new card PIN can be ordered in E-/Mobile-Banking.'
+  - name: 'ReplaceCard'
+    description: ''
+  - name: 'ECommerce'
+    description: 'Defines whether cards can be change e-commerce in E-/Mobile-Banking.'
+  - name: 'Otrc'
+    description: 'Defines whether the "One Time Registration Code" OTRC can be retrieved over the e-banking'

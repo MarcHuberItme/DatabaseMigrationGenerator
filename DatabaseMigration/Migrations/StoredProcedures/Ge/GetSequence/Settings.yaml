@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetSequence'
+  description: 'for getting incremental Codes (Sequences)'

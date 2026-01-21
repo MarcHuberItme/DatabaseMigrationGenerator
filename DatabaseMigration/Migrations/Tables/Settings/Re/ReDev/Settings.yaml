@@ -1,0 +1,64 @@
+table:
+  name: 'ReDev'
+  description: 'Ausbau / Development\r\n\r\nz.B. Beschreibung des Heizsystems, der Waschanlage etc.\r\n\r\n\r\nFIS-2000: GR_AUSBAU'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'ReBuilding'
+      parentRelationField: 'BuildingId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Development'
+    - german:
+        formTitle: 'Ausbau'
+    - french:
+        formTitle: 'expansion'
+    - italian:
+        formTitle: 'espansione'
+  columns:
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'DevTypeId'
+    description: 'erst nach der Migration von FIS-2000 auf NOT NULL ändern\r\nAusbau Art\r\nFIS-2000: GR_AUSBAU_KRIT_CD'
+    genericControls:
+      refTable: 'ReDevType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'DevDetailId'
+    description: 'erst nach der Migration von FIS-2000 auf NOT NULL ändern\r\nAusbau Ausprägung\r\nFIS-2000: GR_AUSBAU_AUSP_CD'
+    genericControls:
+      refTable: 'ReDevDetail'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'MgDevTypeNo'
+    description: 'prov. für Migration FIS-2000'
+    genericControls:
+      refTable: 'ReDevType'
+      refField: 'DevTypeNo'
+      isOnlyForMig: true
+  - name: 'MgDevDetailNo'
+    description: 'prov. für Migration FIS-2000'
+    genericControls:
+      refTable: 'ReDevDetail'
+      refField: 'DevDetailNo'
+      isOnlyForMig: true
+  - name: 'ChoiceType'
+    description: ''
+    genericControls:
+      refTable: 'ReDevDetailChoiceType'
+      refField: 'Id'
+      defColumnPos: 3

@@ -1,0 +1,39 @@
+table:
+  name: 'PtFxPayoutStpRule'
+  description: 'Straight through processing rules for foregin outgoing payments'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'OrderTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderType'
+      refField: 'OrderTypeNo'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'OrderMessageType'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderMsgType'
+      refField: 'Id'

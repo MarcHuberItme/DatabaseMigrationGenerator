@@ -1,0 +1,22 @@
+table:
+  name: 'OaTwoFaProvider'
+  description: 'Table representing a two-factor authentication provider.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'TypeNo'
+    description: 'Referring to two-factor authentication provider type.'
+    minValue: '0'
+    maxValue: '255'
+    genericControls:
+      refTable: 'OaTwoFaProviderType'
+      refField: 'TypeNo'

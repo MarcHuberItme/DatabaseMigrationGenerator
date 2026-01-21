@@ -1,0 +1,52 @@
+table:
+  name: 'AsActivityRule'
+  description: 'Instruction for processing, e.g. \r\n- closing of an account\r\n- account statement\r\n- performance report\r\n- Advices / Anzeigen (Tagesauszug, Einzelanzeige, Sammelanzeige etc.)\r\n- etc.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Activity Rule'
+    - german:
+        formTitle: 'Aktionstyp'
+  columns:
+  - name: 'ActivityRuleCode'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'HasAdviceInstruction'
+    description: '0 = no advice instruction  \r\n1 = has advice instruction \r\nThis is only used for case of daily advice. it is determined as soon as there is any transaction activity upon an account'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsStatement'
+    description: '0 = no statement\r\n1 = is statement'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsClosing'
+    description: '0 = No\r\n1 = Yes'
+    genericControls:
+      defColumnPos: 4
+  - name: 'CorrItemId'
+    description: 'It is relation to document type only in case of statements'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+      defColumnPos: 5
+  - name: 'CanIgnoreBookings'
+    description: 'If true, the selection for the reports based on this activity rule ingores bookings which are marked with ''NotForDailyStatementSelection'' in PtTransItemText.\r\n\r\nThe flag is maninly used for the batch job FsClosingJobs.FsNextPeriod to determine whether it can extend the AccountStatementPeriod for an unprinted statement.'
+  - name: 'CapitalPaymentOnClosing'
+    description: 'The flag is relevant when "IsClosing" = 1. If this flag is set, capital payment (Debit/Credit) will be forced to make the account capital to zero.'
+  - name: 'ForPartner'
+    description: '1= for Partner Proc Rule'
+  - name: 'ForAccount'
+    description: '1= for Account Proc Rule'
+  - name: 'ForPortfolio'
+    description: '1= for Portfolio Proc Rule'

@@ -1,0 +1,23 @@
+table:
+  name: 'IfCamtDownloadHistoryAssoc'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'DownloadHistoryId'
+    description: ''
+    genericControls:
+      refTable: 'IfCamtDownloadHistory'
+      refField: 'Id'
+  - name: 'DeliveryHistoryId'
+    description: ''
+    genericControls:
+      refTable: 'IfDeliveryHistory'
+      refField: 'Id'

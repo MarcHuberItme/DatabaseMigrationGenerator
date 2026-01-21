@@ -1,0 +1,129 @@
+table:
+  name: 'PtContactReport'
+  description: 'informations about meetings between partners and the bank'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Contact Report'
+    - german:
+        formTitle: 'Kontaktrapport'
+    - french:
+        formTitle: 'Rapports de contact'
+  columns:
+  - name: 'TopicId'
+    description: 'foreign-key; Id of AsContactTopic'
+    genericControls:
+      refTable: 'AsContactTopic'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'MediaId'
+    description: 'foreign-key; Id of AsContactMedia'
+    genericControls:
+      refTable: 'AsContactMedia'
+      refField: 'Id'
+      defColumnPos: 7
+  - name: 'PartnerId'
+    description: 'foreign-key; Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'TriggerId'
+    description: 'z.B. Vermittler, Kundenberater selbst, etc.'
+    genericControls:
+      refTable: 'AsContactTrigger'
+      refField: 'Id'
+      defColumnPos: 8
+  - name: 'InitiatorId'
+    description: 'foreign-key; Id of AsContactInitiator'
+    genericControls:
+      refTable: 'AsContactInitiator'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'CustSpeaker'
+    description: 'leading speaker of the partners (if there are more persons in the meeting)\r\nA list of all participants of the meeting can be stored in the text field.'
+  - name: 'BankSpeakerId'
+    description: 'leading speaker of the bank (if there are more persons in the meeting)\r\nA list of all participants of the meeting can be stored in the text field.'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'MeetingPlace'
+    description: 'location where the contact/meeting takes place'
+  - name: 'BeginTime'
+    description: 'time when the contact/meeting started'
+    genericControls:
+      defColumnPos: 5
+  - name: 'EndTime'
+    description: 'time when the contact/meeting ended'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Expences'
+    description: 'costs thereby incurred'
+  - name: 'Text'
+    description: 'additional information to the ResultNo (only unformatted text)'
+    genericControls:
+      multiLine: true
+  - name: 'ResultNo'
+    description: 'achievd result out of this contact, e.g. client is not interessted in the offer'
+    genericControls:
+      refTable: 'PtContactResult'
+      refField: 'ResultNo'
+      defColumnPos: 4
+  - name: 'ReasonId'
+    description: ''
+    genericControls:
+      refTable: 'PtContactResultReason'
+      refField: 'Id'
+  - name: 'OpenIssueIdForNextContact'
+    description: 'foreign-key;  Id of PtOpenIssue\r\nthis Open-Issue contains the date of the next contact'
+    genericControls:
+      refTable: 'PtOpenIssue'
+      refField: 'Id'
+  - name: 'OpenIssueId'
+    description: 'foreign-key;  Id of PtOpenIssue\r\nPendenzen können manuell erfasst oder aus Applikationen generiert werden. Über den Kontaktrapport kann eine einzige Pendenz direkt referenziert werden.'
+    genericControls:
+      refTable: 'PtOpenIssue'
+      refField: 'Id'
+  - name: 'ProcessId'
+    description: 'based on a contact report a workflow can be initiated - the ProcessId of the started Workflow map is stored in this field.'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'IsConfidential'
+    description: 'vertraulich zu behandeln / is confidential\r\n0 = No\r\n1 = Yes'
+  - name: 'BulkFlag'
+    description: 'report is created through bulk mailings or just automatically\r\n1 = automatically\r\n0 / Null = Default = manually'
+  - name: 'TemplateId'
+    description: 'template used for this contact (for example in bulk mailings)'
+    genericControls:
+      refTable: 'AsTemplate'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AddressId'
+    description: 'the created document is sent to that addressId (for example in case of bulk mailings)'
+    genericControls:
+      refTable: 'PtAddress'
+      refField: 'Id'
+  - name: 'ReportText'
+    description: 'the whole document (formatted) is stored in the database.\r\nthis text is created with a template and is stored in a special format (rtf)'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CheckAccCompValueValidFrom'
+  description: 'check if there is already an entry for the account component with the defined valid from!'

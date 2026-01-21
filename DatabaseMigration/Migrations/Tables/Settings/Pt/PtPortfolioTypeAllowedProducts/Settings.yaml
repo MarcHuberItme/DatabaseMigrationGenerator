@@ -1,0 +1,35 @@
+table:
+  name: 'PtPortfolioTypeAllowedProducts'
+  description: 'Kontoprodukt-Zuordnung zu einem Portfoliotyp'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Acc type alloc portfolio'
+    - german:
+        formTitle: 'Kontoart Portfoliozuordnu'
+    - french:
+        formTitle: 'Type compte alloc portfol'
+    - italian:
+        formTitle: 'Tipo conto alloc portafog'
+  columns:
+  - name: 'PortfolioTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      defColumnPos: 1
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      defColumnPos: 2

@@ -1,0 +1,60 @@
+table:
+  name: 'AcReportRuleCriteria'
+  description: 'This table stores the criteria names'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Report Criteria'
+    - german:
+        formTitle: 'Report-Kriterien'
+  columns:
+  - name: 'CriteriaNo'
+    description: 'Criteria sequence number for creating the keystring'
+    minValue: '1'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CriteriaName'
+    description: 'Criteria name, used in ARS-System\r\nIn program code is the criteria to be referenced by field CriteriaCode.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'CriteriaCode'
+    description: 'CriteriaCode is used in programmcode and must not be changed'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsValid'
+    description: '0 = untested\r\n1 = ready for use\r\nARS - will use those records which will be having This flag as True (Checked)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'CriteriaTable'
+    description: 'Name of the table where the list of items of this criterion is held.'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'CriteriaField'
+    description: 'Field name for the criterion\r\nName of the field within the table where the list of items of this criterion is held.'
+  - name: 'CriteriaFieldDescription'
+    description: 'This Field will contain the Field of the table which is given as ''CriteriaTable''.\r\nThe Field will be used by ARS Definer to papulate the description of the Criterions\r\ndepending upon this field from the Base table.\r\ni.e. Select CriteriaField, CriteriaFieldDescription from CriteriaTable\r\nThis type of SQL statement will papulate the list of Criterions and their respective'
+  - name: 'KeyStartPosition'
+    description: 'Start position in Keystring'
+    minValue: '1'
+  - name: 'KeyLength'
+    description: 'Length of the key in Keystring'
+    minValue: '1'
+  - name: 'GroupingMethod'
+    description: '0 = without grouping\r\n1 = FinStar Grouping - Standard grouping (e.g. country to continent)\r\n2 = Code Translation (e.g. ID to ISO-Code) *not needed*\r\n3 = numeric e.g. Interest Rate or employees\r\n4 = Date e.g. Maturity Date \r\n********************************************************* \r\nFor calcuation of Maturity Days the program will find the record in this table by contacting the value in field ''CriteriaTable'' with the constant word ''Group'' to find the record which is defines the Base table for Grouping and the key string position for GroupNo\r\n\r\n*********************************************************\r\nand for calculation of Maturity in Months the program will find the do the same as above by contcatenating the word ''Group1'' with the value in the field ''CriteriaTable''\r\n'
+  - name: 'GroupType'
+    description: 'Used in case of  GroupingMethod 1 (Standard grouping)\r\nPredefined name of a group type (e.g. Continent for country grouping)\r\nresult of "GetGroupNo" function is GroupId and GroupNo.'
+  - name: 'Instruction'
+    description: 'Textual instruction how  this criteria has to be calculated'
+    genericControls:
+      multiLine: true
+  - name: 'Format'
+    description: 'Format of the criteria, \r\ne.g. MaturitiyDate  = dd.mm.yyyy'

@@ -1,0 +1,66 @@
+table:
+  name: 'MgZvEndbeg'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'creat_dt'
+    description: ''
+  - name: 'creat_id'
+    description: ''
+  - name: 'mut_von'
+    description: ''
+  - name: 'mut_bis'
+    description: ''
+  - name: 'kd_lnr_vis'
+    description: ''
+  - name: 'log_lnr_mut'
+    description: ''
+  - name: 'vers_vor'
+    description: ''
+  - name: 'stat_cd'
+    description: ''
+  - name: 'userbk_nr'
+    description: ''
+  - name: 'vers'
+    description: ''
+  - name: 'gesperrt'
+    description: ''
+  - name: 'algo_code'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'serie_nr'
+    description: ''
+  - name: 'konto_id'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'alt_kto_nr'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'linie1'
+    description: ''
+  - name: 'linie2'
+    description: ''
+  - name: 'linie3'
+    description: ''
+  - name: 'linie4'
+    description: ''
+  - name: 'datum'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'anz_rueckgriffe'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'no_cmp'
+    description: ''

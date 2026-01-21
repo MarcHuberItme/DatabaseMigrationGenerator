@@ -1,0 +1,45 @@
+table:
+  name: 'PtPaymentExtChargeDetail'
+  description: 'Charge detail that needs to be forwarded to external receiver, for example over SIC'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment Charge details'
+        helpText: 'Payment Charge details'
+    - german:
+        formTitle: 'Zahlungsdetails'
+        helpText: 'Zahlungsdetails'
+    - french:
+        formTitle: 'Détails des frais de paie'
+        helpText: 'Détails des frais de paiement'
+  columns:
+  - name: 'OrderDetailId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderDetail'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'ChargeAmount'
+    description: ''
+  - name: 'ReceiverParty'
+    description: ''
+  - name: 'ChargeTypeCode'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentChargeTypeCode'
+      refField: 'CodeNo'

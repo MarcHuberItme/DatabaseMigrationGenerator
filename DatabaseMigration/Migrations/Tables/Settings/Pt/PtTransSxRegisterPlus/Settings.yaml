@@ -1,0 +1,55 @@
+table:
+  name: 'PtTransSxRegisterPlus'
+  description: 'Staging Area for Sx Transaction register with new XML data for multipurpose. Initially will be used with SMR 8.1 (SWX Meldung; FinfraG Art 39; Transparency reporting)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtTransSxRegisterPlus'
+    - german:
+        formTitle: 'PtTransSxRegisterPlus'
+    - french:
+        formTitle: 'PtTransSxRegisterPlus'
+  columns:
+  - name: 'ExportID'
+    description: 'Used to track the runs'
+    genericControls:
+      refTable: 'PtTransSxExportRun'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ExportSQLSeqNo'
+    description: 'Used to track the SQLs used for generating the corresponding data'
+    genericControls:
+      defColumnPos: 2
+  - name: 'SourceTableName'
+    description: 'name of the table used as source for the data'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'SourceRecId'
+    description: 'record id use for tha data source'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsSuppressed'
+    description: 'marked records are not written to the output file'
+    genericControls:
+      defColumnPos: 3
+  - name: 'XmlDataSetType'
+    description: 'DataType of the current record. It is meant to be used for Coding, Decoding and Versioning of changes'
+    genericControls:
+      refTable: 'PtTransSxRegisterPlusDataType'
+      refField: 'XmlDataType'
+  - name: 'XmlDataSet'
+    description: 'the final data stored for further use (generating an external report, moving data somewhere else) in XML format'
+    genericControls:
+      defColumnPos: 4

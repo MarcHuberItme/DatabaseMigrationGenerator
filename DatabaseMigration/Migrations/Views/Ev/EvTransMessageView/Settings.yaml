@@ -1,0 +1,259 @@
+view:
+  name: 'EvTransMessageView'
+  description: ''
+frontendView:
+  name: 'EvTransMessageView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'TransText'
+  columns:
+  - name: 'TransactionId'
+    description: 'Reference to PtTransaction'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PaymentCurrency'
+    description: 'Settlement (Payment) Currency 3-digit Code.'
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'PaymentAmount'
+    description: 'Payment (settlement) amount in currency of "PaymentCurrency"'
+    dataType: 'money'
+    scale: 2
+    genericControls:
+      defColumnPos: 3
+  - name: 'PaymentDate'
+    description: 'Date of settlement or Scheduled payment date'
+    dataType: 'datetime'
+  - name: 'TradeDate'
+    description: 'Date on wich the transaction (e.g. trade, interest payment, cash payment) was fixed.'
+    dataType: 'datetime'
+  - name: 'TransMsgStatusNo'
+    description: 'This field has 4 possible status:\r\n- NULL = normal\r\n- this original transaction is cancelled\r\n- this is a cancellation transaction\r\n- Rektifikat'
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtTransMsgStatus'
+      refField: 'TransMsgStatusNo'
+  - name: 'CancelTransMsgId'
+    description: 'If the transaction is a cancellation transaction or a Rektifikat, this field references the cancelled original transaction'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitGroupKey'
+    description: 'possible key format: yyyymmddhhmmssqqq where \r\nyyyymmdd = date, hhmmss = time\r\nqqq = sequence no within the a second\r\nThis format is used e.g. for StandingOrder or QuickOrder to force a single debit advise.'
+    dataType: 'nvarchar'
+    prec: 17
+  - name: 'DebitAdvice'
+    description: '0 = no advice, Info is handled by account statement\r\n1 = as part of transaction processing, multi item advice\r\n2 = as part of transaction processing, single advice\r\n3 = as multi item advice at end of day, \r\n4 = as part of transaction processing, total amount advice (Summenanzeige ohne Details)\r\n9 = report on demand (for internal accounts)\r\nFor StandingOrder, QuickOrder and similar orders  the value is to set to 1'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+  - name: 'DebitPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitPrReferenceId'
+    description: '//Denormalization\r\nProduct Reference Id of debit account. It is associates to a row in PrReference\r\nProduct Reference is at the most generalized level in Product hierarchy.'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrRefPosTextView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitAccountCurrency'
+    description: '//denormalization\r\nCurrency code of Debit account'
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 11
+  - name: 'DebitRateAcCuPfCu'
+    description: 'Exchange rate (factor) between account currency (original curr.) and portfolio currency (target curr.)'
+    dataType: 'float'
+  - name: 'DebitRate'
+    description: 'Cross Rate of Debit Currency and Settlement Currency\r\nRate to calculate DebitAmount from PaymentAmount\r\nThe rate is to be delivered by CPM and CSS if the currency is different.\r\nThe rate is to set to 1.00 if the currency is equal'
+    dataType: 'float'
+  - name: 'DebitQuantity'
+    description: 'Quantity (nominal or piece) of financial instruments'
+    dataType: 'money'
+  - name: 'DebitAmount'
+    description: 'Amout to debit the account'
+    dataType: 'money'
+  - name: 'DebitCvCurrency'
+    description: 'Currency of the amount for cost value calculation (DebitCvAmount)'
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'DebitAmountCv'
+    description: 'Amount for cost value calculation in original currency (DebitCvCurrency)'
+    dataType: 'money'
+  - name: 'DebitAmountCvAcCu'
+    description: 'Amount for cost value calculation in position currency (DebitAccountCurrency)'
+    dataType: 'money'
+  - name: 'DebitCvAmountTypeNo'
+    description: 'Amount type for booking in the portfolio bookkeeping (also called as cost value system)'
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtTransCvAmountType'
+      refField: 'CvAmountTypeNo'
+  - name: 'DebitValueDate'
+    description: 'Same as PaymentDate as default.'
+    dataType: 'datetime'
+  - name: 'DebitTextNo'
+    description: 'Text to show on account statement\r\n(Not supported in standing order)'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+  - name: 'DebitLocGroupId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrLocGroupView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'VatCode'
+    description: '[Bank Internal Project]\r\n'
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'CreditGroupKey'
+    description: 'Depending on a special Rule (is to be defined by NMU), \r\ndefault key format: yyyymmddhhmmssqqq where \r\nyyyymmdd = date, hhmmss = time\r\nqqq = sequence no within the a second'
+    dataType: 'nvarchar'
+    prec: 17
+  - name: 'CreditAdvice'
+    description: '0 = no advice, Info is handled by account statement\r\n1 = as part of transaction processing multi item advice\r\n2 = as part of transaction processing single advice\r\n3 = as multi item advice at end of day, \r\n9 = report on demand (for internal accounts)\r\nFor StandingOrder, QuickOrder and similar orders  the value is to set to 1'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+  - name: 'CreditPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditPrReferenceId'
+    description: '//Denormalization\r\nProduct Reference Id of credit account. It is associates to a row in PrReference\r\nProduct Reference is at the most generalized level in Product hierarchy.'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrRefPosTextView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditAccountCurrency'
+    description: '//denormalization\r\nCurrency code of Credit account'
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 10
+  - name: 'CreditRateAcCuPfCu'
+    description: 'Exchange rate (factor) between account currency (original curr.) and portfolio currency (target curr.)'
+    dataType: 'float'
+  - name: 'CreditRate'
+    description: 'Cross Rate of Credit Currency and Settlement Currency\r\nRate to calculate CreditAmount from PaymentAmount\r\nThe rate is to be delivered by CPM and CSS if the currency is different.\r\nThe rate is to set to 1.00 if the currency is equal'
+    dataType: 'float'
+  - name: 'CreditQuantity'
+    description: 'Quantity (nominal or piece) of financial instruments'
+    dataType: 'money'
+  - name: 'CreditAmount'
+    description: 'Amout to debit the account'
+    dataType: 'money'
+  - name: 'CreditCvCurrency'
+    description: 'Currency of the amount for cost value calculation (CreditCvAmount)'
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'CreditAmountCv'
+    description: 'Amount for cost value calculation in original currency (CreditCvCurrency)'
+    dataType: 'money'
+  - name: 'CreditAmountCvAcCu'
+    description: 'Amount for cost value calculation in position currency (DebitAccountCurrency)'
+    dataType: 'money'
+  - name: 'CreditCvAmountTypeNo'
+    description: 'Amount type for booking in the portfolio bookkeeping (also called as cost value system)'
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtTransCvAmountType'
+      refField: 'CvAmountTypeNo'
+  - name: 'CreditValueDate'
+    description: 'Same as PaymentDate as default.'
+    dataType: 'datetime'
+  - name: 'CreditTextNo'
+    description: 'Text to show on account statement'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+  - name: 'CreditLocGroupId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrLocGroupView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ExternalPayeeId'
+    description: 'Id in case of external payee. It is used (both in case of normal payments and LSV)'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsPayee'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransText'
+    description: 'free text entered through the cashier, is coming as instruction from outside in case of  EC cards (e.g.  Coop Aarau  13:30) - will be automatically copied into transremark in case of cashiers-application.'
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      multiLine: true
+  - name: 'TransNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 12
+  - name: 'MsgSequenceNumber'
+    description: ''
+    dataType: 'int'
+  - name: 'TransTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+  - name: 'TransDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'IsTransitBooking'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 12

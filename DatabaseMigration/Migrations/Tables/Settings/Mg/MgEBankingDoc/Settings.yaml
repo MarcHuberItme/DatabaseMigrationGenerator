@@ -1,0 +1,62 @@
+table:
+  name: 'MgEBankingDoc'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FIS2000Id'
+    description: ''
+  - name: 'Segment'
+    description: 'Arbgeb'
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'SubAccountNo'
+    description: ''
+  - name: 'CreateDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Filename'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'FileRelPath'
+    description: ''
+  - name: 'FilenamePartner'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'FileCounter'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'DocType'
+    description: ''
+  - name: 'DocName'
+    description: ''
+  - name: 'DocDate'
+    description: ''
+  - name: 'SendDate'
+    description: ''
+  - name: 'FileSize'
+    description: ''
+  - name: 'File_Stat_CD'
+    description: ''
+  - name: 'Amount'
+    description: ''
+  - name: 'MigrationTime'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ErrorTextFull'
+    description: ''
+    genericControls:
+      defColumnPos: 7

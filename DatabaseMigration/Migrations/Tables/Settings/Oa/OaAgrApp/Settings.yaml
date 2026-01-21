@@ -1,0 +1,49 @@
+table:
+  name: 'OaAgrApp'
+  description: 'Sub-Table of PtAgrEbanking.\r\nConstains the customer''s agreement to use a specific app over the OpenBanking API'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'API-App Agreement'
+    - german:
+        formTitle: 'API-App Berechtigung'
+  columns:
+  - name: 'AgrEBankingId'
+    description: 'Relation to the E-Banking contract.'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AppId'
+    description: ''
+    genericControls:
+      refTable: 'OaApp'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'SingleMoneyTransferLimit'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'StrongAuthForQueries'
+    description: 'if strong authentication in OaApp is required and this field is true, strong authentication is also required for queries'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PasswordBcrypt'
+    description: 'BCrypt hash of the password\r\n\r\n'
+  - name: 'WrongPasswordCounter'
+    description: 'Cuonter of wrong password entries, will be reset to 0 if password was entered correctly.'
+  - name: 'DailyMoneyTransferLimit'
+    description: 'Max cumulated amount of payments created on a single day.'
+  - name: 'MonthlyMoneyTransferLimit'
+    description: 'Max cumulated amount of payments created on a single month.'
+  - name: 'YearlyMoneyTransferLimit'
+    description: 'Max cumulated amount of payments created on a single year.'

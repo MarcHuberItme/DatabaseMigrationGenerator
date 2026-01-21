@@ -1,0 +1,73 @@
+table:
+  name: 'PtAccountClosingDetails'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Closing Detail'
+    - german:
+        formTitle: 'Abschlussdetail'
+  columns:
+  - name: 'AccountClosingPeriodId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountClosingPeriod'
+      refField: 'Id'
+  - name: 'ValidFrom'
+    description: 'This is the ValidFrom of the first row of the Interval Table'
+  - name: 'AccountComponentId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountComponent'
+      refField: 'Id'
+  - name: 'ValidTo'
+    description: 'This is the ValidTo of the last row of the Interval Table'
+  - name: 'ValueDate'
+    description: 'This is the ValidTo of the CurrentRow of the Interval Table'
+  - name: 'Balance'
+    description: 'This is the balance on the ValidTo Date'
+  - name: 'DayBalance'
+    description: 'This is the balance of the day'
+  - name: 'ValueFrom'
+    description: 'This is set equal to the ValidTo of the previous Product component entry. Set to zero if the first product component in the table.'
+  - name: 'Valueto'
+    description: 'This is set equal to the sum o fthe Product Components Value to this point. Use only the non-high value activities.'
+  - name: 'Days'
+    description: 'The days returned by the Interestpracticesmodule'
+  - name: 'Priority'
+    description: 'The priority of product component under consideration'
+  - name: 'UsedValue'
+    description: 'The used value of the Price Calculation Table'
+  - name: 'UnusedValue'
+    description: 'The unused value of the price calculation table'
+  - name: 'UnusedLoan'
+    description: 'The unused loan field of hte price calculation table'
+  - name: 'InterestRate'
+    description: 'Interest Rate that has been applied for this Product Component Type'
+  - name: 'InterestAmount'
+    description: 'This is the interest that has been calculated'
+  - name: 'CommissionRate'
+    description: 'Commission Rate that has been applied for this Product Component Type'
+  - name: 'CommissionAmount'
+    description: 'This is the commission that has been calculated'
+  - name: 'ProvisionRate'
+    description: ''
+  - name: 'ProvisionAmount'
+    description: ''
+  - name: 'IsDebit'
+    description: ''
+  - name: 'ComponentValidFrom'
+    description: ''
+  - name: 'ComponentValidTo'
+    description: ''
+  - name: 'ComponentLimit'
+    description: ''
+  - name: 'DepositFee'
+    description: ''

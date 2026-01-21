@@ -1,0 +1,18 @@
+table:
+  name: 'PtAccountAdvancedClosing'
+  description: 'Buffer table to store information about ''pre-calculated'' closing activities.\r\nUsed to check if closing transactions have to be rolled back.\r\nAfter this ''rollback'' the records are physically deleted.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PositionId'
+    description: 'Id of record in ''PtPosition'', defining the ''position'' of the precalculated transaction'
+  - name: 'TransactionId'
+    description: 'Id of record in ''PtTransaction'', defining the precalculated transaction which might be rolled back.'
+  - name: 'ExecutedDate'
+    description: 'Date of intended closing execution corresponding to field in table ''PtAccountClosingPeriod'''

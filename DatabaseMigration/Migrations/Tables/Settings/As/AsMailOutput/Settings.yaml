@@ -1,0 +1,118 @@
+table:
+  name: 'AsMailOutput'
+  description: 'Index of edited mails (paper or electronic), ready for batch output process.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'OutgoingMail'
+    - german:
+        formTitle: 'Postausgang'
+  columns:
+  - name: 'DocumentDataId'
+    description: ''
+    genericControls:
+      refTable: 'AsDocumentData_O'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'SheetNumber'
+    description: 'Number of sheets for one document'
+  - name: 'CreationDate'
+    description: 'Virtual creation date of the document'
+  - name: 'FirstClassMail'
+    description: 'True if first class mail (e.g. for using a color printer)'
+  - name: 'PartnerNo'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+  - name: 'PortfolioNo'
+    description: ''
+  - name: 'AccountNo'
+    description: ''
+  - name: 'ReceiverPartnerNo'
+    description: ''
+  - name: 'ReceiverAddressTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAddressType'
+      refField: 'AddressTypeNo'
+  - name: 'ReceiverCountry'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'ReceiverZip'
+    description: ''
+  - name: 'ReceiverEmailAddress'
+    description: 'EMail Address if document is to be sent by eMail'
+  - name: 'CarrierTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsCarrierType'
+      refField: 'CarrierTypeNo'
+  - name: 'ScheduledDeliveryTime'
+    description: 'Date/Time of delivery. \r\nIn the batch output process the document has to be selected if \r\ncurrent time is >= the value in this field'
+  - name: 'DetourGroupName'
+    description: 'Name of the detour group if the document is to show to an internal person before mail to the customer.'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'AsTemplateId'
+    description: 'for Bulkmails'
+    genericControls:
+      refTable: 'AsTemplate'
+      refField: 'Id'
+  - name: 'Amount'
+    description: 'Amount for display in the eMail document list'
+  - name: 'CorrItemId'
+    description: 'Relation to corr item so that type of document can be identified directly.'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+  - name: 'DocumentType'
+    description: 'This field is used to display the type of the document in the eMail document list'
+  - name: 'MailOutput'
+    description: 'This field is used for bulkmails, which are not stored in the table AsDocumentData'
+  - name: 'CopyNumber'
+    description: 'number of copies for the document'
+    minValue: '1'
+    maxValue: '99'
+  - name: 'IsFromMigration'
+    description: ''
+  - name: 'MgDocFileName'
+    description: 'Name of the file without the extension. Path and extensions are handled by the application.'
+  - name: 'Processed'
+    description: 'Set to true when document is printed.'
+  - name: 'JobDocId'
+    description: 'Id from table AsMailOutputJobDoc in which this document was processed.'
+    genericControls:
+      refTable: 'AsMailOutputJobDoc'
+      refField: 'Id'
+  - name: 'JobBatchPageNo'
+    description: 'Batch page number that was assigned to this document while processing.'
+  - name: 'EmailLanguage'
+    description: 'Language in which email shall be generated. If NULL, default 2 is assumed.'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'DoChargeCost'
+    description: 'Flag says if the charge cost has to be debited'
+  - name: 'IsPrimaryCorrAddress'
+    description: 'True if the receiver address is the primary correpondence address.\r\n\r\nUsage example:\r\nAn ESR-document might be printed on a special ESR-form for the primary address, but on normal paper for the non-primary addresses.'
+  - name: 'JobCategoryNo'
+    description: 'Job category, necessary to devide the print process in different jobs.'
+    genericControls:
+      refTable: 'AsMailJobCategory'
+      refField: 'JobCategoryNo'
+  - name: 'DocumentId'
+    description: 'Id of AsDocument, is used to avoid join over AsDocumentData'
+    genericControls:
+      refTable: 'AsDocument'
+      refField: 'Id'

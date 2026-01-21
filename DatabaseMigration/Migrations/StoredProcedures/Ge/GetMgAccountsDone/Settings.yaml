@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetMgAccountsDone'
+  description: 'for BookingMigration'

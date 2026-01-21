@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetProcConfStatus'
+  description: 'Determins the lowes ConfirmationStatus in a group of pending changes for a given ProcessId'

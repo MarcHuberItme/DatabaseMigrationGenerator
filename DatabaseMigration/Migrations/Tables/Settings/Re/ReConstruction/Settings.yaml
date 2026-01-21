@@ -1,0 +1,58 @@
+table:
+  name: 'ReConstruction'
+  description: 'Gebäudekonstruktion\r\n\r\n\r\n\r\n\r\nFIS-2000: GR_KONSTR'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'ReBuilding'
+      parentRelationField: 'BuildingId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Construction'
+    - german:
+        formTitle: 'Konstruktion'
+    - french:
+        formTitle: 'construction'
+    - italian:
+        formTitle: 'costruzione'
+  columns:
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ConstructionTypeId'
+    description: 'erst nach der Migration von FIS-2000 auf NOT NULL ändern'
+    genericControls:
+      refTable: 'ReConstructionType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ConstructionDetailId'
+    description: 'erst nach der Migration von FIS-2000 auf NOT NULL ändern'
+    genericControls:
+      refTable: 'ReConstructionDetail'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'MgConstructionTypeNo'
+    description: 'prov. nur für Migration FIS-2000'
+    genericControls:
+      refTable: 'ReConstructionType'
+      refField: 'ConstructionType'
+      isOnlyForMig: true
+  - name: 'MgConstructionDetailNo'
+    description: 'prov. nur für Migration FIS-2000'
+    genericControls:
+      refTable: 'ReConstructionDetail'
+      refField: 'ConstructionDetailNo'
+      isOnlyForMig: true

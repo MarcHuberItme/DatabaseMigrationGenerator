@@ -1,0 +1,32 @@
+table:
+  name: 'PtPMSInstrument'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PMS Specific Instrument'
+  columns:
+  - name: 'VDFInstrumentSymbol'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'PMSInstrumentSymbol'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'TradePlaceCode'
+    description: ''

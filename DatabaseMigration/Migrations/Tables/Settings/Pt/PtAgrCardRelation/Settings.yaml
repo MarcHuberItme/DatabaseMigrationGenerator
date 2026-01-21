@@ -1,0 +1,41 @@
+table:
+  name: 'PtAgrCardRelation'
+  description: 'Assignment of the account, portfolio or partner to debit the transaction done with this card'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'CardId'
+    description: 'Relation to the Id of PtAgrCard'
+    genericControls:
+      refTable: 'PtAgrCardBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'PartnerId'
+    description: 'Partner if any account of the related partner may be used to debit the transaction'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PortfolioId'
+    description: 'Portfolio if any account of the related portfolio may be used to debit the transaction'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'AccountId'
+    description: 'Account that may be used to debit the transaction'
+    genericControls:
+      refTable: 'PtAccountAllView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3

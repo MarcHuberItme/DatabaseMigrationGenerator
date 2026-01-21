@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AsNavigationIndex_GetByRoot'
+  description: 'Used to quickly access a navigation index from the data access components when a client needs an actual navigationindex-tree'

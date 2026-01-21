@@ -1,0 +1,43 @@
+table:
+  name: 'PtBlockReason'
+  description: 'cause of blocking\r\n'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'cause of blocking'
+    - german:
+        formTitle: 'Blockierungsgründe'
+  columns:
+  - name: 'MigValue'
+    description: 'value to backmigrate in XS12.VBART\r\nIf Null the blocking record will not be backmigrated.'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'AllowDebit'
+    description: ''
+  - name: 'AllowCredit'
+    description: ''
+  - name: 'IsWarning'
+    description: 'used as Default\r\n0 = is blocking (effektive Sperrung - im Fall von Sperrungen wird z.B die Karte am ATM eingezogen)\r\n1 = is only a warning (d.h. wird nur in den inaktiven Programmen berücksichtigt, nicht z.B. im ATM Betrieb).'
+  - name: 'ReleaseUserGroupName'
+    description: 'UserGroup that is allowed to release the blocking'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'AllowLSV'
+    description: 'In case of warning, LSV payments will be processed automatically unless this flag is set to 0 explicitly. In case of actual blocking, this flag is irrelevant.'
+  - name: 'ReleasePaymentOrderAllowed'
+    description: '1 = payment order can be released manually in case of this blocking reason\r\n0 = payment order can not be released'
+  - name: 'AllowSafeDeposit'
+    description: 'When 1, this blocking type has nothing to do with safe deposit box'

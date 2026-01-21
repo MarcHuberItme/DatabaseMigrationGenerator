@@ -1,0 +1,26 @@
+table:
+  name: 'AiTaxReportPartnerType'
+  description: 'Typ des Partners:\r\n- Person\r\n- Firma'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Partner type'
+    - german:
+        formTitle: 'Partnertyp'
+    - french:
+        formTitle: 'Type de partenaire'
+  columns:
+  - name: 'PartnerTypeNo'
+    description: '1 = Person / Individual\r\n2 = Firma / Corporation / Organization\r\n'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

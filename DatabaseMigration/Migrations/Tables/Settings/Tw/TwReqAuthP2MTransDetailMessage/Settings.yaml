@@ -1,0 +1,63 @@
+table:
+  name: 'TwReqAuthP2MTransDetailMessage'
+  description: 'Contains the detailed data of the P2M transaction. It could be connected to TwRequestAuthorizationMessage or TwFinancialAdviceMessage.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: bad6dd0b-5ed3-4cee-b419-0b3faf9ddacc
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Detail P2M Message'
+    - german:
+        formTitle: 'Detail P2M Message'
+  columns:
+  - name: 'ReqAuthMessageId'
+    description: 'Id of TwReqAuthMessage'
+    genericControls:
+      refTable: 'TwReqAuthMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'FinancialAdviceMessageId'
+    description: 'Id of TwFinancialAdviceMessage'
+    genericControls:
+      refTable: 'TwFinancialAdviceMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'AcquirerId'
+    description: 'The unique TWINT Identifier for the Acquirer this authorization comes through.'
+  - name: 'MerchantId'
+    description: 'The unique TWINT Identifier for the Merchant this authorization comes through.'
+  - name: 'AcquirerMerchantId'
+    description: 'A unique Identifier given to the Merchant by the Acquirer. Guaranteed to be stable across payment schemes, thus allowing the Issuer to recognize and track Merchants across different payment methods.\r\n'
+  - name: 'Name'
+    description: 'The name of the Merchant receiving the payment.'
+  - name: 'Street'
+    description: 'The name of the Street the Merchant resides at.'
+  - name: 'HouseNumber'
+    description: 'The house number of the address the Merchant resides at.'
+  - name: 'AdditionalAddressLine'
+    description: 'Space for an additional address line, if necessary (optional).'
+  - name: 'POBoxNumber'
+    description: 'Field to hold a PO Box Number, if necessary (optional).'
+  - name: 'ZipCode'
+    description: 'The ZIP Code of the Merchants address.'
+  - name: 'City'
+    description: 'The name of the City the Merchant resides at.'
+  - name: 'Country'
+    description: 'The country the Merchant resides at given as 3-Character Code according to ISO-3166.'
+  - name: 'Latitude'
+    description: 'The Latitude of the Merchants Location given as a decimal coordinate. Coordinates are determined according to the WGS84 Reference system.\r\nThe field is given as decimal number with 8 digits of which 5 are decimal places (ddd.ddddd). The Value ranges between +90 and -90 (optional).'
+  - name: 'Longitude'
+    description: 'The Longitude of the Merchants Location given as a decimal coordinate. Coordinates are determined according to the WGS84 Reference system.\r\nThe field is given as decimal number with 8 digits of which 5 are decimal places (ddd.ddddd). The Value ranges between +180 and -180 (optional).'
+  - name: 'Category'
+    description: 'The category of business the merchant is operating. This is given as an MCC Code according to the VISA Scheme to uniquely and consistently identify the category of business.\r\n'
+  - name: 'Homepage'
+    description: 'The URL for the Merchants homepage (especially for ECommerce / optional).'

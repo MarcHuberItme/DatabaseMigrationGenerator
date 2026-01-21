@@ -1,0 +1,23 @@
+table:
+  name: 'PtTransSxFixMappingFinstarFld'
+  description: 'List of Finstar Fields that are being read by Finstar for the FIX Mapping configuration'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'FIX mapping Finstar field'
+        helpText: 'Finstar fields for FIX mapping configuration'
+    - german:
+        formTitle: 'FIX Mapping Finstar Feld'
+        helpText: 'Finstar Felder für FIX Mapping Konfiguration'
+  columns:
+  - name: 'FinstarField'
+    description: ''
+    genericControls:
+      defColumnPos: 1

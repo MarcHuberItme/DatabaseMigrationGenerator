@@ -1,0 +1,74 @@
+table:
+  name: 'PtTaxRegPosition'
+  description: 'Holds the position vor historical FWHT valuation'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TaxRegBalanceId'
+    description: ''
+    genericControls:
+      refTable: 'PtTaxRegBalance'
+      refField: 'Id'
+  - name: 'PortfolioNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'PortfolioNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PositionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+  - name: 'PositionType'
+    description: ''
+    genericControls:
+      refTable: 'EvPositionType'
+      refField: 'PositionType'
+      defColumnPos: 2
+  - name: 'OrderNo'
+    description: ''
+  - name: 'Description'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'MaturityDate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'Quantity'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'Rate'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'RateAdjustmentFactor'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'PriceCurrency'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'RatePrCuCHF'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'MarketValueCHF'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'MarketValueChfNew'
+    description: ''
+    genericControls:
+      defColumnPos: 11

@@ -1,0 +1,24 @@
+table:
+  name: 'PrPublicSPH_Test'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Valor'
+    description: ''
+  - name: 'Isin'
+    description: ''
+  - name: 'Valorentext'
+    description: ''
+  - name: 'Anzahl'
+    description: ''
+  - name: 'Titelart'
+    description: ''
+  - name: 'Titelarttext'
+    description: ''

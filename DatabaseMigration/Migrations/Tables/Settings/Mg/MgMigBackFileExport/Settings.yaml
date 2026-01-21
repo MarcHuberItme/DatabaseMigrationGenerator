@@ -1,0 +1,40 @@
+table:
+  name: 'MgMigBackFileExport'
+  description: 'Details about export from MgMigBackBuffer to file for VRX'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'VRX Backmig File Details'
+    - german:
+        formTitle: 'VRX Backmig File Details'
+    - french:
+        formTitle: 'VRX Backmig File Details'
+    - italian:
+        formTitle: 'VRX Backmig File Details'
+  columns:
+  - name: 'FileName'
+    description: 'Export FileName'
+  - name: 'FileLocation'
+    description: ''
+  - name: 'FileStatus'
+    description: '0 = Draft\r\n10 = ToBeProcessed\r\n20 = SelectingRecs\r\n30 = BuildingFile\r\n40 = FileCompleted\r\n50 = FileDelivered'
+  - name: 'Destination'
+    description: ''
+  - name: 'AdditionalWhere'
+    description: 'additional where to filter the records to select'
+  - name: 'StartSelect'
+    description: ''
+  - name: 'StartBuildFile'
+    description: ''
+  - name: 'FileCompleted'
+    description: ''
+  - name: 'FileDelivered'
+    description: ''

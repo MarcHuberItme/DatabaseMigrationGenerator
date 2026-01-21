@@ -1,0 +1,33 @@
+table:
+  name: 'OaAppPaymentOrderGroupType'
+  description: 'Defines which PaymentOrderGroupTypes to display for an OaApp.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'OaAppPaymentOrderGroupTyp'
+        helpText: 'OaAppPaymentOrderGroupType'
+    - german:
+        formTitle: 'OaAppPaymentOrdeOaAprType'
+        helpText: 'OaAppPaymentOrderGroupType'
+  columns:
+  - name: 'AppId'
+    description: ''
+    genericControls:
+      refTable: 'OaApp'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'OrderGroupTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderGroupType'
+      refField: 'OrderGroupTypeNo'
+      defColumnPos: 2

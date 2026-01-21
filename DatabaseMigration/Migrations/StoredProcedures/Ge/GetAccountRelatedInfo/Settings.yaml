@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountRelatedInfo'
+  description: '/*Purpose         : This procedure returns the account related information*/\r\n/*Author            : Abdul Nasir Khan                                                          */\r\n/*Date Created : 16-May-2003                                                                  */\r\n/*Date Modified : 12-Oct-2003                                                                  */'

@@ -1,0 +1,65 @@
+table:
+  name: 'CoEngcalc'
+  description: 'Berechnetes Gesamtengagement für einen Kundengruppe \r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Group engagement'
+    - german:
+        formTitle: 'Gruppen Gesamtengagement'
+  columns:
+  - name: 'Idmaster'
+    description: 'ID von Gesamtengagement oder Kundengemeinschaft, bei einem Gesamtengagament für einen einzelnen Kunden leer\r\n'
+    genericControls:
+      refTable: 'PtRelationMaster'
+      refField: 'Id'
+  - name: 'RelationTypeNo'
+    description: 'Hier nur Verbindungstyp 10 (einfache Gemeinschaft -> Famile) oder 92 (Gesamtengagement) erlaubt, redundant aus Tabelle ptrelationmaster. Bei einem Gesamtengagament für einen einzelnen Kunden leer.'
+    genericControls:
+      refTable: 'PtRelationType'
+      refField: 'RelationTypeNo'
+  - name: 'Veragrp'
+    description: 'Laufnummer ist bei einer Deckungsausscheidung für alle gleichzeitig verarbeiten Sicherheiten und Kreditkonti gleich, für das Gesamtengagement wird diese Laufnummer auch für die Historisierung der Kontoseite (Tabellen coeng...) verwendet'
+    genericControls:
+      refTable: 'CoVeragrp'
+      refField: 'Veragrp'
+  - name: 'Veradate'
+    description: 'Datum der Verarbeitung'
+  - name: 'Requser'
+    description: 'Benutzer der das Gesamtengagement abgerufen hat'
+  - name: 'Remark'
+    description: 'Bemerkung'
+    genericControls:
+      multiLine: true
+  - name: 'Remark1'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Remark2'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Organflag'
+    description: 'Gesamtengagament für einen Organkredit ?'
+  - name: 'Largedebitor'
+    description: 'Gesamtengagement für einen der 10 grössten Schuldnern der Bank ?'
+  - name: 'Engstat'
+    description: 'Status der Engagamentverarbeitung:\r\n000 angemeldet\r\n010 Kreditkonti historisiert\r\n020 Deckungsausscheidung gestartet\r\n100 abgeschlossen'
+    genericControls:
+      refTable: 'CoEngstat'
+      refField: 'Engstat'
+  - name: 'Clientmaster'
+    description: 'Kundenlaufnummer Master ( Master / Slave Beziehung) gelesen über aus ptrelationmaster.partnerid'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+  - name: 'DeckFirst'
+    description: 'Wenn gesetzt, werden manuelle erfasste Zusätzliche Deckungen als erstes bei der Deckungsausscheidung berücksichtigt'

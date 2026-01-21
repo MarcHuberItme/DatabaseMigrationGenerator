@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AsNavigationIndexSub_GetIndex'
+  description: 'Used to quickly access a navigation index sub from the data access components when the main table changes.'

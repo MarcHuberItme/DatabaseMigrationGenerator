@@ -1,0 +1,37 @@
+table:
+  name: 'AsProfitCenter'
+  description: 'for internal controlling - could be one or a combination of:\r\n- Profit Center\r\n- Cost Center\r\n- Service Center\r\n'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PC, CC, SC'
+    - german:
+        formTitle: 'PC, CC, SC'
+  columns:
+  - name: 'ProfitCenterNo'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'BranchNo'
+    description: 'foreign-key;  candidate-key of AsBranch\r\n\r\nis always required to retrieve the main ledger account if it is branch individual.\r\n08.12.06/mct'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 2
+  - name: 'ProfitCenter'
+    description: 'is a Profit Center\r\n0 = is not\r\n1 = is a Profit Center'
+  - name: 'CostCenter'
+    description: 'is a Cost Center\r\n0 = is not\r\n1 = is a Cost Center'
+  - name: 'ServiceCenter'
+    description: 'is a Service Center\r\n0 = is not\r\n1 = is a Service Center'

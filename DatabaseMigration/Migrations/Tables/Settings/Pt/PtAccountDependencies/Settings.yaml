@@ -1,0 +1,51 @@
+table:
+  name: 'PtAccountDependencies'
+  description: 'SQL''s um die Abhängigkeiten eines Kontos zu finden, z.B. bei einer Saldiierung'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Account dependency check'
+    - german:
+        formTitle: 'Kontoabhängigkeitscheck'
+    - french:
+        formTitle: 'dépendance du compte'
+    - italian:
+        formTitle: 'dipendenza dell''account'
+  columns:
+  - name: 'SequenceNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Name'
+    description: 'Name of this Query'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Description'
+    description: 'description of this Query'
+    genericControls:
+      multiLine: true
+  - name: 'IsActive'
+    description: 'Define if this query is active or not. inactive queries will not be executed'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsBlocking'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'MessageTextNo'
+    description: 'Referenz zu AsMessageText'
+    genericControls:
+      defColumnPos: 5
+  - name: 'SqlCommand'
+    description: 'The query that will be executed'
+    genericControls:
+      multiLine: true

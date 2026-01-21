@@ -1,0 +1,19 @@
+table:
+  name: 'AsMean'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 94c2d033-c482-4cd0-842b-8498330b12a6
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'WordId'
+    description: ''
+    genericControls:
+      refTable: 'AsVocab'
+      refField: 'Id'
+  - name: 'Meaning'
+    description: ''

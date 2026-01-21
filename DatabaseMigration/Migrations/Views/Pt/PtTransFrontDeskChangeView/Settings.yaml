@@ -1,0 +1,53 @@
+view:
+  name: 'PtTransFrontDeskChangeView'
+  description: ''
+frontendView:
+  name: 'PtTransFrontDeskChangeView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ValueDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'PaymentAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ChangeAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'ChangeCurrency'
+    description: ''
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'TransText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      multiLine: true
+  - name: 'TransRemark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true

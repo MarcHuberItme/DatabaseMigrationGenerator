@@ -1,0 +1,42 @@
+table:
+  name: 'MgAccountNoConversion'
+  description: 'Conversion of CompanyAccountNo from FIS to Finstar,\r\nused for migration of account balances and transactions from FIS to Finstar.\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'CompanyAccountConversion'
+    - german:
+        formTitle: 'HB Kontonummern Umsetzung'
+  columns:
+  - name: 'PrevAccountNo'
+    description: 'Previous company account no.\r\nFormat: ssssnnnnnnnnnn00wwww\r\ns = Sitz, n = KontoNr, 00 is fix, w =Währung'
+    genericControls:
+      defColumnPos: 1
+  - name: 'NewAccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CustomerReference'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 3
+  - name: 'ProductNo'
+    description: ''
+  - name: 'ProductId'
+    description: ''
+  - name: 'PortfolioNo'
+    description: ''
+  - name: 'PortfolioId'
+    description: ''
+  - name: 'Currency'
+    description: ''

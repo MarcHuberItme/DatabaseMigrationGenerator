@@ -1,0 +1,68 @@
+table:
+  name: 'RePremisesRelAccount'
+  description: 'link to mortgage account'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'RePremisesRelAccount'
+        helpText: 'RePremisesRelAccount'
+    - german:
+        formTitle: 'RePremisesRelAccount'
+        helpText: 'RePremisesRelAccount'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+  - name: 'PartnerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'PremisesId'
+    description: ''
+  - name: 'AccountId'
+    description: ''
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'AcctPremisesType'
+    description: ''
+  - name: 'AcctGBNo'
+    description: ''
+  - name: 'AcctZip'
+    description: ''
+  - name: 'PremisesType'
+    description: ''
+    genericControls:
+      refTable: 'RePremisesType'
+      refField: 'PremisesType'
+      defColumnPos: 3
+  - name: 'GBNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'Zip'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'ValidTo'
+    description: ''
+  - name: 'BatchJobType'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'RuleNo'
+    description: ''
+    genericControls:
+      refTable: 'RePremisesRelAccountRule'
+      refField: 'RuleNo'
+      defColumnPos: 6

@@ -1,0 +1,29 @@
+table:
+  name: 'ReBuildingStyleSTWE'
+  description: 'FIS2000: GR_STWE_TYP_CD'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Building style STWE'
+    - german:
+        formTitle: 'STWE Typ'
+  columns:
+  - name: 'BuildingStyleSTWENo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'SortNo'
+    description: ''
+  - name: 'PfandRegValue'
+    description: ''

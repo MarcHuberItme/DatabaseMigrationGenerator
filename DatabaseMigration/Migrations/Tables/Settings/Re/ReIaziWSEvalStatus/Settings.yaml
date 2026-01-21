@@ -1,0 +1,24 @@
+table:
+  name: 'ReIaziWSEvalStatus'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ReIaziWSEvalStatus'
+        helpText: 'ReIaziWSEvalStatus'
+    - german:
+        formTitle: 'ReIaziWSEvalStatus'
+        helpText: 'ReIaziWSEvalStatus'
+  columns:
+  - name: 'EvalStatusNo'
+    description: '0, OK'

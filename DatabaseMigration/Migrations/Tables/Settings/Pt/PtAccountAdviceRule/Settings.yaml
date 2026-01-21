@@ -1,0 +1,55 @@
+table:
+  name: 'PtAccountAdviceRule'
+  description: 'individual account rule for an advice'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountBaseId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'account rule for advice'
+    - german:
+        formTitle: 'Kontoanzeigesteuerung'
+  columns:
+  - name: 'AccountBaseId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'TransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'DebitAdviceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+      defColumnPos: 2
+  - name: 'CreditAdviceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+      defColumnPos: 3
+  - name: 'DebitStatementDetails'
+    description: ''
+  - name: 'CreditStatementDetails'
+    description: ''

@@ -1,0 +1,289 @@
+table:
+  name: 'PtPortfolio'
+  description: 'set of investments owned by a partner'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    descField: 'PortfolioNoEdited'
+    navigation:
+      applicationKey: 'PortfolioNoEdited'
+      navigationConditionField: 'MgSUBKTNR,PortfolioTypeNo'
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Portfolio'
+    - german:
+        formTitle: 'Portfolio'
+    - french:
+        formTitle: 'Portefeuille'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key; Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PortfolioNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PortfolioNoText'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'PortfolioNoEdited'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+      isNoUpdate: true
+  - name: 'PortfolioTypeNo'
+    description: 'foreign-key;  candidate-key of PtPortfolioType (PortfolioTypeNo)'
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'CustomerReference'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'PrivacyLockId'
+    description: ''
+    genericControls:
+      refTable: 'AsPrivacyLock'
+      refField: 'Id'
+  - name: 'Currency'
+    description: '"Valuation currency"; foreign-key;  candidate-key of CyBase\r\nused for PMS as "Referenzwährung"'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 4
+  - name: 'OpeningDate'
+    description: 'Start Date of Portfolio validity'
+  - name: 'TerminationDate'
+    description: 'Date of Portfolio termination (closing date)'
+  - name: 'AgentId'
+    description: 'foreign-key, Id of PtDescriptionView (View to create the descriptionfield of PtBase)'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'MotiveToOpenNo'
+    description: 'foreign-key; candidate-key of AsMotiveOpenType (MotiveOpenTypeNo)'
+    genericControls:
+      refTable: 'AsMotiveOpenType'
+      refField: 'MotiveOpenTypeNo'
+  - name: 'MotiveToCloseNo'
+    description: 'foreign-key; candidate-key of AsMotiveCloseType (MotiveCloseTypeNo)'
+    genericControls:
+      refTable: 'AsMotiveCloseType'
+      refField: 'MotiveCloseTypeNo'
+  - name: 'AssetStrategyId'
+    description: 'used for PMS - Asset Strategy (Anlagestrategie)'
+    genericControls:
+      refTable: 'PtAssetStrategy'
+      refField: 'Id'
+      defColumnPos: 5
+  - name: 'CurrencyStrategyId'
+    description: 'used for PMS - Currency Strategy'
+    genericControls:
+      refTable: 'PtCurrencyStrategy'
+      refField: 'Id'
+      defColumnPos: 6
+  - name: 'StrategyTolerance'
+    description: 'Enter tolerance % to check on Optimum or leave empty for check on Min/Max value.'
+  - name: 'BenchmarkId'
+    description: 'used for PMS - Benchmark'
+    genericControls:
+      refTable: 'PtBenchmark'
+      refField: 'Id'
+      defColumnPos: 7
+  - name: 'ConformAccountNo'
+    description: 'If the portfolio is a safekeeping account of Hypothekarbank Lenzburg at an other bank, this is the safekeeping account no from the other bank.'
+  - name: 'SxSpecialTariffId'
+    description: 'NULL = Standard\r\n> 0 = indiv. Tarif calculation'
+    genericControls:
+      refTable: 'PtPortfolioSxTariff'
+      refField: 'Id'
+  - name: 'SxOrderAuthValue'
+    description: 'StockExOrderAuthorizationValue\r\n\r\nvalue (in the currency of the portfolio) when a stockexorder (entered by the customer consultat or by the trader) cannot be transferred automatically (marketvalue is bigger than this value) \r\n\r\nif the value is null, the field PtSegment.SxOrderAuthValue will be applied'
+  - name: 'SxOrderAuthValueSpecial'
+    description: 'StockExOrderAuthorizationValueSpecial\r\n\r\nvalue (in the currency of the portfolio)  when a stockexorder (entered by ebanking) cannot be transferred automatically (marketvalue is bigger than this value) \r\n\r\nif the value is null, the field PtSegment.SxOrderAuthValueSpecial will be applied'
+  - name: 'LocGroupId'
+    description: 'Only filled, if portfolio is a depositary (representing the physical location of securities)'
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'EncashmentRate'
+    description: 'Rate (in percent) of charges for the encashment of titles or coupons\r\n100 = full charge\r\n  40 = 40 % Charge\r\n    0 = no charge (typically for stuff and locations groups)\r\n\r\nThis field replaced the migration field MgCPSANT'
+  - name: 'NostroTypeId'
+    description: 'nur bei bankeigenen Positionen zu verwenden,z.B.\r\nFinanzanlagen, Handelsbestand oder Beteiligungen'
+    genericControls:
+      refTable: 'PtPortfolioNostroType'
+      refField: 'Id'
+  - name: 'IndividualTaxReport'
+    description: ''
+  - name: 'TaxReportRebate'
+    description: ''
+    minValue: '0'
+    maxValue: '100'
+  - name: 'IndividualAssetReport'
+    description: 'If True, the portfolio receives an individual asset report. Otherwise, the asset report is printed on partner level.'
+  - name: 'IsAdHocAdvisoryService'
+    description: 'If True, the portfolio is included in the Advisory Suite (but only if the portfolio type is not on the Advisory Suite Whitelist and it is a customer portfolio which allows stockexchange.'
+  - name: 'MgVrxKey'
+    description: 'Format: ffbbkkkkkkkkaaddddddddddssrr\r\nff = Subfile (80), bb = Userbank (01), kkkkkkkk = Kundennummer\r\naa = ArbGeb (50), dddddddddd = Depotnr, ss = SubDepotnr, rr = Recid (10)'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgSITZ'
+    description: ''
+    genericControls:
+      refTable: 'MgA01'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgBELANT'
+    description: ''
+    minValue: '0'
+    maxValue: '100'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgSACHB'
+    description: ''
+    genericControls:
+      refTable: 'MgA02'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgVWCD'
+    description: ''
+    genericControls:
+      refTable: 'MgA22'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgBKERKL'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgBOVOLLM'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgGEBANT'
+    description: ''
+    minValue: '0'
+    maxValue: '253'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgCKAT'
+    description: '2020-06-02/ram: Default Wert 100 und DB Integrity entfernt. Grund Problem bei Neueröffnungen bei Avibis, SEBA, da Tab. MgT79 leer ist.'
+    genericControls:
+      refTable: 'MgT79'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgCPSANT'
+    description: ''
+    minValue: '0'
+    maxValue: '253'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgGEBFIX'
+    description: ''
+    minValue: '0'
+    maxValue: '999999'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgDSTNR'
+    description: ''
+    genericControls:
+      refTable: 'MgD02'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgLSTNR'
+    description: ''
+    genericControls:
+      refTable: 'MgD03'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgParentPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      isOnlyForMig: true
+      isNoUpdate: true
+  - name: 'MgSUBKTNR'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+      isNoUpdate: true
+  - name: 'MgSTEUAUSW'
+    description: ''
+    genericControls:
+      refTable: 'MgD06'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgDKGR1'
+    description: ''
+    genericControls:
+      refTable: 'MgDKGR'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgVERMITT'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+      isOnlyForMig: true
+  - name: 'LastCurrencyChangeDate'
+    description: ''
+  - name: 'DepotChargeRebate'
+    description: 'rebate on Depotgebühren'
+    genericControls:
+      defColumnPos: 2
+  - name: 'AssetChargeRebate'
+    description: ''
+  - name: 'RebateReaspn'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'MasterPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PerformanceStartDate'
+    description: 'PMS performance start date'
+  - name: 'ExCustodyBankId'
+    description: ''
+    genericControls:
+      refTable: 'PtExCustodyBank'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ExpTransBehaviour'
+    description: 'Erwartetes Transaktionsverhalten (SEBA)'
+  - name: 'PricingModel'
+    description: 'Pricing Model for investment portfolio. \r\nThis field is only available if PtPortfolioType.IsPricingModelRelevant = 1'
+    genericControls:
+      refTable: 'PtPortfolioPricingModel'
+      refField: 'PricingModel'
+      isNoUpdate: true
+  - name: 'TaxRegulationId'
+    description: 'Used for Qualified Intermediary (PtPortfolioType.IsQualifiedIntermediary).\r\nThe values of the table PtPortfolioTaxRegulation will be used in the CA-Application if QiStatusNo = 200 (AiTaxQiStatus)'
+    genericControls:
+      refTable: 'PtPortfolioTaxRegulation'
+      refField: 'Id'

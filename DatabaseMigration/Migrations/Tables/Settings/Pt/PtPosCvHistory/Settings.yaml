@@ -1,0 +1,49 @@
+table:
+  name: 'PtPosCvHistory'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Cost value'
+    - german:
+        formTitle: 'Einstandspreis'
+  columns:
+  - name: 'PositionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'TradeDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'NextTradeDate'
+    description: ''
+  - name: 'Quantity'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'CostValueAcCu'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'CostValuePfCu'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'BuyChargesAcCu'
+    description: ''
+  - name: 'BuyChargesPfCu'
+    description: ''
+  - name: 'AvgValueAcCu'
+    description: 'Average value of the position in position currency, calculated as weighted arithmetic average.'
+  - name: 'AvgValuePfCu'
+    description: 'Average value of the position in portfolio currency, calculated as weighted arithmetic average.'

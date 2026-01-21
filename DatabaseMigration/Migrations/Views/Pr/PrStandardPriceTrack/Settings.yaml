@@ -1,0 +1,156 @@
+view:
+  name: 'PrStandardPriceTrack'
+  description: ''
+frontendView:
+  name: 'PrStandardPriceTrack'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ProductId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 14
+  - name: 'ProductNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      defColumnPos: 1
+  - name: 'CurrRegId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'RegionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'Curr'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'CompId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PrivateComponentNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PrivateCompTypeId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'Id'
+      defColumnPos: 13
+  - name: 'Limit'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Prio'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValidFrom'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ValidTo'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7
+  - name: 'InterestRate'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+    genericControls:
+      defColumnPos: 8
+  - name: 'CommissionRate'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+    genericControls:
+      defColumnPos: 9
+  - name: 'ProvisionRate'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+    genericControls:
+      defColumnPos: 10
+  - name: 'State'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      defColumnPos: 11
+  - name: 'StandardPriceNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrStandardPriceType'
+      refField: 'StandardPriceNo'
+      defColumnPos: 12
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+    isNotNull: true
+    defaultValue: '(GetDate())'
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+    isNotNull: true
+    defaultValue: '(GetDate())'
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'HdStatusFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdNoUpdateFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdTriggerControl'
+    dataType: 'tinyint'

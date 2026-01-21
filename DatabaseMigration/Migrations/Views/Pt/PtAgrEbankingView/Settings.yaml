@@ -1,0 +1,61 @@
+view:
+  name: 'PtAgrEbankingView'
+  description: 'View to display relevant ebanking information'
+frontendView:
+  name: 'PtAgrEbankingView'
+  description: 'view for translation'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'Description'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ContactPersonId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtContactPersonView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'SeqNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Description'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 4

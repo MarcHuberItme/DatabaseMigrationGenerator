@@ -1,0 +1,40 @@
+table:
+  name: 'OaBusinessParameter'
+  description: 'Defines business parameter names that are used by OaBusinessParameterSetting. Furthermore it specifies constraints on those parameters such as the data type and or the format.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'OaBusinessParameter'
+    - german:
+        formTitle: 'OaBusinessParameter'
+    - french:
+        formTitle: 'OaBusinessParameter'
+  columns:
+  - name: 'FullyQualifiedName'
+    description: 'A fully qualified parameter name that enables filtering and grouping by common prefixes.\r\n\r\nExamples: \r\n\r\nfs.financing.mortgage.tranche.opening.useWorkflow (with Type=bool)\r\nfs.financing.mortgage.tranche.type.fixed.compTypeNo (with Type=int)\r\n\r\nThis allows us to search for all tranche-parameters with LIKE "fs.financing.tranche.*"\r\n\r\nfs indicates that the parameter is a parameter defined by Finstar. Another prefix should be used if the parameter is defined by an external application that is integrated with finstar, e.g. that application''s name.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TypeName'
+    description: 'Defines a data type for the parameter, such as int, string, bool, date, date-time etc.'
+    genericControls:
+      refTable: 'OaBusinessParameterType'
+      refField: 'TypeName'
+  - name: 'Description'
+    description: 'A description of the parameter:\r\n* Where is it used?\r\n* How is it used?\r\n* What is the expected behavior for various special parameters?'
+    genericControls:
+      multiLine: true
+  - name: 'IsNotNull'
+    description: 'Whether the OaParamterSetting.Value can be null or not'
+  - name: 'IsArray'
+    description: 'Whether the parameter is value is a single value or an array of values.\r\nIf it is an array, the (ApplicationCode, FullyQualifiedName)-pair is not unique. Otherwise it needs to be unique'
+  - name: 'IsDictionary'
+    description: 'If the parameter is a dictionary, then OaBusinessParameterSetting.DictionaryKey is expected to have a value.\r\n\r\nExample:\r\nfs.product.private.currency.region\r\ncan have different values for different regions such as: Worldwide, Switzerland, Lenzburg, etc.\r\nIn this case region is the dictionary key'

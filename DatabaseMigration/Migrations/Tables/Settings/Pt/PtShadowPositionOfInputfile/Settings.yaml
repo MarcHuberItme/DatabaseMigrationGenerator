@@ -1,0 +1,47 @@
+table:
+  name: 'PtShadowPositionOfInputfile'
+  description: 'Temporary table of securities positions of a shadow account.\r\nThis table is used to reconcile the stocks between Entris Banking and Finstar.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ShadowAccountId'
+    description: 'Id of shadow account the position belongs to.'
+    genericControls:
+      refTable: 'PtShadowAccount'
+      refField: 'Id'
+  - name: 'PositionType'
+    description: '1 = Cashpositionen in Kontowährung\r\n2 = Wertschriftenpositionen'
+  - name: 'UnitNo'
+    description: '1 = Nominal\r\n2 = Stück'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'PrPublicId'
+    description: 'Referencr to PrPublic, only for security based positions.'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+  - name: 'Valor'
+    description: 'Telekurs Valorennummer'
+  - name: 'IsinNo'
+    description: 'ISIN-Nummer des Valors'
+  - name: 'PosDescription'
+    description: 'Description of Security Position, e.g. instrumment text'
+  - name: 'Balance'
+    description: 'Balance of position, nominal or pieces'
+  - name: 'Rate'
+    description: 'Rate of the security.'
+  - name: 'Value'
+    description: 'Value of the position\r\nsecurities: Balance x Rate\r\naccount : Balance + Accrued Interest'
+  - name: 'CostValue'
+    description: 'Einstandspreis'
+  - name: 'BookingDate'
+    description: ''
+  - name: 'FileProductNo'
+    description: ''

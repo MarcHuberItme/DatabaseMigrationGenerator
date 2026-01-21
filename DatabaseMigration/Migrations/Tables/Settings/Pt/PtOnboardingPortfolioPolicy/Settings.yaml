@@ -1,0 +1,74 @@
+table:
+  name: 'PtOnboardingPortfolioPolicy'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'BaasUseCasePortfolio'
+        helpText: 'Baas Use Case Portfolio'
+    - german:
+        formTitle: 'BaasUseCasePortfolio'
+        helpText: 'Baas Use Case Portfolio'
+    - french:
+        formTitle: 'BaasUseCasePortfolio'
+        helpText: 'Baas Use Case Portfolio'
+  columns:
+  - name: 'PolicyId'
+    description: ''
+    genericControls:
+      refTable: 'PtOnboardingPolicy'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'PortfolioTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      defColumnPos: 2
+  - name: 'CustomerReference'
+    description: ''
+  - name: 'MotiveToOpenNo'
+    description: ''
+    genericControls:
+      refTable: 'AsMotiveOpenType'
+      refField: 'MotiveOpenTypeNo'
+  - name: 'DigitalBankingAgrPolicyId'
+    description: ''
+    genericControls:
+      refTable: 'PtOnboardingDbAgrPolicy'
+      refField: 'Id'
+  - name: 'PricingModel'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioPricingModel'
+      refField: 'PricingModel'
+      defColumnPos: 3
+  - name: 'IsEAMFeedActivated'
+    description: 'Indicates whether the EAM Feed is enabled for this portfolio. If true, the sub-entity PtBaasUseCasePfEAMFeed is used for EAM Feed configuration'
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'ValidTo'
+    description: ''
+  - name: 'IsInvestmentPortfolio'
+    description: ''
+  - name: 'IsDefaultPortfolio'
+    description: ''
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'

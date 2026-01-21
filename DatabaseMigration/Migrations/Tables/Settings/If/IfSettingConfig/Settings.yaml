@@ -1,0 +1,32 @@
+table:
+  name: 'IfSettingConfig'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'Name'
+    description: 'The name of the setting. Attention: Programs read settings by this name, therefore changing a name or deleting a parameter should not be possible through the UI.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Description'
+    description: 'A description for the user for what the setting is.'
+  - name: 'DefaultValue'
+    description: 'A default value that shall be used if there is no value defined for a setting in a group.'
+  - name: 'Type'
+    description: 'The type of the setting (bool, string, numeric, ...). Used for the UI.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'MinValue'
+    description: ''
+  - name: 'MaxValue'
+    description: ''
+  - name: 'Options'
+    description: 'Semicolon list of options to be shown in a drop down combobox the user can select from.'

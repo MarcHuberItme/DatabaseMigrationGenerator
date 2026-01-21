@@ -1,0 +1,162 @@
+table:
+  name: 'CoBasecalc'
+  description: 'Einmalige Berechnung der Sicherheit bei der Deckungsausscheidung. Jede Sicherheit hat einen oder mehrere Datensätze pro Deckungsausscheidungslauf (unterscheiden nach priocover und typecov). Wertschriftenpositionen werden zusammengezogen.\r\nBei Grundpfand gibt es mehrere Datensätze (unterschieden nach priocover und typecov und Grundstück, siehe auch Felder compremresult, premiseid).\r\nZusammengefasst Art / Anzahl Sätze\r\n1000 Kontoguthaben->  Ein Satz\r\n2000 Wertschriften    -> mehrere Sätze (selten)\r\n4000 Bürgschaften    -> Ein Satz\r\n5000 Versicherungen ->Ein Satz\r\n6000 übrige                -> Ein Satz\r\n7000 Grundpfand       -> Mehrere Sätze (Normallfall)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'calc colleteral'
+    - german:
+        formTitle: 'Berechnung Sicherheit'
+  columns:
+  - name: 'CollateralId'
+    description: 'Laufnummer Sicherheit'
+    genericControls:
+      refTable: 'CoBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'Calcgrp'
+    description: 'Laufnummer der Berechnung der Belehnung der Sicherheit\r\nLaufnummer wird mit assequence ''CO_Calcgruppe''  vergeben und hat heute eine 1:1 Beziehung zur Veragrp'
+    genericControls:
+      refTable: 'CoCalcgrp'
+      refField: 'Calcgrp'
+  - name: 'Veradate'
+    description: 'Datum der Verarbeitung der Deckungsausscheidung für alle\r\ngleichzeitig verarbeiten Sicherheiten und Kreditkonti gleich\r\n'
+  - name: 'Pricover'
+    description: 'Priorität der Deckung (nach 2-1 Reglement)\r\n'
+    genericControls:
+      refTable: 'CoPricov'
+      refField: 'Pricover'
+  - name: 'SubpriCover'
+    description: 'Subpriorität innerhalb der Pricover'
+  - name: 'Typecov'
+    description: 'Art der Deckung (nach 2-1 Reglement)'
+    genericControls:
+      refTable: 'CoTypecov'
+      refField: 'Typecov'
+  - name: 'Pledgevaluefree'
+    description: 'Enthält den noch nicht zugeteilen Betrag, entspricht am Anfang\r\nvon der Deckungsausscheidung dem Feld pledgevalue und wird bei jeder\r\nZuordnung (schreiben Satz cobaseasscalc) bis auf 0 reduziert. Immer in Bilanzwährung.'
+  - name: 'Pledgevalue'
+    description: 'Enthält den Belehnungswert nach pricover und typecov Immer in Bilanzwährung.'
+  - name: 'Pledgevalueper'
+    description: 'Belehnungswert in % (Kopie aus CollSubtype und anderen Tabellen) nach pricover und typecov'
+  - name: 'CoValuetot'
+    description: 'Enthält den gesamten Wert der Sicherheit im Moment der Berechnung (100%), der als Basis für die Berechnung von den Feldern Pledgevalue / Pledgevaluefree dient. Je nach Typ der Sicherheit werden folgende Werte gespeichert:\r\n1000 Konto              -> Kontosaldo\r\n2000 Wertschriften  -> Kurswert\r\n4000 Bürgschaften  -> Betrag der Bürgschaft (aus CoBAse.Bvalue)\r\n5000 Versicherungen -> Rückkaufwert der Versicherung\r\n6000 Übrige              -> Betrag der Sicherheit  (aus CoBAse.Bvalue)\r\n7000 Grundpfand     -> Verkehrswert oder Schätzwert von einem Grundstück (!)\r\nImmer in Bilanzwährung.'
+  - name: 'CoValuetotkw'
+    description: 'analog Covaluetot, aber geführt in Currency'
+  - name: 'Currency'
+    description: 'Währung der Sicherheit (z.B. Kontowährung oder Titelwährung) bezieht sich auf Feld CoValuetotkw'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Copremresult'
+    description: 'nur bei Grundpfand, enthält Belehnungskategorie aus Resultattabelle (Copremres)'
+    genericControls:
+      refTable: 'CoPremres'
+      refField: 'Copremresult'
+  - name: 'PremisesId'
+    description: 'Nur bei Grundpfand, enthält Schlüssel auf das Grundstück'
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+  - name: 'RentRateBusiness'
+    description: 'Nur bei Grundpfand,,Kopie aus ReBuilding (Hauptgebäude) für Fire Schnitstelle relevant'
+  - name: 'BusinessPartTotalEW'
+    description: ''
+  - name: 'VaRunID'
+    description: 'Nur bei Subart Wertschriften, enthält die Referenz auf den dann gültigen Bewertungslauf (aus PtPositionValuationView)'
+    genericControls:
+      refTable: 'VaRun'
+      refField: 'Id'
+  - name: 'CompTypeNoV'
+    description: 'Bestehende Komponente die aus den Tabellen (CoSubtype, Prprivate,PRPublicScurityType,Copremres) selektiert wurde'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'CompTypeNoF'
+    description: 'Bestehende Komponente die aus den Tabellen (CoSubtype, Prprivate,PRPublicScurityType,Copremres) selektiert wurde'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'C536'
+    description: 'Ermittelt aus Copremres, Firefeld C536'
+    genericControls:
+      refTable: 'AcFireC536'
+      refField: 'C536'
+  - name: 'RentPVSumNew'
+    description: ''
+  - name: 'OwnerId'
+    description: 'Kopie aus COBASE im moment der Erstellung'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+  - name: 'CollType'
+    description: 'Kopie aus COBASE'
+    genericControls:
+      refTable: 'CoType'
+      refField: 'Colltype'
+  - name: 'Collsubtype'
+    description: 'Kopie aus COBASE'
+    genericControls:
+      refTable: 'CoSubtype'
+      refField: 'Collsubtype'
+  - name: 'PortfolioId'
+    description: 'Kopie aus Cobase'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+  - name: 'AccountId'
+    description: 'Kopie aus Cobase (Konto der Sicherheit, nicht vom Kredit !)'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+  - name: 'Insurancepolice'
+    description: 'Kopie aus CObase'
+    genericControls:
+      refTable: 'PrInsurancePolice'
+      refField: 'Id'
+  - name: 'ObligationId'
+    description: 'Kopie aus Cobase'
+    genericControls:
+      refTable: 'ReObligationSearchView'
+      refField: 'Id'
+  - name: 'Veragrp'
+    description: 'Laufnummer ist bei einer Deckungsausscheidung für alle gleichzeitig\r\nverarbeiten Kredit gleich'
+    genericControls:
+      refTable: 'CoVeragrp'
+      refField: 'Veragrp'
+  - name: 'Collno'
+    description: 'Kopie aus Cobase'
+  - name: 'Description'
+    description: 'Kopie aus CObase'
+  - name: 'Extkey'
+    description: 'Kopie aus CObase'
+  - name: 'ObliCurr'
+    description: 'Kopie aus Copremview'
+  - name: 'GbDescription'
+    description: 'Kopie aus Copremview'
+  - name: 'UseAntecedentAmount'
+    description: 'aus Copremview'
+  - name: 'UseRankRivalryAmount'
+    description: 'Kopie aus Copremview'
+  - name: 'UseRank'
+    description: 'Kopie aus Copremview'
+  - name: 'AntecedenAmountthird'
+    description: 'Kopie aus Copremview'
+  - name: 'RankRivalryAmountthird'
+    description: 'Kopie aus Copremview'
+  - name: 'ObligAmount'
+    description: 'aus Copremview'
+  - name: 'CoGesamtpfand'
+    description: 'Wenn gesetzt ist der Schuldbrief mit Gesamtpfand errichtet'
+  - name: 'AdjAntecedentAmount'
+    description: ''
+  - name: 'IsAdjusted'
+    description: ''

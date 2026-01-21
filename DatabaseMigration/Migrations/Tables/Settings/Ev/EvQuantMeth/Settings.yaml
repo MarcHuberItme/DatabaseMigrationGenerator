@@ -1,0 +1,39 @@
+table:
+  name: 'EvQuantMeth'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Quantity method'
+    - german:
+        formTitle: 'Methode für Menge'
+  columns:
+  - name: 'QuantMethNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'QuantityFieldCondNo'
+    description: ''
+    genericControls:
+      refTable: 'EvFieldCond'
+      refField: 'FieldCondNo'
+      defColumnPos: 2
+  - name: 'IsDefaultForAccount'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsDefaultForNoPos'
+    description: ''
+    genericControls:
+      defColumnPos: 4

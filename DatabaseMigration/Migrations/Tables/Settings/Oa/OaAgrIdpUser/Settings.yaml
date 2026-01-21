@@ -1,0 +1,54 @@
+table:
+  name: 'OaAgrIdpUser'
+  description: 'The relation between a PtAgrEBanking contract and an OaIdp.\r\nDefines user information to be used with the identity provider.\r\nThe existence of such a record means that the user should be provisioned to the referenced identity provider. If enabled, the user can be authenticated using the identity provider. If multiple identity providers are enabled for a given user, it means the same user can be authenticated with any of them.\r\nInitially, the user information will be redundant information which is primarily defined elsewhere (OaAgrApp, PtAgrEBanking, PtAgrSecureList) and is automatically replicated as the source records change. This behavior can change later as this table becomes the primary source for such user information.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'IdpId'
+    description: 'The identity provider to which the user information should be provisioned to.'
+    genericControls:
+      refTable: 'OaIdp'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'AgrEBankingId'
+    description: 'The ebanking agreement id for which the user information should be provisioned to the identity provider. The agreement stands for an ebanking or open banking user account. The same physical person can have both multiple ebanking agreements and multiple IDP user accounts in arbitrary many identity providers.'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'Username'
+    description: 'The username that should be provisioned to the identity provider.\r\nThis is typically the agreementNo (or MgVTNo) of the ebanking agreement, but it can change.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'UserId'
+    description: 'The id of the user in the idp. Only available after the user has been provisioned.'
+  - name: 'PasswordHash'
+    description: 'The hashed password that should be provisioned to the identity provider for the user.'
+  - name: 'PasswordHashAlgo'
+    description: 'The algorithm used to hash the password'
+  - name: 'RequirePasswordChange'
+    description: 'Require a password change after signing in the the first time to the idp'
+  - name: 'IsEnabled'
+    description: 'Whether the user should be enabled or disabled.\r\nChanging this state will cause the IDP to be provisioned accordingly.\r\nCheck the OaAgrIdpUserEvents to get feedback about when or whether the user has effectively been disabled at the IDP.'
+  - name: 'LastTimeProvisioningRequested'
+    description: 'A timestamp denoting when idp provisioning has been requested the last time for that user.'
+  - name: 'LastTimeProvisioningCompleted'
+    description: 'A timestamp denoting when idp provisioning has been completed the last time for that user.'
+  - name: 'DateTimeWhenLocked'
+    description: 'Timestamp when the user was locked either by the idp or other login methods. The user is locked when this is set.'
+  - name: 'DateTimeWhenLockedByIdp'
+    description: 'Timestamp when this was locked by the idp. User is locked when this is set.'
+  - name: 'LastTimeLoggedIn'
+    description: 'Last time the user successfully logged in using the idp. The user never logged in when this is null.'
+  - name: 'LastTimeLoginFailed'
+    description: 'Timestamp when the user failed to login the last time. The user never failed to login when this is null.'
+  - name: 'DeactivationDate'
+    description: 'Timestamp when this user was deactivated.'

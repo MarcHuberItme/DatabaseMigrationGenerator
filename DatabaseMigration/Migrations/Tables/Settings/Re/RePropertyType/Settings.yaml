@@ -1,0 +1,34 @@
+table:
+  name: 'RePropertyType'
+  description: 'Eigentumsart'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Property Type'
+    - german:
+        formTitle: 'Eigentumsart'
+  columns:
+  - name: 'PropertyTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'SortNo'
+    description: ''
+  - name: 'OwnerOptional'
+    description: '0 = Eingabe des Eigentümer ist benötigt (oblig.)\r\n1 = Keine Eingabe des Eigentümers notwendig'
+  - name: 'DefaultPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2

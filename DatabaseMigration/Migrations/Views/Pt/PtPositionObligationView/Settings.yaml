@@ -1,0 +1,3 @@
+view:
+  name: 'PtPositionObligationView'
+  description: 'Verbindung zwischen Referenz und ReObligation'

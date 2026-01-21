@@ -1,0 +1,61 @@
+table:
+  name: 'NcScanExecution'
+  description: 'Executed scans.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0ebe92b4-009e-4d5f-b882-c8d9daf72042
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'TimeStart'
+    uiTableDescription:
+    - english:
+        formTitle: 'NameMatching Exe. Scans'
+    - german:
+        formTitle: 'Namematching abge. Scans'
+  columns:
+  - name: 'ScanDefinitionId'
+    description: 'Basic scan definition id of this scan execution.'
+    genericControls:
+      refTable: 'NcScanDefinition'
+      refField: 'Id'
+  - name: 'IndexVersionId'
+    description: 'Id of the index version used by this scan.'
+    genericControls:
+      refTable: 'NcIndexVersion'
+      refField: 'Id'
+  - name: 'TimeStart'
+    description: 'Time when this scan process has been started.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TimeEnd'
+    description: 'Time when this scan process has been finished.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'NumberOfRecords'
+    description: 'Number of records processed.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'NumberOfMatches'
+    description: 'Number of matches (not verifications, see NumberOfNewVerifications).'
+    genericControls:
+      defColumnPos: 4
+  - name: 'NumberOfNewVerifications'
+    description: 'Number of new verifications. This fields depends on the scan type. Not all scan types have a verification-part.'
+    genericControls:
+      defColumnPos: 5
+  - name: 'StatusType'
+    description: 'Status of this scan (Successful, Faild etc.).'
+    genericControls:
+      refTable: 'NcStatusType'
+      refField: 'Type'
+      defColumnPos: 6
+  - name: 'ErrorText'
+    description: 'A short error description in case of an error. Details are almost in the error handling.'
+    genericControls:
+      multiLine: true
+  - name: 'LastId'
+    description: ''

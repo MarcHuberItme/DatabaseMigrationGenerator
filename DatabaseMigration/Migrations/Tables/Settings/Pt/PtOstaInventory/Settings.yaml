@@ -1,0 +1,41 @@
+table:
+  name: 'PtOstaInventory'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'OSTA Inventory'
+    - german:
+        formTitle: 'OSTA Bestand'
+  columns:
+  - name: 'MessageId'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaMessage'
+      refField: 'Id'
+  - name: 'DailyClosureId'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaDailyClosure'
+      refField: 'Id'
+  - name: 'Kind'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaMoneyKind'
+      refField: 'Value'
+  - name: 'InventoryPeriod'
+    description: ''
+  - name: 'InventoryClosure'
+    description: '0 - no inventory period closed\r\n1 - inventory period has been closed'
+  - name: 'Amount'
+    description: ''
+  - name: 'Currency'
+    description: ''

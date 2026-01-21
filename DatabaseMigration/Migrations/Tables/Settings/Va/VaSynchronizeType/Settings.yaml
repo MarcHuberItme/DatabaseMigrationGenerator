@@ -1,0 +1,19 @@
+table:
+  name: 'VaSynchronizeType'
+  description: 'Code Table for SynchronizeTypeNo\r\n0 = Valuta Date\r\n1 = Trans Date\r\n--2 = Trade Date'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    physicalDelete: true
+    isGroupable: true
+  columns:
+  - name: 'SynchronizeTypeNo'
+    description: 'Valuta, Trade or Transdate'
+    genericControls:
+      defColumnPos: 1

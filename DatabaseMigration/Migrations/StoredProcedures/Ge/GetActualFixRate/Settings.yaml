@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetActualFixRate'
+  description: 'Get actual interest rate for fixed duration'

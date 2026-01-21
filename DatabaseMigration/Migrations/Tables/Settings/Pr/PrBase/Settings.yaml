@@ -1,0 +1,22 @@
+table:
+  name: 'PrBase'
+  description: 'all things of a bank which are produced for sale\r\n(ex. salary account, deposit facility, loan, etc.)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Product'
+    - german:
+        formTitle: 'Produkt'
+    - french:
+        formTitle: 'Produit'
+    - italian:
+        formTitle: 'Produtto'
+  columns: []

@@ -1,0 +1,24 @@
+table:
+  name: 'AsMailConfigSet'
+  description: 'Set number of the XML configuration block.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'MailConfigSet'
+        helpText: 'MailConfigSet'
+    - german:
+        formTitle: 'MailConfigSet'
+        helpText: 'MailConfigSet'
+  columns:
+  - name: 'SetNo'
+    description: ''
+    minValue: '1'
+    maxValue: '255'

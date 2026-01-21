@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAgrListByAccountId'
+  description: 'retrieve a list of all security agreement that have the account as security position'

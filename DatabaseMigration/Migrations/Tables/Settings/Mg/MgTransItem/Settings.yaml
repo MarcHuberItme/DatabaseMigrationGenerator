@@ -1,0 +1,166 @@
+table:
+  name: 'MgTransItem'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'UniqueNo'
+    description: 'UniqueNo als eindeutiger DB-Key\r\nFormat =  yyyymmddhhmm_ssssssss'
+    genericControls:
+      isNoUpdate: true
+  - name: 'PartnerNr'
+    description: ''
+  - name: 'KontoNr'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'SubKontoNr'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValKey'
+    description: 'Valorenschlüssel ( Valorennr/Anrecht/ValZusatz)\r\nFormat = vvvvvvvvaazzzzzzzzzz'
+    genericControls:
+      defColumnPos: 3
+  - name: 'DstGruppe'
+    description: 'Depotstellengruppe gemäss VRX'
+    genericControls:
+      defColumnPos: 4
+  - name: 'FinstarNo'
+    description: 'Nummer in Finstar:\r\nBei Kundenkonto = KontoNr (in der Regel identisch)\r\nBei Hauptbuchkonto = Neue Nummer (9nnnnnnnn)\r\nBei Wertschriften = Portfolionummer \r\n'
+    genericControls:
+      defColumnPos: 5
+  - name: 'Sitz'
+    description: 'Sitz im Format = xxxx'
+    genericControls:
+      defColumnPos: 6
+  - name: 'Ag'
+    description: 'Arbeitsgebiet:\r\n10 = Kontokorrent, 20 = Sparkasse, 30 = Hypotheken, 50 = Dept, 80 = Hauptbuch'
+    genericControls:
+      defColumnPos: 7
+  - name: 'Ka'
+    description: 'Kontoart'
+    genericControls:
+      defColumnPos: 8
+  - name: 'WrgA'
+    description: 'Kontowährung'
+    genericControls:
+      defColumnPos: 9
+  - name: 'Bcd'
+    description: 'Buchungscode\r\n1 = Debit \r\n2 = Credit'
+    genericControls:
+      defColumnPos: 10
+  - name: 'Tc'
+    description: 'Transaktionscode\r\n1 - 7 = Zinsen etc\r\n8       = Kapital'
+    genericControls:
+      defColumnPos: 11
+  - name: 'DebitQuantity'
+    description: ''
+  - name: 'DebitAmount'
+    description: ''
+  - name: 'DebitAmountCHF'
+    description: ''
+  - name: 'CreditQuantity'
+    description: ''
+  - name: 'CreditAmount'
+    description: ''
+  - name: 'CreditAmountCHF'
+    description: ''
+  - name: 'TransDate'
+    description: 'Buchungsdatum'
+    genericControls:
+      defColumnPos: 12
+  - name: 'ValueDate'
+    description: ''
+  - name: 'TextNo'
+    description: ''
+  - name: 'ZusatzText'
+    description: 'Valutadatum'
+    genericControls:
+      multiLine: true
+  - name: 'IsDueRelevant'
+    description: 'Bei Hypotheken:\r\nTrue = Zinsen, Kommission etc.\r\nFalse = Kapital'
+  - name: 'BookletPrintDate'
+    description: 'Nachtragsdatum im Sparheft'
+  - name: 'MgLNtDat'
+    description: 'Letztes Nachtragsdatum bei Sparheften'
+  - name: 'DepotNr'
+    description: 'Nur bei speziellen Titelarten (Schuldbriefe, Policen, Gegenstände)\r\nals Relation zur Beschreibungstabelle'
+  - name: 'MgVrxBuNr'
+    description: 'Absolute Buchungsnummer in VRX\r\nermöglicht ein nachträgliche Bearbeiten einer Buchung in Finstar'
+  - name: 'MgAusglNr'
+    description: 'Ausgleichsnummer (= Matchingcode)'
+  - name: 'MgSpesen'
+    description: ''
+  - name: 'MgMenge'
+    description: ''
+  - name: 'MgHandelsWrg'
+    description: ''
+  - name: 'MgKurs'
+    description: ''
+  - name: 'MgBruttoHandelsWrg'
+    description: ''
+  - name: 'MgChange'
+    description: ''
+  - name: 'MgNettoKundenWrg'
+    description: ''
+  - name: 'MgDepNr'
+    description: 'Nur bei Kontobuchungen aus Wertschriften verwendet \r\n(z.B. bei Börsenabrechnung)'
+  - name: 'MgValNrAnrecht'
+    description: ''
+  - name: 'SitzC'
+    description: 'Sitzcode für Bildung der Bilanz, nur für Kontrollzwecke'
+  - name: 'KaC'
+    description: 'Kontoart  für Bildung der Bilanz, nur für Kontrollzwecke'
+  - name: 'WrgB'
+    description: 'Währungscode in der Kontonummer im VRX\r\nBetragsfelder können in Fwg oder CHF sein'
+  - name: 'InputFileName'
+    description: 'Filename aus VRX-Selektion'
+  - name: 'MgLabDat'
+    description: 'Letztes Abschlussdatum'
+  - name: 'MgLabVal'
+    description: 'Letzte Abschlussvaluta'
+  - name: 'MgLabAuszug'
+    description: 'Datum des letzten Auszuges\r\nbei Ag 10 aus KS10\r\nbei Ag 20 und 30 aus LabDat übernommen'
+  - name: 'MgLabSaldo'
+    description: 'Saldo beim letzten Abschluss'
+  - name: 'TransSource'
+    description: 'System welche die GTransaktion ursprünglich generierte\r\nVrx = Fis-Vrx\r\nFst = Finstar'
+  - name: 'MigInstruction'
+    description: 'MigInstruction: only value 1 is to migrate\r\n0 = Not to Migrate, undefined\r\n1 = To migrate\r\n3 = Not to Migrate (Hauptbuch, wird von nmu  erst am Schluss auf 1 gesetzt)\r\n5 = Not to Migrate (alter Valor)\r\n6 = Not to Migrate (fehlerhafte Buchung,kein Valorenschlüssel)\r\n7 = Not to Migrate (Personalfürsorgestiftung)\r\n8 = Not to Migrate (Depotstelle out of use)\r\n9 = Not to Migrate, because the booking is in the old nominal currency\r\n99 = Not to Migrate, because the portfolio is in finstar now deleted'
+  - name: 'IsActive'
+    description: 'True = this TransItem is active \r\nFalse = this TransItem  is inactivated (e.g. because it is undo by Storno)'
+  - name: 'IsClosingItem'
+    description: 'True = closingItem\r\nFalse = normal transaction'
+  - name: 'MgVrxRetNo'
+    description: 'TransItemNo created by Fst and returned by Vrx'
+  - name: 'CardNo'
+    description: 'Debit or Credit Cardno used for this transaction'
+  - name: 'CyPosValue'
+    description: 'CHF-Betrag bei Fwg-Konto für Nachführung der Devisenposition'
+  - name: 'IsToffShort'
+    description: 'True = This is a Trans for aToff short position'
+  - name: 'MgVrxPortfolioKey'
+    description: 'Format: ffbbkkkkkkkkaaddddddddddssrr'
+  - name: 'PrReferenceId'
+    description: 'Used by migration process'
+  - name: 'PrLocationId'
+    description: 'Used by migration process'
+  - name: 'PtPortfolioId'
+    description: 'Used by migration process for check'
+  - name: 'SourceKey'
+    description: ''
+  - name: 'TitleNo'
+    description: ''
+  - name: 'MgZeilnrNachtrag'
+    description: 'Booklet line no'
+  - name: 'MgBetragSfr'
+    description: 'Betrag in CHF, nur für Vorwärtsmigation bei Fremdwährungsbuchunen'
+  - name: 'RealDate'
+    description: 'Für Abschlussbuchungen, die die Vorperiode betreffen, z.B. Devisenbewertungen oder Gewinnverteilung.'

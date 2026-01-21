@@ -1,0 +1,3 @@
+view:
+  name: 'PtInsaXHoldingView'
+  description: 'Splits the Insa record-string into its single fields.'

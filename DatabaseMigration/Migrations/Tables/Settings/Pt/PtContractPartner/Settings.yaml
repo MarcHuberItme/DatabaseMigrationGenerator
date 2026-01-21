@@ -1,0 +1,139 @@
+table:
+  name: 'PtContractPartner'
+  description: 'Partners involved in a contract'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Contract Partners'
+    - german:
+        formTitle: 'Contract Partners'
+  columns:
+  - name: 'ContractId'
+    description: 'Contract Id from PtContract'
+    genericControls:
+      refTable: 'PtContract'
+      refField: 'Id'
+  - name: 'CapitalAccountNo'
+    description: 'The current account no that has to be debited to put investment on the money market account for nvesting partner, and the credit accountno for the borrowing party.  By default the money market account will be created with this account number specified in payment rule as beneficiary for interest and capital payback.'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PortfolioId'
+    description: 'The portfolio that has to be used for creation of Money market account. If this portfolio is not specified, the account will be created under same portfolio as source or target account, which ever is applicable.'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Commission'
+    description: 'The fix amount of commission that has to be charged on a fiduciary investment. If this option is specified, all the other options will be ignored. This is relevant only to the investing partner of a fiduciary contract'
+  - name: 'MMAccountNo'
+    description: 'Money market account'
+    genericControls:
+      refTable: 'PtAccountAllView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'PartnerSequence'
+    description: 'The sequence number of the partner in a contract. The first partner will have sequence no = 1. Relevant to fiduciary or any other contract will multiple partners.'
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'BCNo'
+    description: 'BC number if source or target account is an external account, reachable by SIC.'
+  - name: 'BICNo'
+    description: 'BC number if source or target account is an external account, reachable only by SWIFT.'
+  - name: 'ContributionAmount'
+    description: 'Specifies the contribution by partner. Relevant only if there are more than one partners involved and the partner is the investor.'
+  - name: 'PartnerDescription'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IsInvestor'
+    description: 'Specifies if this is the investing client of the bank'
+  - name: 'FxCorrAccountNo'
+    description: 'Account with correspondence information for the trading partner.'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 5
+      isOnlyForMig: true
+  - name: 'FxDebitAccountNo'
+    description: 'In case of forex trade, this would be the debit accountno for buy or sell party.'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'FxCreditAccountNo'
+    description: 'for forex trade this would be the credit account no for buy or sell party'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'ExternalAccount'
+    description: 'External account number if capital has to go out to an external party'
+  - name: 'ConversionRate'
+    description: 'Conversion rate if capital accont currency is different that contract currency. If not specified the current market rate will be used by booking system'
+  - name: 'DebitPriceDeviationId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountPriceDeviation'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditPriceDeviationId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountPriceDeviation'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ExpectedInterestAmount'
+    description: 'In case of Fix term contracts with the bank, we can caculate the expected interest in advance to show on advices for initial capital payments'
+  - name: 'ExpectedInterestDays'
+    description: 'In case of Fix term contracts with the bank, we can caculate the number of effective days for interest calculation in advance, to show on advices for initial capital payments'
+  - name: 'PreviousContribution'
+    description: 'In case of renewed contract, this field contains the previous contribution by the partner'
+  - name: 'AdjustAmtOnCapitalChange'
+    description: 'The flag specifies if cpaital has to be paid back and re-invested \r\nOR\r\nonyl ajustment payment done for change in capital for an individual partner in a call contract'
+  - name: 'ValueDateNewCapital'
+    description: ''
+  - name: 'TerminationDate'
+    description: 'Termination of contract with single partner. This is possible to terminate one partner in a multparty call contract'
+  - name: 'IsFxBuyer'
+    description: 'It will be used to specify if the partner is buyer in forex contracts.'
+  - name: 'ExternalBeneficiaryAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ConversionRatePayback'
+    description: 'Conversion rate for capital payback'
+  - name: 'ConversionRateInterestPayment'
+    description: ''
+  - name: 'RoundingTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtContractRoundingType'
+      refField: 'RoundingTypeNo'
+  - name: 'ClientMargin'
+    description: 'FX Client Margin charged by the Client Advisor'
+  - name: 'MarketRate'
+    description: 'FX Market rate\r\nConversionRate = MarketRate +- ClientMargin'
+  - name: 'MarginValueType'
+    description: ''
+    genericControls:
+      refTable: 'MpValueType'
+      refField: 'Label'
+  - name: 'RateValidFrom'
+    description: ''

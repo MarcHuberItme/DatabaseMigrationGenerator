@@ -1,0 +1,51 @@
+table:
+  name: 'PtPhoneNumber'
+  description: 'phone numbers of the related partner'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'PhoneNumber'
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Phone Number'
+    - german:
+        formTitle: 'Telefonnummer'
+    - french:
+        formTitle: 'Téléphone'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key, Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'PhoneNumber'
+    description: 'number of a telephone, fax, handy, etc.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PhoneNumberTypeNo'
+    description: 'foreign-key;  candidate-key of PtPhoneNumberType (PhoneNumberTypeNo)'
+    genericControls:
+      refTable: 'PtPhoneNumberType'
+      refField: 'PhoneNumberTypeNo'
+      defColumnPos: 2
+  - name: 'ForDelivery'
+    description: 'if true, the phonenumber can be assigned in the addressform as delivery-number'
+  - name: 'Remark'
+    description: 'Comment e.g. Mobile Salvatore if the partner is a Einfache Gesellschaft'
+    genericControls:
+      multiLine: true
+      defColumnPos: 3

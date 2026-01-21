@@ -1,0 +1,91 @@
+table:
+  name: 'PrPublicIntTaxEvent'
+  description: 'VDF TKXTD\r\nInternational Tax Event (AIA)\r\nSteuererhebung auf Ereignisse für Vertragsstaaten'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'International Tax Events'
+    - german:
+        formTitle: 'Steuerereignis (AIA)'
+    - french:
+        formTitle: 'Événement fiscal (AIA)'
+  columns:
+  - name: 'VdfDocGen'
+    description: 'VDF: XTD.XTD.0813'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: XTD.MGA.7895'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'VdfDocKey'
+    description: 'Only informal.\r\nWith this field it''s possible to print the tax VDF doc (TKXTD) as PDF file.'
+  - name: 'PublicId'
+    description: 'VDF: XTD.VAI.K981.7842 (translate with PrPublic)'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'VdfMessageIdent'
+    description: 'VDF: XTD.MGG.7820'
+  - name: 'TaxType'
+    description: 'VDF: XTD.VAI.MGG.LRI.XTT.7965'
+    genericControls:
+      refTable: 'PrPublicIntTaxType'
+      refField: 'TaxType'
+      defColumnPos: 1
+  - name: 'CountryCode'
+    description: 'VDF: XTD.LRJ.3991\r\nContracting country code'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 2
+  - name: 'TaxApplic'
+    description: 'VDF: XTD.XTP.7966\r\nApplicable tax'
+    genericControls:
+      refTable: 'PrPublicIntTaxApplic'
+      refField: 'TaxApplic'
+      defColumnPos: 3
+  - name: 'SequenceNo'
+    description: 'VDF: XTD.XTB.7820\r\nSequence number'
+    genericControls:
+      defColumnPos: 4
+  - name: 'IncomeType'
+    description: 'VDF: XTD.XTB.7967\r\nIncome type'
+    genericControls:
+      refTable: 'PrPublicIntTaxIncomeType'
+      refField: 'IncomeType'
+  - name: 'TaxBase'
+    description: 'VDF: XTD.XTB.7968\r\nBasis for assessment'
+    genericControls:
+      refTable: 'PrPublicIntTaxBase'
+      refField: 'TaxBase'
+  - name: 'AmountType'
+    description: 'VDF: XTD.XTB.7969\r\nAmount type'
+    genericControls:
+      refTable: 'PrPublicIntTaxAmountType'
+      refField: 'AmountType'
+  - name: 'Currency'
+    description: '???'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Amount'
+    description: 'VDF: XTD.XTB.K818.5833'
+  - name: 'CfVdfIdentification'
+    description: 'VDF: XTD.XTR.7820\r\nCashflow identification'

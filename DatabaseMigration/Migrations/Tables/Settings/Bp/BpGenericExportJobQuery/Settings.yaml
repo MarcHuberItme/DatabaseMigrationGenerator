@@ -1,0 +1,46 @@
+table:
+  name: 'BpGenericExportJobQuery'
+  description: 'Can store Queries that will be run by a SP and exported with the GenericExportJob'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Generic Export Query'
+    - german:
+        formTitle: 'Generic Export Query'
+    - french:
+        formTitle: 'Generic Export Query'
+    - italian:
+        formTitle: 'Generic Export Query'
+  columns:
+  - name: 'Name'
+    description: 'Name of this Query'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Description'
+    description: 'description of this Query'
+    genericControls:
+      multiLine: true
+  - name: 'ValidFrom'
+    description: 'From this date time on this is valid'
+  - name: 'ValidUntil'
+    description: 'The Date Time until this query is Valid'
+  - name: 'Active'
+    description: 'Define if this query is active or not. inactive queries will not be executed'
+  - name: 'InterruptFrom'
+    description: 'Interrupt this query from'
+  - name: 'InterruptUntil'
+    description: 'Interrupt this query until'
+  - name: 'Query'
+    description: 'The query that will be executed and return the result'
+    genericControls:
+      multiLine: true

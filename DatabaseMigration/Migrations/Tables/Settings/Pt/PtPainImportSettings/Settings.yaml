@@ -1,0 +1,53 @@
+table:
+  name: 'PtPainImportSettings'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Name'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'FileTransferSource'
+    description: ''
+  - name: 'FileTransferTarget'
+    description: ''
+  - name: 'FileTransferResponse'
+    description: ''
+  - name: 'FileImportPattern'
+    description: ''
+  - name: 'FileOutputPattern'
+    description: ''
+  - name: 'DebitAccountCheckMethod'
+    description: ''
+  - name: 'ExtendedDebitValidation'
+    description: ''
+  - name: 'ExtendedCreditValidation'
+    description: ''
+  - name: 'ExternalApplicationId'
+    description: ''
+    genericControls:
+      refTable: 'AsExternalApplication'
+      refField: 'Id'
+      hasDetailBtn: true
+      visNumber: 2
+  - name: 'IsActive'
+    description: 'true = files from this source will be processed'
+  - name: 'CheckAccountPermission'
+    description: ''
+  - name: 'AcceptOnlyFullyValidFiles'
+    description: ''
+  - name: 'ProcessWithoutConfirmation'
+    description: ''
+  - name: 'IsWithAttachment'
+    description: ''
+  - name: 'ValidationSetting'
+    description: 'Allows different validations for different sources. Currently:\r\n- SIX\r\n- EBill'
+  - name: 'SaveImportOnFailedValidation'
+    description: 'Always create a record in CMFileImportProcess and its associated error tables even if the file doesn''t pass most basic validation'

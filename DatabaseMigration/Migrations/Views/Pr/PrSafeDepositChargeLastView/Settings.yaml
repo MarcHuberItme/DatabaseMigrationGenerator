@@ -1,0 +1,103 @@
+view:
+  name: 'PrSafeDepositChargeLastView'
+  description: 'this view shows the last charge issued.'
+frontendView:
+  name: 'PrSafeDepositChargeLastView'
+  description: 'the view for displaying the payment last issued'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PrSafeDepositChargeLastVi'
+        helpText: 'PrSafeDepositChargeLastView'
+    - german:
+        formTitle: 'PrSafeDepositChargeLastVi'
+        helpText: 'PrSafeDepositChargeLastView'
+  columns:
+  - name: 'VPartnerID'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'VBranchNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 2
+  - name: 'VBoxNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 3
+  - name: 'VPeriodBegin'
+    description: 'the start date of the charge period'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 5
+  - name: 'VPeriodEnd'
+    description: 'the end date of the charge period'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'VChargeType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 7
+  - name: 'VChargeAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 8
+  - name: 'VReportDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 9
+  - name: 'VIsBooked'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 10
+  - name: 'VIsManualPrinted'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 11
+  - name: 'VContractID'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 12
+  - name: 'VDebitAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      defColumnPos: 13
+  - name: 'VSafeDepositBoxID'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 14
+  - name: 'VTransactionID'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      defColumnPos: 15

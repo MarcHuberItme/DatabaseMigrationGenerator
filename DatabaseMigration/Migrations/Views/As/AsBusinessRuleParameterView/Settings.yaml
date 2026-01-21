@@ -1,0 +1,52 @@
+view:
+  name: 'AsBusinessRuleParameterView'
+  description: ''
+frontendView:
+  name: 'AsBusinessRuleParameterView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'AsBusinessRuleParamView'
+        helpText: 'AsBusinessRuleParameterView'
+    - german:
+        formTitle: 'AsBusinessRuleParamView'
+        helpText: 'AsBusinessRuleParameterView'
+    - french:
+        formTitle: 'AsBusinessRuleParamView'
+        helpText: 'AsBusinessRuleParameterView'
+  columns:
+  - name: 'ParameterName'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 200
+  - name: 'Expression'
+    description: ''
+    dataType: 'text'
+    isNotNull: true
+  - name: 'RuleId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsBusinessRule'
+      refField: 'Id'
+  - name: 'RuleNo'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsBusinessRule'
+      refField: 'RuleNo'
+  - name: 'OrderNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true

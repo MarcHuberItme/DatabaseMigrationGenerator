@@ -1,0 +1,29 @@
+table:
+  name: 'MdStatusFlagValue'
+  description: 'Contains the possible values of a status flag'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: d18c2bae-7838-4b83-a18e-29041114c63e
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Status'
+    - german:
+        formTitle: 'Status'
+  columns:
+  - name: 'TableName'
+    description: 'Name of the table the value belongs to'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'FlagPos'
+    description: 'Position of flag in  the StatusFlag string'
+  - name: 'FlagValue'
+    description: 'Possible value of a status flag'

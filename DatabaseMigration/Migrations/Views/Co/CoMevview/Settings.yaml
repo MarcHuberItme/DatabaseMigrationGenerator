@@ -1,0 +1,139 @@
+view:
+  name: 'CoMevview'
+  description: 'View für die Anzeige der SNB Werte aus der Deckungsausscheidung per Monatsende\r\nUmgestellt auf Cobasecalc, cobase felder und zugriff komplett entfernt'
+frontendView:
+  name: 'CoMevview'
+  description: 'View für die Anzeige der SNB Werte aus der Deckungsausscheidung per Monatsende\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'snb view'
+        helpText: 'snb view'
+    - german:
+        formTitle: 'snb view'
+        helpText: 'snb view'
+  columns:
+  - name: 'MevYear'
+    description: 'Enthält das Datum der MEV (Jahr). Der Datensatz mit dem Maxdate\r\n(9999-12) beinhaltet die jeweils höchtse gültige Verarbeitungsgruppen oder\r\nBerechnungsnummer (für Konto / Sicherheit)'
+    dataType: 'smallint'
+  - name: 'MevMonth'
+    description: 'Enthält das Datum der MEV (Monat). Der Datensatz\r\n(9999-12) beinhaltet die jeweils höchtse gültige\r\nBerechnungsnummer (für Konto / Sicherheit)'
+    dataType: 'tinyint'
+  - name: 'Accountid'
+    description: 'Laufnummer Kreditkonto'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+  - name: 'Accountno'
+    description: 'account identificationnumber'
+    dataType: 'decimal'
+    prec: 11
+  - name: 'C551'
+    description: 'Generated key for fire\r\n''N'' + convert(varchar(11), ptaccountbase.AccountNo) as C551,'
+    dataType: 'nvarchar'
+    prec: 12
+  - name: 'C540'
+    description: 'Fire “Kontonummer”\r\nJe nach Colleteraltyp wird dieses Fire Feld gefüllt:\r\n- bei Grundpfand aus copremres\r\n- bei Konto / Wertschriftesicherheiten wird das\r\nFeld mit NULL belegt (da für diese Arten der\r\nSicherheit diese Information im bestehenden Fire\r\nInterface vorhanden ist)\r\n- für alles andere (Versicherungen, Bürgschaften,\r\nÜbrige) kommt diese Info aus cosubtype'
+    dataType: 'int'
+  - name: 'C536'
+    description: 'Art des Grundpfandobjekts,\r\nIm Moment der Deckungsausscheidung aus\r\ncopremres gelesen und historisiert.\r\n8-Tung: gemische Liegenschaftsobjekte werden durch die Deckungsausscheidung aufgelöst und es werden zwei Sätze geschrieben (mit zwei unterschiedlichen C536 Werten aus\r\ncopremres).'
+    dataType: 'smallint'
+  - name: 'Veragrp'
+    description: 'Laufnnumer wird mit asseqeuence ''CO_Veragruppe'' vergeben und ist bei\r\neiner Deckungsausscheidung für alle gleichzeitig verarbeiten Kreditkonti\r\ngleich'
+    dataType: 'int'
+    genericControls:
+      refTable: 'CoVeragrp'
+      refField: 'Veragrp'
+  - name: 'Veradate'
+    description: 'Verarbeitungsdatum / Zeit'
+    dataType: 'datetime'
+  - name: 'Calcgrp'
+    description: 'Berechnugnsgruppe Collateral \r\n(heute in einer 1:1 Relation zur Verarbeitungsgruppennummer, aber unterschiedlichen Werte)'
+    dataType: 'int'
+    genericControls:
+      refTable: 'CoCalcgrp'
+      refField: 'Calcgrp'
+  - name: 'CollateralId'
+    description: 'Laufnummer Sicherheit'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'CoBase'
+      refField: 'Id'
+  - name: 'CollNo'
+    description: 'Nummer der Sicherheit'
+    dataType: 'int'
+  - name: 'Collsubtype'
+    description: 'Subtyp von der Sicherheit'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'CoSubtype'
+      refField: 'Collsubtype'
+  - name: 'Colltype'
+    description: 'Typ der Sicherheit'
+    dataType: 'smallint'
+  - name: 'Cobasecalcid'
+    description: 'Verwendeter Sicherheiten Schnippsel'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'CoBaseasscalc'
+      refField: 'Id'
+  - name: 'CoValuetotkw'
+    description: 'analog Covaluetot, aber geführt in Currency'
+    dataType: 'money'
+  - name: 'Currency'
+    description: 'Währung der Sicherheit (z.B. Kontowährung oder Titelwährung) bezieht sich\r\nauf Feld CoValuetotkw'
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'CoValuetot'
+    description: 'Enthält den gesamten Wert der Sicherheit im Moment der Berechnung\r\n(100%), der als Basis für die Berechnung von den Feldern Pledgevalue /\r\nPledgevaluefree dient.'
+    dataType: 'money'
+  - name: 'CoValuetotAdjust'
+    description: 'Fire verlangt bei der Übergabe vom Wert der\r\nSicherheit bei mehrfacher Zuweisung (bei Grundpfand Feld C045, sonst Feld C041, siehe auch Firedokumentation Seite 36, Feld C536) auf Kreditkonti einer Sicherheit ein prozentuales Aufteilen vom Verkehrswert auf die verschiedenen Zuweisungen.\r\nDetails und Beispiel der Berechnung siehe View CoSumFire'
+    dataType: 'money'
+  - name: 'Sumpledgevalueass'
+    description: 'Gesamter zugeweisener Belehnungswert (berechnet über alle Schnippsel aus\r\nCoSumFireView)'
+    dataType: 'money'
+  - name: 'Vkadjustfak'
+    description: 'Faktor für die Umwandlung auf CoValueTotAdjust\r\nDetails und Beispiel der Berechnung siehe View CoSumFireView)'
+    dataType: 'real'
+  - name: 'Pledgevalueassign'
+    description: 'Zugewiesener Belehnungswert der Sicherheit für dieses Konto hier immer in Bilanzwährung'
+    dataType: 'money'
+  - name: 'PremisesId'
+    description: 'Nur bei Grundpfand, enthält Schlüssel auf das Grundstück'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+  - name: 'CopremresCopremresult'
+    description: 'nur bei Grundpfand, enthält Belehnungskategorie aus Resultattabelle\r\n(Copremres)'
+    dataType: 'smallint'
+  - name: 'ObligAmount'
+    description: 'Nominal vom Schuldbrief'
+    dataType: 'money'
+  - name: 'VaRunID'
+    description: 'aus PtPositionValuationView'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'VaRun'
+      refField: 'Id'
+  - name: 'PortfolioId'
+    description: 'Id vom Portfolio'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'

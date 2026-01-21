@@ -1,0 +1,35 @@
+table:
+  name: 'PtProfessionSbn'
+  description: 'Schweizer Berufsnomenklatur 2000'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    descField: 'TextLong'
+    uiTableDescription:
+    - english:
+        formTitle: 'SBN 2000'
+    - german:
+        formTitle: 'SBN 2000'
+  columns:
+  - name: 'SbnAbteilung'
+    description: ''
+  - name: 'SbnKlasse'
+    description: ''
+  - name: 'SbnGruppe'
+    description: ''
+  - name: 'SbnCode'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TextLong'
+    description: ''
+    genericControls:
+      defColumnPos: 2

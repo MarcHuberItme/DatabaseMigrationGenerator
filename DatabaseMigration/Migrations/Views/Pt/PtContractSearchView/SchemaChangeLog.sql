@@ -1,0 +1,6 @@
+--liquibase formatted sql
+
+--changeset system:create-alter-view-PtContractSearchView context:any labels:c-any,o-view,ot-schema,on-PtContractSearchView,fin-13659 runOnChange:true splitStatements:false stripComments:false endDelimiter:GO
+--comment: Create view PtContractSearchView
+CREATE OR ALTER VIEW dbo.PtContractSearchView AS
+select Id, HdCreateDate, HdCreator, HdChangeDate, HdChangeUser, HdEditStamp, HdVersionNo, HdProcessId, HdStatusFlag, HdNoUpdateFlag, HdPendingChanges, HdPendingSubChanges, HdTriggerControl, ContractNo, PortfolioId, ContractType, AgentId, InternalRemark, ExternalRemark, OrderDate, Currency, Amount, DateFrom, DateTo, CommissionType, InterestRate, InterestPaymentDate, InterestPaymentPeriod, InterestPracticeType, WithholdingTaxType, VrxData, Status, SequenceNo, TerminationDate, ChangeMinNoticeDays, FxSellCurrency, FxBuyCurrency, FxTransId, ConfirmationUser, StartDate, AdjustAmtOnRenew, IsRenewed, IsCapitalModified, DeTourGroup, CapitalAccountNo, BranchNo, BCapitalAccountNo, BPortfolioId, IsMigrated, IsContractReset, ValueDateInterestChange, EmissionsabgabeAmount, EmissionsabgabeCurrency, IsEmissionsabgabeCharged, ContactMediaNo, AdditionalInfo, FxBuyCurrMktRate, FxSellCurrMktRate, FxMarginEquivAmount from PtContract

@@ -1,0 +1,19 @@
+table:
+  name: 'MsFixOutMsg'
+  description: 'Messages to client FIX-Server'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdMessageStore'
+  genericComponents:
+    tableType: 6
+    groupId: 47a738e9-4dcb-41bc-8fcc-bb1699c6b097
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'App'
+    description: ''
+  - name: 'MessageType'
+    description: ''
+  - name: 'MessageData'
+    description: ''

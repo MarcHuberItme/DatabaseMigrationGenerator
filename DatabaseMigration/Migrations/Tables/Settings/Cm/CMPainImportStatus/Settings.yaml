@@ -1,0 +1,45 @@
+table:
+  name: 'CMPainImportStatus'
+  description: 'Stores the status of an imported pain file'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'CMPainImportStatus'
+        helpText: 'CMPainImportStatus'
+    - german:
+        formTitle: 'CMPainImportStatus'
+        helpText: 'CMPainImportStatus'
+    - french:
+        formTitle: 'CMPainImportStatus'
+        helpText: 'CMPainImportStatus'
+    - italian:
+        formTitle: 'CMPainImportStatus'
+        helpText: 'CMPainImportStatus'
+  columns:
+  - name: 'FileImportProcessId'
+    description: 'Reference to CMFileImportProcess.Id'
+    genericControls:
+      refTable: 'CMFileImportProcess'
+      refField: 'Id'
+  - name: 'Status'
+    description: 'Group status used in pain.002'
+    genericControls:
+      refTable: 'PtIsoGroupStatus'
+      refField: 'Status'
+  - name: 'Message'
+    description: 'Pain.002 message'
+  - name: 'PainImportSettingId'
+    description: ''
+    genericControls:
+      refTable: 'PtPainImportSettings'
+      refField: 'Id'

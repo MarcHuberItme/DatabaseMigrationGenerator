@@ -1,0 +1,88 @@
+view:
+  name: 'PtagrCardBaseView'
+  description: ''
+frontendView:
+  name: 'PtagrCardBaseView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'view on PtAgrCardBase'
+    - german:
+        formTitle: 'View über PtAgrCardBase'
+  columns:
+  - name: 'CardNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+    genericControls:
+      defColumnPos: 2
+  - name: 'CardType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtCardType'
+      refField: 'CardType'
+      defColumnPos: 1
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ContactPersonId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtContactPersonView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 3
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 4
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 5
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 6
+  - name: 'BeginDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7
+  - name: 'ExpirationDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 8

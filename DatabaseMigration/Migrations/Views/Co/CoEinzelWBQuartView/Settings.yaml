@@ -1,0 +1,3 @@
+view:
+  name: 'CoEinzelWBQuartView'
+  description: 'Zeigt alle gerechneten Einzel Wb auf Quartalsende und aktueller Stand)'

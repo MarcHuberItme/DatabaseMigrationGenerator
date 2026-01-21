@@ -1,0 +1,70 @@
+table:
+  name: 'ReSituationNaegeli'
+  description: 'Lageburteilung nach Nägeli / Hungerbühler\r\n\r\n\r\nFIS-2000: GR_NAEGELI'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Nägeli/Wenger'
+    - german:
+        formTitle: 'Nägeli/Wenger'
+    - french:
+        formTitle: 'Nägeli/Wenger'
+    - italian:
+        formTitle: 'Nägeli/Wenger'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+  - name: 'SituationGeneral'
+    description: 'Bewertung von "Allgemeine Situation" der Lageklasse A nach Naegeli/Hungerbühler'
+    minValue: '1'
+    maxValue: '8'
+  - name: 'SituationTraffic'
+    description: 'Bewertung von "Verkehrsrelation" der Lageklasse B nach Naegeli/Hungerbühler'
+    minValue: '1'
+    maxValue: '8'
+  - name: 'UseIntensity'
+    description: 'Bewertung von "Nutzungsintensität" der Lageklasse C nach Naegeli/Hungerbühler'
+    minValue: '1'
+    maxValue: '8'
+  - name: 'LivingSektor'
+    description: 'Bewertung von "Wohnsektor" der Lageklasse D nach Naegeli/Hungerbühler'
+    minValue: '1'
+    maxValue: '8'
+  - name: 'TradeSektor'
+    description: 'Bewertung von "Handels- und Dienstleistungssektor" der Lageklasse E nach Naegeli/Hungerbühler'
+    minValue: '1'
+    maxValue: '8'
+  - name: 'IndustrySektor'
+    description: 'Bewertung von "Industrie" der Lageklasse F nach Naegeli/Hungerbühler'
+    minValue: '1'
+    maxValue: '4'
+  - name: 'IncreaseFactor'
+    description: 'Bemessung des "Steigerungsfaktors" der Lageklasse G nach Nägeli / Hungerbühler  (Grundstücke mit erheblichen Vorteilen)'
+    minValue: '0.1'
+    maxValue: '0.5'
+  - name: 'ReductionFactor'
+    description: 'Bemessung des "Reduktionsfaktors" der Lageklasse H nach Nägeli / Hungerbühler (Grundstücke mit erheblichen Nachteilen)'
+    minValue: '0.1'
+    maxValue: '0.5'
+  - name: 'ValuationFlag'
+    description: 'Landwertberechnungsflag\r\n0 = nach Nägeli\r\n1 = Landwert = Quadratmeterpreis mal Anzahl Quadratmeter'
+  - name: 'SituationNaegeli'
+    description: 'Resultat aus Berechnung (Lageklasse)'
+  - name: 'ValueDate'
+    description: 'Aufnahme der Information per diesem Datum (entspricht nicht dem Datum der Erfassung)'

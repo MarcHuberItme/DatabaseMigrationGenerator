@@ -1,0 +1,48 @@
+table:
+  name: 'PtLegalStatus'
+  description: 'by private person: unmarried, married, divorced, widowed \r\nby companies: AG, GmbH, etc.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Legal Status'
+    - german:
+        formTitle: 'Rechtsform'
+  columns:
+  - name: 'LegalStatusNo'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'LegalDefinitionId'
+    description: 'Dieses Feld wurde irrtümlicherweise gelöscht!'
+    genericControls:
+      refTable: 'PtLegalDefinition'
+      refField: 'Id'
+  - name: 'MigValue'
+    description: 'Vrx Value (nicht mehr unique, da keine Rückmigration mehr 23.12.05 MWI / MCT)\r\nDieses Feld wird im Programm FsEntrisExport für den Stammdaten-Export an Primanet / Liberty benötigt (22.12.2015/ram) !'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'ForNaturalPartner'
+    description: 'All LegalStatuses having set this flag to true will appear in the GUI-Profile for NaturalPartners.'
+  - name: 'ForLegalPartner'
+    description: 'All LegalStatuses having set this flag to true will appear in the GUI-Profile for LegalPartners.'
+  - name: 'ForAnonymous'
+    description: 'All LegalStatuses having set this flag to true will appear in the GUI-Profile for Anonymous-Partners.'
+  - name: 'ForMarriedCouple'
+    description: 'All LegalStatuses having set this flag to true will appear in the GUI-Profile for MarriedCouples.'
+  - name: 'ForRegisteredPartnership'
+    description: ''
+  - name: 'IsLegalEntity'
+    description: 'checkbox to decide if it''s a juristic person in the view of ZGB/KAG\r\n1= juristic person'
+  - name: 'BeneficialOwnerCode'
+    description: 'This code is used if we cannot build the BeneficialOwner as usually. Before in this case we filled the date ''19000101'' into the BeneficialOwner.'

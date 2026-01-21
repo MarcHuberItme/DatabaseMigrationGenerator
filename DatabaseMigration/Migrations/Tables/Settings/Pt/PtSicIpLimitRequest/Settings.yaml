@@ -1,0 +1,42 @@
+table:
+  name: 'PtSicIpLimitRequest'
+  description: 'Instructions for setting SIC IP limit'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'RequestId'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'LimitType'
+    description: ''
+    genericControls:
+      refTable: 'PtSicIpLimitType'
+      refField: 'LmitTypeCode'
+      defColumnPos: 2
+  - name: 'AccountOwnerId'
+    description: 'SIC Participant Id'
+  - name: 'SettlementAccountId'
+    description: ''
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Limit'
+    description: ''
+  - name: 'CommStatus'
+    description: ''
+    genericControls:
+      refTable: 'PtSisMessageStatus'
+      refField: 'StatusCode'
+  - name: 'RequestDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1

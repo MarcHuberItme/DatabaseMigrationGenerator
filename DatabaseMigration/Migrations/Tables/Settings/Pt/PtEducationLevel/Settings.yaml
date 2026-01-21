@@ -1,0 +1,24 @@
+table:
+  name: 'PtEducationLevel'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Education Level'
+    - german:
+        formTitle: 'Ausbildungsniveau'
+  columns:
+  - name: 'EducationLevelNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

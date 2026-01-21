@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetMasterPartnerNo'
+  description: 'returns master partnerno for give slave partner id'

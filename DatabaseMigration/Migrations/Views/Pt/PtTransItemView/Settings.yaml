@@ -1,0 +1,160 @@
+view:
+  name: 'PtTransItemView'
+  description: 'This view is used to view Transaction Statements in the Partner.\r\nCreated By: Abdul Nasir Khan\r\nCreated On: May 21, 2003\r\n2023-08-02/FIN-9318/daga: condition added for PtTransItem HdVersionNo between 1 and 999999998'
+frontendView:
+  name: 'PtTransItemView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 9
+  - name: 'PositionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 11
+  - name: 'SourcePositionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'GroupKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 18
+  - name: 'DetailCounter'
+    description: ''
+    dataType: 'smallint'
+  - name: 'TransDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValueDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'DebitQuantity'
+    description: ''
+    dataType: 'money'
+  - name: 'DebitAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 2
+  - name: 'CreditQuantity'
+    description: ''
+    dataType: 'money'
+  - name: 'CreditAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TextNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      defColumnPos: 1
+  - name: 'MessageId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ServiceCenterNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 6
+  - name: 'TransText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+      defColumnPos: 7
+  - name: 'AdvicePrinted'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'CompletionDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'BookletPrintDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'BookletPageNo'
+    description: ''
+    dataType: 'int'
+  - name: 'BookletLineNo'
+    description: ''
+    dataType: 'int'
+  - name: 'CardNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'ClearingNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'SourceKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 12
+  - name: 'IsInactive'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 4
+  - name: 'ProdReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'CustomerReference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 8
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 10

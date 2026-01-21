@@ -1,0 +1,36 @@
+table:
+  name: 'AsTranslationValue'
+  description: 'UI Translation Values'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    descField: 'TextLength;LanguageNo'
+    uiTableDescription:
+    - english:
+        formTitle: 'Translation Values'
+    - german:
+        formTitle: 'Übersetzungen'
+  columns:
+  - name: 'TranslationId'
+    description: 'Id from AsTranslation table'
+    genericControls:
+      refTable: 'AsTranslation'
+      refField: 'Id'
+  - name: 'TextLength'
+    description: 'TransTextLength enum'
+    genericControls:
+      defColumnPos: 1
+  - name: 'LanguageNo'
+    description: 'Language number'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+      defColumnPos: 2
+  - name: 'TransText'
+    description: 'The value / text of the translation'

@@ -1,0 +1,67 @@
+table:
+  name: 'AsDocImportProfile'
+  description: 'Document import profile that can be used for a table when importing documents for it.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'ProfileName'
+    description: 'import profile name'
+    genericControls:
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'TableName'
+    description: 'Name of the table that can use this profile'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 2
+      noUpdatePos: 2
+  - name: 'DocTypeId'
+    description: 'Document type to save in AsDocument when importing the document'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+      defColumnPos: 3
+      noUpdatePos: 3
+  - name: 'ImportSettingsId'
+    description: 'reference to file output settings to use for the import'
+    genericControls:
+      refTable: 'AsDocImportSettings'
+      refField: 'Id'
+      defColumnPos: 4
+      noUpdatePos: 4
+  - name: 'ArchiveFormerDocs'
+    description: 'flag that says if old documents have to be archived. Archivation means that the property Location of the affected records in tables AsDocument, AsDocumentData and AsDocumentIndex is set to 2.'
+    genericControls:
+      noUpdatePos: 5
+  - name: 'Location'
+    description: 'Location value for the new imported document'
+    minValue: '1'
+    maxValue: '2'
+    genericControls:
+      noUpdatePos: 6
+  - name: 'DefaultStatusNo'
+    description: 'initial value to set in AsDocumentData.StatusNo'
+    genericControls:
+      refTable: 'AsDocumentStatus'
+      refField: 'StatusNo'
+      noUpdatePos: 7
+  - name: 'FileQuantityMin'
+    description: 'minimum quantity of files to import'
+    minValue: '1'
+  - name: 'FileQuantityMax'
+    description: ''
+    minValue: '1'
+  - name: 'Conditions'
+    description: 'Define here conditions for the import profile. If source record does not satisfy the conditions the import profile is not showed and can not be selected!'
+  - name: 'UseFileExplorer'
+    description: 'When this flag is set then a file system explorer is used to select the desired files'

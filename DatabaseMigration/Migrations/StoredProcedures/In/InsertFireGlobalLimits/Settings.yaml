@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'InsertFireGlobalLimits'
+  description: 'Berechnen des nicht benutzten Anteils der Globallimite pro Kunde und als neuer Record einfügen.\r\nZurücksetzen des Feldes C042 für die verarbeiteten Ursprungsrecords.\r\n30.12.2024 --> Spalte C540 entfernt, da diese Spalte in der Tabelle AcFireRecord nicht existiert.'

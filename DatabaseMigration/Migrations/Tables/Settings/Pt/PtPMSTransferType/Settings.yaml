@@ -1,0 +1,49 @@
+table:
+  name: 'PtPMSTransferType'
+  description: 'List of transfer data transfer functions to be executed with PMS'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'TransferTypeCode'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'TransferSequence'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsForMigration'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsForDailyTransfer'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'OutputFolder'
+    description: 'Name of sub-folder in main output directory where xml files (in case of errors or intensive logging) will be written'
+  - name: 'UpdatesValidFrom'
+    description: 'This date is used to ignore updates on already transfered data. Update before this date will not be sent. This would reduce risk of overriding manual changes done during pilot phase'
+  - name: 'IsStaticCodeTable'
+    description: ''
+  - name: 'PMSSetting'
+    description: ''
+    genericControls:
+      refTable: 'PtPMSSetting'
+      refField: 'SystemName'
+      defColumnPos: 5
+  - name: 'ETLPackageName'
+    description: 'ETL Package name'
+  - name: 'MainFinstarTable'
+    description: ''
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'

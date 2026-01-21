@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPaybackPaymentPerYear'
+  description: 'Sums up all indirect amortisation payments on an account per Year\r\n\r\n2023-08-02/FIN-9318/daga: condition added for PtTransItem HdVersionNo between 1 and 999999998'

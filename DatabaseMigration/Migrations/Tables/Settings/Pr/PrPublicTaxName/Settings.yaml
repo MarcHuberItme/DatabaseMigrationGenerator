@@ -1,0 +1,24 @@
+table:
+  name: 'PrPublicTaxName'
+  description: 'Name of a tax or reporting\r\nVDF Domain 7862'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax / Reporting Name'
+    - german:
+        formTitle: 'Steuer-/Meldungsname'
+  columns:
+  - name: 'TaxNameNo'
+    description: 'VDF Domain 7862'
+    genericControls:
+      defColumnPos: 1

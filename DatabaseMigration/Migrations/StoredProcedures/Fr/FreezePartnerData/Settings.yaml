@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'FreezePartnerData'
+  description: 'save partner data snapshot at end of month.\r\nSource Tables: PtBase, PtAddress, PtFiscalDomicile, AsSwissTown, PtBusinessRatio, PtSector\r\nDestination Tables: AcFrozenPartner'

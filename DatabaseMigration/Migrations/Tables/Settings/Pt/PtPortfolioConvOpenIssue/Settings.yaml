@@ -1,0 +1,49 @@
+table:
+  name: 'PtPortfolioConvOpenIssue'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PortfolioConversionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioConversion'
+      refField: 'Id'
+  - name: 'OpenIssueTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtOpenIssueType'
+      refField: 'TypeNo'
+      defColumnPos: 1
+  - name: 'OpenIssueStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtOpenIssueStatus'
+      refField: 'StatusNo'
+      defColumnPos: 2
+  - name: 'TargetDateMin'
+    description: ''
+  - name: 'TargetDateMax'
+    description: ''
+  - name: 'TargetDateIsNull'
+    description: ''
+  - name: 'UpdateCompletionDate'
+    description: ''
+  - name: 'UpdateStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtOpenIssueStatus'
+      refField: 'StatusNo'
+  - name: 'AdditionalText'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ForceConversion'
+    description: ''

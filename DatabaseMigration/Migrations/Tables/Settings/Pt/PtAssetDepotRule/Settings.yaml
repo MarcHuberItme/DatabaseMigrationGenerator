@@ -1,0 +1,39 @@
+table:
+  name: 'PtAssetDepotRule'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAssetDepotRule'
+        helpText: 'PtAssetDepotRule'
+    - german:
+        formTitle: 'PtAssetDepotRule'
+        helpText: 'PtAssetDepotRule'
+  columns:
+  - name: 'DepotTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAssetDepotType'
+      refField: 'DepotTypeNo'
+      defColumnPos: 1
+  - name: 'InstrumentTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicInstrumentType'
+      refField: 'InstrumentTypeNo'
+      defColumnPos: 2
+  - name: 'IsInclusive'
+    description: ''
+  - name: 'SortSeqNo'
+    description: ''
+    genericControls:
+      defColumnPos: 3

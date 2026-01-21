@@ -1,0 +1,3 @@
+view:
+  name: 'PtOwnBondEmissionAdviceView'
+  description: 'own bond advices information for reports'

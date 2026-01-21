@@ -1,0 +1,22 @@
+table:
+  name: 'PsReportParameterType'
+  description: 'Defines the type of the user parameter.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Report parameter types'
+    - german:
+        formTitle: 'Parametertypen'
+  columns:
+  - name: 'ParameterType'
+    description: ''
+    genericControls:
+      defColumnPos: 1

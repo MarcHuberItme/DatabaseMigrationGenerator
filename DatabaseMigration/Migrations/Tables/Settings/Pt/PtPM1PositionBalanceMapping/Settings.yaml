@@ -1,0 +1,55 @@
+table:
+  name: 'PtPM1PositionBalanceMapping'
+  description: 'If during the import (PtPM1PositionBalance.exe) a security position has no corresponding PrPublic (PtPM1PositionBalance.Title has to correspond to PrPublic.IsinNo or PrPublic.VdfInstrumentSymbol), the program will insert a record in this table.\r\nEither in this record has to be defined a mapping to another PrPublic or the checkbox IsNoMapping has to be checked on.\r\nRecords without a mapping (PublicId = Null) an with IsNoMapping = 0 has to be listed on a report.\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Mapping PtPM1PositionBala'
+        helpText: 'Mapping PtPM1PositionBala'
+    - german:
+        formTitle: 'Mapping PtPM1PositionBala'
+        helpText: 'Mapping PtPM1PositionBala'
+  columns:
+  - name: 'PortfolioId'
+    description: 'refers to PtPM1PositionBalance.PortfolioNo'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'Title'
+    description: 'refers to PtPM1PositionBalance.Title'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TitleCurrency'
+    description: 'refers to PtPM1PositionBalance.TitleCurrency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'InterestRate'
+    description: 'used to call GetPrReference'
+    genericControls:
+      defColumnPos: 4
+  - name: 'MaturityDate'
+    description: 'used to call GetPrReference'
+    genericControls:
+      defColumnPos: 5
+  - name: 'PublicId'
+    description: 'mapping to the PrPublic'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'IsNoMapping'
+    description: 'checkbox to define that for this record no mapping is needed'
+    genericControls:
+      defColumnPos: 7

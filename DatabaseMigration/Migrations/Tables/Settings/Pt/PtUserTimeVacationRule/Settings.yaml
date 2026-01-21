@@ -1,0 +1,29 @@
+table:
+  name: 'PtUserTimeVacationRule'
+  description: 'Hilfstabelle für Ferien'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Time Vacation Rule'
+    - german:
+        formTitle: 'Ferienregelart'
+  columns:
+  - name: 'RuleNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Hours'
+    description: 'erlaubte Anzahl Mehrstunden'
+    genericControls:
+      defColumnPos: 2

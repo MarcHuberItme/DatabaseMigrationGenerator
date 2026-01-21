@@ -1,0 +1,58 @@
+table:
+  name: 'PrExpenseType'
+  description: 'expense type for products'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Expenses type'
+    - german:
+        formTitle: 'Spesenart'
+  columns:
+  - name: 'ExpenseTypeNo'
+    description: 'identification key for expense'
+    minValue: '0'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ExpensePerTransItem'
+    description: ''
+  - name: 'ExpensePerPayment'
+    description: 'expense based on withdraw payments'
+  - name: 'ExpensePerDay'
+    description: ''
+  - name: 'ExpensePerMonth'
+    description: ''
+  - name: 'ExpenseAtClosing'
+    description: ''
+  - name: 'ExpenseAtFinalTermination'
+    description: ''
+  - name: 'DailyStatement'
+    description: ''
+  - name: 'PeriodicalStatement'
+    description: ''
+  - name: 'AdditionalStatement'
+    description: ''
+  - name: 'AdditionalClosingCalculation'
+    description: ''
+  - name: 'PaymentFreeOfCharge'
+    description: ''
+  - name: 'CorrItemGroupId'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItemGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransChargeTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'ChargeNo'

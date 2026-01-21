@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetReportPosition_Reference'
+  description: '\r\n--Author		: Rolf Amstad\r\n--Date Created	: 5-December-2003\r\n--Date Modified        : 28-October-2004\r\n                                : 22-December-2004\r\n                                : 28-January-2005\r\n                                : 31-Marz-2005\r\n                                : 03-May-2005 (added PortfolioId, PortfolioCurrency)\r\n                                : 15-June-2009 (add Field IsMoneyMarket)\r\n                                : 28-May-2015 (add Field PossibleCredit) \r\n                                : 24-Jan-2017 (add Field IsExcludForLatentRisk)'

@@ -1,0 +1,76 @@
+table:
+  name: 'PrPublicStopList'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Stop List'
+    - german:
+        formTitle: 'Oppositionen'
+  columns:
+  - name: 'VdfDocGen'
+    description: 'VDF: OPD.OPD.0813\r\nGeneration of the last OPD-Doc, which was received from VDF'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: OPD.MGA.7895\r\nMessage status of OPD-Doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'PublicId'
+    description: 'VDF: OPD.VAI.K981.7842 (transformation with table PrPublic)'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'VdfIdentification'
+    description: 'VDF: OPD.MGG.7820\r\nTelekurs internal reference'
+  - name: 'IssueDate'
+    description: 'VDF: OPD.OPE.OPA.2801-A\r\nIssue date of collective security. This field is normally filled for "Kassenobligationen"'
+    genericControls:
+      defColumnPos: 4
+  - name: 'MaturityDate'
+    description: 'VDF: OPD.OPE.OPA.2801-B\r\nExpiry date of collected security. This field is normally filled for "Kassenobligationen"'
+    genericControls:
+      defColumnPos: 5
+  - name: 'StoppingAgentId'
+    description: 'VDF: OPD.OPM.K985.3801 (translation with table PtBase)\r\nStopping agent'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ReportingSourceDate'
+    description: 'VDF: OPD.OPM.OPA.2801-A\r\nReporting date of source'
+    genericControls:
+      defColumnPos: 2
+  - name: 'DeletionStopDate'
+    description: 'VDF: OPD.OPM.OPA.2801-B\r\nDeletion date of stop'
+  - name: 'InvalidationDate'
+    description: 'VDF: OPD.OPK.OPA.2801-B\r\nInvalidation as of (date)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'StopReasonNo'
+    description: 'VDF: OPD.OPI.4884\r\nStop reason\r\n'
+    genericControls:
+      refTable: 'PrPublicStopReason'
+      refField: 'StopReasonNo'
+      defColumnPos: 1
+  - name: 'InstrNoTypeNo'
+    description: 'VDF: OPD.OPI.4829\r\nInstrument number type\r\n'
+    genericControls:
+      refTable: 'PrPublicInstrNoType'
+      refField: 'InstrNoTypeNo'

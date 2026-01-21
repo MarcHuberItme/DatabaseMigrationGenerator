@@ -1,0 +1,29 @@
+table:
+  name: 'PtHobbySubDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Hobby'
+    - german:
+        formTitle: 'Interessen'
+  columns:
+  - name: 'SubDetailNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'HobbySubTypeId'
+    description: ''
+    genericControls:
+      refTable: 'PtHobbySubType'
+      refField: 'Id'
+      defColumnPos: 2

@@ -1,0 +1,23 @@
+table:
+  name: 'PtOstaServiceType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'OSTA Service Type'
+    - german:
+        formTitle: 'OSTA Servicetyp'
+  columns:
+  - name: 'Value'
+    description: '0 - CRDT / credit (e.g. deposit)\r\n1 - CRDR / credit reversal\r\n2 - DEBT / debit (e.g. withdrawal)\r\n3 - DBTR / debit reversal\r\n4 - ORFT / operator refund\r\n5 - ORFR / operator refund reversal'
+    minValue: '0'
+    maxValue: '5'

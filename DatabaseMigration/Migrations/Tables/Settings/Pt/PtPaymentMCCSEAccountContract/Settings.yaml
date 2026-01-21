@@ -1,0 +1,35 @@
+table:
+  name: 'PtPaymentMCCSEAccountContract'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ParentAccountContractID'
+    description: 'Account contract record ID from CMS database.'
+  - name: 'ParentAccountContractNumber'
+    description: 'Account contract number.'
+  - name: 'ParentAccountCBSNumber'
+    description: 'Account identifier inside the core banking system  Usually IBAN - full account number according to ISO 13616 standard.'
+  - name: 'AccountOwnerClientID'
+    description: 'Account owner record ID from CMS database.'
+  - name: 'AccountOwnerClientNumber'
+    description: 'Account owner client number.'
+  - name: 'AccountStatus'
+    description: 'Current status of the account contract. Default supported values:\r\n\r\n"00" - Account active.\r\n"00c" - To be closes. Account closure procedure was initiated and is ongoing (transition period).\r\n"14" - Closed. Final state of accounts’ lifecycle. Set automatically by Way4 system from\r\n\r\n*List can be extended/shortened depending on the need and agreements of specific project*'
+  - name: 'AccountBalances'
+    description: 'List of contract balances. Format of the field: \r\n[BalanceType/Amount/Currency]\r\nfor example:\r\n[CR_LIMIT/5000/EUR] [AVAILABLE/350.25/EUR] [PAST_DUE/0.00/EUR]'
+  - name: 'AccountClassifiers'
+    description: 'Active classifier on given account contract along with its value (in fact code assigned to value). Can contain multiple occurences.\r\n\r\nProvided in format: "CODE=VALUE" followed by "semi-colon" [;] sign \r\n(e.g. "CODE_1=VALUE_1;CODE_2=VALUE_2;CODE_3=VALUE_3;").\r\n\r\nMaximum length of single code is 32.\r\nMaximum length of single value is 32.\r\n\r\nClassifiers are specific for given setup and allows to monitor state of certain functionalities (e.g. currently active fee profiles or delinquency level).'
+  - name: 'PaymentMasterCardCseID'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentMasterCardCSE'
+      refField: 'Id'
+  - name: 'DateExpiry'
+    description: 'Date of card contract record expiration.'

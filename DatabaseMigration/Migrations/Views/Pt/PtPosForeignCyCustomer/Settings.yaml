@@ -1,0 +1,3 @@
+view:
+  name: 'PtPosForeignCyCustomer'
+  description: 'Fremdwährungspositionen Kundenkonti'

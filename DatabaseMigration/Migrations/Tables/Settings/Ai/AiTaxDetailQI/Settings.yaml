@@ -1,0 +1,58 @@
+table:
+  name: 'AiTaxDetailQI'
+  description: 'In dieser Tabelle werden die Informationen gespeichert, welche für die Reportingpflichten unter QI (Qualified Intermediary Agreement) nötig sind.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'AiTaxStatus'
+      parentRelationField: 'TaxStatusId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Detail QI'
+    - german:
+        formTitle: 'Detail QI'
+    - french:
+        formTitle: 'Détails QI'
+  columns:
+  - name: 'TaxStatusId'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxStatus'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'QIStatusNo'
+    description: 'Definiert, welchen Status der Partner hat'
+    genericControls:
+      refTable: 'AiTaxQIStatus'
+      refField: 'QIStatusNo'
+  - name: 'DBACountry'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'LOBCode'
+    description: 'Limitation on Benefits (LOB)'
+    genericControls:
+      refTable: 'AiTaxLOBCodes'
+      refField: 'LOBCode'
+  - name: 'IsWaiver'
+    description: 'freiwilliger Verzicht auf DBA-Vorteile'
+  - name: 'Chapter3StatusNo'
+    description: 'Chapter 3 Status gemäss IRS-Formular W-8BEN-E'
+    genericControls:
+      refTable: 'AiTaxDetailQIChap3Status'
+      refField: 'StatusNo'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

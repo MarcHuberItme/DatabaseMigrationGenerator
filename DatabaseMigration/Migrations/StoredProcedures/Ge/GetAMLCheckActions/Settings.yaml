@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAMLCheckActions'
+  description: 'executes the SQL as defined in PtMLPeriodicCheckDetailConfig for related TemplateNo'

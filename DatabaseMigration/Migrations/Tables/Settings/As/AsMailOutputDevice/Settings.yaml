@@ -1,0 +1,24 @@
+table:
+  name: 'AsMailOutputDevice'
+  description: 'List of virtual devices available for printing system.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'VirtualPrintDevices'
+        helpText: 'Virtual Print Devices'
+    - german:
+        formTitle: 'VirtualPrintDevices'
+        helpText: 'Virtual Print Devices'
+  columns:
+  - name: 'Name'
+    description: ''
+  - name: 'Duplex'
+    description: ''

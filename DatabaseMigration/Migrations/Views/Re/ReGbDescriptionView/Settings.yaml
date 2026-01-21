@@ -1,0 +1,76 @@
+view:
+  name: 'ReGbDescriptionView'
+  description: 'Description of a premises (GB-No)'
+frontendView:
+  name: 'ReGbDescriptionView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ReBaseId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReBase'
+      refField: 'Id'
+  - name: 'PremisesType'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'RePremisesType'
+      refField: 'PremisesType'
+      defColumnPos: 1
+  - name: 'GbDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 2
+  - name: 'Street'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 3
+  - name: 'HouseNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 4
+  - name: 'Zip'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 13
+    genericControls:
+      defColumnPos: 5
+  - name: 'Town'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 6
+  - name: 'GBNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 15
+    genericControls:
+      defColumnPos: 7
+  - name: 'GBNoAdd'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 8
+  - name: 'GBPlanNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 15
+    genericControls:
+      defColumnPos: 9

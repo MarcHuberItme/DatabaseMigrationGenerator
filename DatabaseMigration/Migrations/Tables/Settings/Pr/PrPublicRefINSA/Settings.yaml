@@ -1,0 +1,39 @@
+table:
+  name: 'PrPublicRefINSA'
+  description: 'Lookup Table: Table is used for storing VRX-Keys of all INSA-customer''s products. This helps to speed up building the INSA-interface files.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'PublicId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+  - name: 'ProdReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PrReference'
+      refField: 'Id'
+  - name: 'LocGroupId'
+    description: ''
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+  - name: 'ValNr'
+    description: 'Valorennummer'
+  - name: 'ValAnr'
+    description: 'Anrechtscode'
+  - name: 'DstNr'
+    description: ''
+  - name: 'ValZus'
+    description: 'If TOFF: ''SOFFEX'' & MgValor.ToffVerfall\r\nIf Kassenobli (RefTypeNo = 3): ''00'' & Verfall (JJJJMMTT)\r\nIf Objekt (RefTypeNo = 7,8,9): PrObject.ObjectSeqNo\r\nIf PrFreference.SpecialKey = ''VRX_299'': ''0000000099'''
+  - name: 'SoBas'
+    description: '6 Nachkommastellen\r\nIf TOFF: MgValor.ToffBasis\r\notherwise: 11 blank spaces'

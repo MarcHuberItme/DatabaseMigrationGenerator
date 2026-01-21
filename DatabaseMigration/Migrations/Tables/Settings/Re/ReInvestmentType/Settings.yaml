@@ -1,0 +1,41 @@
+table:
+  name: 'ReInvestmentType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Investment type'
+    - german:
+        formTitle: 'Investitionstyp'
+  columns:
+  - name: 'InvestmentTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'SortNo'
+    description: ''
+  - name: 'MinRate'
+    description: 'Wertvermehrung - mindestens % Satz'
+    minValue: '0'
+    maxValue: '100'
+    genericControls:
+      defColumnPos: 2
+  - name: 'MaxRate'
+    description: 'Wertvermehrung - maximum % Satz'
+    minValue: '0'
+    maxValue: '100'
+    genericControls:
+      defColumnPos: 3
+  - name: 'DefaultRate'
+    description: 'Default % Satz Wertvermehrung'
+    genericControls:
+      defColumnPos: 4

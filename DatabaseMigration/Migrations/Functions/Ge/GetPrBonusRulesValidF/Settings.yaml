@@ -1,0 +1,3 @@
+function:
+  name: 'GetPrBonusRulesValidF'
+  description: 'This function Returns the valid bonus rules'

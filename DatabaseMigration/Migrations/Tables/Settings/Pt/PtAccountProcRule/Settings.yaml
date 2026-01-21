@@ -1,0 +1,79 @@
+table:
+  name: 'PtAccountProcRule'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Proc Rule'
+    - german:
+        formTitle: 'Regeln'
+    - french:
+        formTitle: 'Règles'
+  columns:
+  - name: 'AccountId'
+    description: 'foreign-key; Id of PtAccountBase'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ActivityRuleCode'
+    description: 'foreign-key;  candidate-key of AsActivityRule (ActivityRuleCode)'
+    genericControls:
+      refTable: 'AsActivityRule'
+      refField: 'ActivityRuleCode'
+      defColumnPos: 4
+  - name: 'PeriodRuleNo'
+    description: 'foreign-key;  candidate-key of AsPeriodRule (PeriodRuleNo)'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 1
+  - name: 'PeriodRuleBase'
+    description: 'BaseValue representing a day or month & day for date calculation, e.g.\r\n- RuleNo:                   90 means once a quarter \r\n- PeriodRuleBase: 	1st occurance\r\n		3103 means at end of March/June/September/December'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ActivityDate'
+    description: 'Is used to define fixed dates instead of using PeriodRuleNo'
+    genericControls:
+      defColumnPos: 3
+  - name: 'BalanceInDebit'
+    description: 'Condition if Balance is in Debit\r\nIf defined and true, the Rule (ActivityRuleCode) will be actived.'
+  - name: 'LimitExisting'
+    description: 'Condition if a Limit is existing\r\nIf defined and true, the Rule (ActivityRuleCode) will be actived.'
+  - name: 'DebitHigherThanCredit'
+    description: 'Condition if debit interest is higher than credit interest.\r\nIf defined and true, the Rule (ActivityRuleCode) will be actived.'
+  - name: 'CorrAccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtCorrAccount'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'AdviceRuleCode'
+    description: 'if not null -> PeriodRuleNo / PeriodRuleBase / ActivityDate has to be NULL\r\n(Anzeigensteuerung) - only possible if ActivityRuleCode has the bit "HasAdviceInstruction" is set to true'
+    genericControls:
+      refTable: 'AsAdviceRule'
+      refField: 'AdviceRuleCode'
+      defColumnPos: 5
+  - name: 'EnforceAlways'
+    description: '0 = not always\r\n1 = always  (in case of multiple rules returning the same date. This rule will be enforced in addition. e.g. can result into two or more rows for StatementPeriod)'
+  - name: 'SkipDefault'
+    description: '0 = Default PrPrivateProcRule is valid in addition and need to checked for nearest scheduled date\r\n1 = Default PrPrivateProcRule has to be skipped for finding the date altogether.'
+  - name: 'VrxKey'
+    description: ''
+    genericControls:
+      isOnlyForMig: true

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxCreateTaxReportSecurityPrice'
+  description: 'select all prices from instruments of AxTaxReportSecurity and insert them into AxTaxReportSecurityPrice'

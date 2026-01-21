@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPrPublicCfList'
+  description: 'Get a list of PrPublicCf for the given ProdReferenceId and StartDate\r\nORDER BY DueDate is important for the migration 				09.05.2008/mct'

@@ -1,0 +1,3 @@
+view:
+  name: 'AsUserDataPermission'
+  description: 'Returns the PrivacyGroupNos together with the associated users.'

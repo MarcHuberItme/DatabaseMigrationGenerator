@@ -1,0 +1,120 @@
+table:
+  name: 'PrPublicTransform'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Transformation'
+    - german:
+        formTitle: 'Transformation'
+  columns:
+  - name: 'VdfDocType'
+    description: 'VDF: ZTD.ZTD.0804\r\n         ZED.ZED.0804'
+  - name: 'VdfDocGen'
+    description: 'VDF: ZTD.ZTD.0813\r\n         ZED.ZED.0813'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: ZTD.MGA.7895\r\n         ZED.MGA.7895'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'PublicCorpActSubId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicCorpActSub'
+      refField: 'Id'
+  - name: 'PublicId'
+    description: 'VDF: ZTD.VAI.K981.7842 (translate with PrPublic)\r\n         ZED.VAI.K981.7842 (translate with PrPublic)'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'PublicEventId'
+    description: ''
+  - name: 'VdfIdentification'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'VdfMessageIdent'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'TransformTypeNo'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      refTable: 'PrPublicTransformType'
+      refField: 'TransformTypeNo'
+      defColumnPos: 2
+  - name: 'TransformMandatory'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'RecordDate'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'EffectiveDate'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SubstituteEffectiveDate'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'ValidationTypeNo'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      refTable: 'PrPublicValidationType'
+      refField: 'ValidationTypeNo'
+  - name: 'SubmissionPeriodFrom'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'SubmissionPeriodTo'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'SubmissionZone'
+    description: 'VDF: ZTD.ZTF.9997-A bzw. ZTD.ZTF.9997-B\r\n         ZED.'
+  - name: 'SubmissionProlongFrom'
+    description: 'VDF: ZTD.ZTF.2801-B'
+  - name: 'WithdrawableDeadLine'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'WithdrawableZone'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'NumberBeforeTransform'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'NumberMin'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'NumberMax'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'UnitNo'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'NominalCurrency'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'NominalAmountBeforeTransform'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'CouponNo'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'SelectionPeriodFrom'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'SelectionPeriodTo'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'RedenomMethodNo'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      refTable: 'PrPublicRedenomMethod'
+      refField: 'RedenomMethodNo'
+  - name: 'RelevantPrecision'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'Rounding'
+    description: 'VDF: ZTD.\r\n         ZED.'

@@ -1,0 +1,62 @@
+table:
+  name: 'TwRegisterMessage'
+  description: 'Contains the message for HBL TWINT registration: The CustomerCaCert sent is activated for TWINT withdrawals and credits to the the specified account.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: bad6dd0b-5ed3-4cee-b419-0b3faf9ddacc
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Register Message'
+    - german:
+        formTitle: 'Register Message'
+  columns:
+  - name: 'HeaderMessageId'
+    description: 'Id of TwHeaderMessage'
+    genericControls:
+      refTable: 'TwHeaderMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'SystemInfoId'
+    description: 'Id of TwSystemInfo'
+    genericControls:
+      refTable: 'TwSystemInfo'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'SecToken'
+    description: 'Token for further registration flow'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Iban'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'FinancialAccountId'
+    description: 'TWINT account identification'
+    genericControls:
+      defColumnPos: 4
+  - name: 'PrivateCustomerId'
+    description: 'TWINT contract id'
+  - name: 'DeviceName'
+    description: 'Device name of the user'
+  - name: 'DeviceUniqueId'
+    description: 'Identification of the device or app installation'
+  - name: 'UseCase'
+    description: 'Current use case:\r\n0 = Onboarding\r\n1 = Reboarding'
+  - name: 'CustomerCaCert'
+    description: 'The public key that matches the private key used by the client for the private key used for the signature (base64 encoded)'
+  - name: 'Signature'
+    description: 'Signature from the Customer CA via the fields:\r\nmsisdn, deviceId, datetime, customerCaCert'
+  - name: 'KeepOldPublicKey'
+    description: 'If true: existing keys are set column: PendingForInvalidation to true.\r\nDefault false: the existing keys will be deleted.'

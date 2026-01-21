@@ -1,0 +1,436 @@
+view:
+  name: 'AcFrozenSecurityView'
+  description: 'securities data for fire export\r\n2018-06-01/ram: modified HQLA, add field PledgeAmount'
+frontendView:
+  name: 'AcFrozenSecurityView'
+  description: 'Diese Tabelle enthält den monatlichen Snapshot der Wertschriftenbestände'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Frozen security balance'
+        helpText: 'Frozen security balance'
+    - german:
+        formTitle: 'Snapshot der WS-Bestände'
+        helpText: 'Snapshot der WS-Bestände'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+  - name: 'HdStatusFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'ReportDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 11
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'PortfolioNo'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'PortfolioTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      isNoUpdate: true
+  - name: 'PositionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'ProdLocGroupId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Quantity'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'BeginDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'MaturityDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'OutstandingInterestDueDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 4
+  - name: 'InterestRate'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'IsinNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'IsinNo'
+      hasDetailBtn: true
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'FundCatSchemeCode'
+    description: ''
+    dataType: 'varchar'
+    prec: 8
+    genericControls:
+      refTable: 'PrPublicFundCatScheme'
+      refField: 'FundCatSchemeCode'
+      isNoUpdate: true
+  - name: 'RefTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicRefType'
+      refField: 'RefTypeNo'
+      isNoUpdate: true
+  - name: 'SecurityType'
+    description: ''
+    dataType: 'varchar'
+    prec: 8
+    genericControls:
+      refTable: 'PrPublicSecurityType'
+      refField: 'SecurityType'
+      defColumnPos: 14
+      isNoUpdate: true
+  - name: 'InstrumentFormNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicInstrumentForm'
+      refField: 'InstrumentFormNo'
+      isNoUpdate: true
+  - name: 'InstrumentTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicInstrumentType'
+      refField: 'InstrumentTypeNo'
+      isNoUpdate: true
+  - name: 'InstrumentCountryCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 2
+    genericControls:
+      isNoUpdate: true
+  - name: 'FundTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicFundType'
+      refField: 'FundTypeNo'
+      isNoUpdate: true
+  - name: 'DepositTypeForFire'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AcFireDepositType'
+      refField: 'DepositTypeNo'
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'PortfolioNoText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      isNoUpdate: true
+  - name: 'RankingNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicRanking'
+      refField: 'RankingNo'
+      isNoUpdate: true
+  - name: 'OwnSecurityValueHoCu'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 8
+      isNoUpdate: true
+  - name: 'PtPartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'PartnerNo'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PtReportAdrLine'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 60
+    genericControls:
+      isNoUpdate: true
+  - name: 'PtSwissTownNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsSwissTown'
+      refField: 'SwissTownNo'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PtCanton'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 2
+    genericControls:
+      isNoUpdate: true
+  - name: 'PtCodeC510'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AcFireC510'
+      refField: 'C510Code'
+      isNoUpdate: true
+  - name: 'CustomerReference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      isNoUpdate: true
+  - name: 'InstrCodeC510'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AcFireC510'
+      refField: 'C510Code'
+      isNoUpdate: true
+  - name: 'InstrLargeExpGroupNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+    genericControls:
+      isNoUpdate: true
+  - name: 'MappingTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AcFireMappingType'
+      refField: 'MappingTypeNo'
+      isNoUpdate: true
+  - name: 'MappingFireAccountNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ProductId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'NamingPartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PtNoga2008'
+    description: ''
+    dataType: 'varchar'
+    prec: 6
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'SecurityPosDesc'
+    description: ''
+    dataType: 'varchar'
+    prec: 100
+  - name: 'RedemptionCode'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicRedemptionCode'
+      refField: 'RedemptionCode'
+  - name: 'CodeC520'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AcFireC520'
+      refField: 'Code'
+      defColumnPos: 9
+  - name: 'FireStockExListingCode'
+    description: ''
+    dataType: 'smallint'
+  - name: 'IssuerCodeC510'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+    genericControls:
+      refTable: 'AcFireC510'
+      refField: 'C510Code'
+  - name: 'InstrPartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+  - name: 'IssuerPartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+  - name: 'TimeUnitNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicTimeUnit'
+      refField: 'TimeUnitNo'
+  - name: 'InterestTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicInterestType'
+      refField: 'InterestTypeNo'
+  - name: 'NominalCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'CustomerCountry'
+    description: ''
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'MarketValueHoCu'
+    description: ''
+    dataType: 'money'
+  - name: 'CustomerUnpledgedFireAccountNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+  - name: 'CustomerPledgedFireAccountNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+  - name: 'CodeC541'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'CodeC533'
+    description: ''
+    dataType: 'smallint'
+  - name: 'IssuerLargeExpGroupNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+  - name: 'OutputFireAccountNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+  - name: 'PledgeKey'
+    description: ''
+    dataType: 'varchar'
+    prec: 20
+  - name: 'CustomerLargeExpGroupNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+  - name: 'MarketValueWithAcrIntHoCu'
+    description: ''
+    dataType: 'money'
+  - name: 'HQLA'
+    description: ''
+    dataType: 'varchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 10
+  - name: 'Pawned'
+    description: '1 = verpfändet\r\n0 = unbelastet, liquidirbar'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PriceChangePercent'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+    genericControls:
+      defColumnPos: 12
+  - name: 'ValuationDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 13
+  - name: 'Caution'
+    description: 'field to mark rows in BrowseGrid'
+    dataType: 'varchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 14
+  - name: 'IsCollateral'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'CollateralValueHoCu'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'QuarterlyBuyCHF'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'QuarterlySellCHF'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'PledgedAmount'
+    description: 'verpfändeter Betrag'
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 11

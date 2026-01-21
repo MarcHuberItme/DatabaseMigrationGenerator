@@ -1,0 +1,189 @@
+table:
+  name: 'PtAddress'
+  description: 'Partner Address Data'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 2
+    cacheLevel: 1
+    descField: 'SignatureLine'
+    navigation:
+      applicationKey: 'AddressTypeNo'
+      navigationConditionField: 'AddressTypeNo'
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Address'
+    - german:
+        formTitle: 'Adresse'
+    - french:
+        formTitle: 'Adresse'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key, Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'AddressTypeNo'
+    description: 'foreign-key;  candidate-key of PtAddressType\r\nsort of address like mainaddress, deliveryaddress, etc.'
+    genericControls:
+      refTable: 'PtAddressType'
+      refField: 'AddressTypeNo'
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'PreferredLanguageNo'
+    description: 'foreign-key;  candidate-key of AsLanguage\r\nLanguage to be used if possible'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'SubstituteLanguageNo'
+    description: 'foreign-key;  candidate-key of AsLanguage\r\nLanguage to be used if preferred language is not supported (this language must be supported by the system)'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'CarrierTypeNo'
+    description: 'Feld nicht verwenden, sollte gelöscht werden.'
+    genericControls:
+      refTable: 'AsCarrierType'
+      refField: 'CarrierTypeNo'
+  - name: 'DeliveryRuleNo'
+    description: 'Dieses Feld ist "neu" ein Migrationsfeld. Konnte aber nicht mehr umbenennt werden, weil die Daten produktiv verwendet sind.'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      isOnlyForMig: true
+  - name: 'CountryCode'
+    description: 'foreign-key;  candidate-key of AsCountry (ISO-Code)\r\nhome country'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 5
+  - name: 'State'
+    description: 'political part of a country'
+  - name: 'Zip'
+    description: 'code of a village for mail (national and international zip)\r\n(aszip is only used for input help and validation)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'SubZip'
+    description: 'if there are more postoffices in a village but only one zip'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Town'
+    description: 'place of residence'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Street'
+    description: 'road in a village/town'
+    genericControls:
+      defColumnPos: 1
+  - name: 'HouseNo'
+    description: 'number of a building'
+    genericControls:
+      defColumnPos: 2
+  - name: 'AddrSupplement'
+    description: 'Address-Appendix (for exp. "c/o ...")'
+  - name: 'POBox'
+    description: 'If true the AddrSupplement is assumed to contain post-office box information.'
+  - name: 'EmailAddressId'
+    description: 'foreign-key; Id of PtEMailAddress\r\nvirtuell address to an internet service provider'
+    genericControls:
+      refTable: 'PtEMailAddress'
+      refField: 'Id'
+  - name: 'PhoneNumberId'
+    description: 'foreign-key; Id of PtPhoneNumber\r\nnumber of a telephone, fax, handy, etc.'
+    genericControls:
+      refTable: 'PtPhoneNumber'
+      refField: 'Id'
+  - name: 'FormalAddress'
+    description: 'FormalAddress is the result of an automated process, can be overridden by manual input'
+    genericControls:
+      multiLine: true
+  - name: 'FullAddress'
+    description: 'LongAddress is the result of an automated process, can be overridden by manual input'
+    genericControls:
+      multiLine: true
+  - name: 'ReducedAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'AdviceAdrLine'
+    description: ''
+  - name: 'ReportAdrLine'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'SignatureLine'
+    description: 'text below the signature'
+  - name: 'AttentionOfLineNo'
+    description: 'LineNo to insert a given "attention of"'
+  - name: 'FormalAddressManual'
+    description: 'if true, FormalAddress is manual updated'
+    genericControls:
+      isNoUpdate: true
+  - name: 'FullAddressManual'
+    description: 'if true, FullAddress is manual updated'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ReducedAddressManual'
+    description: 'if true, ReducedAddress is manual updated'
+    genericControls:
+      isNoUpdate: true
+  - name: 'AdviceAdrLineManual'
+    description: 'if true, AdviceAdrLine is manual updated'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ReportAdrLineManual'
+    description: 'if true, ReportAdrLine is manual updated'
+    genericControls:
+      isNoUpdate: true
+  - name: 'SignatureLineManual'
+    description: 'if true, SignatureLine is manual updated'
+    genericControls:
+      isNoUpdate: true
+  - name: 'MgKURZADRZB'
+    description: ''
+    minValue: '100'
+    maxValue: '245'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgPORTOCD'
+    description: ''
+    genericControls:
+      refTable: 'MgA10'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgVrxKey'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'Undeliverable'
+    description: 'checked: it''s not allowed to send correspondance to that address (in that case the address is only used as domicile-address (e.g. Bevormundete Personen)'
+  - name: 'EmailSeqNo'
+    description: 'Sequence number (within a year) used to tag emails.\r\n\r\nFormat: YYYYnnnnn, where YYYY = Year & nnnnn = numeric seqence number.\r\n\r\nAnnual resetting of this sequence number is manual, mailing system just increments the number and doesn''t reset it on year change.'
+  - name: 'CorrespondenceLanguageNo'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'ContractNameZ1'
+    description: 'used in contract paper'
+  - name: 'ContractNameZ2'
+    description: 'used in contract paper as a possible second person'
+  - name: 'ContractNameManual'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'NameLine'
+    description: 'Beinhaltet nur Name, keine Ortschaft und Strassenangabe\r\nText für Payments, QR-Slips, E-Banking'
+  - name: 'NameLineManual'
+    description: 'if true, NameLine is manual updated'
+    genericControls:
+      isNoUpdate: true

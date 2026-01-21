@@ -1,0 +1,65 @@
+table:
+  name: 'PtUserTimeLog'
+  description: 'Rapport'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtUserBase'
+      parentRelationField: 'UserBaseId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'User Time Log'
+    - german:
+        formTitle: 'Rapporte'
+  columns:
+  - name: 'UserBaseId'
+    description: ''
+    genericControls:
+      refTable: 'PtUserBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'TimeStatisticId'
+    description: 'Zuordnung zur Periode (die Zuordnung kann bei der Erfassung sofort oder auch nachträglich erfolgen, z.B. bei Erfassungen in der Zukunft)'
+    genericControls:
+      refTable: 'PtUserTimeStatistic'
+      refField: 'Id'
+  - name: 'TimeFrom'
+    description: ''
+  - name: 'TimeTo'
+    description: ''
+  - name: 'Hours'
+    description: ''
+  - name: 'ActivityNo'
+    description: ''
+    genericControls:
+      refTable: 'PtUserTimeActivity'
+      refField: 'ActivityNo'
+  - name: 'InputWorkstation'
+    description: 'Erfassungsgerät (Computername/Maschinennummer)'
+  - name: 'VisumUserRef'
+    description: 'Referenzzeichen der Visumsperson'
+  - name: 'VisumTime'
+    description: 'Datum/Zeit des Visums'
+  - name: 'VisumStatusNo'
+    description: 'Status akzepiert, abgelehnt etc.'
+    genericControls:
+      refTable: 'PtUserTimeStatus'
+      refField: 'StatusNo'
+  - name: 'UserComment'
+    description: 'Bemerkungen des Mitarbeiters zum Ereignis'
+    genericControls:
+      multiLine: true
+  - name: 'SuperiorComment'
+    description: 'Bemerkungen der visumsgebenden Person'
+    genericControls:
+      multiLine: true

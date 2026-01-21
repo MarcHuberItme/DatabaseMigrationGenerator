@@ -1,0 +1,87 @@
+table:
+  name: 'AsProcessActivity'
+  description: 'Activity information about processes.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Process Activity'
+    - german:
+        formTitle: 'Prozess Aktivität'
+  columns:
+  - name: 'ProcessName'
+    description: 'Name of Process. This is a name given by the developer who defines the goal of the process and the way of reaching it. The name must be unique within Finstar; so if there are more than one of these processes allowed to run the name should be extende by a number.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ProcessType'
+    description: 'This field specifies the type of a process. Several processes of the same type may be defined. The type helps to control multiple instances in combination with field ''AllowedTotalNo'' and ''AllowedPerStationNo''.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TypeIsDistributable'
+    description: 'Defines if processes of this type may be started on different remote stations.'
+  - name: 'AllowedTotalNoOfType'
+    description: 'Defines how many processes of the same type may be running at the same time.'
+  - name: 'AllowedTypePerStationNo'
+    description: 'Number of processes of this type which are allowed to run on the same station.'
+  - name: 'ProcessGroup'
+    description: 'Descriptor for process group (only important for JCS Observer)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ProcessGroupNo'
+    description: 'Sequence number of process group (only important for JCS Observer).'
+  - name: 'ProcessNoInGroup'
+    description: 'Sequence number of process within its group (only important for JCS Observer).'
+  - name: 'RunAtStartup'
+    description: 'Defines if the process shall be started as soon as the JCS Controller is started.'
+  - name: 'RunOnStation'
+    description: 'Name of server where the process is or would be running.'
+  - name: 'StartType'
+    description: 'Type of process start: (0: Do not start /) 1: Start as autonomous process / 2: Start by Batch Engine.'
+  - name: 'RunOptional'
+    description: '0: not optional: has to be started according to start type\r\n1: optional: is only started if JCS Controller thinks to reduce load'
+  - name: 'IsPrivileged'
+    description: 'Defines if the process may use privileged commands to get/set information from other processes (0: no / 1: yes)'
+  - name: 'IsStartableByPrivileged'
+    description: 'Defines if the process may be started by a privileged process even if it is not started automatically at JCS startup'
+  - name: 'ExecutableProject'
+    description: 'Project Name (of executable) where process method class is implemented.'
+  - name: 'ExecutableClassName'
+    description: 'Class Name (of executable) where process methods are implemented.'
+  - name: 'StartParameters'
+    description: 'Parameters for executable program.'
+  - name: 'ActualState'
+    description: 'Actual state of process.'
+    minValue: '1'
+    maxValue: '1000'
+  - name: 'ActuallyHandledDate'
+    description: 'Date of day which is actually performed by or valid for the process.'
+  - name: 'LastStartTime'
+    description: 'Date and Time of last start (NULL when never started)'
+  - name: 'LastEndTime'
+    description: 'Date and Time of last stop (NULL when running)'
+  - name: 'LastAliveTime'
+    description: 'Timestamp of last answer to alive event'
+  - name: 'MaxAliveTimeCount'
+    description: 'Number of seconds for which a process should be ''out of alive'''
+  - name: 'MaxMissingAliveMessages'
+    description: 'Maximal number of missing alive messages which are accepted before defining the process as ''died'''
+  - name: 'SpecialInformation'
+    description: 'Special Information for Process, delivered to process if required'
+  - name: 'DailyGoAfterHour'
+    description: 'Time (Hour) of earliest allowed start for each day'
+  - name: 'DailyGoAfterMinute'
+    description: 'Time (Minute) of earliest allowed start for each day'
+  - name: 'DailyGoBeforeHour'
+    description: 'Time (Hour) of latest allowed start for each day'
+  - name: 'DailyGoBeforeMinute'
+    description: 'Time (Minute) of latest allowed start for each day'
+  - name: 'EngineDescriptor'
+    description: 'For Batch Engine processes: Descriptor for Batch Engine'
+  - name: 'EnginePackageCount'
+    description: 'For Batch Engine processes: Maximal number of Job entries which shall be handled in one run.'

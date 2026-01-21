@@ -1,0 +1,26 @@
+table:
+  name: 'PrPublicRegionCountry'
+  description: 'VDF-Domaine: 3998 SPEZLOCSYMB'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - german:
+        formTitle: 'Regionen/Länder'
+  columns:
+  - name: 'RegionCountryCode'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'PrioEuTaxFundData'
+    description: 'Prioritity for selection of fund data (PrPublicFundSelfDeclDetail / PrPublicEuTaxDetail)\r\n1 = highest priority\r\nNULL = no priority'
+    genericControls:
+      defColumnPos: 2

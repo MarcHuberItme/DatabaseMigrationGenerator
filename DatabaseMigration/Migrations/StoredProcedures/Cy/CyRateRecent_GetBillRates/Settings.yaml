@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CyRateRecent_GetBillRates'
+  description: 'Stored procedure provided by slk for exporting bill rates for confluence / intranet.'

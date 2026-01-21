@@ -1,0 +1,91 @@
+table:
+  name: 'MdTableDataDef'
+  description: 'Table metadata for generic editor, confirmations and archiving.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: d18c2bae-7838-4b83-a18e-29041114c63e
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Table Meta Data'
+    - german:
+        formTitle: 'Tabellenkontrolle'
+  columns:
+  - name: 'TableName'
+    description: 'Name of the table in the database'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TableType'
+    description: 'Type of the table\r\n1 = Table to edit with generic editor\r\n2 = Table to edit with specialized editor\r\n3 = Tabel has no editor\r\n4 = Header Table\r\n5 = Dummy table, just a front end representing a view'
+    genericControls:
+      refTable: 'MdTableType'
+      refField: 'TableType'
+  - name: 'GroupId'
+    description: 'Id of the group the table belongs to.'
+    genericControls:
+      refTable: 'MdGroup'
+      refField: 'Id'
+  - name: 'DefArchive'
+    description: 'True if archiving is switched on.'
+  - name: 'VisumLevel'
+    description: 'Level of confirmation\r\n1=No confirmation\r\n2=Process group\r\n4=Single row\r\n8=None, group activation'
+    genericControls:
+      refTable: 'MdVisumLevel'
+      refField: 'VisumLevel'
+  - name: 'VisumNumber'
+    description: 'Number of confirmations needed for this table'
+    minValue: '0'
+  - name: 'HasAsText'
+    description: 'Flag, True(1) = This table has text in asText'
+  - name: 'CacheLevel'
+    description: 'Level of caching\r\n0 = No Caching allowed'
+    genericControls:
+      refTable: 'MdCacheLevel'
+      refField: 'CacheLevel'
+  - name: 'PhysicalDelete'
+    description: 'Flag which causes the Generic Components to delete a record physically\r\nTrue = Delete Physically\r\nFalse = Mark as deleted by setting the HdVersionNo to 999 999 999'
+  - name: 'IsGroupable'
+    description: 'Flag to mark a table a groupable :\r\nTrue = Standard grouping possible\r\nFalse = Standard grouping disabled'
+  - name: 'TableUsageNo'
+    description: 'Usage of the table\r\n1 = For production\r\n2 = In Production DB, but only for test purposes\r\n3 = Used in testarchive only'
+    minValue: '1'
+    maxValue: '3'
+  - name: 'DomainType'
+    description: ''
+  - name: 'DescField'
+    description: 'Name of the fields which represents a description of the record and can be displayed in the text portion of a combo box, separated by ;'
+  - name: 'IsNavigationRoot'
+    description: 'Marks a table as leader in the Navigation Viewer.'
+  - name: 'ApplicationKey'
+    description: 'Field name of the Application key used for the navigation tree.'
+  - name: 'NavigationConditionField'
+    description: 'Contains the Navigation Condition Fields for a table. Is Used only for the DataNavigationViewer.'
+  - name: 'RootTable'
+    description: 'Name of the Root Table if the actual table id part of the navigation tree.\r\nContains ''ROOT'' if the table itself is navigation root.'
+    genericControls:
+      refTable: 'MdTableDataDef'
+      refField: 'TableName'
+  - name: 'ParentTable'
+    description: 'Parent table, used for the navigation tree.'
+    genericControls:
+      refTable: 'MdTableDataDef'
+      refField: 'TableName'
+  - name: 'ParentRelationField'
+    description: 'Name of the  foreign key which references the id in the parent table. Is used only for the DataNavigationSystem!'
+  - name: 'ParentIdField'
+    description: 'Id-Field of the parent tabel which is is referenced by the foreign key ParentRelationField. Is Used only for DataNavigationSystem.'
+  - name: 'IsSharedNode'
+    description: 'True if all records of that table can are repredented by only one node in the Navigation Viewer.'
+  - name: 'IsHiddenNode'
+    description: 'True if the entry of AsNavigationIndex should not be displayed in the navigation tree.'
+  - name: 'DoBackMigrate'
+    description: 'Indicates whether table has to be back-migrated to VRX'
+  - name: 'ChangeNoticeLevel'
+    description: '0 = none\r\n1 = update and insert'

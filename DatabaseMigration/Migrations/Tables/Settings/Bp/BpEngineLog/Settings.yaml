@@ -1,0 +1,38 @@
+table:
+  name: 'BpEngineLog'
+  description: 'Log entries for each Activation of a Batch Processor Engine'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Batch Engine Log'
+    - german:
+        formTitle: 'Batch Engine Log'
+  columns:
+  - name: 'EngineName'
+    description: 'Name of Batch Processor Engine'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'StartTime'
+    description: 'Engine Activation Time'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'CloseTime'
+    description: 'Engine Closing Time'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'Comment'
+    description: 'Comment about Engine Execution'
+    genericControls:
+      defColumnPos: 4
+  - name: 'StationName'
+    description: 'Name of station where job is executed'

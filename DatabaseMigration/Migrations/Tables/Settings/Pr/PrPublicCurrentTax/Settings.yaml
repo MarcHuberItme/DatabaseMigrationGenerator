@@ -1,0 +1,74 @@
+table:
+  name: 'PrPublicCurrentTax'
+  description: 'Import data concerning Section 871'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'tax report QI'
+    - german:
+        formTitle: 'Steuerreport QI'
+    - french:
+        formTitle: 'rapport fiscal QI'
+  columns:
+  - name: 'VdfDocGen'
+    description: 'VDF: FHD.FHD.0813\r\n         FUD.FUD.0813\r\n         FQD.FQD.0813\r\nGeneration of the last FUD-Doc respectivly FHD-Doc, which was received from VDF'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: FHD.MGA.7895\r\n         FUD.MGA.7895\r\n         FQD.MGA.7895\r\nMessage status of Doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'PublicId'
+    description: 'VDF: FSD.Gr2.VAI.K981.7842\r\n'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'TaxName'
+    description: 'VDF: FSD.FSE.7862\r\nnumber of the tax name'
+    genericControls:
+      refTable: 'PrPublicTaxName'
+      refField: 'TaxNameNo'
+  - name: 'ApplicTaxRep'
+    description: 'VDF: FSD.FSE.7863\r\nTax applicability'
+    genericControls:
+      refTable: 'PrPublicApplicTaxRep'
+      refField: 'ApplicTaxRepNo'
+      defColumnPos: 1
+  - name: 'ObjectTaxRep'
+    description: 'VDF: FSD.FSE.7864\r\nTaxable object'
+    genericControls:
+      refTable: 'PrPublicTaxableObject'
+      refField: 'ObjectTaxRepNo'
+      defColumnPos: 2
+  - name: 'TaxParticularity'
+    description: 'VDF: FSD.FSE.7905\r\nSome issuers of 871(m) relevant products are planning to take care of the withholding tax at their own risk; if so it will be indicated with this attribute.'
+    genericControls:
+      refTable: 'PrPublicTaxParticularity'
+      refField: 'TaxParticularity'
+  - name: 'Peculiarity'
+    description: 'VDF: FSD.FSE.7906\r\nSection 871(m) relevant products are subdivided into simple- and complex contracts which will be indicated with this attribute.'
+    genericControls:
+      refTable: 'PrPublicPeculiarity'
+      refField: 'Peculiarity'
+  - name: 'Descr'
+    description: 'VDF: FSD.FSE.9998\r\ndescription'
+  - name: 'ValidFrom'
+    description: 'VDF: FSD.FSE.2811\r\nValid from'
+  - name: 'ValidTo'
+    description: 'VDF: FSD.FSE.2812\r\nValid until'

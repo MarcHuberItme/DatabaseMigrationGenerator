@@ -1,0 +1,76 @@
+table:
+  name: 'TwFinancialAdviceMessage'
+  description: 'Contains the data for a RequestAuthorization message. This is called from TWINT before every financial transaction that is performed on a customers account. TWINT creates this request upon interaction of a customer. The direction of the subsequent money transfer is advised within the Authorization request.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: bad6dd0b-5ed3-4cee-b419-0b3faf9ddacc
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Request Authorization Msg'
+    - german:
+        formTitle: 'Request Authorization Msg'
+  columns:
+  - name: 'HeaderMessageId'
+    description: 'Id of TwHeaderMessage'
+    genericControls:
+      refTable: 'TwHeaderMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'AuthorizationId'
+    description: 'The Id of the referenced authorization, as determined between TWINT and the Issuer in the Authorization Call.'
+  - name: 'PrivateCustomerId'
+    description: 'TWINT contract id'
+  - name: 'FinancialAccountId'
+    description: 'TWINT account identification'
+  - name: 'IssuerId'
+    description: 'The Id identifying the Issuer in TWINT'
+  - name: 'Operation'
+    description: 'Signals whether this authorization is for a Withdrawal or a Deposit:\r\n0 = Deposit\r\n1 = Withdrawal'
+  - name: 'RequestedAmount'
+    description: 'The amount requested for transfer by TWINT. This may be smaller than or equal to the originally authorized amount.'
+  - name: 'RequestedAmountCurrency'
+    description: 'The currency of the requested amount.'
+  - name: 'UpholdAmount'
+    description: 'The amount to uphold of the current authorization for further FinancialAdvice Calls. TWINT will send an amount of 0.- to uphold for all Calls.'
+  - name: 'UpholdAmountCurrency'
+    description: 'The currency of the upholded amount.'
+  - name: 'OrderDate'
+    description: 'The DateTime at which the Order resulting in this FinancialAdvice was made.'
+  - name: 'OrderId'
+    description: 'An identifier for the TWINT internal process that covers the authorization and the subsequent FinancialAdvice message. This SHOULD be stored in addition to the Authorization Id, to provide a systems spanning identifier for troubleshooting.'
+  - name: 'FinancialAdviceTimestamp'
+    description: 'The timestamp at which the Scheme issued the financial Advice and with which the Autorization got financially relevant.'
+  - name: 'ClearingPeriod'
+    description: 'The Clearing period that this advice is assigned to by TWINT. This acts as information for the Issuer so he can assign the Advice booking to the same period. The string consists of 12 Numbers defining a clearing period as YYYYMMDDSSSS; year, month, day, sequence number.'
+  - name: 'CustomerInformationText'
+    description: 'A descriptive text that MAY be shown to the Customer as a reference for the transfer. The text is provided by TWINT and contains information allowing to find the associated payment. The text is a single line.'
+  - name: 'AdviceReferenceNumber'
+    description: 'An reference number given to the advice by the Issuer that can be used as further reference to the specific advice call (used in response).'
+  - name: 'AuthorizationTimestamp'
+    description: 'The Date and time at which the User signed the Authorization Request. The String is formatted in simple ISO-8601 format: YYYY-MMDDTHH:MM:SS.\r\n'
+  - name: 'AuthorizationDuration'
+    description: 'The duration of the authorization given as an ISO-8601 duration. The duration of the authorization is determined by the type of payment performed by TWINT and MAY range up to 90 days\r\n(sample: P3Y6M4DT12H30M5S, represents a duration of three years, six months, four days, twelve hours, thirty minutes, and five seconds).'
+  - name: 'UserAuthorizationMode'
+    description: 'Signals to the Issuer, whether the User has seen and accepted the final amount of the Payment in the Issuers Mobile Application (ONLINE), has accepted a preset maximum amount (OFFLINE) or the request was sent by an authorized merchant (AUTHORIZED_MERCHANT).'
+  - name: 'AcquirerReferenceNumber'
+    description: 'An ID provided by the Acquirer to identify the Authorization for later referencing purposes. This Element is omitted on non Acquirer triggered payments.'
+  - name: 'ReferenceOrderId'
+    description: 'An identifier for the TWINT internal process that covers the authorization and the subsequent FinancialAdvice message.'
+  - name: 'RequestKey'
+    description: 'The Certificate containing the public key of the key pair that was used for the signature. The Certificate is provided as PEM encoded X509 Certificate and MUST be used by the Issuer to verify the authenticity and validity of the Request. This field is only sent for WITHDRAWAL Authorizations. The length of this Field is depends on the Data in the Certificate created by the Issuer.'
+  - name: 'AdditionalIssuerAuthorization'
+    description: 'This Element MAY be used to transport additional Authorization elements deemed necessary by an Issuer. Creating the content of such additional Element is up to the Issuers mobile App.\r\nIf e.g. an Issuer expects a specific type of authorization for large payments, the Issuers app may perform that authorization and then provide according information in such an element so the Banking System can later on verify the existence of such an authorization (optional).'
+  - name: 'Iban'
+    description: ''
+  - name: 'TransactionType'
+    description: 'The type of transaction that builds the context for this authorization. This may currently be one of a number of possible values showing whether a payment is made between individual persons, between a customer and a merchant and details on different merchant payments (e-commerce, m-commerce, attended, unattended, …) or a reversal or credit.'
+  - name: 'Status'
+    description: 'Status of this message:\r\n0 = Received FA\r\n1 = FA successful processed\r\n-x = Error (Several errors possible)'

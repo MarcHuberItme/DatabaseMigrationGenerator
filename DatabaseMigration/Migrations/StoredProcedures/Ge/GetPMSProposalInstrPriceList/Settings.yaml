@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPMSProposalInstrPriceList'
+  description: ''

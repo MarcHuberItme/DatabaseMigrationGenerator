@@ -1,0 +1,47 @@
+table:
+  name: 'PtServicePrice'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtServicePrice'
+        helpText: 'PtServicePrice'
+    - german:
+        formTitle: 'PtServicePrice'
+        helpText: 'PtServicePrice'
+  columns:
+  - name: 'ServiceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtServiceNameList'
+      refField: 'ServiceTypeNo'
+      defColumnPos: 1
+  - name: 'Charge'
+    description: ''
+  - name: 'Currency'
+    description: ''
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidTo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'StartMonth'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'EndMonth'
+    description: ''
+  - name: 'IsEmployeeFree'
+    description: ''

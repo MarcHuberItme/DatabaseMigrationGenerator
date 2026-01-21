@@ -1,0 +1,42 @@
+table:
+  name: 'PtVisecaFileImport'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Viseca file import'
+    - german:
+        formTitle: 'Viseca File-Import'
+  columns:
+  - name: 'ImportDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'FileType'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'SequenceNo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Errors'
+    description: 'Detail zu den aufgetretenen Fehler siehe jeweils in der entsprechenden Logdatei.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'FileName'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

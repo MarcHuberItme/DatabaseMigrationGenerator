@@ -1,0 +1,58 @@
+view:
+  name: 'WfActiveMapView'
+  description: 'Shows the maps with active processes'
+frontendView:
+  name: 'WfActiveMapView'
+  description: 'Shows the maps with active processes'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Active Maps'
+    - german:
+        formTitle: 'Active Maps'
+  columns:
+  - name: 'ProcessId'
+    description: 'Id of an active process'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 5
+  - name: 'DynamicDescription'
+    description: 'Dynamic Description of a Workflow-Process, corresponds to the field with the same name in WfProcess'
+    dataType: 'nvarchar'
+    prec: 4000
+    genericControls:
+      defColumnPos: 4
+  - name: 'CreationDate'
+    description: 'DateTime at which the process is created. Corresponds to WfProcess.CreationDate.'
+    dataType: 'datetime'
+  - name: 'MapName'
+    description: 'Name of the map, corresponds to WfMap.Name'
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 2
+  - name: 'MapNo'
+    description: 'Corresponds to WfMap.MapNo'
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Instanciator'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'MapStatus'
+    description: ''
+    dataType: 'int'
+  - name: 'FullName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 3

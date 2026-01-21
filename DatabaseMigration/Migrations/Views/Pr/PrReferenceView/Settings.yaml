@@ -1,0 +1,190 @@
+view:
+  name: 'PrReferenceView'
+  description: 'used for standing order - selection of accounts or securites'
+frontendView:
+  name: 'PrReferenceView'
+  description: 'Felddefinitionen müssen mit VIEW übereinstimmen.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PrReferenceView'
+    - german:
+        formTitle: 'PrReferenceView'
+  columns:
+  - name: 'ProductId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrBase'
+      refField: 'Id'
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'AccountNoText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 24
+  - name: 'PrivacyLockId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 3
+  - name: 'AccountNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 4
+  - name: 'AccountNoIbanForm'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 31
+    genericControls:
+      defColumnPos: 5
+  - name: 'FormerAccountNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 15
+    genericControls:
+      defColumnPos: 6
+  - name: 'CustomerReference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 7
+  - name: 'OpeningDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 8
+  - name: 'TerminationDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 9
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      defColumnPos: 10
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 11
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 12
+  - name: 'MiddleName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 13
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 14
+  - name: 'NameCont'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 15
+  - name: 'DateOfBirth'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 16
+  - name: 'ConsultantTeamName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 32
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 17
+  - name: 'AddrSupplement'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 35
+    genericControls:
+      defColumnPos: 18
+  - name: 'Street'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 26
+    genericControls:
+      defColumnPos: 19
+  - name: 'HouseNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 20
+  - name: 'Zip'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 13
+    genericControls:
+      defColumnPos: 21
+  - name: 'Town'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 22
+  - name: 'CountryCode'
+    description: ''
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 23
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'PortfolioNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 13

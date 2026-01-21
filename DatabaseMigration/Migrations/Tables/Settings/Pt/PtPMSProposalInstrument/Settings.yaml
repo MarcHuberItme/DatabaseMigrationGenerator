@@ -1,0 +1,20 @@
+table:
+  name: 'PtPMSProposalInstrument'
+  description: 'This table contains list of instruments that Netfolio clients do not have and they have to be transferred to Netfolio for planing and suggestion purpose. As soon as Netfolio-relevant position is openned, the insturment is excluded in selection'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PublicId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1

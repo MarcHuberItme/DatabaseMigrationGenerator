@@ -1,0 +1,64 @@
+table:
+  name: 'PrPublicRefType'
+  description: 'Determine the mandatory attributes for the insert in PrReference'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Reference type'
+    - german:
+        formTitle: 'Referenztyp'
+  columns:
+  - name: 'RefTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'FieldCurrency'
+    description: 'Field in PrReference:\r\nM = mandatory\r\nC = conditional\r\nF = forbidden'
+    genericControls:
+      defColumnPos: 2
+  - name: 'FieldMaturityDate'
+    description: 'Field in PrReference:\r\nM = mandatory\r\nC = conditional\r\nF = forbidden'
+    genericControls:
+      defColumnPos: 3
+  - name: 'FieldInterestRate'
+    description: 'Field in PrReference:\r\nM = mandatory\r\nC = conditional\r\nF = forbidden'
+    genericControls:
+      defColumnPos: 4
+  - name: 'FieldShortLong'
+    description: 'Field in PrReference:\r\nM = mandatory\r\nC = conditional\r\nF = forbidden'
+    genericControls:
+      defColumnPos: 5
+  - name: 'FieldSpecialKey'
+    description: 'Field in PrReference:\r\nM = mandatory\r\nC = conditional\r\nF = forbidden'
+    genericControls:
+      defColumnPos: 6
+  - name: 'FieldAccountId'
+    description: 'Field in PrReference:\r\nM = mandatory\r\nC = conditional\r\nF = forbidden'
+    genericControls:
+      defColumnPos: 7
+  - name: 'FieldObligationId'
+    description: 'Field in PrReference:\r\nM = mandatory\r\nC = conditional\r\nF = forbidden'
+    genericControls:
+      defColumnPos: 8
+  - name: 'FieldInsurancePoliceId'
+    description: 'Field in PrReference:\r\nM = mandatory\r\nC = conditional\r\nF = forbidden'
+    genericControls:
+      defColumnPos: 9
+  - name: 'FieldObjectId'
+    description: 'Field in PrReference:\r\nM = mandatory\r\nC = conditional\r\nF = forbidden'
+    genericControls:
+      defColumnPos: 10
+  - name: 'WithoutTaxReportCharge'
+    description: ''
+  - name: 'IsForPMS'
+    description: ''

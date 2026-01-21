@@ -1,0 +1,82 @@
+table:
+  name: 'PtEventEntity'
+  description: '1) select all partner + 11-er domiclie address -> PtEventEntity\r\n2) selelect correspondence Instruction ->PtEventEntity data+receiver addressId\r\n     -> PtEventAddress\r\n3) Print job -> get all actual data for the receiver from the database'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'EventId'
+    description: ''
+    genericControls:
+      refTable: 'PtEvent'
+      refField: 'Id'
+  - name: 'TopicId'
+    description: 'used for contact report creation'
+    genericControls:
+      refTable: 'AsContactTopic'
+      refField: 'Id'
+  - name: 'InitiatorId'
+    description: 'used for contact report creation'
+    genericControls:
+      refTable: 'AsContactInitiator'
+      refField: 'Id'
+  - name: 'SuppressFlag'
+    description: 'can be manually set, then this client doesn''t receive any documents\r\n0 = not suppressed\r\n1 = suppressed'
+  - name: 'PartnerIdOwner'
+    description: 'owner (Inhaber)'
+  - name: 'PartnerNo'
+    description: 'Partner Number of owner (Inhaber)'
+  - name: 'PartnerNoEdited'
+    description: 'Partner Number of owner (Inhaber)'
+  - name: 'DateOfBirth'
+    description: 'date of birth of the owner (Inhaber)'
+  - name: 'YearOfBirth'
+    description: ''
+  - name: 'SexStatusNo'
+    description: ''
+  - name: 'FirstName'
+    description: 'FirstName from table PtBase'
+  - name: 'PortfolioId'
+    description: 'Portfolio within the same PartnerId (Inhaber)'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'AccountId'
+    description: 'Account within the same PartnerId (Inhaber)'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'ServiceLevelNo'
+    description: 'of owner (Inhaber)'
+    genericControls:
+      refTable: 'PtServiceLevel'
+      refField: 'ServiceLevelNo'
+  - name: 'BranchNo'
+    description: 'of owner (Inhaber)'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+  - name: 'ConsultantTeamName'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'ProfitCenterNo'
+    description: 'of owner (Inhaber)'
+    genericControls:
+      refTable: 'AsProfitCenter'
+      refField: 'ProfitCenterNo'
+  - name: 'AddressId'
+    description: '11-er Address of the owner (=PtBase.Id)  = InhaberAdresse 11'
+  - name: 'ReportAdrLine'
+    description: 'report line of owner (Inhaber 11-er address)'
+  - name: 'ReducedAddress'
+    description: 'reduced address of owner (Inhaber 11-er address)'
+  - name: 'SignatureLine'
+    description: 'of owner out of 11-er address (Inhaber)'

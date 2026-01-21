@@ -1,0 +1,38 @@
+table:
+  name: 'PtMLPeriodicCheckProxiesState'
+  description: 'Status einer GWG-Prüfung bzgl. der Vollmachten\r\n'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Proxie Status'
+    - german:
+        formTitle: 'GWG Vollmacht Status'
+    - french:
+        formTitle: 'Statut du proxy ML'
+  columns:
+  - name: 'StateNo'
+    description: 'Status der Prüfung:\r\n\r\n- 10 keine Anpassungen\r\n- 20 Anpassung ohne Verifikation\r\n- 30 Anpassung mit Verifikation\r\n- 40 Prüfung abgeschlossen\r\n- 90 keine Prüfung\r\n'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Description'
+    description: 'Beschreibung des Status'
+    genericControls:
+      multiLine: true
+  - name: 'ValidFrom'
+    description: 'Zeitliche Gültigkeit des Records, Startdatum'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValidTo'
+    description: 'Zeitliche Gültigkeit des Records, Enddatum'
+    genericControls:
+      defColumnPos: 3

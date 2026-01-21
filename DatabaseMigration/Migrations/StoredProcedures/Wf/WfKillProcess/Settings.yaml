@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'WfKillProcess'
+  description: 'Stored Procedure used with the program ''FsWorkflowManager'' to remove a broken or misleaded workflow process. \r\nIn addition data handeled by the workflow process are lost.\r\nParameters: ''@ProcessId'', the id of the process to be killed.'

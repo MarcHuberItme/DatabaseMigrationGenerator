@@ -1,0 +1,29 @@
+table:
+  name: 'PtPaymentMCCSECard'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'CardholderClientID'
+    description: 'Cardholder record ID from CMS database.'
+  - name: 'CardholderClientNumber'
+    description: 'Cardholder client number.'
+  - name: 'AccountOwnerClientID'
+    description: 'Account owner record ID from CMS database.'
+  - name: 'AccountOwnerClientNumber'
+    description: 'Account owner client number.'
+  - name: 'CardExpiryDate'
+    description: 'Card expiry date. Format YYMM.'
+  - name: 'ProductionCode'
+    description: 'Example values:\r\n\r\n"NCR" - new card (new PAN, new PIN, new expiry date)\r\n"DWP" - duplicated card (same PAN, same PIN, same expiry date)\r\n"RWL" - renewed card (same PAN, same PIN, new expiry date)\r\n"RPL" - replacement card (new PAN, new PIN, new expiry date)\r\n\r\n*List of issue modes is on the need and agreements of specific project*'
+  - name: 'PaymentMasterCardCseID'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentMasterCardCSE'
+      refField: 'Id'

@@ -1,0 +1,48 @@
+table:
+  name: 'PtPKICarrier'
+  description: 'medium that contains the pki-informations (for example Smartcard, USB-Token)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PKI Carrier'
+    - german:
+        formTitle: 'PKI Träger'
+  columns:
+  - name: 'CarrierNo'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Price'
+    description: 'price for the medium'
+  - name: 'Rewriteable'
+    description: 'True if carrier can be rewritten'
+  - name: 'CardLabel'
+    description: 'Lebel of the card (not the certificate!)'
+  - name: 'KeyContainerName'
+    description: 'Name of PKCS# Key Container (Certificate Slot)'
+  - name: 'CanSignEMail'
+    description: 'True, if the carrier can hold an e-mail enabled certificate.'
+  - name: 'CanLogIn'
+    description: 'True if certificate is allowed to be used as e-banking login'
+  - name: 'KeySize'
+    description: 'Size of the key of the certificate which can be hold by the carrier.'
+  - name: 'CSP'
+    description: 'Name of the CSP which is needed to produce the CertRequest'
+  - name: 'PKCS11VendorDll'
+    description: 'Name of the dll to access the token using the PKCS#11 interface.'
+  - name: 'CanBeInscribed'
+    description: 'True, if printer can print on card'
+  - name: 'CanBeLabeled'
+    description: 'True, if paper label can be sticked on the card.'
+  - name: 'RegKeyForUsbSlot'
+    description: 'Name of the registry key under HKEY_LOCAL_MACHINE\SOFTWARE\FinStar\216\SmartCardFactory, which holds the number of the USB Slot which is used to access the card by the PKCS#11 interface. Since the slot number is machine dependent, it is stored in the local registry.'

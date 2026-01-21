@@ -1,0 +1,61 @@
+table:
+  name: 'PtPortfolioProcRule'
+  description: 'no advice rules are possible'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtPortfolio'
+      parentRelationField: 'PortfolioId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Rule'
+    - german:
+        formTitle: 'Regeln'
+  columns:
+  - name: 'PortfolioId'
+    description: 'foreign-key; Id of PtPortfolio\r\nNo updates because of Migration 13.02.2002/mct'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'ActivityRuleCode'
+    description: 'foreign-key;  candidate-key of AsActivityRule (ActivityRuleCode)'
+    genericControls:
+      refTable: 'AsActivityRule'
+      refField: 'ActivityRuleCode'
+      defColumnPos: 2
+  - name: 'PeriodRuleNo'
+    description: 'foreign-key;  candidate-key of AsPeriodRule (PeriodRuleNo)'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 1
+  - name: 'PeriodRuleBase'
+    description: 'BaseValue representing a day or month & day for date calculation, e.g.\r\n- RuleNo:                   90 means once a quarter  \r\n- PeriodRuleBase: 0331 means at end of March/June/September/December'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ActivityDate'
+    description: 'Is used to define fixed dates instead of using PeriodRuleNo'
+    genericControls:
+      defColumnPos: 4
+  - name: 'CorrPortfolioId'
+    description: 'this proc rule is only valid for that specific corr instruction'
+    genericControls:
+      refTable: 'PtCorrPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'EnforceAlways'
+    description: '0 = not always\r\n1 = always'
+  - name: 'SkipDefault'
+    description: '0 = Default PtPortfolioTypeProcRule is valid in addition\r\n1 = Default PtPortfolioTypeProcRule has to be skipped'

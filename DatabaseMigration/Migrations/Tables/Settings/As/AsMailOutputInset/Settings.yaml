@@ -1,0 +1,27 @@
+table:
+  name: 'AsMailOutputInset'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'OutgoingMail Insets'
+    - german:
+        formTitle: 'Postausgang Beilagen'
+  columns:
+  - name: 'MailOutputId'
+    description: ''
+    genericControls:
+      refTable: 'AsMailOutput'
+      refField: 'Id'
+  - name: 'InsetDocumentNo'
+    description: ''
+    genericControls:
+      refTable: 'AsMailInset'
+      refField: 'DocumentNo'

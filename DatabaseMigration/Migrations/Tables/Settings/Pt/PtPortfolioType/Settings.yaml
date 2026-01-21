@@ -1,0 +1,103 @@
+table:
+  name: 'PtPortfolioType'
+  description: 'sort/type of a portfolio\r\n\r\n6.1.2025 rohn: field [UpdateLatestValuation] added'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Portfolio Type'
+    - german:
+        formTitle: 'Portfolio Typ'
+    - french:
+        formTitle: 'Type de portefeuille'
+  columns:
+  - name: 'PortfolioTypeNo'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'MigValue'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'AcctNoRule'
+    description: 'Reference to rule number for portfolio'
+    genericControls:
+      refTable: 'PtAccountNoRule'
+      refField: 'RuleNo'
+  - name: 'ManAcctNo'
+    description: 'Allows manual entry of portfolio number (for migration)'
+  - name: 'FormProfileName'
+    description: 'Name of the profile in PtPortfolioAdmin.frmPortfolio'
+  - name: 'IsEffectsTrader'
+    description: 'Portfolio gehört zu einem Effektenhändler im Sinne Art. 13 Abs. 3 StG (Bundesgesetz über die Stempelabgaben)'
+  - name: 'IsBroker'
+    description: 'Portfolio gehört zu einem Broker (bestimmt die Brokerauswahl)'
+  - name: 'IsCustomer'
+    description: 'Portfolio gehört zu einem Kunden (bestimmt die Kundenauswahl)'
+  - name: 'ExpenseRulesetNo'
+    description: 'expense ruleset to use for this portfoliotype'
+    genericControls:
+      refTable: 'PrExpenseRuleset'
+      refField: 'ExpenseRulesetNo'
+  - name: 'HasRestriction'
+    description: '1= PtPortfolioTypeRestriction exists'
+  - name: 'AllowsStockEx'
+    description: ''
+  - name: 'CalcCostValue'
+    description: ''
+  - name: 'IsSafeCustody'
+    description: ''
+  - name: 'IsAssetManagement'
+    description: 'Is VA Mandat'
+  - name: 'MinAdmChargeAmount'
+    description: ''
+  - name: 'IsForPMS'
+    description: '1= portfolio type is relevant for PMS'
+  - name: 'PMSPortfolioTypeNo'
+    description: ''
+  - name: 'Possiblecol'
+    description: 'als Collateral erlaubt'
+  - name: 'IsExcustody'
+    description: 'portfolio is managed at another bank'
+  - name: 'IsAiaRelevant'
+    description: 'True, if the product has to be included in AIA reports.'
+  - name: 'IsVsbRelevant'
+    description: 'True, if Portfolio type has to be included in the VSB product check'
+  - name: 'HasCurrencyRateRebate'
+    description: 'Checkbox if the PortfolioType has rebate for the CPM-Call.\r\nused for the spread of the currency rate in CorporateAction and StockEx-Application.\r\n0= with spread\r\n1= without spread'
+  - name: 'AdmChargeSubType'
+    description: 'Diese Administrationsgebühr-Regel wird bei der Eröffnung oder Umwandlung automatisch in Tab. PtPortfolioAdmChargeRule gespeichert.'
+    genericControls:
+      refTable: 'PtAdmChargeSubType'
+      refField: 'SubTypeNo'
+  - name: 'IsPricingModelRelevant'
+    description: 'Defines if during entering a new Portfolio (frmPortfolio) a dropdown with the pricemodel (PtPortfolioPricingModel) should be displayed.'
+  - name: 'HasPerformanceCalculation'
+    description: '1= Valuation run will trigger the performance calculation. Performance will be showed on the Vermögensauszug.'
+  - name: 'IgnoreToffMarginCalc'
+    description: '1= no margin calculation for TOFF-Positions will be done (necessery for short Warrant-Positions of Vermittlungsdepot SCO/BSZ in HBL-Finstar).'
+  - name: 'IsQualifiedIntermediary'
+    description: 'Flag to define if it''s a qualified intermediary portfolio where the trader is the locgroup for a partner system.\r\nBased on this field PtPortfolio.TaxRegulation will be showed on the portfolio frontend.\r\nUsed in HBL (trader) for SLG (partner).'
+  - name: 'SuppressInOverview'
+    description: 'do not show this products by default on the overview form (only if special checkbox is choosen). - e.g. Vorsorgeprodukte'
+  - name: 'IsPerformanceReportingActive'
+    description: 'Defines whether Finstar reports exists\r\n1= portfolio reporting active'
+  - name: 'IsPerformanceActive'
+    description: 'Defines whether Finstar calculates performance data for portfolio type (can be used e.g. for visualisation in ebanking).\r\n1= performance available'
+  - name: 'IsAbsoluteTrendActive'
+    description: 'Defines whether Finstar calculates absolute trend data for portfolio type (can be used e.g. for visualisation in ebanking).\r\n1= absolute trend available'
+  - name: 'SetBIRPWithGUID'
+    description: 'Used for Security Portfolios (Neon StockEx Orders).\r\n1= Insert a StockEx Order always with a GUID in the field PtTradingOrderMessage.BankInternalReferencePartner (FIN-11241).\r\n\r\nMaybe this field will be obsolet in the future when BIR will be used instead of BIRP (partially traded order).'
+  - name: 'UpdateLatestValuation'
+    description: 'If set to ''1'', positions linked to this portfolio type are copied to tables VaLatestValuationForPostition/Portfolio.'

@@ -1,0 +1,48 @@
+table:
+  name: 'PtMrosXMLList'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtMrosXMLList'
+        helpText: 'PtMrosXMLList'
+    - german:
+        formTitle: 'PtMrosXMLList'
+        helpText: 'PtMrosXMLList'
+    - french:
+        formTitle: 'PtMrosXMLList'
+        helpText: 'PtMrosXMLList'
+  columns:
+  - name: 'TypeName'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Value'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ItemText'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Comment'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'DataCodeList'
+    description: ''
+  - name: 'TableName'
+    description: ''
+  - name: 'AsNotFound'
+    description: ''
+  - name: 'AsOther'
+    description: ''

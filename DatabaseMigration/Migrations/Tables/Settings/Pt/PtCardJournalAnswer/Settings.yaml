@@ -1,0 +1,17 @@
+table:
+  name: 'PtCardJournalAnswer'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Answer'
+    description: '00 = approved, transaction completed\r\n01 = declined, refer to card issuer\r\n02 = declined, refer to card issuer\r\n03 = declined, invalid merchant\r\n04 = declined, pick up card\r\n05 = declined, do not honor\r\n06 = declined, error\r\n07 = declined, pick up card\r\n12 = declined, invalid transaction\r\n13 = declined, invalid amount\r\n14 = declined, invalid card/account number\r\n15 = declined, no such issuer\r\n19 = declined, re-enter transaction\r\n21 = declined, no action taken\r\n30 = declined, format error\r\n41 = declined, pick up card, card lost\r\n43 = declined, pick up card, card stolen\r\n51 = declined, not sufficient funds\r\n52 = declined, invalid account\r\n53 = declined, invalid account\r\n54 = declined, expired card\r\n55 = declined, incorrect PIN\r\n57 = declined, transaction not permitted to cardholder\r\n58 = declined, transaction not permitted to terminal\r\n61 = declined, exceeds withdrawal amount limit\r\n62 = declined, restricted card\r\n65 = declined, exceeds withdrawal frequency limit\r\n75 = declined, allowable number of PIN tries exceeded\r\n76 = declined, incorrect PIN\r\n77 = declined\r\n80 = declined, invalid date\r\n81 = declined, cryptographic error\r\n83 = declined, PIN cannot be verified\r\n85 = declined\r\n91 = declined, issuer or switch is inoperative\r\n92 = declined, network cannot be found for routing\r\n93 = declined\r\n96 = declined, system malfunction\r\nY1 = approved offline\r\nY2 = approved offline, after card initiated referral\r\nY3 = approved offline, unable to go online\r\nY4 = approved offline, tip amount too high\r\nZ1 = declined offline\r\nZ2 = declined offline, after card initiated referral\r\nZ3 = declined offline, unable to go online\r\n'

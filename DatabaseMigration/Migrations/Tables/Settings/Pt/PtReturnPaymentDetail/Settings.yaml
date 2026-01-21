@@ -1,0 +1,51 @@
+table:
+  name: 'PtReturnPaymentDetail'
+  description: 'Details of the payment returned'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'OrderDetailId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderDetail'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'OriginalMessageId'
+    description: ''
+  - name: 'OriginalMessageType'
+    description: ''
+  - name: 'OrginalInstructionId'
+    description: ''
+  - name: 'OrginalEndToEndId'
+    description: ''
+  - name: 'OriginalTransactionId'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'RetunInstructedAmount'
+    description: ''
+  - name: 'CurrencyCode'
+    description: ''
+  - name: 'ReturnReasonCode'
+    description: ''
+  - name: 'ReturnReason'
+    description: ''
+  - name: 'AdditionalDetails'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'InstrSettementDate'
+    description: ''
+  - name: 'OriginalDebtorName'
+    description: ''
+  - name: 'OriginalDebtorAddress'
+    description: ''
+    genericControls:
+      multiLine: true

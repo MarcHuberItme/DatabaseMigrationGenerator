@@ -1,0 +1,19 @@
+table:
+  name: 'MgFundType'
+  description: 'Temporary Table for Vrx Migration.\r\nContains all funds that can be used in HBL fund accounts.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    descField: 'FundName'
+  columns:
+  - name: 'FundName'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

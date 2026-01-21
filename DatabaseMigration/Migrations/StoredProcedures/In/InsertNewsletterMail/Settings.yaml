@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'InsertNewsletterMail'
+  description: 'Gets Email Addresses of Users who subscribed for the topic specified in PtEbNewsletterAssign and inserts them into PtEbNewsletterMail'

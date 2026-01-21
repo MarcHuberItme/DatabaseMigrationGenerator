@@ -1,0 +1,17 @@
+table:
+  name: 'PtContractStatus'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'ContractStatusNo'
+    description: '1. Open\r\n2. Pending Confirmation\r\n3. Confirmed\r\n4. Operational\r\n98. Terminated\r\n99. Suspended\r\n100: Reversed'

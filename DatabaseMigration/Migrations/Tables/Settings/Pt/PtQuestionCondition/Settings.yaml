@@ -1,0 +1,29 @@
+table:
+  name: 'PtQuestionCondition'
+  description: 'condition to check before asking the question'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'QuestionId'
+    description: ''
+    genericControls:
+      refTable: 'PtQuestion'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'TableName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ConditionFilter'
+    description: ''
+    genericControls:
+      defColumnPos: 3

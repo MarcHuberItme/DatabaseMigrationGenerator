@@ -1,0 +1,30 @@
+table:
+  name: 'PtCardTrxAuthProtocolElement'
+  description: 'Link table between PtCardTrxAuthProtocol and PtCardTrxAuthDataElement'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'DE/Protocol'
+        helpText: 'DE/Protocol'
+    - german:
+        formTitle: 'DE/Protokoll'
+        helpText: 'DE/Protokoll'
+  columns:
+  - name: 'Protocol'
+    description: 'Reference to protocol'
+    genericControls:
+      refTable: 'PtCardTrxAuthProtocol'
+      refField: 'Protocol'
+  - name: 'ElementId'
+    description: 'Reference to data element'
+    genericControls:
+      refTable: 'PtCardTrxAuthDataElement'
+      refField: 'Id'

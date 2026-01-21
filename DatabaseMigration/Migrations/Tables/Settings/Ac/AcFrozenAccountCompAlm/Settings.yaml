@@ -1,0 +1,114 @@
+table:
+  name: 'AcFrozenAccountCompAlm'
+  description: 'monthly frozen account component information for\r\n"Eigenmittel Berechnung" and "ALM"'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ReportDate'
+    description: ''
+    genericControls:
+      noUpdatePos: 1
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      noUpdatePos: 2
+  - name: 'ComponentId'
+    description: ''
+    genericControls:
+      noUpdatePos: 3
+  - name: 'CompTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+      noUpdatePos: 4
+  - name: 'IsDebit'
+    description: ''
+    genericControls:
+      noUpdatePos: 5
+  - name: 'SecurityLevelNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivateSecurityLevel'
+      refField: 'SecurityLevelNo'
+      noUpdatePos: 6
+  - name: 'IsFixedDuration'
+    description: ''
+    genericControls:
+      noUpdatePos: 7
+  - name: 'IsLimitRelevant'
+    description: ''
+    genericControls:
+      noUpdatePos: 8
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      noUpdatePos: 9
+  - name: 'ValidTo'
+    description: ''
+    genericControls:
+      noUpdatePos: 10
+  - name: 'ExpirationDate'
+    description: ''
+    genericControls:
+      noUpdatePos: 11
+  - name: 'ExpirationRecCount'
+    description: ''
+  - name: 'Priority'
+    description: ''
+    genericControls:
+      noUpdatePos: 12
+  - name: 'InterestRate'
+    description: ''
+    genericControls:
+      noUpdatePos: 13
+  - name: 'Value'
+    description: ''
+    genericControls:
+      noUpdatePos: 14
+  - name: 'UsedValue'
+    description: ''
+    genericControls:
+      noUpdatePos: 15
+  - name: 'UsedDueValue'
+    description: ''
+  - name: 'MgVBNR'
+    description: ''
+    genericControls:
+      noUpdatePos: 16
+  - name: 'MgVBSUBKTNR'
+    description: ''
+    genericControls:
+      noUpdatePos: 17
+  - name: 'MgVERKWERT'
+    description: ''
+    genericControls:
+      noUpdatePos: 18
+  - name: 'MgVORGANG'
+    description: ''
+    genericControls:
+      noUpdatePos: 19
+  - name: 'MgLIMITE'
+    description: ''
+  - name: 'MgCoverageNo'
+    description: ''
+  - name: 'UsedValueHomeCurrency'
+    description: ''
+  - name: 'UsedDueValueHomeCurrency'
+    description: ''
+  - name: 'PrReferenceId'
+    description: ''
+  - name: 'Currency'
+    description: ''
+  - name: 'MgDECKWERT'
+    description: ''
+  - name: 'CreditLimitHoCu'
+    description: ''
+  - name: 'SubParticipationPosId'
+    description: ''

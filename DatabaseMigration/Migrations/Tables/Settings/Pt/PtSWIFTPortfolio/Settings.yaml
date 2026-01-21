@@ -1,0 +1,62 @@
+table:
+  name: 'PtSWIFTPortfolio'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtSWIFTPortfolio'
+        helpText: 'PtSWIFTPortfolio'
+    - german:
+        formTitle: 'PtSWIFTPortfolio'
+        helpText: 'PtSWIFTPortfolio'
+  columns:
+  - name: 'AppName'
+    description: ''
+  - name: 'SessionNumber'
+    description: ''
+  - name: 'MessageTypeCode'
+    description: ''
+  - name: 'PortfolioId'
+    description: ''
+  - name: 'SwiftAddress'
+    description: ''
+  - name: 'MessageSequenceNumber'
+    description: ''
+  - name: 'SWIFT_ADR'
+    description: ''
+  - name: 'StatementNo'
+    description: ''
+  - name: 'PortfolioNo'
+    description: ''
+  - name: 'Currency'
+    description: ''
+  - name: 'ContinuationIndicator'
+    description: ''
+  - name: 'PageNumber'
+    description: ''
+  - name: 'PortfolioNoEdited'
+    description: ''
+  - name: 'SenderReference'
+    description: ''
+  - name: 'MessageFunc'
+    description: ''
+  - name: 'PreparationTime'
+    description: ''
+  - name: 'AccountOwner'
+    description: ''
+  - name: 'ValuationDate'
+    description: ''
+  - name: 'TransMessageId'
+    description: ''
+  - name: 'Status'
+    description: ''
+  - name: 'Message'
+    description: ''

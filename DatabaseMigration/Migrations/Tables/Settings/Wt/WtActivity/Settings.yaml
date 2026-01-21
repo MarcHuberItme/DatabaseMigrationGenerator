@@ -1,0 +1,18 @@
+table:
+  name: 'WtActivity'
+  description: 'Activities in a Project, e.g. Analysis, Implementation, Testing etc.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b4ef08a8-5ddd-4342-8dd4-9468bd7539de
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Activity'
+    - german:
+        formTitle: 'Aktivität'
+  columns: []

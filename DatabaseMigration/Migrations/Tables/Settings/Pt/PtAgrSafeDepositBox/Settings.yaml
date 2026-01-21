@@ -1,0 +1,80 @@
+table:
+  name: 'PtAgrSafeDepositBox'
+  description: 'Agreement for rent a safe deposit box'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      navigationConditionField: 'PartnerId'
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'SafeDepositBox'
+        helpText: 'SafeDepositBox'
+    - german:
+        formTitle: 'Tresorfach'
+        helpText: 'Tresorfach'
+    - french:
+        formTitle: 'Coffre-fort'
+        helpText: 'Coffre-fort'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'SafeDepositBoxId'
+    description: 'safe deposit box ID'
+    genericControls:
+      refTable: 'PrSafeDepositView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'KeysManaged'
+    description: 'The number of keys managed by the bank'
+    genericControls:
+      defColumnPos: 3
+  - name: 'DebitAccountId'
+    description: 'Defines the account to debit the rental fee'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'AllowOverdrawn'
+    description: ''
+  - name: 'BeginDate'
+    description: 'Date when the rental agreement starts.'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ChargeStartDate'
+    description: 'this field is used for migration, indicating the start date for a new charge'
+  - name: 'ChargePercentage'
+    description: 'This field defines the percentage a customer should pay. for example, 0 value for free, 100 value for whole.'
+  - name: 'ExpirationDate'
+    description: 'Date when the rental agreement ends.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'SignatureDate'
+    description: 'the date signing the contract'
+    genericControls:
+      defColumnPos: 7
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'VersionNo'
+    description: 'document version of the agreement'
+  - name: 'PrintDate'
+    description: 'Print date of the latest agreement'

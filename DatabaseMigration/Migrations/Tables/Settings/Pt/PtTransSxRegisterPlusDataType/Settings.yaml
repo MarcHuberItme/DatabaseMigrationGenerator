@@ -1,0 +1,49 @@
+table:
+  name: 'PtTransSxRegisterPlusDataType'
+  description: 'Support table for the PtTransSxRegisterPlus table with definitions of various data formats'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtTransSxRegisterPlusData'
+    - german:
+        formTitle: 'PtTransSxRegisterPlusData'
+    - french:
+        formTitle: 'PtTransSxRegisterPlusData'
+  columns:
+  - name: 'DataGroup'
+    description: 'Group for the DataTypes. Used for automation withing the staging area and various implementations'
+    genericControls:
+      defColumnPos: 1
+  - name: 'XmlDataType'
+    description: 'Data type used for coding/decoding of the data'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValidFrom'
+    description: 'ValidFrom for the DataType (Versioning)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Coder'
+    description: 'SQL used for converting the DB data into PtTransSxRegisterPlus.XmlData field'
+    genericControls:
+      multiLine: true
+  - name: 'Decoder'
+    description: 'SQL used for extracting the DB data from PtTransSxRegisterPlus.XmlData field'
+    genericControls:
+      multiLine: true
+  - name: 'ExportToFileSQL'
+    description: 'SQL used to generate file from the datatype'
+    genericControls:
+      multiLine: true
+  - name: 'Comment'
+    description: 'Put here some details of the change'
+    genericControls:
+      multiLine: true

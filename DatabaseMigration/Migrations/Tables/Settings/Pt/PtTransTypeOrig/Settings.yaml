@@ -1,0 +1,30 @@
+table:
+  name: 'PtTransTypeOrig'
+  description: 'Zahlungsart, die der User im E-Banking für die Eingabe der Zahlung gewählt hat.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Original payment type'
+    - german:
+        formTitle: 'Original Zahlungsart'
+  columns:
+  - name: 'TransTypeOrig'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TransTypeDTA'
+    description: 'Default DTA Transaktionsnummer für diese Zahlungsart'
+    genericControls:
+      defColumnPos: 2
+  - name: 'AllowsEBanking'
+    description: '0 = not allowed in E-Banking\r\n1 = Allowed in E-Banking'

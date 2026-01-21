@@ -1,0 +1,82 @@
+table:
+  name: 'PtPayReturnRequestDetailIn'
+  description: 'Details of the payment return request (incoming)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'RequestNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'OriginalMessageId'
+    description: ''
+  - name: 'OriginalMessageType'
+    description: ''
+  - name: 'OrginalInstructionId'
+    description: ''
+  - name: 'OrginalEndToEndId'
+    description: ''
+  - name: 'OriginalTransactionId'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'OrigInstructedAmount'
+    description: ''
+  - name: 'CurrencyCode'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'CancelReasonCode'
+    description: ''
+  - name: 'AdditionalDetails'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'InstrSettlementDate'
+    description: ''
+  - name: 'OriginalDebtorName'
+    description: ''
+  - name: 'OriginalDebtorAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ServiceLevelCode'
+    description: ''
+  - name: 'OriginalCreditorName'
+    description: ''
+  - name: 'OriginalCreditorAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'OriginalDebitorIBAN'
+    description: ''
+  - name: 'OriginalDebitBIC'
+    description: ''
+  - name: 'OriginalCreditBIC'
+    description: ''
+  - name: 'OriginalCreditorIBAN'
+    description: ''
+  - name: 'TransMessageInId'
+    description: ''
+  - name: 'ProcessStatus'
+    description: ''
+    genericControls:
+      refTable: 'PtPayReturnRequestStatus'
+      refField: 'StatusNo'
+      defColumnPos: 3
+  - name: 'CancellationId'
+    description: ''
+  - name: 'RefusalReason'
+    description: ''
+    genericControls:
+      refTable: 'PtIsoRetReqRejectReason'
+      refField: 'ReasonCode'
+  - name: 'RefusalReasonText'
+    description: ''

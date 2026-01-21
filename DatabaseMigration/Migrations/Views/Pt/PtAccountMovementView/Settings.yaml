@@ -1,0 +1,69 @@
+view:
+  name: 'PtAccountMovementView'
+  description: 'Used in OTIS to display account movements on the ATM.\r\n\r\n2023-08.02/FIN-9318/daga: condition added for PtTransItem HdVersionNo between 1 and 999999998'
+frontendView:
+  name: 'PtAccountMovementView'
+  description: 'View used by OTIS to retrieve account movements for display on the ATM.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Account Movement'
+    - german:
+        formTitle: 'Kontobewegung'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'TransactionDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'TransactionType'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'TransactionText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 300
+  - name: 'DebitAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CreditAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'Symbol'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'MinorUnit'
+    description: ''
+    dataType: 'int'
+  - name: 'Type'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 38
+    scale: 38

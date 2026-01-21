@@ -1,0 +1,31 @@
+table:
+  name: 'PtPositionDetailStatus'
+  description: 'the quantity of a position can be divided into portions. depending on the type of the portions there is a process status needed (registration process of a share)'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Position detail status'
+    - german:
+        formTitle: 'Bearbeit.Stat Pos.Detail'
+  columns:
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ClassificationTypeNo'
+    description: 'if the Status is only used within a classification type, this classifiction type should be chosen'
+    genericControls:
+      refTable: 'PtPositionClassificationType'
+      refField: 'ClassificationTypeNo'
+      defColumnPos: 2

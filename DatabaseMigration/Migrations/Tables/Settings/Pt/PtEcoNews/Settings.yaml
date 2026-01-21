@@ -1,0 +1,44 @@
+table:
+  name: 'PtEcoNews'
+  description: 'Kategorie = awp'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtEcoInfo'
+      parentRelationField: 'EcoId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'news'
+    - german:
+        formTitle: 'Firmennachrichten'
+  columns:
+  - name: 'EcoId'
+    description: ''
+    genericControls:
+      refTable: 'PtEcoInfo'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'Date'
+    description: 'Datum der Nachricht'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Source'
+    description: 'Quelle'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Topic'
+    description: 'Titel'
+    genericControls:
+      defColumnPos: 3
+  - name: 'URL'
+    description: 'URL der Nachricht'

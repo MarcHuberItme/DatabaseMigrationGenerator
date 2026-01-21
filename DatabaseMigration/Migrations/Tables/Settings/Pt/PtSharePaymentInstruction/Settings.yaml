@@ -1,0 +1,45 @@
+table:
+  name: 'PtSharePaymentInstruction'
+  description: 'This table records the special payment instructions'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'DepotbankID'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ShareholderID'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'CreditAccountNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountCollateralView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'PayeeID'
+    description: ''
+    genericControls:
+      refTable: 'AsPayee'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'ShareholderNo'
+    description: ''
+    genericControls:
+      defColumnPos: 5

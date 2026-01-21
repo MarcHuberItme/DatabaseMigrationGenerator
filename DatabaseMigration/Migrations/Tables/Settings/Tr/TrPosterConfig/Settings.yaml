@@ -1,0 +1,21 @@
+table:
+  name: 'TrPosterConfig'
+  description: 'Configurations for message generation host processes'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ProcessLabel'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'BatchServer'
+    description: ''
+  - name: 'PosterQueue'
+    description: ''

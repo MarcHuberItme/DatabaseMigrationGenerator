@@ -1,0 +1,212 @@
+table:
+  name: 'PtPaymentOrder'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'OrderType'
+  columns:
+  - name: 'Status'
+    description: 'Status of this order. e.g. in generation / generated / in processing / processed etc.'
+    genericControls:
+      refTable: 'PtPaymentOrderStatus'
+      refField: 'StatusNo'
+      defColumnPos: 2
+  - name: 'OrderType'
+    description: 'Test\r\n\r\nTest'
+    genericControls:
+      refTable: 'PtPaymentOrderType'
+      refField: 'OrderTypeNo'
+      defColumnPos: 1
+  - name: 'ScheduledDate'
+    description: 'The date on which payments is scheduled to be made. If type of order specifies overriding is allowed, the dates for individual payments is followed for payments.\r\n\r\nThis field corresponds to the ScheduledDate in PtPaymentOrderDetail.\r\n{PtPaymentOrderDetail.ScheduledDate}\r\n\r\nFor DTA file import: TA-800-VERDATE in file Header Record'
+    genericControls:
+      defColumnPos: 3
+  - name: 'OrderDate'
+    description: 'For DTA file import: TA-800-ERSTDATE in file Header Record'
+    genericControls:
+      defColumnPos: 4
+  - name: 'FileName'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'TotalReportedAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 16
+  - name: 'TotalReportedTransactions'
+    description: ''
+    minValue: '0'
+    genericControls:
+      defColumnPos: 11
+  - name: 'TransWithError'
+    description: 'Total number of transactions in this order which contain any error. Error is identified if RejectFlag is non-zero in PtPaymentOrderDetail.'
+    minValue: '0'
+    genericControls:
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'TransNeedConfirmation'
+    description: 'Total number of transactions in this order which need some type of confirmation before being processed. Field ConfirmationFlag in PtPaymentOrderDetail marks if the transaction needs confirmation or not.'
+    minValue: '0'
+    genericControls:
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'SenderAccountNumber'
+    description: 'The account number of sender for the payments in this order. If the type of order specifies that overriding is allowed, this number can be different for individual payments in the order.  -> AsPayee (depending on the checkbox in PtPaymentOrderType) -> define SenderAccountNo (internal)\r\nONLY used in Case of Incoming Transactions'
+  - name: 'SenderAccountNo'
+    description: 'effektive accountno that has to be debited or credited\r\nOutgoing: PtAccountBase\r\nIncoming: defined over AsPayee (AccountNoExt)'
+    genericControls:
+      refTable: 'PtAccountAllViewNoPL'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'PaymentCurrency'
+    description: 'Follows the same rules as for PaymentDate and SenderAccountNumber.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 10
+  - name: 'PayInChargeTotal'
+    description: 'YellowNet: The total amount of charges occured in this order.'
+  - name: 'ReProcessedISRFee'
+    description: 'YellowNet: {Re-Processed ISR} The re-processing fees occured on the the payments in this order.'
+  - name: 'DTASenderId'
+    description: 'For DTA File import this field contains the File Sender Id. TA-800-ABSID.\r\nThe field will always contain TEL05 for the files received from Telekurs.'
+    genericControls:
+      defColumnPos: 12
+  - name: 'ExternalCreationDate'
+    description: 'The Creation Date of the file/Order in External System.\r\nFor example for a DTA file received directly from a customer, the field contains the creation date of file with customer'
+    genericControls:
+      defColumnPos: 13
+  - name: 'SystemCode'
+    description: 'Code for the Payment System, such as SIC, SICE (EURO-SIC),DTA, PROUT'
+    genericControls:
+      defColumnPos: 14
+  - name: 'FilePath'
+    description: ''
+  - name: 'ExtSurrenderDate'
+    description: 'Payroute: 885 - EINLDATUM + EINLZEIT'
+  - name: 'ExtOrderType'
+    description: 'Payroute: 885 - EINLFART'
+  - name: 'ExtReleaseMode'
+    description: 'Payroute 885 - FREIGABEART'
+  - name: 'ExtReleaseUserId1'
+    description: 'Payroute 885 - PCW-BUID1'
+  - name: 'ExtReleaseUser1'
+    description: 'Payroute 885: PCW-Name1 + PCW-Vorname1'
+  - name: 'ExtReleaseUserId2'
+    description: 'Payroute 885 - PCW-BUID2'
+  - name: 'ExtReleaseUser2'
+    description: 'Payroute 885: PCW-Name2 + PCW-Vorname2'
+  - name: 'TransGroupNo'
+    description: 'Transactions which belong together have the same TransGroupNo. The TransGroupNo corresponds to the first TransNo of the group of transactions.'
+  - name: 'FileImportProcessId'
+    description: 'File Import process Id / no ref.integr. because it should be possible to delete CMEFileImport'
+    genericControls:
+      refTable: 'CMFileImportProcess'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'MasterListDesc'
+    description: 'e.g. individuelle Bezeichnung für Stammlisten  (MasterList) / individual description of an order (can be a description from the client)'
+    genericControls:
+      multiLine: true
+      defColumnPos: 15
+  - name: 'ProcessId'
+    description: 'Workflow Process Id'
+  - name: 'ConfirmationUser'
+    description: 'bank clerk that confirmes the payment order and sets the status to be processed'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'SenderRemark'
+    description: 'Remarks that should be printed on the recipt of the SenderAccountNo e.g.\r\nAuftraggeber ist ein Kunde, und diesem Kunden will man Bemerkungen zu seinem Vergütungsauftrag machen.'
+    genericControls:
+      multiLine: true
+  - name: 'SenderChargeText'
+    description: 'Information about Charges - Free Text\r\n(Texterläuterungen zu den berechneten Spesen).'
+    genericControls:
+      multiLine: true
+  - name: 'SenderChargeAmount'
+    description: 'Fremde Spesen / extern begründete Spesen'
+  - name: 'TransText'
+    description: 'Text, welcher in die Buchung geladen werden muss (zusatztext)\r\nz.B. SIC Eingang vom 23.08.06'
+  - name: 'SenderChargeCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'OrderNo'
+    description: ''
+    genericControls:
+      defColumnPos: 17
+  - name: 'PositionToCalculate'
+    description: 'Anzahl Positionen zum Spesen berechnen'
+    genericControls:
+      isNoUpdate: true
+  - name: 'InternalText'
+    description: 'Internal Text, is only used for processing hints and will never be forwarded or presented to a payment sender of receiver.'
+    genericControls:
+      multiLine: true
+  - name: 'ValueCheck'
+    description: 'If true, the bad solvency of the sender''s account was overridden manually and therefore the solvency has not to be checked again in PaymentOrderProcessing.'
+  - name: 'ValueDate'
+    description: 'Booking Value Date.\r\nOptional field --> If not set then TransDate is assumed as ValueDate.\r\n25.07.2007/mct'
+  - name: 'BadSolvencyRetryCounter'
+    description: 'this counter is incremented each time the payment system retrys to process the order  with bad solvency status.'
+  - name: 'BadSolvencyRetryDate'
+    description: 'date of the last retry of the order with a bad solvency status'
+  - name: 'EBankingId'
+    description: 'Payment was enterd by this user.\r\n\r\nEBankingId, EBankingIdVisum1 and EBankingIdVisum2 have to be filled in. Otherwise the payment will not accomplished.\r\n'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'EBankingIdVisum1'
+    description: 'Payment was signed by this user.\r\n\r\nEBankingId, EBankingIdVisum1 and EBankingIdVisum2 have to be filled in. Otherwise the payment will not accomplished.\r\n\r\nThis will be filled automatically if a user CanSignOrder and hasn''t any LimitValues (PtAgrEbankingDetail).'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'EBankingIdVisum2'
+    description: 'Payment was signed by this user.\r\n\r\nEBankingId, EBankingIdVisum1 and EBankingIdVisum2 have to be filled in. Otherwise the payment will not accomplished.\r\n\r\nThis will be filled automatically if a user CanSignOrder and hasn''t any LimitValues (PtAgrEbankingDetail).'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'RealDate'
+    description: 'Datum wird verwendet für Abschlussbuchungen'
+  - name: 'OverrideUser'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      isNoUpdate: true
+  - name: 'SuspendInfo'
+    description: '0 = Info letter will be generated\r\n1 = no Info letter will be generated'
+  - name: 'PrintStatus'
+    description: 'NULL not in use\r\n0 PrintJob prepared but not yet printed\r\n1 Document printed'
+  - name: 'ProjectNo'
+    description: 'Interne Projektnummer'
+    genericControls:
+      refTable: 'PtPaymentOrderProject'
+      refField: 'ProjectNo'
+  - name: 'ReversalTransactionId'
+    description: 'gefüllt, falls dieser ZV-Auftrag storniert wurde'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsInstantPayment'
+    description: 'Payment should instantly be executed if flag is set. Execution is done by instant payment execution job instead of the normal periodic process.'
+  - name: 'SettlementDate'
+    description: 'SIC Instant Payment SettlementDate, IntrBkSttlmDt from pacs.002 response\r\nMight differ from transaction date on week ends, holidays or day changes'

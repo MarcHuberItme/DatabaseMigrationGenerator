@@ -1,0 +1,60 @@
+table:
+  name: 'PtPortfolioKeyFigure'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtPortfolio'
+      parentRelationField: 'PortfolioId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Portfolio key figures'
+        helpText: 'Portfolio key figures'
+    - german:
+        formTitle: 'Portfolio Kennzahlen'
+        helpText: 'Portfolio Kennzahlen'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ProviderNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicKeyFigureProvider'
+      refField: 'ProviderNo'
+      defColumnPos: 1
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValidTo'
+    description: ''
+  - name: 'KeyFigureTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicKeyFigureType'
+      refField: 'KeyFigureTypeNo'
+      defColumnPos: 2
+  - name: 'Value'
+    description: ''
+    genericControls:
+      defColumnPos: 5

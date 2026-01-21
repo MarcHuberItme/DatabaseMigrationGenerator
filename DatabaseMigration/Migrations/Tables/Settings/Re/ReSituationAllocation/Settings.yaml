@@ -1,0 +1,37 @@
+table:
+  name: 'ReSituationAllocation'
+  description: 'Beurteilung der Lage, eine gute Lage bedeutet, dass das Grundstück seinen Verwenddungszweck optimal unterstützt (z.B. EFH ist gut besonnt, verkehrsam Quartierstrasse, gute Aussicht und keine Industrie).'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Situation Allocation'
+    - german:
+        formTitle: 'Lagezuordnung'
+  columns:
+  - name: 'SitAllocationNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'IaziValue'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'SortNo'
+    description: ''
+  - name: 'PfandRegValue'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'IaziStartValue'
+    description: ''
+  - name: 'IaziEndValue'
+    description: ''

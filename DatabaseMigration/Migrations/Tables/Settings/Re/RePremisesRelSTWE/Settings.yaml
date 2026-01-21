@@ -1,0 +1,66 @@
+table:
+  name: 'RePremisesRelSTWE'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Relation STWE'
+    - german:
+        formTitle: 'STWE Verbindung'
+    - french:
+        formTitle: 'STWE relation'
+  columns:
+  - name: 'PremisesId'
+    description: 'z.B. Stammparzelle'
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'PremisesRelationId'
+    description: 'z.B. Stammparzelle (ist nicht obligatorisch, weil übers E-Banking bei der Pfandbriefbank, dieses Feld NICHT geliefert wird!) Wenn bei HBL gewünscht, muss die Erfassung übers Form oblig. gesetzt werden.'
+    genericControls:
+      refTable: 'ReGbDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'STWEType'
+    description: ''
+    genericControls:
+      refTable: 'RePremisesRelSTWEType'
+      refField: 'STWEType'
+      defColumnPos: 1
+  - name: 'Amount'
+    description: 'z.B. Anteil  des einzelnen STWE''s am Wert der Stammparzelle (Totalwert kann über die Stammparzelle validiert werden)'
+  - name: 'FlatNo'
+    description: 'Anzahl Wohnungen im ganzen Gebäude (für IAZI) nur PfB'
+  - name: 'Counter'
+    description: 'Zähler der Wertquote (Anteil an der Stammparzelle)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Denominator'
+    description: 'Nenner der Wertquote (Anteil an der Stammparzelle)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValueDate'
+    description: ''
+  - name: 'Remark'
+    description: 'Bei Pfandbriefbank E-Banking enthält dieses Feld die Kennung der Stammparzelle, z.B. GB-Nummer und m2 Fläche der Stammparzelle'
+    genericControls:
+      multiLine: true
+      defColumnPos: 5
+  - name: 'MemberUniqueKey'
+    description: 'PfB spezifisch: Jede Mitgliedbank vergibt für den gemeldeten Record eine eindeutige Identifikation. Diese benötigt sie um über E-Banking die Daten zu mutieren. Diese eindeutige Kennung muss die Mitgliedbank bei sich speichern.'

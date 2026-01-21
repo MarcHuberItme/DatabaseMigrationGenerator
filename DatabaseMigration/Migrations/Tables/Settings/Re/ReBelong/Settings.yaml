@@ -1,0 +1,67 @@
+table:
+  name: 'ReBelong'
+  description: 'FIS-2000:GR_ZUGEH'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'ReNote'
+      parentRelationField: 'NoteId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Belong'
+    - german:
+        formTitle: 'Zugehör'
+    - french:
+        formTitle: 'appartenir'
+  columns:
+  - name: 'NoteId'
+    description: 'Zugehör ist angemerkt im Grundbuch (Anmerkung muss bevor sie verbunden werden kann, erfasst werden)'
+    genericControls:
+      refTable: 'ReNote'
+      refField: 'Id'
+      hasDetailBtn: true
+      createNavigationIndex: true
+  - name: 'InsurancePartnerRelId'
+    description: 'Versicherungsgesellschaft, wenn das Zugehör versichert ist.'
+    genericControls:
+      refTable: 'RePremisesPtRel'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'BelongTypeId'
+    description: ''
+    genericControls:
+      refTable: 'ReBelongType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'Number'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Remark'
+    description: 'FIS-2000:GR_ZUGEH.ZUGEH_BEZ'
+    genericControls:
+      multiLine: true
+      defColumnPos: 4
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ValueAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValuationDate'
+    description: ''
+  - name: 'IsInsured'
+    description: ''

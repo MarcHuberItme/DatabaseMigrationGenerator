@@ -1,0 +1,36 @@
+table:
+  name: 'AiTaxPoolReportType'
+  description: 'anonyme Pool-Meldung, bspw. Recalcitrant'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Pool report type'
+    - german:
+        formTitle: 'Pool Meldungstyp'
+    - french:
+        formTitle: 'Type de rapport de pool'
+  columns:
+  - name: 'PoolTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TaxProgramNo'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxProgram'
+      refField: 'TaxProgramNo'
+      defColumnPos: 2
+  - name: 'Code'
+    description: 'Steuerprogramm spezifischer Code.\r\nFatca:\r\nFATCA201 = Recalcitrant account holders with US Indicia\r\nFATCA202 = Recalcitrant account holders without US Indicia\r\nFATCA203 = Dormant Accounts\r\nFATCA204 = Non-participating foreign financial institutions\r\nFATCA205 = Recalcitrant account holders that are US persons\r\nFATCA206 = Recalcitrant account holders that are passive NFFEs'
+    genericControls:
+      defColumnPos: 3

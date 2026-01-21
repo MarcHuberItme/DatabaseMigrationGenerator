@@ -1,0 +1,82 @@
+table:
+  name: 'PrPublicTaxPrice'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - german:
+        formTitle: 'Steuerkurse'
+  columns:
+  - name: 'PublicId'
+    description: 'VDF: PSD.VAI.K981.7842 (translate with PrPublic)'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'DomicileValidation'
+    description: 'VDF: PSD.PSL.K974.3990'
+    genericControls:
+      refTable: 'PrPublicTaxPriceValidation'
+      refField: 'TaxPriceValidation'
+      defColumnPos: 2
+  - name: 'Currency'
+    description: 'VDF: PSD.PSV.K983.6804 (translate with CyBase)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'PriceDate'
+    description: 'VDF: PSD.PSV.2840'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PriceTypeNo'
+    description: 'fix 26(tax price)'
+    genericControls:
+      refTable: 'PrPublicPriceType'
+      refField: 'PriceTypeNo'
+  - name: 'Price'
+    description: 'VDF: PSD.PSV.5841'
+    genericControls:
+      defColumnPos: 5
+  - name: 'NonVerse'
+    description: 'VDF: PSD.PSF.5802'
+  - name: 'PriceCalcMethNo'
+    description: 'VDF: PSD.PSV.4965'
+    genericControls:
+      refTable: 'PrPublicPriceCalcMeth'
+      refField: 'PriceCalcMethNo'
+      defColumnPos: 4
+  - name: 'PriceUnit'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'PriceQuoteType'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicPriceQuoteType'
+      refField: 'PriceQuoteType'
+  - name: 'IsDefinitive'
+    description: 'VDF: PSD.PSV.4924'
+  - name: 'PriceFixingDate'
+    description: 'VDF: PSD.PSV.2801'
+  - name: 'TaxPriceAvailabilityNo'
+    description: 'VDF: PSD.PSE.4906'
+    genericControls:
+      refTable: 'PrPublicTaxPriceAvailability'
+      refField: 'TaxPriceAvailabilityNo'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetForeignCyBookingsByValueDateCoBa'
+  description: 'selects correspondence bank bookings on a specific value date'

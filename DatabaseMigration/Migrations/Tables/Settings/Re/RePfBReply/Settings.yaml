@@ -1,0 +1,35 @@
+table:
+  name: 'RePfBReply'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PFB Reply'
+    - german:
+        formTitle: 'PFB Reply'
+  columns:
+  - name: 'MessageId'
+    description: ''
+  - name: 'FileName'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ProcessId'
+    description: ''
+  - name: 'Status'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ProcessTime'
+    description: ''
+    genericControls:
+      defColumnPos: 2

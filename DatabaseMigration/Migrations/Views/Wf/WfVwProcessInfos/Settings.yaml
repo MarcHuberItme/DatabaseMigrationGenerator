@@ -1,0 +1,71 @@
+view:
+  name: 'WfVwProcessInfos'
+  description: ''
+frontendView:
+  name: 'WfVwProcessInfos'
+  description: 'Used as FrontEnd View in the program ''FsWorkflowManager'' and visualalizes the currently running workflow processes.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Workflow Processes'
+    - german:
+        formTitle: 'Workflow-Prozesse'
+  columns:
+  - name: 'TaskId'
+    description: 'Id of the running Step. WfStepInstanceAssignee.TaskId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 8
+  - name: 'TaskName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 200
+    genericControls:
+      defColumnPos: 2
+  - name: 'DynamicDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 400
+    genericControls:
+      defColumnPos: 7
+  - name: 'UserName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      defColumnPos: 4
+  - name: 'StartDate'
+    description: 'Start DateTime of the Process'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 1
+  - name: 'MapNo'
+    description: 'Number of the Workflow Map, WfMap.MapNo'
+    dataType: 'int'
+  - name: 'StepNo'
+    description: 'Number of the Step in the Map, resp. Process'
+    dataType: 'int'
+  - name: 'TaskStatus'
+    description: 'Status of Process'
+    dataType: 'int'
+    genericControls:
+      refTable: 'WfTaskStatus'
+      refField: 'TaskStatusNo'
+      defColumnPos: 3
+  - name: 'Timeout'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ProcessId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 6

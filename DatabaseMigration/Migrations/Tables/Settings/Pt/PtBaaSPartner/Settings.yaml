@@ -1,0 +1,66 @@
+table:
+  name: 'PtBaaSPartner'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'BaaS Partner'
+    - german:
+        formTitle: 'BaaS Partner'
+    - french:
+        formTitle: 'BaaS Partenaire'
+  columns:
+  - name: 'BaaSClientNo'
+    description: 'Nummer des Baas Kunden, dient als Referenz für andere Tabellen'
+    genericControls:
+      refTable: 'PtBaaSPartnerClient'
+      refField: 'ClientNo'
+      defColumnPos: 1
+  - name: 'BaaSOwnPartnerId'
+    description: 'Finstar Kunden-Id des Hauptstamms des BaasPartners'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'BaaSOwnPartnerNo'
+    description: 'Finstar Kundennummer des Hauptstamms des BaasPartners'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'PartnerNo'
+      defColumnPos: 2
+  - name: 'BaaSConsultantTeamName'
+    description: 'Referenz zu AsUserGroup.UserGroupName'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 3
+  - name: 'BaaSPeriodicCheckChannelNo'
+    description: 'hier kann definiert werden welcher Default Kanal für die periodische GWG Prüfung für diesen BaaS Partner verwendet werden soll'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckChannel'
+      refField: 'ChannelNo'
+      defColumnPos: 4
+  - name: 'BaaSAgentId'
+    description: 'Finstar-Id des Vermittlers, welcher für diesen BaasPartner verwendet wird'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'BaaSBranchNo'
+    description: 'Gewisse Baas Partner haben einen eigenen Geschäftsstellencode, dieser kann hier referenziert werden'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

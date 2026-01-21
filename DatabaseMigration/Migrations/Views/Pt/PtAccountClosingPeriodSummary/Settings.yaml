@@ -1,0 +1,3 @@
+view:
+  name: 'PtAccountClosingPeriodSummary'
+  description: 'View, welcher für die Anzeigen der Zinsbescheinigungen per Ende Jahr notwendig ist.'

@@ -1,0 +1,514 @@
+table:
+  name: 'PtPaymentOrderDetail'
+  description: 'Individual payment record'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'AccountNo'
+  columns:
+  - name: 'OrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrder'
+      refField: 'Id'
+  - name: 'ScheduledDate'
+    description: 'geplantes Ausführungsdatum - Scheduled Date (The date on which payment has to be made). \r\nPlease also see discription of field {PtPaymentOrder.ScheduledDate} in parrent table PtPaymentOrder\r\n\r\n \r\nPayroute: GVVERARBDAT'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PaymentDate'
+    description: 'effektives Ausführungsdatum - The date/time on which this record was processed and the transactions were generated. If this field is NULL, it specifies that this record has yet to be processed.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'SenderAccountNumber'
+    description: 'Sender''s account number for debiting. (external no)\r\nFor Payroute: VBKTONR (1:1 from original source) - can also be an IBAN Number'
+  - name: 'SenderAccountNo'
+    description: 'internal account no if the sender\r\nFor Payroute: VBKTONR (translation over ptaccountBase)'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'ExternalSurrenderDate'
+    description: 'ECA-I: {SurrenderDate} Date on which the transaction was submitted to SwissPost.\r\nYellowNet: {Date of Payment} Date of post office inpayment, or date of paperless transfer debit by the PostFinance Operations Center.'
+  - name: 'ExternalBookingDate'
+    description: 'ECA-I: {BookingDate} Date on which payment was booked to Swiss Post (Yellow Account Credited).\r\nYellowNet: {Date of Processing} Date by the operations center.\r\nA10 - settlement date/time - 92'
+  - name: 'ExternalBalanceSheetDate'
+    description: 'ECA-I: {BalanceSheetDate} Balance sheet date / Booking date used by SwissPost.\r\nYellowNet: -None-'
+  - name: 'ExternalValueDate'
+    description: 'ECA-I: {ValueDate} Value date at PostFinance.\r\nYellowNet: {Date of crediting}\r\nSIC: Field 16'
+  - name: 'AccountAmount'
+    description: 'can be debit or credit (depends on ordertype) - Amount / Currency belongs to SenderAccountNo'
+  - name: 'AccountCurrency'
+    description: 'ISO currency symbol - belongs to SenderAccountNo'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'PaymentAmount'
+    description: 'SIC Field 17A\r\nPayroute: VERGBETR'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PaymentCurrency'
+    description: 'SIC Field: 15\r\nPayroute: WAEHRBEZ'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'ConversionRate'
+    description: 'Payroute: KURS (conversion rate) - falls dieser vorher zwischen den Banken vereinbart wurde. (Kurs zwischen AccountCurrency - PaymentCurrency)\r\nPayroute.ConversionRate Field 36'
+    genericControls:
+      defColumnPos: 5
+  - name: 'SlipType'
+    description: ''
+    genericControls:
+      refTable: 'PtTransTypeOrig'
+      refField: 'TransTypeOrig'
+  - name: 'ImageFilePath'
+    description: ''
+  - name: 'Image'
+    description: ''
+  - name: 'PayeeId'
+    description: 'no ref.integr. because it should be possible to delete AsPayee entries.'
+    genericControls:
+      refTable: 'AsPayee'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'RejectFlag'
+    description: '0 = Accepted.\r\nNon-zero = Rejected for some reasons. (We can define specific rejecting flags later)\r\n1 = Rejected (General)'
+    genericControls:
+      refTable: 'PtPaymentRejectReason'
+      refField: 'RejectCode'
+      defColumnPos: 7
+  - name: 'ConfirmationFlag'
+    description: '0 = No confirmation needed.\r\nNon-zero = Some sort of confirmation is required before processing this transaction. Specific codes can be defined later on.'
+    genericControls:
+      defColumnPos: 8
+  - name: 'ConfirmationUser'
+    description: 'user that confirms the modifications made to the order detail.\r\nConfirmation is mandatory when confirmationflag is set'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      isNoUpdate: true
+  - name: 'ReferenceNo'
+    description: 'Registered Benefeciary Account No in Conventional Format. SIC Field 45A\r\n\r\npayroute: ZAHLGRUND1 (826) / (836 70I)'
+    genericControls:
+      defColumnPos: 9
+  - name: 'ImageCode'
+    description: 'For post finance:\r\nThe code to identify image file name.\r\nThis field along with BookingInfomation makes the BookingIdentifier.\r\nBookingIdentifier = ImageCode & BookingInformation.'
+  - name: 'BookingInformation'
+    description: 'For post finance data:\r\nThis field along with ImageCode makes the BookingIdentifier.\r\nBookingIdentifier = ImageCode & BookingInformation.\r\n\r\nFor SIC:  Code = 03\r\nThis field will contain Transaction Reference Number\r\n\r\nFor Payroute: REFNR1 + REFNR2\r\n\r\nFor rest:\r\nThe alphanumeric booking indentifier.'
+  - name: 'BCOrderingBank'
+    description: 'SIC Field: 02 (SIC Number ). The SIC Number is first converted to BC Number before being saved in the table.\r\nPayroute; OrderingParty BC No. BCNRAUFT1'
+  - name: 'OrderingPartyAddress'
+    description: 'SIC Field: 32A\r\nOrdering Party Full Address\r\nPayroute: AUFTADR1 - 4'
+    genericControls:
+      multiLine: true
+  - name: 'OrderingPartyBIC'
+    description: ''
+  - name: 'BeneficiaryAddress'
+    description: 'Beneficiary''s address -SIC Field: 46A Full address\r\nPayroute: BEGADR 1 - 4  (Feld Id-59)'
+    genericControls:
+      multiLine: true
+      defColumnPos: 11
+  - name: 'BeneficiaryMessage'
+    description: 'SIC Field: 51A. (Free text)\r\nPayroute: ZAHLGRUND 3 - 4 (826) - (Feld Id-70)\r\nPayroute: 837 -> 70 U / 827,830,832 -> ZAHLGRUND1-4'
+    genericControls:
+      multiLine: true
+  - name: 'BeneficiaryReferenceNo'
+    description: 'Unformatted or formatted? how shud it be?\r\n\r\nSIC Field: 49A.  Beneficiary''s reference number'
+  - name: 'MessageStandard'
+    description: ''
+  - name: 'MessageTypeIn'
+    description: 'MessageType Code like 826, A10, C15\r\n\r\nPayroute: TA 826 / 827\r\n\r\nSame as textual code in PtPaymentOrderMsgType.MessageType. Relationship is defined over MessageTypeId though.'
+  - name: 'MessageTypeId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderMsgType'
+      refField: 'Id'
+      defColumnPos: 12
+  - name: 'TransMessageInId'
+    description: 'Id of the original message for back tracking.'
+  - name: 'CreditClearingNo'
+    description: 'No more used. The field is redundant. ''BCNrBenBank'' is being used instead. \r\n\r\nSIC Field: 18 \r\nBC number benefeciary bank.  For payment for HBL it will alway be 083077.'
+  - name: 'NotificationCode'
+    description: 'Notification code in SIC Payment Message. SIC Field: 59\r\n0 = Normal payment - (DTA/Payroute -> PtTransMessage.SalaryFlag)\r\n\r\n1 = Salary payment, valid only in messages A10, C10 and C11 (DTA/Payroute -> PtTransMessage.SalaryFlag)\r\n\r\n2 = Urgent payment, valid only in A10 and A11. A preferential handling is thus recommended to the B-Bank\r\n\r\n3 = Payment instruction (mandate) paid out to the beneficiary personally; valid only in MT A10 and C10. In this case the surcharge to the regular fees for payment transfers is to be considered (only SIC)\r\n\r\n4 = Normal Payment instruction (mandate); valid only in MT A10 (only SIC)'
+  - name: 'BookingTime'
+    description: 'Booking time information received in a  SIC Payment Message'
+  - name: 'ErrorCodeImage'
+    description: 'Image error code discription for Post Finance ECA-I data.'
+  - name: 'PayInChargeAmount'
+    description: 'Externe Spesen / Fremdspesen'
+  - name: 'PayInChargeCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'BuildingLoanPositionId'
+    description: 'Baukostenkontrolle / Check building loan costs (where statement -> within chosen AccountNo)'
+    genericControls:
+      refTable: 'PtAccountBuildingLoanCheck'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Project'
+    description: '[Bank Internal Project]\r\nId of project, only used for settlement of invoices to be payed by the bank itself.'
+  - name: 'PeriodFrom'
+    description: '[Bank Internal Project]'
+  - name: 'PeriodTo'
+    description: '[Bank Internal Project]'
+  - name: 'BudgetValue'
+    description: '[Bank Internal Project]\r\n'
+  - name: 'VatCode'
+    description: '[Bank Internal Project]\r\n'
+  - name: 'VATCalculation'
+    description: '[Bank Internal Project] The change in this field is made keeping in view the changed in PtTransMessage\r\nthis fields defines how to calculate tax\r\n1: tax inclusive\r\n2: tax exclusive\r\n3: service from foreign countries'
+  - name: 'ExternalCreationDate'
+    description: 'The Creation Date of the file/Order in External System.\r\nFor example for a DTA file received directly from a customer, the field contains the creation date of file with customer\r\n\r\nPayroute: ERSTDATE'
+  - name: 'DTASenderId'
+    description: 'For DTA File import this field contains the File Sender Id. TA-800-ABSID.\r\nThe field will always contain TEL05 for the files received from Telekurs.\r\nThis information is mainly stored in table: PtPtaymentOrder, the field has been defined in PtPaymentOrderDetail just to help parsing.'
+  - name: 'TotalAmountReported'
+    description: 'For DTA File import this field contains the Total Amount of all DTA orders in a file. This information is mainly stored in table: PtPtaymentOrder, the field has been defined in PtPaymentOrderDetail just to help parsing of message'
+  - name: 'BCOrderingBankOrigin'
+    description: 'Payroute; OrderingParty (Original if there is a chain) BC No. BCNRAUFT2'
+  - name: 'ExternalOrderStatusCode'
+    description: 'Payroute: BEAFLAG \r\n3 = transaction to be processed\r\n8 = transaction with errors'
+  - name: 'ESRParticipantNo'
+    description: 'Payroute: BEGVENR\r\n\r\nSIC: 45 D ?\r\n\r\nESR ParticipantNo is a 9 character field but in Payrouter it with qualfier ''/C/'', we need to store the complete value. For this reason it has been defined as 12 char field. The qualifier ''/C/'' is later on removed.'
+    genericControls:
+      defColumnPos: 14
+  - name: 'EndBeneficiaryAccountNoExt'
+    description: 'Payroute: 2ter - ENDBEGKTONR (Feld Id-55)\r\n'
+  - name: 'EndBeneficiaryAddress'
+    description: 'Payroute: 2ter - "END"BEGADR 1 - 4 (827)  (Feld Id-55)'
+    genericControls:
+      multiLine: true
+  - name: 'ChargeOptionCode'
+    description: 'Options for Charges for an outgoing payment. (Payroute: 836 - SPESEN) Field 71A\r\n1 = OUR: All charges will be paid by ordering customer\r\n2 = BEN: All charges will be paid by benefeciary\r\n3 =SHA: Charges will be shared be sender and receiver'
+  - name: 'AccountNo'
+    description: 'Non-registered account number, conventional format. SIC Field 45B (used if CreditClearingNo = HBL) \r\n\r\nPayroute: BEGKTONR (if inside HBL)\r\n'
+    genericControls:
+      refTable: 'PtAccountViewNoPL'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 10
+  - name: 'AccountNoExt'
+    description: 'The external account number of the benificiary. This is generally entered if the ReferenceNo entry is not possible.\r\nOriginal length should be 27, 3 char extra length has been defined to handle Qualifier "/C/"\r\nPayroute: BEGKTONR\r\n45 A / 45 B - beneficiary account number'
+    genericControls:
+      defColumnPos: 13
+  - name: 'AccountNoExtIBAN'
+    description: 'Payroute: IBAN No of the Beneficiary (58 - BEGIBAN)\r\n45I  - beneficiary account number IBAN'
+    genericControls:
+      defColumnPos: 15
+  - name: 'AccountNoPost'
+    description: '45C - Beneficiary account number - postal account number\r\n\r\n'
+  - name: 'BeneficiaryBankAddress'
+    description: 'Payroute: BEGBANKA1 - 4 (57 D)\r\n\r\n'
+    genericControls:
+      multiLine: true
+  - name: 'BeneficiaryBIC'
+    description: 'Payroute: BEGBANKKTONR - (57A) - SWIFT Address\r\nSIC Field 46S. This field is moved to PtTransMessage.CreditBICNo\r\n'
+    genericControls:
+      defColumnPos: 16
+  - name: 'ESRParticipantNoChkDigit'
+    description: 'Check digit for 5-Digit Participant ESR Number. Payroute: Field 70, Subitem 2'
+  - name: 'BCNrCustomerBenBank'
+    description: 'BC Number Customer Benefeciary Bank (Payroute Header)\r\nBCNRBEG1'
+  - name: 'BCNrBenBank'
+    description: 'BC Number Benefeciary Bank- Pay Route (Payroute Header)\r\nBCNRBEG2, SIC Field 18\r\n\r\nThe precison was increaded to 12 to accomodate DTA clearing numbers entred through optical readers'
+    genericControls:
+      defColumnPos: 17
+  - name: 'BankPaymentInstruction'
+    description: 'Payroute: ZAHLINSTR 1-4 (Feld ID 72)\r\n\r\nSIC - A11: Field 53 - bank-to-bank-information'
+    genericControls:
+      multiLine: true
+  - name: 'EBankingId'
+    description: 'Payment was enterd by this user.\r\n\r\nEBankingId, EBankingIdVisum1 and EBankingIdVisum2 have to be filled in. Otherwise the payment will not accomplished.\r\n\r\n'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'BenefeciaryBankId'
+    description: 'Payroute: 57D'
+  - name: 'CustomerMsgSequenceNumber'
+    description: '(PROUT field : SEQNR2)\r\nEntry SequenceNo for Customer'
+  - name: 'MsgSequenceNumber'
+    description: '(PROUT field : SEQNR1)'
+    genericControls:
+      defColumnPos: 18
+  - name: 'EBankingIdVisum1'
+    description: 'Payment was signed by this user.\r\n\r\nEBankingId, EBankingIdVisum1 and EBankingIdVisum2 have to be filled in. Otherwise the payment will not accomplished.\r\n\r\nThis will be filled automatically if a user CanSignOrder and hasn''t any LimitValues (PtAgrEbankingDetail).'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'EBankingIdVisum2'
+    description: 'Payment was signed by this user.\r\n\r\nEBankingId, EBankingIdVisum1 and EBankingIdVisum2 have to be filled in. Otherwise the payment will not accomplished.\r\n\r\nThis will be filled automatically if a user CanSignOrder and hasn''t any LimitValues (PtAgrEbankingDetail).'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransNo'
+    description: ''
+  - name: 'CopyAmountMasterList'
+    description: '0 = no (PaymentAmount will not be copied)\r\n1 = yes ->  If an order will be copied the amount data will be copied\r\nBeim Erstellen (d.h. Kopieren) von Stammlisten wird der Betrag mitkopiert.'
+  - name: 'CopyBenMessageMasterList'
+    description: '0 = no (Beneficiary Message will not be copied)\r\n1 = yes ->  If an order will be copied the Beneficiary Message will be copied\r\nBeim Erstellen (d.h. Kopieren) von Stammlisten werden die Begünstigten Informationen mitkopiert.'
+  - name: 'ChargeOptionText'
+    description: 'Options for Charges for an SIC and SWIFT\r\nOUR: All charges will be paid by ordering customer\r\nBEN: All charges will be paid by benefeciary\r\nSHA: Charges will be shared be sender and receiver'
+  - name: 'ChargeDetails'
+    description: ''
+  - name: 'OrderingPartyReference'
+    description: '56 and 33A - Ordering party reference'
+  - name: 'OrderingPartyAccountNo'
+    description: 'SIC field 31A or 31I'
+  - name: 'OrderingPartyAccountNoIBAN'
+    description: ''
+  - name: 'OriginalSenderAddress'
+    description: 'SWIFT Field 36A and 36S'
+    genericControls:
+      multiLine: true
+  - name: 'OriginalSenderBIC'
+    description: ''
+  - name: 'SwiftInstruction'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SwiftTransTypeCode'
+    description: ''
+    genericControls:
+      refTable: 'SwTransType'
+      refField: 'TransTypeCode'
+  - name: 'SwiftBankOperationCode'
+    description: ''
+    genericControls:
+      refTable: 'SwBankOperation'
+      refField: 'OperationCode'
+  - name: 'IntermediaryAccountNo'
+    description: ''
+  - name: 'IntermediaryAccountNoIBAN'
+    description: ''
+  - name: 'IntermediaryAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IntermediaryBIC'
+    description: ''
+  - name: 'BBankAccountNo'
+    description: '41A / 41B'
+  - name: 'BBankAccountNoIBAN'
+    description: '41I'
+  - name: 'BeneficiaryFinalBIC'
+    description: '42S - Account with institution - Swift Address BIC. This field is moved to PtTransMessage.CreditFinalBICNo'
+  - name: 'SICPaymentCode'
+    description: 'SIC Payment Type code as used in SIC B10 messages. SIC Field Code = <58>'
+    genericControls:
+      refTable: 'PtPaymentSICPayCode'
+      refField: 'SICPaymentCode'
+  - name: 'LSVId'
+    description: 'SIC Field 52B - LSVId'
+  - name: 'BeneficiaryFinalBankAddress'
+    description: '42A - Account with institution - Full Address'
+    genericControls:
+      multiLine: true
+  - name: 'SenderRemarks'
+    description: 'For E-Banking, the customers remarks, message to the bank or in some cases Benficiary Bank Address will be saved in this field (When customer cannot find BIC for international payment)'
+    genericControls:
+      multiLine: true
+  - name: 'EBankingTemplate'
+    description: 'Use this record as template in ebanking'
+  - name: 'AdditionalPaymentInfo'
+    description: 'SIC Field 54. This field is used in EURO-SIC payments to specify additional payment information like currency exchange rates'
+    genericControls:
+      multiLine: true
+  - name: 'StandingOrderId'
+    description: 'reference to the standing order that generated this payment'
+    genericControls:
+      refTable: 'PtStandingOrder'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PriorityCode'
+    description: 'SIC payment priority codes. SIC field tag: 20\r\nA0 = Highest\r\nZ9 = Lowest\r\nB1 B7 B9: Payments from bank\r\nB5: Service payments from (DTA), LSV,BM,TM, POS. CASH.SECOM. REPO\r\nA5: Service payments EURX,SNB/SECB, SIS'
+  - name: 'BillPresentationId'
+    description: 'PtBillPresentation.Id'
+    genericControls:
+      refTable: 'PtBillPresentation'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsDueRelevant'
+    description: 'To define if the amount is an interest  payment or  a capital transaction'
+  - name: 'SequenceNo'
+    description: 'Sequence number of the payment within payment order. Important for applications that need the payments to be printed on advice in a certain order\r\nWARNING: Field MsgSequenceNumber might have taken over this role.'
+  - name: 'PayOutChargeCurrency'
+    description: 'Currency for manual charges on single outgoing payment'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'PayOutChargeAmount'
+    description: 'Manual charge amount on single outging payment'
+  - name: 'UseManualOrderingAddress'
+    description: 'The flag specifies that manual ordering party address typed by some user has to be used with this payment.'
+  - name: 'BenBankAddressCode'
+    description: 'In DTA 836, the Code A specifies that address is BIC Number\r\nCode D specifies the address in descriptive format'
+  - name: 'PaymentValueDate'
+    description: 'optional field\r\nis used in case of foreign currency payments.\r\nSenderAccountNo will be booked with PtPaymentOrder.ValueDate in any case.\r\nIf PaymentValueDate = NULL then PtPaymentOrder.ValueDate will be used, otherwise PtPaymentOrderDetail.AccountNo will be booked with this value.'
+  - name: 'IsLockedForCustomer'
+    description: 'Used for ebanking to block any modification in payment by customer after the payment has been modified internally by payment department'
+  - name: 'BlockingOverrideUser'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      isNoUpdate: true
+  - name: 'WithdrawCommException'
+    description: ''
+  - name: 'BeneficiaryName'
+    description: 'Full beneficiary name.\r\n1-1 to ISO 20022 Message'
+  - name: 'BeneficiaryStreetName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'BeneficiaryBuildingNo'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'BeneficiaryPostCode'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'BeneficiaryTownName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'BeneficiaryCountry'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'ExternalMessageId'
+    description: 'key for Message level duplicate identification as introduced in ISO 20022'
+  - name: 'ExternalPartnerCode'
+    description: ''
+  - name: 'IsUrgentPayment'
+    description: ''
+  - name: 'SettlementPriority'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentSettlementPriority'
+      refField: 'PriorityCode'
+  - name: 'EarliestSettlementTime'
+    description: 'Earliest settlement time can be instructed to SIC.'
+  - name: 'ReturnReason'
+    description: 'Textual payment return  reason. This information is forwarded to orginal external sender.'
+  - name: 'ReturningMessageInId'
+    description: 'PtTransnMessageIn:Id belonging to orginal payment that is being returned.\r\nFor returning SIC payment, information from orignal XML message is extracted and sent as original payment reference.'
+  - name: 'ReturnReasonCode'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentReturnCode'
+      refField: 'PaymentReturnCode'
+  - name: 'InstructedAmount'
+    description: 'Orginal instructed amount before detucting charges and conversion rate. This is entered for informatin purpose for sending with external payment, for example SIC Payment'
+  - name: 'InstructedAmtCurrency'
+    description: 'Currency of instructed amount. This is entered for informatin purpose for sending with external payment, for example SIC Payment'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'InstructedAmoutXRate'
+    description: 'Exchange rate for instructed amount. This is entered for informatin purpose for sending with external payment, for example SIC Payment'
+  - name: 'DebitorAgentIBAN'
+    description: 'SIC: account for Debitor Agent (Bank) in (IBAN Format'
+  - name: 'CreditorAgentIBAN'
+    description: 'SIC: account for Creditor Agent (Bank) in (IBAN Format'
+  - name: 'SanctionOverrideUser'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      isNoUpdate: true
+  - name: 'SanctionMatchList'
+    description: ''
+  - name: 'SanctionReleaseReason'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'CustConfirmationTime'
+    description: 'Date time when customer gave confirmation to the payment'
+  - name: 'SettlementAccountNumber'
+    description: 'Settlement account number from inter-bank settlement services like post finance'
+  - name: 'CustomerConfirmationPending'
+    description: ''
+  - name: 'BusinessCaseId'
+    description: 'Paynet EBill Business Case'
+  - name: 'InstallmentId'
+    description: 'Paynet EBill InstallmentId'
+  - name: 'SenderBIC'
+    description: ''
+  - name: 'AccountWithInstitutionBic'
+    description: ''
+  - name: 'StructuredCreditorReference'
+    description: 'Structured Creditor Reference (SCOR) for IBAN payments'
+  - name: 'OriginalSenderName'
+    description: 'Full ultimate debtor name.\r\n1-1 to ISO 20022 Message'
+  - name: 'OriginalSenderStreetName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'OriginalSenderBuildingNo'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'OriginalSenderPostCode'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'OriginalSenderTownName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'OriginalSenderCountry'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'EndBeneficiaryName'
+    description: 'Full ultimate creditor name.\r\n1-1 to ISO 20022 Message'
+  - name: 'EndBeneficiaryStreetName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'EndBeneficiaryBuildingNo'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'EndBeneficiaryPostCode'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'EndBeneficiaryTownName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'EndBeneficiaryCountry'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'AlternativeParameter1'
+    description: 'QR-Bill Alternative Parameter (Alternatives Verfahren)'
+  - name: 'AlternativeParameter2'
+    description: 'QR-Bill Alternative Parameter (Alternatives Verfahren)'
+  - name: 'InitiatingPartyId'
+    description: 'Reference to the application that initiates the payment in the system. Via payment API it is normally application code.'
+  - name: 'OrderingPartyName'
+    description: 'Full ordering party name.\r\n1-1 to ISO 20022 Message'
+  - name: 'OrderingPartyStreetName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'OrderingPartyBuildingNo'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'OrderingPartyPostCode'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'OrderingPartyTownName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'OrderingPartyCountry'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'InstructedAgentBic'
+    description: ''
+  - name: 'PersonalNote'
+    description: 'Allows customer to add own payment notes'
+  - name: 'RegulatoryReportingCode'
+    description: 'Regulatory reporting code required in some countries.\r\nFrom e.g. Pain.001 field RgltryRptg/DbtCdtRptgInd/Dtls/Ctry/Cd'
+  - name: 'IsInstantPayment'
+    description: ''
+  - name: 'OrderingPartyAddressLine1'
+    description: 'OrderingPartyAddressLine1 for hybrid address'
+  - name: 'OrderingPartyAddressLine2'
+    description: 'OrderingPartyAddressLine2 for hybrid address'
+  - name: 'BeneficiaryAddressLine1'
+    description: 'BeneficiaryAddressLine1 for hybrid address'
+  - name: 'BeneficiaryAddressLine2'
+    description: 'BeneficiaryAddressLine2 for hybrid address'
+  - name: 'EndBeneficiaryAddressLine1'
+    description: 'EndBeneficiaryAddressLine1 for hybrid address'
+  - name: 'EndBeneficiaryAddressLine2'
+    description: 'EndBeneficiaryAddressLine2 for hybrid address'
+  - name: 'OriginalSenderAddressLine1'
+    description: 'OriginalSenderAddressLine1 for hybrid address'
+  - name: 'OriginalSenderAddressLine2'
+    description: 'OriginalSenderAddressLine2 for hybrid address'

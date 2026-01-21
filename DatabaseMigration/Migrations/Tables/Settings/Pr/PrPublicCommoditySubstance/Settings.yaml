@@ -1,0 +1,29 @@
+table:
+  name: 'PrPublicCommoditySubstance'
+  description: 'VDF-Domaine: 7924 K-482'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - german:
+        formTitle: 'Bezeichnung Commodity'
+  columns:
+  - name: 'CommoditySubstanceNo'
+    description: 'Maintained by VDF-Metadata'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CySymbol'
+    description: 'Currency symbol. Only for metalcurrency (for instance XAU for gold, XAG for silver), or other commodities that have a currency ISO code. This field is currently only used for edgelab.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 2

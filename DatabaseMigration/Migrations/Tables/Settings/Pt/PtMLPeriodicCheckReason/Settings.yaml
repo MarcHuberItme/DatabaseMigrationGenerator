@@ -1,0 +1,46 @@
+table:
+  name: 'PtMLPeriodicCheckReason'
+  description: 'Verwaltung der verschiedenen Prüfungsarten und die Zeit, die bleibt um die Prüfung abzuarbeiten (kanalabhängig).'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML types of exams'
+    - german:
+        formTitle: 'GWG Prüfungsarten'
+    - french:
+        formTitle: 'ML Types d''examens'
+    - italian:
+        formTitle: 'ML Tipi di esami'
+  columns:
+  - name: 'ReasonNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'AllowedChannelNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckChannel'
+      refField: 'ChannelNo'
+      defColumnPos: 2
+  - name: 'DaysUntilEndDate'
+    description: 'Anzahl Tage, welche für die Prüfung insgesamt zur Verfügung stehen, bis die Prüfung abgeschlossen sein muss. Wird benötigt um aufgrund des Startdatums bei AdHocPrüfungen den Endzeitpunkt und zu definieren.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'DaysUntilTargetDate'
+    description: 'Anzahl Tage, welche für die Prüfung dem Benutzer insgesamt zur Verfügung stehen bis die Prüfung in den Exception Modus wechselt. Wird benötigt um aufgrund des Startdatums bei AdHocPrüfungen das Zieldatum der Pendenz zu definieren.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'OversteersExistingChecks'
+    description: ''
+    genericControls:
+      defColumnPos: 5

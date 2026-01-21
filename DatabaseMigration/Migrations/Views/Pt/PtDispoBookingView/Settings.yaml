@@ -1,0 +1,100 @@
+view:
+  name: 'PtDispoBookingView'
+  description: 'View used for generic editor on PtDispoBooking'
+frontendView:
+  name: 'PtDispoBookingView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Reservations'
+    - german:
+        formTitle: 'Dispo Buchungen'
+    - french:
+        formTitle: 'Réservations Dispo'
+  columns:
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      defColumnPos: 3
+      noUpdatePos: 30
+      isNoUpdate: true
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 90
+    genericControls:
+      noUpdatePos: 40
+      isNoUpdate: true
+  - name: 'SettlementAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 4
+      noUpdatePos: 10
+      isNoUpdate: true
+  - name: 'RetrievalRefNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+    genericControls:
+      defColumnPos: 2
+      noUpdatePos: 20
+      isNoUpdate: true
+  - name: 'Status'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtDispoBookingStatus'
+      refField: 'StatusNo'
+      defColumnPos: 5
+      noUpdatePos: 50
+  - name: 'TotalOpenAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      noUpdatePos: 70
+      isNoUpdate: true
+  - name: 'TotalSettledAmount'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    scale: 4
+    genericControls:
+      noUpdatePos: 80
+      isNoUpdate: true
+  - name: 'Timestamp'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 1
+      noUpdatePos: 60
+      isNoUpdate: true
+  - name: 'MerchantCity'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      isNoUpdate: true
+  - name: 'MerchantName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 200
+    genericControls:
+      isNoUpdate: true
+  - name: 'HoldbackDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      isNoUpdate: true

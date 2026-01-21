@@ -1,0 +1,34 @@
+table:
+  name: 'ReRoomType'
+  description: 'Raumtyp / room type\r\n\r\n\r\nFIS-2000: GR_RAUM_TYP_CD (GR1RAUM_TYP) - Codes 1:1 übernommen'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'room type'
+    - german:
+        formTitle: 'Raumtyp'
+  columns:
+  - name: 'RoomType'
+    description: 'entspricht 1:1 den Werten aus FIS-2000 GR_RAUM_TYP_CD'
+    genericControls:
+      defColumnPos: 1
+  - name: 'HasSeats'
+    description: 'if checked, it''s possible to enter an number of seats\r\nEingabe von Anzahl Sitzplätze möglich (J/N)'
+  - name: 'ForHotel'
+    description: 'für Hotel / Restaurants'
+  - name: 'RoomCategory'
+    description: 'Raumkategorie'
+    genericControls:
+      refTable: 'ReRoomTypeCategory'
+      refField: 'RoomCategory'
+  - name: 'SortNo'
+    description: ''

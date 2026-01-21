@@ -1,0 +1,172 @@
+table:
+  name: 'PtAgrSecureList'
+  description: 'Administration of secure list. A secure list is method to authenticate a partner (like PKI).'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      applicationKey: 'SeqNo'
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Secure List'
+    - german:
+        formTitle: 'Streichliste'
+    - french:
+        formTitle: 'Liste sécurité e-banking'
+  columns:
+  - name: 'ProcessId'
+    description: 'Workflow-ProcessId: Streichliste'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'ProcessIdPw'
+    description: 'Workflow-ProcessId: Passwort für EBanking'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'PartnerId'
+    description: 'foreign-key; Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'ContactPersonId'
+    description: 'This field is for example used when a contact person (for example Chief Financial Officer) within a company (PtBase) should have an own SecureList and the contact person has no PtBase.'
+    genericControls:
+      refTable: 'PtContactPersonView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'SeqNo'
+    description: 'Unique within a client - PartnerNo and SeqNo is printed on the secure list\r\n12345/1 (PartnerNo = 12345, SeqNo = 1)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'VersionNo'
+    description: 'version of the secure list'
+  - name: 'CurrentList'
+    description: 'List that is currently in use. (50 encrypted codes per 32 characters)'
+    genericControls:
+      multiLine: true
+  - name: 'CurrentListPosition'
+    description: 'Position on the current list. It refers to the next usable code.'
+  - name: 'CurrentListGenDate'
+    description: 'Generation-timestamp of the current list.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'CurrentListPrintDate'
+    description: 'Print-timestamp of the current list.'
+  - name: 'NewList'
+    description: 'New list. (50 encrypted codes per 32 characters)'
+    genericControls:
+      multiLine: true
+  - name: 'NewListGenDate'
+    description: 'Generation-timestamp of the new list.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'NewListPrintDate'
+    description: 'Print-timestamp of the new list.'
+  - name: 'Password'
+    description: 'encrypted password'
+  - name: 'PasswordOld'
+    description: 'After changing the password, the old password will be saved in this field.'
+  - name: 'PrevEBankingNo'
+    description: 'EBanking agreement number of a previous system.\r\nUsed for running "Streichliste" of previous EBanking agreement.'
+  - name: 'WrongListCodeCounter'
+    description: ''
+  - name: 'WrongPasswordCounter'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IsMatrixList'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'PasswordSetByCustomer'
+    description: 'If this field is NULL, the customer is forced to enter his own PW in the E-Banking frontend.'
+  - name: 'AGBacceptedByCustomer'
+    description: 'NOT IN USE ANYMORE!\r\n\r\nIf this field is NULL, the customer is forced to accept the AGB (Allgemeine Geschäftsbedingungen) in the E-Banking frontend.'
+  - name: 'PasswordSHA2'
+    description: 'Base64 String of the SHA2 (SHA-512) Hash of the password\r\n\r\nSHA512 outputs 512 bits (64 bytes).\r\nBase64 adds roughly a 33% of constant overhead, so the string can be expected to always be 88 chars.'
+  - name: 'IsSecureListEnabled'
+    description: ''
+  - name: 'IsMobileCodeEnabled'
+    description: ''
+  - name: 'WrongMobileCodeCounter'
+    description: ''
+  - name: 'UnusedMobileCodeCounter'
+    description: ''
+  - name: 'IsAstAllowed'
+    description: 'True if KOBIL AST is allowed for that login'
+  - name: 'ProcessIdAst'
+    description: ''
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'AstUserId'
+    description: 'UserId in Kobi AST-System. Currently, the Contract-Number from PtAgrEbanking, which is also stored in PrevEBankingNo, is used'
+  - name: 'AstActivationCode'
+    description: 'Last Activation Code to pair a Kobil AST device. The activation code i a one-time code, it here temporarly stored for printing the activation document delayed or in a separated step.'
+  - name: 'AstCodeValidity'
+    description: 'If an activation code ist generatd, the field is populated with its Validity. The duration of the code in days is configured in the system parameter ebanking - AstCodeDurationPrinted\r\n'
+  - name: 'AstCodePrinted'
+    description: 'If the code is printed to a document for the customer, the print-date is stored here.'
+  - name: 'WrongAstPinCounter'
+    description: 'Counts how often a wrong PIN is entered since the last successful login.\r\n--> Actually not used. Pin management and user locking / unlocking is done in the KOBIL SSMS management-console.'
+  - name: 'AstRejectCounter'
+    description: 'Amount of rejected transaction since last confirmed transaction.'
+  - name: 'AstActivationImage'
+    description: 'Dummy Field for Using Recordset as a DTO to Crystal Reports.'
+  - name: 'IsMobilePinEnabled'
+    description: 'Enables/disables login with mobile app (through MobilePin) for this secure list'
+  - name: 'WrongMobilePinCounter'
+    description: ''
+  - name: 'MobilePin'
+    description: 'Base64 encoded string of the (twice!) SHA2 (SHA-256) Hash of the PIN used for the mobile banking app.\r\n\r\nSHA-256 outputs 256 bits (32 bytes).\r\nBase64 adds roughly a 33% of constant overhead, so the string can be expected to always be 44 chars.'
+  - name: 'PasswordBcrypt'
+    description: ''
+  - name: 'PasswordConfirmationCounter'
+    description: 'Counter used to track the amount of consecutively equal Bcrypt comparisons. This prevents a lockout due to a typo when entering a password for the first time that is migrated to bcrypt, as this allows a treshold in which the old SHA512 or MD5 password are still considered valid.'
+    minValue: '0'
+  - name: 'EbankingVersion'
+    description: ''
+  - name: 'IsFuturaeAllowed'
+    description: 'Checked when Futurae 2FA is allowed.'
+  - name: 'FuturaeUserId'
+    description: 'User identifier in Futurae\r\nNo manual entry, can''t be edited. But copy should be available.'
+  - name: 'RecommendUsage'
+    description: 'When checked, user will be informed after the login to use Futurae, but can decline.\r\nDisabled when FuturaeUserId  is null'
+  - name: 'UsingFuturaeDueDate'
+    description: 'When date is not null, user will be informed after the login to use Futurae and the time left to do so. When time is up. User must self-enroll with Futurae.\r\nDisabled when FuturaeUserId  is null'
+  - name: 'ProcessIdQR'
+    description: 'Workflow-ProcessId: QR-Code'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'FuturaeDeviceActivationCode'
+    description: 'Short, user readable code for two-factor authentication device activation.'
+  - name: 'FuturaeActivationCodeValidity'
+    description: 'Validity of the last activation code issued for the user registered in Futurae.'
+  - name: 'FuturaeDevActQrCodeDataUri'
+    description: 'Device activation QR code data URI for Futurae'
+  - name: 'CurrentFuturaeTwoFaTenantId'
+    description: 'Id (OaTwoFaProviderTenant.Id) of current tenant where the futurae user is registered to.'
+    genericControls:
+      refTable: 'OaTwoFaProviderTenant'
+      refField: 'Id'
+  - name: 'FuturaeCodePrinted'
+    description: ''
+  - name: 'TwoFaRejectCounter'
+    description: 'The number of times the user rejected the second factor confirmation consecutively.\r\nThis is reset to 0 when there is a successful confirmation.'

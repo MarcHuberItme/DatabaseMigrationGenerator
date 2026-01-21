@@ -1,0 +1,84 @@
+table:
+  name: 'VaAICalculator'
+  description: 'This table is used to record accrued interest amount with pre-calculated result and test result.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'VaAICalculator'
+        helpText: 'VaAICalculator'
+    - german:
+        formTitle: 'VaAICalculator'
+        helpText: 'VaAICalculator'
+    - french:
+        formTitle: 'VaAICalculator'
+        helpText: 'VaAICalculator'
+    - italian:
+        formTitle: 'VaAICalculator'
+        helpText: 'VaAICalculator'
+  columns:
+  - name: 'ISIN'
+    description: 'The standard ISIN'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'IsinNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'CaseNo'
+    description: 'this field is used as the sequence no of the test'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TestDate'
+    description: 'The date for the test'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValueDate'
+    description: 'The valuation date'
+  - name: 'Amount'
+    description: 'the amount of the security'
+    genericControls:
+      defColumnPos: 7
+  - name: 'MaturityDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'InterestRate'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'actCurrency'
+    description: 'the actual calculation of interest currency'
+  - name: 'actInterestDays'
+    description: 'the actual calculation of interest bearing days'
+  - name: 'actAIAmount'
+    description: 'the actual calculation of accrued interest amount'
+  - name: 'expCurrency'
+    description: 'the interest currency from standard calculation'
+  - name: 'expInterestDays'
+    description: 'the standard calculation of interest bearing days'
+  - name: 'expAIAmount'
+    description: 'the standard calculation of accrued interest amount'
+  - name: 'TestStatusNo'
+    description: 'this field is used to show the test result as either ok, error, or not tested. this number references AsTestStatus'
+    genericControls:
+      refTable: 'AsTestStatus'
+      refField: 'TestStatusNo'
+      defColumnPos: 4
+  - name: 'Description'
+    description: 'This field describes the test goals, and also possible for the failed reason'
+  - name: 'RefTypeNo'
+    description: ''
+  - name: 'PublicID'
+    description: ''
+  - name: 'ProdReferenceID'
+    description: ''
+  - name: 'NominalCurrency'
+    description: ''

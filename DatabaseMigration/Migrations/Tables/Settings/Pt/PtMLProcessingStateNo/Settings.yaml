@@ -1,0 +1,32 @@
+table:
+  name: 'PtMLProcessingStateNo'
+  description: 'Verwaltung der Prozesstati der GWG-Prüfung'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Processing State'
+    - german:
+        formTitle: 'GWG Prozess Status'
+    - french:
+        formTitle: 'État de traitement ML'
+    - italian:
+        formTitle: 'Stato di elaborazione ML'
+  columns:
+  - name: 'ProcessingStateNo'
+    description: 'Status der Verarbeitung (offen, in Verarbeitung, erledigt)'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Remark'
+    description: 'Bemerkungsfeld'
+    genericControls:
+      multiLine: true

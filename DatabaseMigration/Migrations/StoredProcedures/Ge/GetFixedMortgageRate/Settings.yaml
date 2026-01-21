@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetFixedMortgageRate'
+  description: 'Get the mortgage rates for a specific duration. 22.07.2004/mct'

@@ -1,0 +1,153 @@
+view:
+  name: 'ReBasePremisesView'
+  description: 'View for the selection of RealEstates in frmRealEstateSearch'
+frontendView:
+  name: 'ReBasePremisesView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'GBNo'
+    uiTableDescription:
+    - english:
+        formTitle: 'real estate view'
+    - german:
+        formTitle: 'Liegenschaften/Grundstück'
+  columns:
+  - name: 'BaseTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReBaseType'
+      refField: 'BaseTypeNo'
+      defColumnPos: 1
+  - name: 'Zip'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 6
+    genericControls:
+      defColumnPos: 2
+  - name: 'Town'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+    genericControls:
+      defColumnPos: 2
+  - name: 'Street'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 4
+  - name: 'HouseNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 5
+  - name: 'CountryCode'
+    description: ''
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+  - name: 'TerminationDateBase'
+    description: ''
+    dataType: 'datetime'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      defColumnPos: 6
+  - name: 'PartnerName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 7
+  - name: 'PartnerFirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 8
+  - name: 'ValidFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ValidTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'PremisesId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+    genericControls:
+      defColumnPos: 14
+  - name: 'PremisesType'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'RePremisesType'
+      refField: 'PremisesType'
+      defColumnPos: 9
+  - name: 'GBNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 15
+    genericControls:
+      defColumnPos: 10
+  - name: 'GBNoAdd'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 15
+    genericControls:
+      defColumnPos: 11
+  - name: 'GBPlanNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 15
+    genericControls:
+      defColumnPos: 12
+  - name: 'GBDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 13
+  - name: 'TerminationDatePremises'
+    description: ''
+    dataType: 'datetime'
+  - name: 'SwissTownNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsSwissTown'
+      refField: 'SwissTownNo'
+      defColumnPos: 15
+  - name: 'SwissTownPartNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsSwissTownPartView'
+      refField: 'SwissTownPartNo'
+      hasDetailBtn: true
+  - name: 'ReBaseId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 14

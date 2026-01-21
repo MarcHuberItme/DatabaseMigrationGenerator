@@ -1,0 +1,39 @@
+table:
+  name: 'RePfBRelLoan'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PfB Rel Bank Loan'
+    - german:
+        formTitle: 'PfB Rel Bank - Darlehen'
+  columns:
+  - name: 'LoanId'
+    description: ''
+    genericControls:
+      refTable: 'RePfBLoan'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'BcId'
+    description: ''
+    genericControls:
+      refTable: 'RePfBRelBC'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'SerNo'
+    description: 'Serie und Tranche'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Allocation'
+    description: 'Zuteilung'
+    genericControls:
+      defColumnPos: 2

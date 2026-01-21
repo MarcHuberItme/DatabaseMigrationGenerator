@@ -1,0 +1,38 @@
+table:
+  name: 'CyBankNoteGroup'
+  description: 'Currency groups for banknote reporting'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Currency groups f. report'
+    - german:
+        formTitle: 'Währungsgruppen f. Report'
+  columns:
+  - name: 'BankNoteGroupNo'
+    description: ''
+    genericControls:
+      visNumber: 1
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'BankNoteReportGroupNo'
+    description: 'Reporting group'
+    genericControls:
+      refTable: 'CyBankNoteReportGroup'
+      refField: 'BankNoteReportGroupNo'
+      noUpdatePos: 3
+  - name: 'LimitCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      noUpdatePos: 2

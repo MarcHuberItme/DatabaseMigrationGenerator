@@ -1,0 +1,36 @@
+table:
+  name: 'OaNotificationRule'
+  description: 'Rules for notification settings used in E-Banking and other apps. Each rule belongs to a OaNotificationSet.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 2
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Name'
+    description: 'Name of the notification rule'
+  - name: 'WithDetails'
+    description: '1 = detailed notification text\r\n0 = simple notification text (default)'
+  - name: 'IsActive'
+    description: '1 = notification rule is active (default)\r\n0 = notification rule is inactive'
+  - name: 'PushEnabled'
+    description: '0 = push notifications disabled (default)\r\n1 = push notifications enabled'
+  - name: 'AllAccounts'
+    description: '0 = rule is linked to custom selection of accounts (in OaNotificationAccount)\r\n1 = rule is linked to all accounts of the agreement (default)'
+  - name: 'AllPortfolio'
+    description: '0 = rule is linked to custom selection of portfolio (in OaNotificationPortfolio)\r\n1 = rule is linked to all portfolio of the agreement (default)'
+  - name: 'NotificationSetId'
+    description: 'OaNotificationSet.Id reference'
+    genericControls:
+      refTable: 'OaNotificationSet'
+      refField: 'Id'
+  - name: 'NotificationTriggerId'
+    description: 'OaNotifictionTrigger.Id reference'
+    genericControls:
+      refTable: 'OaNotificationTrigger'
+      refField: 'Id'

@@ -1,0 +1,65 @@
+table:
+  name: 'ReObligPremisesRelation'
+  description: 'Relation between RePremises and ReObligation'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Relation'
+    - german:
+        formTitle: 'Grundpfandrechte'
+  columns:
+  - name: 'PremisesId'
+    description: 'Verbindung zum Grundstück'
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ObligationId'
+    description: 'Verbindung zum Schuldbrief'
+    genericControls:
+      refTable: 'ReObligDescription'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PremisesOrigId'
+    description: 'Id des Grundstücks, bei welchem der Originalschuldbrief liegt'
+    genericControls:
+      refTable: 'ReBasePremisesView'
+      refField: 'PremisesId'
+      hasDetailBtn: true
+  - name: 'ObligAmountChargeable'
+    description: 'anrechenbarer Deckungswert des Schuldbriefs (= Nominalwert)\r\nin case of obligation that are not "verpfändet an die Pfandbriefbank" this amount is 0'
+    minValue: '0'
+  - name: 'AntecedentAmount'
+    description: 'Kapital Vorgang nur bei Gesamtpfand'
+  - name: 'RankRivalryAmount'
+    description: 'Rangkonkurrenz nur bei Gesamtpfand'
+  - name: 'Rank'
+    description: 'nur bei Gesamtpfand'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'MemberUniqueKey'
+    description: ''
+  - name: 'AntecedenAmountthird'
+    description: 'Teilbetrag vom Feld Antecedent Amount der bei einer Drittbank liegt oder (abbezahlt ist und nicht von der Hypi verwaltet wird)'
+  - name: 'RankRivalryAmountthird'
+    description: 'Teilbetrag vom Feld RankRivalryAmount der einer Drittbank liegt oder (abbezahlt ist und nicht von der Hypi verwaltet wird)'
+  - name: 'Copremresultman'
+    description: 'Manuell zugeweisene Belehnungskategorie für Spezialfälle, wenn NULLwird die Belehnungskategoeri automatisch bestimmt. Nur Sätze aus CoPremres mit Feld dateonprimes = True zuweisbar'
+    genericControls:
+      refTable: 'CoPremres'
+      refField: 'Copremresult'

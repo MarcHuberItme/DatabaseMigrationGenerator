@@ -1,0 +1,133 @@
+view:
+  name: 'PtTradingOrderMessageStatView'
+  description: 'View containing the status related fields of PtTradingOrderMessageView. PtTradingOrderMessageViewMod records are also joined.'
+frontendView:
+  name: 'PtTradingOrderMessageStatView'
+  description: 'View containing the status related fields of PtTradingOrderMessageView. PtTradingOrderMessageViewMod records are also joined.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'TradingOrderId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTradingOrder'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsStockExOrder'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: ' 0'
+    genericControls:
+      defColumnPos: 9
+  - name: 'BankInternalReferencePartner'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 36
+  - name: 'OrderStatusNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransSxOrderStatus'
+      refField: 'OrderStatusNo'
+      defColumnPos: 33
+  - name: 'OrderQuantity'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 7
+  - name: 'DebitQuantity'
+    description: 'used to show data from PtTransMessage'
+    dataType: 'money'
+  - name: 'CreditQuantity'
+    description: 'used to show data from PtTransMessage'
+    dataType: 'money'
+  - name: 'DebitAmount'
+    description: 'used to show data from PtTransMessage'
+    dataType: 'money'
+  - name: 'CreditAmount'
+    description: 'used to show data from PtTransMessage'
+    dataType: 'money'
+  - name: 'OrderTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsTradingOrderType'
+      refField: 'OrderTypeNo'
+      defColumnPos: 18
+  - name: 'TraderPrintoutStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PlaceStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 10
+  - name: 'TradeStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 11
+  - name: 'AllocationStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'CalculationStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ProcessStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 12
+  - name: 'UpdateStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'CancelledStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 13
+  - name: 'ExpiredStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 25
+  - name: 'TransTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+      defColumnPos: 17
+  - name: 'IsCancelRequest'
+    description: 'Is NULL if no modification exists, 0 if exists but is not a cancel request, 1 if exists and is a cancel request.'
+    dataType: 'nvarchar'
+    prec: 1
+  - name: 'IsAccepted'
+    description: 'NULL if there is no modification existing. 0 if modification exists but not yet accepted. 1 if modification exists and is accepted.'
+    dataType: 'nvarchar'
+    prec: 1
+  - name: 'IsDeclined'
+    description: 'NULL if no modification exists. 0 if modification exists but it is not declined yet or has been accepted. 1 if modification has been declined.'
+    dataType: 'nvarchar'
+    prec: 1

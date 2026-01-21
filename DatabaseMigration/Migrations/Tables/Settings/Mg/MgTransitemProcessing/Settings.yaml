@@ -1,0 +1,28 @@
+table:
+  name: 'MgTransitemProcessing'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ClientId'
+    description: ''
+  - name: 'ProcessId'
+    description: ''
+  - name: 'HostName'
+    description: ''
+  - name: 'FinstarNo_WrgA1'
+    description: ''
+  - name: 'FinstarNo_WrgA2'
+    description: ''
+  - name: 'NumberOfAccounts'
+    description: ''
+  - name: 'TimeStart'
+    description: ''
+  - name: 'TimeEnd'
+    description: ''

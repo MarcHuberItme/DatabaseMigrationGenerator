@@ -1,0 +1,42 @@
+table:
+  name: 'AsZip'
+  description: 'zip-code and domicil from all cities in Switzerland'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    descField: 'SwissTownNo'
+    uiTableDescription:
+    - english:
+        formTitle: 'Zip Code'
+    - german:
+        formTitle: 'Postleitzahlen'
+  columns:
+  - name: 'Zip'
+    description: 'code of a village for mail'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SubZip'
+    description: 'there are more postoffices in a village but only one zip'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Town'
+    description: 'place of residence'
+    genericControls:
+      defColumnPos: 3
+  - name: 'LanguageNo'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'SwissTownNo'
+    description: 'This field contains the BFS number (Bundesamt für Statistik).\r\nNo DB-Integrity because the data is loaded from a file retrieved from the post office, but the data in AsSwissTown is retrieved from a file given from the BFS. 24.09.2002/mct'
+    genericControls:
+      refTable: 'AsSwissTown'
+      refField: 'SwissTownNo'
+      defColumnPos: 4

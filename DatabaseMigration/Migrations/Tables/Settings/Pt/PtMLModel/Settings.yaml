@@ -1,0 +1,38 @@
+table:
+  name: 'PtMLModel'
+  description: 'This table stores metadata and binary data of machine learning models.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'AML Model'
+    - german:
+        formTitle: 'GwG Modell'
+    - french:
+        formTitle: 'LBA Modèle'
+    - italian:
+        formTitle: 'AML Modello'
+  columns:
+  - name: 'ModelNo'
+    description: 'Reference to the model numberModel number, incremental number'
+    genericControls:
+      isIdentity: true
+  - name: 'ProjectName'
+    description: 'Name of the associated project'
+  - name: 'ModelFilePath'
+    description: 'Path to the model file'
+  - name: 'ModelType'
+    description: 'Type of the machine learning model'
+  - name: 'ModelBinary'
+    description: 'Serialized model data, readable using Python''s joblib.loads'
+  - name: 'Accuracy'
+    description: 'Model accuracy'
+  - name: 'Comments'
+    description: 'Optional comments'

@@ -1,0 +1,43 @@
+table:
+  name: 'PrPublicBXReporting'
+  description: 'Similir to PrPublicSIXReporting this table contains the instruments have to be reported to BX based on a stockex order. This table contains only instruments which are not in PrPublicSIXReporting.\r\nLogic for reporting:\r\n- Isin only in SWX-Reportingfile: report to SIX\r\n- Isin only in BX-Reportingfile: report to BX\r\n- Isin in SWX- and BX-ReportingFile: report to SIX\r\nThat''s why we only save Isin in this table where only have to be reported to BX (not to SIX).\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'SIX Reporting'
+        helpText: 'SIX Reporting'
+    - german:
+        formTitle: 'SIX Reporting'
+        helpText: 'SIX Reporting'
+  columns:
+  - name: 'PublicId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'DateFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'DateTo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'HasToBeReported'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'BXUnknownInstrument'
+    description: '1= Instrument is not in the ImportFile from SIX but has to be reported (in this case the record should not be updated with HasToBeReported = false after importing the file).'
+    genericControls:
+      defColumnPos: 5

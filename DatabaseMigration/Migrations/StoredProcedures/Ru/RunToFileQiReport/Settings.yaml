@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'RunToFileQiReport'
+  description: 'Called by a Job, which will create a CSV Export, based on the SELECT of this SP. Initial create of SP\r\n2023-04-26 rwm and wwo update to accept epd regulationcode null and instead of nodesecondtree = USIRS, check for UsIrsIncomeCode'

@@ -1,0 +1,52 @@
+table:
+  name: 'AsCountry'
+  description: 'table with all countries'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    descField: 'ISOCode'
+    uiTableDescription:
+    - english:
+        formTitle: 'Country'
+    - german:
+        formTitle: 'Länder'
+    - french:
+        formTitle: 'Pays'
+  columns:
+  - name: 'ISOCode'
+    description: 'Official ISO-code of the country'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Currency'
+    description: 'Main curreny of a country\r\nforeign-key; candidate-key of CyBase (Symbol)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'MigValue'
+    description: ''
+    minValue: '000'
+    maxValue: '999'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'IBANlength'
+    description: 'Defines the length of the country''s unformatted IBAN.'
+  - name: 'ISOCodeNumeric'
+    description: 'http://en.wikipedia.org/wiki/ISO_3166-1'
+    minValue: '000'
+    maxValue: '999'
+  - name: 'SPSCountryName'
+    description: ''
+  - name: 'CrsCode'
+    description: 'Common Reporting Standard Code\r\nDieser ISO-Land-Code wird im Zusammenhang mit AIA gebraucht, um gewisse Inseln/Aussengebiete von EU-Staaten mit dem Länder-ISO-Code vom Hauptland zu melden.'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'

@@ -1,0 +1,35 @@
+view:
+  name: 'AsCorrPartnerView'
+  description: ''
+frontendView:
+  name: 'AsCorrPartnerView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'TextShort'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 25
+  - name: 'No'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+  - name: 'Type'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50

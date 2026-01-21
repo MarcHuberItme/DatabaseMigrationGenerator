@@ -1,0 +1,56 @@
+table:
+  name: 'AsRatingCode'
+  description: 'rating codes of the different rating agencies'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    descField: 'RatingCode'
+    uiTableDescription:
+    - english:
+        formTitle: 'Rating Code'
+    - german:
+        formTitle: 'Rating Code'
+  columns:
+  - name: 'RatingAgencyId'
+    description: 'foreign-key; Id of AsRatingAgency'
+    genericControls:
+      refTable: 'AsRatingAgency'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'RatingImmaterial'
+    description: 'immateriell  (z.B. aaa von E-qualiquant)\r\nif both checkboxes (RatingImmaterial , RatingFinancial) are checked its a general Rating (e.g. AAA von Standard & Poors)'
+  - name: 'RatingFinancial'
+    description: 'financial (z.B. Resultat aus HBL Bilanzanalyse)\r\nif both checkboxes (RatingImmaterial , RatingFinancial) are checked its a general Rating (e.g. AAA von Standard & Poors)'
+  - name: 'RatingCode'
+    description: 'rating codes of the different rating agencies'
+    genericControls:
+      defColumnPos: 2
+  - name: 'InternRatingCodeNo'
+    description: 'foreign-key;  candidate-key of AsInternRatingCode'
+    genericControls:
+      refTable: 'AsInternRatingCode'
+      refField: 'InternRatingCodeNo'
+      defColumnPos: 3
+  - name: 'LinearValue'
+    description: 'Field to show linear precedence of codes. e.g. AAA = 1 and AA = 2 and CCC = 7 etc.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'PD'
+    description: 'Ausfallwahrscheinlichkeit'
+    genericControls:
+      defColumnPos: 5
+  - name: 'CalculatedValue'
+    description: 'calculated bonität'
+    genericControls:
+      defColumnPos: 6
+  - name: 'Rate'
+    description: 'Pauschal-WB % Satz pro Ratinggruppe'
+    genericControls:
+      defColumnPos: 7

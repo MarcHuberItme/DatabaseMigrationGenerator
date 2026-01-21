@@ -1,0 +1,77 @@
+table:
+  name: 'AcBalanceStructure'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Balance structure'
+    - german:
+        formTitle: 'Bilanzstruktur'
+    - french:
+        formTitle: 'Structure du bilan'
+  columns:
+  - name: 'BalanceSheetTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceSheetType'
+      refField: 'BalanceSheetTypeNo'
+      defColumnPos: 8
+  - name: 'AL1'
+    description: 'tiefster Level'
+    genericControls:
+      refTable: 'AcBalanceStructureAL1'
+      refField: 'AL1'
+      defColumnPos: 1
+  - name: 'AL2'
+    description: 'e.g. 1.1 Flüssige Mittel or 2.1.Verpflichtungen aus Geldmarktpapieren'
+    genericControls:
+      refTable: 'AcBalanceStructureAL2'
+      refField: 'AL2'
+      defColumnPos: 2
+  - name: 'AL3'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceStructureAL3'
+      refField: 'AL3'
+      defColumnPos: 3
+  - name: 'AL4'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceStructureAL4'
+      refField: 'AL4'
+      defColumnPos: 4
+  - name: 'AL5'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceStructureAL5'
+      refField: 'AL5'
+      defColumnPos: 5
+  - name: 'BalanceAccountNo'
+    description: 'fiktives Bilanzkonto'
+    genericControls:
+      defColumnPos: 6
+  - name: 'CoaCode'
+    description: 'Coa Code für SUN Reports (Chart of Accounts)'
+    genericControls:
+      defColumnPos: 7
+  - name: 'CasachCode'
+    description: 'Capital Sheet für Eigenmittelausweis'
+    genericControls:
+      defColumnPos: 10
+  - name: 'FireAccountNo'
+    description: ''
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+      defColumnPos: 11
+      isNoUpdate: true
+  - name: 'FireAccountNoOld'
+    description: ''

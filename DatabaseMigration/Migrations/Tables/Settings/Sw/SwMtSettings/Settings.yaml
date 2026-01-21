@@ -1,0 +1,93 @@
+table:
+  name: 'SwMtSettings'
+  description: 'Settings for MT940 Export (SWIFT)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Settings for MT940 Export'
+        helpText: 'Settings for MT940 Export'
+    - german:
+        formTitle: 'Settings for MT940 Export'
+        helpText: 'Settings for MT940 Export'
+  columns:
+  - name: 'DatabaseName'
+    description: 'Prd / XXX'
+    genericControls:
+      defColumnPos: 1
+  - name: 'LogPath'
+    description: 'Path for Log File'
+  - name: 'FilePath'
+    description: 'Path for File save'
+  - name: 'FileName'
+    description: ''
+  - name: 'DeleteDays'
+    description: 'Days left to Delete old Item in Table swMtItem and delete old Log Files'
+    genericControls:
+      defColumnPos: 3
+  - name: 'EmailAlert'
+    description: '<> 0 = Email enabled'
+  - name: 'EmailErrorOnly'
+    description: '<> 0 = Send Email only in Error situation'
+  - name: 'SmtpHost'
+    description: 'Host Name of Mail server'
+  - name: 'EmailReceiver'
+    description: 'Emailadress for Status Mail \r\nseparated by ;'
+  - name: 'SwiftAddress'
+    description: 'Swift Address of forwarder'
+  - name: 'LastMessageNumber'
+    description: 'MessageNumber of Last Fileblock'
+  - name: 'SessionNumber'
+    description: ''
+  - name: 'LastMessageDate'
+    description: 'Last Message Date'
+  - name: 'AppName'
+    description: 'Application name. The application name can be provided to program using command line. If no application name will be provided, the program will take settings with ''Null'' value. The combination of Application Name and Database name must be unique.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PageSize'
+    description: 'Max number of Transitems for each page'
+  - name: 'IsToSkipCurrentDay'
+    description: 'Send today''s bookings or not'
+  - name: 'IsToSendExtendedInfo'
+    description: '1 = Send Detailed information about transaction'
+  - name: 'IsToAppendClearingNo'
+    description: '1 = Append clearing number to the send account for example 8307/XXXXXX'
+  - name: 'LenAccountNumber'
+    description: ''
+  - name: 'IsToAppendAcctLeadingZero'
+    description: '1 = Append leading zero if account length is less than length in field LenAccountNumber'
+  - name: 'IsPFMApp'
+    description: ''
+  - name: 'PFMMandateId'
+    description: ''
+  - name: 'AdHocRequestQueue'
+    description: ''
+  - name: 'HTTPPostURL'
+    description: ''
+  - name: 'NumAdhocListeners'
+    description: 'Number of adhoc file requests listeners'
+  - name: 'IsToInsertBookingId'
+    description: 'Send TransItem or TransItemDetailId in field 86'
+  - name: 'BatchServerHost'
+    description: ''
+  - name: 'HttpPushCertName'
+    description: ''
+  - name: 'IsOutput'
+    description: '1 = Swift Output (Application Header Block {2:O94... instead of default {2:I94...)'
+  - name: 'MessageStandard'
+    description: 'Link to trCharacter entries for conversion of characters in field 86.'
+    genericControls:
+      refTable: 'TrMessageStandard'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsUseValutaDatAsClosingBalDat'
+    description: 'If this flag is set, then in field 62 the value date of the last booking is used instead of the booking date. Attention: Setting this option might result in WRONG/INVALID Swift messages. This flag has only been added for backward compatibility with previous versions of SwiftMT940 program that always used the value date instead of the booking date.'

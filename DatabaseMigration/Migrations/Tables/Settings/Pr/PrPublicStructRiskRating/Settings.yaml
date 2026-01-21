@@ -1,0 +1,24 @@
+table:
+  name: 'PrPublicStructRiskRating'
+  description: 'SVSP Risk Rating\r\nVDF FAD.VAI.FMG, Domain 7845, wenn 7844 = SVSPRR'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'SVSP Risk Rating'
+    - german:
+        formTitle: 'SVSP Risk Rating'
+  columns:
+  - name: 'SVSPRiskRating'
+    description: 'SVSP Risk Rating, Domain 7845'
+    genericControls:
+      defColumnPos: 1

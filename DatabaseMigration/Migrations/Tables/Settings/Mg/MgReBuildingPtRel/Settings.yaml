@@ -1,0 +1,62 @@
+table:
+  name: 'MgReBuildingPtRel'
+  description: 'table for migration into ReBuildingPtRel'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'BuildingId'
+    description: ''
+  - name: 'BuildingPtRelType'
+    description: ''
+  - name: 'PartnerId'
+    description: ''
+  - name: 'InsuranceTypeNo'
+    description: ''
+  - name: 'PolicyNo'
+    description: ''
+  - name: 'ValuationDate'
+    description: ''
+  - name: 'ValuationYear'
+    description: ''
+  - name: 'ReasonTypeNo'
+    description: ''
+  - name: 'BuildCostIndex'
+    description: ''
+  - name: 'IsIndexed'
+    description: ''
+  - name: 'DeValuationRate'
+    description: ''
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'ValidTo'
+    description: ''
+  - name: 'NotificationDate'
+    description: ''
+  - name: 'Currency'
+    description: ''
+  - name: 'AmountTypeNo'
+    description: ''
+  - name: 'BaseAmount'
+    description: ''
+  - name: 'AddAmount'
+    description: ''
+  - name: 'BuildValue'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SoftProfileUsed'
+    description: ''
+  - name: 'MigrationId'
+    description: ''
+  - name: 'MigrationDate'
+    description: ''
+  - name: 'MigrationStatus'
+    description: ''

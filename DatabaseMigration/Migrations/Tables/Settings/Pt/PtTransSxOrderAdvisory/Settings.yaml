@@ -1,0 +1,26 @@
+table:
+  name: 'PtTransSxOrderAdvisory'
+  description: 'Order advisory classification'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Order advisory type'
+    - german:
+        formTitle: 'Auftrags Beratungsart'
+  columns:
+  - name: 'OrderAdvisoryNo'
+    description: '10= with consultation (mit Beratung)\r\n20= without consultation (ohne Beratung)\r\n40= with consultation but not recommended by the bank (mit Beratung aber nicht Bankempfehlung)\r\n50= mandate (PM1) (Mandat)'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ForFondsBuyWithReasonText'
+    description: 'used for fonds buy order\r\ntrue= a reason why the order was recommend to the customer.'

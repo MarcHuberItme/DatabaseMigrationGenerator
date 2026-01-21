@@ -1,0 +1,77 @@
+table:
+  name: 'CyInterest'
+  description: 'SWAP and LIBOR rates'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'InterestTypeNo;CurrencySymbol;'
+    uiTableDescription:
+    - english:
+        formTitle: 'Interest main table'
+    - german:
+        formTitle: 'Zinssätze haupttabelle'
+  columns:
+  - name: 'InterestTypeNo'
+    description: 'Interest Type (SWAP / LIBOR)'
+    genericControls:
+      refTable: 'CyInterestType'
+      refField: 'InterestTypeNo'
+      visNumber: 1
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'CurrencySymbol'
+    description: 'Interest Currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      visNumber: 2
+      defColumnPos: 2
+      noUpdatePos: 2
+  - name: 'Ric'
+    description: 'now used for Bloomberg (17.03.2016)\r\nReuters Identification Code'
+    genericControls:
+      visNumber: 3
+      defColumnPos: 3
+      noUpdatePos: 3
+  - name: 'PublicId'
+    description: 'Instrument id'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      hasDetailBtn: true
+      visNumber: 4
+      defColumnPos: 4
+      noUpdatePos: 4
+  - name: 'PublicTradingPlaceId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+      visNumber: 5
+      defColumnPos: 5
+      noUpdatePos: 5
+  - name: 'IntervalId'
+    description: 'Day/Week/Month/Year'
+    genericControls:
+      refTable: 'AsInterval'
+      refField: 'Id'
+      hasDetailBtn: true
+      visNumber: 6
+      defColumnPos: 6
+      noUpdatePos: 6
+  - name: 'Interval'
+    description: '1,2,3 Day''s/Week''s ...'
+    genericControls:
+      visNumber: 7
+      defColumnPos: 7
+      noUpdatePos: 7

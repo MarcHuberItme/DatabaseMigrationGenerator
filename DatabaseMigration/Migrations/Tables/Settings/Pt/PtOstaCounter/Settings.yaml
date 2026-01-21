@@ -1,0 +1,39 @@
+table:
+  name: 'PtOstaCounter'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'OSTA Counter'
+    - german:
+        formTitle: 'OSTA Zähler'
+  columns:
+  - name: 'DailyClosureId'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaDailyClosure'
+      refField: 'Id'
+  - name: 'Service'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaServiceType'
+      refField: 'Value'
+  - name: 'ClearingMode'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaClearingMode'
+      refField: 'Value'
+  - name: 'Amount'
+    description: ''
+  - name: 'Currency'
+    description: ''
+  - name: 'TransactionCount'
+    description: ''

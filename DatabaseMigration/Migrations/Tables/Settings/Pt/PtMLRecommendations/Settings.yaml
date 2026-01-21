@@ -1,0 +1,88 @@
+table:
+  name: 'PtMLRecommendations'
+  description: 'This Table is used to store the information about the Partners whose are given exemptions from Monitoring of Money Laundering'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 8
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtProfile'
+      parentRelationField: 'ProfileId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'AML Recommendations'
+    - german:
+        formTitle: 'Transaktionsüberwachung'
+    - french:
+        formTitle: 'Surveillance'
+  columns:
+  - name: 'ProfileId'
+    description: ''
+    genericControls:
+      refTable: 'PtProfile'
+      refField: 'Id'
+      defColumnPos: 1
+      createNavigationIndex: true
+  - name: 'RuleId'
+    description: ''
+    genericControls:
+      refTable: 'PtMLRules'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'RecommendedBy'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'ExemptionStartDate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ExemptionEndDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ExemptionAllRules'
+    description: 'This field is  not being used in Single Transaction Analysis'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ExemptionThreshold'
+    description: 'If a partner ExemptionCounter exceeds this value, the partner is reported'
+    genericControls:
+      defColumnPos: 7
+  - name: 'ExemptionCounter'
+    description: 'This will increment by 1 each time the exemption is given to the particular partner'
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 9
+  - name: 'MgPartnerNo'
+    description: 'not used any more'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'ExemptionAmountLimit'
+    description: '= CheckLimit Table. Amount'
+  - name: 'ExemptionDebitAmount'
+    description: '= CheckLimit Table. DebitAmount'
+  - name: 'ExemptionCreditAmount'
+    description: '= CheckLimit Table. CreditAmount'
+  - name: 'AmountDeviationDown'
+    description: '= CheckLimit Table. AmountDeviationDown'
+  - name: 'AmountDeviationUp'
+    description: '= CheckLimit Table. AmountDeviationUp'
+  - name: 'AlertDivisor'
+    description: '= CheckLimit Table.AlertDivisor'
+  - name: 'ExemptionRule'
+    description: '1 = Exemption of Rule - no analysis for rule will be performed\r\n0 = No exemption of Rule - analysis for rule will be performed'

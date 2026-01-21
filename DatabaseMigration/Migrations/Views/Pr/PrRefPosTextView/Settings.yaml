@@ -1,0 +1,36 @@
+view:
+  name: 'PrRefPosTextView'
+  description: ''
+frontendView:
+  name: 'PrRefPosTextView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'PosDescription'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'PosDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 500
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'

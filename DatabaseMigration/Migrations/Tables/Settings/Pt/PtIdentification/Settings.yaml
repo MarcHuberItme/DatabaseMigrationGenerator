@@ -1,0 +1,105 @@
+table:
+  name: 'PtIdentification'
+  description: 'Identification of partner by first business contact'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 2
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Identification'
+    - german:
+        formTitle: 'Identifikation'
+    - french:
+        formTitle: 'Identification CDB'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key; Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'IdentificationType'
+    description: 'type of identification (exp. driver licence, passport, etc.)'
+    genericControls:
+      refTable: 'PtIdentificationType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ReferenceNo'
+    description: 'Number of the Identification Document like PassportNo, etc.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'DateOfIssue'
+    description: 'date the Identification Document was written out'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Remarks'
+    description: 'special notices'
+    genericControls:
+      multiLine: true
+  - name: 'MgVrxKey'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'UserId'
+    description: 'foreign-key; Id of AsUser'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ConfirmedFlag'
+    description: 'Status that gives the information whether this Identification is manually confirmed throught a third person on purpose\r\nif checked = confirmation is done'
+  - name: 'ReIdentification'
+    description: '0 = no / 1 = yes\r\nif checked, the identification should be done again. For example because of poor quality of the documents or because of expiry.'
+  - name: 'WaitingProcessId'
+    description: 'Id of the Workflow Process that waits for the completion of this identification'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'OpenIssueId'
+    description: 'Id of PtOpenIssue if a open issue was generated for the pending identification\r\n(Introduced for PKI-Workflow 6.5.2003 psk)'
+    genericControls:
+      refTable: 'PtOpenIssue'
+      refField: 'Id'
+  - name: 'ThirdPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CountryOfIssuance'
+    description: 'Land, in dem das Dokument ausgestellt worden ist'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 4
+  - name: 'IssuanceThroughEmbassy'
+    description: 'ausgestellt durch die Botschaft (Ja/Nein)'
+  - name: 'DateOfExpiry'
+    description: 'Expiry date of Id document'
+  - name: 'IssuingAuthority'
+    description: ''
+  - name: 'IdentificationMediaNo'
+    description: ''
+    genericControls:
+      refTable: 'PtIdentificationMedia'
+      refField: 'IdMediaNo'
+  - name: 'AddrCheckStatusNo'
+    description: 'Status, der vom externen Provider zurückgemeldete Adressqualität'
+    genericControls:
+      refTable: 'PtIdentificationAddrCheckStat'
+      refField: 'StatusNo'

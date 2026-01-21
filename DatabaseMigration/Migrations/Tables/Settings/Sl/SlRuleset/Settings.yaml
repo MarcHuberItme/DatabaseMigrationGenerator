@@ -1,0 +1,52 @@
+table:
+  name: 'SlRuleset'
+  description: 'Base Table for the Soft Logic System. Contains information about all the Rulesets.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 4acbe022-2230-43ff-8ee9-38f7f0e7a595
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Name'
+    description: ''
+  - name: 'Version'
+    description: ''
+  - name: 'Status'
+    description: ''
+  - name: 'Author'
+    description: ''
+  - name: 'CreatedOn'
+    description: ''
+  - name: 'ModifiedOn'
+    description: ''
+  - name: 'ModifiedBy'
+    description: ''
+  - name: 'PublicVariableSetName'
+    description: ''
+  - name: 'Description'
+    description: ''
+  - name: 'TotalInvocations'
+    description: ''
+  - name: 'SuccessfulInvocations'
+    description: ''
+  - name: 'Data'
+    description: ''
+  - name: 'IsParsed'
+    description: ''
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'ValidTo'
+    description: ''
+  - name: 'SrcCode'
+    description: ''
+  - name: 'IsOpened'
+    description: ''
+  - name: 'OpenedBy'
+    description: ''
+  - name: 'TSQLTreeProcCode'
+    description: 'This field will store the Transact SQL code of the Ruleset Tree procedure'
+  - name: 'TSQLEntryProcCode'
+    description: 'This field will store the Transact SQL code of the Ruleset Entry procedure'

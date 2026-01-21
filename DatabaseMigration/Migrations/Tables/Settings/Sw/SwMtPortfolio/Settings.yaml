@@ -1,0 +1,41 @@
+table:
+  name: 'SwMtPortfolio'
+  description: 'List of portfolios for electronic portfolio statements in SWIFT format.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'SettingId'
+    description: ''
+    genericControls:
+      refTable: 'SwMtSettings'
+      refField: 'Id'
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'MessageTypeCode'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'DateFrom'
+    description: ''
+  - name: 'DateTo'
+    description: ''
+  - name: 'LastTransDate'
+    description: ''
+  - name: 'SWIFT_ADR'
+    description: 'As receiver Swift address'
+  - name: 'StatementNo'
+    description: ''
+  - name: 'AsDepository'
+    description: 'When Depotstelle, all positions be multiplied with -1'

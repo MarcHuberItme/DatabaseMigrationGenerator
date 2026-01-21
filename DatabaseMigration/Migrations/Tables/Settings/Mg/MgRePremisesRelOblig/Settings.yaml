@@ -1,0 +1,52 @@
+table:
+  name: 'MgRePremisesRelOblig'
+  description: 'table for migration into RePremisesRelOblig'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PremisesId'
+    description: ''
+  - name: 'ObligTypeNo'
+    description: ''
+  - name: 'StipulationDate'
+    description: ''
+  - name: 'Stipulation'
+    description: ''
+  - name: 'Currency'
+    description: ''
+  - name: 'Amount'
+    description: ''
+  - name: 'ForValuation'
+    description: ''
+  - name: 'FreeOfCharge'
+    description: ''
+  - name: 'InterestRate'
+    description: ''
+  - name: 'HasAdditionalPartners'
+    description: ''
+  - name: 'IsNaturalPartner'
+    description: ''
+  - name: 'SupportAmount'
+    description: ''
+  - name: 'InterestAmount'
+    description: ''
+  - name: 'PremisesPtRelId1'
+    description: ''
+  - name: 'PremisesPtRelId2'
+    description: ''
+  - name: 'Remark'
+    description: ''
+  - name: 'AmountPerYear'
+    description: ''
+  - name: 'MigrationId'
+    description: ''
+  - name: 'MigrationDate'
+    description: ''
+  - name: 'MigrationStatus'
+    description: ''

@@ -1,0 +1,33 @@
+table:
+  name: 'PtIsoTransactionCode'
+  description: 'ISO bank transation codes'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ISO bank transation codes'
+        helpText: 'ISO bank transation codes'
+    - german:
+        formTitle: 'ISO bank transation codes'
+        helpText: 'ISO bank transation codes'
+  columns:
+  - name: 'DomainCode'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'FamilyCode'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'SubFamilyCode'
+    description: ''
+    genericControls:
+      defColumnPos: 3

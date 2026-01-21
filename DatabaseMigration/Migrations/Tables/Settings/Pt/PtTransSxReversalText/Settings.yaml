@@ -1,0 +1,37 @@
+table:
+  name: 'PtTransSxReversalText'
+  description: 'Storno text templates to be displayed in a combobox for SCO'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Reversal Text'
+        helpText: 'Reversal Text'
+    - german:
+        formTitle: 'Storno Text'
+        helpText: 'Storno Text'
+  columns:
+  - name: 'GermanText'
+    description: 'Storno text in german'
+    genericControls:
+      defColumnPos: 1
+  - name: 'EnglishText'
+    description: 'Storno text in english'
+    genericControls:
+      defColumnPos: 2
+  - name: 'FrenchText'
+    description: 'Storno text in french'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ItalianText'
+    description: 'Storno text in italian'
+    genericControls:
+      defColumnPos: 4

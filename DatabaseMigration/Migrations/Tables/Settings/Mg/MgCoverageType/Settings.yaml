@@ -1,0 +1,28 @@
+table:
+  name: 'MgCoverageType'
+  description: 'VRX Coverage Type'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'CoverageNo'
+    description: ''
+    genericControls:
+      refTable: 'MgCoverage'
+      refField: 'CoverageNo'
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'MigValue'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      defColumnPos: 2
+      noUpdatePos: 2

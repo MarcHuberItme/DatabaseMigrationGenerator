@@ -1,0 +1,35 @@
+table:
+  name: 'WfTaskboxStrings'
+  description: 'Contains the multilingual strings for taskbox.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Taskbox Strings'
+    - german:
+        formTitle: 'Taskbox Texte'
+  columns:
+  - name: 'LanguageNo'
+    description: 'Number of the lanugage the string written in.'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'StringNo'
+    description: 'Number of the string'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'StringText'
+    description: 'Multilingual Text'
+    genericControls:
+      multiLine: true
+      defColumnPos: 3

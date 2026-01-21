@@ -1,0 +1,191 @@
+table:
+  name: 'PtBillPresentation'
+  description: 'Temporarly storage of bills collected from EBPP consolidator'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Bill presentation list'
+    - german:
+        formTitle: 'Rechnungsliste'
+  columns:
+  - name: 'EBankingId'
+    description: 'Reference to the E-Banking Agreement'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      hasDetailBtn: true
+      noUpdatePos: 1
+  - name: 'ConsolidatorNo'
+    description: 'Identification of the consolidator\r\n- Paynet\r\n- Yellowbill\r\n- LSV+ (LS) = 3'
+    minValue: '1'
+    maxValue: '3'
+    genericControls:
+      refTable: 'PtBillConsolidator'
+      refField: 'ConsolidatorNo'
+      defColumnPos: 8
+      noUpdatePos: 1
+  - name: 'ConsolidatorTransRef'
+    description: 'YellowBill: 4.2.1     <eBillId>\r\nPaynet:    15.2.2.    <BPIDBTRef>'
+  - name: 'BillerPID'
+    description: 'Identification of the biller within the system'
+  - name: 'BillerName'
+    description: ''
+  - name: 'BillerAddress'
+    description: 'YellowBill: 4.2.1        <BillerRef>\r\nPaynet:    15.2.2.2    <BillAddress>'
+  - name: 'BillerReference'
+    description: 'YellowBill: 2.3.6.2.1\r\nPaynet:    15.2.2.1    <BillerRef>  e.g. invoice number'
+    genericControls:
+      noUpdatePos: 3
+  - name: 'BillerBankType'
+    description: 'PC = Postfinance    BC =   ClearingNo\r\nBIC = Swift                 BLZ = Bankleitzahl\r\n'
+  - name: 'BillerBankNo'
+    description: 'Depending on BillerBankType (ClearingNo, BIC-Numer etc.)'
+  - name: 'BillerAccountNo'
+    description: 'Biller''s accountNo of its finance institut (kann IBAN Nummer sein)'
+  - name: 'BillerEsrReference'
+    description: 'Yellobill: 4.2.1 <ESRReferenznummer>\r\nPaynet: 15.2.2.1 <TrxRef>'
+  - name: 'BillerTrxRefType'
+    description: ''
+  - name: 'BillerURL'
+    description: 'URL for access the bill from the biller'
+  - name: 'BillType'
+    description: ''
+  - name: 'BillId'
+    description: 'Bill-ID from the consolidator'
+  - name: 'BillDate'
+    description: ''
+  - name: 'BillCurrency'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'BillAmount'
+    description: ''
+    genericControls:
+      noUpdatePos: 4
+  - name: 'BillAmountType'
+    description: ''
+  - name: 'BillAuthToken'
+    description: 'Authentication token for accessing the bill'
+  - name: 'BillAccessEndDate'
+    description: 'End date for access to the bill'
+  - name: 'BillB2BWebVerifyState'
+    description: 'B2B-Web: Zeigt an ob Rechnung Mehrwertsteuer-Konform. In HBL-Ebill noch nicht implementiert.\r\n- None\r\n- OK\r\n- Fehlercode'
+  - name: 'BillCharges'
+    description: ''
+  - name: 'BillChargesToBePaid'
+    description: 'OUR,BEN,SHA'
+  - name: 'BillDisputeCode'
+    description: ''
+  - name: 'BillDisputeText'
+    description: ''
+  - name: 'BillDueDate'
+    description: ''
+  - name: 'BillNewInvoiceFlag'
+    description: 'PayNet: Neue Rechnungen sind markiert, ähnlich einer ungelesenen Email'
+  - name: 'BillPFMDeliveryFlag'
+    description: 'PayNet: Zeigt an ob Rechnung ev. schon von einem Offline-Client zur bearbeitung heruntergeladen wurde (in diesem Fall wäre die Rechnung nicht bearbeitbar)'
+  - name: 'BillReadOnly'
+    description: ''
+  - name: 'BillStatus'
+    description: '0 = Offen\r\n11 = Erledigt/Freigegeben\r\n12 = Abgelehnt\r\n13 = Zahlung ausgelöst\r\n14 = Bezahlt\r\n15 = Read Only (Storniert, Avisierung, Settled)\r\n1 = Input Error\r\nab cxx v2, PayNet:\r\n2 = Fehlerhaft (Im Zusammenhang mit B2BWebVerifyState)\r\n3 = Ausgeliefert (Im Zusammenhang mit BillPFMDeliveryFlag)'
+  - name: 'BillNo'
+    description: ''
+  - name: 'BillLocalRefNo'
+    description: 'NOT IN USE ANYMORE'
+  - name: 'CustomerPid'
+    description: 'Identication of the customer:\r\nPayNet = PID (Participant Identification)\r\nYellowbill = eBillAccount'
+    genericControls:
+      refTable: 'PtBillCustomerPID'
+      refField: 'CustomerPID'
+      noUpdatePos: 2
+  - name: 'CustomerAddress'
+    description: ''
+  - name: 'CustomerAccountId'
+    description: 'falls die account no nicht gefüllt werden könnte'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'CustomerAccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CustomerAccountNoOriginal'
+    description: ''
+  - name: 'CustomerAccountNoText'
+    description: 'CutomerAccountNo received as external input.It may contain non-numeric charaters. These non-numeric characters are removed and then actual no is saved in field ''CustomerAccountNo'''
+  - name: 'CustomerPaymentDate'
+    description: 'This field contains the date when the peyment has been made.'
+  - name: 'CustomerPaymentPermission'
+    description: 'If True then the invoice should be paid as soon as the CustomerDueDate is reached.'
+  - name: 'CustomerDueDate'
+    description: 'This field contains the date when the invoice has to be paid.\r\nDefault is BillDueDate.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CustomerAccountNoIBAN'
+    description: ''
+  - name: 'DelDate'
+    description: 'zu diesem Zeitpunkt wurde der Record gelöscht, wenn durch den Kunden selbst über E-Banking (->DelEBankingId enthält Vertrags-Id)'
+  - name: 'DelEBankingId'
+    description: 'durch diesen E-Banking-User wurde der Record gelöscht'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DelRemark'
+    description: 'Bemerkung, warum der Eintrag gelöscht wurde. Wenn der Eintrag durch einen Mitarbeiter gelöscht wurde, soll im E-Banking der Test nicht mutiert werden können. Nur angezeigt.'
+    genericControls:
+      multiLine: true
+  - name: 'InvoiceType'
+    description: ''
+  - name: 'IPIPaymentDetail'
+    description: ''
+  - name: 'LSVId'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'MessageTypeIn'
+    description: 'MessageTypeCode for example SIC D10'
+  - name: 'NotificationToDebtor'
+    description: 'SIC Field 52A'
+    genericControls:
+      multiLine: true
+  - name: 'ParticipantESRNo'
+    description: 'SIC Field 45D - Participant VESR Number'
+  - name: 'PresentmentState'
+    description: 'Yellowbill :\r\nOffen\r\nErledigt\r\nAbgelehnt\r\n\r\nPaynet:\r\nausgeliefert\r\nfreigegeben\r\nausgelöst\r\nbezahlt\r\nerledigt\r\nstorniert\r\nabgelehnt\r\nAvisierung\r\nMahnung\r\noffen\r\nfällig'
+  - name: 'PriorityCode'
+    description: 'Priority Code in incoming SIC D10 Message'
+  - name: 'ProcessId'
+    description: ''
+  - name: 'ProcessStatus'
+    description: 'Status-Field for Batch-Process FsBillPresentation. As soon as a bill was processed, this field is set:\r\nFsBillPresentationUnprocessed = 0\r\nFsBillPresentationProcessed = 1\r\nFsBillPresentationNotTobeProcessed = 98, Relevant to OWN LSV\r\nFsBillPresentationError = 99'
+    genericControls:
+      refTable: 'PtBillPresentationStatus'
+      refField: 'StatusNo'
+      defColumnPos: 4
+  - name: 'RejectCode'
+    description: 'This field contains the reject reason code for the bad payment.  This is not necessary that payment order is not generated for the record with a reject reason code. For example in case LSV+ Bonitat problem, the reject reason will be set for further review only but the process status will not have any impact'
+    genericControls:
+      refTable: 'PtPaymentRejectReason'
+      refField: 'RejectCode'
+      defColumnPos: 3
+  - name: 'RelatedInvoiceBPIDBTRef'
+    description: ''
+  - name: 'ServiceApplication'
+    description: ''
+  - name: 'TransMessageInId'
+    description: 'Id of the incoming D10 Message (LSV+)'
+    genericControls:
+      refTable: 'PtTransMessageIn'
+      refField: 'Id'
+  - name: 'IsOwnLSV'
+    description: 'Flag to show if the payment is bank''s own LSV (bill) payment'
+  - name: 'BillerReferenceFlag'
+    description: 'LSV+ 875 Record\r\nA: ESR Reference Number\r\nB: IPI details of payment'

@@ -1,0 +1,81 @@
+view:
+  name: 'PtAccountCompSecurityView'
+  description: ''
+frontendView:
+  name: 'PtAccountCompSecurityView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Underlying Securities'
+        helpText: 'Underlying Securities'
+    - german:
+        formTitle: 'Zugeordnete Sicherheiten'
+        helpText: 'Zugeordnete Sicherheiten'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'HdStatusFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'AccountCompId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'AgrSecurityId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAgrSecurityView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 2
+  - name: 'PartnerName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 3
+  - name: 'AgrTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsSecurityAgrType'
+      refField: 'AgrTypeNo'
+      defColumnPos: 4
+  - name: 'ReferenceNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 5

@@ -1,0 +1,54 @@
+view:
+  name: 'RePfBCheckOverview'
+  description: 'Overview for Pfandbriefbank E-Banking - show all loans in comparison with valueamounts (> 103 %)'
+frontendView:
+  name: 'RePfBCheckOverview'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: '% Rate Total'
+    - german:
+        formTitle: '% Deckungsgrad'
+  columns:
+  - name: 'GroupNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 1
+  - name: 'BCNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      defColumnPos: 2
+  - name: 'AllocationSum'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValueAmountSum'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 4
+  - name: 'Bank'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+    genericControls:
+      defColumnPos: 5
+  - name: 'Result'
+    description: ''
+    dataType: 'float'
+    genericControls:
+      defColumnPos: 6

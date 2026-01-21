@@ -1,0 +1,101 @@
+table:
+  name: 'PtOwnBondCfFrontdesk'
+  description: 'table for front desk cash flow processing'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Kassenobli Cashflow Kasse'
+    - german:
+        formTitle: 'Frontdesk Cf of own bonds'
+  columns:
+  - name: 'PartnerId'
+    description: 'customer portfolio id where the issued bond will be placed'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountRefId'
+    description: 'account to be debited or credited... a customer account or the cash desk account'
+    genericControls:
+      refTable: 'PrReference'
+      refField: 'Id'
+  - name: 'CreditMode'
+    description: '0 = cash\r\n1 = customer account\r\n2 = intermediate account'
+    minValue: '0'
+    maxValue: '2'
+  - name: 'IsPhysicalBond'
+    description: '1 = it''s a physical bond 0 = it''s an electronic bond (buchforderung)'
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'BoolVal'
+  - name: 'ValueDate'
+    description: 'Valutadatum'
+  - name: 'ServiceCenterNo'
+    description: 'Geschäftsstelle'
+    genericControls:
+      refTable: 'AsProfitCenter'
+      refField: 'ProfitCenterNo'
+  - name: 'CashDeskAccountNo'
+    description: 'Kassenkonto'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+  - name: 'TransactionId'
+    description: 'Bookin information about this emission'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'LanguageNo'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'InterestAmount'
+    description: 'required in case of interest payment\r\n'
+  - name: 'WhTax'
+    description: 'required in case of interest payment\r\n'
+  - name: 'TaxRateDebit'
+    description: 'required in case of interest payment\r\n'
+  - name: 'TaxRateDa'
+    description: 'required in case of interest payment\r\n'
+  - name: 'TaxRateReclaim'
+    description: 'required in case of interest payment\r\n'
+  - name: 'IncomeTypeNo'
+    description: 'required in case of interest payment\r\n'
+    genericControls:
+      refTable: 'EvIncomeType'
+      refField: 'IncomeTypeNo'
+  - name: 'TaxReportClass'
+    description: 'required in case of interest payment\r\n'
+    genericControls:
+      refTable: 'EvTaxReportClass'
+      refField: 'TaxReportClass'
+  - name: 'TaxCountry'
+    description: 'required in case of interest payment\r\n'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'NetAmount'
+    description: ''
+  - name: 'InterestCalcStartDate'
+    description: ''
+  - name: 'InterestPracticeType'
+    description: ''
+    genericControls:
+      refTable: 'AsInterestPractice'
+      refField: 'PracticeType'
+  - name: 'InterestDays'
+    description: ''
+  - name: 'TextIntermediate'
+    description: ''
+  - name: 'PortfolioId'
+    description: 'will be filled only in case of anticipated payback on a non physical bond'

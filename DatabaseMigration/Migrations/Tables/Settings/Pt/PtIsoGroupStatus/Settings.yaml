@@ -1,0 +1,30 @@
+table:
+  name: 'PtIsoGroupStatus'
+  description: 'Group status used in pain.002 files'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtIsoGroupStatus'
+        helpText: 'PtIsoGroupStatus'
+    - german:
+        formTitle: 'PtIsoGroupStatus'
+        helpText: 'PtIsoGroupStatus'
+    - french:
+        formTitle: 'PtIsoGroupStatus'
+        helpText: 'PtIsoGroupStatus'
+    - italian:
+        formTitle: 'PtIsoGroupStatus'
+        helpText: 'PtIsoGroupStatus'
+  columns:
+  - name: 'Status'
+    description: 'ISO Group status used in pain.002'

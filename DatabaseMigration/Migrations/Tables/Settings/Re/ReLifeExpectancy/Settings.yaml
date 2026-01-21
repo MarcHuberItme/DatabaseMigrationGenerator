@@ -1,0 +1,35 @@
+table:
+  name: 'ReLifeExpectancy'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Life Expectancy'
+    - german:
+        formTitle: 'Lebenserwartung'
+  columns:
+  - name: 'LifeExpectancyType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'SortNo'
+    description: ''
+  - name: 'Age'
+    description: 'Alter in Jahren'
+    genericControls:
+      defColumnPos: 2
+  - name: 'FactorWoman'
+    description: 'Faktor der Mortalität der Frau'
+    genericControls:
+      defColumnPos: 3
+  - name: 'FactorMan'
+    description: 'Faktor der Mortalität des Mannes'
+    genericControls:
+      defColumnPos: 4

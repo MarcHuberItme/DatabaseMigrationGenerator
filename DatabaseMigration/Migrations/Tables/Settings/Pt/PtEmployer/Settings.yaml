@@ -1,0 +1,59 @@
+table:
+  name: 'PtEmployer'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'employer'
+    - german:
+        formTitle: 'Arbeitgeber'
+  columns:
+  - name: 'ProfileId'
+    description: ''
+    genericControls:
+      refTable: 'PtProfile'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'DateFrom'
+    description: 'angestellt seit'
+    genericControls:
+      defColumnPos: 1
+  - name: 'DateTo'
+    description: 'angestellt bis Datum'
+    genericControls:
+      defColumnPos: 4
+  - name: 'EmployerAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 3
+  - name: 'EmployerPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'RankDesc'
+    description: 'Rang (in Textform), weil jede Firma andere Rangbezeichnungen kennt.'
+  - name: 'RankDate'
+    description: 'Rang seit Datum'
+  - name: 'LabourPercentage'
+    description: 'Arbeitszeit Pensum'
+    genericControls:
+      defColumnPos: 5
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'OutlookFlag'
+    description: '0 = intakt\r\n1 = unsicher'
+  - name: 'PlannedReduction'
+    description: '0 = nein\r\n1 = Reduktion Berufstägigkeit ist geplant'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'MatchAndGetAcctPaymentInfo'
+  description: 'Matches account based in input account number or IBAN number'

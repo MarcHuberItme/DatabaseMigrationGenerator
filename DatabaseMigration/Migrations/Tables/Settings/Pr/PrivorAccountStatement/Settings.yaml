@@ -1,0 +1,30 @@
+table:
+  name: 'PrivorAccountStatement'
+  description: 'Privor Account Statement'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'PrivorDocumentId'
+    description: ''
+    genericControls:
+      refTable: 'PrivorDocument'
+      refField: 'Id'
+  - name: 'ValueDate'
+    description: 'Value Date'
+  - name: 'BookingText'
+    description: 'Booking Text'
+  - name: 'Debit'
+    description: 'Debit'
+  - name: 'Credit'
+    description: 'Credit'
+  - name: 'Balance'
+    description: 'Balance'

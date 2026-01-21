@@ -1,0 +1,47 @@
+table:
+  name: 'PtCardRohling'
+  description: 'Table contains the information for the physical templates (molds) for the production of cards and the link to the current producer.'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Templates for Cards'
+    - german:
+        formTitle: 'Rohling-Typen'
+    - french:
+        formTitle: 'Types vierges'
+  columns:
+  - name: 'TemplateNo'
+    description: 'Bank specific code, designates a template to be used for the production od a card.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'RohlingCode'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'TKChipCode'
+    description: 'Code which is used by the Telekus to charactize the chip on the card'
+  - name: 'ChipApplication'
+    description: ''
+  - name: 'ChipName'
+    description: ''
+  - name: 'AddressId'
+    description: ''
+    genericControls:
+      refTable: 'PtAddress'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ProducerCode'
+    description: 'gemäss SIX'
+    genericControls:
+      refTable: 'PtCardProducer'
+      refField: 'ProducerCode'
+      defColumnPos: 3

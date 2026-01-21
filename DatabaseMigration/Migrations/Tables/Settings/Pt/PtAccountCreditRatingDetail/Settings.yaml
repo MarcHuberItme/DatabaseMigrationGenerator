@@ -1,0 +1,44 @@
+table:
+  name: 'PtAccountCreditRatingDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountCreditRating'
+      parentRelationField: 'CreditRatingId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Credit Rating Detail'
+    - german:
+        formTitle: 'Kreditrating Detail'
+  columns:
+  - name: 'CreditRatingId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountCreditRating'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'CreditRatingTypeNo'
+    description: 'z.B. beansprucht / bewilligt'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CollateralGroupTypeNo'
+    description: 'Deckungskategorie - Blanko, unkurant, kurant ....'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Amount'
+    description: 'Kreditvolumen per Deckungskategorie-Gruppe'
+    genericControls:
+      defColumnPos: 3

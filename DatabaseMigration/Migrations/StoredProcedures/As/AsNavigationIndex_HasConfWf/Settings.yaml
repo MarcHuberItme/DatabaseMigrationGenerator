@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AsNavigationIndex_HasConfWf'
+  description: 'Checks if a status in the NavigationIndex exits that indicates ta running workflow'

@@ -1,0 +1,45 @@
+table:
+  name: 'MsGoiOutMsg'
+  description: 'Messages from generic order interface (GOI) for clients (such as AssetMax, 3rd banks, E-Banking)\r\nWith reference to table MsGoiOutTraderMsg, the name MsGoiOutClientMsg would make more sense, but we keep it as it is (MsGoiOutMsg).'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdMessageStore'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 6
+    groupId: 47a738e9-4dcb-41bc-8fcc-bb1699c6b097
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'MessageType'
+    description: 'Type of the message (Order, Trade, Charge, Modification) ==> Order Data Class (the format of the order data). Can also be a "sub-type" e.g. TradeAllocation'
+  - name: 'MessageTypeVersion'
+    description: 'Version of the OutType structure ==> Order Data Class (the format of the order data)'
+  - name: 'App'
+    description: 'App (e.g. AssetMax, EBanking, PM1, GLOX, BSZ)'
+    genericControls:
+      refTable: 'PtTransSxGoiApp'
+      refField: 'App'
+  - name: 'Channel'
+    description: 'Channel (e.g. FIX, SOAP, Frontend...)'
+    genericControls:
+      refTable: 'PtTransSxGoiChannel'
+      refField: 'Channel'
+  - name: 'OrderKeyPartner'
+    description: ''
+  - name: 'OrderKeyTrader'
+    description: ''
+  - name: 'ExtOrderCreator'
+    description: 'Optional field where the OrderCreator from the external system can be defined.\r\nWill be saved in PtTradingOrderMessage.ExtOrderCreator'
+  - name: 'ExtOrderMandator'
+    description: 'Optional field where the OrderMandator from the source system will be defined.\r\nWill be saved in PtTradingOrderMessage.ExtOrderMandant\r\nThis field is like an additional key field to BankInternalReferencePartner to be able to address the correct consumer for the Out-Data.\r\nFor orders from FIX (AssetMax) it contains: SessionId ???'
+  - name: 'OrderStatus'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxGoiOrderStatus'
+      refField: 'OrderStatus'
+  - name: 'MessageData'
+    description: 'Data based on the record described in MessageSourceId'
+  - name: 'MessageSourceId'
+    description: 'Id of the record where the MessageData was basically built from.\r\nMessageType ''Order'' -> PtTradingOrder\r\nMessageType ''Trade'' -> PtTransTrade\r\nMessageType ''TradeAllocation'' -> PtTradingOrder\r\nMessageType ''Charge'' -> PtTransMessageCharge\r\nMessageType ''Modification'' -> PtTradingOrderMod/PtTradingOrderMessageMod\r\n\r\n'

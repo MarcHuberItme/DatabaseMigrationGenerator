@@ -1,0 +1,44 @@
+table:
+  name: 'PrPrivatePayRule'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Private Pay Rule'
+    - german:
+        formTitle: 'Zahlungsregel'
+  columns:
+  - name: 'PayRuleNo'
+    description: '0 = Börsentransaktionen nicht erlaubt\r\n1 = Börsentransaktionen erlaubt'
+    genericControls:
+      defColumnPos: 1
+  - name: 'AllowsCashPayment'
+    description: 'Indicates if  cash payments are allowed:\r\n0 = cash payment are not allowed \r\n1 = cash payment are allowed'
+  - name: 'AllowsPayments'
+    description: 'Indicates if  payments are allowed:\r\n0 = payment are not allowed \r\n1 = payment are allowed'
+  - name: 'AllowsDirectDebit'
+    description: 'Indicates if direct debit is allowed:\r\n0 = direct debit is not allowed \r\n1 = direct debit is allowed'
+  - name: 'NeedsVisa'
+    description: '0 = visa is not necessary\r\n1 = visa is necessary'
+  - name: 'IsBooklet'
+    description: '0 = booklets can not be used\r\n1 = booklets can be used (payment out are forbidden without booklet, in case of payment in a warnig is shown)'
+  - name: 'NeedsBooklet'
+    description: '1 = transaction without booklet is not allowed\r\n0 = transaction without booklet creates only a warning'
+  - name: 'AllowsStockEx'
+    description: ''
+  - name: 'AllowsInstrPayment'
+    description: 'Allows instrument payments like coupon payment and repayment'
+  - name: 'AllowForexContract'
+    description: '1= Allow forex contract payments\r\n0 = Do not allow forex contract payments'
+  - name: 'AllowMoneyMarket'
+    description: 'Allow booking of money market payment orders'

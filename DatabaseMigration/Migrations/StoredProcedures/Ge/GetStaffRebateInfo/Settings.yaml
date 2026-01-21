@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetStaffRebateInfo'
+  description: 'Returns if user can have staff rebate'

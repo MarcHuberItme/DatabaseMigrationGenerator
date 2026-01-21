@@ -1,0 +1,54 @@
+table:
+  name: 'MgH18'
+  description: 'Vrx Amortisationen aus Fileexport'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Vrx Payback'
+    - german:
+        formTitle: 'Vrx Amortisation'
+  columns:
+  - name: 'KundenNr'
+    description: ''
+  - name: 'KontoNr'
+    description: ''
+  - name: 'SubKontoNr'
+    description: ''
+  - name: 'PostenNr'
+    description: ''
+  - name: 'AmortRate'
+    description: 'gemäss Vrx definitionen kann in diesem Feld entweder ein Betrag oder ein Prozentanteil sein.'
+  - name: 'AmortTermin'
+    description: ''
+  - name: 'AmortBetrag'
+    description: 'noch zu tilgender Betrag'
+  - name: 'AmortPeriode'
+    description: ''
+  - name: 'AmortDeck'
+    description: ''
+  - name: 'AmortArt'
+    description: ''
+  - name: 'AmortSaldo'
+    description: 'offene / vorausbezahlte Tilgungen'
+  - name: 'LAmortBetrag'
+    description: ''
+  - name: 'LAmortDatum'
+    description: ''
+  - name: 'LMahnDatum'
+    description: ''
+  - name: 'MigrationStatus'
+    description: 'Status für die Migrationsverarbeitung\r\n\r\n00 = Daten werden geladen\r\n01 = Bereit für Verarbeitung\r\n02 = Record erfolgreich migriert\r\n03 = Konto nicht gefunden\r\n04 = Konto saldiert\r\n99 = Verarbeitung fehlerhaft'
+  - name: 'ErrorDescription'
+    description: ''
+  - name: 'AccountPaybackId'
+    description: 'Id of the generated PtAccountPayback detail'
+    genericControls:
+      refTable: 'PtAccountPayback'
+      refField: 'Id'

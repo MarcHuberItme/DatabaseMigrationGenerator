@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'HasFiduciaryCPOpenInvoice'
+  description: 'Checks if money market fiduciary counter party has open closing invoice with specified value date'

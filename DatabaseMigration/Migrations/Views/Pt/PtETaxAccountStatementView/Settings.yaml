@@ -1,0 +1,127 @@
+view:
+  name: 'PtETaxAccountStatementView'
+  description: ''
+frontendView:
+  name: 'PtETaxAccountStatementView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtETaxAccountStatementVie'
+        helpText: 'PtETaxAccountStatementView'
+    - german:
+        formTitle: 'PtETaxAccountStatementVie'
+        helpText: 'PtETaxAccountStatementView'
+    - french:
+        formTitle: 'PtETaxAccountStatementVie'
+        helpText: 'PtETaxAccountStatementView'
+    - italian:
+        formTitle: 'PtETaxAccountStatementVie'
+        helpText: 'PtETaxAccountStatementView'
+  columns:
+  - name: 'TaxReportJobNo'
+    description: ''
+    dataType: 'int'
+  - name: 'TaxReportDataId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'PositionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'Iban'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 31
+  - name: 'BankAccountNumber'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'BankAccountName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'BankAccountCountry'
+    description: ''
+    dataType: 'char'
+    prec: 2
+  - name: 'BankAccountCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'OpeningDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ClosingDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'TotalTaxValue'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'TotalGrossRevenueA'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'TotalGrossRevenueB'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'TotalWithHoldingTaxClaim'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ReferenceDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'BalanceCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'Balance'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ExchangeRate'
+    description: ''
+    dataType: 'float'
+  - name: 'Value'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'HelpTotalTaxValue'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'HelpTaxPosId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'HelpAsDebt'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'HelpAsAcct'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true

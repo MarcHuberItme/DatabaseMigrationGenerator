@@ -1,0 +1,43 @@
+table:
+  name: 'ReBuildingQuality'
+  description: 'Bauqualität / IAZI\r\nAusbaustandard aus FIS-2000'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Developing Quality'
+    - german:
+        formTitle: 'Bauqualität, -standard'
+  columns:
+  - name: 'Quality'
+    description: 'Bauqualität / Ausbaustandard \r\n\r\nFIS-2000:GR_GBDE. GR_AUSBSTD_ART_CD'
+    genericControls:
+      defColumnPos: 1
+  - name: 'IaziValue'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PfandRegValue'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'BuildClassLivNo'
+    description: ''
+    genericControls:
+      refTable: 'ReBuildClassLiv'
+      refField: 'BuildClassNo'
+      hasDetailBtn: true
+  - name: 'SortNo'
+    description: ''
+  - name: 'IAZIStartValue'
+    description: 'IAZi start Value to define the range for this quality type.'
+  - name: 'IAZIEndVAlue'
+    description: 'IAZi End Value to define the range for this quality type.'

@@ -1,0 +1,61 @@
+table:
+  name: 'EvDetailTaxRate'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'EvBase'
+      parentTable: 'EvDetailTax'
+      parentRelationField: 'EventDetailTaxId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+  columns:
+  - name: 'EventDetailTaxId'
+    description: ''
+    genericControls:
+      refTable: 'EvDetailTax'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'TaxCountry'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 1
+  - name: 'TaxTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxType'
+      refField: 'TaxTypeNo'
+      defColumnPos: 2
+  - name: 'SpecialTaxText'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'ChargeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'ChargeNo'
+      defColumnPos: 3
+  - name: 'TaxRateDebit'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'TaxRateDa'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'TaxRateReclaim'
+    description: ''
+    genericControls:
+      defColumnPos: 6

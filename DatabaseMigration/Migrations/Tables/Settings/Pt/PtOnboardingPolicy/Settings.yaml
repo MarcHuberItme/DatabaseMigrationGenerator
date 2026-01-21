@@ -1,0 +1,79 @@
+table:
+  name: 'PtOnboardingPolicy'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'DigitalOnboarding UseCase'
+        helpText: 'Digital Onboarding UseCase'
+    - german:
+        formTitle: 'Anwendungsfall digitales'
+    - french:
+        formTitle: 'Cas d’usage'
+  columns:
+  - name: 'PolicyTypeId'
+    description: ''
+    genericControls:
+      refTable: 'PtOnboardingPolicyType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'BaasPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBaaSPartner'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'MotiveToOpenNo'
+    description: ''
+    genericControls:
+      refTable: 'AsMotiveOpenType'
+      refField: 'MotiveOpenTypeNo'
+  - name: 'SegmentNo'
+    description: ''
+    genericControls:
+      refTable: 'PtSegment'
+      refField: 'SegmentNo'
+  - name: 'RelationTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtRelationType'
+      refField: 'RelationTypeNo'
+  - name: 'RelationRoleNo'
+    description: ''
+    genericControls:
+      refTable: 'PtRelationRole'
+      refField: 'RelationRoleNo'
+  - name: 'LegalRepStatus'
+    description: ''
+    genericControls:
+      refTable: 'PtLegalRepStatus'
+      refField: 'RepStatusNo'
+  - name: 'NogaCode2008'
+    description: ''
+    genericControls:
+      refTable: 'PtNoga2008'
+      refField: 'NogaCode'
+  - name: 'ServiceLevelNo'
+    description: ''
+    genericControls:
+      refTable: 'PtServiceLevel'
+      refField: 'ServiceLevelNo'
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'ValidTo'
+    description: ''

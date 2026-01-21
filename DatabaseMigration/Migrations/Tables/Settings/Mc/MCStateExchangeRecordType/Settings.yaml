@@ -1,0 +1,23 @@
+table:
+  name: 'MCStateExchangeRecordType'
+  description: 'Record type for MasterCard Current State Exchange report'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'CSE Record Type'
+        helpText: 'CSE Record Type'
+    - german:
+        formTitle: 'CSE Record Type'
+        helpText: 'CSE Record Type'
+  columns:
+  - name: 'RecordType'
+    description: 'FH - File Header\r\nFT - File Footer\r\nCL - Client\r\nAC - Account Contract\r\nCR - Card\r\nCS - Card Status\r\nAD - Address\r\nLM - Limit'

@@ -1,0 +1,21 @@
+table:
+  name: 'AsProfileSystem'
+  description: 'Stores the system profiles needed by the Form-Shaper ocx to control the look of a form.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Profile System'
+    - german:
+        formTitle: 'System Profil'
+  columns:
+  - name: 'FormName'
+    description: 'Name of the form the profile is used for.'
+  - name: 'SystemProfile'
+    description: 'Name of the system profile'

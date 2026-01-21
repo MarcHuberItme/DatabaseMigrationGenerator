@@ -1,0 +1,18 @@
+table:
+  name: 'PtPositionAllocationType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'TextKey'
+    description: ''
+    genericControls:
+      defColumnPos: 1

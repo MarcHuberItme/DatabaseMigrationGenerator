@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxCreateTaxReportCashMovement'
+  description: 'insert account-positions from AxTaxReportEndOfYearBalance into AxTaxReportTransaction'

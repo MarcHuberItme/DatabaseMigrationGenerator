@@ -1,0 +1,24 @@
+table:
+  name: 'PrPublicPeculiarity'
+  description: 'Peculiarity of PrPublicCurrentTax\r\nSection 871(m) relevant products are subdivided into simple- and complex contracts which will be indicated with this attribute.\r\nVDF: FSD.FSE.7906\r\n1= Simple contract\r\n2= Complex contract'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax Particularity'
+    - german:
+        formTitle: 'Steuertyp'
+  columns:
+  - name: 'Peculiarity'
+    description: 'VDF Doamin 7906'
+    genericControls:
+      defColumnPos: 1

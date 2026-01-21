@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PMSGetExternalPortfolioCashFlow'
+  description: 'This SP does determine the external cashflow from or to a portfolio within given period  (reference: portfolio currency).\r\n'

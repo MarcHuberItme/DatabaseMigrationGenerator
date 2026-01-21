@@ -1,0 +1,81 @@
+table:
+  name: 'PtMLCheckAccessByDBObjectConf'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Check Acc by DB Obj Co'
+    - german:
+        formTitle: 'GwG Check Acc by DB Obj C'
+    - french:
+        formTitle: 'ML Check Acc by DB Obj Co'
+  columns:
+  - name: 'DataFieldOrig'
+    description: 'Orginal Feldname in Checktabelle aus Selektion'
+  - name: 'DataField'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'CanBeCorrected'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsVisible'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'FollowUpProcessNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMlFollowUpProcesses'
+      refField: 'ProcessNo'
+      defColumnPos: 3
+  - name: 'NeedsDocument'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'NeedsVerification'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'IsMandatory'
+    description: 'Field is mandatory'
+    genericControls:
+      defColumnPos: 7
+  - name: 'TemplateNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckTemplates'
+      refField: 'TemplateNo'
+      defColumnPos: 8
+  - name: 'TooltipNoExternal'
+    description: 'Tooltip gegenüber dem Kunden'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckToolTips'
+      refField: 'ToolTipNo'
+  - name: 'TooltipNoInternal'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckToolTips'
+      refField: 'ToolTipNo'
+  - name: 'CntlPrefix'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'TableName'
+    description: 'Herkunftstabelle'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'OriginalFieldName'
+    description: 'Orginal Feldname gemäss TableName'
+  - name: 'Label'
+    description: 'Bezeichnung für Feldname, nicht technisch'

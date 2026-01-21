@@ -1,0 +1,665 @@
+view:
+  name: 'PtTradingOrderMessageView'
+  description: 'Always also change PtTransMessageView\r\n\r\n29.03.2018 / wwo: new field IsOtcDerivat\r\n20.08.2018 / wwo: new field OrderAdvisoryNo\r\n21.08.2019 / wwo: new field RateAcCuPfCu\r\n18.07.2023 / wwo: OrderQuantity from pooled order\r\n30.04.2025 / wwo: new field OrderNAVAmount (FIN-11902)\r\n02.05.2025 / wwo: HdProcessId vom PtTradingOrder (FIN-13270)\r\n22.05.2025 / wwo: undo change from 02.05.2025\r\n13.11.2025 / daga: new field RejectReason'
+frontendView:
+  name: 'PtTradingOrderMessageView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'BankShortNamePartner'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 3
+    genericControls:
+      defColumnPos: 35
+  - name: 'BankInternalReference'
+    description: 'field from pttransmessage'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'BankInternalReferencePartner'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 36
+  - name: 'IsStockExOrder'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: ' 0'
+    genericControls:
+      defColumnPos: 9
+  - name: 'TradingSystemId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTradingSystem'
+      refField: 'Id'
+      defColumnPos: 14
+  - name: 'AutoOrderRouting'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 23
+  - name: 'StockExRef'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+  - name: 'OrderStatusNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransSxOrderStatus'
+      refField: 'OrderStatusNo'
+      defColumnPos: 38
+  - name: 'IsPartnerToTrader'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsPartnerIntern'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsAlreadyTraded'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsKeepingInterest'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PublicTradingPlaceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 15
+  - name: 'IsOffExchange'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LocGroupId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+  - name: 'OrderQuantity'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 7
+  - name: 'Quantity'
+    description: ''
+    dataType: 'money'
+  - name: 'TradeDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'TradePrice'
+    description: ''
+    dataType: 'money'
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'PaymentAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'PaymentDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'CompletionDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'TransSxRebateNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtTransSxRebate'
+      refField: 'TransSxRebateNo'
+  - name: 'TextForRebate'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+  - name: 'SecurityPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioViewNoPL'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'SecurityPortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'PortfolioNo'
+  - name: 'SecurityPortfolioNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 2
+  - name: 'SecurityPortfolioOwnerText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 93
+    genericControls:
+      defColumnPos: 28
+  - name: 'SecurityPrReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrRefPosTextView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountPortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'PortfolioNo'
+  - name: 'AccountPortfolioNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'AccountPrReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountRate'
+    description: ''
+    dataType: 'float'
+  - name: 'AccountAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'AccountCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'SecurityCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'SettlementRate'
+    description: ''
+    dataType: 'float'
+  - name: 'DebitRate'
+    description: 'used to show data from PtTransMessage'
+    dataType: 'float'
+  - name: 'CreditRate'
+    description: 'used to show data from PtTransMessage'
+    dataType: 'float'
+  - name: 'DebitAmount'
+    description: 'used to show data from PtTransMessage'
+    dataType: 'money'
+  - name: 'CreditAmount'
+    description: 'used to show data from PtTransMessage'
+    dataType: 'money'
+  - name: 'DebitQuantity'
+    description: 'used to show data from PtTransMessage'
+    dataType: 'money'
+  - name: 'CreditQuantity'
+    description: 'used to show data from PtTransMessage'
+    dataType: 'money'
+  - name: 'TradingOrderId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTradingOrder'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 12
+    genericControls:
+      defColumnPos: 6
+  - name: 'TransNoOrig'
+    description: ''
+    dataType: 'decimal'
+    prec: 12
+  - name: 'OrderNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 12
+    genericControls:
+      defColumnPos: 8
+  - name: 'OrderDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'OrderMediaNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransOrderMedia'
+      refField: 'OrderMediaNo'
+  - name: 'TransTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+      defColumnPos: 17
+  - name: 'TransTypeNoSearchList'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+      defColumnPos: 31
+  - name: 'SecurityBookingSide'
+    description: ''
+    dataType: 'char'
+    prec: 1
+  - name: 'PublicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'IsInstrumentFastOpening'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'PublicDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 4
+  - name: 'IsinNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+    genericControls:
+      defColumnPos: 29
+  - name: 'VdfInstrumentSymbol'
+    description: ''
+    dataType: 'char'
+    prec: 12
+  - name: 'PublicShortName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 19
+    genericControls:
+      defColumnPos: 30
+  - name: 'PublicLongName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 300
+  - name: 'OrderTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsTradingOrderType'
+      refField: 'OrderTypeNo'
+      defColumnPos: 18
+  - name: 'PriceLimit'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 19
+  - name: 'TriggerPrice'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 20
+  - name: 'ValidFrom'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 16
+  - name: 'ValidToRule'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsValidToRule'
+      refField: 'RuleTypeNo'
+  - name: 'ValidTo'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 21
+  - name: 'TextToTrader'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+    genericControls:
+      multiLine: true
+  - name: 'TextToPartner'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+  - name: 'TextToBackOffice'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+    genericControls:
+      multiLine: true
+  - name: 'TextToForexTrader'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+    genericControls:
+      multiLine: true
+  - name: 'TextToBOPartner'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+  - name: 'OrderCreator'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      hasDetailBtn: true
+      defColumnPos: 22
+  - name: 'OrderDisposerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderMiddlemanId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtUserBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderMiddlemanAsUserId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TraderPrintoutStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'TraderProgress'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PlaceStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 10
+  - name: 'TradeStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 11
+  - name: 'AllocationStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'CalculationStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ProcessStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 12
+  - name: 'UpdateStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'DebitPrintStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'CreditPrintStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'PrintStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'TransDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 27
+  - name: 'CancelledStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 13
+  - name: 'ExpiredStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 25
+  - name: 'Status'
+    description: '0= unplaced\r\n1= placed\r\n2= Trade exists (partially traded or fully traded)\r\n3= processed\r\n8= expired\r\n9= cancelled'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTradingOrderStatus'
+      refField: 'Status'
+      defColumnPos: 32
+  - name: 'PreferredPublicListingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'OrderReversalTextExtern'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+  - name: 'TransMsgStatusNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtTransMsgStatus'
+      refField: 'TransMsgStatusNo'
+      defColumnPos: 24
+  - name: 'CancelTradOrderMsgId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PooledTradOrderMsgId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'IsShortToff'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'MaturityDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'SmallDenom'
+    description: ''
+    dataType: 'money'
+  - name: 'RefTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicRefType'
+      refField: 'RefTypeNo'
+  - name: 'TransText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'TransactionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+  - name: 'TransMessageId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+  - name: 'TradingOrderMessageId'
+    description: 'this field is only here to have the same structure as PtTransMessageView'
+    dataType: 'uniqueidentifier'
+  - name: 'TransMessageIdChargeFut'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+  - name: 'IsShortSell'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsShortSellWithLongPosition'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'MessageReversalTextExtern'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+  - name: 'IsListingOrder'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 26
+  - name: 'IsPooledOrder'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsCalculateCompleted'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsNoRectificationText'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ProcessId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'OrderHdEditStamp'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ToBePooled'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsFondsBuyWithConsulting'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsFondsToNAV'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsFondsSaving'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsWithoutForeignFee'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsOtcDerivat'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'OrderAdvisoryNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtTransSxOrderAdvisory'
+      refField: 'OrderAdvisoryNo'
+  - name: 'RateAcCuPfCu'
+    description: 'Rate AccountCurrency <> PortfolioCurrency'
+    dataType: 'float'
+  - name: 'OrderStatusNoTrader'
+    description: 'field of PtTradingOrder.OrderStatusNoTrader'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransSxOrderStatus'
+      refField: 'OrderStatusNo'
+      defColumnPos: 37
+  - name: 'IsOrderByNAVAmount'
+    description: '--> PtTradingOrder.IsOrderByNAVAmount'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'OrderNAVAmount'
+    description: '--> PtTradingOrderMessage.OrderNAVAmount'
+    dataType: 'money'
+  - name: 'RejectReason'
+    description: '--> PtTradingOrderMessage.RejectReason'
+    dataType: 'nvarchar'
+    prec: 1000

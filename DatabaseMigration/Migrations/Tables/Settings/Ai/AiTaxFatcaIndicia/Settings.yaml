@@ -1,0 +1,94 @@
+table:
+  name: 'AiTaxFatcaIndicia'
+  description: 'Diese Tabelle enthält alle für FATCA relevanten Indizien'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax Fatca Indicia'
+    - german:
+        formTitle: 'Indizien Fatca'
+    - french:
+        formTitle: 'Taxe Fatca Indicia'
+  columns:
+  - name: 'TaxStatusId'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxStatus'
+      refField: 'Id'
+  - name: 'ReportDate'
+    description: 'Datum der Indiziensuche'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IndiciaStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxIndiciaStatus'
+      refField: 'StatusNo'
+      defColumnPos: 2
+  - name: 'HasUsAddress'
+    description: 'True if one of the customer''s addresses is in the U.S.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'VaCustomerIsLegalEntity'
+    description: 'True if there is one Portfoliotype flaged with IsAssetManagement = True and NogaCode <> ''970000'''
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasInCareOfAddress'
+    description: 'True if there is one "in care of" address'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsUsCitizen'
+    description: 'True if one of customer''s nationalities is U.S.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasUsPhoneNumber'
+    description: 'True if one of the customer''s phone numbers is an U.S. number.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasUsBasket'
+    description: 'True if there is any hint to an U.S. account in context of U.S. witholding tax.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'MailsToUsAddress'
+    description: 'True if there is a correpondence rule to an  U.S. address.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'GrantsToUsPerson'
+    description: 'True if there are power of attorney or signature authority granted to an US person.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasStandingOrder'
+    description: 'Dauerauftrag'
+  - name: 'HasRetainedMail'
+    description: 'True, if customer has a retained mail agreement'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IndiciaFromRM'
+    description: 'Indiz aus KuBe-Befragung. Das Indiz wird nur manuell gepflegt.'
+  - name: 'HasUSBirthPlace'
+    description: 'Geburtsland USA. Selektion von PtBase.CountryOfBirth = US'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasUSIssuanceIdDoc'
+    description: 'Identifikations-Dokument (Type egal) ausgestellt in USA. Selektion von PtIdentification.CountryOfIssuance = US'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IndiciaAssessmentType'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxIndiciaAssessmentType'
+      refField: 'IndiciaAssessmentType'
+      defColumnPos: 3
+  - name: 'Comment'
+    description: ''
+    genericControls:
+      multiLine: true

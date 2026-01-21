@@ -1,0 +1,56 @@
+table:
+  name: 'PtPortfolioPricingModel'
+  description: 'Definition of Portfolio pricing model (default values for PtPortfolio and PtPortfolioAdmChargeRule).'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Portfolio Pricing Model'
+        helpText: 'Portfolio Pricing Model'
+    - german:
+        formTitle: 'Portfolio Preis Model'
+        helpText: 'Portfolio Preis Model'
+  columns:
+  - name: 'PricingModel'
+    description: 'Name of the pricing model'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Currency'
+    description: 'The value of this field will be saved in PtPortfolio.Currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'SxSpecialTariffId'
+    description: 'The value of this field will be saved in PtPortfolio.SxSpecialTariffId'
+    genericControls:
+      refTable: 'PtPortfolioSxTariff'
+      refField: 'Id'
+  - name: 'DepotChargeRebate'
+    description: 'The value of this field will be saved in PtPortfolio.DepotChargeRebate'
+  - name: 'IndividualTaxReport'
+    description: 'The value of this field will be saved in PtPortfolio.IndividualTaxReport'
+  - name: 'IndividualAssetReport'
+    description: 'The value of this field will be saved in PtPortfolio.IndividualAssetReport'
+  - name: 'TaxReportRebate'
+    description: 'The value of this field will be saved in PtPortfolio.TaxReportRebate'
+  - name: 'AdmChargeType'
+    description: 'The value of this field will be saved in PtPortfolioAdmChargeRule.AdmChargeType\r\n--> only if PtPortfolioType.AdmChargeSubType is null\r\n'
+    genericControls:
+      refTable: 'PtAdmChargeSubType'
+      refField: 'SubTypeNo'
+  - name: 'EffectiveRate'
+    description: 'The value of this field will be saved in PtPortfolioAdmChargeRule.EffectiveRate\r\n--> only if PtPortfolioType.AdmChargeSubType is null\r\n'
+  - name: 'Rebate'
+    description: 'The value of this field will be saved in PtPortfolioAdmChargeRule.Rebate\r\n--> only if PtPortfolioType.AdmChargeSubType is null\r\n'
+  - name: 'HasMinimumCharge'
+    description: 'The value of this field will be saved in PtPortfolioAdmChargeRule.HasMinimumCharge\r\n--> only if PtPortfolioType.AdmChargeSubType is null\r\n'
+  - name: 'EffectiveAmount'
+    description: 'The value of this field will be saved in PtPortfolioAdmChargeRule.EffectiveAmount\r\n--> only if PtPortfolioType.AdmChargeSubType is null\r\n'

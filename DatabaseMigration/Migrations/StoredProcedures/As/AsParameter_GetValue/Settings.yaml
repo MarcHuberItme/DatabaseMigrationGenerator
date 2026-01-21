@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AsParameter_GetValue'
+  description: 'Stored Procedure to quickly retrieve a system parameter.'

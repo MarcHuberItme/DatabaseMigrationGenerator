@@ -1,0 +1,40 @@
+table:
+  name: 'PtRelationType'
+  description: 'different types of couple of persons'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Relation Type'
+    - german:
+        formTitle: 'Art der Beziehung'
+    - french:
+        formTitle: 'Type de relation'
+  columns:
+  - name: 'RelationTypeNo'
+    description: 'candidate-key\r\nthe following values are predefined because of migration and shouldn''t be changed !\r\n10, 20 , 30, 40, 50, 90'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'MigValue'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'HasAccountRestriction'
+    description: 'if true, the relations can have restrictions on portfolio-/accountlevel.'
+  - name: 'HasPartnershipInfo'
+    description: 'If true, several fields in PtRelationMaster are relevant for the RelationType and have to be displayed.'
+  - name: 'IsBeneficialUse'
+    description: 'Ist Nutzniessung'
+  - name: 'IsTotalCommitment'
+    description: 'ist Gesamtengagement'

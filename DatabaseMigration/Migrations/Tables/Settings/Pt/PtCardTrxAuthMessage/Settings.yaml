@@ -1,0 +1,50 @@
+table:
+  name: 'PtCardTrxAuthMessage'
+  description: '*** CAUTION - DO NOT TRANSFER TABLE WITH DATA DEFINER ***\r\n- Optimized clustered index on TransmissionDate column, not on Id column\r\n\r\nContains all incoming and outgoing messages over the different card authorisation interfaces.\r\n\r\nBEWARE: the fields MessageTypeIdentifier, ProcessingCode and ResponseCode combined with Protocol are used as composite foreign keys to reference the tables PtCardTrxAuthMessageType, PtCardTrxAuthProcessingCode and PtCardTrxAuthResponseCode'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Card Trx Auth Message'
+        helpText: 'Card transaction authorization message'
+    - german:
+        formTitle: 'Karten Trx Auth Meldung'
+        helpText: 'Autorisationsmeldung für Kartentransaktionen'
+  columns:
+  - name: 'SessionId'
+    description: 'Messages that were received/sent over the same socket (i.e. within the same login) share a common session identifier, thus enabling the grouping of messages.'
+  - name: 'MessageTypeIdentifier'
+    description: 'Describes the type of message (9410, etc.)'
+  - name: 'Indicator'
+    description: 'Network indicator for a given message'
+  - name: 'TransmissionDate'
+    description: 'Exact date and time the message was received/sent.'
+  - name: 'Protocol'
+    description: 'Reference to protocol'
+    genericControls:
+      refTable: 'PtCardTrxAuthProtocol'
+      refField: 'Protocol'
+  - name: 'Data'
+    description: 'Raw binary message data'
+  - name: 'RequestId'
+    description: 'References the incoming request in case of an outgoing response'
+    genericControls:
+      refTable: 'PtCardTrxAuthMessage'
+      refField: 'Id'
+  - name: 'PrimaryAccountNumber'
+    description: 'The Primary Account Number (PAN) is a series of up to 19 digits used to identify a\r\nparticular card number.'
+  - name: 'ProcessingCode'
+    description: 'A series of digits used to describe the way in which the card was used.'
+  - name: 'SystemTraceAuditNumber'
+    description: 'A number assigned by the originator of a message to identify a particular\r\ntransaction. A transaction in this context is an\r\n- authorisation and its response\r\n- advice/repeat and its response\r\n- reversal/repeat and its response\r\n- reversal advice/repeat and its response.\r\n- inquiry and its response\r\nThe same STAN must be used for all messages belonging to the same original\r\nmessage, e.g. request/9410 and response 9413.\r'
+  - name: 'ResponseCode'
+    description: 'This value represent the exactly status how the messages was treated from the\r\nreceiver (must always be present in a response message).'
+  - name: 'AuthIdentificationCode'
+    description: 'This data element is used for two particular purposes:\r\n- For authorizations, reversals or advice messages, to identify the response given by the authorising institution\r\n- In case of an format error (RC 30), to indicate the data element which produces this format error (only in message 9413 possible)\r\r\n\r\nIf the partner refuses the transaction with RC30 (format error), he has the possibility\r\nto put in this data element the bitmap number which has produced this error.'

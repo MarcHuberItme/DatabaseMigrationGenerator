@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetGroupedTransItems'
+  description: '2010-03-29/ram: Inputparameter GroupKey auf 30 Zeichen verlängert'

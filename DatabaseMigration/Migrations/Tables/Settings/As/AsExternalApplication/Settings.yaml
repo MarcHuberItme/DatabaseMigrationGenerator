@@ -1,0 +1,21 @@
+table:
+  name: 'AsExternalApplication'
+  description: 'Exterrnal applications linked with Finstar, e.g. DepositSolution'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'ApplicationCode'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ShortName'
+    description: 'A short name of the application that is easily recognizable throughout Finstar.\r\n\r\nExample Usage:\r\nIf available it is used as the prefix for OaExternalUser.FinstarUseName, which is used as the HdCreator and HdChangeUser and when audit logging.'

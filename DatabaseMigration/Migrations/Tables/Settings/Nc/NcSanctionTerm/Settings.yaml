@@ -1,0 +1,39 @@
+table:
+  name: 'NcSanctionTerm'
+  description: 'Sanctioned terms which will be searched in payment purpose text (PtPaymentOrderDetail.BeneficiaryMessage)\r\nBased on MatchingType the term which might consist of multiple words will match if its parts are found\r\n- anywhere in the text\r\n- after each other in any order\r\n- after each other in a fixed order'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0ebe92b4-009e-4d5f-b882-c8d9daf72042
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'NcSanctionTerm'
+        helpText: 'NcSanctionTerm'
+    - german:
+        formTitle: 'NcSanctionTerm'
+        helpText: 'NcSanctionTerm'
+    - french:
+        formTitle: 'NcSanctionTerm'
+        helpText: 'NcSanctionTerm'
+    - italian:
+        formTitle: 'NcSanctionTerm'
+        helpText: 'NcSanctionTerm'
+  columns:
+  - name: 'Term'
+    description: 'Term consisting of one or multiple words'
+    genericControls:
+      defColumnPos: 1
+  - name: 'MatchingTypeNo'
+    description: 'Based on MatchingType the term which might consist of multiple words will match if its parts are found\r\n- anywhere in the text\r\n- after each other in any order'
+    genericControls:
+      refTable: 'NcSanctionTermMatchingType'
+      refField: 'MatchingTypeNo'
+      defColumnPos: 2
+  - name: 'IsExactMatch'
+    description: 'If true, only whole words are matched. Otherwise matches also partial words.'

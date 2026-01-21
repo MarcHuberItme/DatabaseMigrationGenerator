@@ -1,0 +1,16 @@
+table:
+  name: 'MpCurveType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1b7f657d-bf02-4f66-b37b-cee0cfa5299b
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'TypeLabel'
+    description: ''

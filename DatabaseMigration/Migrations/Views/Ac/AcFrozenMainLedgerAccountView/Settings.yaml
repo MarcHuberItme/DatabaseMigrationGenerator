@@ -1,0 +1,153 @@
+view:
+  name: 'AcFrozenMainLedgerAccountView'
+  description: ''
+frontendView:
+  name: 'AcFrozenMainLedgerAccountView'
+  description: 'monthly frozen account information for\r\n"Eigenmittel Berechnung" and "ALM"'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ReportDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+    genericControls:
+      noUpdatePos: 1
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 11
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      noUpdatePos: 2
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'PrReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      noUpdatePos: 3
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      noUpdatePos: 4
+  - name: 'ProductNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      noUpdatePos: 5
+  - name: 'AccountGroupNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'CharacteristicNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PrPrivateCharacteristic'
+      refField: 'CharacteristicNo'
+      noUpdatePos: 6
+  - name: 'IsDueRelevant'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      noUpdatePos: 7
+  - name: 'MgOBJEKT'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'MgA21'
+      refField: 'MigValue'
+      noUpdatePos: 18
+  - name: 'MgOBJPLZ'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      noUpdatePos: 19
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'OperationTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PrOperationType'
+      refField: 'TypeNo'
+  - name: 'ConsCreditMonitorId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'IsMoneyMarket'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'ClosingPeriodRuleNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+  - name: 'FreezeStatus'
+    description: '1 = account data loaded\r\n2 = additional account data loaded\r\n3 = freeze account components done\r\n4 = freeze account balance done\r\n5 = freeze account interest done (account freeze process completed)'
+    dataType: 'int'
+  - name: 'PositionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'DueValuePrCu'
+    description: ''
+    dataType: 'money'
+  - name: 'AccountNoText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'ValueSign'
+    description: ''
+    dataType: 'smallint'
+  - name: 'InterestRate'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+  - name: 'AmountType'
+    description: ''
+    dataType: 'smallint'
+  - name: 'CodeC510'
+    description: ''
+    dataType: 'int'
+  - name: 'ValueHoCu'
+    description: ''
+    dataType: 'money'
+  - name: 'ValuePrCu'
+    description: ''
+    dataType: 'money'
+  - name: 'AccountDesc'
+    description: ''
+    dataType: 'varchar'
+    prec: 50
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+  - name: 'Noga2008'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000

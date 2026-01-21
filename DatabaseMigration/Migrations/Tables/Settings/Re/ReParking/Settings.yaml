@@ -1,0 +1,70 @@
+table:
+  name: 'ReParking'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'ReBuilding'
+      parentRelationField: 'BuildingId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Parking'
+    - german:
+        formTitle: 'Parkmöglichkeiten'
+    - french:
+        formTitle: 'parking'
+  columns:
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ParkingType'
+    description: ''
+    genericControls:
+      refTable: 'ReParkingType'
+      refField: 'ParkingType'
+      defColumnPos: 1
+  - name: 'Number'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValueDate'
+    description: ''
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ValueAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsRented'
+    description: ''
+  - name: 'IsTrade'
+    description: ''
+  - name: 'IsRealValueRelevant'
+    description: ''
+  - name: 'IsEarningValueRelevant'
+    description: ''
+  - name: 'IsMarketValueRelevant'
+    description: ''
+  - name: 'ValueAmount2'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 3

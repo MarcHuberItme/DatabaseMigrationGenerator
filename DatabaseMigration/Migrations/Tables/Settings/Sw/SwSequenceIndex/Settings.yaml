@@ -1,0 +1,28 @@
+table:
+  name: 'SwSequenceIndex'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'SwSequenceIndex'
+        helpText: 'SwSequenceIndex'
+    - german:
+        formTitle: 'SwSequenceIndex'
+        helpText: 'SwSequenceIndex'
+  columns:
+  - name: 'SWIFTID'
+    description: ''
+    genericControls:
+      refTable: 'SwSWIFT'
+      refField: 'Id'
+  - name: 'SequenceName'
+    description: ''

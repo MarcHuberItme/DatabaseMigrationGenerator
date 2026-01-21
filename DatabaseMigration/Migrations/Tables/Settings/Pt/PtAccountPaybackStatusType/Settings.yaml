@@ -1,0 +1,31 @@
+table:
+  name: 'PtAccountPaybackStatusType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Amortisation status'
+        helpText: 'Types for the amortisation progress shown in Table PtAccountPaybackStatus'
+    - german:
+        formTitle: 'Status Amortisation'
+        helpText: 'Typen für den Amortisations-Fortschritt in der Tabelle PtAccountPaybackStatus (Voll, teilweise, ....'
+    - french:
+        formTitle: 'Status de l''amortissement'
+        helpText: 'Types for the amortisation progress shown in Table PtAccountPaybackStatus'
+    - italian:
+        formTitle: 'Stato del ammortamento'
+        helpText: 'Types for the amortisation progress shown in Table PtAccountPaybackStatus'
+  columns:
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,57 @@
+table:
+  name: 'Test'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ed24bd87-1b5f-4231-b64b-f2cc5ca68d5d
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 4
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    navigation:
+      parentTable: 'CyBase'
+      parentRelationField: 'CurSharedNode'
+      parentIdField: 'Symbol'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Test'
+    - german:
+        formTitle: 'Test'
+  columns:
+  - name: 'TestNo'
+    description: 'TestField'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TestAttribute1'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'TestAtribute2'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'CurSharedNode'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      createNavigationIndex: true
+  - name: 'CurHidden'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'varbinarytest'
+    description: ''
+  - name: 'newvarcharfield'
+    description: ''
+  - name: 'newIntDatatype'
+    description: ''
+  - name: 'identiytestcolumn'
+    description: ''

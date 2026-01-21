@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAdviceRulesSalaryByAccountId'
+  description: ''

@@ -1,0 +1,83 @@
+table:
+  name: 'PtAdmChargePositions'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargePositions'
+        helpText: 'PtAdmChargePositions'
+    - german:
+        formTitle: 'PtAdmChargePositions'
+        helpText: 'PtAdmChargePositions'
+  columns:
+  - name: 'ChargePortfolioID'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'PositionID'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Description'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ISINNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'TitleTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeTitleType'
+      refField: 'TypeNo'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'LocGroupNo'
+    description: ''
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'GroupNo'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 5
+  - name: 'AverageValue'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'AverageQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'InlandCharge'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'AuslandCharge'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'TitleChargeRate'
+    description: ''
+  - name: 'DPSTChargeRate'
+    description: ''
+  - name: 'RetroChargeRate'
+    description: ''
+  - name: 'CurrencyChargeRate'
+    description: ''
+  - name: 'MetalChargeRate'
+    description: ''

@@ -1,0 +1,141 @@
+table:
+  name: 'PtAssetStatement'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAssetStatement'
+        helpText: 'PtAssetStatement'
+    - german:
+        formTitle: 'PtAssetStatement'
+        helpText: 'PtAssetStatement'
+  columns:
+  - name: 'PartnerID'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'PositionID'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+  - name: 'AssetType'
+    description: ''
+  - name: 'JobNo'
+    description: ''
+  - name: 'ReportCurrency'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PositionCurrency'
+    description: ''
+  - name: 'PortfolioID'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'PortfolioNoEdited'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'OldDepotNo'
+    description: ''
+  - name: 'PortfolioCurrency'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'AccountID'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'AccountNoEdited'
+    description: ''
+  - name: 'AccountType'
+    description: ''
+  - name: 'AccountBalance'
+    description: ''
+  - name: 'AcctSeqNo'
+    description: ''
+  - name: 'ISINNo'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'SecurityNo'
+    description: ''
+  - name: 'Abv'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'Preffix'
+    description: ''
+  - name: 'SecurityDescription'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'Country'
+    description: ''
+  - name: 'MaturityDate'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'InterestRate'
+    description: ''
+  - name: 'InstrumentTypeNo'
+    description: ''
+  - name: 'DepotType'
+    description: ''
+  - name: 'DepotSeqNo'
+    description: ''
+  - name: 'Quantity'
+    description: ''
+  - name: 'SecurityPrice'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'MarketValue'
+    description: ''
+  - name: 'MVCurrency'
+    description: ''
+  - name: 'MVReport'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'AIAmount'
+    description: ''
+  - name: 'AICurrency'
+    description: ''
+  - name: 'AIReport'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'ExchangeRate'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'PriceInfo'
+    description: ''
+  - name: 'DepotQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'ValuationDate'
+    description: ''
+  - name: 'IsTransDateBased'
+    description: ''
+  - name: 'LocGroupNo'
+    description: ''
+    genericControls:
+      defColumnPos: 11

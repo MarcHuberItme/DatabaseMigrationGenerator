@@ -1,0 +1,27 @@
+table:
+  name: 'MsAcknowledgeStatus'
+  description: 'The status of the message processing.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 47a738e9-4dcb-41bc-8fcc-bb1699c6b097
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Acknowledge Status'
+    - german:
+        formTitle: 'Acknowledge Status'
+    - french:
+        formTitle: 'Acknowledge Status'
+    - italian:
+        formTitle: 'Acknowledge Status'
+  columns:
+  - name: 'AckStatus'
+    description: 'Acknowledge Status Number.\r\n\r\nProcessing = 0 (use only in case of multiple processes)\r\nAcknowledged = 1\r\nError = 2\r\nIgnore = 3\r\nDeleted = 9'
+    genericControls:
+      defColumnPos: 1

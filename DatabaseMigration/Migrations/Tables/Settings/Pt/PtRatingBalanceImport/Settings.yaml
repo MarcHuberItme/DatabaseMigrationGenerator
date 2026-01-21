@@ -1,0 +1,43 @@
+table:
+  name: 'PtRatingBalanceImport'
+  description: 'balance sheet file data'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtRatingBalanceImport'
+        helpText: 'PtRatingBalanceImport'
+    - german:
+        formTitle: 'PtRatingBalanceImport'
+        helpText: 'PtRatingBalanceImport'
+  columns:
+  - name: 'ExcelFileName'
+    description: ''
+  - name: 'PartnerNo'
+    description: ''
+  - name: 'ReportDueDate'
+    description: ''
+  - name: 'CompanyName'
+    description: ''
+  - name: 'CompanyPLZ'
+    description: ''
+  - name: 'NogaCode'
+    description: ''
+  - name: 'BookKeeper'
+    description: ''
+  - name: 'BookKeeperPLZ'
+    description: ''
+  - name: 'Auditor'
+    description: ''
+  - name: 'AuditorPLZ'
+    description: ''
+  - name: 'ReportImportDateTime'
+    description: ''

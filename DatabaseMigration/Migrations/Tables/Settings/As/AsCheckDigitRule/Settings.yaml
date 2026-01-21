@@ -1,0 +1,30 @@
+table:
+  name: 'AsCheckDigitRule'
+  description: 'This table defines check digit rules for generating account number.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Check Digit Rules'
+        helpText: 'Check Digit Rules'
+    - german:
+        formTitle: 'Check Digit Rules'
+        helpText: 'Check Digit Rules'
+  columns:
+  - name: 'RuleNo'
+    description: 'Unique rule number of check digit algorithm'
+  - name: 'CheckDigMod'
+    description: 'The base value used in the mod calculation'
+  - name: 'CheckDigWeightMap'
+    description: 'Defines the weight logic used in check digit calculation. Legal format is a string of position, length and weight. Example:\r\n<1,1,9>,<2,1,8>,<3,1,7>,<4,1,6>,<5,1,5>,<6,1,4,><7,1,3>,<8,1,2>,<9,1,1>'
+  - name: 'CheckDig10'
+    description: 'Value 0: accept check digit result, if the length of result is longer than defined.\r\nValue 1: refuse check digit result, if the length of result is longer than defined.'

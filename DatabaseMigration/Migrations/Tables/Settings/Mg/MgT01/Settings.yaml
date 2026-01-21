@@ -1,0 +1,38 @@
+table:
+  name: 'MgT01'
+  description: 'FixVrx-Titelarten'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 2
+    physicalDelete: true
+    isGroupable: true
+    descField: 'Bezeichnung'
+    uiTableDescription:
+    - english:
+        formTitle: 'FIS Titelarten'
+    - german:
+        formTitle: 'FIS Titelarten'
+  columns:
+  - name: 'TitArt'
+    description: 'Titelart'
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ValZusKond'
+    description: 'VRX: T01.Stcd_A'
+  - name: 'ValZus'
+    description: 'VRX: T01.Stcd_B'
+  - name: 'Typ'
+    description: 'VRX: T01.Stcd_C'
+  - name: 'IntTitArt'
+    description: 'VRX: T01.Stcd_I'
+  - name: 'Bezeichnung'
+    description: ''
+    genericControls:
+      defColumnPos: 2

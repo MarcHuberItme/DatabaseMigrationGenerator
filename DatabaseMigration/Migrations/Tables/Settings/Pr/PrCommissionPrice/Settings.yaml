@@ -1,0 +1,44 @@
+table:
+  name: 'PrCommissionPrice'
+  description: 'Price as percentage of the calculation basic'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'ProductId'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'CommissionTypeId'
+    description: ''
+    genericControls:
+      refTable: 'PrCommissionType'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Currency'
+    description: 'Currency associated to the price.\r\nCurrency, ProductId and ValidFrom forms a unique key\r\n\r\nnot to be used any more --> new table PrExpenseType 24.11.2005/mct'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 4
+  - name: 'Price'
+    description: 'Price as a percentage of the calculation basic value. When a product is to be made inactive its value is set 0'
+    minValue: '0'
+    maxValue: '10'
+    genericControls:
+      defColumnPos: 5
+  - name: 'PriceElectronicDelivery'
+    description: 'If the pricing is for document delivery, this field is to define different charges for electronic delivery.'
+    minValue: '0'

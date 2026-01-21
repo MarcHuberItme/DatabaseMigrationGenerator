@@ -1,0 +1,66 @@
+table:
+  name: 'EvDetailTax'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'EvBase'
+      parentTable: 'EvDetail'
+      parentRelationField: 'EventDetailId'
+      parentIdField: 'Id'
+  columns:
+  - name: 'EventDetailId'
+    description: ''
+    genericControls:
+      refTable: 'EvDetail'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'SlpTaxRegulationCode'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+      defColumnPos: 1
+  - name: 'ManTaxRegulationCode'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+  - name: 'NodeSecondTree'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxNodeSecondTree'
+      refField: 'NodeSecondTree'
+  - name: 'SlpEuInterestTaxCode'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+  - name: 'ManEuInterestTaxCode'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+  - name: 'SlpTaxEuCalcMethNo'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxEuCalcMeth'
+      refField: 'TaxEuCalcMethNo'
+  - name: 'ManTaxEuCalcMethNo'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxEuCalcMeth'
+      refField: 'TaxEuCalcMethNo'
+  - name: 'DiscountTaxEuCalcMethNo'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxEuCalcMeth'
+      refField: 'TaxEuCalcMethNo'

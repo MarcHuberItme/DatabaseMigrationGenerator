@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'MgVrxUnit_SignOn'
+  description: 'Procedure to find a vrx unit number that is not used. Units with a SignOnDate < today are also asumed as not used! Sign on the found unit number by setting the workstation, user, session and sign on date (=now)! The Procedure has no return values!'

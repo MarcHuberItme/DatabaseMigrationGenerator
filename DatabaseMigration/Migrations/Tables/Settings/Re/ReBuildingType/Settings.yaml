@@ -1,0 +1,59 @@
+table:
+  name: 'ReBuildingType'
+  description: 'The given number of the Building Type is FIX - it''s not allowed to change the values because the content of the dropdown list of the building styles - ReBuildingStyle\r\n- ReDevType\r\n- ReConstructionType\r\nare depending on these values. (and Interface to pfandbriefbank)'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Building Type'
+    - german:
+        formTitle: 'Gebäudetyp'
+  columns:
+  - name: 'BuildingTypeNo'
+    description: 'Gebäudetyp e.g. EFH, MFH, etc. \r\n(wird 1:1 von FIS-2000: GBDE_TYP_CD übernommen)'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IaziValue'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PfandRegValue'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'HasRentAmount'
+    description: '0 = kein Ertragswert auf ReBuilding\r\n1 = Ertragswert (obligatorische Eingabe über Internet Pfandregister)'
+  - name: 'ForPremisesType01'
+    description: ''
+  - name: 'ForPremisesType02'
+    description: ''
+  - name: 'ForPremisesType03'
+    description: ''
+  - name: 'ForPremisesType04'
+    description: ''
+  - name: 'ForPremisesType05'
+    description: ''
+  - name: 'ForPremisesType06'
+    description: ''
+  - name: 'ForPremisesType07'
+    description: ''
+  - name: 'ForPremisesType09'
+    description: ''
+  - name: 'ForPremisesType11'
+    description: ''
+  - name: 'IsLiving'
+    description: ''
+  - name: 'IsTrade'
+    description: ''
+  - name: 'SortNo'
+    description: ''

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'FireRecordPostProcessing'
+  description: '2020-02-20: löschen Spezialfälle für Bank Sallfort, Aufnahme SEBA'

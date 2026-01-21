@@ -1,0 +1,3 @@
+function:
+  name: 'AverageAccountBalances'
+  description: 'This function analyses all bookings within a specified range of an account and reports the where product limits have breached.'

@@ -1,0 +1,44 @@
+table:
+  name: 'AxTaxReportTariff'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'AxTaxReportTariff'
+        helpText: 'AxTaxReportTariff'
+    - german:
+        formTitle: 'AxTaxReportTariff'
+        helpText: 'AxTaxReportTariff'
+    - french:
+        formTitle: 'AxTaxReportTariff'
+        helpText: 'AxTaxReportTariff'
+  columns:
+  - name: 'TypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AxTaxReportTariffType'
+      refField: 'TypeNo'
+      defColumnPos: 1
+  - name: 'Price'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CorrItemNo'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'ItemNo'
+      defColumnPos: 3
+  - name: 'Currency'
+    description: ''
+  - name: 'IsEmployeeFree'
+    description: ''

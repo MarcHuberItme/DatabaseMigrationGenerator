@@ -1,0 +1,31 @@
+table:
+  name: 'TwDateLastCheckPartner'
+  description: 'Contains the date of the last partner check for changes.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: bad6dd0b-5ed3-4cee-b419-0b3faf9ddacc
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Date of last check part.'
+    - german:
+        formTitle: 'Dat. letzter Partner chk.'
+    - french:
+        formTitle: 'Date du dernier part.'
+    - italian:
+        formTitle: 'Data ultimo controllo pt.'
+  columns:
+  - name: 'PartnerId'
+    description: 'Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'LastCheck'
+    description: 'Date of last check'

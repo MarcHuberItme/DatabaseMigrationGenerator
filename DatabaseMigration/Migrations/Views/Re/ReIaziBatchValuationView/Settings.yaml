@@ -1,0 +1,138 @@
+view:
+  name: 'ReIaziBatchValuationView'
+  description: ''
+frontendView:
+  name: 'ReIaziBatchValuationView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'ReIaziBatchValuationView'
+        helpText: 'ReIaziBatchValuationView'
+    - german:
+        formTitle: 'ReIaziBatchValuationView'
+        helpText: 'ReIaziBatchValuationView'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      defColumnPos: 1
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      defColumnPos: 2
+  - name: 'AcctPremisesType'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'AcctGBNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 15
+  - name: 'AcctZip'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 6
+  - name: 'PremisesType'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'RePremisesType'
+      refField: 'PremisesType'
+      defColumnPos: 3
+  - name: 'GBNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 15
+    genericControls:
+      defColumnPos: 4
+  - name: 'Zip'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 6
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValidFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ValidTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'StatusNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReIaziWSEvalStatus'
+      refField: 'EvalStatusNo'
+      defColumnPos: 6
+  - name: 'QualityNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReIaziWSEvalQuality'
+      refField: 'QualityNo'
+      defColumnPos: 7
+  - name: 'Price'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 8
+  - name: 'ValuationDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 8
+  - name: 'Info'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 250
+    genericControls:
+      multiLine: true
+  - name: 'LastPrice'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'LastValuationDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'BatchJobType'
+    description: ''
+    dataType: 'varchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 9
+  - name: 'LastIntPrice'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'LastIntValuationDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'LastIntPriceSigned'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'Notes'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+    genericControls:
+      multiLine: true

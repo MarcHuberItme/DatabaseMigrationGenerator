@@ -1,0 +1,11 @@
+--liquibase formatted sql
+
+--changeset system:create-alter-view-PtAccountClosingDetailsView context:any labels:c-any,o-view,ot-schema,on-PtAccountClosingDetailsView,fin-13659 runOnChange:true splitStatements:false stripComments:false endDelimiter:GO
+--comment: Create view PtAccountClosingDetailsView
+CREATE OR ALTER VIEW dbo.PtAccountClosingDetailsView AS
+select 
+PtAccountClosingDetails.Id, PtAccountClosingDetails.HdCreateDate, PtAccountClosingDetails.HdCreator, PtAccountClosingDetails.HdChangeDate, PtAccountClosingDetails.HdChangeUser, PtAccountClosingDetails.HdEditStamp, PtAccountClosingDetails.HdVersionNo, PtAccountClosingDetails.HdProcessId, PtAccountClosingDetails.HdStatusFlag, PtAccountClosingDetails.HdNoUpdateFlag, PtAccountClosingDetails.HdPendingChanges, PtAccountClosingDetails.HdPendingSubChanges, PtAccountClosingDetails.HdTriggerControl, PtAccountClosingDetails.AccountClosingPeriodId, PtAccountClosingDetails.ValidFrom, PtAccountClosingDetails.AccountComponentId, PtAccountClosingDetails.ValidTo, PtAccountClosingDetails.ValueDate, PtAccountClosingDetails.Balance, PtAccountClosingDetails.DayBalance, PtAccountClosingDetails.ValueFrom, PtAccountClosingDetails.Valueto, PtAccountClosingDetails.Days, PtAccountClosingDetails.Priority, PtAccountClosingDetails.UsedValue, PtAccountClosingDetails.UnusedValue, PtAccountClosingDetails.UnusedLoan, PtAccountClosingDetails.InterestRate, PtAccountClosingDetails.InterestAmount, PtAccountClosingDetails.CommissionRate, PtAccountClosingDetails.CommissionAmount, PtAccountClosingDetails.ProvisionRate, PtAccountClosingDetails.ProvisionAmount,
+PtAccountComponent.PrivateCompTypeId
+from PtAccountClosingDetails
+Inner Join 
+PtAccountComponent on PtAccountClosingDetails.AccountComponentId = PtAccountComponent.Id

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetStaffRebateInfoForAccount'
+  description: 'Get Staff rebate flag for the give account number'

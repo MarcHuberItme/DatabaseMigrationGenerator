@@ -1,0 +1,139 @@
+view:
+  name: 'PtPositionSecClientView'
+  description: ''
+frontendView:
+  name: 'PtPositionSecClientView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'PortfolioNoEdited;Currency;Ref'
+  columns:
+  - name: 'PublicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ProdReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 8
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'IsShortToff'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ReferenceData'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 9
+  - name: 'Quantity'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 10
+  - name: 'LocGroupId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrLocGroupView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'LocGroupDesc'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 6
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 11
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      defColumnPos: 1
+  - name: 'PortfolioNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 13
+    genericControls:
+      defColumnPos: 2
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'PortfolioLocGroupId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PtDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 103
+    genericControls:
+      defColumnPos: 4
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'Town'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'CountryCode'
+    description: ''
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 12
+  - name: 'IsPosBlocked'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'IntVal'
+      defColumnPos: 13

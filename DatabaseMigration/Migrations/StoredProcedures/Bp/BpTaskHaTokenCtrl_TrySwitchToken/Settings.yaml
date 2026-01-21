@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'BpTaskHaTokenCtrl_TrySwitchToken'
+  description: 'Tries to take away a token from a task and if succesful gives the token to another task.'

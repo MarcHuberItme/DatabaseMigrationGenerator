@@ -1,0 +1,82 @@
+table:
+  name: 'PtTaxReportData'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TaxReportJobId'
+    description: ''
+    genericControls:
+      refTable: 'PtTaxReportJob'
+      refField: 'Id'
+  - name: 'PartnerNo'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'PartnerNoEdited'
+    description: ''
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'PortfolioNoEdited'
+    description: ''
+  - name: 'FiscalDomicileCanton'
+    description: ''
+  - name: 'ReportLanguageNo'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'AllPortfolioOfPartner'
+    description: ''
+  - name: 'HasPartnerSummary'
+    description: ''
+  - name: 'IsTaxReportPrepared'
+    description: ''
+  - name: 'NumberReportsCreated'
+    description: ''
+  - name: 'NumberPosError'
+    description: ''
+  - name: 'ValidPeriodBeginDate'
+    description: ''
+  - name: 'ValidPeriodEndDate'
+    description: ''
+  - name: 'EStvzXml'
+    description: ''
+  - name: 'EStvzStatus'
+    description: 'Na = 0,\r\nTaxDataPrepared = 1,\r\nReadyToProcessXml = 10,\r\nXmlJobPrepared = 11,\r\nProcessingXml = 12,\r\nXmlProcessed = 13,\r\nXmlFailed = 14,\r\nReadyForSsk = 20,\r\nSskJobPrepared = 21,\r\nSskProcessing = 22,\r\nSskProcessed = 23,\r\nSskFailed = 24,\r\nReadyToBeArchived = 30,\r\nUploadJobPrepared = 31,\r\nProcessingUpload = 32,\r\nUploadProcessed = 33,\r\nUploadFailed = 34,\r\nMailOutputProcessed = 35,\r\nMailOutputFailed = 36,\r\nBanklagerndProcessed = 37,\r\nBanklagerndFailed = 38'
+    genericControls:
+      refTable: 'PtETaxProcessStatus'
+      refField: 'StatusNo'
+  - name: 'EStvzEndStatus'
+    description: 'Na = 0,\r\nTaxDataPrepared = 1,\r\nReadyToProcessXml = 10,\r\nXmlJobPrepared = 11,\r\nProcessingXml = 12,\r\nXmlProcessed = 13,\r\nXmlFailed = 14,\r\nReadyForSsk = 20,\r\nSskJobPrepared = 21,\r\nSskProcessing = 22,\r\nSskProcessed = 23,\r\nSskFailed = 24,\r\nReadyToBeArchived = 30,\r\nUploadJobPrepared = 31,\r\nProcessingUpload = 32,\r\nUploadProcessed = 33,\r\nUploadFailed = 34,\r\nMailOutputProcessed = 35,\r\nMailOutputFailed = 36,\r\nBanklagerndProcessed = 37,\r\nBanklagerndFailed = 38'
+  - name: 'EStvzFileName'
+    description: ''
+  - name: 'ForceZeroCharge'
+    description: 'only filled with "Y" if there is no active portfolio or no active accounts in the report'
+  - name: 'CountryCode'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'ConsultantTeamName'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'CopyNumber'
+    description: ''

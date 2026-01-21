@@ -1,0 +1,35 @@
+table:
+  name: 'PtAdmChargeGroup'
+  description: '1, Depotgebühren\r\n2, VA Gebühren\r\n3, Metallkonti Gebühren\r\n10, Sallfort\r\n'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargeGroup'
+        helpText: 'PtAdmChargeGroup'
+    - german:
+        formTitle: 'PtAdmChargeGroup'
+        helpText: 'PtAdmChargeGroup'
+  columns:
+  - name: 'GroupNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'UseSallfortModel'
+    description: ''
+  - name: 'IncludeSubType'
+    description: ''
+  - name: 'DebitAccountRule'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeDebitAccountRule'
+      refField: 'RuleNo'

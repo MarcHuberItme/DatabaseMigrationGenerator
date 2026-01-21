@@ -1,0 +1,40 @@
+table:
+  name: 'MgTransItemAccount'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FinstarNo'
+    description: 'Nummer in Finstar:\r\nBei Kundenkonto = KontoNr (in der Regel identisch)\r\nBei Hauptbuchkonto = Neue Nummer (9nnnnnnnn)\r\nBei Wertschriften = Portfolionummer \r\n'
+    genericControls:
+      defColumnPos: 5
+  - name: 'WrgA'
+    description: 'Kontowährung'
+    genericControls:
+      defColumnPos: 9
+  - name: 'PositionId'
+    description: 'Mit dieser Relation können bei bedarf Buchungen nachträglich abgestimmt werden.'
+  - name: 'PrReferenceId'
+    description: ''
+  - name: 'PortfolioId'
+    description: ''
+  - name: 'ErrorText'
+    description: 'Errortext if transaction ist not processed.'
+    genericControls:
+      defColumnPos: 13
+  - name: 'ClientId'
+    description: ''
+    genericControls:
+      refTable: 'MgTransitemProcessing'
+      refField: 'ClientId'
+  - name: 'ProcessId'
+    description: ''
+    genericControls:
+      refTable: 'MgTransitemProcessing'
+      refField: 'ProcessId'

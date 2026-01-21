@@ -1,0 +1,106 @@
+view:
+  name: 'PtPaymentOrderBonView'
+  description: 'Information related to a payment order with insufficent balance in debit account. The view is used to display information in generic form'
+frontendView:
+  name: 'PtPaymentOrderBonView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdStatusFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+    isNotNull: true
+    defaultValue: '(GetDate())'
+  - name: 'ProcessId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'OrderId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'OrderNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SenderAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'TotalReportedTransactions'
+    description: ''
+    dataType: 'int'
+  - name: 'Comment'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      multiLine: true
+  - name: 'IsPaymentAllowed'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'TotalReportedAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ScheduledDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'OrderDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'OrderType'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtPaymentOrderType'
+      refField: 'OrderTypeNo'
+  - name: 'ReportAdrLine'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8

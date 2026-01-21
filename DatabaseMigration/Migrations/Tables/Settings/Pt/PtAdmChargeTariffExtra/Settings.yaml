@@ -1,0 +1,79 @@
+table:
+  name: 'PtAdmChargeTariffExtra'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargeTariffExtra'
+        helpText: 'PtAdmChargeTariffExtra'
+    - german:
+        formTitle: 'PtAdmChargeTariffExtra'
+        helpText: 'PtAdmChargeTariffExtra'
+  columns:
+  - name: 'ExtraGroupNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeExtraGroup'
+      refField: 'ExtraGroupNo'
+      defColumnPos: 1
+  - name: 'PortfolioTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      defColumnPos: 2
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'DepotLoc'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeDPSTType'
+      refField: 'LocGroupNo'
+      defColumnPos: 3
+  - name: 'DepotLocChargeRate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'CurrencyType'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeCurrencyType'
+      refField: 'TypeNo'
+      defColumnPos: 5
+  - name: 'CurChargeRate'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'ChargeRangeBegin'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'ChargeRangeEnd'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'DiscountRate'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'CumSum'
+    description: ''
+  - name: 'MinChargeAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'NoAcctAddedRate'
+    description: ''
+    genericControls:
+      defColumnPos: 11

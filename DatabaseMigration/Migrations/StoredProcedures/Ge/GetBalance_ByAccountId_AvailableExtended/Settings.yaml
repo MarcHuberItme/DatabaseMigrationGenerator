@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetBalance_ByAccountId_AvailableExtended'
+  description: ''

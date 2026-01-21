@@ -1,0 +1,51 @@
+table:
+  name: 'DvContactReport'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 94c2d033-c482-4cd0-842b-8498330b12a6
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'Topic'
+  columns:
+  - name: 'ProjectId'
+    description: ''
+    genericControls:
+      refTable: 'DvProject'
+      refField: 'Id'
+  - name: 'Topic'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Media'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ContactPerson'
+    description: ''
+  - name: 'Date'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Summary'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'InitiatorId'
+    description: ''
+    genericControls:
+      refTable: 'DvTeamMember'
+      refField: 'Id'
+      defColumnPos: 4
+  - name: 'TaskId'
+    description: ''
+    genericControls:
+      refTable: 'DvTask'
+      refField: 'Id'

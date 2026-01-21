@@ -1,0 +1,58 @@
+table:
+  name: 'PtOnboardingIdentPolicy'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Identificatican'
+    - german:
+        formTitle: 'Identificatican'
+    - french:
+        formTitle: 'Identificatican'
+  columns:
+  - name: 'PolicyId'
+    description: ''
+    genericControls:
+      refTable: 'PtOnboardingPolicy'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'IdentificationMedium'
+    description: ''
+  - name: 'IdType'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'DocumentNamePattern'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'DocumentType'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'ItemNo'
+      defColumnPos: 4
+  - name: 'IdentificationTypeId'
+    description: ''
+    genericControls:
+      refTable: 'PtIdentificationType'
+      refField: 'Id'
+      defColumnPos: 5
+  - name: 'ShouldStoreIdentificationMedia'
+    description: ''
+  - name: 'Remarks'
+    description: ''
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true

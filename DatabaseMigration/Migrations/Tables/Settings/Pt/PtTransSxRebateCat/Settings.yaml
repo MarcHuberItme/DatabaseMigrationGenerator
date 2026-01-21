@@ -1,0 +1,34 @@
+table:
+  name: 'PtTransSxRebateCat'
+  description: 'rebate category'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'rebate category'
+        helpText: 'rebate category'
+    - german:
+        formTitle: 'Rabatt-Kategorie'
+        helpText: 'Rabatt-Kategorie'
+  columns:
+  - name: 'TransSxRebateCatNo'
+    description: ''
+  - name: 'TransSxRebateId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxRebate'
+      refField: 'Id'
+  - name: 'TransSxRebateIdForMinimum'
+    description: 'this field is used for the minimal tariff\r\nstaff has 80% rebate, but has to pay at least 50% of the minimum'
+    genericControls:
+      refTable: 'PtTransSxRebate'
+      refField: 'Id'

@@ -1,0 +1,36 @@
+table:
+  name: 'CyRateTax'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'CySymbolOriginate'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'CySymbolTarget'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'ValidDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'Rate'
+    description: ''
+    genericControls:
+      defColumnPos: 4

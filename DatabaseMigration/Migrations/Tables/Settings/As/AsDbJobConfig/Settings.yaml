@@ -1,0 +1,25 @@
+table:
+  name: 'AsDbJobConfig'
+  description: 'Contains configuration for generic Db to Db data transfer jobs'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+  columns:
+  - name: 'ConfigName'
+    description: 'Name of the config. The job searches for this name and uses this config.'
+  - name: 'SourceServer'
+    description: 'Name of the source DB server'
+  - name: 'SourceDb'
+    description: 'Name of the source DB'
+  - name: 'SourceTable'
+    description: 'Name of the source table.'
+  - name: 'DestinationTable'
+    description: 'Name of the table the records are to be imported in. This works in conjunction with AsDbJobConfigMapping.'

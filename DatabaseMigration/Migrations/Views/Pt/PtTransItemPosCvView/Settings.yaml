@@ -1,0 +1,203 @@
+view:
+  name: 'PtTransItemPosCvView'
+  description: ''
+frontendView:
+  name: 'PtTransItemPosCvView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PositionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'IsSourceBooking'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 13
+  - name: 'IsInitBooking'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 14
+  - name: 'TransMsgStatusNo'
+    description: 'This field has 4 possible status:\r\n- NULL = normal\r\n- this original transaction is cancelled\r\n- this is a cancellation transaction\r\n- Rektifikat'
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtTransMsgStatus'
+      refField: 'TransMsgStatusNo'
+  - name: 'RealDate'
+    description: 'Dieses Datum wird benötigt, um eine Buchung dem effektiven Datum zuzuweisen, im speziellen für die Verbuchung der Gewinnverteilung am Jahresende benötigt. Dieses Datum wird defaultmässig auf TransDate gesetzt, kann jedoch mit speziellen Applikationen abweichend geladen werden.'
+    dataType: 'datetime'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TransDate'
+    description: 'Date of transaction posting'
+    dataType: 'datetime'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 2
+  - name: 'TransDateTime'
+    description: 'Date & Time of transaction posting'
+    dataType: 'datetime'
+    isNotNull: true
+    defaultValue: 'getdate()'
+  - name: 'ValueDate'
+    description: 'Date of transaction settlement'
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'TradeDate'
+    description: 'Date on wich the transaction (e.g. trade, interest payment, cash payment) was fixed.'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 1
+  - name: 'DebitQuantity'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 4
+  - name: 'CreditQuantity'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 5
+  - name: 'TextNo'
+    description: 'It refers to PtTransItemText. This text is displayed on Account Statements.'
+    dataType: 'smallint'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+  - name: 'MainTransText'
+    description: 'This text is printed on a statement of account report'
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+  - name: 'TransText'
+    description: 'It is text entered by the Cashier or account manager'
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+  - name: 'AmountCvAcCu'
+    description: ''
+    dataType: 'money'
+  - name: 'AmountCvPfCu'
+    description: ''
+    dataType: 'money'
+  - name: 'CvAmountTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtTransCvAmountType'
+      refField: 'CvAmountTypeNo'
+  - name: 'RateAcCuPfCu'
+    description: 'Exchange rate between position currency (original curr.) and portfolio currency (target curr.). Position and portfolio are based on field PositionId'
+    dataType: 'float'
+  - name: 'CvBookStatusNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtCvBookStatus'
+      refField: 'CvBookStatusNo'
+      defColumnPos: 11
+  - name: 'IsTransItemDetail'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'OpenInputQuantity'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 6
+  - name: 'BuyChargesAcCu'
+    description: ''
+    dataType: 'money'
+  - name: 'AmountCorrectionAcCu'
+    description: ''
+    dataType: 'money'
+  - name: 'AmountCorrectionPfCu'
+    description: ''
+    dataType: 'money'
+  - name: 'IsInputBooking'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 9
+  - name: 'OpenAmountCvAcCu'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 7
+  - name: 'OpenAmountCvPfCu'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 8
+  - name: 'TransNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 12
+  - name: 'EventNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'TransTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+      defColumnPos: 10
+  - name: 'AccountCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'PortfolioCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ContraPosDesc'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 300
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'BankInternalReference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'CorrCnt'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 12

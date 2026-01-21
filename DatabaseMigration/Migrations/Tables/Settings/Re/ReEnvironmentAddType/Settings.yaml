@@ -1,0 +1,44 @@
+table:
+  name: 'ReEnvironmentAddType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'EnvironmentAddType'
+    - german:
+        formTitle: 'Umgebungszuschlagstyp'
+    - french:
+        formTitle: 'Type de supplément d''envi'
+    - italian:
+        formTitle: 'Tipo di supplemento ambie'
+  columns:
+  - name: 'EnvironmentAddType'
+    description: 'Code des Umgebungszuschlages (FIS-2000:GR_UMGZUSC_CD)'
+    genericControls:
+      defColumnPos: 1
+  - name: 'StdPrice'
+    description: 'Standardpreis'
+    genericControls:
+      defColumnPos: 3
+  - name: 'OverrideStdPrice'
+    description: 'übersteuern des Standardpreises erlaubt\r\n0 = Nein\r\n1 = Ja'
+  - name: 'ForValuation'
+    description: ''
+    genericControls:
+      refTable: 'ReEnvironmentAddValuation'
+      refField: 'ValuationNo'
+      defColumnPos: 2
+  - name: 'EarningValueRate'
+    description: ''
+  - name: 'SortNo'
+    description: ''

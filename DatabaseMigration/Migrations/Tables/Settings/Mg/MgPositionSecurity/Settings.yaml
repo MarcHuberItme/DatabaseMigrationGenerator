@@ -1,0 +1,55 @@
+table:
+  name: 'MgPositionSecurity'
+  description: 'For comparing from VRX positions with Finstar positions'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'PartnerNr'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'KontoNr'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'SubKontoNr'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValKey'
+    description: 'Valorenschlüssel ( Valorennr/Anrecht/ValZusatz)\r\nFormat = vvvvvvvvaazzzzzzzzzz'
+    genericControls:
+      defColumnPos: 4
+  - name: 'DstGruppe'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'PositionId'
+    description: ''
+  - name: 'QuantityDate'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'Quantity'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'PositionCode'
+    description: 'O = Objekt\r\nP = Police\r\nS = Schuldbrief\r\nN = normaler Wertschriftenposition'
+    genericControls:
+      defColumnPos: 8
+  - name: 'PositionInfo'
+    description: ''
+  - name: 'ErrorCode'
+    description: '0 = kein Fehler\r\n1 = Fehler bei der Ermittlung des VRX-Keys'
+  - name: 'ErrorText'
+    description: ''
+    genericControls:
+      multiLine: true

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetStandardProfile'
+  description: 'Retrieves all the profile data necessary used by the FormShaper control after loading a form.'

@@ -1,0 +1,29 @@
+table:
+  name: 'CoTypecov'
+  description: 'Codetabellle -  Arten der Deckung'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Type of coverage'
+    - german:
+        formTitle: 'Arten der Deckung'
+  columns:
+  - name: 'Typecov'
+    description: 'Typ der Deckung (kurant (Gpf), kurant, örk, unkurant,blanko, blanko schwach), für Gesamtengagement und Vorlageprozess'
+    genericControls:
+      defColumnPos: 1
+  - name: 'manpri'
+    description: 'Manuelle Priorität (nur für Gesamtengagement)'
+    minValue: '1'
+    maxValue: '6'
+  - name: 'mansubpri'
+    description: ''

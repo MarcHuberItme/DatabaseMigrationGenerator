@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AsNavigationIndex_GetByParent'
+  description: 'Used to quickly access a navigation index from the data access components when a record for a shared node is inserted.'

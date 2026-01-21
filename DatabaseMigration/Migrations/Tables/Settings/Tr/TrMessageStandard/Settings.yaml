@@ -1,0 +1,80 @@
+table:
+  name: 'TrMessageStandard'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'Code'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Description'
+    description: ''
+  - name: 'HeaderStartDelimiterIn'
+    description: ''
+  - name: 'HeaderStartDelimiterOut'
+    description: ''
+  - name: 'HeaderEndDelimiter'
+    description: ''
+  - name: 'MessageStartDelimiterIn'
+    description: ''
+  - name: 'MessageStartDelimiterOut'
+    description: ''
+  - name: 'MessageEndDelimiter'
+    description: ''
+  - name: 'TextStartDelimiter'
+    description: ''
+  - name: 'TextEndDelimiter'
+    description: ''
+  - name: 'TrailerStartDelimiter'
+    description: ''
+  - name: 'TrailerEndDelimiter'
+    description: ''
+  - name: 'SequenceStartDelimiter'
+    description: ''
+  - name: 'SequenceEndDelimiter'
+    description: ''
+  - name: 'FieldStartDelimiter'
+    description: ''
+  - name: 'FieldEndDelimiter'
+    description: ''
+  - name: 'FieldContentSeparator'
+    description: ''
+  - name: 'SubItemSep'
+    description: ''
+  - name: 'SubItemSepExistence'
+    description: ''
+  - name: 'VersionNo'
+    description: ''
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'ValidTo'
+    description: ''
+  - name: 'PreParseExtAppId'
+    description: ''
+    genericControls:
+      refTable: 'TrExternalApplication'
+      refField: 'Id'
+  - name: 'PostParseExtAppId'
+    description: ''
+    genericControls:
+      refTable: 'TrExternalApplication'
+      refField: 'Id'
+  - name: 'PreConcatExtAppId'
+    description: ''
+    genericControls:
+      refTable: 'TrExternalApplication'
+      refField: 'Id'
+  - name: 'PostConcatExtAppId'
+    description: ''
+    genericControls:
+      refTable: 'TrExternalApplication'
+      refField: 'Id'
+  - name: 'AltSubItemSep'
+    description: ''

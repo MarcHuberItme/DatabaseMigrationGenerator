@@ -1,0 +1,119 @@
+view:
+  name: 'AiTaxDescriptionView'
+  description: 'View the identificate partner-selection'
+frontendView:
+  name: 'AiTaxDescriptionView'
+  description: 'Front end definition for view AiTaxDescriptionView joining AiTaxReportPartner and AiTaxReport for building the descriptionfield'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'PtDescription'
+    uiTableDescription:
+    - english:
+        formTitle: 'Description View'
+    - german:
+        formTitle: 'Partnerdaten'
+    - french:
+        formTitle: 'données des partenaire'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    defaultValue: '0'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 1
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 3
+  - name: 'MiddleName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 4
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 2
+  - name: 'NameCont'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 5
+  - name: 'DateOfBirth'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7
+  - name: 'AddrPOBox'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 35
+    genericControls:
+      defColumnPos: 10
+  - name: 'AddrStreet'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 26
+    genericControls:
+      defColumnPos: 11
+  - name: 'AddrHouseNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 12
+  - name: 'AddrZip'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 13
+    genericControls:
+      defColumnPos: 8
+  - name: 'AddrTown'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 9
+  - name: 'AddrCountryCode'
+    description: ''
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      defColumnPos: 13
+  - name: 'PtDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 103
+    genericControls:
+      defColumnPos: 15
+  - name: 'ReportingPeriod'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 16
+  - name: 'TaxReportId'
+    description: ''
+    dataType: 'uniqueidentifier'

@@ -1,0 +1,24 @@
+table:
+  name: 'PtChargeBorneType'
+  description: 'Who has to pay the expenses, ordering or beneficiary party or both half of the amount ?SWIFT: BEN, OUR, SHA'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    descField: 'ChargeBorneTypeNo'
+  columns:
+  - name: 'ChargeBorneTypeNo'
+    description: 'SWIFT: BEN, OUR, SHA'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'BICChargeType'
+    description: 'OUR,BEN,SHA'
+    genericControls:
+      defColumnPos: 2

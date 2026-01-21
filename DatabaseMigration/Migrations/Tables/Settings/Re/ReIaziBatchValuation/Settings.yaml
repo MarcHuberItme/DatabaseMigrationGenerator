@@ -1,0 +1,54 @@
+table:
+  name: 'ReIaziBatchValuation'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ReIaziBatchValuation'
+        helpText: 'ReIaziBatchValuation'
+    - german:
+        formTitle: 'ReIaziBatchValuation'
+        helpText: 'ReIaziBatchValuation'
+  columns:
+  - name: 'PremisesRelAccountId'
+    description: ''
+  - name: 'StatusNo'
+    description: ''
+  - name: 'QualityNo'
+    description: ''
+    genericControls:
+      refTable: 'ReIaziWSEvalQuality'
+      refField: 'QualityNo'
+  - name: 'Price'
+    description: ''
+  - name: 'Info'
+    description: ''
+  - name: 'ValuationDate'
+    description: ''
+  - name: 'IaziWSProcessId'
+    description: ''
+  - name: 'FsMissingData'
+    description: ''
+  - name: 'IaziParaList'
+    description: ''
+  - name: 'LastPrice'
+    description: ''
+  - name: 'LastValuationDate'
+    description: ''
+  - name: 'LastIntPrice'
+    description: ''
+  - name: 'LastIntValuationDate'
+    description: ''
+  - name: 'LastIntPriceSigned'
+    description: ''
+  - name: 'Comment'
+    description: ''

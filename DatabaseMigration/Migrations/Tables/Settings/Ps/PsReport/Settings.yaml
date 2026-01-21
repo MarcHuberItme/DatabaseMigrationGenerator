@@ -1,0 +1,113 @@
+table:
+  name: 'PsReport'
+  description: 'Base table for reports.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Reports'
+    - german:
+        formTitle: 'Reports'
+  columns:
+  - name: 'ReportGroupId'
+    description: 'Grouping criteria for reports'
+    genericControls:
+      refTable: 'PsReportGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ReportName'
+    description: 'Reports, which are stored in the report table PsReportFile, are named by the following convention:\r\n<ReportName>_<LanguageNo>.rpt\r\nReportName is stored in this field, LanguageNo is a field of PsReportFile'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ReportType'
+    description: '1 = Batch Mainreport\r\n2 = Batch Subreport\r\n3 = Online-Report'
+    genericControls:
+      refTable: 'PsReportType'
+      refField: 'ReportTypeNo'
+      defColumnPos: 2
+  - name: 'DocumentType'
+    description: 'Type of the document. \r\nNULL for Subreports.'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+      defColumnPos: 3
+  - name: 'SelectClause'
+    description: 'Contains the select-part of the query which is needed to retrieve the primary report data\r\nNULL for Subreports.'
+  - name: 'StaticFields'
+    description: 'Comma separated list of fields that can be statically defined if a print job is started'
+  - name: 'ArchiveLocation'
+    description: 'Location of the archive where the formatted documents are stored\r\n0 = No Archive\r\n1 = Operational database\r\n2 = Archive database (Read Only)\r\nNULL for Subreports\r\n\r\nIf ArchiveLocation is 1 or 2, at least the field PartnerId must be present.'
+  - name: 'ArchiveRefersToPortfolio'
+    description: 'If true, the field PortfolioId will be filled in AsDocument. The select clause must also include PortfolioId.\r\nOnly relevent, if ArchiveLocation is 1 or 2.'
+  - name: 'ArchiveRefersToAccount'
+    description: 'If true, the field AccountId will be filled in AsDocument. The select clause must also include AccountId.\r\nOnly relevent, if ArchiveLocation is 1 or 2.'
+  - name: 'DocumentIndexTables'
+    description: 'Contains a comma separated list of table names and foreign keys in the format\r\n<TableName1>=<ForeignKey1>,<TableName1>=<ForeignKey1>, ...\r\nfor example:\r\nPtAgrPki=PtAgrPkiId,PtPkiCert=CertId\r\nThe foreign keys in the list must all be part of the select clause'
+  - name: 'PrintDocNoBarCode'
+    description: 'If true, the report engine will print a document number, which is taken from AsSequence, to the document and store it, if necessary, in AsDocument.\r\nThe report must contain an image with the name DocNoBarCode.\r\n\r\nThis field can only be true if archive location is set to 1.'
+  - name: 'Replaceable'
+    description: 'True if a document can be replaced in the archive if it is returned by the customer.\r\nThis field is only relevant if PrintDocNoBarCode is set to true.'
+  - name: 'CreateContactReport'
+    description: 'If true, a contact report is generated for each formatted document.'
+  - name: 'ContactInitiatorId'
+    description: 'InitiatorId that will be set in PtContactReport if CreateContactReport is true.'
+    genericControls:
+      refTable: 'AsContactInitiator'
+      refField: 'Id'
+  - name: 'ContactTriggerId'
+    description: 'TriggerId that will be set in PtContactReport if CreateContactReport is true.'
+    genericControls:
+      refTable: 'AsContactTrigger'
+      refField: 'Id'
+  - name: 'ContactTopicId'
+    description: 'TopicId that will be set in PtContactReport if CreateContactReport is true.'
+    genericControls:
+      refTable: 'AsContactTopic'
+      refField: 'Id'
+  - name: 'ContactMediaId'
+    description: 'MediaId that will be set in PtContactReport if CreateContactReport is true.'
+    genericControls:
+      refTable: 'AsContactMedia'
+      refField: 'Id'
+  - name: 'MailOutput'
+    description: 'True if report is intended to send to customer'
+  - name: 'MultiQualityReport'
+    description: 'if true, the report contains elements (e.g.logos) of several qualities. To choose the right one, the input data must contain the field QualityCode'
+  - name: 'BranchDependent'
+    description: 'True if the report has to print branch dependen labels stored in PsBranchLabelText'
+  - name: 'PreProcessingTask'
+    description: 'Name of the task that has to be executed before the report is formatted.'
+    genericControls:
+      refTable: 'AsLogicalTask'
+      refField: 'LogicalName'
+  - name: 'PostProcessingTask'
+    description: 'Name of the task that is executed after formatting the report.'
+    genericControls:
+      refTable: 'AsLogicalTask'
+      refField: 'LogicalName'
+  - name: 'CanRunAdHoc'
+    description: 'If True, the report can be started as Ad-Hoc report'
+  - name: 'FunctionGroupNo'
+    description: 'Permission group with access rights to this report.\r\n0 or null = full access for everybody'
+    genericControls:
+      refTable: 'AsFunctionGroup'
+      refField: 'FunctionGroupNo'
+      hasDetailBtn: true
+  - name: 'ResponsibleID'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Usage'
+    description: ''
+  - name: 'ExportAllowed'
+    description: 'One can export this report even if the bank is basically not allowed to export this report. Override for the system parameter ExcelExportAllowed in case the system parameter is set to 0.'

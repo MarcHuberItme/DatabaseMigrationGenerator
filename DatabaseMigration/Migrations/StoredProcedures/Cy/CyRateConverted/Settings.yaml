@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CyRateConverted'
+  description: 'Gets Rate, Brief, Geld of given @Amount for Currency-Pair @SourceCurrency/@DestCurrency'

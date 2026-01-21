@@ -1,0 +1,31 @@
+table:
+  name: 'CyBankNoteReportGroup'
+  description: 'Banknote Group for reporting'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'reporting group f. bankn.'
+    - german:
+        formTitle: 'Report Gruppen f. Bankno.'
+  columns:
+  - name: 'BankNoteReportGroupNo'
+    description: 'Banknote group only for reporting'
+    genericControls:
+      visNumber: 1
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'NoReporting'
+    description: 'is true then no BankNote limit'
+    genericControls:
+      defColumnPos: 2
+      noUpdatePos: 2

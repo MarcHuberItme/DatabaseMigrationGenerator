@@ -1,0 +1,39 @@
+table:
+  name: 'PtEbNewsInset'
+  description: 'Contains newsletter attachments'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'E-News Inset'
+    - german:
+        formTitle: 'E-News Inset'
+    - french:
+        formTitle: 'E-News Inset'
+    - italian:
+        formTitle: 'E-News Inset'
+  columns:
+  - name: 'NewsletterId'
+    description: ''
+    genericControls:
+      refTable: 'PtEbNewsletter'
+      refField: 'Id'
+  - name: 'Document'
+    description: 'Content of the document'
+  - name: 'Name'
+    description: 'Name of the document'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Format'
+    description: 'Format of Document (like .jpg / .pdf / .doc)'
+    genericControls:
+      refTable: 'AsDocumentFormat'
+      refField: 'Format'

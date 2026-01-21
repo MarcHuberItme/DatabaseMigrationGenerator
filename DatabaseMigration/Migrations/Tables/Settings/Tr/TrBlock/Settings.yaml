@@ -1,0 +1,39 @@
+table:
+  name: 'TrBlock'
+  description: 'Contains information about Blocks in a MessageStandard'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'MessageStandardId'
+    description: ''
+    genericControls:
+      refTable: 'TrMessageStandard'
+      refField: 'Id'
+  - name: 'Name'
+    description: ''
+  - name: 'BlockTypeCode'
+    description: ''
+  - name: 'ParseBlock'
+    description: ''
+  - name: 'FieldCodesExist'
+    description: ''
+  - name: 'ExistFieldDelimiter'
+    description: ''
+  - name: 'MinLength'
+    description: ''
+  - name: 'MaxLength'
+    description: ''
+  - name: 'ContainsMsgTypeCode'
+    description: ''
+  - name: 'Code'
+    description: ''
+  - name: 'ConcatBlock'
+    description: ''
+  - name: 'BlockIdOffset'
+    description: 'Offset of the block id in the block text'

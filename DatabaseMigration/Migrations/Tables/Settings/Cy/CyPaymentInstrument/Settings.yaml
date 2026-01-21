@@ -1,0 +1,25 @@
+table:
+  name: 'CyPaymentInstrument'
+  description: 'Defines the Instrument a payment is made with.\r\nA payment instrument can be, for example:\r\n- Small Notes\r\n- Large Notes\r\n- Traveller Checkes\r\netc.'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment Instrument'
+    - german:
+        formTitle: 'Zahlungsmittel'
+  columns:
+  - name: 'PaymentInstrumentNo'
+    description: 'Number of the payment intrument.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CheckUnion'
+    description: 'Flag to indicate that these type of rate has to be calculated by special calculation rules defined by the union.'

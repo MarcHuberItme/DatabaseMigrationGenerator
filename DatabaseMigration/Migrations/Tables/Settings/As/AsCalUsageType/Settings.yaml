@@ -1,0 +1,20 @@
+table:
+  name: 'AsCalUsageType'
+  description: 'This table contains the numeric codes for the different usage types available for date calculation.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'UsageType'
+    description: ''
+    minValue: '0'
+    maxValue: '255'
+    genericControls:
+      defColumnPos: 1

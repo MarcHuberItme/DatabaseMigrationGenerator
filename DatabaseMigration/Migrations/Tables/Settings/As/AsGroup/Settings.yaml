@@ -1,0 +1,33 @@
+table:
+  name: 'AsGroup'
+  description: 'Names of the different groups within a Group Type'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Group'
+    - german:
+        formTitle: 'Gruppe'
+  columns:
+  - name: 'GroupTypeId'
+    description: 'foreign-key, Id of AsGroupType\r\nand also part of primary-key'
+    genericControls:
+      refTable: 'AsGroupType'
+      refField: 'Id'
+  - name: 'IsDefault'
+    description: 'set the default GroupName (true=default)'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'SortNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2

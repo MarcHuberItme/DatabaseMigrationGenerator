@@ -1,0 +1,84 @@
+table:
+  name: 'ReIaziEAPFsTemp'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ReIaziEAPFsTemp'
+        helpText: 'ReIaziEAPFsTemp'
+    - german:
+        formTitle: 'ReIaziEAPFsTemp'
+        helpText: 'ReIaziEAPFsTemp'
+  columns:
+  - name: 'TaskId'
+    description: ''
+  - name: 'FinstarTaskId'
+    description: ''
+  - name: 'Sector'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Factor'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Category'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'FieldDesc'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'FieldLoc'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'XMLElement'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'Data'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'ListText'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'FsIaziValue'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'FsValue'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'FsListText'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'AsEFH'
+    description: ''
+  - name: 'AsMFH'
+    description: ''
+  - name: 'AsStwE'
+    description: ''
+  - name: 'DataType'
+    description: ''
+    genericControls:
+      defColumnPos: 12
+  - name: 'AsFsConfig'
+    description: ''
+    genericControls:
+      defColumnPos: 13
+  - name: 'TableId'
+    description: ''

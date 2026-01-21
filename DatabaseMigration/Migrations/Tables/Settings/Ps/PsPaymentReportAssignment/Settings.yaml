@@ -1,0 +1,40 @@
+table:
+  name: 'PsPaymentReportAssignment'
+  description: 'Lists reports used for payment advices'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    visumLevel: 1
+    cacheLevel: 2
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment Advice Reports'
+    - german:
+        formTitle: 'Zahlungsverkehr-Reports'
+  columns:
+  - name: 'CorrItemId'
+    description: 'DocumentType'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'MessageType'
+    description: 'MessageType'
+    genericControls:
+      defColumnPos: 2
+  - name: 'SingleReportName'
+    description: 'Refers to the table PsReports.ReportName, contains the name of the report for a singleline advice'
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'ReportName'
+      defColumnPos: 3
+  - name: 'MultiReportName'
+    description: 'Refers to the table PsReports.ReportName, contains the Name of the report for a multiline advice'
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'ReportName'
+      defColumnPos: 4

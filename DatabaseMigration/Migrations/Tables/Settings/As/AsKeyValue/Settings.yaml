@@ -1,0 +1,18 @@
+table:
+  name: 'AsKeyValue'
+  description: 'A simple key value store which is not versioned and used to store temporary information that is not of long-term value, e.g. state information that is kept to preserve information after a service or job restart.\r\n\r\nThe key should be a fully qualified name that clearly indicates the domain, consistent with other namespaces in the system.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+  columns:
+  - name: 'FullyQualifiedKey'
+    description: 'The key which must be a fully qualified name including the domain and reflect namespaces elsewhere in the system.'
+  - name: 'Value'
+    description: 'The value which is store with the key. Format is individual to each specific usecase. Can be a simple value, JSON, or anything.'

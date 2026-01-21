@@ -1,0 +1,39 @@
+table:
+  name: 'PtAgrSecureListMobileDef'
+  description: 'Administration of mobile phone numbers for partner authentication.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Mobile Phone Definition'
+    - german:
+        formTitle: 'Mobiltelefondefinition'
+  columns:
+  - name: 'SecureListId'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrSecureList'
+      refField: 'Id'
+  - name: 'BeginDate'
+    description: 'From this date on the given mobile phone number will be used'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ExpirationDate'
+    description: 'The given phone number will only be used till this date'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PhoneNo'
+    description: 'The phone number to be used in national or international format'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Remark'
+    description: 'Custom remarks (e.g. "business number" or "customer changed mobile contract as of 01.03.2016", ...)'
+    genericControls:
+      multiLine: true

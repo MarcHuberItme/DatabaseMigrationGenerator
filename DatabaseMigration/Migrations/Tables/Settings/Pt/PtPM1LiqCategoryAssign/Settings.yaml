@@ -1,0 +1,39 @@
+table:
+  name: 'PtPM1LiqCategoryAssign'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'CategoryNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPM1LiquidityCategory'
+      refField: 'CategoryNo'
+      defColumnPos: 1
+  - name: 'PrivateProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'ContractType'
+    description: ''
+    genericControls:
+      refTable: 'PtContractType'
+      refField: 'ContractType'
+      defColumnPos: 3
+  - name: 'AssetTypeCode'
+    description: 'AssetTypeCode from the PrPublicAssetType used for mapping with the main asset types used in the security table. This field will be used in the SSIS data load to RTW/PM1 (current PMS system from Expersoft) in order to create asset type structure. The Liquidity Category corresponds to all products, objects or so in Finstar not being a security. For those an eritifical ISIN will be created since PM1 could only work with Securities.'
+    genericControls:
+      refTable: 'PrPublicAssetType'
+      refField: 'AssetTypeCode'
+      defColumnPos: 4

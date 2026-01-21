@@ -1,0 +1,23 @@
+table:
+  name: 'NcScan'
+  description: 'NameMatching scan.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0ebe92b4-009e-4d5f-b882-c8d9daf72042
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'Name'
+    uiTableDescription:
+    - english:
+        formTitle: 'NameMatching Scan'
+    - german:
+        formTitle: 'Namematching-Scan'
+  columns:
+  - name: 'Name'
+    description: 'Name of a scan. Expl.: Daily Full Scan, or Weekly incremental PEP-Scan etc.'
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,29 @@
+table:
+  name: 'PtAccountPaybackAccountPayList'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'PaybackAccountId'
+    description: 'Amortisierter bzw. einbezahlter Betrag im entsprechenden Geschäftsjahr\r\n--\r\nAmortised amount in the business year "year"'
+    genericControls:
+      refTable: 'PtAccountPaybackAccountList'
+      refField: 'Id'
+  - name: 'Year'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'LastControlDate'
+    description: 'Date of last check in this business year\r\n--\r\nLetztes Kontrolldatum im entsprechenden Geschäftsjahr'
+  - name: 'PaybackYearToDateAmount'
+    description: 'Amortised amount in the business year\r\n--\r\nAmortisierter bzw. einbezahlter Betrag im entsprechenden Geschäftsjahr'
+    genericControls:
+      defColumnPos: 2

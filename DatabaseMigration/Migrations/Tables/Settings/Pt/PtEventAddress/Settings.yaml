@@ -1,0 +1,98 @@
+table:
+  name: 'PtEventAddress'
+  description: '1) select all partner + 11-er domiclie address -> PtEventEntity\r\n2) selelect correspondence Instruction ->PtEventEntity data+receiver addressId\r\n     -> PtEventAddress\r\n3) Print job -> get all actual data for the receiver from the database'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'EventId'
+    description: ''
+    genericControls:
+      refTable: 'PtEvent'
+      refField: 'Id'
+  - name: 'TopicId'
+    description: 'used for contact report creation'
+    genericControls:
+      refTable: 'AsContactTopic'
+      refField: 'Id'
+  - name: 'InitiatorId'
+    description: 'used for contact report creation'
+    genericControls:
+      refTable: 'AsContactInitiator'
+      refField: 'Id'
+  - name: 'SuppressFlag'
+    description: 'the entity can be suppressed manually then the client doesn''t receive any documents.\r\n0 = not suppressed / 1 = suppressed'
+  - name: 'PartnerIdOwner'
+    description: 'PartnerId of owner (Inhaber)'
+  - name: 'PartnerNo'
+    description: 'Partner Number of owner (Inhaber)'
+  - name: 'PartnerNoEdited'
+    description: 'Partner Number of owner (Inhaber)'
+  - name: 'DateOfBirth'
+    description: 'date of birth of the owner (Inhaber)'
+  - name: 'YearOfBirth'
+    description: ''
+  - name: 'SexStatusNo'
+    description: ''
+  - name: 'FirstName'
+    description: 'FirstName from table PtBase'
+  - name: 'PortfolioId'
+    description: 'PortfolioId of owner (Inhaber)'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'AccountId'
+    description: 'AccountId of owner (Inhaber)'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'ServiceLevelNo'
+    description: 'Service Level of the owner (Inhaber)'
+    genericControls:
+      refTable: 'PtServiceLevel'
+      refField: 'ServiceLevelNo'
+  - name: 'BranchNo'
+    description: 'of owner (Inhaber)'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+  - name: 'ConsultantTeamName'
+    description: 'Consultant Team of the owner (Inhaber)'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'ProfitCenterNo'
+    description: 'Profit Center of the owner (Inhaber)'
+    genericControls:
+      refTable: 'AsProfitCenter'
+      refField: 'ProfitCenterNo'
+  - name: 'AddressId'
+    description: 'domicile address of the owner (11-er Adresse Inhaber)'
+  - name: 'ReportAdrLine'
+    description: 'from 11-er address of the owner (Inhaber)'
+  - name: 'ReducedAddress'
+    description: 'Reduced address of the owner (11-er Addresse)'
+    genericControls:
+      multiLine: true
+  - name: 'SignatureLine'
+    description: 'owner signature from the 11-er Addresse'
+  - name: 'PartnerIdReceiver'
+    description: 'PartnerId of receiver (Empfänger)'
+  - name: 'AddrIdReceiver'
+    description: 'receiver address Id (Empfänger)'
+  - name: 'CarrierTypeNo'
+    description: 'Feld aus Tab. PtCorrPartner'
+  - name: 'DeliveryRuleNo'
+    description: 'Feld aus Tab. PtCorrPartner'
+  - name: 'DetourGroup'
+    description: 'Feld aus Tab. PtCorrPartner\r\nInhalt via AsUserGroup, AsText'
+  - name: 'QualityCheck'
+    description: 'Feld aus Tabelle PtCorrPartner \r\nfalse = not checked\r\ntrue  = checked'
+  - name: 'CopyNumber'
+    description: 'Feld aus Tabelle PtCorrPartnerItemGroup\r\nAnzahl Exemplare eines Dokumentes.\r\n0 = diese Korrespondenzanweisung ist nicht erwünscht'

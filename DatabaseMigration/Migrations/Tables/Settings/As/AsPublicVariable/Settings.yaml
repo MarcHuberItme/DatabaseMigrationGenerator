@@ -1,0 +1,34 @@
+table:
+  name: 'AsPublicVariable'
+  description: 'Variables of a public variable set\r\n(used for Workflow System and Soft Logic System)'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Public Variables'
+    - german:
+        formTitle: 'Public Variables'
+  columns:
+  - name: 'VarSetName'
+    description: 'Name of the variable set to which the variable belongs.'
+    genericControls:
+      refTable: 'AsPublicVariableSet'
+      refField: 'VarSetName'
+      isNoUpdate: true
+  - name: 'VarName'
+    description: 'Name of the public variable'
+    genericControls:
+      defColumnPos: 1
+  - name: 'VarType'
+    description: 'Type of the variable according to definitions found in WorkFlow Designer Ver. 1.2'
+    genericControls:
+      defColumnPos: 2
+  - name: 'VarSize'
+    description: 'Maximum length of the variable.'

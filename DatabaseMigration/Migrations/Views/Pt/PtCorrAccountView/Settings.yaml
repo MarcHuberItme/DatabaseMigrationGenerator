@@ -1,0 +1,67 @@
+view:
+  name: 'PtCorrAccountView'
+  description: 'Rules for account correspondence are selected. Rules on account, portfolio and partner level are provided.\r\n'
+frontendView:
+  name: 'PtCorrAccountView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'AddressId'
+  columns:
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+  - name: 'AddressId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAddressView'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'AttentionOf'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+    genericControls:
+      defColumnPos: 2
+  - name: 'CarrierTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsCarrierType'
+      refField: 'CarrierTypeNo'
+      defColumnPos: 3
+  - name: 'DeliveryRuleNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 4
+  - name: 'DetourGroup'
+    description: ''
+    dataType: 'varchar'
+    prec: 32
+    genericControls:
+      defColumnPos: 5
+  - name: 'CorrItemId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+  - name: 'CopyNumber'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 6

@@ -1,0 +1,32 @@
+table:
+  name: 'WfQueueError'
+  description: 'Contains the queue messages of the workflow system that caused permanent errors.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Workflow queue errors'
+    - german:
+        formTitle: 'Fehlerhafte Queueelemente'
+  columns:
+  - name: 'ErrorDate'
+    description: 'Date when the entry was removed from the queue.'
+  - name: 'QueueType'
+    description: 'Determines the type of the queue the entry is coming form\r\n1 = Public Event\r\n2 = Engine message\r\n3 = JobBroker message\r\n4 = EventDistributor message'
+  - name: 'ServerName'
+    description: 'Name of the server the queue resides.'
+  - name: 'QueueName'
+    description: 'Name of the queue the entry is coming form.'
+  - name: 'MsgLabel'
+    description: 'Label of the queue entry.'
+  - name: 'MsgBody'
+    description: 'Body of the queue message'
+  - name: 'ErrorStack'
+    description: 'Error stack of the listener that dropped thiw message.'

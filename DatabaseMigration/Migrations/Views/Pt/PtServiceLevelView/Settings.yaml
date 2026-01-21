@@ -1,0 +1,56 @@
+view:
+  name: 'PtServiceLevelView'
+  description: 'View of different service levels for different customers.'
+frontendView:
+  name: 'PtServiceLevelView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'TextShort'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 25
+  - name: 'ServiceLevelNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    isUnique: true
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'ForLegalPartner'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ForNaturalPartner'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ForAiA'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ForAML'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ForAnonymous'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ForMarriedCouple'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true

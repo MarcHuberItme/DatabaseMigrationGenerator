@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtUpdateTransactionAndTransMessagePosting'
+  description: 'Updates status for an outgoing payment in PtTransMessage, after external message has beem successfully created.\r\nChecks if messages have been successfully generated for all the external payments in a transaction, in case all processed, it marks the Transaction as SCANNED FOR POSTING'

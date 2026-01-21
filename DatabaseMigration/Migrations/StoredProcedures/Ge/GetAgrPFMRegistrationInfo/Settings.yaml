@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAgrPFMRegistrationInfo'
+  description: ''

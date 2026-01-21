@@ -1,0 +1,19 @@
+table:
+  name: 'AsVocab'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 94c2d033-c482-4cd0-842b-8498330b12a6
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Word'
+    description: ''
+  - name: 'Sound'
+    description: ''

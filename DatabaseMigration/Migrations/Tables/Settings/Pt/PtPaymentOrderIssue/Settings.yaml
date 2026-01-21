@@ -1,0 +1,33 @@
+table:
+  name: 'PtPaymentOrderIssue'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'OrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrder'
+      refField: 'Id'
+  - name: 'WfMap'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ProcessId'
+    description: ''
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'Comment'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IsPaymentAllowed'
+    description: ''

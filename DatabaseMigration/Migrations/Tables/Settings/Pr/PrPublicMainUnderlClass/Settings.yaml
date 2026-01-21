@@ -1,0 +1,24 @@
+table:
+  name: 'PrPublicMainUnderlClass'
+  description: 'VDF-Domaine: 7930 MANUALASSETCLASS'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Main underlying class'
+    - german:
+        formTitle: 'Haupt Underlying-Klasse'
+  columns:
+  - name: 'MainUnderlClassNo'
+    description: 'Maintained by VDF-Metadata'
+    genericControls:
+      defColumnPos: 1

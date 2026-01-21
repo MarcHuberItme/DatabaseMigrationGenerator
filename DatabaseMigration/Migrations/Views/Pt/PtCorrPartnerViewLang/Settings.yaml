@@ -1,0 +1,3 @@
+view:
+  name: 'PtCorrPartnerViewLang'
+  description: 'Baed on PtCorrPartnerView, but enriched by the Correpondence Language of the target address'

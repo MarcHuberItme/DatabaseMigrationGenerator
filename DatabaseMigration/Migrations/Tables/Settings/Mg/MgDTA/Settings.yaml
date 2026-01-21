@@ -1,0 +1,38 @@
+table:
+  name: 'MgDTA'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransactionId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      defColumnPos: 4
+  - name: 'CreationDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'DTAText'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ProcessingDate'
+    description: 'This date is set when the file is generated'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TotalAmount'
+    description: ''
+  - name: 'TransactionCount'
+    description: ''
+  - name: 'Outputfile'
+    description: ''
+  - name: 'MachineName'
+    description: ''

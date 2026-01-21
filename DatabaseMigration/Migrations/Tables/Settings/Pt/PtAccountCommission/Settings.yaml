@@ -1,0 +1,57 @@
+table:
+  name: 'PtAccountCommission'
+  description: 'Individual commission for a specific account.\r\nIf the commission is based on the average balance then the price and the calculation is handeld with ICM.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Commission'
+    - german:
+        formTitle: 'Kommission'
+    - french:
+        formTitle: 'Commissions'
+  columns:
+  - name: 'AccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      defColumnPos: 1
+      createNavigationIndex: true
+  - name: 'CommissionTypeId'
+    description: 'Relation to to commission type'
+    genericControls:
+      refTable: 'PrCommissionType'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Price'
+    description: 'Price according to the rules of the commission type.\r\nIf <Null> then the standard price of the commission type has to be used.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'MgVrxKey'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'Currency'
+    description: 'Currency associated to the price.\r\nCurrency, AccountId, CommissionTypeId and ValidFrom forms a unique key'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 5

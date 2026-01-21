@@ -1,0 +1,137 @@
+table:
+  name: 'PtPaymentAdvice'
+  description: 'printable payment advices'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'printable payment advices'
+        helpText: 'printable payment advices'
+    - german:
+        formTitle: 'ZV Avis aufbereitet'
+        helpText: 'ZV Avis aufbereitet'
+  columns:
+  - name: 'PrintPaymentAdviceDayId'
+    description: ''
+    genericControls:
+      refTable: 'PtPrintPaymentAdviceDay'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'GroupKey'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'AdviceType'
+    description: ''
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+      isNoUpdate: true
+  - name: 'CorrItemId'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'ProcessStatusNo'
+    description: '1 = Avis initialisiert\r\n2 = Avis details zugeordnet\r\n3 = TransItem zugeordnet\r\n4 = AccountDesc gespeichert\r\n5 = Avis wird erstellt\r\n6 = Avis erstellt'
+    minValue: '1'
+    maxValue: '8'
+    genericControls:
+      refTable: 'PtPaymentAdviceStatus'
+      refField: 'ProcessStatusNo'
+      defColumnPos: 4
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'AccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'RelatedToDebit'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'ReportName'
+    description: ''
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'ReportName'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'TransItemId'
+    description: ''
+  - name: 'PrReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PrReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PositionId'
+    description: ''
+  - name: 'ValueDate'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'BranchNo'
+    description: ''
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+  - name: 'AccountNoEdited'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'AccountNoIbanForm'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      isNoUpdate: true
+  - name: 'CustomerReference'
+    description: ''
+  - name: 'TotalAmount'
+    description: ''
+  - name: 'PrCharacteristicId'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivateCharacteristic'
+      refField: 'Id'
+      hasDetailBtn: true

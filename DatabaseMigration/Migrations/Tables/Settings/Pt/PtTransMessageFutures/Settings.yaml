@@ -1,0 +1,53 @@
+table:
+  name: 'PtTransMessageFutures'
+  description: 'Details for a future stockexorder'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PositionId'
+    description: 'Id of the customer security position'
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransMessageIdCustomer'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransMessageIdBroker'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransactionIdAdjustment'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransactionIdReversalAdj'
+    description: ''
+  - name: 'FuturesStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessageFuturesStatus'
+      refField: 'FuturesStatusNo'
+  - name: 'ReversalTextIntern'
+    description: ''
+  - name: 'ReversalTextExtern'
+    description: ''
+  - name: 'AdjQuantityCustomer'
+    description: 'This field was added to have the possibility to adjust only a part of the orderquantity and contains the quantity to be adjusted.\r\nBasically it contains the quantity from PtTransMessage (Debit- or CreditQuantity). But the user can reduce this value with the quantity to be adjusted.\r\nTo prevent rounding problems in this case the field AdjAmountCustomer and AdjAmountBroker are necessary.'
+  - name: 'AdjAmountCustomer'
+    description: 'see description of AdjQuantityCustomer'
+  - name: 'AdjAmountBroker'
+    description: 'see description of AdjQuantityCustomer'

@@ -1,0 +1,21 @@
+table:
+  name: 'JkTemp'
+  description: 'Temp-Table. Only created for DataDefiner experiments'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 75acefc4-0a56-4966-97a8-53e8b891ec08
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'BaseName'
+    description: ''
+  - name: 'UserInfo'
+    description: ''
+  - name: 'IdReference'
+    description: ''

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetRetainedMail'
+  description: 'to get pending retained mail of a partner'

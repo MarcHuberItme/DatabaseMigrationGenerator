@@ -1,0 +1,186 @@
+view:
+  name: 'PtETaxSecurityStatementView'
+  description: ''
+frontendView:
+  name: 'PtETaxSecurityStatementView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtETaxSecurityStatementVi'
+        helpText: 'PtETaxSecurityStatementView'
+    - german:
+        formTitle: 'PtETaxSecurityStatementVi'
+        helpText: 'PtETaxSecurityStatementView'
+    - french:
+        formTitle: 'PtETaxSecurityStatementVi'
+        helpText: 'PtETaxSecurityStatementView'
+    - italian:
+        formTitle: 'PtETaxSecurityStatementVi'
+        helpText: 'PtETaxSecurityStatementView'
+  columns:
+  - name: 'TaxReportJobNo'
+    description: ''
+    dataType: 'int'
+  - name: 'TaxReportDataId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'TaxPosId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'DepotNumber'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 11
+  - name: 'PositionId'
+    description: ''
+    dataType: 'int'
+  - name: 'ValorNumber'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+  - name: 'Isin'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+  - name: 'Country'
+    description: ''
+    dataType: 'char'
+    prec: 2
+  - name: 'City'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'QuotationType'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+  - name: 'NominalValue'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'SecurityCategory'
+    description: ''
+    dataType: 'varchar'
+    prec: 20
+  - name: 'SecurityType'
+    description: ''
+    dataType: 'varchar'
+    prec: 30
+  - name: 'SecurityName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 60
+  - name: 'IssueDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'RedemptionDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'RedemptionDateEarly'
+    description: ''
+    dataType: 'datetime'
+  - name: 'IssuePrice'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'RedemptionPrice'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'RedemptionPriceEarly'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'InterestRate'
+    description: ''
+    dataType: 'float'
+  - name: 'VariableInterest'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ReferenceDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 60
+  - name: 'Quantity'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'BalanceCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'UnitPrice'
+    description: ''
+    dataType: 'decimal'
+    prec: 28
+    scale: 10
+  - name: 'Balance'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ExchangeRate'
+    description: ''
+    dataType: 'float'
+  - name: 'Value'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'Blocked'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'BlockingTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Undefined'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Kursliste'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'HelpTaxPriceSourceNo'
+    description: ''
+    dataType: 'int'
+  - name: 'HelpPosSequence'
+    description: ''
+    dataType: 'int'
+  - name: 'HelpPositionText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 500
+  - name: 'HelpTaxReportClass'
+    description: ''
+    dataType: 'char'
+    prec: 1
+  - name: 'HelpPortfolioTypeNo'
+    description: ''
+    dataType: 'int'

@@ -1,0 +1,3 @@
+view:
+  name: 'AcFrozenSpecProvisionSumView'
+  description: 'specific provisions totals (fire export frontend)'

@@ -1,0 +1,497 @@
+table:
+  name: 'PtTransMessage'
+  description: 'contains all fields of a message e.g. SIC ... or Trading Orders'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'TransText'
+    uiTableDescription:
+    - english:
+        formTitle: 'original message'
+    - german:
+        formTitle: 'Original Message'
+  columns:
+  - name: 'TransactionId'
+    description: 'Reference to PtTransaction'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 14
+      isNoUpdate: true
+  - name: 'IsStockExOrder'
+    description: 'False = Customer order (default)\r\nTrue    = Order to Stockexchange or broker'
+  - name: 'BankInternalReference'
+    description: 'application individual reference:\r\n\r\nStock Exchange application:\r\n    unique reference passing to the StockEx-System.\r\n    TransNo: 12 digits\r\n    SequenceNo: 4 digits \r\nCorporate actions application:\r\n    TransMsgNo (inherited from EvTemplateDetail.TransMsgNo)'
+  - name: 'OrderStatusNo'
+    description: 'Status of the order from the StockEx system'
+    genericControls:
+      refTable: 'PtTransSxOrderStatus'
+      refField: 'OrderStatusNo'
+  - name: 'StockExRef'
+    description: 'unique reference getting from the StockEx-System.\r\nStockExRef\r\nSWX/VirtX =ExchangeId\r\nOthers may be a string value'
+  - name: 'TradingSystemId'
+    description: 'Trading system \r\ne.g. SWX, Virt-X, Keytrader'
+    genericControls:
+      refTable: 'PtTradingSystem'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PublicTradingPlaceId'
+    description: 'Trading place\r\ne.g. SWX, Virt-X, NYSE, Frankfurt, London, Xetra'
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Quantity'
+    description: 'MSI:\r\nThis field is replaced with DebitQuantity and CreditQuantity. Field will be removed with next release.\r\n[shares]\r\nQuantity of requested shares to buy or to sell etc.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'OrderQuantity'
+    description: 'The ordered quantity for an stock exchange order\r\noriginal order (transno = orderno) = quantity of the order for the corresponding customer/broker\r\ncontinuation (transno <> orderno) = quantity of the desired continuation for the corresponding customer/broker\r\n'
+  - name: 'TradePrice'
+    description: 'Average Price of all corresponding PtTransTrade-records'
+  - name: 'PaymentCurrency'
+    description: 'Settlement (Payment) Currency 3-digit Code.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'PaymentAmount'
+    description: 'Payment (settlement) amount in currency of "PaymentCurrency"'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'IsDueRelevant'
+    description: 'To define if the amount is an interest  payment or  a capital transaction'
+  - name: 'OrderDate'
+    description: '[shares]\r\nDate when the order is initiated or modified.'
+  - name: 'PaymentDate'
+    description: 'Date of settlement or Scheduled payment date'
+  - name: 'CompletionDate'
+    description: 'Date/Time of completion of the payment.\r\nIt involves concept of SQL Partitioning. It is first value is MAXDATE (9999-12-31). It is then later changed by another process responsible for the task of Partioning.'
+  - name: 'MaturityDate'
+    description: '[Bonds]\r\nMaturity date for fixed term transaction, e.g. bonds'
+  - name: 'TradeDate'
+    description: 'Date on wich the transaction (e.g. trade, interest payment, cash payment) was fixed.'
+  - name: 'InterestRate'
+    description: '[Bonds]\r\nInterest rate for fixed term transaction, e.g. bonds'
+  - name: 'TransMsgStatusNo'
+    description: 'This field has 4 possible status:\r\n- NULL = normal\r\n- 1= this original transaction is cancelled\r\n- 2= this is a cancellation transaction\r\n- 3= Rektifikat'
+    genericControls:
+      refTable: 'PtTransMsgStatus'
+      refField: 'TransMsgStatusNo'
+  - name: 'CancelTransMsgId'
+    description: 'If the transaction is a cancellation transaction or a Rektifikat, this field references the cancelled original transaction'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitGroupKey'
+    description: 'possible key format: yyyymmddhhmmssqqq where \r\nyyyymmdd = date, hhmmss = time\r\nqqq = sequence no within the a second\r\nThis format is used e.g. for StandingOrder or QuickOrder to force a single debit advise.'
+  - name: 'DebitAdvice'
+    description: '0 = no advice, Info is handled by account statement\r\n1 = as part of transaction processing, multi item advice\r\n2 = as part of transaction processing, single advice\r\n3 = as multi item advice at end of day, \r\n4 = as part of transaction processing, total amount advice (Summenanzeige ohne Details)\r\n9 = report on demand (for internal accounts)\r\nFor StandingOrder, QuickOrder and similar orders  the value is to set to 1'
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+  - name: 'DebitMessageStandard'
+    description: 'Message Format Type (SIC / SWIFT / DTA). "Internal" keyword will be used for FrontDesk Operations'
+  - name: 'DebitClearingNo'
+    description: 'Own clearing number of the bank. For HBL = 8307. It is used by SIC.'
+  - name: 'DebitBICNo'
+    description: 'BIC number of our bank, to beselected by AsParameter (System)\r\n(For HBL = HYPLCH22A). It is used by SWIFT'
+  - name: 'DebitAccountNo'
+    description: 'AccountNo of debit account'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 15
+      isNoUpdate: true
+  - name: 'DebitPortfolioNo'
+    description: '//Denormalization\r\nPortfolioNo of debit account'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'PortfolioNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'DebitPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitPrReferenceId'
+    description: '//Denormalization\r\nProduct Reference Id of debit account. It is associates to a row in PrReference\r\nProduct Reference is at the most generalized level in Product hierarchy.'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitAccountCurrency'
+    description: '//denormalization\r\nCurrency code of Debit account (if a security this is the positioncurrency)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 11
+  - name: 'DebitRateAcCuPfCu'
+    description: 'Exchange rate (factor) between account currency (original curr.) and portfolio currency (target curr.)'
+  - name: 'DebitCustomerReference'
+    description: '//denormalization\r\nDebitCustomerReference to load from PtAccountBase\r\nSIC Incoming: 56 - Ordering Party Reference'
+  - name: 'DebitPrintStatus'
+    description: 'Is set, if the DebitAdvice is printed.'
+  - name: 'DebitRate'
+    description: 'Cross Rate of Debit Currency and Settlement Currency\r\nRate to calculate DebitAmount from PaymentAmount\r\nThe rate is to be delivered by CPM and CSS if the currency is different.\r\nThe rate is to set to 1.00 if the currency is equal'
+  - name: 'DebitQuantity'
+    description: 'Quantity (nominal or piece) of financial instruments\r\ntraded quantity for the corresponding customer/broker\r\n'
+  - name: 'DebitAmount'
+    description: 'Amout to debit the account'
+    genericControls:
+      isNoUpdate: true
+  - name: 'DebitCvCurrency'
+    description: 'Currency of the amount for cost value calculation (DebitCvAmount)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'DebitAmountCv'
+    description: 'Amount for cost value calculation in original currency (DebitCvCurrency)'
+  - name: 'DebitAmountCvAcCu'
+    description: 'Amount for cost value calculation in position currency (DebitAccountCurrency)'
+  - name: 'DebitCvAmountTypeNo'
+    description: 'Amount type for booking in the portfolio bookkeeping (also called as cost value system)'
+    genericControls:
+      refTable: 'PtTransCvAmountType'
+      refField: 'CvAmountTypeNo'
+  - name: 'DebitName'
+    description: 'Address of owner of the debit account.'
+  - name: 'DebitOrderingName'
+    description: 'Name or address of the ordering person if different of DebitName\r\n(not supported in standing order)\r\nFor Payrout: We store in this field the original OrderingPartyAddress (can be compared with the DebitName that is built by Finstar itself)'
+    genericControls:
+      multiLine: true
+  - name: 'DebitOrderingAccountNo'
+    description: 'AccountNo of the ordering person if different of DebitAccountNo\r\n(not supported in standing order)'
+  - name: 'DebitValueDate'
+    description: 'Same as PaymentDate as default.'
+    genericControls:
+      defColumnPos: 13
+  - name: 'DebitOpenItem'
+    description: 'Reference to an open item\r\n(not used in standing order)'
+  - name: 'DebitTextNo'
+    description: 'Text to show on account statement\r\n(Not supported in standing order)'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      hasDetailBtn: true
+  - name: 'DebitLocGroupId'
+    description: ''
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitDTAIdentification'
+    description: ''
+  - name: 'DebitPCNo'
+    description: ''
+  - name: 'DebitPaymentInformation'
+    description: ''
+  - name: 'SalaryFlag'
+    description: 'True if the payment is a salary payment.\r\nUsed to suppress detail information on debit advise and/or\r\nto suppress the payment advise for the payee'
+  - name: 'CardBaseId'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrCardBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CardNo'
+    description: 'CardNo only used in case of payments/withdraws at ATM''s or POS.\r\n'
+  - name: 'LsvId'
+    description: 'Reference of LSV only used in case of a debit by the automatic debit system'
+  - name: 'MatchingCode'
+    description: 'Matching code to locate a transaction by the counter party.\r\nCan be set by the bank and returned by the couterparty or opposite.\r\n(Not used by standing order)'
+  - name: 'ServiceCenterNo'
+    description: 'No of ServiceCenter in the common table AsProfitCenter. This is equivalent branch code'
+    genericControls:
+      refTable: 'AsProfitCenter'
+      refField: 'ProfitCenterNo'
+  - name: 'Project'
+    description: '[Bank Internal Project]\r\nId of project, only used for settlement of invoices to be payed by the bank itself.'
+  - name: 'PeriodFrom'
+    description: '[Bank Internal Project]\r\n'
+  - name: 'PeriodTo'
+    description: '[Bank Internal Project]\r\n'
+  - name: 'BudgetValue'
+    description: '[Bank Internal Project]\r\n'
+  - name: 'VatCode'
+    description: 'refers to AsVATCode.AsVATType, but not one to one'
+    genericControls:
+      refTable: 'AsVatCode'
+      refField: 'VATTaxTypeNo'
+  - name: 'CreditGroupKey'
+    description: 'Depending on a special Rule (is to be defined by NMU), \r\ndefault key format: yyyymmddhhmmssqqq where \r\nyyyymmdd = date, hhmmss = time\r\nqqq = sequence no within the a second'
+  - name: 'CreditAdvice'
+    description: '0 = no advice, Info is handled by account statement\r\n1 = as part of transaction processing multi item advice\r\n2 = as part of transaction processing single advice\r\n3 = as multi item advice at end of day, \r\n9 = report on demand (for internal accounts)\r\nFor StandingOrder, QuickOrder and similar orders  the value is to set to 1'
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+      hasDetailBtn: true
+  - name: 'CreditMessageStandard'
+    description: 'Message Format Type (SIC / SWIFT / DTA). "Internal" keyword will be used for FrontDesk Operations'
+  - name: 'CreditClearingNo'
+    description: 'Own clearing number of the bank. For HBL = 8307. It is used by SIC.'
+  - name: 'CreditBICNo'
+    description: 'BIC number of our bank, to beselected by AsParameter (System)\r\n(For HBL = HYPLCH22A). It is used by SWIFT\r\nField 46S\r\n'
+  - name: 'CreditAccountNo'
+    description: 'AccountNo of credit account'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'CreditPortfolioNo'
+    description: '//Denormalization\r\nPortfolioNo of credit account'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'PortfolioNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'CreditPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditPrReferenceId'
+    description: '//Denormalization\r\nProduct Reference Id of credit account. It is associates to a row in PrReference\r\nProduct Reference is at the most generalized level in Product hierarchy.'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditAccountCurrency'
+    description: '//denormalization\r\nCurrency code of Credit account (if a security this is the positioncurrency)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 10
+  - name: 'CreditRateAcCuPfCu'
+    description: 'Exchange rate (factor) between account currency (original curr.) and portfolio currency (target curr.)'
+  - name: 'CreditCustomerReference'
+    description: '//denormalization\r\nCreditCustomerReference to load from PtAccountBase'
+  - name: 'CreditPrintStatus'
+    description: 'Is set, if the CreditAdvice is printed.'
+  - name: 'CreditRate'
+    description: 'Cross Rate of Credit Currency and Settlement Currency\r\nRate to calculate CreditAmount from PaymentAmount\r\nThe rate is to be delivered by CPM and CSS if the currency is different.\r\nThe rate is to set to 1.00 if the currency is equal'
+  - name: 'CreditQuantity'
+    description: 'Quantity (nominal or piece) of financial instruments\r\ntraded quantity for the corresponding customer/broker\r\n'
+  - name: 'CreditAmount'
+    description: 'Amout to debit the account'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CreditCvCurrency'
+    description: 'Currency of the amount for cost value calculation (CreditCvAmount)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'CreditAmountCv'
+    description: 'Amount for cost value calculation in original currency (CreditCvCurrency)'
+  - name: 'CreditAmountCvAcCu'
+    description: 'Amount for cost value calculation in position currency (DebitAccountCurrency)'
+  - name: 'CreditCvAmountTypeNo'
+    description: 'Amount type for booking in the portfolio bookkeeping (also called as cost value system)'
+    genericControls:
+      refTable: 'PtTransCvAmountType'
+      refField: 'CvAmountTypeNo'
+  - name: 'CreditName'
+    description: 'Address of owner of the credit account.'
+  - name: 'CreditBeneficiaryName'
+    description: 'Name or address of the receiving person/company\r\n'
+    genericControls:
+      multiLine: true
+      defColumnPos: 4
+  - name: 'CreditBeneficiaryAccountNo'
+    description: 'AccountNo of the receiving person/company at his financial institute\r\n'
+  - name: 'CreditValueDate'
+    description: 'Same as PaymentDate as default.'
+  - name: 'CreditOpenItem'
+    description: 'Reference to an open item\r\n(not used in standing order)'
+  - name: 'CreditPaymentInformation'
+    description: 'Message from der payer to the payee, e.g. reason for the payment.'
+    genericControls:
+      multiLine: true
+  - name: 'CreditTextNo'
+    description: 'Text to show on account statement'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      hasDetailBtn: true
+  - name: 'CreditLocGroupId'
+    description: ''
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditEsrReference'
+    description: 'ReferenceNo of the swiss standard payment slip (blue and/or orange).'
+  - name: 'CreditFinalBICNo'
+    description: 'BIC No of the beneficiary bank. SIC Field 42S'
+  - name: 'DebitMessageType'
+    description: 'Order/Payment Message Type. For example A10 for a SIC Customer payment'
+  - name: 'CreditMessageType'
+    description: 'Order/Payment Message Type. For example A10 for a SIC Customer payment'
+  - name: 'CreditDTAIdentification'
+    description: ''
+  - name: 'CreditPCNo'
+    description: ''
+  - name: 'ExternalPayeeId'
+    description: 'Id in case of external payee. It is used (both in case of normal payments and LSV) - without DB Integrity because it should be possible, that the entries in AsPayee  can be deleted once - Fields will be copied to TransMessage if the AsPayee is used.'
+    genericControls:
+      refTable: 'AsPayee'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransText'
+    description: 'free text entered through the cashier, is coming as instruction from outside in case of  EC cards (e.g.  Coop Aarau  13:30) - will be automatically copied into transremark in case of cashiers-application.'
+    genericControls:
+      multiLine: true
+  - name: 'TransRemark'
+    description: 'Free Text entered by Cashier - is to be printed out on the receipt (Ein-, Auszahlungsbeleg)'
+    genericControls:
+      multiLine: true
+  - name: 'QualityCheck'
+    description: 'Good Quality = True (1)\r\nBad Quality = False (0)\r\nIt is the quality of individual transaction message. For an incomplete message or wrong message this flag is set to False (0).\r\nQuality = (Flag for correctness and completeness of Values of the record in PtTransMessage)'
+  - name: 'ConsolidatorTransRef'
+    description: 'Reference of a bill given by the consolidator.\r\nOnly used for EBPP.'
+  - name: 'ConsolidatorNo'
+    description: 'This field determines the consolidator that deliveres the bill.\r\nOnly used for EBPP.'
+  - name: 'TransReferenceKey'
+    description: 'It is TransactionReferenceNo in case of SIC/EUROSIC . Its purpose is to avoid double processing of incoming message.'
+    genericControls:
+      defColumnPos: 16
+  - name: 'ProxyPartnerId'
+    description: 'Partner Id of the authorized person'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ProxyContactPersonId'
+    description: 'In case the authorized person is a contact person within a certain Partner the field contains the Id of the authorized contact person'
+    genericControls:
+      refTable: 'PtContactPersonView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ProxyThirdPerson'
+    description: 'Cash Desk: Transaction was made from a third person (information about this third person can be written in this field).'
+    genericControls:
+      multiLine: true
+  - name: 'CreditReferenceNo'
+    description: 'Reference No (VESR with lnegth 15 or 16)'
+  - name: 'CommStatus'
+    description: 'Communication Status for the payment instruction. \r\n0 =  Transaction ready to be sent to external partner over communication system\r\n1 = Postet\r\n2 = Transaction posted to the communication system for sending\r\n3 = Not To be sent\r\n7 = Error in concatenation\r\n9 = To be processed\r\n10 = Processed\r\n11 = Transaction not ready to be sent to external partner over communication system\r\n12 = For external process'
+    genericControls:
+      refTable: 'PtSisMessageStatus'
+      refField: 'StatusCode'
+      defColumnPos: 12
+  - name: 'ChargeOption'
+    description: 'Options for Charges for an outgoing payment.\r\nOUR: All charges will be paid by ordering customer\r\nBEN: All charges will be paid by benefeciary\r\nSHA: Charges will be shared be sender and receiver\r\n\r\n'
+  - name: 'RelatedTransRefKey'
+    description: 'Transaction Reference Number/Key of the related transaction'
+  - name: 'SourceTableName'
+    description: 'PtPaymentOrderDetail / PtStandingOrder etc..'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      hasDetailBtn: true
+  - name: 'SourceRecId'
+    description: 'Id of the source table'
+  - name: 'CreditReceiverBICNo'
+    description: 'BIC Address of the destination of the outgoing SWIFT message. This field is used to populate SWIFT messge header. The field will contain either BIC Address of one of the intermediary , if there is one, or will contain the BIC address of Benefeciary if there is no intermediary.\r\n40S'
+  - name: 'CreditReceiverBankAddress'
+    description: '40 A'
+    genericControls:
+      multiLine: true
+  - name: 'TransSxRebateNo'
+    description: 'Rebate Level'
+    genericControls:
+      refTable: 'PtTransSxRebate'
+      refField: 'TransSxRebateNo'
+  - name: 'IsTransitBooking'
+    description: 'True = transit booking amongst others for corporate action events'
+  - name: 'MsgSequenceNumber'
+    description: ''
+  - name: 'Image'
+    description: 'e.g. Post-Check Images (PC Eingang) or scanned payment slip'
+  - name: 'CreditFinalBankAddress'
+    description: 'Bank Address of Final Beneficiary. SIC field 42A'
+    genericControls:
+      multiLine: true
+  - name: 'CreditFinalBankId'
+    description: 'Credit final Bank''s Identification. Also Used as Account with instution''s reference in SIC A11'
+  - name: 'CreditBeneficiaryAccountNoIBAN'
+    description: 'either CreditBeneficiaryAccountNo or CreditBeneficiaryAccountNoIBAN can be present. First Prio has CreditBeneficiaryAccountNoIBAN'
+  - name: 'CreditReferenceIPI'
+    description: '70I -> structered (if unstructered - 1 line of CreditPaymentInformation will be in Field 70U)\r\nSIC Field 51I'
+  - name: 'LsvProcDate'
+    description: 'Original Lsv requested Processing Date (from D10)'
+  - name: 'ChargeDetails'
+    description: 'additional charge information'
+    genericControls:
+      multiLine: true
+  - name: 'DebitIsBill'
+    description: ''
+  - name: 'BankPaymentInstruction'
+    description: 'Bank to Bank information - SIC 53'
+  - name: 'CreditIsBill'
+    description: ''
+  - name: 'CreditBankAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ConfirmationUser'
+    description: 'user that confirms the modifications made to the order detail.\r\nConfirmation is mandatory when confirmationflag is set'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'ConfirmationFlag'
+    description: '0 = No confirmation needed.\r\nNon-zero = Some sort of confirmation is required before processing this transaction. Specific codes can be defined later on.'
+  - name: 'DebitTransText'
+    description: 'Free Text information. It will be automatically copied to PtTrasItem.TransText for debit booking'
+    genericControls:
+      multiLine: true
+  - name: 'CreditTransText'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SICPaymentCode'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentSICPayCode'
+      refField: 'SICPaymentCode'
+  - name: 'PrintBatchId'
+    description: ''
+    genericControls:
+      refTable: 'PtPrintPaymentAdviceBatch'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'WithdrawCommException'
+    description: ''
+  - name: 'IsUrgentPayment'
+    description: ''
+  - name: 'SettlementPriority'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentSettlementPriority'
+      refField: 'PriorityCode'
+  - name: 'EarliestSettlementTime'
+    description: 'Earliest settlement time can be instructed to SIC.'
+  - name: 'IsReturnPayment'
+    description: 'Payment being return to external sender (for example over SIC)'

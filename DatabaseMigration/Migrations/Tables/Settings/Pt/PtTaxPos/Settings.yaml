@@ -1,0 +1,117 @@
+table:
+  name: 'PtTaxPos'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TaxReportDataId'
+    description: ''
+    genericControls:
+      refTable: 'PtTaxReportData'
+      refField: 'Id'
+  - name: 'PositionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+  - name: 'PosSequence'
+    description: ''
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'PortfolioNoEdited'
+    description: ''
+  - name: 'TaxReportClass'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxReportClass'
+      refField: 'TaxReportClass'
+  - name: 'TaxCountry'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'ReportPosCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ReportPosAmount'
+    description: ''
+  - name: 'InstrTextInterest'
+    description: ''
+  - name: 'PositionText'
+    description: ''
+  - name: 'VdfInstrumentSymbol'
+    description: ''
+  - name: 'IsinNo'
+    description: ''
+  - name: 'InstrumentTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicInstrumentType'
+      refField: 'InstrumentTypeNo'
+  - name: 'AccountNo'
+    description: ''
+  - name: 'AccountOpeningDate'
+    description: ''
+  - name: 'AccountTerminationDate'
+    description: ''
+  - name: 'PriceCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Price'
+    description: ''
+  - name: 'PriceQuoteType'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicPriceQuoteType'
+      refField: 'PriceQuoteType'
+  - name: 'TaxPriceSourceNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTaxPriceSource'
+      refField: 'TaxPriceSourceNo'
+  - name: 'TaxValueHoCu'
+    description: ''
+  - name: 'AccountChargeHoCu'
+    description: ''
+  - name: 'AccountNegativeInterestHoCu'
+    description: ''
+  - name: 'ConversionCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'RatePrCuHoCu'
+    description: ''
+  - name: 'ExtRateCvCuHoCu'
+    description: ''
+  - name: 'TaxRateSourceNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTaxRateSource'
+      refField: 'TaxRateSourceNo'
+  - name: 'TaxReportChargeAmountHoCu'
+    description: ''
+  - name: 'HasUnknownIncome'
+    description: ''
+  - name: 'ErrorText'
+    description: ''
+  - name: 'ProdReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PrReference'
+      refField: 'Id'
+  - name: 'CashMultiplier'
+    description: ''

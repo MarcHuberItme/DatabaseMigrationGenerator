@@ -1,0 +1,42 @@
+table:
+  name: 'ObProviderSupportsConsent'
+  description: 'Supported consent flows for a provider'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 4de0d3b7-95d8-473e-be4c-1d37a958d353
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Supported Consent Flow'
+    - german:
+        formTitle: 'Supported Consent Flow'
+    - french:
+        formTitle: 'Supported Consent Flow'
+    - italian:
+        formTitle: 'Supported Consent Flow'
+  columns:
+  - name: 'ProviderId'
+    description: 'Reference to provider'
+    genericControls:
+      refTable: 'ObProvider'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ConsentFlowId'
+    description: 'Reference to consent flow'
+    genericControls:
+      refTable: 'ObHubConsentFlow'
+      refField: 'Id'
+  - name: 'ValidFrom'
+    description: 'From when the consent will be valid'
+  - name: 'ValidTo'
+    description: 'Until this date is the consent valid'
+  - name: 'StatusNo'
+    description: 'Reference to supported consent status'
+    genericControls:
+      refTable: 'ObProviderSupportsConsStatus'
+      refField: 'StatusNo'
+      defColumnPos: 2

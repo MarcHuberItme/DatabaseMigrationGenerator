@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetParentAccCompValues'
+  description: 'Retrive for an account component all PtAccountCompValue with a specified ValidFrom or with pending changes.\r\nSkip only the PtAccountCompValue with the given Id. \r\nProcedure is used to find out if there is any PtAccountCompValue detail with same ValidFrom.'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxValidateTaxReportData'
+  description: 'validates the data (InitQuantity + Transactions must be = EndQuantity)'

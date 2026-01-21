@@ -1,0 +1,40 @@
+table:
+  name: 'RePfBMessageIn'
+  description: 'Table to store recieved messages'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Received Messages'
+    - german:
+        formTitle: 'Empfangene Nachrichten'
+  columns:
+  - name: 'Message'
+    description: 'Received XML-Message'
+  - name: 'MessageId'
+    description: 'Unique Id of the message'
+  - name: 'ReceiveDate'
+    description: ''
+  - name: 'TimeStamp'
+    description: ''
+  - name: 'Processed'
+    description: 'True if the message has been processed'
+  - name: 'FileName'
+    description: 'Name of the received file'
+  - name: 'SourceFile'
+    description: 'Name of the sent file'
+  - name: 'MessageType'
+    description: 'MessageType\r\n3 -> ePledgeLog\r\n4 -> ePledgeReply'
+    genericControls:
+      refTable: 'RePfBMessageType'
+      refField: 'MessageType'
+  - name: 'Validated'
+    description: ''
+  - name: 'ValidationError'
+    description: ''

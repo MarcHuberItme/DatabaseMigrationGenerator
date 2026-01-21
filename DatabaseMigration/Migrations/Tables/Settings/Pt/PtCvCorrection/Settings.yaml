@@ -1,0 +1,64 @@
+table:
+  name: 'PtCvCorrection'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Cost value correction'
+    - german:
+        formTitle: 'Einstandswertkorrekturen'
+  columns:
+  - name: 'PosCvHistoryId'
+    description: ''
+    genericControls:
+      refTable: 'PtPosCvHistory'
+      refField: 'Id'
+  - name: 'TransItemBookingId'
+    description: 'referes to:\r\n- PtTransItem.Id\r\n- PtTransItemDetail.Id'
+  - name: 'IsRelatedToSourcePos'
+    description: ''
+  - name: 'SequenceNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'OriginCvCorrectionId'
+    description: ''
+    genericControls:
+      refTable: 'PtCvCorrection'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OldAmountCvAcCu'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'NewAmountCvAcCu'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'OldRateAcCuPfCu'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'NewRateAcCuPfCu'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'CvCorrectionStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtCvCorrectionStatus'
+      refField: 'CvCorrectionStatusNo'
+      defColumnPos: 6
+  - name: 'AutomaticCorrection'
+    description: ''
+    genericControls:
+      defColumnPos: 7

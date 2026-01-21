@@ -1,0 +1,49 @@
+table:
+  name: 'PtSHRegDBDispo'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtSHRegDBDispo'
+        helpText: 'PtSHRegDBDispo'
+    - german:
+        formTitle: 'PtSHRegDBDispo'
+        helpText: 'PtSHRegDBDispo'
+  columns:
+  - name: 'PartnerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'BankName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'HBDispo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ExDispo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'TotalDispo'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'HBActualDispo'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'Diff'
+    description: ''
+    genericControls:
+      defColumnPos: 7

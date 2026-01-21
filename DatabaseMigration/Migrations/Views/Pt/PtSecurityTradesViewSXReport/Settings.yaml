@@ -1,0 +1,3 @@
+view:
+  name: 'PtSecurityTradesViewSXReport'
+  description: 'This view is used for SIX-Reporting and BX-Reporting.\r\nIt should make PtSecurityTradesViewForSix obsolet.'

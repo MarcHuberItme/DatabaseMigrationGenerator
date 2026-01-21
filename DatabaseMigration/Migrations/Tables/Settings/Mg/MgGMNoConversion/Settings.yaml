@@ -1,0 +1,35 @@
+table:
+  name: 'MgGMNoConversion'
+  description: 'Umsetzungstabelle von KontraktNr/TeilnehmerNr auf Sequentielle Finstar-KontoNr.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'GM KontoNrConversion'
+    - german:
+        formTitle: 'GM KontoNrConversion'
+  columns:
+  - name: 'PartnerNo'
+    description: 'Kundennummer des Kontrahenden'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ContraktNo'
+    description: 'Kontraktnummer aus VRX GM'
+    genericControls:
+      defColumnPos: 2
+  - name: 'MemberNo'
+    description: 'TeilnehmerNummer des Kontrahenden (aus VRX)'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4

@@ -1,0 +1,45 @@
+table:
+  name: 'PtOnboardingDocumentPolicy'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Document'
+    - german:
+        formTitle: 'Document'
+    - french:
+        formTitle: 'Document'
+  columns:
+  - name: 'PolicyId'
+    description: ''
+    genericControls:
+      refTable: 'PtOnboardingPolicy'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'DocumentNamePattern'
+    description: ''
+  - name: 'DocumentType'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'ItemNo'
+      defColumnPos: 2
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Location'
+    description: ''
+    genericControls:
+      refTable: 'AsDocLocation'
+      refField: 'Location'

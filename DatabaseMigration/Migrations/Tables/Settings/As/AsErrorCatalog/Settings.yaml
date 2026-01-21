@@ -1,0 +1,44 @@
+table:
+  name: 'AsErrorCatalog'
+  description: 'Catalog of alle application specific errors, errortypes'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Finstar Error Catalog'
+    - german:
+        formTitle: 'Finstar Fehlerverzeichnis'
+  columns:
+  - name: 'ErrorName'
+    description: 'Name of the enumeration'
+    genericControls:
+      defColumnPos: 1
+  - name: 'RangeMin'
+    description: 'StartNo of the reserved field  and also of the enumeration'
+    genericControls:
+      defColumnPos: 2
+  - name: 'RangeMax'
+    description: 'Upper limit of the reservet range of numbers'
+  - name: 'DefinitionFile'
+    description: 'FileName of the file containing the declaration of the error enumeration.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'AppComponent'
+    description: 'FrontEnd, BatchServer, ApplicationServer'
+    genericControls:
+      noUpdatePos: 4
+  - name: 'Application'
+    description: 'Programm (.dll or .exe) the error (message) originates or contains it'
+    genericControls:
+      defColumnPos: 5
+  - name: 'Description'
+    description: 'Description to the Error'
+    genericControls:
+      multiLine: true

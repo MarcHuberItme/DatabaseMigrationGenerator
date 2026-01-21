@@ -1,0 +1,139 @@
+view:
+  name: 'ReObligationView01'
+  description: 'View of the relation between the obligations and the premises from the point of the obligations, covers the relation table ''ReObligPremisesRelation'''
+frontendView:
+  name: 'ReObligationView01'
+  description: 'Used for the form ''frmReObligPremisesRelation01'''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PremisesId'
+    description: 'ReObligPremisesRelation.PremiseId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 14
+  - name: 'PremisesOrigId'
+    description: 'ReObligPremisesRelation.PremisesOrigId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 15
+  - name: 'ObligationId'
+    description: 'ReObligPremisesRelation.ObligationId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReObligation'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ObligPremisesRelId'
+    description: 'ReObligPremisesRelation.Id'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 10
+  - name: 'ObligAmountChargeable'
+    description: 'ReObligPremisesRelation.ObligAmountChargeable'
+    dataType: 'money'
+  - name: 'Rank'
+    description: 'ReObligPremisesRelation.Rank'
+    dataType: 'smallint'
+    prec: 2
+    genericControls:
+      defColumnPos: 9
+  - name: 'Remark'
+    description: 'ReObligPremisesRelation.Remark'
+    dataType: 'nvarchar'
+    prec: 400
+  - name: 'MemberUniqueKey'
+    description: 'ReObligPremisesRelation.MemberUniqueKey'
+    dataType: 'nvarchar'
+    prec: 120
+  - name: 'Description'
+    description: 'ReObligation.Description'
+    dataType: 'nvarchar'
+    prec: 500
+    genericControls:
+      defColumnPos: 16
+  - name: 'ObjectSeqNo'
+    description: 'ReObligation.ObjectSeqNo'
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ReBaseId'
+    description: 'ReObligation.ReBaseId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Currency'
+    description: 'ReObligation.Currency'
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      defColumnPos: 11
+  - name: 'ObligAmount'
+    description: 'ReObligation.ObligAmount'
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 8
+  - name: 'ObligTypeNo'
+    description: 'ReObligation.ObligTypeNo'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReObligType'
+      refField: 'ObligTypeNo'
+      defColumnPos: 7
+  - name: 'ObligDate'
+    description: 'ReObligation.ObligDate'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 15
+  - name: 'ObligRank'
+    description: 'ReObligation.ObligRank'
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 12
+  - name: 'SwissTownNo'
+    description: 'Repremises.SwissTownPartNo'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsSwissTown'
+      refField: 'SwissTownNo'
+      defColumnPos: 13
+  - name: 'GBNo'
+    description: 'Repremises.GBNo'
+    dataType: 'nvarchar'
+    prec: 15
+    genericControls:
+      defColumnPos: 2
+  - name: 'GBNoAdd'
+    description: 'Repremises.GBNoAdd'
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 3
+  - name: 'GBPlanNo'
+    description: 'Repremises.GBPlanNo'
+    dataType: 'nvarchar'
+    prec: 15
+    genericControls:
+      defColumnPos: 4
+  - name: 'PremisesType'
+    description: 'RePremises.PremisesType'
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'RePremisesType'
+      refField: 'PremisesType'
+      defColumnPos: 6

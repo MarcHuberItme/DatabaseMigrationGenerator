@@ -1,0 +1,57 @@
+table:
+  name: 'PtEbNewsletter'
+  description: 'Contains the content of the mails sent'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'E-News'
+    - german:
+        formTitle: 'E-News'
+    - french:
+        formTitle: 'E-News'
+    - italian:
+        formTitle: 'E-News'
+  columns:
+  - name: 'TemplateNo'
+    description: 'template to initialize subject, body and other settings of the newsletter'
+    genericControls:
+      refTable: 'PtEbNewsletterTemplate'
+      refField: 'TemplateNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Subject'
+    description: 'Subject of the mail'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Body'
+    description: 'Body of the mail'
+    genericControls:
+      multiLine: true
+  - name: 'SenderEmailAddress'
+    description: 'Address to display'
+    genericControls:
+      defColumnPos: 3
+  - name: 'AsHtml'
+    description: '0 = Body contains plain text\r\n1 = Body contains html'
+  - name: 'SendDate'
+    description: 'Date the mail will be sent'
+    genericControls:
+      defColumnPos: 4
+  - name: 'CompletionDate'
+    description: 'Date the sending was completed'
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'ConfirmationReceiver'
+    description: 'Address to send the confirmation to'
+  - name: 'DisplayName'
+    description: ''

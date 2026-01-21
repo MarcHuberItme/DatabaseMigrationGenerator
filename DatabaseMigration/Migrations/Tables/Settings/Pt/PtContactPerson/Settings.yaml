@@ -1,0 +1,98 @@
+table:
+  name: 'PtContactPerson'
+  description: 'contact persons of a partner (if for example the partner is a big company)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'Name'
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Contact Person'
+    - german:
+        formTitle: 'Kontaktperson'
+    - french:
+        formTitle: 'Personne de contact'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key;  Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'Title'
+    description: ''
+  - name: 'Name'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Firstname'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'DateOfBirth'
+    description: ''
+  - name: 'SexStatusNo'
+    description: 'is used to generate the FormalAddress "Anrede"'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+  - name: 'FormalAddress'
+    description: 'Anrede'
+    genericControls:
+      multiLine: true
+  - name: 'FormalAddressManual'
+    description: 'if true, FormalAddress is manual updated'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TelephoneNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'MobileNo'
+    description: ''
+  - name: 'FaxNo'
+    description: ''
+  - name: 'EMailAddressPrivate'
+    description: ''
+  - name: 'EMailAddressBusiness'
+    description: ''
+  - name: 'Nationality'
+    description: 'foreign-key;  candidate-key of AsCountry (ISOCode)'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+  - name: 'LanguageNo'
+    description: 'foreign-key;  candidate-key of AsLanguage (LanguageNo)'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'Remark'
+    description: 'information concerning the contact person'
+    genericControls:
+      multiLine: true
+  - name: 'ContactPersonRoleId'
+    description: 'role of the contact person (e.g. CEO)\r\nforeign-key; Id of PtContactPersonRole'
+    genericControls:
+      refTable: 'PtContactPersonRole'
+      refField: 'Id'
+      defColumnPos: 3
+  - name: 'CountryCode'
+    description: 'foreign-key;  candidate-key of AsCountry (ISO-Code)'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true

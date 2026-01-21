@@ -1,0 +1,135 @@
+table:
+  name: 'RePremisesRelRight'
+  description: 'Grundstück - Grundstück (Dienstbarkeiten - Servitute) - ZGB 730 - 744\r\n\r\nBelasten ein Grundstück zu Gunsten eines bestimmten anderen Grundstückes (Grunddienstbarkeit) oder zu Gunsten einer ganz bestimmten Person (Personaldienstbarkeit).\r\nz.B. Näherbaurecht / Baurecht / Wohnrecht / Nutzniessung / Wegrecht etc.\r\n\r\nFIS-2000:GR_WOHREC und GR_BRCT_STWE (nur BRCT)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      navigationConditionField: 'RightTypeNo'
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Premises Relation Rights'
+    - german:
+        formTitle: 'Dienstb/Grundlast (Recht)'
+    - french:
+        formTitle: 'servitudes'
+  columns:
+  - name: 'PremisesId'
+    description: 'belastetes Grundstück'
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'RightTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'RePremisesRelRightType'
+      refField: 'RightTypeNo'
+      defColumnPos: 1
+  - name: 'PremisesRelationId'
+    description: 'zu Gunsten diesem Grundstück (berechtigtes)'
+    genericControls:
+      refTable: 'ReGbDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PartnerRelationId'
+    description: 'Baurechtgeber ! Weil Baurechtnehmer ist der Inhaber der Liegenschaft !\r\nWohnrechtnehmer (denn der Eigentümer erteilt dieser Person das Wohnrecht und sie wohnt im Gebäude - eigentlich ähnlich wie ein Mieter)'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ValueDate'
+    description: 'Stichtag der erfassten Werte'
+  - name: 'ValidFrom'
+    description: 'z.B. Baurecht von'
+  - name: 'ValidTo'
+    description: 'z.B. Baurecht bis\r\n\r\nFIS-2000:GR_WOHNREC.BIS_DAT'
+  - name: 'TerminationDate'
+    description: 'Fristdatum (gekündigt per)\r\n\r\nFIS-2000:GR_BRCE_STWE.KUEND_DAT'
+  - name: 'StipulationDate'
+    description: 'befristet bis'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Stipulation'
+    description: 'befristet'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidLifeLong'
+    description: '0 = no\r\n1 = Yes (e.g. right of residence lifelong - lebenslanges Wohnrecht)\r\nFIS-2000: GR_WOHREC.GR_NUTZN_WOHREC_CD'
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Amount'
+    description: 'Value per year, e.g. Amount for right of residence (Wohnrecht in CHF) or paid interest amount in case of building law (bezahlter Baurechtszins)\r\nFIS-2000:GR_WOHREC.WERT_PJ / GR_BRCT_STWE.BRCTZS (der Wert wird kapitalisiert, Zinssatz aus Programmparameter - das Resultat ist erst schätzungsrelevant!)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'AmountBasis'
+    description: 'Basiswert\r\n\r\nFIS-2000:GR_BRCT_STWE.BAS_WERT'
+  - name: 'FreeOfCharge'
+    description: 'free of charge  / unentgeltlich\r\n\r\nFIS-2000:GR_WOHNREC.GR_WOHREC_ART_CD'
+  - name: 'ForValuation'
+    description: 'FIS-2000: STZ_RELE_CD'
+    genericControls:
+      refTable: 'ReEnvironmentAddValuation'
+      refField: 'ValuationNo'
+      defColumnPos: 5
+  - name: 'InterestTypeNo'
+    description: 'z.B. Realzins, Hypozins der KB etc.'
+    genericControls:
+      refTable: 'ReInterestType'
+      refField: 'InterestTypeNo'
+  - name: 'InterestRate'
+    description: 'z.B. Baurechtszins pro Jahr (FIS-2000:GR_WOHREC.ZINSSATZ)\r\nbuilding law interest -  the building-entitled has to pay a building law interest to the property owner as remuneration \r\nBaurechtszins - der Bauberechtigte hat als Entschädigung dem Grundeigentümer einen Baurechtzins zu bezahlen'
+  - name: 'InterestDeviation'
+    description: 'Zu- / Abschlagsatz zum/vom Zinssatz (InterestRate) - Interest Rate + InterestDeviation = InterestEffektiv (has to be calculated on the fly)\r\nFIS-2000:ZU_ABSCHLAG_SATZ (indirekt ZINSSATZ_EFF)'
+  - name: 'InterestBasis'
+    description: 'Zinssatzbasis'
+  - name: 'InterestSecured'
+    description: 'Baurechtzins ist sichergestellt ?\r\n0 = Nein\r\n1 = Ja'
+  - name: 'AdaptionPeriode'
+    description: 'Anpassungsperiode in Jahren - nach welcher eine Anpassung des Baurechtszinses vorgenommen wird.\r\nFIS-2000:GR_BRCT_STWE.ANP_PERI_JJ'
+  - name: 'AdaptionRate'
+    description: 'Satz der Anpassung (des Zinses)'
+  - name: 'IndexTypeId'
+    description: ''
+    genericControls:
+      refTable: 'ReIndexType'
+      refField: 'Id'
+  - name: 'ReversionClause'
+    description: 'Heimfallklausel vorhanden J/N\r\n0 = Nein\r\n1 = Ja'
+  - name: 'Prolongation'
+    description: 'Option auf Verlängerung besteht ?  Option on extension exists? \r\n0 = no\r\n1 = Yes'
+  - name: 'SupportAmount'
+    description: 'Betrag für Bewirtschaftung und Unterhalt\r\n(Bruttoertrag - SupportAmount - InterestAmount = display feld Nettowert)'
+  - name: 'InterestAmount'
+    description: 'Hypothekarzins Betrag (für Kalkulation Nettowert)\r\n(Bruttoertrag - SupportAmount - InterestAmount = display feld Nettowert)'
+  - name: 'Remark'
+    description: 'Bemerkungen \r\nFIS-2000: GR_WOHREC.BEM\r\nPFB: Speicherung Grantor'
+    genericControls:
+      multiLine: true
+      defColumnPos: 6
+  - name: 'BuildingLawText'
+    description: 'Baurechtgeber (z.B. Gemeinde) - E-Pledge'
+    genericControls:
+      multiLine: true
+  - name: 'BuildingLawAmount'
+    description: 'jährlicher Baurechtzins (Betrag) - verwendet für PfB E-Pledge'
+  - name: 'ReversionClauseText'
+    description: 'Beschreibung der Heimfallklausel'
+    genericControls:
+      multiLine: true
+  - name: 'MemberUniqueKey'
+    description: 'PfB spezifisch: Jede Mitgliedbank vergibt für den gemeldeten Record eine eindeutige Identifikation. Diese benötigt sie um über E-Banking die Daten zu mutieren. Diese eindeutige Kennung muss die Mitgliedbank bei sich speichern.'

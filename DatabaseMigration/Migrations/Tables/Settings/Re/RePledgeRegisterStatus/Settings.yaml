@@ -1,0 +1,30 @@
+table:
+  name: 'RePledgeRegisterStatus'
+  description: 'Status Pfandregistereintrag'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Status'
+    - german:
+        formTitle: 'Pfandregisterstatus'
+  columns:
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PledgeInventory'
+    description: 'Designates wether the pledges with this status are shown in the ''Pledge Inventary''\r\n1 = appears in Pledge Inventary'
+    genericControls:
+      defColumnPos: 3
+  - name: 'WincreditStatusNo'
+    description: 'PfandRegister Status No in Wincredit. This mapping will be used to update the status in Finstar after receiving answer from Wincredit'

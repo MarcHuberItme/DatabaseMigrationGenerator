@@ -1,0 +1,33 @@
+table:
+  name: 'PtIdentificationExternalType'
+  description: 'type of identification (exp. driver licence, passport, etc.)'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Identification Type exter'
+    - german:
+        formTitle: 'Identifikation Typ extern'
+    - french:
+        formTitle: 'type d''identification ext'
+  columns:
+  - name: 'IdExtType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'CounterpartyIDType'
+    description: 'The type of code used in the Other Counterparty ID field. \r\n- L: LEI\r\n- B: BIC\r\n- I: Internal identifier'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Priority'
+    description: 'Priorität der Auswahl'

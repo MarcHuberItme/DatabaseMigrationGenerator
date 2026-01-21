@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxCreateTaxReportTransactionInitEndMissing'
+  description: 'List of all missing security balance. Missing because the position was not already open at Init or was already closed at End.'

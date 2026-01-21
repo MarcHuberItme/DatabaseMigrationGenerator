@@ -1,0 +1,30 @@
+table:
+  name: 'OaTwoFaFuturaeTenant'
+  description: 'Extending OaTwoFaTenant with Futurae tenant specific values.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'TwoFaProviderTenantId'
+    description: 'Id of the OaTwoFaProviderTenant entry.'
+    genericControls:
+      refTable: 'OaTwoFaProviderTenant'
+      refField: 'Id'
+  - name: 'AdminApiAccessKey'
+    description: 'Key for accesing administration API of a specific Futurae tenant'
+  - name: 'AuthenticationApiAccessKey'
+    description: 'Key for accesing authentication API of a specific Futurae tenant'
+  - name: 'ServiceIdentificationKey'
+    description: 'Identifier of the Futurae tenant that is accessed.'
+  - name: 'CallbackSignatureKey'
+    description: 'Secret that Futurae uses to encode JWS tokens that they send as a security factor. Based on the CallbackSignatureKey and the previously sent request body the JWS must be reconstructed and verified if it is really coming from Futurae.'
+  - name: 'MobileAuthRedirectUri'
+    description: 'Bundle Identifier (bundle ID) which is used for the futurae-to-main app switch (iOS only), and should be provided to Futurae via the Auth API.'

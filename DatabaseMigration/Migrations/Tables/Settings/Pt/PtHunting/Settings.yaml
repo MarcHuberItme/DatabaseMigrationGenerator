@@ -1,0 +1,185 @@
+table:
+  name: 'PtHunting'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Acquisition'
+    - german:
+        formTitle: 'Akquisition'
+  columns:
+  - name: 'SeqNo'
+    description: 'automatically numbered - used as a unique key to find a certain partner'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Title'
+    description: 'like doctor, professor'
+  - name: 'FirstName'
+    description: 'e.g. John'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Name'
+    description: 'e.g. Meier'
+    genericControls:
+      defColumnPos: 2
+  - name: 'MaidenName'
+    description: 'name of the wife before she is married (Frauenname)'
+  - name: 'ChangeNameOrder'
+    description: 'Flag that indicates, whether the Maidenname is in front of the name (Frauenname vorgestellt)'
+  - name: 'SexStatusNo'
+    description: 'Sexstatus of the partner, also differtiation business verus private'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+      defColumnPos: 4
+  - name: 'LegalStatusNo'
+    description: 'Rechtsform der Firma/Organisation'
+    genericControls:
+      refTable: 'PtLegalStatus'
+      refField: 'LegalStatusNo'
+  - name: 'DateOfBirth'
+    description: 'birthday'
+  - name: 'ConsultantTeamName'
+    description: 'Betreuerteam'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 9
+  - name: 'MotiveToOpenNo'
+    description: 'Reason of the opening of that partner (only hunting)'
+    genericControls:
+      refTable: 'PtHuntingOpen'
+      refField: 'MotiveOpenTypeNo'
+      defColumnPos: 10
+  - name: 'CountryCode'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'Zip'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'Town'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'Street'
+    description: 'Sreet and housenumber'
+  - name: 'AddrSupplement'
+    description: 'e.g. z.Hd. von'
+  - name: 'FullAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'FormalAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'TelephoneNo'
+    description: ''
+  - name: 'TelBus'
+    description: 'Telefonnummer Geschäft'
+  - name: 'MobileNo'
+    description: ''
+  - name: 'FaxNo'
+    description: ''
+  - name: 'EMailAddressPrivate'
+    description: ''
+  - name: 'EMailAddressBusiness'
+    description: ''
+  - name: 'WebAddress'
+    description: 'homepage'
+  - name: 'InitialActionDate'
+    description: 'at that date the action starts - z.B. Versand Brief oder Geschenk'
+    genericControls:
+      defColumnPos: 11
+  - name: 'NextActionDate'
+    description: 'at that date, the next contact takes place after the initial action (z.B. erster Anruf nach dem Türöffnerbrief)'
+  - name: 'NextContactDate'
+    description: 'date of the next contact (always the last one, without history)'
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Comment'
+    description: 'Comment to the action / information same as in contactreport / list of information'
+    genericControls:
+      multiLine: true
+  - name: 'ResultNo'
+    description: 'Result out of an action'
+    genericControls:
+      refTable: 'PtHuntingResult'
+      refField: 'ResultNo'
+      defColumnPos: 7
+  - name: 'TemplateId'
+    description: 'not used field, logically at the wrong place in the datamodel'
+    genericControls:
+      refTable: 'AsTemplate'
+      refField: 'Id'
+  - name: 'PartnerId'
+    description: 'is only used if the person ends up in a real partner relationship'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AgentId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AddInformation'
+    description: 'additional informations (can be generated automatically).'
+    genericControls:
+      multiLine: true
+  - name: 'BusinessType'
+    description: 'Branche'
+  - name: 'ConstructionArea'
+    description: 'Baustelle'
+  - name: 'ConstAreaZIP'
+    description: ''
+  - name: 'ConstAreaTown'
+    description: ''
+  - name: 'SubCanton'
+    description: 'Bezirk'
+  - name: 'ReferenceNo'
+    description: 'Referenz-Nr.'
+  - name: 'ConstructionPhase'
+    description: 'Baustadium'
+  - name: 'ConstructionType'
+    description: 'Bauart'
+  - name: 'PublishDate'
+    description: 'Datum der Publikation des Baugesuchs'
+  - name: 'StartingDate'
+    description: 'Baubeginn'
+  - name: 'Cost'
+    description: 'Baukosten'
+  - name: 'ProcessId'
+    description: 'The process Id returned by launching the workflow for the WF Map given in system parameters. e.g. Baublatt'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'UserName'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      defColumnPos: 13
+  - name: 'BranchNo'
+    description: 'BranchNo from AsBranch, replaces the field  ''MgSitz'''
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 14
+  - name: 'LastContactDate'
+    description: 'Date and Time of the last Contact with the potential customer'

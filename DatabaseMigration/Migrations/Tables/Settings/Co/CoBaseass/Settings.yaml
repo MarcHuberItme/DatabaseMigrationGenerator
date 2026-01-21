@@ -1,0 +1,50 @@
+table:
+  name: 'CoBaseass'
+  description: 'Manuelle Zuweisung der Sicherheiten zu den Kreditkonti'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Assign Colleteral'
+    - german:
+        formTitle: 'Zuweisung Sicherheit'
+  columns:
+  - name: 'AccountId'
+    description: 'Laufnummer Kreditkonto'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      createNavigationIndex: true
+  - name: 'CollateralId'
+    description: 'Laufnummer Sicherheit'
+    genericControls:
+      refTable: 'CoBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Assignnullvalue'
+    description: 'Sicherheit Konto immer zuweisen (Cobaseasscalc Satz schreiben), kommt von collsubtype'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Inactflag'
+    description: 'Same meaning as COBASE.INACTFLAG'
+  - name: 'ErrorFlag'
+    description: 'if set, this record ist not touched for automatic processing'
+  - name: 'MaxAllocAmount'
+    description: 'if Null or 0 keine Limitation der Zuweisung. \r\nAnderenfalls darf dem Kreditkonto von dieser Sicherheit nicht mehr als dieser Betrag in der Deckugnsausscheidung / Gesamtengagement zugeweisen werden.'

@@ -1,0 +1,29 @@
+table:
+  name: 'PtTransDeliveryKillList'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtTransDeliveryKillList'
+        helpText: 'PtTransDeliveryKillList'
+    - german:
+        formTitle: 'PtTransDeliveryKillList'
+        helpText: 'PtTransDeliveryKillList'
+  columns:
+  - name: 'TransNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'KillDateTime'
+    description: ''
+    genericControls:
+      defColumnPos: 2

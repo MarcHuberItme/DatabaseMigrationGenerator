@@ -1,0 +1,51 @@
+table:
+  name: 'PtOfferNewProvision'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtOfferNew'
+      parentRelationField: 'OfferNewId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Provision'
+    - german:
+        formTitle: 'BVG, gebund. Vorsorge'
+  columns:
+  - name: 'OfferNewId'
+    description: ''
+    genericControls:
+      refTable: 'PtOfferNew'
+      refField: 'Id'
+  - name: 'Insert01'
+    description: ''
+  - name: 'Insert02'
+    description: ''
+  - name: 'Insert03'
+    description: ''
+  - name: 'Insert04'
+    description: ''
+  - name: 'Insert05'
+    description: ''
+  - name: 'Insert06'
+    description: ''
+  - name: 'Insert07'
+    description: ''
+  - name: 'Insert08'
+    description: ''
+  - name: 'Insert09'
+    description: ''
+  - name: 'Insert10'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

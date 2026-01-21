@@ -1,0 +1,66 @@
+table:
+  name: 'FaLeaver'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'MainPartnerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Name'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'LeaverCode'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'AccountOpenDate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'AccountCloseDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'MaximumValueUSD'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'CashDepositWithdrawal'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'EntityDescription'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 8
+  - name: 'HeldUsSecurities'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'W8BEN'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'BreachCorpCovernance'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'RepeatedTransactions'
+    description: ''
+    genericControls:
+      defColumnPos: 12
+  - name: 'SNF_AccountId'
+    description: ''
+    genericControls:
+      defColumnPos: 13

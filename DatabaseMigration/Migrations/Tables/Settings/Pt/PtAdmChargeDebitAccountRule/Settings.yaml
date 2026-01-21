@@ -1,0 +1,29 @@
+table:
+  name: 'PtAdmChargeDebitAccountRule'
+  description: 'Table to define how to find the debit account'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargeDebitAccountRu'
+        helpText: 'PtAdmChargeDebitAccountRule'
+    - german:
+        formTitle: 'PtAdmChargeDebitAccountRu'
+        helpText: 'PtAdmChargeDebitAccountRule'
+    - french:
+        formTitle: 'PtAdmChargeDebitAccountRu'
+        helpText: 'PtAdmChargeDebitAccountRule'
+  columns:
+  - name: 'RuleNo'
+    description: '0, portfolio based\r\n1, partner based debit product\r\n2, combi mode, first rule 0, then verified with rule 1. if not in 1, replace with top account from rule 1'
+  - name: 'OrderByDetail'
+    description: 'Order by from fields ProductNo, AccountNo, PortfolioNo, Currency, Balance'

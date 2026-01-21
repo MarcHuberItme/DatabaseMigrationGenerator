@@ -1,0 +1,61 @@
+table:
+  name: 'PtPortfolioSxBroker'
+  description: 'Broker mapping table'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Broker mapping'
+    - german:
+        formTitle: 'Broker-Zuordnung'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'MemberId'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'MemberNameAbbreviation'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'MemberNameShort'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'MemberFullName'
+    description: ''
+  - name: 'MemberPartyRef'
+    description: ''
+  - name: 'MemberPartyRefDssCode'
+    description: 'PtSISDataSrcSchema'
+  - name: 'TradingSystem'
+    description: 'this field will be removed \r\nnew field is TradingSystemGroupId'
+    genericControls:
+      refTable: 'PtTradingSystem'
+      refField: 'TradingSystemCode'
+      defColumnPos: 5
+  - name: 'SISNo'
+    description: 'Sega Intersettle Number'
+  - name: 'ClearingNo'
+    description: 'ClearingNumber'
+  - name: 'IsDeliveryPortfolio'
+    description: ''
+  - name: 'WithoutRounding'
+    description: 'Flag to define the marketvalue in PtTransTrade should not be rounded (is only necessary for CHF Portfolios because foreign currencies will always be rounded to 0.01)\r\n0= rounding\r\n1= no rounding'
+  - name: 'MemberIdTradingSystem'
+    description: ''
+    genericControls:
+      defColumnPos: 6

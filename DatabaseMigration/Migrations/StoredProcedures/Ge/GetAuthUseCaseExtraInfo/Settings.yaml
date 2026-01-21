@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAuthUseCaseExtraInfo'
+  description: 'Get a list of extra info objects and translations'

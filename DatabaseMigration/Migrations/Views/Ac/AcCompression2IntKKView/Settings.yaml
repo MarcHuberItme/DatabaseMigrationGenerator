@@ -1,0 +1,3 @@
+view:
+  name: 'AcCompression2IntKKView'
+  description: 'Counts number of debit/credit cards and internet contracts for Qlikview grouping'

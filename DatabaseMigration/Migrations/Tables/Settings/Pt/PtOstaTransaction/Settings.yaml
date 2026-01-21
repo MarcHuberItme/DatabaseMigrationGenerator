@@ -1,0 +1,56 @@
+table:
+  name: 'PtOstaTransaction'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'OSTA Single Transaction'
+    - german:
+        formTitle: 'OSTA Einzeltransaktion'
+  columns:
+  - name: 'MessageId'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaMessage'
+      refField: 'Id'
+  - name: 'Kind'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaMoneyKind'
+      refField: 'Value'
+  - name: 'ClearingPeriod'
+    description: 'Clearing period number in which the transaction was assigned. If the transaction is a reversal, this number is the same as in the original authorization.'
+    minValue: '1'
+    maxValue: '9999'
+  - name: 'ClearingPeriodReversal'
+    description: 'Conditional: If the transaction is a reversal, this clearing period number is set at the time of the reversal transaction. Is this value higher than the <clearingPeriod> one, then it is a transitory reversal.'
+    minValue: '1'
+    maxValue: '9999'
+  - name: 'InventoryPeriod'
+    description: 'Inventory period in which the transaction was assigned'
+  - name: 'ClearingMode'
+    description: 'Indicates, if clearing and settlement is done by the bank internally or by SIX.'
+    genericControls:
+      refTable: 'PtOstaClearingMode'
+      refField: 'Value'
+  - name: 'Service'
+    description: 'Service that the cardholder has selected at the ATM (withdrawal, deposit) or an operator refund launched by an operator. The value includes also the information if it is an authorization or a reversal.'
+    genericControls:
+      refTable: 'PtOstaServiceType'
+      refField: 'Value'
+  - name: 'Amount'
+    description: ''
+  - name: 'Currency'
+    description: 'Numeric ISO4217 currency code'
+  - name: 'CardProfileReference'
+    description: 'The card profile reference corresponds to the profile selected during card capability request. The profile reference is contained in any service message from the ATM to the SIX-Host. e.g.: 10101'
+  - name: 'CardProfileDescription'
+    description: 'The card profile description is the technical description of the card. e.g.: for card profile  reference 10101 = "Bankkarte ISO3 UBS"'

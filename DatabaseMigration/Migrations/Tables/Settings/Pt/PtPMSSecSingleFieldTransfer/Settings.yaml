@@ -1,0 +1,32 @@
+table:
+  name: 'PtPMSSecSingleFieldTransfer'
+  description: 'Single field transfer for the security master data'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PublicId'
+    description: ''
+  - name: 'LastTransferProcessId'
+    description: ''
+    genericControls:
+      refTable: 'PtPMSTransferProcess'
+      refField: 'Id'
+  - name: 'LastNetFReturnCode'
+    description: ''
+  - name: 'LastNetFErrorText'
+    description: ''
+  - name: 'InternalRejectCode'
+    description: ''
+    genericControls:
+      refTable: 'PtPMSInternalRjectCode'
+      refField: 'RejectCode'
+  - name: 'FieldName'
+    description: 'Name of the field to be updated'
+  - name: 'SourceRecId'
+    description: ''

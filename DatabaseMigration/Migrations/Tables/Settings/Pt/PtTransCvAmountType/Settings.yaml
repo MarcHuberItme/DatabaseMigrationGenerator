@@ -1,0 +1,24 @@
+table:
+  name: 'PtTransCvAmountType'
+  description: 'This table is used for the classification of amounts for the portfolio bookkeeping (also called as cost value system)'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Cost value amount type'
+    - german:
+        formTitle: 'Betragstyp EK-Rechnung'
+  columns:
+  - name: 'CvAmountTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

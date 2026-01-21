@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetETPortfolioCorrespondence'
+  description: 'Correspondence information to be merged in Easy tax document (Portfolio level)'

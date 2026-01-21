@@ -1,0 +1,3 @@
+view:
+  name: 'PtTransItemEbView'
+  description: 'View to show bookings in E-Banking system\r\n10.11.04/kgy\r\n02.08.2023/FIN-9318/daga: condition added for PtTransItem HdVersionNo between 1 and 999999998'

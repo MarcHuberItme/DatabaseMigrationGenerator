@@ -1,0 +1,97 @@
+table:
+  name: 'PtQuestion'
+  description: 'Partner Question'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'Description'
+    uiTableDescription:
+    - english:
+        formTitle: 'Partner Question'
+        helpText: 'Partner Question'
+    - german:
+        formTitle: 'Partner Question'
+        helpText: 'Partner Question'
+  columns:
+  - name: 'QuestionGroupId'
+    description: ''
+    genericControls:
+      refTable: 'PtQuestionGroup'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'SequenceNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'MsgNo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'FormName'
+    description: 'FormName'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ProfileName'
+    description: ''
+  - name: 'DestinationTable'
+    description: ''
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      hasDetailBtn: true
+  - name: 'DestinationField'
+    description: ''
+  - name: 'DestinationFilter'
+    description: ''
+  - name: 'DefaultValue'
+    description: ''
+  - name: 'TransTable'
+    description: ''
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      hasDetailBtn: true
+  - name: 'TransKeyField'
+    description: ''
+  - name: 'TransTextField'
+    description: ''
+  - name: 'TransKeyWidth'
+    description: ''
+    minValue: '0'
+  - name: 'TransTextWidth'
+    description: ''
+    minValue: '0'
+  - name: 'AdditionalWhere'
+    description: ''
+  - name: 'ConditionQuestionId'
+    description: ''
+    genericControls:
+      refTable: 'PtQuestion'
+      refField: 'Id'
+  - name: 'ConditionQuestionValue'
+    description: ''
+  - name: 'YesValue'
+    description: ''
+  - name: 'NoValue'
+    description: ''
+  - name: 'QueryForListBox'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ConditionRoutineName'
+    description: ''
+  - name: 'ProcessRoutineName'
+    description: ''
+  - name: 'ProcessRoutineParam'
+    description: ''
+  - name: 'Description'
+    description: ''
+    genericControls:
+      defColumnPos: 5

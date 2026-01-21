@@ -1,0 +1,29 @@
+table:
+  name: 'OaIdempotencyStore'
+  description: 'A table to support idempotent POST OpenAPI calls.\r\nThis table lives temporarily in finstar main db and will later be moved to a dedicated private place. It is used to store responses of successfully processed calls, so that subsequent calls with the same idempotency key can get the same response without changing the state of the system.\r\nThe idempotency key is set at the beginning of each call where as well the LockAcquiredDateTime is set. As soon as the call completes without errors, the Response is set by the application and as well the LockAcquiredDateTime is set to null, indicating that the call has finished. In case of an error, only the LockAcquiredDateTime is set. This allows to automatically retry failed requests using the same idempotency key while at the same time protecting from a double execution of successful calls.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'OaIdempotencyStore'
+        helpText: 'A table to support idempotent POST OpenAPI calls.'
+  columns:
+  - name: 'IdempotencyKey'
+    description: 'The idempotency key identifies a single API call which might be retried because of partial failure, in order to achieve idempotency. When subsequent calls with the same key are made, the same response, which was stored with the first call and identified by the idempotency key, shall be returned.'
+  - name: 'LockAcquiredDateTime'
+    description: 'If the lock has been acquired at the beginning of an API call, the LockAcquiredDateTime is set.\r\nAt the end of each call, whether successful or not, the lock is returned and the LockAcquiredDateTime is set to null again.'
+  - name: 'NumberOfFailedRequests'
+    description: 'Counts the number of failed requests.\r\nThe application must update this value when the call finishes with an error at the time when it returns the lock.'
+    minValue: '0'
+  - name: 'ErrorMessages'
+    description: 'The Error Messages are separated by "\n\n-----ErrorMessageBorder-----\n\n"'
+  - name: 'Response'
+    description: 'Stores the response of the first successful call with the given idempotency key, so that subsequent automatic retries of the same call see the same result without changing the application state. (e.g. preventing double POST calls to insert two items)'

@@ -1,0 +1,76 @@
+table:
+  name: 'PrPublicInstituteRole'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Institute role'
+    - german:
+        formTitle: 'Institutionsrolle'
+  columns:
+  - name: 'VdfDocType'
+    description: 'VDF: DID.DID.0804\r\n         DGD.DGD.0804\r\n         DED.DED.0804\r\nDoctype: DID, DGD or DED'
+  - name: 'VdfDocGen'
+    description: 'VDF: DID.DID.0813\r\n         DGD.DGD.0813\r\n         DED.DED.0813\r\nGeneration of the last DID-/DGD-/DED-Doc, which was received from VDF'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: DxD.MGA.7895\r\n(DxD = DID, DGD or DED)\r\nMessage status of DID-/DGD-/DED-Doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'PublicId'
+    description: 'VDF: DxD.VAI.K981.7842\r\n(DxD = DID, DGD or DED)'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'PartnerId'
+    description: 'VDF: DxD.GEI.K985.3801\r\n(DxD = DID, DGD or DED)'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'InstituteRoleTypeNo'
+    description: 'VDF: DID.DII.4830\r\n         DGD: = 2 (guarantor)\r\n         DED: = 6 (depository)\r\nRole played by an institution in respect of an instrument.'
+    genericControls:
+      refTable: 'PrPublicInstituteRoleType'
+      refField: 'InstituteRoleTypeNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'GuarantyTypeNo'
+    description: 'VDF: DGD.DGI.4831 (only, if InstitutRoleTypeNo = 2)\r\nType of security granted by an institution as guarantor'
+    genericControls:
+      refTable: 'PrPublicGuarantyType'
+      refField: 'GuarantyTypeNo'
+  - name: 'CustodyTypeNo'
+    description: 'VDF: DED.DEE.4889 (only, if InstitutRoleTypeNo = 6)\r\nCustody type'
+    genericControls:
+      refTable: 'PrPublicCustodyType'
+      refField: 'CustodyTypeNo'
+  - name: 'ClearingSystemNo'
+    description: 'VDF: DED.DEI.4890 (only, if InstitutRoleTypeNo = 6) \r\nSettlement system\r\n'
+    genericControls:
+      refTable: 'PrPublicClearingSystem'
+      refField: 'ClearingSystemNo'
+  - name: 'DeliveryCode'
+    description: 'VDF: DED.DEI.4801 (only, if InstitutRoleTypeNo = 6)\r\nDeliverability code'
+    genericControls:
+      refTable: 'PrPublicDeliveryCode'
+      refField: 'DeliveryCode'

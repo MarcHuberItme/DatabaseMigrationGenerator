@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetCardCurrentExpenses'
+  description: 'Calculates the daily and monthly current cash, retail, online and total expenses for a given card.\r\n\r\n2023-08-02/FIN-9318/daga: condition added for PtTransItem HdVersionNo between 1 and 999999998\r\n2025-06-03/FIN-13187/PHF: added three system parameters for textNo'

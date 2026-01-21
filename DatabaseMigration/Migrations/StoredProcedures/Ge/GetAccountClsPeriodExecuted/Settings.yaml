@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountClsPeriodExecuted'
+  description: '--Purpose : This procedure returns the last Closing Period which is executed (PtAccountClosingPeriod) \r\n--Modified : 19-Jan-2005 / anasir'

@@ -1,0 +1,109 @@
+view:
+  name: 'PrPublicListingOrderView'
+  description: ''
+frontendView:
+  name: 'PrPublicListingOrderView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'ListingDescription'
+    uiTableDescription:
+    - english:
+        formTitle: 'Listing'
+    - german:
+        formTitle: 'Kotierung'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'HdPendingChanges'
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'HdPendingSubChanges'
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'PublicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'ListingStatusNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicListingStatus'
+      refField: 'ListingStatusNo'
+  - name: 'ListingDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+    genericControls:
+      defColumnPos: 7
+  - name: 'CountryCode'
+    description: ''
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'ShortName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 19
+    genericControls:
+      defColumnPos: 2
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 120
+    genericControls:
+      defColumnPos: 6
+  - name: 'Town'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 4
+  - name: 'SelPrioInt'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SelPrioEb'
+    description: ''
+    dataType: 'int'
+  - name: 'PublicTradingPlaceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderStatusNoSx'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PrPublicListingOrderStatusSx'
+      refField: 'OrderStatusNo'

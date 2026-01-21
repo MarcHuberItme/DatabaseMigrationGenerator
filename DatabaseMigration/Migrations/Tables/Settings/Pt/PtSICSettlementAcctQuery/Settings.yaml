@@ -1,0 +1,31 @@
+table:
+  name: 'PtSICSettlementAcctQuery'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'SettlementDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'AccountOwnerId'
+    description: 'IID/Clearing number with leading zero'
+  - name: 'SystemCode'
+    description: 'SIC or SICE'
+    genericControls:
+      defColumnPos: 2
+  - name: 'SettlementAccount'
+    description: 'Settlement account with leading zero'
+  - name: 'PaymentCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'IsForPaymentTypeBalance'
+    description: ''

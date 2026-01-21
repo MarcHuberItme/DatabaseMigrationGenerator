@@ -1,0 +1,42 @@
+view:
+  name: 'PtAgrAnnouncementView'
+  description: 'Returns the announcements records together with the announcementSeen date from the PtAgrAnnouncement2TnC2Agr table.'
+frontendView:
+  name: 'PtAgrAnnouncementView'
+  description: 'View representation for the Announcement (PtAgrAnnouncement). It''s used for quering data.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'AgreementId'
+    description: 'Id of the agreementId'
+    dataType: 'uniqueidentifier'
+  - name: 'Name'
+    description: 'Name of the Announcement (the same as in PtAgrAnnouncement table). e.x --> Instant Payment'
+    dataType: 'varchar'
+    prec: 100
+  - name: 'Description'
+    description: 'The description for an announcement'
+    dataType: 'varchar'
+    prec: 8000
+  - name: 'ActivationDate'
+    description: 'Activation date for an announcement. If announcement is active, then it should be visible for an e-banking user'
+    dataType: 'datetime'
+  - name: 'ExpirationDate'
+    description: 'Expiration date for an announcement'
+    dataType: 'datetime'
+  - name: 'AnnouncementSeenDate'
+    description: 'Information about wether the announcement was seen by the e-banking user.'
+    dataType: 'datetime'
+  - name: 'TnCAcceptedDate'
+    description: 'Date of the acceptance of a new terms and conditions'
+    dataType: 'datetime'

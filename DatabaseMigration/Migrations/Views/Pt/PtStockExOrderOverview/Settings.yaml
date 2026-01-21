@@ -1,0 +1,3 @@
+view:
+  name: 'PtStockExOrderOverview'
+  description: '2018-03-20/ram: Formatierung der Felder PriceLimit und TriggerPrice aufgenommen, damit auch 3 oder 4 Nachkomma-Stellen angezeigt werden (SD 55695).'

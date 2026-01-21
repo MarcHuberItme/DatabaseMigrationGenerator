@@ -1,0 +1,45 @@
+table:
+  name: 'PtContractLimit'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Contract Limit'
+    - german:
+        formTitle: 'Contract Limit'
+  columns:
+  - name: 'ContractType'
+    description: ''
+    genericControls:
+      refTable: 'PtContractType'
+      refField: 'ContractType'
+      defColumnPos: 1
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'MinimumAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'MinPercentage'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'MaxPercentage'
+    description: ''
+    genericControls:
+      defColumnPos: 5

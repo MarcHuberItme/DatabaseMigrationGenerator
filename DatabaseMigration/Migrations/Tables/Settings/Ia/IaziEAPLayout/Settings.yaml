@@ -1,0 +1,51 @@
+table:
+  name: 'IaziEAPLayout'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'IaziEAPLayout'
+        helpText: 'IaziEAPLayout'
+    - german:
+        formTitle: 'IaziEAPLayout'
+        helpText: 'IaziEAPLayout'
+  columns:
+  - name: 'Frame'
+    description: ''
+  - name: 'FrameSeq'
+    description: ''
+  - name: 'Button'
+    description: ''
+  - name: 'SubFrame'
+    description: ''
+  - name: 'SubFrameSeq'
+    description: ''
+  - name: 'FieldDesc'
+    description: ''
+  - name: 'FieldSeqEFH'
+    description: ''
+  - name: 'FieldSeqMFH'
+    description: ''
+  - name: 'FieldSeqStwE'
+    description: ''
+  - name: 'XMLElement'
+    description: ''
+  - name: 'DataType'
+    description: ''
+  - name: 'AsEFH'
+    description: ''
+  - name: 'AsMFH'
+    description: ''
+  - name: 'AsStwE'
+    description: ''
+  - name: 'LanguageNo'
+    description: ''

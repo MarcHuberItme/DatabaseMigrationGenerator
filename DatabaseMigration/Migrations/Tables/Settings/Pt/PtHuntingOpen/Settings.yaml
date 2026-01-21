@@ -1,0 +1,31 @@
+table:
+  name: 'PtHuntingOpen'
+  description: 'Motiv to open'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Motiv to open'
+    - german:
+        formTitle: 'Eröffnungsgrund'
+  columns:
+  - name: 'MotiveOpenTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'WorkFlowMap'
+    description: 'Name of the map to launch'
+  - name: 'TemplateId'
+    description: 'Name of the Text Template to use for printing letter'
+    genericControls:
+      refTable: 'AsTemplate'
+      refField: 'Id'

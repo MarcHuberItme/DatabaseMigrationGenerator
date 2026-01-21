@@ -1,0 +1,56 @@
+view:
+  name: 'OaTwoFaTenantView'
+  description: 'View for 2 factor authentication provider tenants'
+frontendView:
+  name: 'OaTwoFaTenantView'
+  description: 'View for 2 factor authentication provider tenants. It was only put among table definitions for code generation purposes.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ProviderId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'OaTwoFaProvider'
+      refField: 'Id'
+  - name: 'TenantId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'OaTwoFaProviderTenant'
+      refField: 'Id'
+  - name: 'TenantName'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 100
+    genericControls:
+      refTable: 'OaTwoFaProviderTenant'
+      refField: 'Name'
+  - name: 'ProviderTypeNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      refTable: 'OaTwoFaProviderType'
+      refField: 'TypeNo'
+  - name: 'TenantHdVersionNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+  - name: 'ProviderHdVersionNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+  - name: 'ProviderTypeText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25

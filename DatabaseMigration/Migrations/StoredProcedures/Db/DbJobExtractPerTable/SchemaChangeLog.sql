@@ -1,0 +1,393 @@
+--liquibase formatted sql
+
+--changeset system:create-alter-procedure-DbJobExtractPerTable context:any labels:c-any,o-stored-procedure,ot-schema,on-DbJobExtractPerTable,fin-13659 runOnChange:true splitStatements:false stripComments:false endDelimiter:GO
+--comment: Create stored procedure DbJobExtractPerTable
+CREATE OR ALTER PROCEDURE dbo.DbJobExtractPerTable
+@pSOURCE_DB_SERVER				VARCHAR(50)	= '',
+	@pSOURCE_DB						VARCHAR(50)	= '', 
+	@pSOURCE_TABLE_SCHEMA			VARCHAR(3)	= '', 
+	@pCUSTOMER_CODE					VARCHAR(3)	= '',
+	@pJOB_CODE						VARCHAR(4)	= '',
+	@pTARGET_DB_SERVER				VARCHAR(50) = '',
+	@pTARGET_DB						VARCHAR(50) = '',
+	@pTARGET_TABLE_SCHEMA			VARCHAR(3)	= '',
+	@pJOB_DATE						VARCHAR(10)	= '',
+	
+	@pTABLE_NAME					VARCHAR(50)	= '',
+		
+	@pEXTRACT_TEXT_SHORT			INT	= 0, 
+	@pEXTRACT_TEXT_LONG				INT	= 0, 
+	@pDEFAULT_LANGUAGE_NO			INT	= 2,
+	
+	@pFROM_DATETIME					VARCHAR(25) = '',
+	@pTO_DATETIME					VARCHAR(25) = '',
+	@pRECORD_REF_GUID				UNIQUEIDENTIFIER,
+	@pAPPLICATIONCODE				VARCHAR(50) = '',
+	@pTRANSFERTYPENO				INT = 0,
+	@JOB_REC_COUNT					INT	= 0	OUTPUT
+
+AS
+
+DECLARE @USER 					VARCHAR(20)
+	DECLARE @TEXT					VARCHAR(MAX)
+
+	DECLARE @EXECUTINGPROCEDURE 	VARCHAR(256)
+	DECLARE	@tmpDate				VARCHAR(25)
+	DECLARE @sSQL					NVARCHAR(max) = ''
+	DECLARE @INITIAL_REFERENCE_DATE	VARCHAR(20)	= '20010101'
+
+	DECLARE @TABLE_NAME				VARCHAR(50)	
+
+	DECLARE @COLUMN_LIST			VARCHAR(MAX) = ''
+	DECLARE @DEFAULT_FIELD_LIST		VARCHAR(100) = 'A.HDCREATEDATE, A.HDCHANGEDATE, A.HDVERSIONNO'
+	DECLARE @TABLE_EXISTS			INT = 0
+	DECLARE @INFORMATION_TABLE		VARCHAR(100) = '[' + @pTARGET_DB_SERVER + '].[' + @pTARGET_DB + '].INFORMATION_SCHEMA.TABLES'
+
+	SET 	@USER 					= SUSER_NAME()		-- User who executing the Job
+	SET		@EXECUTINGPROCEDURE 	= '[DbJobExtractPerTable]'
+	SET 	@tmpDate = CONVERT(VARCHAR(25),GETDATE(),121)
+	
+BEGIN
+	SET @tmpDate = CONVERT(VARCHAR(25),GETDATE(),121)
+	IF(@pTABLE_NAME = '' OR @pTABLE_NAME IS NULL OR @pSOURCE_DB_SERVER = '' OR @pSOURCE_DB_SERVER IS NULL OR @pSOURCE_DB = '' OR @pSOURCE_DB IS NULL)
+	BEGIN 
+		SET @TEXT = @tmpDate + ' : Procedure '+ @EXECUTINGPROCEDURE + 'Mandatory Parameter TABLE_NAME AND/OR SOURCE_DB is not provided.'
+		EXEC DbJobWriteInfo @USER, @pJOB_CODE, @EXECUTINGPROCEDURE, 'Log Message', @TEXT, @pJOB_DATE, 1
+		RETURN
+	END
+	
+	
+
+	BEGIN TRY
+		SET @TABLE_NAME = @pTABLE_NAME
+
+		SET @TEXT = @tmpDate + ' : Procedure '+ @EXECUTINGPROCEDURE + ' started ...'
+		EXEC DbJobWriteInfo @USER, @pJOB_CODE, @EXECUTINGPROCEDURE, 'Log Message', @TEXT, @pJOB_DATE, 1
+		
+		
+		SET @sSQL = ' SELECT @cnt = count(1) FROM ' + @INFORMATION_TABLE +
+					' WHERE TABLE_NAME = ''' + @TABLE_NAME + '''' +
+					' AND TABLE_SCHEMA = ''' + @pTARGET_TABLE_SCHEMA + '''' 
+					
+		EXEC DbJobWriteInfo @USER, @pJOB_CODE, @EXECUTINGPROCEDURE, 'Log Message: Execute Dynamic SQL', @sSQL, @pJOB_DATE, 1
+
+		EXECUTE sp_executesql @sSQL, N'@cnt int OUTPUT' ,@cnt=@TABLE_EXISTS OUTPUT
+		
+		PRINT @TABLE_NAME
+
+		IF (@TABLE_EXISTS >= 1) 
+
+			BEGIN
+				-- Incremental Selection of Data based on Field HDCREATEDATE & HDCHANGEDATE and load in corresponding Staging table
+				IF(@pTABLE_NAME = 'PTDSPARTNERTRANSFER')
+					
+					BEGIN
+						Print 1
+						SET @TABLE_NAME = @pTABLE_NAME
+
+						SET @sSQL = 'INSERT INTO [' + @pTARGET_DB +'].['+ @pTARGET_TABLE_SCHEMA + '].' + @TABLE_NAME + '' +
+							' ( ' +
+							' 	TRANSFERPROCESSID	 ' +
+							' , EXTAPPPARTNERID	 ' +
+							' , FINSTARPARTNERNO	 ' +
+							' , TITLE				 ' +
+							' , FIRSTNAME			 ' +
+							' , LASTNAME			 ' +
+							' , ISFATCA			 ' +
+							' , ISPEP				 ' +
+							' , GENDER			 ' +
+							' , LOCALTAXNUMBER	 ' +
+							' , MARITALSTATUS		 ' +
+							' , DATEOFBIRTH		 ' +
+							' , COUNTRYOFBIRTH		 ' +
+							' , PROFESSION		 ' +
+							' , NATIONALITY ' +
+							' , HDVERSIONNO 			' +
+							' )' +
+							' SELECT ' +
+							' ''' + CONVERT(VARCHAR(255),@pRECORD_REF_GUID) + '''' +
+					       	' , EP.ID						 ' +
+					       	' , PB.PARTNERNO                 ' +
+					       	' , PB.TITLE                     ' +
+					       	' , PB.FIRSTNAME                 ' +
+					       	' , PB.NAME                      ' +
+					       	' , case ISNULL(ATF.FatcaStatusNo,100)  when 100 then 0  else 1  end    As  ISFATCA                           ' +
+					       	' , PTP.POLITICALEXPOSEDPERSON	 ' +
+						   	' , UPPER(SST.TEXTSHORT)		 ' +
+					       	' , NULL						 ' +
+						   	' , UPPER(PLDS.DepositSolutionCode)		 ' +
+					       	' , PB.DATEOFBIRTH				 ' +
+					       	' , PB.COUNTRYOFBIRTH			 ' +
+					       	' , NULL						 ' +
+					       	' , ISNULL(CHN.COUNTRYCODE,FN.COUNTRYCODE) ' +
+					       	' , 1							' +
+							' FROM ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].ASEXTERNALAPPLICATION EA' + 
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTEXTERNALAPPPARTNER EP ON EA.ID = EP.EXTERNALAPPID  And  EP.HDVERSIONNO BETWEEN 1 AND 99999998' +
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTBASE PB ON PB.ID = EP.FINSTARPARTNERID	AND PB.HDVERSIONNO BETWEEN 1 AND 99999998 ' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTEXTERNALAPPACCTMAP EAM ON  EAM.ID = (SELECT TOP 1 ID FROM ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTEXTERNALAPPACCTMAP WHERE  PTEXTERNALAPPACCTMAP.ExternalAppPartnerId = EP.Id AND PTEXTERNALAPPACCTMAP.HDVERSIONNO  BETWEEN 1 AND 999999998 ORDER BY PTEXTERNALAPPACCTMAP.HdChangeDate DESC ) ' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTPROFILE PTP ON PB.ID = PTP.PARTNERID AND PTP.HDVERSIONNO BETWEEN 1 AND 99999998  ' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTSEXSTATUS PSS ON PSS.SEXSTATUSNO = PB.SEXSTATUSNO	AND PSS.HDVERSIONNO BETWEEN 1 AND 99999998 ' +
+							' LEFT outer JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTADDRESS PAD ON PAD.PARTNERID = PB.Id AND PAD.ADDRESSTYPENO = 11 AND PAD.HDVERSIONNO  BETWEEN 1 AND 99999998	' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].ASTEXT SST ON SST.MASTERID = PSS.ID AND SST.LANGUAGENO = 1 ' +                                          
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTLEGALSTATUS PLS ON PLS.LEGALSTATUSNO = PB.LEGALSTATUSNO AND PLS.HDVERSIONNO BETWEEN 1 AND 99999998 ' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTDSLEGALSTATUS PLDS ON PLS.LEGALSTATUSNO = PLDS.LEGALSTATUSNO AND PLDS.HDVERSIONNO BETWEEN 1 AND 99999998 ' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].ASTEXT LST ON LST.MASTERID = PLS.ID AND LST.LANGUAGENO = 1   ' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTNATIONALITY CHN ON CHN.PARTNERID = PB.ID AND CHN.COUNTRYCODE = ''CH'' AND CHN.HDVERSIONNO BETWEEN 1 AND 999999998 ' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTNATIONALITY FN ON  FN.ID =  ' +
+							' (SELECT TOP 1 ID FROM ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTNATIONALITY WHERE PTNATIONALITY.PARTNERID = PB.ID AND PTNATIONALITY.COUNTRYCODE <> ''CH'' AND PTNATIONALITY.HDVERSIONNO BETWEEN 1 AND 999999998) ' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTIDENTIFICATION IDD ON IDD.ID = '+
+                                                                                    ' (SELECT TOP 1 ID FROM ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTIDENTIFICATION WHERE  PTIDENTIFICATION.PARTNERID = EP.FINSTARPARTNERID AND PTIDENTIFICATION.HDVERSIONNO  BETWEEN 1 AND 999999998 ORDER BY PTIDENTIFICATION.HdChangeDate DESC ) '+
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTIDENTIFICATIONTYPE IDT ON IDD.IDENTIFICATIONTYPE = IDT.ID  '+
+                            ' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTDSIDDOCTYPEMAPPING DTM ON IDT.ID = DTM.FINSTARDOCTYPEID '+
+                                                                                    
+                            ' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTEMAILADDRESS EAD ON PAD.EMAILADDRESSID = EAD.ID AND EAD.HDVERSIONNO  BETWEEN 1 AND 99999998                                                                                    ' +
+                            ' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTPHONENUMBER PNM ON EP.FINSTARPARTNERID = PNM.PARTNERID AND PNM.PHONENUMBERTYPENO IN(1, 4) AND PNM.HDVERSIONNO BETWEEN 1 AND 999999998        ' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].AITaxStatus ATS ON PB.Id  = ATS.PartnerId  ANd ATS.TaxProgramNo = 840 and ATS.CountryCode = ''US'' AND ATS.HDVERSIONNO BETWEEN 1 AND 999999998  ' +      
+																					' And convert(date, GETDATE()) between ATS.ValidFrom and isnull(ATs.ValidTo,DATEFROMPARTS(9999,12,31))  ' + 
+							' Left outer join ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].AiTaxDetailFatca ATF on  ATS.Id = ATF.TaxStatusId and ATS.HdVersionNo between 1 and 999999998 ' +
+							' WHERE ((PB.HDCREATEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND PB.HDCREATEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +'''))' +
+							' OR (PB.HDCHANGEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND PB.HDCHANGEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +''')))' +
+							' OR ((EP.HDCREATEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND EP.HDCREATEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +'''))' +
+							' OR (EP.HDCHANGEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND EP.HDCHANGEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +''')))' +
+							' OR ((PAD.HDCREATEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND PAD.HDCREATEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +'''))' +
+							' OR (PAD.HDCHANGEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND PAD.HDCHANGEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +''')))' +
+							' OR ((PTP.HDCREATEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND PTP.HDCREATEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +'''))' +
+							' OR (PTP.HDCHANGEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND PTP.HDCHANGEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +''')))' +
+							' OR ((EAM.HDCREATEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND EAM.HDCREATEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +'''))' +
+							' OR (EAM.HDCHANGEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND EAM.HDCHANGEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +''')))' +
+							' OR ((PLS.HDCREATEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND PLS.HDCREATEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +'''))' +
+							' OR (PLS.HDCHANGEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND PLS.HDCHANGEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +''')))' +
+							' OR ((IDD.HDCREATEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND IDD.HDCREATEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +'''))' +
+                            ' OR (IDD.HDCHANGEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND IDD.HDCHANGEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +''')))' +
+                            ' OR ((IDT.HDCREATEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND IDT.HDCREATEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +'''))' +
+                            ' OR (IDT.HDCHANGEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND IDT.HDCHANGEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +''')))' +
+                            ' OR ((DTM.HDCREATEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND DTM.HDCREATEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +'''))' +
+                            ' OR (DTM.HDCHANGEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND DTM.HDCHANGEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +''')))' +
+                            ' OR ((EAD.HDCREATEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND EAD.HDCREATEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +'''))' +
+                            ' OR (EAD.HDCHANGEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND EAD.HDCHANGEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +''')))' +
+                            ' OR ((PNM.HDCREATEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND PNM.HDCREATEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +'''))' +
+                            ' OR (PNM.HDCHANGEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND PNM.HDCHANGEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +''')))' +
+								' OR ((ATF.HDCREATEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND ATF.HDCREATEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +'''))' +
+                            ' OR (ATF.HDCHANGEDATE >= CONVERT(DATETIME,''' + @pFROM_DATETIME + ''') AND ATF.HDCHANGEDATE < CONVERT(DATETIME,''' + @pTO_DATETIME +''')))' +
+							' AND EA.APPLICATIONCODE = ' + CONVERT(VARCHAR, @pAPPLICATIONCODE)
+							Print 2
+					END
+				
+					
+				ELSE IF(@pTABLE_NAME = 'PTDSCONTACTINFOTRANSFER')
+					-- Selection of Data based on transfered Partner
+					BEGIN
+						SET @TABLE_NAME = @pTABLE_NAME
+						
+						SET @sSQL = ' INSERT INTO [' + @pTARGET_DB +'].['+ @pTARGET_TABLE_SCHEMA + '].' + @TABLE_NAME + '' +
+							' ( ' +
+							' 	PARTNERTRANSFERID 		' +
+							' 	, BUSINESSPHONENUMBER 	' +
+							' 	, CITY 					' +
+							' 	, COUNTRY 				' +
+							' 	, EMAILADDRESS			' +
+							' 	, HOUSENUMBER			' +
+							' 	, MOBILEPHONENUMBER		' +
+							' 	, PHONENUMBER			' +
+							' 	, PRIVATEPHONENUMBER	' +
+							' 	, STREET				' +
+							' 	, ZIPCODE				' +
+							'   , HDVERSIONNO 			' +
+							' ) ' + 
+							' SELECT  DP.ID				' +
+							' , PNB.PHONENUMBER			' +
+							' , PAD.TOWN				' +
+							' , PAD.COUNTRYCODE			' +
+							' , EAD.EMAILADDRESS		' +
+							' , PAD.HOUSENO				' +
+							' , PNM.PHONENUMBER			' +
+							' , Isnull(PNG.PHONENUMBER,PNM.PHONENUMBER)			' +
+							' , PNP.PHONENUMBER			' +
+							' , PAD.STREET				' +
+							' , PAD.ZIP					' +
+							' , 1						' +
+							' FROM ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].ASEXTERNALAPPLICATION EA	' +
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTEXTERNALAPPPARTNER EP ON EA.ID = EP.EXTERNALAPPID	' +
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTDSPARTNERTRANSFER DP ON EP.ID =DP.EXTAPPPARTNERID 	' +
+							' LEFT JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTADDRESS PAD ON PAD.PARTNERID = EP.FINSTARPARTNERID AND PAD.ADDRESSTYPENO = 11 AND PAD.HDVERSIONNO  BETWEEN 1 AND 99999998	' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTEMAILADDRESS EAD ON PAD.EMAILADDRESSID = EAD.ID AND EAD.HDVERSIONNO  BETWEEN 1 AND 99999998							' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTPHONENUMBER PNM ON EP.FINSTARPARTNERID = PNM.PARTNERID  AND PNM.PHONENUMBERTYPENO = 4 AND PNM.HDVERSIONNO BETWEEN 1 AND 99999998	' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTPHONENUMBER PNG ON EP.FINSTARPARTNERID = PNG.PARTNERID  AND PNG.PHONENUMBERTYPENO = 1 AND PNG.HDVERSIONNO BETWEEN 1 AND 99999998  	' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTPHONENUMBER PNB ON EP.FINSTARPARTNERID = PNB.PARTNERID  AND PNB.PHONENUMBERTYPENO = 1 AND PNB.HDVERSIONNO BETWEEN 1 AND 99999998  	' +
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTPHONENUMBER PNP ON EP.FINSTARPARTNERID = PNP.PARTNERID  AND PNP.PHONENUMBERTYPENO = 1 AND PNP.HDVERSIONNO BETWEEN 1 AND 99999998  	' +
+							--' WHERE ((PB.HDCREATEDATE >= ''' + @pFROM_DATETIME + ''' AND PB.HDCREATEDATE < ''' + @pTO_DATETIME +''')' +
+							--' OR (PB.HDCHANGEDATE >= ''' + @pFROM_DATETIME + ''' AND PB.HDCHANGEDATE < ''' + @pTO_DATETIME +'''))'
+							' WHERE EA.APPLICATIONCODE = ' + CONVERT(VARCHAR, @pAPPLICATIONCODE) +'' +
+							' AND DP.TRANSFERPROCESSID = ''' + CONVERT(VARCHAR(255),@pRECORD_REF_GUID) + ''''
+					END
+				
+				ELSE IF(@pTABLE_NAME = 'PTDSIDDOCUMENTTRANSFER')
+					-- Selection of Data based on transfered Partner
+					BEGIN
+						SET @TABLE_NAME = @pTABLE_NAME
+						
+						SET @sSQL = ' INSERT INTO [' + @pTARGET_DB +'].['+ @pTARGET_TABLE_SCHEMA + '].' + @TABLE_NAME + '' +
+							' ( '+
+							' 	PARTNERTRANSFERID '+
+							' , [NUMBER] '+
+							' , ISSUINGCOUNTRY '+
+							' , ISSUEDATE '+
+							' , EXPIRYDATE '+
+							' , ISSUINGAUTHORITY ' +
+							' , HDVERSIONNO 			' +
+							' , Type 			' +
+							' ) '+
+							' SELECT DP.ID '+
+							' ,IDD.REFERENCENO  '+
+							' ,IDD.COUNTRYOFISSUANCE '+
+							' ,IDD.DATEOFISSUE '+
+							' ,IDD.DATEOFEXPIRY '+
+							' ,IDD.ISSUINGAUTHORITY '+
+							' , 1					' +
+							' ,DTM.DsDocumentType '+
+							' FROM ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].ASEXTERNALAPPLICATION EA '+
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTEXTERNALAPPPARTNER EP ON EA.ID = EP.EXTERNALAPPID '+
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTDSPARTNERTRANSFER DP ON EP.ID = DP.EXTAPPPARTNERID '+
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTIDENTIFICATION IDD ON IDD.ID = '+
+							' (SELECT TOP 1 ID FROM ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTIDENTIFICATION WHERE  PTIDENTIFICATION.PARTNERID = EP.FINSTARPARTNERID AND PTIDENTIFICATION.HDVERSIONNO  BETWEEN 1 AND 999999998 ORDER BY PTIDENTIFICATION.HDCREATEDATE DESC ) '+
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTIDENTIFICATIONTYPE IDT ON IDD.IDENTIFICATIONTYPE = IDT.ID  '+
+							' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTDSIDDOCTYPEMAPPING DTM ON IDT.ID = DTM.FINSTARDOCTYPEID '+
+							' WHERE EA.APPLICATIONCODE = ' + CONVERT(VARCHAR, @pAPPLICATIONCODE) + '' +
+							' AND DP.TRANSFERPROCESSID = ''' + CONVERT(VARCHAR(255),@pRECORD_REF_GUID) + ''''
+					END
+					
+				ELSE IF(@pTABLE_NAME = 'PTDSREFERENCEACCOUNTTRANSFER')
+					-- Selection of Data based on transfered Partner
+					BEGIN
+						SET @TABLE_NAME = @pTABLE_NAME
+						
+						SET @sSQL = ' INSERT INTO [' + @pTARGET_DB +'].['+ @pTARGET_TABLE_SCHEMA + '].' + @TABLE_NAME + '' +
+							' ( ' +
+							' PARTNERTRANSFERID 		' +
+							' , EXTERNALACCOUNTMAPID 	' +
+							' , IBAN 					' +
+							' , BIC 					' +
+							' , HDVERSIONNO 			' +
+							' ) 						' +
+							' SELECT   PPT.ID 			' +
+							' ,EAM.ID 					' +
+							' , EXTERNALIBAN 			' +
+							' , EXTERNALBIC  			' +
+							' , 1 						' +
+							' FROM ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].ASEXTERNALAPPLICATION EA ' +
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTEXTERNALAPPPARTNER EP ON EA.ID = EP.EXTERNALAPPID ' +
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTEXTERNALAPPACCTMAP EAM ON  EP.ID = EAM.EXTERNALAPPPARTNERID ' +
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTDSPARTNERTRANSFER PPT ON EAM.EXTERNALAPPPARTNERID = PPT.EXTAPPPARTNERID ' +
+							' WHERE EA.APPLICATIONCODE = ' + CONVERT(VARCHAR, @pAPPLICATIONCODE) + '' +
+							' AND PPT.TRANSFERPROCESSID = ''' + CONVERT(VARCHAR(255),@pRECORD_REF_GUID) + ''''
+					END
+					
+				ELSE IF(@pTABLE_NAME = 'PTDSSERVICEACCOUNTTRANSFER')
+					-- Selection of Data based on transfered Partner
+					BEGIN
+						SET @TABLE_NAME = @pTABLE_NAME
+						
+						SET @sSQL = ' INSERT INTO [' + @pTARGET_DB +'].['+ @pTARGET_TABLE_SCHEMA + '].' + @TABLE_NAME + '' +
+							' ( ' +
+							'   PARTNERTRANSFERID ' +
+							' , EXTERNALACCOUNTMAPID ' +
+							' , IBAN ' +
+							' , CURRENCY ' +
+							' , HDVERSIONNO ' +
+							' , ACCOUNTHOLDER ' +
+							' ) ' +
+							' SELECT   PPT.ID ' +
+							' ,EAM.ID ' +
+							' ,AB.ACCOUNTNOIBANELECT ' +
+							' ,PR.CURRENCY ' +
+							' ,1 ' +
+							' ,ISNULL(PB.FIRSTNAME,'''') + '' '' + ISNULL(PB.NAME,'''')  ' +
+							' FROM ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].ASEXTERNALAPPLICATION EA ' +
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTEXTERNALAPPPARTNER EP ON EA.ID = EP.EXTERNALAPPID ' +
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTEXTERNALAPPACCTMAP EAM ON  EP.ID = EAM.EXTERNALAPPPARTNERID AND EAM.HDVERSIONNO  BETWEEN 1 AND 999999998 ' +
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTDSPARTNERTRANSFER PPT ON EAM.EXTERNALAPPPARTNERID = PPT.EXTAPPPARTNERID ' +
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTACCOUNTBASE AB ON EAM.FINSTARACCOUNTID = AB.ID ' +
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PRREFERENCE PR ON PR.ACCOUNTID = AB.ID ' +
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTPORTFOLIO POR ON AB.PORTFOLIOID = POR.ID ' +
+							' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTBASE PB ON POR.PARTNERID = PB.ID ' +
+							' WHERE EA.APPLICATIONCODE = ' + CONVERT(VARCHAR, @pAPPLICATIONCODE) + '' +
+							' AND PPT.TRANSFERPROCESSID = ''' + CONVERT(VARCHAR(255),@pRECORD_REF_GUID) + ''''
+					END
+							
+				ELSE IF(@pTABLE_NAME = 'IFDELIVERYITEM')
+					-- Selection of Data based on transfered Partner
+					BEGIN
+					SET @TABLE_NAME = @pTABLE_NAME
+                                                                        
+					SET @sSQL = ' INSERT INTO [' + @pTARGET_DB +'].['+ @pTARGET_TABLE_SCHEMA + '].' + @TABLE_NAME + '' +
+								' ( ' +
+								'  HDVERSIONNO ' +
+								' , DELIVERYSETTINGID ' +
+								' , REFTABLENAME' +
+								' , REFITEMID' +
+								' , LOADSETTINGGROUPID' +
+								' , VALIDFROM' +
+								' , VALIDTO ' +
+								' ) '+      
+								'   SELECT 1 AS HDVERSIONNO ' +
+								' , S.ID AS DELIVERYSETTINGID '+
+								' , ''PtAccountBase'' AS REFTABLENAME '+
+								' , M.FINSTARACCOUNTID AS REFITEMID ' +
+								' , S.LOADSETTINGGROUPID '+
+								' , CONVERT( DATE, GETDATE()) AS VALIDFROM '+
+								' , ''99991231'' AS VALIDTO '+
+								'  FROM ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].IFDELIVERYSETTING S ' +
+								' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].ASEXTERNALAPPLICATION APP ON APP.APPLICATIONCODE = ''100''' +
+								' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTEXTERNALAPPPARTNER EP ON APP.ID = EP.EXTERNALAPPID ' +
+								' INNER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].PTEXTERNALAPPACCTMAP M ON EP.ID  = M.EXTERNALAPPPARTNERID ' +
+								' LEFT OUTER JOIN ['+ @pSOURCE_DB_SERVER + '].[' + @pSOURCE_DB + '].[' + @pSOURCE_TABLE_SCHEMA + '].IFDELIVERYITEM I ON S.ID = I.DELIVERYSETTINGID AND M.FINSTARACCOUNTID = I.REFITEMID ' +
+								' WHERE NAME = ''camt-DS'''+
+								' AND I.ID IS NULL'
+					END
+
+
+			
+				ELSE
+					BEGIN
+						SET @sSQL = 'SELECT 0'
+					END
+						
+				PRINT '@sSQL: for Table ' + @pTABLE_NAME + ': ' + @sSQL
+				EXEC DbJobWriteInfo @USER, @pJOB_CODE, @EXECUTINGPROCEDURE, 'Log Message: Execute Dynamic SQL', @sSQL, @pJOB_DATE, 1
+				
+				EXECUTE (@sSQL);
+				
+				SET @JOB_REC_COUNT = @@ROWCOUNT
+	
+			END
+		
+		SET @sSQL = '';
+
+		
+		SET @TEXT = CONVERT(VARCHAR(25),GETDATE(),121) + ' : Procedure '+ @EXECUTINGPROCEDURE +' finished.'
+		EXEC DbJobWriteInfo @USER, @pJOB_CODE, @EXECUTINGPROCEDURE, 'Log Message', @TEXT, @pJOB_DATE, 1
+		
+	END TRY
+	BEGIN CATCH
+		DECLARE @ErrorSeverity INT	= 0
+		DECLARE @ErrorState INT		= 0
+		DECLARE @ErrorNumber INT	= 0
+		DECLARE @ErrorMessage VARCHAR(256)	=	'Error'
+		DECLARE @ErrorProcedure VARCHAR(100)=	@EXECUTINGPROCEDURE	
+		DECLARE @ErrorLine INT				= -1
+		
+		SELECT	@ErrorSeverity = ERROR_SEVERITY(),
+				@ErrorState = ERROR_STATE(),
+				@ErrorNumber = ERROR_NUMBER(),
+				@ErrorMessage = ERROR_MESSAGE(),
+				@ErrorLine = ERROR_LINE()		
+		
+		SET @TEXT = 'SQL Error trapped in Procedure: ' + @EXECUTINGPROCEDURE +'. Error: ' + CONVERT(VARCHAR(10), @ErrorNumber) +'. Message: ' + @ErrorMessage + ' Procedure: '+ @ErrorProcedure + '. Line: ' + CONVERT(VARCHAR(10), @ErrorLine)+ '.'
+
+		EXEC DbJobWriteError @USER, @pJOB_CODE, @EXECUTINGPROCEDURE, 'Log Message', @TEXT, @pJOB_DATE, 1
+		
+		RAISERROR ('SQL Error trapped in Procedure:%s. Error:%d. Message:%s Procedure:%s. Line:%d.', 
+				@ErrorSeverity, @ErrorState, @EXECUTINGPROCEDURE, @ErrorNumber, @ErrorMessage, 
+				@ErrorProcedure, @ErrorLine)
+	END CATCH
+END

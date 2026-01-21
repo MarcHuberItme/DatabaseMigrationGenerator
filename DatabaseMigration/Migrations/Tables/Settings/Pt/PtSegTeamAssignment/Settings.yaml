@@ -1,0 +1,34 @@
+table:
+  name: 'PtSegTeamAssignment'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Segm. Team Assing'
+    - german:
+        formTitle: 'Segmentteam Zuordnung'
+  columns:
+  - name: 'UserGroupName'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 1
+  - name: 'SegCriteriaCompressionId'
+    description: ''
+    genericControls:
+      refTable: 'PtSegCriteriaCompression'
+      refField: 'Id'
+  - name: 'PercentageAssigned'
+    description: 'number of assigned partners to the team'
+    minValue: '0'
+    maxValue: '100'
+    genericControls:
+      defColumnPos: 2

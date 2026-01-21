@@ -1,0 +1,120 @@
+table:
+  name: 'PtOffer'
+  description: 'z.B. Finanzierungsofferte\r\nNever switch on data confirmation due to interferences with own workflow'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      applicationKey: 'OfferDate'
+      navigationConditionField: 'OfferTypeNo'
+      rootTable: 'PtEbInfo'
+      parentTable: 'PtEbInfo'
+      parentRelationField: 'EbInfoId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Offers'
+    - german:
+        formTitle: 'Offerten'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'EbInfoId'
+    description: 'Id of the Partner Information if the offer party is not a Partner'
+    genericControls:
+      refTable: 'PtEbInfo'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OfferTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtOfferType'
+      refField: 'OfferTypeNo'
+      defColumnPos: 1
+  - name: 'OfferStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtOfferStatus'
+      refField: 'OfferStatusNo'
+      defColumnPos: 2
+  - name: 'BankSpeakerId'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CustSpeaker'
+    description: ''
+  - name: 'ValidToDate'
+    description: 'Offerte ist gültig bis'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ResultTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtOfferResultType'
+      refField: 'ResultTypeNo'
+      defColumnPos: 4
+  - name: 'ReasonText'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'CompetitorsId'
+    description: 'competitors / Konkurrenz'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ConsequencesTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtOfferConsequencesType'
+      refField: 'ConsequencesTypeNo'
+  - name: 'ConsequencesText'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ToBeContacted'
+    description: '0 = no\r\n1 = yes (client wants to be contacted by the bank) - wünscht Beratung'
+  - name: 'ContactFromTime'
+    description: 'e.g. 18:00'
+  - name: 'ContactToTime'
+    description: 'e.g. 20:00'
+  - name: 'ContactText'
+    description: 'text related to contact ... e.g. contact should take place, bank can call but not on monday and not on weekend.'
+    genericControls:
+      multiLine: true
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ConsultantTeamName'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      hasDetailBtn: true
+  - name: 'WFProcessId'
+    description: ''
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'SourceTypeNo'
+    description: 'Source can be immoscout / baublatt ....'
+    genericControls:
+      refTable: 'PtOfferSourceType'
+      refField: 'SourceTypeNo'
+  - name: 'ConfStatus'
+    description: ''
+  - name: 'OfferDate'
+    description: 'Datum, wann die Offerte eingegangen ist.'

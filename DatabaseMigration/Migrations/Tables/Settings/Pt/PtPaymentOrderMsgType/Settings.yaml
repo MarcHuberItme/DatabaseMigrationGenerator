@@ -1,0 +1,58 @@
+table:
+  name: 'PtPaymentOrderMsgType'
+  description: 'Message sub types / Types of different slips in an order.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment msg types'
+        helpText: 'Payment msg types'
+    - german:
+        formTitle: 'Payment msg types'
+        helpText: 'Payment msg types'
+  columns:
+  - name: 'OrderType'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderType'
+      refField: 'OrderTypeNo'
+      defColumnPos: 1
+  - name: 'MessageType'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ProfileName'
+    description: 'Name of the system profile that has to be used for this specific message type in the payments entry form.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TransTextField1'
+    description: 'Name of the field in PtPaymentOrderDetail. If this field is not null, the contents will be given priority 1 for being used as transtext in booking, on the opposite side of sender  of the order. If sender has to be debited, the contents will be on credit booking transtext and vise versa.'
+  - name: 'TransTextField2'
+    description: 'Name of the field in PtPaymentOrderDetail. If this field is not null, the contents will be given priority 2 for being used as transtext in booking, on the opposite side of sender  of the order. If sender has to be debited, the contents will be on credit booking transtext and vise versa.'
+  - name: 'TransTextField3'
+    description: 'Name of the field in PtPaymentOrderDetail. If this field is not null, the contents will be given priority 3 for being used as transtext in booking, on the opposite side of sender  of the order. If sender has to be debited, the contents will be on credit booking transtext and vise versa.'
+  - name: 'IsPostMandat'
+    description: ''
+  - name: 'IsSICOnlyExternPayment'
+    description: 'if the beneficiary is external, the payment has to be sent by SIC'
+  - name: 'IsOwnReturnPayment'
+    description: 'Payment sent to external beneficiary returned, for example sent back over SIC. In this case the information to original payment is saved in separate table'
+  - name: 'IsToReturnExternalPayment'
+    description: 'Sending back the payment received from external source. For example by sending back over SIC as pacs.004 messages'
+  - name: 'IsSepaPayment'
+    description: ''
+  - name: 'IsCoverPayment'
+    description: ''
+  - name: 'IsSwiftOutgoing'
+    description: ''
+  - name: 'IsReturnDetailManual'
+    description: '0 = Return details will be copied from original payment\r\n1 = Return details will be entered manually'
+  - name: 'IsInstantPayment'
+    description: 'Is SIC instant payment where message will be generated and sent to SIC before transaction is booked in Finstar.'

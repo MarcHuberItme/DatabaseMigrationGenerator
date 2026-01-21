@@ -1,0 +1,33 @@
+table:
+  name: 'AsNavigationStructureKey'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 75acefc4-0a56-4966-97a8-53e8b891ec08
+    visumLevel: 1
+    cacheLevel: 2
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Navigation Structure Key'
+    - german:
+        formTitle: 'Navigationstruktur Key'
+  columns:
+  - name: 'NavigationStructureRowId'
+    description: '*** The DB-Integrity to AsNavigationStructrure is temporarly removed until we get the next version of NavigationBuilder.  (!!! Restored with cascade delete/update enforced now (Imran - Sep. 6, 2001))'
+    genericControls:
+      refTable: 'AsNavigationStructure'
+      refField: 'Id'
+  - name: 'FormName'
+    description: ''
+  - name: 'FunctionList'
+    description: ''
+  - name: 'ParentConditionKey'
+    description: ''
+  - name: 'ApplicationKey'
+    description: ''
+  - name: 'Type'
+    description: ''

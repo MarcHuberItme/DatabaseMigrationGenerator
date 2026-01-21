@@ -1,0 +1,74 @@
+table:
+  name: 'PtSharePaymentList'
+  description: 'special payment list for the shareholder'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'EventID'
+    description: 'linked to the dividend event'
+    genericControls:
+      refTable: 'EvBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'ShareQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'CreditAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'CreditAccountNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'PayeeID'
+    description: ''
+    genericControls:
+      refTable: 'AsPayee'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'OrderID'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrder'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'OrderDate'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'InstructionID'
+    description: ''
+    genericControls:
+      refTable: 'PtSharePaymentInstruction'
+      refField: 'Id'
+      defColumnPos: 9
+  - name: 'DepotbankID'
+    description: ''
+  - name: 'ShareholderID'
+    description: ''
+  - name: 'TitleNo'
+    description: ''
+  - name: 'TitleQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'ExtRefNo'
+    description: ''
+  - name: 'ReportDate'
+    description: ''

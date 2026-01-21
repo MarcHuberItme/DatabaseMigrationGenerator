@@ -1,0 +1,46 @@
+table:
+  name: 'AiTaxReportSubstantialOwner'
+  description: 'Bei Firmen kann es im FATCA-Programm zu einer Meldung (TaxReportAccount) keine, eine oder mehrere sog. Substantial Owners geben.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Substantial Owner'
+    - german:
+        formTitle: 'Wesentliche Besitzer'
+    - french:
+        formTitle: 'Propriétaire substantiel'
+  columns:
+  - name: 'TaxReportAccountId'
+    description: 'Verbindung zum Account.\r\n\r\n1) FATCA: SubstantialOwner\r\n\r\n2) AIA (CRS): ControllingPerson'
+    genericControls:
+      refTable: 'AiTaxReportAccount'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TaxReportPartnerId'
+    description: 'Verbindung zum Partner.'
+    genericControls:
+      refTable: 'AiTaxDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'StatusNo'
+    description: 'Verarbeitungsstatus'
+    genericControls:
+      refTable: 'AiTaxReportEntryStatus'
+      refField: 'StatusNo'
+      defColumnPos: 3
+  - name: 'CtrlgPersonTypeNo'
+    description: 'It is used currently in AIA (TaxProgramNo 1) for Passive and Trist in order define the type of the controlling person'
+    genericControls:
+      refTable: 'AiTaxReportCtrlPersonType'
+      refField: 'CtrlgPersonTypeNo'
+      defColumnPos: 4

@@ -1,0 +1,274 @@
+view:
+  name: 'PtStandingOrderSearchView'
+  description: 'Extensive view containing all the information of standing order that can be usually shown on a UI.'
+frontendView:
+  name: 'PtStandingOrderSearchView'
+  description: 'Showing extensive information about standing orders and searching for standing orders.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        helpText: 'Showing extensive information about standing orders and searching for standing orders.'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+  - name: 'DebtorAccountId'
+    description: 'PtStandingOrder.AccountId'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'ChargeBearerTypeNo'
+    description: 'PtStandingOrder.ChargeBorneTypeNo'
+    dataType: 'smallint'
+  - name: 'FirstExecutionDate'
+    description: 'PtStandingOrder.FirstSelectionDate'
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'FinalExecutionDate'
+    description: 'PtStandingOrder.FinalSelectionDate'
+    dataType: 'datetime'
+  - name: 'MaximumNumberOfExecutions'
+    description: 'PtStandingOrder.MaximumSelection'
+    dataType: 'smallint'
+  - name: 'NextExecutionDate'
+    description: 'PtStandingOrder.NextSelectionDate'
+    dataType: 'datetime'
+  - name: 'ConsecutiveFailedPaymentCount'
+    description: ''
+    dataType: 'smallint'
+  - name: 'PeriodRuleNo'
+    description: 'PtStandingOrder.PeriodRuleNo'
+    dataType: 'int'
+    isNotNull: true
+  - name: 'Amount'
+    description: 'PtStandingOrder.PaymentAmount'
+    dataType: 'money'
+  - name: 'Currency'
+    description: 'PtStandingOrder.PaymentCurrency'
+    dataType: 'char'
+    prec: 3
+  - name: 'PreviousSelectionDate'
+    description: 'PtStandingOrder.PreviousSelectionDate'
+    dataType: 'datetime'
+  - name: 'PreviousExecutionDate'
+    description: 'PtStandingOrder.PreviousExecutionDate'
+    dataType: 'datetime'
+  - name: 'EsrOrQrReferenceNo'
+    description: 'PtStandingOrder.ReferenceNo'
+    dataType: 'nchar'
+    prec: 27
+  - name: 'DebtorRemark'
+    description: 'PtStandingOrder.SenderRemarks'
+    dataType: 'nvarchar'
+    prec: 250
+  - name: 'ScoReference'
+    description: 'PtStandingOrder.StructuredCreditorReference'
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'SuspendFrom'
+    description: 'PtStandingOrder.SuspendFrom'
+    dataType: 'datetime'
+  - name: 'SuspendTo'
+    description: 'PtStandingOrder.SuspendTo'
+    dataType: 'datetime'
+  - name: 'SlipType'
+    description: 'PtStandingOrder.TransTypeOrig'
+    dataType: 'smallint'
+  - name: 'SalaryFlag'
+    description: 'PtStandingOrder.SalaryFlag'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'UltimateCreditorBuildingNumber'
+    description: 'PtStandingOrder.EndBeneficiaryBuildingNo'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'UltimateCreditorCountryCode'
+    description: 'PtStandingOrder.EndBeneficiaryCountry'
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'UltimateCreditorName'
+    description: 'PtStandingOrder.EndBeneficiaryName'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'UltimateCreditorPostCode'
+    description: 'PtStandingOrder.EndBeneficiaryPostCode'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'UltimateCreditorStreetName'
+    description: 'PtStandingOrder.EndBeneficiaryStreetName'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'UltimateCreditorTownName'
+    description: 'PtStandingOrder.EndBeneficiaryTownName'
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'UltimateDebtorBuildingNumber'
+    description: 'PtStandingOrder.OriginalSenderBuildingNo'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'UltimateDebtorCountryCode'
+    description: 'PtStandingOrder.OriginalSenderCountry'
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'UltimateDebtorName'
+    description: 'PtStandingOrder.OriginalSenderName'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'UltimateDebtorPostCode'
+    description: 'PtStandingOrder.OriginalSenderPostCode'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'UltimateDebtorStreetName'
+    description: 'PtStandingOrder.OriginalSenderStreetName'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'UltimateDebtorTownName'
+    description: 'PtStandingOrder.OriginalSenderTownName'
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'InternalCreditorAccountNumber'
+    description: 'PtAccountBase.AccountNo'
+    dataType: 'decimal'
+    prec: 11
+  - name: 'InternalCreditorIban'
+    description: 'PtAccountBase.AccountNoIbanElect'
+    dataType: 'nvarchar'
+    prec: 21
+  - name: 'InternalCreditorQrIban'
+    description: 'PtAccountBase.QrIban'
+    dataType: 'nvarchar'
+    prec: 21
+  - name: 'ExternalCreditorAccountNumber'
+    description: 'AsPayee.AccountNoExt'
+    dataType: 'nvarchar'
+    prec: 34
+  - name: 'ExternalCreditorBuildingNumber'
+    description: 'AsPayee.BeneficiaryBuildingNo'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'ExternalCreditorCountryCode'
+    description: 'AsPayee.BeneficiaryCountry'
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'ExternalCreditorName'
+    description: 'AsPayee.BeneficiaryName'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'ExternalCreditorPostCode'
+    description: 'AsPayee.BeneficiaryPostCode'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'ExternalCreditorStreetName'
+    description: 'AsPayee.BeneficiaryStreetName'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'ExternalCreditorTownName'
+    description: 'AsPayee.ExternalCreditorTownName'
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'InternalCreditorCountryCode'
+    description: 'PtAddress.CountryCode of Main Address'
+    dataType: 'nvarchar'
+    prec: 2
+  - name: 'InternalCreditorTownName'
+    description: 'PtAddress.Town of Main Address'
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'InternalCreditorPostCode'
+    description: 'PtAddress.Zip of Main Address'
+    dataType: 'nvarchar'
+    prec: 13
+  - name: 'InternalCreditorStreetName'
+    description: 'PtAddress.Street of Main Address'
+    dataType: 'nvarchar'
+    prec: 26
+  - name: 'InternalCreditorBuildingNumber'
+    description: 'PtAddress.HouseNo of Main Address'
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'InternalCreditorFirstName'
+    description: 'PtBase.FirstName'
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'InternalCreditorLastName'
+    description: 'PtBase.Name'
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'InternalCreditorMiddleName'
+    description: 'PtBase.MiddleName'
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'InternalCreditorNameCont'
+    description: 'PtBase.NameCont'
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'InternalCreditorName'
+    description: 'CalculatedField from PtBase.Name, PtBase.FirstName, PtBase.MiddleName, PtBase.NameCont'
+    dataType: 'nvarchar'
+    prec: 140
+  - name: 'IsInternalCreditorMidNameUsed'
+    description: 'PtBase.UseMiddleName'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'RemittanceInformation'
+    description: 'PtStandingOrder.PaymentInformation'
+    dataType: 'nvarchar'
+    prec: 150
+  - name: 'CreditorPostAccountNo'
+    description: 'AsPayee.PCNo'
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'CreditorPostAccountNoUnf'
+    description: 'AsPayee.PCNoUnformatted'
+    dataType: 'nvarchar'
+    prec: 9
+  - name: 'DebtorAccountNo'
+    description: 'PtAccountBase.AccountNo'
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 11
+  - name: 'DebtorIban'
+    description: 'PtAccountBase.AccountNoIbanElect'
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 21
+  - name: 'RejectedUnstructuredAddress'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+  - name: 'IsCustomerConfirmationPending'
+    description: 'If 2FA confirmation is pending'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'CreatorAgreementId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'AgreementIdThatApproved1'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'AgreementIdThatApproved2'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'

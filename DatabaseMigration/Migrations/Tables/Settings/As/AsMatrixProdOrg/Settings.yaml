@@ -1,0 +1,26 @@
+table:
+  name: 'AsMatrixProdOrg'
+  description: 'QlikView Matrix für Auswertungen\r\nEin Record für jede Kombination von AccountancyPeriod, Prod (AuswertungsproduktgruppeQlikView) und Org (Organisationseinheit QlikView)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'QlikView Matrix'
+    - german:
+        formTitle: 'QlikView Matrix'
+    - french:
+        formTitle: 'QlikView Matrix'
+  columns:
+  - name: 'AccountancyPeriod'
+    description: ''
+  - name: 'Prod'
+    description: 'Produktegruppe für QlikView-Auswertungen'
+  - name: 'Org'
+    description: 'Organisationseinheit für QlikView-Auswertungen'

@@ -1,0 +1,37 @@
+view:
+  name: 'PtPaymentRejectReasonView'
+  description: 'View to get reject codes with their text description.'
+frontendView:
+  name: 'PtPaymentRejectReasonView'
+  description: 'Table for view to get reject codes with their text description. Created because of code generation.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+  - name: 'IsRelevantToCustomer'
+    description: 'IsRelevantToCustomer from PtPaymentRejectReason'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'RejectCode'
+    description: 'RejectCode from PtPaymentRejectReason'
+    dataType: 'smallint'
+    isNotNull: true
+  - name: 'Description'
+    description: 'TextLong from PtPaymentRejectReason'
+    dataType: 'nvarchar'
+    prec: 1000
+  - name: 'LanguageNo'
+    description: 'Number of Language'
+    dataType: 'tinyint'
+    isNotNull: true

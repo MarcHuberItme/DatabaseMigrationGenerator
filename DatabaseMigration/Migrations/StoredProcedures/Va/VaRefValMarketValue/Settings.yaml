@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaRefValMarketValue'
+  description: '09.05.2023 / wwo: deactivate change from 20.12.2022 for InstrumentTypeNo = 9\r\n20.12.2022 / wwo: Consider PrPublicListing.PriceRepUnitAmount (at the moment only for UnitNo = 2 (Piece), necesseray for SEBA (SD 306952))\r\n18.10.2017 / wwo: changes for InstrumentTypeNo = 9 (calculate with gram)\r\n'

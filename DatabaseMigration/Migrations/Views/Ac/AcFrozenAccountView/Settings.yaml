@@ -1,0 +1,409 @@
+view:
+  name: 'AcFrozenAccountView'
+  description: ''
+frontendView:
+  name: 'AcFrozenAccountView'
+  description: 'Diese Tabelle enthält den monatlichen Snapshot der Partnerdaten\r\n(für Fire, Alm,...)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Account snapshot data'
+    - german:
+        formTitle: 'Konto Snapshotdaten'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'HdStatusFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'ReportDate'
+    description: 'Berichtsdatum'
+    dataType: 'datetime'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 1
+      noUpdatePos: 1
+      isNoUpdate: true
+  - name: 'AccountNo'
+    description: 'Kontonummer'
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 11
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 2
+      noUpdatePos: 2
+      isNoUpdate: true
+  - name: 'AccountId'
+    description: 'Konto Id (PtAccountBase'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      isNoUpdate: true
+  - name: 'PrReferenceId'
+    description: 'Konto Referenz (Währung, PrReference)'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      noUpdatePos: 3
+      isNoUpdate: true
+  - name: 'Currency'
+    description: 'Kontowährung'
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+      noUpdatePos: 4
+      isNoUpdate: true
+  - name: 'ProductNo'
+    description: 'Produkt Nr. (PrPrivate)'
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      defColumnPos: 4
+      noUpdatePos: 5
+      isNoUpdate: true
+  - name: 'AccountGroupNo'
+    description: 'Kontogruppe gemäss PrPrivate'
+    dataType: 'smallint'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CharacteristicNo'
+    description: 'Produkt Charakteristik'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PrPrivateCharacteristic'
+      refField: 'CharacteristicNo'
+      noUpdatePos: 6
+      isNoUpdate: true
+  - name: 'IsDueRelevant'
+    description: 'Zinssaldo separat führen (Hypotheken und Vorschüsse)'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      noUpdatePos: 7
+      isNoUpdate: true
+  - name: 'CapitalBalance'
+    description: 'Kapitalsaldo'
+    dataType: 'money'
+    genericControls:
+      noUpdatePos: 8
+      isNoUpdate: true
+  - name: 'InterestBalance'
+    description: 'Zinssaldo'
+    dataType: 'money'
+    genericControls:
+      noUpdatePos: 9
+      isNoUpdate: true
+  - name: 'MgSITZ'
+    description: 'Sitz (Migrationsfeld)'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'MgA01'
+      refField: 'MigValue'
+      noUpdatePos: 17
+      isNoUpdate: true
+  - name: 'MgOBJEKT'
+    description: 'Objektcode (aus Migrationsfeld)'
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'MgA21'
+      refField: 'MigValue'
+      noUpdatePos: 18
+      isNoUpdate: true
+  - name: 'MgOBJPLZ'
+    description: 'Postleitzahl des Objekts (Migrationsfeld, wird aus Kontokomponenten ermittelt)'
+    dataType: 'smallint'
+    genericControls:
+      noUpdatePos: 19
+      isNoUpdate: true
+  - name: 'PartnerId'
+    description: 'Kunden Identifikation'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      isNoUpdate: true
+  - name: 'OperationTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PrOperationType'
+      refField: 'TypeNo'
+      isNoUpdate: true
+  - name: 'ConsCreditMonitorId'
+    description: 'Konsumkreditrecord Id'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsMoneyMarket'
+    description: 'Ist Geldmarkt'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ClosingPeriodRuleNo'
+    description: 'Abschlussperiodizität'
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      isNoUpdate: true
+  - name: 'FreezeStatus'
+    description: 'Freeze Status\r\n1 = account data loaded\r\n2 = additional account data loaded\r\n3 = freeze account components done\r\n4 = freeze account balance done\r\n5 = freeze account interest done\r\n6 = Run Analysis done for this account'
+    dataType: 'int'
+    genericControls:
+      isNoUpdate: true
+  - name: 'PositionId'
+    description: 'PtPosition Id'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      isNoUpdate: true
+  - name: 'InitValuePrCu'
+    description: 'Initialisierter Saldo in Produktwährung'
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'InitDueValuePrCu'
+    description: 'Initialisierter Zinssaldo in Produktwährung'
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'AcrDebitInterestSumPrCu'
+    description: 'Marchzinsen Soll in Produktwährung'
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'AcrCreditInterestSumPrCu'
+    description: 'Marchzinsen Haben in Produktwährung'
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'AcrExpensesSumPrCu'
+    description: 'Spesen in Produktwährung'
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'AcrCommissionSumPrCu'
+    description: 'Kommission in Produktwährung'
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'AcrBonusSumPrCu'
+    description: 'Bonuszins in Produktwährung'
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ValuePrCuAdjustment'
+    description: 'Saldokorrektur in Produktwährung'
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'DueValuePrCuAdjustment'
+    description: 'Zinssaldokorrektur in Produktwährung'
+    dataType: 'nvarchar'
+    prec: 4000
+    genericControls:
+      isNoUpdate: true
+  - name: 'ValuePrCu'
+    description: 'Saldo in Produktwährung'
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'DueValuePrCu'
+    description: 'Zinssaldo in Produktwährung'
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'NotAssignedValue'
+    description: 'Nicht einer Komponente zugeordneter Kapitalbetrag, muss 0 sein'
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'NotAssignedDueValue'
+    description: 'Nicht einer Komponente zugeordneter Zinsbetrag, muss 0 sein'
+    dataType: 'nvarchar'
+    prec: 4000
+    genericControls:
+      isNoUpdate: true
+  - name: 'AccountNoText'
+    description: 'Kontonr. als Textfeld mit führender 0'
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      isNoUpdate: true
+  - name: 'ConsolidAcrInterestDebHoCu'
+    description: 'Konsolidierter Marchzins Soll in Bilanzwährung'
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ConsolidAcrInterestCredHoCu'
+    description: 'Konsolidierter Marchzins Haben in Bilanzwährung'
+    dataType: 'money'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ValueHoCu'
+    description: 'Saldo in Bilanzwährung'
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'RealEstateCanton'
+    description: 'Grundstückkanton gemäss PtAccountComponent.MgPlz'
+    dataType: 'nvarchar'
+    prec: 2
+    genericControls:
+      refTable: 'AsCanton'
+      refField: 'CantonSymbol'
+      isNoUpdate: true
+  - name: 'CustomerReference'
+    description: 'Kundenrubrik'
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      isNoUpdate: true
+  - name: 'FiduciaryCountry'
+    description: 'bei Kundentreuhandgelder, Domizil des Treunehmers'
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      isNoUpdate: true
+  - name: 'ContractType'
+    description: 'Kontrakttyp (PtContract)'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtContractType'
+      refField: 'ContractType'
+      isNoUpdate: true
+  - name: 'IsRepo'
+    description: '1 = Repogeschäft'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsImpaired'
+    description: '1 = Gefährdete Forderung (mit Einzelwertberichtigung oder Räting 0.5)'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsOverdue'
+    description: '1 = Überfällige Position (zinslos bzw. mit Zinsrückstellungen)'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      isNoUpdate: true
+  - name: 'NoDebitInterests'
+    description: '1 = Zinslose Forderung (relevant für Ermittlung der überfälligen Positionen)'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'InterestRecovery'
+    description: '1 = Diese Position hat Zinsrückstellungen (PtAccountInterestRecovery)'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'SuppressOverdueFlag'
+    description: '1 = Überfällig übersteuern, nicht als überfällig an Fire übergeben'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 9
+  - name: 'MinimumCapitalViolated'
+    description: 'True = SBVg minimum requirements for own capital not fulfilled'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'MinimumAmortisationViolated'
+    description: 'True = SBVg minimum requirements for own amortisation not fulfilled'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'MaxWithdrawAmountHoCu'
+    description: 'Maximalre formeller Rückzug innerhalb 30 Tagen (gem. Definition LCR) in CHF.\r\nSaldo und Limiten werden nicht berücksichtigt, lediglich Rückzugsbedingungen'
+    dataType: 'money'
+    scale: 4
+  - name: 'MaxWithdrawAmountPrCu'
+    description: 'Maximalre formeller Rückzug innerhalb 30 Tagen (gem. Definition LCR) in Kontowährung.\r\nSaldo und Limiten werden nicht berücksichtigt, lediglich Rückzugsbedingungen'
+    dataType: 'money'
+    scale: 4
+  - name: 'NoticeAmountHoCu'
+    description: 'Gekündigte Beträge innert 30 Tagen für LCR in CHF\r\n'
+    dataType: 'money'
+    scale: 4
+  - name: 'NoticeAmountPrCu'
+    description: 'Gekündigte Beträge innert 30 Tagen für LCR in Kontowährung'
+    dataType: 'money'
+    scale: 4
+  - name: 'MaxEffWithdrawAmountHoCu'
+    description: 'Betrag, der nach Berücksichtigung von Saldo, Rückzugsbedingungen und Kündigungen bezogen werden kann.'
+    dataType: 'money'
+    scale: 4
+  - name: 'CollClean'
+    description: 'If true, the captuer of the colletaral and the assignment to the loan was completed.'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'OpeningDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ReportAdrLine'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 10

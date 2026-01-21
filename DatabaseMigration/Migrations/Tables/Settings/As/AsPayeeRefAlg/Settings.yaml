@@ -1,0 +1,34 @@
+table:
+  name: 'AsPayeeRefAlg'
+  description: 'In this table there are set the Parameters for the identification of the ESR-Number.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Function01'
+    description: 'Rule 1 to identificate the ESR-Number'
+  - name: 'Function02'
+    description: 'Rule 2 to identificate the ESR-Number'
+  - name: 'Function03'
+    description: 'Rule 3 to identificate the ESR-Number'
+  - name: 'Function04'
+    description: 'Rule 4 to identificate the ESR-Number'
+  - name: 'Function05'
+    description: 'Rule 5 to identificate the ESR-Number'
+  - name: 'Function06'
+    description: 'Rule 6 to identificate the ESR-Number'
+  - name: 'Function07'
+    description: 'Rule 7 to identificate the ESR-Number'
+  - name: 'Function08'
+    description: 'Rule 8 to identificate the ESR-Number'
+  - name: 'Function09'
+    description: 'Rule 9 to identificate the ESR-Number'
+  - name: 'Function10'
+    description: 'Rule 10 to identificate the ESR-Number'

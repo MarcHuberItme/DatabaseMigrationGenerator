@@ -1,0 +1,21 @@
+table:
+  name: 'OaTwoFaFuturaeSession'
+  description: 'Contains Futurae specific authentication session values.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TwoFaSessionId'
+    description: ''
+    genericControls:
+      refTable: 'OaTwoFaSession'
+      refField: 'Id'
+  - name: 'AuthenticationRequestBody'
+    description: 'Request body of the initiated authentication request.'

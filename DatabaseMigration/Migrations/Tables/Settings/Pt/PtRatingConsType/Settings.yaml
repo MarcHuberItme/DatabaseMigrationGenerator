@@ -1,0 +1,24 @@
+table:
+  name: 'PtRatingConsType'
+  description: 'Gesamtrating'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Rating Typ'
+    - german:
+        formTitle: 'Rating Typ'
+  columns:
+  - name: 'RatingTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

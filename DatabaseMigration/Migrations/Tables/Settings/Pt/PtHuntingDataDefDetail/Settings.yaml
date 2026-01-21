@@ -1,0 +1,40 @@
+table:
+  name: 'PtHuntingDataDefDetail'
+  description: 'Contains detail informations like the selected fields, the order of the fields and datatype'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'SeqNo'
+    description: ''
+  - name: 'DataDefId'
+    description: ''
+    genericControls:
+      refTable: 'PtHuntingDataDef'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'FieldName'
+    description: 'Name of field from the Table ''PtHunting'''
+    genericControls:
+      defColumnPos: 2
+  - name: 'FieldPositions'
+    description: 'The list of the indexed positioin of fields to populate against the field of the table PtHunting which given in the field ''FieldName'''
+  - name: 'InputFields'
+    description: 'The list of the fields from the sample file whose indexed position is given in ''FieldPositions'''
+    genericControls:
+      defColumnPos: 3
+  - name: 'DataType'
+    description: 'Type of the imported Field, just the for database types varchar, int, datetime and money are supported'
+  - name: 'ShowWithImport'
+    description: 'if not null, then it defines the position of the field where it is shown on the import form'
+  - name: 'DynamicDescription'
+    description: ''
+    genericControls:
+      multiLine: true

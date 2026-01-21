@@ -1,0 +1,91 @@
+table:
+  name: 'MgXS24'
+  description: 'VRX Booking Rules (Buchungsvorschriften)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Buchungsvorschriften'
+    - german:
+        formTitle: 'Buchungsvorschriften'
+  columns:
+  - name: 'KdNr'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ArbGeb'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'KtNr'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'SubKtNr'
+    description: ''
+  - name: 'VKdNr'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'VArbGeb'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'VKtNr'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'VSubKtNr'
+    description: ''
+  - name: 'VbArt'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'VfPos'
+    description: ''
+  - name: 'MutZyklus'
+    description: ''
+  - name: 'VStatus'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'VwArt'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'Wrg'
+    description: ''
+  - name: 'ValNr'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'ValZus'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'ValutaKorr'
+    description: ''
+  - name: 'BelastArt'
+    description: ''
+  - name: 'FaSitz'
+    description: ''
+  - name: 'FachNr'
+    description: ''
+  - name: 'ValNrV'
+    description: ''
+  - name: 'VrxKey'
+    description: ''
+  - name: 'MigrationStatus'
+    description: '0 = Pending Import'
+  - name: 'MigrationDate'
+    description: ''
+  - name: 'ErrorDescription'
+    description: 'Error description in case the the rule could not be migrated'

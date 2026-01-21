@@ -1,0 +1,137 @@
+view:
+  name: 'PtCvCorrectionPosHistoryView'
+  description: ''
+frontendView:
+  name: 'PtCvCorrectionPosHistoryView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PortfolioNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 13
+    genericControls:
+      defColumnPos: 2
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PublicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'PublicDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 4
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'LocGroupId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'GroupNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 6
+  - name: 'PositionCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 7
+  - name: 'PortfolioCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 8
+  - name: 'Quantity'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 9
+  - name: 'AmountCvAcCu'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 13
+  - name: 'RateAcCuPfCu'
+    description: ''
+    dataType: 'float'
+    genericControls:
+      defColumnPos: 14
+  - name: 'AmountCvPfCu'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 15
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'NewAmountCvAcCu'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 16
+  - name: 'NewRateAcCuPfCu'
+    description: ''
+    dataType: 'float'
+    genericControls:
+      defColumnPos: 17
+  - name: 'NewAmountCvPfCu'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 18
+  - name: 'PosCvHistoryId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 20
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+  - name: 'HdPendingChanges'
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'HdPendingSubChanges'
+    dataType: 'nvarchar'
+    prec: 4000

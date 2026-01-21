@@ -1,0 +1,64 @@
+view:
+  name: 'PrSafeDepositView'
+  description: 'view to select a safe deposit (for example to create a safe-deposit-proxy)\r\n\r\n{For getting a list of only AVAILABLE safe deposits, use PrAvailableSafeDepositView!}'
+frontendView:
+  name: 'PrSafeDepositView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'BranchNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 1
+  - name: 'BoxNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrSafeDepositBoxType'
+      refField: 'TypeNo'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'TypeText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 4
+  - name: 'Price'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    scale: 2
+    genericControls:
+      defColumnPos: 5
+  - name: 'PriceValidFrom'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'BranchText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'DepositDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 55
+    genericControls:
+      defColumnPos: 5

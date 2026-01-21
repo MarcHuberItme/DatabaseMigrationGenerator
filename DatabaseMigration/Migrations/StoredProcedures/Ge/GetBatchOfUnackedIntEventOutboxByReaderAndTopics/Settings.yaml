@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetBatchOfUnackedIntEventOutboxByReaderAndTopics'
+  description: 'Gets a batch of integration events which are not yet acked by a reader (no acks yet or acks deleted) by an optional comma separated list of topics. The batch is specified with an offset (>= HdSequence) and a BatchSize.'

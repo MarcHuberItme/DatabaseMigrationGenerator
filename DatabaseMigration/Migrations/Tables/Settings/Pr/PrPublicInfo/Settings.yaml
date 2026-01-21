@@ -1,0 +1,49 @@
+table:
+  name: 'PrPublicInfo'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Instrument informations'
+    - german:
+        formTitle: 'Instrumenteninformationen'
+  columns:
+  - name: 'MasterId'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'LanguageNo'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'MasterTableName'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'VdfSegmentPath'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'VdfMessageIdent'
+    description: ''
+  - name: 'VdfTextDescr'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Text'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 3

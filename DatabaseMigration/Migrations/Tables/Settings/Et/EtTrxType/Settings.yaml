@@ -1,0 +1,23 @@
+table:
+  name: 'EtTrxType'
+  description: 'Easy-Tax transactions-types'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+  columns:
+  - name: 'TrxType'
+    description: 'TansacrionType according to EasyTax documentation.'
+  - name: 'TrxProfile'
+    description: 'UI profile name for displaying EtTrx.'
+  - name: 'ExportClass'
+    description: ''
+    genericControls:
+      refTable: 'EtExportClass'
+      refField: 'ExportClass'

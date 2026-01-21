@@ -1,0 +1,39 @@
+table:
+  name: 'AcMaturityGroup'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Maturity Group'
+    - german:
+        formTitle: 'Verfallgruppe'
+  columns:
+  - name: 'GroupNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'IntervalType'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'RangeFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'RangeTo'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'GroupName'
+    description: ''
+    genericControls:
+      defColumnPos: 2

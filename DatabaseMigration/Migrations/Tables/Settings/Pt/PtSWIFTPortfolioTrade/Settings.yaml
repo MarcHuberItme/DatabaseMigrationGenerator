@@ -1,0 +1,74 @@
+table:
+  name: 'PtSWIFTPortfolioTrade'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtSWIFTPortfolioTrade'
+        helpText: 'PtSWIFTPortfolioTrade'
+    - german:
+        formTitle: 'PtSWIFTPortfolioTrade'
+        helpText: 'PtSWIFTPortfolioTrade'
+    - french:
+        formTitle: 'PtSWIFTPortfolioTrade'
+        helpText: 'PtSWIFTPortfolioTrade'
+  columns:
+  - name: 'SWIFTPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtSWIFTPortfolio'
+      refField: 'Id'
+  - name: 'PortfolioPositionsId'
+    description: ''
+    genericControls:
+      refTable: 'PtSWIFTPortfolioPositions'
+      refField: 'Id'
+  - name: 'TransMessageId'
+    description: ''
+  - name: 'TradingOrderMessageId'
+    description: ''
+  - name: 'TradeQuantity'
+    description: ''
+  - name: 'QuantityType'
+    description: ''
+  - name: 'TradePrice'
+    description: ''
+  - name: 'TradeCurrency'
+    description: ''
+  - name: 'TradeValue'
+    description: ''
+  - name: 'IndicativePrice'
+    description: ''
+  - name: 'MarketPrice'
+    description: ''
+  - name: 'SettlementCurrency'
+    description: ''
+  - name: 'SettlementAmount'
+    description: ''
+  - name: 'LINKQualifier'
+    description: ''
+  - name: 'TradeReference'
+    description: 'same as TransNo'
+  - name: 'PrevSenderReference'
+    description: ''
+  - name: 'TransNo'
+    description: ''
+  - name: 'TradeDate'
+    description: ''
+  - name: 'SettlementDate'
+    description: ''
+  - name: 'BuSeIndicator'
+    description: ''
+  - name: 'BuSeParty'
+    description: ''
+  - name: 'BookingAccount'
+    description: 'IBAN booking account'

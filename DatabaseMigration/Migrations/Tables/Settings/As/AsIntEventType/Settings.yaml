@@ -1,0 +1,35 @@
+table:
+  name: 'AsIntEventType'
+  description: 'Defines event types that belong to a topic.\r\nThe event names must be globally unique. A fully qualified name is required.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Event Type'
+        helpText: 'The type of an event, an occurrence, something that happened in the past'
+    - german:
+        formTitle: 'Ereignistyp'
+        helpText: 'Der Typ eines Ereignisses, einer Vorkommnis, etwas, das in der Vergangenheit passiert ist.'
+    - french:
+        formTitle: 'Type d''événement'
+        helpText: 'The type of an event, an occurrence, something that happened in the past'
+    - italian:
+        formTitle: 'Tipo di evento'
+        helpText: 'The type of an event, an occurrence, something that happened in the past'
+  columns:
+  - name: 'TopicName'
+    description: 'The topic to which this event belongs. Every event should only belong to one topic.'
+    genericControls:
+      refTable: 'AsIntEventTopic'
+      refField: 'TopicName'
+  - name: 'TypeName'
+    description: 'The name of the event type which should be unique within the topic.\r\nThis is the name that is typically used by schema repositories, AsyncAPI specifications, and in the event log itself.'

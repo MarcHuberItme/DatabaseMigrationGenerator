@@ -1,0 +1,49 @@
+table:
+  name: 'PtMLDecision'
+  description: 'Stores manual review decisions for detection results.\r\nThe compliance team should review this table.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'AML Manually Revisions'
+    - german:
+        formTitle: 'GwG Man. Überarbeitung'
+    - french:
+        formTitle: 'LBA Révisions manuelles'
+    - italian:
+        formTitle: 'AML Revisioni manuali'
+  columns:
+  - name: 'RunNo'
+    description: 'Run number of the associated run'
+  - name: 'PartnerId'
+    description: 'Foreign-key; Id of PtBase'
+  - name: 'PartnerNo'
+    description: 'Partner number'
+    genericControls:
+      defColumnPos: 1
+  - name: 'DecisionStatus'
+    description: 'Status: 0 = unknown, 1 = suspicious, 2 = false positive, 3 = true positive'
+  - name: 'CaseClosed'
+    description: 'Whether the case is closed'
+  - name: 'WhiteListFlag'
+    description: 'Indicates if the partner is whitelisted. A partner in the whitelist  is not checked again  from WhiteListStart to WhiteListEnd.'
+  - name: 'WhiteListStart'
+    description: 'Whitelist exemption start time'
+    genericControls:
+      defColumnPos: 2
+  - name: 'WhiteListEnd'
+    description: 'Whitelist exemption end time'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Reviewer'
+    description: 'Name of the reviewer'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Comments'
+    description: 'Review comments'

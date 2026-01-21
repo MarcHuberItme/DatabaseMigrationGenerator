@@ -1,0 +1,210 @@
+view:
+  name: 'PtPaymentOrderPendingView'
+  description: 'Shows all pending payments including next executable StandingOrders.'
+frontendView:
+  name: 'PtPaymentOrderPendingView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'AgrEBankingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'EBankingTemplate'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'NotificationCode'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'EndBeneficiaryAddress'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 200
+  - name: 'BeneficiaryAddress'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 200
+  - name: 'SequenceNo'
+    description: ''
+    dataType: 'int'
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'PaymentAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'IsLockedForCustomer'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'BCNrBenBank'
+    description: ''
+    dataType: 'decimal'
+    prec: 12
+  - name: 'RejectFlag'
+    description: ''
+    dataType: 'smallint'
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+  - name: 'BeneficiaryMessage'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 500
+  - name: 'AccountNoPost'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'ReferenceNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 27
+  - name: 'SenderAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'ScheduledDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Status'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'FileImportProcessId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'OrderNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 12
+  - name: 'OrderType'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'AccountNoIbanElect'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 21
+  - name: 'ESRParticipantNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 12
+  - name: 'AccountNoExtIBAN'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 34
+  - name: 'AccountNoExt'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 34
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'SlipType'
+    description: ''
+    dataType: 'smallint'
+  - name: 'BeneficiaryName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'BeneficiaryStreetName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'BeneficiaryBuildingNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'BeneficiaryTownName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'BeneficiaryPostCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'BeneficiaryCountry'
+    description: ''
+    dataType: 'varchar'
+    prec: 50
+  - name: 'OriginalSenderAddress'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+  - name: 'DebitAccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'DebitAccountNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 21
+  - name: 'OrderId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'EBankingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'EBankingIdVisum1'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'EBankingIdVisum2'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'IsStandingOrder'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'TotalReportedAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'TotalReportedTransactions'
+    description: ''
+    dataType: 'int'
+  - name: 'MgVTNoCreator'
+    description: ''
+    dataType: 'decimal'
+    prec: 38
+    scale: 38
+  - name: 'MgVTNoApproval'
+    description: ''
+    dataType: 'decimal'
+    prec: 38
+    scale: 38
+  - name: 'BalanceLimit'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'PaymentAmountMin'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'TransTypeOrig'
+    description: ''
+    dataType: 'smallint'
+  - name: 'FullPayment'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'UsageNo'
+    description: 'Refers to PtStandingOrderUsage\r\n0, payment\r\n10, cover\r\n20, invest'
+    dataType: 'tinyint'

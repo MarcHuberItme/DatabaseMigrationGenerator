@@ -1,0 +1,3 @@
+view:
+  name: 'PtSecurityTradesView'
+  description: 'used for report Effektenjournal\r\n07.12.2017/wwo add fields PtTradingOrderMessage.BeneficialOwner(Description)\r\n24.07.2017/wwo add field PrReference.IsShortToff\r\n05.01.2016/wwo add field PtTransTradeId'

@@ -1,0 +1,24 @@
+table:
+  name: 'OaTwoFaMsgContentLine'
+  description: 'Message lines of the 2FA message content'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ContentId'
+    description: ''
+    genericControls:
+      refTable: 'OaTwoFaMsgContent'
+      refField: 'Id'
+  - name: 'KeyTemplate'
+    description: ''
+  - name: 'ValueTemplate'
+    description: ''
+  - name: 'LineOrder'
+    description: ''

@@ -1,0 +1,51 @@
+table:
+  name: 'CoVeragrp'
+  description: 'Deckungsausscheidungsteuerunggruppe (die zu konkret verarbeitenden Konti/Sicherheiten  sind in der Tabelle CoVeradet mit collworkingtype = 30/40 drin)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'colleteral separation con'
+    - german:
+        formTitle: 'Deckungsausscheidungs'
+  columns:
+  - name: 'Veragrp'
+    description: 'Laufnummer wird mit assequence ''CO_Veragruppe''  vergeben und ist bei einer Deckungsausscheidung für alle gleichzeitig verarbeiteten Sicherheiten und Kreditkonti gleich (z.b. mehrere Kredite die sich gleiche Sicherheiten teilen oder ein Gesamtengagement)'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Veradate'
+    description: 'Datum der Verarbeitung der  Deckungsausscheidung für alle gleichzeitig verarbeiteten Sicherheiten und Kreditkonti gleich'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Remark'
+    description: 'Bemerkung nach Verarbeitung (z.B Wert = 0), enthält nur die variablen Daten. Das Feld MsgNr enthält die tatsächlcihe Meldungsnummer'
+    genericControls:
+      multiLine: true
+      defColumnPos: 5
+  - name: 'Remarkflag'
+    description: 'wenn True msgnr gefültl'
+  - name: 'MsgNr'
+    description: 'Meldungsnummer vom Verarbeitungshinweis'
+    genericControls:
+      refTable: 'CoMsg'
+      refField: 'CoMsgNr'
+  - name: 'Verastat'
+    description: 'Gruppenstatus\r\n000 - angemeldet\r\n010 - Blowup fertig (Tabelle CoVeradet gefüllt)\r\n020 - Belehnungswert pro Sicherheit ermittel (Tabelle CoBasecalc gefüllt)\r\n100 - abgeschlossen (Tabelle CoBaseasscalc gefüllt)\r\n200 - Verarbeitung fehlerhaft abgeschlossen'
+    genericControls:
+      refTable: 'CoVerastat'
+      refField: 'Verastat'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'Wheredowecamefrom'
+    description: 'Herkunft vom Datensatz\r\n0 -> Sicherheitenverwaltung\r\n1 -> Gesamtengagement'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ReportDate'
+    description: ''

@@ -1,0 +1,38 @@
+table:
+  name: 'PtPaymentOrderReport'
+  description: 'Used to configure the Reports to the ''PaymentOrderType'' and ''PaymentOrderStatus'''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Order Reporting'
+    - german:
+        formTitle: 'Auftrags Reporting'
+  columns:
+  - name: 'OrderTypeId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderType'
+      refField: 'Id'
+  - name: 'OrderStatusId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderStatus'
+      refField: 'Id'
+  - name: 'CorrItemId'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+  - name: 'ReportId'
+    description: ''
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'Id'

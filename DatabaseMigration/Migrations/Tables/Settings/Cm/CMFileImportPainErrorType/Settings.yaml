@@ -1,0 +1,18 @@
+table:
+  name: 'CMFileImportPainErrorType'
+  description: 'Contains validation error codes for imported PAIN files.'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'ErrorTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

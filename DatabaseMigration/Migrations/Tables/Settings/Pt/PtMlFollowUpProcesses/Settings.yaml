@@ -1,0 +1,42 @@
+table:
+  name: 'PtMlFollowUpProcesses'
+  description: 'Verwaltung der GWG-Folgeprozesse'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Follow up processes'
+    - german:
+        formTitle: 'GWG Folgeprozesse'
+    - french:
+        formTitle: 'Processus de suivi ML'
+    - italian:
+        formTitle: 'Processi di follow-up ML'
+  columns:
+  - name: 'ProcessNo'
+    description: 'Nummer des Folgeprozesses'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ProcessingTypeNo'
+    description: 'Art der Verarbeitung für diesen Schritt (manuell / automatisch), \r\nReferenz zu PtMlProcessingType'
+    genericControls:
+      refTable: 'PtMLProcessingType'
+      refField: 'ProcessingTypeNo'
+      defColumnPos: 2
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Remark'
+    description: 'Bemerkungsfeld'
+    genericControls:
+      multiLine: true

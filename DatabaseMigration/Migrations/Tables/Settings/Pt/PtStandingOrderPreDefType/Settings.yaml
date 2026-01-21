@@ -1,0 +1,24 @@
+table:
+  name: 'PtStandingOrderPreDefType'
+  description: 'Wenn im Dauerauftrag kein Betrag vorhanden ist, wird der Betrag über diese Tabelle bestimmt, z.B. bei Privor Beträgen sinnvoll (diese sind regulatorisch vorgegeben).'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'default amount st.order'
+    - german:
+        formTitle: 'Defaultbetrag D''auftrag'
+  columns:
+  - name: 'PreDefTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

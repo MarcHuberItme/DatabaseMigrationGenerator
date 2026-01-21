@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPMSMovementSummary'
+  description: 'To determine if Debit/Credit amounts,accounts, quantities were involved in Transaction booked with multiple TransMessages. Used mainly for event Transaction.'

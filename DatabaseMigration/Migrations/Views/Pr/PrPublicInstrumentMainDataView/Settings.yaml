@@ -1,0 +1,3 @@
+view:
+  name: 'PrPublicInstrumentMainDataView'
+  description: '2017-06-12/ram: add field ExposureCurrency'

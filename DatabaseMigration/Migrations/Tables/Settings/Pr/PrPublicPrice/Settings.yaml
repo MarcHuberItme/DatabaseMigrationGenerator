@@ -1,0 +1,98 @@
+table:
+  name: 'PrPublicPrice'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Price'
+    - german:
+        formTitle: 'Kurs'
+  columns:
+  - name: 'PublicId'
+    description: 'VDF: PRD.VAI.K981.7842 (translate with PrPublic)'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PublicTradingPlaceId'
+    description: 'VDF: PRD.GEI.K985.3801 (translate with PrPublicTradingPlace)'
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'Currency'
+    description: 'VDF: PRD.WAI.K983.6804 (translate with CyBase)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'LogicalPriceDate'
+    description: 'VDF: PRD.DAE.2801'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PriceDate'
+    description: 'VDF: PRD.PRU.2801 &PRD.PRU.2832'
+    genericControls:
+      defColumnPos: 4
+  - name: 'StatisticTypeNo'
+    description: 'VDF: PRD.PRS.4901'
+    genericControls:
+      refTable: 'PrPublicStatisticType'
+      refField: 'StatisticTypeNo'
+      defColumnPos: 5
+  - name: 'PriceTypeNo'
+    description: 'VDF: PRD.PRU.4902'
+    genericControls:
+      refTable: 'PrPublicPriceType'
+      refField: 'PriceTypeNo'
+      defColumnPos: 6
+  - name: 'Price'
+    description: 'VDF: PRD.PRU.5841'
+    genericControls:
+      defColumnPos: 8
+  - name: 'ValueStyleNo'
+    description: 'VDF: PRD.PRU.4903'
+    genericControls:
+      refTable: 'PrPublicValueStyle'
+      refField: 'ValueStyleNo'
+      defColumnPos: 7
+  - name: 'PriceRepUnitAmount'
+    description: 'VDF: PRD.PLR.K822.6911-A'
+  - name: 'PriceCorrectionFactor'
+    description: 'VDF: PRD.PLR.K822.6911-B'
+  - name: 'NonVerse'
+    description: 'VDF: PRD.PLR.K822.6911-C'
+  - name: 'PriceUnit'
+    description: 'VDF: PRD.PLR.K822.4802'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'PriceQuoteType'
+    description: 'VDF: PRD.PLR.4823'
+    genericControls:
+      refTable: 'PrPublicPriceQuoteType'
+      refField: 'PriceQuoteType'
+  - name: 'PriceStaticTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicPriceStaticType'
+      refField: 'PriceStaticTypeNo'
+      defColumnPos: 9
+  - name: 'TradeUnitNo'
+    description: 'VDF: PRD.PLR.4802'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'IsFlat'
+    description: 'VDF: if PRD.PLR.4824 = 6 -> IsFlat = True'
+  - name: 'TradingNominal'
+    description: 'VDF: PRD.PLR.6911'

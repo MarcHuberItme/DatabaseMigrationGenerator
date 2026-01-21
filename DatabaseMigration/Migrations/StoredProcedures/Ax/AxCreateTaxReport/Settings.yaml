@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxCreateTaxReport'
+  description: 'create new AxTaxReport record'

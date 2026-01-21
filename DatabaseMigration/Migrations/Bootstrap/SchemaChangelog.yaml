@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: AcAmountType.sql #if for example a function is used in views.
+      relativeToChangelogFile: true

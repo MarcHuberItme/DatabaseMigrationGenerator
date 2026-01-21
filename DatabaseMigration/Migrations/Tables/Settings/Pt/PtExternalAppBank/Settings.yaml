@@ -1,0 +1,44 @@
+table:
+  name: 'PtExternalAppBank'
+  description: 'Assigns the trust account to the custodian bank.\r\nExistance of the account is required.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'External App Bank'
+    - german:
+        formTitle: 'External App Bank'
+    - french:
+        formTitle: 'External App Bank'
+  columns:
+  - name: 'ExternalAppCode'
+    description: 'reference to external Application (e.g. Deposit Soulutions)'
+    genericControls:
+      refTable: 'AsExternalApplication'
+      refField: 'ApplicationCode'
+      defColumnPos: 1
+  - name: 'BicNoBank'
+    description: 'BIC-code from deposit bank.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Currency'
+    description: 'Currency of the investment'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'AccountNo'
+    description: 'deposit account of the depot bank.'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 4

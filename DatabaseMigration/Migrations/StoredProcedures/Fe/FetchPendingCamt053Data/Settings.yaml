@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'FetchPendingCamt053Data'
+  description: 'Fetches pending entries from IfCamtEntryDelivery to IfCamtStatementDeliveryAssoc table, assingning it a fileId'

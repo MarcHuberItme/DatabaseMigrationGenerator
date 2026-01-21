@@ -1,0 +1,94 @@
+view:
+  name: 'RePremisesRelSTWEView'
+  description: 'Shows a union form both sides of the relation in RePremisesRelSTWE'
+frontendView:
+  name: 'RePremisesRelSTWEView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+  - name: 'IsSwapped'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'PremisesIdThisSide'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReGbDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PremisesIdThisSideText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'PremisesIdOtherSide'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReGbDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'PremisesIdOtherSideText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'STWEType'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'RePremisesRelSTWEType'
+      refField: 'STWEType'
+      defColumnPos: 2
+  - name: 'STWETypeText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'Amount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'FlatNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'Counter'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Denominator'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValueDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Remark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 250
+    genericControls:
+      defColumnPos: 6
+  - name: 'MemberUniqueKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50

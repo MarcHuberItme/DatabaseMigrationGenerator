@@ -1,0 +1,41 @@
+view:
+  name: 'PtAccountStatementView1'
+  description: ''
+frontendView:
+  name: 'PtAccountStatementView1'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'FromDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'ToDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'BeginBalance'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+  - name: 'CorrItemId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'

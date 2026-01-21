@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPtCheckList'
+  description: 'Returns Partner Data for the PEP-Check\r\nThe Batch-Size is determined by the TOP-clause in the select statement'

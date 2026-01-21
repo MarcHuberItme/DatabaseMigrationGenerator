@@ -1,0 +1,24 @@
+table:
+  name: 'PsReportGroup'
+  description: 'Table to group the reports in PsReport'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Report Group'
+    - german:
+        formTitle: 'Reportgruppen'
+  columns:
+  - name: 'ParentId'
+    description: 'Relation to Parent Group\r\nRequired ro build a hierary of report groups'
+    genericControls:
+      refTable: 'PsReportGroup'
+      refField: 'Id'

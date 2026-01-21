@@ -1,0 +1,24 @@
+table:
+  name: 'PrPublicSnbClass'
+  description: 'VDF-Domaine: 7865 K-418 (only rows between 100 and 199)'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+  columns:
+  - name: 'SnbClassNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ReportLine'
+    description: ''
+    genericControls:
+      defColumnPos: 2

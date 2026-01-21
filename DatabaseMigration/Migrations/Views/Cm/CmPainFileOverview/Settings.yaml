@@ -1,0 +1,91 @@
+view:
+  name: 'CmPainFileOverview'
+  description: ''
+frontendView:
+  name: 'CmPainFileOverview'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'MessageId'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'FileName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'CanBeProcessed'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'FileStatus'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'UploadDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'FileUploaderId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'FirstApprovalId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ApprovalDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+  - name: 'ProcessedDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'FaultyPayments'
+    description: ''
+    dataType: 'int'
+  - name: 'TotalPayments'
+    description: ''
+    dataType: 'int'
+  - name: 'TotalAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'Status'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'MinStatus'
+    description: ''
+    dataType: 'int'
+  - name: 'MaxStatus'
+    description: ''
+    dataType: 'int'
+  - name: 'FileUploaderName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'FirstApprovalName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'EBankingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ProcessingStatus'
+    description: ''
+    dataType: 'int'
+  - name: 'DTAVisumNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'DebitAccountCheckMethod'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50

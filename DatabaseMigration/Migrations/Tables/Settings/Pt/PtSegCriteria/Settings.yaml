@@ -1,0 +1,49 @@
+table:
+  name: 'PtSegCriteria'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Segment criteria'
+    - german:
+        formTitle: 'Segmentierung'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AgeGroup'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ProfessionGroup'
+    description: ''
+    genericControls:
+      refTable: 'AsGroupParameter'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'RegionGroup'
+    description: ''
+    genericControls:
+      refTable: 'AsGroupParameter'
+      refField: 'Id'
+      defColumnPos: 3
+  - name: 'SpecialistName'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'SegmentNo'
+    description: ''
+    genericControls:
+      refTable: 'PtSegment'
+      refField: 'SegmentNo'
+      defColumnPos: 5

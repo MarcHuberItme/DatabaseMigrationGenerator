@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'MMFinaliseContractReversal'
+  description: 'Finalises reversal of money market contract'

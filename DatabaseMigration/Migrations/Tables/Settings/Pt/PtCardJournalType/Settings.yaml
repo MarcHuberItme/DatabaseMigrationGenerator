@@ -1,0 +1,19 @@
+table:
+  name: 'PtCardJournalType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Type'
+    description: '100 = Cash withdrawal\r\n101 = Retail purchase\r\n102 = Credit\r\n110 = Load purse\r\n111 = Unload purse\r\n112 = purse balance refund after expiry\r\n113 = purse balance refund after defect\r\n114 = purse refund after blocking\r\n115 = purse R refund after unsuccessful loading\r\n116 = purse R posting after unsuccessful unloading\r\n120 = Balance query\r\n121 = PIN change\r\n122 = Check PIN/Amount/Blocking\r\n123 = Check PIN/Blocking\r\n124 = Check PIN\r\n125 = Check Blocking\r\n126 = purse R log printout\r\n128 = EMV R script result advice\r\n131 = Data capture after reservation\r\n132 = Data capture mail order\r\n133 = Data capture phone order\r\n140 = Reservation\r\n141 = Reservation increase\r\n142 = Authorization\r\n158 = Purchase with Cashback\r\n176 = POS preauthorization\r\n189 = P2P Payment\r\n217 = international POS preauthorization\r\n218 = internatinal POSpreauthorization capture\r\n999 = incomplete data for transaction processing.Transaction type not recognized.\r\n'
+    genericControls:
+      defColumnPos: 1

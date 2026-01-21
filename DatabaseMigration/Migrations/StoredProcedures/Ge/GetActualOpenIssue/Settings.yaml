@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetActualOpenIssue'
+  description: 'to receive all open issues that must be actived today (activationdate is calculated with NextDate and PreActivation)\r\n2022-02-11/ram: add field PreActivation'

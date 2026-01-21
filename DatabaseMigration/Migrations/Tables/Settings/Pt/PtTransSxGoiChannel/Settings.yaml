@@ -1,0 +1,24 @@
+table:
+  name: 'PtTransSxGoiChannel'
+  description: 'Possible channels for the generic order interface GOI.\r\nE.g. FIX, OpenApi, Frontend..'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Channel for GOI'
+        helpText: 'Channel for GOI'
+    - german:
+        formTitle: 'Kanal für GOI'
+        helpText: 'Kanal für GOI'
+  columns:
+  - name: 'Channel'
+    description: 'Channel via the COI will be called (e.g. FIX, OpenAPI, FrontEnd...)'

@@ -1,0 +1,41 @@
+table:
+  name: 'PtPainImportVersion'
+  description: 'Current and old version of pain schema versions according to SIX'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPainImportVersion'
+        helpText: 'PtPainImportVersion'
+    - german:
+        formTitle: 'PtPainImportVersion'
+        helpText: 'PtPainImportVersion'
+    - french:
+        formTitle: 'PtPainImportVersion'
+        helpText: 'PtPainImportVersion'
+    - italian:
+        formTitle: 'PtPainImportVersion'
+        helpText: 'PtPainImportVersion'
+  columns:
+  - name: 'SchemaVersion'
+    description: 'xsd schema version'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ValidFrom'
+    description: 'Delivering files with this Schema version is allowed from this date.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValidTo'
+    description: 'Delivering files with this Schema version is allowed until this date.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Version'
+    description: 'SIX version'

@@ -1,0 +1,46 @@
+table:
+  name: 'CyRateType'
+  description: 'Type of Rates\r\nDefined per payment instrument and transaction type\r\ne.g. Forex Buy, Forex Sell or Accountancy Evaluation'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Currency Rate Types'
+    - german:
+        formTitle: 'Währungs-Kursarten'
+  columns:
+  - name: 'RateType'
+    description: 'Candidate Key for currency rate types'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PaymentInstrumentNo'
+    description: 'Instrument in which a payment is made'
+    genericControls:
+      refTable: 'CyPaymentInstrument'
+      refField: 'PaymentInstrumentNo'
+      defColumnPos: 2
+  - name: 'SizeCode'
+    description: 'Code 0 = no limit (only one rate exits)\r\nCode 1 = small amounts\r\nCode 2 = large amounts'
+    minValue: '0'
+    maxValue: '2'
+  - name: 'FeedRateCode'
+    description: 'e.g. Telekurs: 16 = bid / 19 = close\r\ne.g. Reuters: BID or HISTORICAL CLOSE\r\ne.g. Bloomberg: [LAST_PRICE] \r\n'
+  - name: 'FeedSourceCode'
+    description: 'Rate Source Code\r\nTelekurs: contributor code 149'
+  - name: 'FeedSource'
+    description: 'Source name\r\ne.g. UBS, ZKB, Telekurs Forex, Telekurs Forex Cross'
+  - name: 'FeedAltSourceCode'
+    description: 'Alternative Rate Source Code\r\nTelekurs: contributor code 148'
+  - name: 'FeedAltSource'
+    description: 'Alternative Soruce Name\r\ne.g. UBS, ZKB, Telekurs Forex, Telekurs Forex Cross'
+  - name: 'IsValuationRateType'
+    description: 'True (1) = RateType is used for valuation purpose\r\nFalse(0) = RateType is used for other purposes and not valuation purpose\r\nExactly one RateType for a given instrument has to be used for valuation purpose.'

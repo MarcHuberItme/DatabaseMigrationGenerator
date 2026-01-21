@@ -1,0 +1,26 @@
+table:
+  name: 'PtTransSxGoiOrderStatus'
+  description: 'Possible status of the order.\r\n'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'GOI Order Status'
+        helpText: 'GOI Order Status'
+    - german:
+        formTitle: 'GOI Order Status'
+        helpText: 'GOI Order Status'
+  columns:
+  - name: 'OrderStatus'
+    description: 'Status of the order (rejected, placed, modified, partially filled, filled, cancelled, expired).'
+    genericControls:
+      defColumnPos: 1

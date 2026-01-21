@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetConfirmationMapName'
+  description: 'Quickly retrieves the workflow confirmation mapname for a given table.'

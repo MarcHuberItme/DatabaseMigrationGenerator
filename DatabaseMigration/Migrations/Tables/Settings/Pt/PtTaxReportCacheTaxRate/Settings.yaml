@@ -1,0 +1,32 @@
+table:
+  name: 'PtTaxReportCacheTaxRate'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'JobNo'
+    description: ''
+  - name: 'EventId'
+    description: ''
+  - name: 'EffectiveDate'
+    description: ''
+  - name: 'TaxReportClass'
+    description: ''
+  - name: 'TaxCountry'
+    description: ''
+  - name: 'LumpSumTaxCreditPercent'
+    description: ''
+  - name: 'NonRecoverableTaxPercent'
+    description: ''
+  - name: 'TaxAmountPercent'
+    description: ''
+  - name: 'DaTaxPercent'
+    description: ''
+  - name: 'ReclaimTaxPercent'
+    description: ''

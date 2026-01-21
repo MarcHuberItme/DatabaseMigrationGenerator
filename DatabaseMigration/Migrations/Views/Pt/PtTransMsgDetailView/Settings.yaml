@@ -1,0 +1,142 @@
+view:
+  name: 'PtTransMsgDetailView'
+  description: ''
+frontendView:
+  name: 'PtTransMsgDetailView'
+  description: 'Own bond transaction overview'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Own bond transactions'
+    - german:
+        formTitle: 'Kassenobli Transaktionen'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+  - name: 'ValueDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'PortfolioNo'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'TextNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'DebitQuantity'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'CreditQuantity'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'TitleNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'FunctionCode'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtTransMsgDetailFunction'
+      refField: 'FunctionCode'
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'LocGroupNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'GroupNo'
+      hasDetailBtn: true
+      defColumnPos: 8
+      isNoUpdate: true
+  - name: 'Processed'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      isNoUpdate: true
+  - name: 'OwnBondCfId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      isNoUpdate: true
+  - name: 'OwnBondCfProcessDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      isNoUpdate: true
+  - name: 'OwnBondCfPaymentDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CancelDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TransactionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TransMessageId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      isNoUpdate: true

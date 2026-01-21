@@ -1,0 +1,47 @@
+table:
+  name: 'AcFireReport'
+  description: 'Fire Report Periode'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Exportfile für FiRE'
+        helpText: 'Exportfile für FiRE'
+    - german:
+        formTitle: 'Exportfile für FiRE'
+        helpText: 'Exportfile für FiRE'
+  columns:
+  - name: 'ReportDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'StatusNo'
+    description: '1 = initialized\r\n2 = account data initialized\r\n3 = account data prepared\r\n4 = portfolio data initialized\r\n5 = portfolio data prepared\r\n9 = file completed'
+    genericControls:
+      refTable: 'AcFireReportStatus'
+      refField: 'StatusNo'
+  - name: 'MarketValueDate'
+    description: 'Datum Marktkurse (Bewertung)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ReleaseUser'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+  - name: 'ReleaseDate'
+    description: ''
+  - name: 'SpecialProvWithDetails'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SnbRepoListImportDate'
+    description: ''
+  - name: 'ExportDerivativesData'
+    description: ''

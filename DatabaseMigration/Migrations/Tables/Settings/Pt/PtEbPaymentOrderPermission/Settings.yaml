@@ -1,0 +1,36 @@
+table:
+  name: 'PtEbPaymentOrderPermission'
+  description: 'Code Table for usage in PtPaymentOrderType to define for each payment order type if it is possible to read, edit, delete over ebanking.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    descField: 'PermissionCode'
+    uiTableDescription:
+    - english:
+        formTitle: 'E-Banking Pay. Permission'
+        helpText: 'E-Banking Pay. Permission'
+    - german:
+        formTitle: 'E-Banking Pay. Permission'
+        helpText: 'E-Banking Pay. Permission'
+    - french:
+        formTitle: 'E-Banking Pay. Permission'
+        helpText: 'E-Banking Pay. Permission'
+    - italian:
+        formTitle: 'E-Banking Pay. Permission'
+        helpText: 'E-Banking Pay. Permission'
+  columns:
+  - name: 'PermissionCode'
+    description: '0\r\n\r\n0	invisible\r\n10	Read Only\r\n11	Read & Copy\r\n20	Read & Delete\r\n21	Read & Delete & Copy\r\n30	Read & Delete & Edit\r\n31	Read & Delete & Edit & Copy'
+    minValue: '00'
+    maxValue: '99'
+    genericControls:
+      defColumnPos: 1
+      noUpdatePos: 1

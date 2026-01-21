@@ -1,0 +1,40 @@
+view:
+  name: 'PtETaxBankInfoView'
+  description: ''
+frontendView:
+  name: 'PtETaxBankInfoView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtETaxBankInfoView'
+        helpText: 'PtETaxBankInfoView'
+    - german:
+        formTitle: 'PtETaxBankInfoView'
+        helpText: 'PtETaxBankInfoView'
+    - french:
+        formTitle: 'PtETaxBankInfoView'
+        helpText: 'PtETaxBankInfoView'
+    - italian:
+        formTitle: 'PtETaxBankInfoView'
+        helpText: 'PtETaxBankInfoView'
+  columns:
+  - name: 'Lei'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'Uid'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 60

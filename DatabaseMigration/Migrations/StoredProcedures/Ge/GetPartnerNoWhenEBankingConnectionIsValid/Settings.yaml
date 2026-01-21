@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPartnerNoWhenEBankingConnectionIsValid'
+  description: 'Get allowed connections between partner'

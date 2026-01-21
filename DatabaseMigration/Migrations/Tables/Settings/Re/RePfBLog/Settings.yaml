@@ -1,0 +1,49 @@
+table:
+  name: 'RePfBLog'
+  description: 'Log from Pfandbriefbank'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PFBLog'
+    - german:
+        formTitle: 'PFBLog'
+  columns:
+  - name: 'MessageId'
+    description: 'MessageId \r\nePledge/ePledge_Header/MESSAGE_ID'
+  - name: 'FileName'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'SourceFile'
+    description: 'Corresponds with the Name of the processed file.\r\nePledge/ePledge_Data/ePledgeLog/SourceFile'
+    genericControls:
+      defColumnPos: 2
+  - name: 'UpdateStatus'
+    description: 'UpdateStatus of the logfile\r\nePledge/ePledge_Data/ePledgeLog/UpdateStatus'
+    genericControls:
+      defColumnPos: 3
+  - name: 'UpdateMessage'
+    description: 'UpdateMessage corresponding to UpdateStatus\r\nePledge/ePledge_Data/ePledgeLog/UpdateMessage'
+    genericControls:
+      defColumnPos: 4
+  - name: 'HasErrors'
+    description: 'True if UpdateStatus <> 1000'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ProcessTime'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ProcessId'
+    description: ''
+  - name: 'Status'
+    description: ''

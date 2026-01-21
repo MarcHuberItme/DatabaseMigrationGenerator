@@ -1,0 +1,23 @@
+table:
+  name: 'MgPaymentTransferDate'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'MgVTNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'TransferDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PaymentsMigrated'
+    description: '1 = payments from fis2000 have been migrated to finstar'

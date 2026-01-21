@@ -1,0 +1,151 @@
+view:
+  name: 'PtOpenIssueSearchView'
+  description: 'Search view for open issues.'
+frontendView:
+  name: 'PtOpenIssueSearchView'
+  description: 'View for searching open issues based on different criteria.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtOpenIssue'
+      refField: 'Id'
+  - name: 'AccountId'
+    description: 'Id of the account the open issue is related to.'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'ActivationDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'TargetDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'CompletionDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'IsPrioritized'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'ContactPersonId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtContactPerson'
+      refField: 'Id'
+  - name: 'PartnerId'
+    description: 'Id of the partner the issue belongs to.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'TypeNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtOpenIssueType'
+      refField: 'TypeNo'
+  - name: 'StatusNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtOpenIssueStatus'
+      refField: 'StatusNo'
+  - name: 'Remark'
+    description: 'Remark for the issue.'
+    dataType: 'nvarchar'
+    prec: 1000
+  - name: 'InitiatorFullName'
+    description: 'Full name of the initiator.'
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'InitiatorDepartment'
+    description: 'Department that the initiator belongs to.'
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'InitiatorPartnerId'
+    description: 'Partner id of the initiator.'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'InitiatorUsername'
+    description: 'Username of the initiator.'
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+  - name: 'InitiatorId'
+    description: 'Id of the initiator.'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+  - name: 'PartnerFirstName'
+    description: 'First name of the partner the issue belongs to.'
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'PartnerMiddleName'
+    description: 'Middle name of the partner the issue belongs to.'
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'PartnerLastName'
+    description: 'Family name of the partner the issue belongs to.'
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 40
+  - name: 'PartnerNo'
+    description: 'No of the partner the issue belongs to.'
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 8
+    scale: 8
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+  - name: 'IsCompleted'
+    description: 'Indicates whether this open issue has been completed (1) or not (0) based on PtOpenIssueType.EndStatusNo'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PortfolioId'
+    description: 'Id of the portfolio the issue belongs to.'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    scale: 11
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'PortfolioNo'
+  - name: 'RemarkDate1'
+    description: 'deadline for the annual accounts'
+    dataType: 'datetime'
+  - name: 'RemarkDate2'
+    description: 'date on which the annual accounts were received.'
+    dataType: 'datetime'
+  - name: 'RemarkDate3'
+    description: 'date on which the pending item must be submitted to the Board of Directors'
+    dataType: 'datetime'

@@ -1,0 +1,59 @@
+table:
+  name: 'PrPublicVdfMetaSeg'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'VDF Meta data segment'
+    - german:
+        formTitle: 'Metadaten VDF Segment'
+  columns:
+  - name: 'VdfMetaDocId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicVdfMetaDoc'
+      refField: 'Id'
+  - name: 'SegmentName'
+    description: 'VDF: MEA.0861\r\nName of VDF-Segment'
+    genericControls:
+      defColumnPos: 1
+  - name: 'IsSegmentInformative'
+    description: 'VDF: (if MEM.0904 = 13) MEM.9990 = ''O'' -> False, else = True\r\nIndication, wether the segment is informative (True) or original (False) is'
+  - name: 'Path'
+    description: 'VDF: (if MEM.0904 = 14) MEM.9990 \r\nPath of VDF-Segment'
+    genericControls:
+      defColumnPos: 2
+  - name: 'RepeatFactor'
+    description: 'VDF: MEA.K834.0855'
+  - name: 'IsRepeating'
+    description: 'see "Konzept Finanzinstrumente"'
+  - name: 'IsMandatory'
+    description: 'VDF: MEA.K834.0854\r\nif true, the segment or group is mandatory'
+  - name: 'InternalIsMandatory'
+    description: 'see "Konzept Finanzinstrumente"'
+  - name: 'Level'
+    description: 'VDF: MEA.K835.0856'
+  - name: 'InternalLevel'
+    description: 'VDF: MEA.K835.0856, but the grouplevels are removed (see "Konzept Finanzinstrumente")'
+  - name: 'SegPosition'
+    description: 'VDF: MES.6922'
+  - name: 'VdfIdent'
+    description: 'VDF: MEI.K901.0901'
+  - name: 'ParentVdfIdent'
+    description: 'VDF: MES.K991.0902'
+  - name: 'InternalParentVdfIdent'
+    description: ''
+  - name: 'SegmentSequence'
+    description: ''
+  - name: 'IsGroup'
+    description: 'IsGroup = True, if it''s a segment group \r\nIsGroup = False, if it''s a segment'

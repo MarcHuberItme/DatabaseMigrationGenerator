@@ -1,0 +1,45 @@
+table:
+  name: 'IfDeliveryItem'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'DeliverySettingId'
+    description: ''
+    genericControls:
+      refTable: 'IfDeliverySetting'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'RefTableName'
+    description: ''
+  - name: 'RefItemId'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidFrom'
+    description: 'Delivery of data is only done if current date is >= ValidFrom. Only date without time is being used.'
+  - name: 'ValidTo'
+    description: 'Delivery of data is only done if current date is < ValidTo. Only date without time is being used.'
+  - name: 'LoadSettingGroupId'
+    description: 'Foreign key to a setting group of type “load”. In this setting group additional values that have to be used for the load step for this particular delivery item are defined.'
+    genericControls:
+      refTable: 'IfSettingGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'LastRun'
+    description: ''
+  - name: 'IsSalaryHidden'
+    description: 'Hide salary details when creating camt.053 file'
+  - name: 'RecipientBankBIC'
+    description: 'BIC of Receiving Financial Institution'

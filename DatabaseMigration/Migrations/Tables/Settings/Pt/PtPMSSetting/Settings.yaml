@@ -1,0 +1,24 @@
+table:
+  name: 'PtPMSSetting'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PMS Interfaces'
+        helpText: 'PMS Interfaces'
+    - german:
+        formTitle: 'PMS Interfaces'
+        helpText: 'PMS Interfaces'
+  columns:
+  - name: 'SystemName'
+    description: ''
+    genericControls:
+      defColumnPos: 1

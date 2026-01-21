@@ -1,0 +1,53 @@
+table:
+  name: 'PtAccountConversionDetail'
+  description: 'This table contains details about converted accounts'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Converted Account Detail'
+    - german:
+        formTitle: 'Konvertiertes Konto'
+  columns:
+  - name: 'AccountConversionId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountConversion'
+      refField: 'Id'
+  - name: 'AccountBaseId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'ConversionStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtConversionStatus'
+      refField: 'ConversionStatusNo'
+  - name: 'OpenIssueId'
+    description: 'just a technical reference to PtOpenIssue for logging purpose.\r\nNo DB integrity necessary!'
+  - name: 'OpenIssueUpdated'
+    description: ''
+  - name: 'ConvOpenIssueNotFound'
+    description: ''
+  - name: 'ConversionDate'
+    description: ''
+  - name: 'OriginalProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      hasDetailBtn: true
+  - name: 'NewProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      isNoUpdate: true

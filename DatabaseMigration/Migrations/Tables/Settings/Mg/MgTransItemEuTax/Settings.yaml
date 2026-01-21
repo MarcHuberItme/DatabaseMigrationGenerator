@@ -1,0 +1,116 @@
+table:
+  name: 'MgTransItemEuTax'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'TransItemId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItemView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 9
+      isNoUpdate: true
+  - name: 'SequenceNo'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'PositionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'CountryForEuTax'
+    description: 'only for EU tax retention'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'AccountReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'InterestTaxation'
+    description: ''
+    genericControls:
+      refTable: 'PtEUTaxation'
+      refField: 'InterestTaxation'
+      defColumnPos: 3
+  - name: 'PublicId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'EuInterestTaxCat'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicEuInterestTaxCat'
+      refField: 'EuInterestTaxCat'
+      defColumnPos: 5
+  - name: 'TextNo'
+    description: ''
+    genericControls:
+      refTable: 'MgA20'
+      refField: 'MigValue'
+      defColumnPos: 6
+  - name: 'AccountCurrency'
+    description: 'Currency of the account'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Amount'
+    description: 'in AccountCurrency'
+  - name: 'TransDate'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'ValueDate'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'EuProcStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'MgEuProcStatus'
+      refField: 'EuProcStatusNo'
+      defColumnPos: 8
+  - name: 'TransChargeId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessageCharge'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransChargeTypeId'
+    description: 'at the end this data is stored in PtTransMessageCharge.TransChargeTypeId'
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'Id'
+  - name: 'ChargeAmountChf'
+    description: 'at the end this data is stored in PtTransMessageCharge.Amount'
+  - name: 'BaseAmountChf'
+    description: 'at the end this data is stored in PtTransMessageCharge.BaseAmount'
+    minValue: '0'
+  - name: 'Comment'
+    description: 'at the end this data is stored in PtTransMessageCharge.Comment'

@@ -1,0 +1,49 @@
+table:
+  name: 'RePfBRelBC'
+  description: 'Mitgliedbank Nummer der Pfandbriefbank (interne Numerierung) - Zuordnung zur Bankenclearingnummer'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PfB No'
+    - german:
+        formTitle: 'Mitgliedno PfB'
+  columns:
+  - name: 'PfBNo'
+    description: 'interne Nummer der Pfandbriefbank'
+    genericControls:
+      defColumnPos: 2
+  - name: 'BCNo'
+    description: ''
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'VisumCheck'
+    description: '1 = Visum prüfen, d.h. Erfasser <> Visumgeber\r\n0 = keine Prüfung'
+  - name: 'IsDirectMember'
+    description: '1 = yes = Direktmitglied bei der Pfandbriefbank\r\n0 = no = kein Direktmitglied'
+  - name: 'IsBranch'
+    description: '0 = nein = Keine Niederlassung\r\n1 = yes = ist niederlassung (für raiffeisen!)'
+  - name: 'GroupNo'
+    description: 'Gruppierungsnummer (z.B. alle Raiffeisen haben dieselbe Nummer)\r\n01 ='
+    genericControls:
+      defColumnPos: 3
+  - name: 'ModAllocation'
+    description: 'Manuelle Zuteilungen zulässig (Tabelle RePfBRelLoan):\r\n0 = Nein\r\n1 = Ja'
+  - name: 'AllowMultiple'
+    description: 'Yes = allow multiple records in ePledgeReply\r\nNo = Generate an ePledgeReply per record'
+  - name: 'XMLSchemaVersion'
+    description: ''
+  - name: 'VisumOnly'
+    description: ''
+  - name: 'CorrespondenceLanguage'
+    description: 'Correspondance language e.g. used for reports concerning this bank.'

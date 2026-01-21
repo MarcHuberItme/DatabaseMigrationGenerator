@@ -1,0 +1,48 @@
+table:
+  name: 'PtCardShowLastFoTransactions'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'DateTime'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Origin'
+    description: 'Quelle\r\nCode form Table PtCardJournalOrigin'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TrxType'
+    description: 'Code from Table PtCardJournalType'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ProcessingType'
+    description: 'Gutschrift/Belastung\r\n0 =Trans.\r\n2 =Rev. Trans.\r\n'
+    genericControls:
+      defColumnPos: 4
+  - name: 'TerminalID'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'Location'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'OriginalAmt'
+    description: 'Original Amount'
+    genericControls:
+      defColumnPos: 7
+  - name: 'SystemAmt'
+    description: 'System Amount'
+    genericControls:
+      defColumnPos: 8
+  - name: 'IsoRespCode'
+    description: 'Answer\r\nCode from Table PtCardJournalAnswer'
+    genericControls:
+      defColumnPos: 9

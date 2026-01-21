@@ -1,0 +1,32 @@
+table:
+  name: 'MCStateExchangeRecord'
+  description: 'Header record for imported CSE entry.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'CSE Record'
+        helpText: 'CSE Record'
+    - german:
+        formTitle: 'CSE Record'
+        helpText: 'CSE Record'
+  columns:
+  - name: 'RecordType'
+    description: 'Type of record'
+    genericControls:
+      refTable: 'MCStateExchangeRecordType'
+      refField: 'RecordType'
+  - name: 'FileImportId'
+    description: 'file import process foreign key'
+    genericControls:
+      refTable: 'CMFileImportProcess'
+      refField: 'Id'
+  - name: 'Status'
+    description: '0 - imported\r\n1 - processed\r\n2 - error'

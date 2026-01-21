@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtLibertyPortfolioPerform_TruncateTable'
+  description: 'truncate PtLibertyPortfolioPerform'

@@ -1,0 +1,56 @@
+table:
+  name: 'AsMailInset'
+  description: 'This table is used to store the system wide documents like flyers and insets which has to be emailed to the partners.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    descField: 'Description'
+    uiTableDescription:
+    - english:
+        formTitle: 'Mail Attachment'
+    - german:
+        formTitle: 'Mail Attachment'
+  columns:
+  - name: 'DocumentNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Format'
+    description: ''
+    genericControls:
+      refTable: 'AsDocumentFormat'
+      refField: 'Format'
+      defColumnPos: 2
+  - name: 'Description'
+    description: 'Textual description about the document.'
+    genericControls:
+      multiLine: true
+  - name: 'SheetEquivalent'
+    description: ''
+  - name: 'IsDocPrefolded'
+    description: 'True if the inset document is pre folded.'
+  - name: 'ForElectronicMail'
+    description: 'If true, this inset can be sent as email attachment. For this purpose, the DataString shall contain the document data.'
+  - name: 'ForPaperMail'
+    description: 'If true, the document can be sent as a paper inset. For this purpose, SheetEquivalent and IsDocPrefolded attributes shall be available.'
+  - name: 'DataString'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SpsArtNo'
+    description: 'Articel number of an inset at SPS'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Condition'
+    description: 'an SQL-Statement which contains an condition to check whether the inset has to be added.'
+    genericControls:
+      multiLine: true
+  - name: 'CanSendAbroad'
+    description: ''

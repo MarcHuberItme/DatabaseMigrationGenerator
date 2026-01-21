@@ -1,0 +1,34 @@
+table:
+  name: 'PtTransMsgFlow'
+  description: 'Instruction rule for payments (Zahlungsemfänger Kette)\r\n(Result out of a rule - with the needed fields)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'payee chain'
+    - german:
+        formTitle: 'Zahlungsempfänger Kette'
+  columns:
+  - name: 'TransMessageId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'RecordType'
+    description: 'e.g. 57a in SWIFT-Message'
+  - name: 'BankNo'
+    description: 'e.g. BIC - No (im Klartext)'
+  - name: 'AccountNo'
+    description: 'account no within the bank'
+  - name: 'Address'
+    description: 'e.g. Address of the Bank'

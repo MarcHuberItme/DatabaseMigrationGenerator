@@ -1,0 +1,24 @@
+table:
+  name: 'AsPublicVariableSet'
+  description: 'Contains an entry for each public variable set\r\n(used for Workflow System and Soft Logic System)'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 2
+    physicalDelete: true
+    descField: 'VarSetName'
+    uiTableDescription:
+    - english:
+        formTitle: 'Public Variable Set'
+    - german:
+        formTitle: 'Public Variable Set'
+  columns:
+  - name: 'VarSetName'
+    description: 'Name of the public variable set.\r\nBecause the workflow system and the Soft Logic System do not use ID''s, the name has to identify the variable set uniquely.'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

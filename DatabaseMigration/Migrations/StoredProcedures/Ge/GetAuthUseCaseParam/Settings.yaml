@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAuthUseCaseParam'
+  description: 'Get the auth use case params for a use case auth in futurae 2fa'

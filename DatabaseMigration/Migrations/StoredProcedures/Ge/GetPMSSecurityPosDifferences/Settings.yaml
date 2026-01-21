@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPMSSecurityPosDifferences'
+  description: 'Security position differences for reconciliation'

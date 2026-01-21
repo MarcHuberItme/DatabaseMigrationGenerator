@@ -1,0 +1,26 @@
+table:
+  name: 'PrivorFeeStatement'
+  description: 'Privor Fee Statement'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'PrivorDocumentId'
+    description: ''
+    genericControls:
+      refTable: 'PrivorDocument'
+      refField: 'Id'
+  - name: 'Name'
+    description: 'Name'
+  - name: 'Date'
+    description: 'Date'
+  - name: 'Fee'
+    description: 'Fee'

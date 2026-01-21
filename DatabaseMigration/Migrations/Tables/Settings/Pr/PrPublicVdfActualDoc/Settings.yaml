@@ -1,0 +1,28 @@
+table:
+  name: 'PrPublicVdfActualDoc'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'actual VDF doc'
+    - german:
+        formTitle: 'Aktuelles VDF Doc'
+  columns:
+  - name: 'VdfDocIdentifier'
+    description: 'VDF: Doc.K801.0804'
+  - name: 'VdfDocKey'
+    description: 'VDF: contains the concatenated values of all doc type key fields (defined in VDF meta data)'
+  - name: 'VdfDocText'
+    description: 'contains the whole doc string in Edifact format'
+  - name: 'ImportStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicImportStatus'
+      refField: 'ImportStatusNo'

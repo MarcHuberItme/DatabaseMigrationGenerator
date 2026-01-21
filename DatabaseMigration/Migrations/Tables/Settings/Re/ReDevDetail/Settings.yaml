@@ -1,0 +1,34 @@
+table:
+  name: 'ReDevDetail'
+  description: 'Ausbau Ausprägung\r\n\r\n\r\n\r\n\r\nFIS-2000: GR_AUSBAU_AUSP_CD'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Dev Detail'
+    - german:
+        formTitle: 'Ausprägung'
+  columns:
+  - name: 'DevDetailNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'DevTypeId'
+    description: 'Die Ausprägungen gelten nur für bestimmte Ausbaukriterien !'
+    genericControls:
+      refTable: 'ReDevType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'SortNo'
+    description: ''
+  - name: 'IaziValue'
+    description: ''

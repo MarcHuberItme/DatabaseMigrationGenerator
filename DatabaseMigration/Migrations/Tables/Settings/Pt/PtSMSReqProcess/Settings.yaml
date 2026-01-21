@@ -1,0 +1,70 @@
+table:
+  name: 'PtSMSReqProcess'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtSMSReqProcess'
+        helpText: 'PtSMSReqProcess'
+    - german:
+        formTitle: 'PtSMSReqProcess'
+        helpText: 'PtSMSReqProcess'
+  columns:
+  - name: 'TransRefNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'AppName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PartnerID'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'PartnerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'MobileNo'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'SMSText'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'LifeTime'
+    description: ''
+  - name: 'NeedConfirm'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'SendDateTime'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'SendResult'
+    description: ''
+  - name: 'InquiryDateTime'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'InquiryResult'
+    description: ''
+  - name: 'DeliveryDateTime'
+    description: ''
+  - name: 'DeliveryDescription'
+    description: ''

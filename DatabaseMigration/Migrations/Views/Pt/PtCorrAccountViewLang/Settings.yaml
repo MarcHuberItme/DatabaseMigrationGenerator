@@ -1,0 +1,3 @@
+view:
+  name: 'PtCorrAccountViewLang'
+  description: 'Based on PtCorrAccountView, enriched by the correpondence language of the tatget address'

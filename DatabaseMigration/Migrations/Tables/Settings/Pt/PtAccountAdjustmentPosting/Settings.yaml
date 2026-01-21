@@ -1,0 +1,34 @@
+table:
+  name: 'PtAccountAdjustmentPosting'
+  description: 'Ausbuchungen (Zinsen)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Account adjustm. posting'
+    - german:
+        formTitle: 'Ausbuchungen (Zinsen)'
+  columns:
+  - name: 'PostingDate'
+    description: ''
+  - name: 'AccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountAllView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'InterestAmountHoCu'
+    description: ''
+  - name: 'LoanChargeAmountHoCu'
+    description: ''
+  - name: 'ExpenseAmountHoCu'
+    description: ''

@@ -1,0 +1,52 @@
+table:
+  name: 'AiTaxDetailFatca'
+  description: 'In dieser Tabelle können alle Informationen gespeichert werden, welche für FATCA gebraucht werden (ohne Altbestand).'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'AiTaxStatus'
+      parentRelationField: 'TaxStatusId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Detail Fatca'
+    - german:
+        formTitle: 'Detail Fatca'
+    - french:
+        formTitle: 'Détails Fatca'
+  columns:
+  - name: 'TaxStatusId'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxStatus'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'FatcaStatusNo'
+    description: 'Definiert, welchen Status der Partner hat (bspw. US-Person)'
+    genericControls:
+      refTable: 'AiTaxFatcaStatus'
+      refField: 'StatusNo'
+  - name: 'IsStatusSetManually'
+    description: 'Dieses Feld definiert, ob der FatcaStatus vom System festgelegt worden ist oder nicht. Wenn nicht, wurde er manuell festgelegt.\r\n\r\nWerte:\r\n0 = by System\r\n1 = by User'
+  - name: 'TIN'
+    description: 'Steuernummer (Tax identification number)'
+  - name: 'GIIN'
+    description: 'Steht für "Global Intermediary Identification Number" und ist die Steuernummer, welche für Finanzinstitute verwendet wird'
+  - name: 'AssetCode'
+    description: 'Information, ob der Kunde vorbestehend ist und wie gross, zum relevanten Zeitpunkt, sein Vermögen war.'
+    genericControls:
+      refTable: 'AiTaxFatcaAssetAmount'
+      refField: 'AssetCode'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

@@ -1,0 +1,23 @@
+table:
+  name: 'PtProtectionAmountObjectType'
+  description: 'Codetabellle -  Object types for deposit protection'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Object types'
+    - german:
+        formTitle: 'Objektarten'
+  columns:
+  - name: 'ObjectType'
+    description: '1000 LW Konto\r\n1400 FW Konto\r\n2000 Bonds\r\n3000 Privit\r\n4000 Revor\r\n5000 Contract\r\n'
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,29 @@
+table:
+  name: 'AsIntEventOutboxProcState'
+  description: 'The possible publishing states for the integration event outbox'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Outbox Processing State'
+        helpText: 'The possible publishing states for the integration event outbox'
+    - german:
+        formTitle: 'Ausg.Verarbeitungszustand'
+    - french:
+        formTitle: 'Outbox Processing State'
+        helpText: 'The possible publishing states for the integration event outbox'
+    - italian:
+        formTitle: 'Outbox Processing State'
+        helpText: 'The possible publishing states for the integration event outbox'
+  columns:
+  - name: 'StateName'
+    description: 'The name of the state.'

@@ -1,0 +1,149 @@
+table:
+  name: 'PtTransSxDelivery'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransMessageId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PublicId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'DebitSecurityPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'DebitSecurityPrReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PrReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitAccountPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitAccountPrReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditSecurityPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'CreditSecurityPrReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PrReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditAccountPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditAccountPrReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Quantity'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'PaymentCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 5
+  - name: 'Amount'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'TradeDate'
+    description: ''
+  - name: 'LocGroupId'
+    description: 'locgroupid of the order'
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+  - name: 'TransactionIdOrder'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'OrderDateOrder'
+    description: ''
+  - name: 'TransDateOrder'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'PaymentDateOrder'
+    description: ''
+    genericControls:
+      defColumnPos: 12
+  - name: 'TransactionIdDelivery'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderDateDelivery'
+    description: ''
+  - name: 'TransDateDelivery'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'PaymentDateDelivery'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'DeliveryStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxDeliveryStatus'
+      refField: 'DeliveryStatusNo'
+      defColumnPos: 9
+  - name: 'IsSelected'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'DeliveryProcessId'
+    description: 'this id is used to allocate the finance transaction to the security transactions'
+  - name: 'IsFromCustomer'
+    description: 'flag if the record was created based on a customer-pttransmessage (hbl-vermittlungsdepot, portfoliotypeno 5021)\r\n\r\n--> this field will not be used anymore (use only IsWithoutAmount)'
+  - name: 'IsWithoutAmount'
+    description: 'flag if is without amount-booking (bsz system (order traded over hbl) and hbl-vermittlungsportfolio)'
+  - name: 'BankShortNamePartner'
+    description: 'used in HBL-System to decide from which bank the order was'
+    genericControls:
+      defColumnPos: 13

@@ -1,0 +1,144 @@
+table:
+  name: 'AsPayee'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 2
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'Beneficary'
+    uiTableDescription:
+    - english:
+        formTitle: 'Payee'
+    - german:
+        formTitle: 'Zahlungsempfänger'
+    - french:
+        formTitle: 'Bénéficiaire'
+  columns:
+  - name: 'BCId'
+    description: 'BC-Number, only together with AccountNoExt'
+    genericControls:
+      refTable: 'AsBCIndex'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'BICId'
+    description: 'BIC number, only together with AccountNoExt'
+    genericControls:
+      refTable: 'AsBICIndex'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'PCNo'
+    description: 'PC-Number or ESR-No\r\nPC-Number can only be filled if it is a swiss-payment.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PCNoUnformatted'
+    description: 'PC No. in unformatted shape without any dashes etc.\r\n'
+  - name: 'ReferenceCode'
+    description: 'Indicator for the identification of the beneficary, \r\nfilled up left and right with "n" to 27 characters (former algocode)\r\ne.g.  nnnnnnnnnn11233nnnnnnnnnnnn'
+    genericControls:
+      defColumnPos: 4
+  - name: 'QualityCheck'
+    description: 'indicates whether a payee is verified or not\r\n0 = not checked\r\n1 = checked - valid for everybody'
+    genericControls:
+      defColumnPos: 11
+  - name: 'ReUsedDate'
+    description: 'date of the last usage'
+  - name: 'ReUsedCounter'
+    description: 'indicates how many times this payee is used until now'
+  - name: 'AccountNoExt'
+    description: 'external Account No of the end beneficiary ( in case of IBAN .... numbers unformatted, e.g. without spaces)\r\nIts also used for bank internal accounts if the account number is not included in ReferenceCode but has to be translated.'
+    genericControls:
+      defColumnPos: 5
+  - name: 'Beneficary'
+    description: 'Final receiver address'
+    genericControls:
+      multiLine: true
+      defColumnPos: 7
+  - name: 'PublicFlag'
+    description: '0 = not public\r\n1 = public (alle reinen PC Nummern sind public)'
+    genericControls:
+      defColumnPos: 12
+  - name: 'PtAgrEBankingId'
+    description: 'NULL = usable for everybody (verified through the bank)\r\nnot NULL = used only for a certain EBankingContract'
+    genericControls:
+      refTable: 'PtAgrEBankingView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 13
+  - name: 'PEPCheck'
+    description: 'PEP Check for moneylaundering suspect people'
+  - name: 'PEPCheckDate'
+    description: 'date of PEPCheck Performed'
+  - name: 'SkipPEPCheck'
+    description: 'Some clients are known to bank already personally and their names are in PEP check due to sharing of same name present in PEP list.\r\n1=Skip the name'
+    genericControls:
+      defColumnPos: 14
+  - name: 'MessageStandardCode'
+    description: 'Default Value for MessageStandard (SIC, Post ....) -> Used in PtTransMessage'
+    genericControls:
+      refTable: 'TrMessageStandardType'
+      refField: 'Code'
+  - name: 'BankNumber'
+    description: 'Bankleitzahl (BLZ) (Länge und Datentyp gemäss SIC Spezifikation)'
+    genericControls:
+      defColumnPos: 6
+  - name: 'FinalBICId'
+    description: 'Final bank Swift Address Id'
+    genericControls:
+      refTable: 'AsBICIndex'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 8
+  - name: 'BeneficiaryBankAddress'
+    description: 'If beneficiary bank BIC is not available then it is possiböle to send beneficiary bank address'
+    genericControls:
+      multiLine: true
+      defColumnPos: 9
+  - name: 'FinalBeneficiaryBankAddress'
+    description: 'If final beneficiary bank BIC is not available then it is possible to send bank address'
+    genericControls:
+      multiLine: true
+      defColumnPos: 10
+  - name: 'IntermediaryBICId'
+    description: 'Intermediary BIC'
+    genericControls:
+      refTable: 'AsBICIndex'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IntermediaryBankAddress'
+    description: 'Address of the intermediary bank'
+    genericControls:
+      multiLine: true
+  - name: 'IsAccountExtIBAN'
+    description: 'Identifies if AccountNoExt is in IBAN format. In this case checks for IBAN validity will be executed.'
+  - name: 'CorrBankAccountNo'
+    description: 'Interal bank account number to book SWIFT payment'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'BeneficiaryName'
+    description: 'Full beneficiary name.'
+  - name: 'BeneficiaryStreetName'
+    description: ''
+  - name: 'BeneficiaryBuildingNo'
+    description: ''
+  - name: 'BeneficiaryPostCode'
+    description: ''
+  - name: 'BeneficiaryTownName'
+    description: ''
+  - name: 'BeneficiaryCountry'
+    description: ''
+  - name: 'ConfirmedByUser'
+    description: ''
+  - name: 'BeneficiaryAddressLine1'
+    description: 'BeneficiaryAddressLine1 for hybrid address'
+  - name: 'BeneficiaryAddressLine2'
+    description: 'BeneficiaryAddressLine2 for hybrid address'

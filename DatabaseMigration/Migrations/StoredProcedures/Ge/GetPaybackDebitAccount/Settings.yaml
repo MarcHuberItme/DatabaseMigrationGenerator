@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPaybackDebitAccount'
+  description: 'get a list of accounts that can be used for the payback (PtAccountPaymentRule)'

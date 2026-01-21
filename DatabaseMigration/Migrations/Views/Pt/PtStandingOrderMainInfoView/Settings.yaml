@@ -1,0 +1,77 @@
+view:
+  name: 'PtStandingOrderMainInfoView'
+  description: ''
+frontendView:
+  name: 'PtStandingOrderMainInfoView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'CreditPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PayeeId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsPayee'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderNo'
+    description: ''
+    dataType: 'int'
+  - name: 'OrderType'
+    description: '0 = Payment / Fondssparen (FundsSaving)\r\n1 = LSV / Fondsentnahme(FundsWithdrawal)'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PeriodRuleNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+  - name: 'PeriodRuleBase'
+    description: ''
+    dataType: 'varchar'
+    prec: 4
+  - name: 'FirstSelectionDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'NextSelectionDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'FinalSelectionDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'NokCounter'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ReferenceNo'
+    description: ''
+    dataType: 'nchar'
+    prec: 27
+  - name: 'Remark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      multiLine: true

@@ -1,0 +1,47 @@
+table:
+  name: 'AiTaxCARFDetail'
+  description: 'In dieser Tabelle können alle Informationen gespeichert werden, welche für CARF gebraucht werden.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'AiTaxStatus'
+      parentRelationField: 'TaxStatusId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Detail CARF'
+    - german:
+        formTitle: 'Detail CARF'
+    - french:
+        formTitle: 'Détails CARF'
+  columns:
+  - name: 'TaxStatusId'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxStatus'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'AIAStatusNo'
+    description: 'Definiert, welchen Status der Partner hat'
+    genericControls:
+      refTable: 'AiTaxCarfStatus'
+      refField: 'StatusNo'
+  - name: 'TIN'
+    description: 'Steuernummer (Tax identification number)'
+  - name: 'IsStatusSetManually'
+    description: 'Dieses Feld definiert, ob der FatcaStatus vom System festgelegt worden ist oder nicht. Wenn nicht, wurde er manuell festgelegt.\r\n\r\nWerte:\r\n0 = by System\r\n1 = by User'
+  - name: 'IsLegacy'
+    description: 'Beziehung vorbestehend'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

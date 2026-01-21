@@ -1,0 +1,61 @@
+view:
+  name: 'AsBusinessRuleSubRuleView'
+  description: ''
+frontendView:
+  name: 'AsBusinessRuleSubRuleView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'AsBusinessRuleSubRuleView'
+        helpText: 'AsBusinessRuleSubRuleView'
+    - german:
+        formTitle: 'AsBusinessRuleSubRuleView'
+        helpText: 'AsBusinessRuleSubRuleView'
+    - french:
+        formTitle: 'AsBusinessRuleSubRuleView'
+        helpText: 'AsBusinessRuleSubRuleView'
+  columns:
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 50
+  - name: 'Body'
+    description: ''
+    dataType: 'text'
+    genericControls:
+      multiLine: true
+  - name: 'IsExpired'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'SuccessEvent'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'RuleId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsBusinessRule'
+      refField: 'Id'
+  - name: 'RuleNo'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsBusinessRule'
+      refField: 'RuleNo'
+  - name: 'OrderNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true

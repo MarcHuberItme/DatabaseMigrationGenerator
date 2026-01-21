@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetStandingOrders'
+  description: 'Get the Standing Orders for one Account ID'

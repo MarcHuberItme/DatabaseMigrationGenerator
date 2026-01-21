@@ -1,0 +1,72 @@
+table:
+  name: 'MgZvAlgo'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'creat_dt'
+    description: ''
+  - name: 'creat_id'
+    description: ''
+  - name: 'mut_von'
+    description: ''
+  - name: 'mut_bis'
+    description: ''
+  - name: 'kd_lnr_vis'
+    description: ''
+  - name: 'log_lnr_mut'
+    description: ''
+  - name: 'vers_vor'
+    description: ''
+  - name: 'stat_cd'
+    description: ''
+  - name: 'userbk_nr'
+    description: ''
+  - name: 'vers'
+    description: ''
+  - name: 'gesperrt'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'info_field'
+    description: ''
+  - name: 'algo_nr'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'user_field'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'funktion01'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'funktion02'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'funktion03'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'funktion04'
+    description: ''
+  - name: 'funktion05'
+    description: ''
+  - name: 'funktion06'
+    description: ''
+  - name: 'funktion07'
+    description: ''
+  - name: 'funktion08'
+    description: ''
+  - name: 'funktion09'
+    description: ''
+  - name: 'funktion10'
+    description: ''

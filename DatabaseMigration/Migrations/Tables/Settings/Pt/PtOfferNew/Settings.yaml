@@ -1,0 +1,92 @@
+table:
+  name: 'PtOfferNew'
+  description: 'Erhöhungen und Verlängerungen werden direkt auf dem Ursprungsgeschäft gemacht !\r\n\r\nIn diesem Record werden neue Offerten für bestehende Kunden erstellt.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      applicationKey: 'OfferNo'
+      navigationConditionField: 'HasGuarantee,HasInsurance,HasOther,HasProvision,HasRealEstate,HasSecurity'
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'New Offer'
+    - german:
+        formTitle: 'Neue Offerte'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'OfferNo'
+    description: 'laufende Nummer'
+  - name: 'Reason'
+    description: 'Verwendungszweck'
+  - name: 'NetIncome'
+    description: ''
+  - name: 'Investment'
+    description: 'Kaufpreis / Investition'
+  - name: 'OwnResources'
+    description: 'Eigenmittel'
+  - name: 'CreditCapital'
+    description: 'benötigtes Fremdkapital'
+  - name: 'AmortAmount'
+    description: 'jährlicher Amortisationsbetrag - Vorstellung des Kunden'
+  - name: 'HasDirectAmort'
+    description: '0 = no (indirekt amortisieren)\r\n1 = yes (direkt amortisieren)'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'HasRealEstate'
+    description: 'Grundpfänder'
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'BoolVal'
+  - name: 'HasSecurity'
+    description: 'Werschriften'
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'BoolVal'
+  - name: 'HasOther'
+    description: 'ohne besondere Sicherheiten'
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'BoolVal'
+  - name: 'HasInsurance'
+    description: 'Lebensversicherung'
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'BoolVal'
+  - name: 'HasProvision'
+    description: 'BVG , gebundene Selbstvorsorge'
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'BoolVal'
+  - name: 'HasGuarantee'
+    description: 'Bürgschaft'
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'BoolVal'
+  - name: 'ImportantInfo'
+    description: 'ergänzende Angaben / Bemerkungen'
+    genericControls:
+      multiLine: true
+  - name: 'ChangeReason'
+    description: 'Ablösungsgrund'
+    genericControls:
+      multiLine: true
+  - name: 'ProsecutionTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtProsecutionType'
+      refField: 'ProsecutionTypeNo'

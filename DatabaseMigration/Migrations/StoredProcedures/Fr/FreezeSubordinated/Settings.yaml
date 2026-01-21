@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'FreezeSubordinated'
+  description: 'Marks an accout as subordinated if the collateral ''WBNachrangig'' exists.'

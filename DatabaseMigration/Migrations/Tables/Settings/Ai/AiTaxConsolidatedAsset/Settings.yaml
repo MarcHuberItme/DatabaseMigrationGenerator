@@ -1,0 +1,65 @@
+table:
+  name: 'AiTaxConsolidatedAsset'
+  description: 'In dieser Tabelle sollen pro Stichtag (i.d.R. 1x pro Jahr) die kumulierten Vermögen eines Partners mit den relevanten Verbindungen in einer spez. Währung (i.d.R. USD) persistiert werden können.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Consolidated Asset'
+    - german:
+        formTitle: 'Konsolidierte Vermögen'
+    - french:
+        formTitle: 'Avoirs consolidés'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'ReportDate'
+    description: 'Stichtag Vermögen'
+    genericControls:
+      defColumnPos: 1
+  - name: 'VaRunId'
+    description: 'ID if the valuation batch process'
+    genericControls:
+      refTable: 'VaRun'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OwnAssetsCHF'
+    description: 'Value in CHF for own assetes of the actual account.'
+  - name: 'AssetsToMergeCHF'
+    description: 'Assets from other accounts of the same partner.'
+  - name: 'JointAssetsCHF'
+    description: 'Value in CHF in joint accounts.'
+  - name: 'RateFWGCHF'
+    description: 'average exchange rate CHF/FWG at the valuation date'
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'SumOwnBalanceFWG'
+    description: 'kumulierter Betrag eigener Stamm in Währung gemäss Feld Currency'
+    genericControls:
+      defColumnPos: 3
+  - name: 'SumTotalBalanceFWG'
+    description: 'kumulierter Betrag, in Währung gemäss Feld Currency, über alle verbundenen Stämme'
+    genericControls:
+      defColumnPos: 4

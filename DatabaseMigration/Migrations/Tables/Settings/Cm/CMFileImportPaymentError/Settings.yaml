@@ -1,0 +1,30 @@
+table:
+  name: 'CMFileImportPaymentError'
+  description: 'Contains payments with validation errors for imported PAIN files.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FileImportProcessId'
+    description: ''
+    genericControls:
+      refTable: 'CMFileImportProcess'
+      refField: 'Id'
+  - name: 'EndToEndId'
+    description: ''
+  - name: 'ExecutionDate'
+    description: ''
+  - name: 'Currency'
+    description: ''
+  - name: 'Amount'
+    description: ''
+  - name: 'BeneficiaryAddress'
+    description: ''
+  - name: 'AdditionalInformation'
+    description: ''

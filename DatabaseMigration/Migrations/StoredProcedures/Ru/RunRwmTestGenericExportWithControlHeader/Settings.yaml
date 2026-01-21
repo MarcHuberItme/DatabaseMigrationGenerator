@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'RunRwmTestGenericExportWithControlHeader'
+  description: 'this SP will produce a controlheader row first and then the data for testing'

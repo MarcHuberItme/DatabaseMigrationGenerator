@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccPriceDevWithNoValidTo'
+  description: 'get a list of PtAccountPriceDeviation that refere to the specified component\r\nand that do not have the ValidTo information. 02.11.2004/mct'

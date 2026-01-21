@@ -1,0 +1,51 @@
+table:
+  name: 'AcOwnSecurityRates'
+  description: 'Monthly market rates of own securities to do the stress-test according to RS 2015/2 RZ 142 and 143'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PositionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+  - name: 'ValuationDate'
+    description: 'Date of the valuation, typically the month-end valuation'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SecurityPrice'
+    description: 'Rate of the security.'
+  - name: 'PriceCurrency'
+    description: 'Currency of the given security price, nominal if rate is in %'
+  - name: 'CurrencyRate'
+    description: 'Forex rate PriceCurrency to CHF'
+  - name: 'PriceQuoteType'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicPriceQuoteType'
+      refField: 'PriceQuoteType'
+  - name: 'PriceCHF'
+    description: 'Price in CHF per piece\r\nor per nominal 100'
+    genericControls:
+      defColumnPos: 2
+  - name: 'AdjustmentFactor'
+    description: 'Adjustment factor to compensate corporate actions'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PriceCHFDiff'
+    description: 'Difference of the PriceCHF to the previos month'
+    genericControls:
+      defColumnPos: 4
+  - name: 'PriceChangePercent'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'Caution'
+    description: 'wird im Project FireAdmin.frmFireOwnSecurities (View AcFrozenSecurityView) verwendet, um Titelbestände, die einen Kursverlust > ?? % aufweisen, zu markieren. Auf der DB selbst hat dieses Feld keinen Inhalt.'

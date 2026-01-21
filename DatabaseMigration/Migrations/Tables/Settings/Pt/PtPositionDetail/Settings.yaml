@@ -1,0 +1,32 @@
+table:
+  name: 'PtPositionDetail'
+  description: 'Details to the position OWN BondTitelNo'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PositionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+  - name: 'StatusNo'
+    description: 'Status within a classification type, e.g.\r\nStatus = for registered named shares\r\nStatus = for non registered named shares\r\n\r\nin case of own bonds this field will be null'
+    genericControls:
+      refTable: 'PtPositionDetailStatus'
+      refField: 'StatusNo'
+  - name: 'Quantity'
+    description: 'Portion of PtPosition.Quantity\r\nIs <Null> in case of accounts, bonds or similar pieces.'
+  - name: 'Value'
+    description: 'Value of the Portion   in ProductCurrency\r\n\r\n'
+  - name: 'TitleNo'
+    description: 'Kassenobligationentitelnr.'
+    genericControls:
+      refTable: 'PtOwnBond'
+      refField: 'TitleNo'
+      defColumnPos: 1

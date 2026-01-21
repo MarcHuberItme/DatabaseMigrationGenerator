@@ -1,0 +1,137 @@
+table:
+  name: 'PrPublicIssue'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      applicationKey: 'IssuePaymentDate'
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublic'
+      parentRelationField: 'PublicId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Issue'
+    - german:
+        formTitle: 'Emission'
+  columns:
+  - name: 'VdfDocGen'
+    description: 'VDF: EMD.EMD.0813\r\nGeneration of the last EMD-Doc, which was received from VDF'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: EMD.MGA.7895\r\nMessage status of EMD-Doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'PublicId'
+    description: 'VDF: EMD.VAI.K981.7842 (transformation with table PrPublic)'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'VdfIdentification'
+    description: 'VDF: EMD.MGG.7820\r\nTelekurs internal reference'
+  - name: 'IssueStatusNo'
+    description: 'VDF: EMD.EMA.4837\r\nIssue status'
+    genericControls:
+      refTable: 'PrPublicIssueStatus'
+      refField: 'IssueStatusNo'
+  - name: 'SubscriptionTypeNo'
+    description: 'VDF: EMD.EMA.K841.4911\r\nSubscription type\r\n'
+    genericControls:
+      refTable: 'PrPublicSubscriptionType'
+      refField: 'SubscriptionTypeNo'
+  - name: 'SubscriptionFrom'
+    description: 'VDF: EMD.EMA.K841.2811\r\nBeginning of subscription period'
+  - name: 'SubscriptionTo'
+    description: 'VDF: EMD.EMA.K841.2812 & EMD.EMA.K841.2832\r\nEnd of subscription period  (with time)'
+  - name: 'SubscriptionCountry'
+    description: 'VDF: EMD.EMA.K841.3991 (translation with AsCountry) \r\nDomicile of subscription time'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+  - name: 'SubscriptionLoc'
+    description: 'EMD.EMA.K841.7902\r\nLocation of subscription time'
+  - name: 'IssuePaymentTypeNo'
+    description: 'VDF: EMD.EMA.4910\r\nPayment type for issue payment'
+    genericControls:
+      refTable: 'PrPublicIssuePaymentType'
+      refField: 'IssuePaymentTypeNo'
+  - name: 'PlacementTypeNo'
+    description: 'VDF: EMD.EMA.7903\r\nPlacing'
+    genericControls:
+      refTable: 'PrPublicPlacementType'
+      refField: 'PlacementTypeNo'
+  - name: 'IssuePaymentDate'
+    description: 'VDF: EMD.EMA.K819.2801 or EMD.EMA.K819.2812\r\nDate of issue payment'
+  - name: 'InterestFromDate'
+    description: 'VDF: EMD.EMA.2801-B\r\nDate of start of interest period/start of dividend entitlement'
+  - name: 'SubscriptionMinimum'
+    description: 'VDF: EMD.EMA.K816.5833 or EMD.EMS.6912\r\nMinimum subscription'
+  - name: 'SubscriptionIncrement'
+    description: 'VDF: EMD.EMA.6911\r\nSubscription increment above minimum subscription'
+  - name: 'IssueCurrency'
+    description: 'VDF: EMD.EMP.K816.6804 or EMD.K817.6804\r\nCurrency of price or price range'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'IssueUnitNo'
+    description: 'VDF: EMD.EMP.K816.4802 or EMD.K817.4802\r\nIndicates the unit of measurement in which the instrument quantity is expressed: per instrument or per nominal.'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'QuoteTypeNo'
+    description: 'VDF: EMD.EMP.K816.4812 or EMD.K817.4812\r\nQuotation type of price or price range'
+    genericControls:
+      refTable: 'PrPublicQuoteType'
+      refField: 'QuoteTypeNo'
+  - name: 'IssuePrice'
+    description: 'VDF: EMD.EMP.K816.5833\r\nIssue price'
+  - name: 'IssuePriceRangeFrom'
+    description: 'VDF: EMD.EMP.K817.5831\r\nLowest issue price that can be offered\r\nby an investor in the bidding process'
+  - name: 'IssuePriceRangeTo'
+    description: 'VDF: EMD.EMP.K817.5832\r\nHighest issue price that can be offered\r\nby an investor in the bidding process'
+  - name: 'TaxCurrency'
+    description: 'VDF: EMD.EMP.K983.6804'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'TaxUnitNo'
+    description: 'VDF: EMD.EMP.4802'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'TaxQuoteTypeNo'
+    description: 'VDF: EMD.EMP.4812'
+    genericControls:
+      refTable: 'PrPublicQuoteType'
+      refField: 'QuoteTypeNo'
+  - name: 'TaxAmount'
+    description: 'VDF: EMD.EMP.5835\r\nFiscal charges paid on issue'
+  - name: 'TaxTypeNo'
+    description: 'VDF: EMD.EMP.4803\r\nTax type'
+    genericControls:
+      refTable: 'PrPublicTaxType'
+      refField: 'TaxTypeNo'
+  - name: 'IssueQuantity'
+    description: 'VDF: EMD.EMB.K820.5833 or EMD.EMB.K820.6911\r\nBond amount or number of instruments'
+  - name: 'IpoFillingDate'
+    description: 'VDF: EMD.EMO.2801-A\r\nDate on which the IPO was filed with the US Securities & Exchange Commission (SEC). \r\n'
+  - name: 'IpoTimingTypeNo'
+    description: 'VDF: EMD.EMO.4832\r\nThe timing type indicates whether the IPO takes place on a fixed date or over a period of time.'
+    genericControls:
+      refTable: 'PrPublicIpoTimingType'
+      refField: 'IpoTimingTypeNo'
+  - name: 'IpoDate'
+    description: 'VDF: EMD.EMO.2801-B\r\nIf the IPO timing type is not on a fixed date, then this date will mark the first day of the offering period.'
+  - name: 'SmallTradingUnit'
+    description: 'VDF: EMD.VAI.MGG.GEI.VAI.EMK'

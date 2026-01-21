@@ -1,0 +1,30 @@
+table:
+  name: 'AsIntEventInboxProcessingState'
+  description: 'Defines possible processing states for incoming events.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Processing State'
+        helpText: 'Defines possible processing states for incoming integration events.'
+    - german:
+        formTitle: 'Eing.Verarbeitungszustand'
+        helpText: 'Definiert mögliche Verarbeitungszustände für eingehende Ereignisse aus Integrationen.'
+    - french:
+        formTitle: 'Processing State'
+        helpText: 'Defines possible processing states for incoming integration events.'
+    - italian:
+        formTitle: 'Processing State'
+        helpText: 'Defines possible processing states for incoming integration events.'
+  columns:
+  - name: 'StateName'
+    description: 'The event processing state name.'

@@ -1,0 +1,32 @@
+table:
+  name: 'zzDbInstallationHistory'
+  description: 'The zzDbInstallationHistory shows the history of the db installation updates from the OneClickInstaller.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'zzDbInstallationHistory'
+    - german:
+        formTitle: 'zzDbInstallationHistory'
+  columns:
+  - name: 'Hash'
+    description: 'Hash will be stored from already executed elements'
+  - name: 'VersionMajor'
+    description: 'Major version'
+  - name: 'VersionMinor'
+    description: 'Minor version'
+  - name: 'TicketNumber'
+    description: 'Jira ticket number'
+  - name: 'Type'
+    description: 'Type of item (InstallationLock, TabUtil, DataDefiner, SqlDataDefinerBefore, SqlTabUtilBefore, SqlTabUtilAfter)'
+  - name: 'FileName'
+    description: 'File name'
+  - name: 'Status'
+    description: 'Status of the item (Running, Error, Successful, Locked, Unlocked)'

@@ -1,0 +1,61 @@
+view:
+  name: 'ReNoteView'
+  description: 'View over ReNote, ReBelong and ReCoProperty\r\nField Amount is filled with\r\nthe sum of ValueAmount of ReBelong or\r\nthe sum ofAmount of ReCoProperty or\r\nAmount of ReNote'
+frontendView:
+  name: 'ReNoteView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'note view'
+    - german:
+        formTitle: 'Anmerkungen'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+  - name: 'NoteTypeNo'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+    genericControls:
+      refTable: 'ReNoteType'
+      refField: 'NoteTypeNo'
+      defColumnPos: 1
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Amount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 2
+  - name: 'ForValuation'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReEnvironmentAddValuation'
+      refField: 'ValuationNo'
+      defColumnPos: 6
+  - name: 'Remark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 500
+    genericControls:
+      multiLine: true
+      noUpdatePos: 3

@@ -1,0 +1,34 @@
+table:
+  name: 'PtPortfolioTypeProcRule'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PortfolioTypeNo'
+    description: 'foreign-key;  candidate-key of PtPortfolioType (PortfolioTypeNo)'
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+  - name: 'DefaultPeriodRuleNo'
+    description: 'foreign-key;  candidate-key of AsPeriodRule (PeriodRuleNo)'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 1
+  - name: 'DefaultActivityRuleCode'
+    description: 'foreign-key;  candidate-key of AsActivityRule (ActivityRuleCode)'
+    genericControls:
+      refTable: 'AsActivityRule'
+      refField: 'ActivityRuleCode'
+      defColumnPos: 2
+  - name: 'DefaultPeriodRuleBase'
+    description: 'BaseValue representing a day or month & day for date calculation, e.g.\r\n- RuleNo:                   90 means once a quarter  \r\n- PeriodRuleBase: 0331 means at end of March/June/September/December'
+    genericControls:
+      defColumnPos: 3

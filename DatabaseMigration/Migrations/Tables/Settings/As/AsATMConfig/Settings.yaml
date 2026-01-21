@@ -1,0 +1,69 @@
+table:
+  name: 'AsATMConfig'
+  description: 'This table is used to store ATM configuration information.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Bancomat'
+        helpText: 'Bancomat'
+    - german:
+        formTitle: 'Bancomat'
+        helpText: 'Bancomat'
+  columns:
+  - name: 'DeviceID'
+    description: 'This is the Geräte-ID assigned by Telekurs.'
+  - name: 'ATMType'
+    description: ''
+  - name: 'Location'
+    description: 'This is the location installing the ATM'
+  - name: 'ServerPort'
+    description: 'This is the TCP port assigned to the ATM'
+  - name: 'IP'
+    description: 'The IP address of the ATM'
+  - name: 'BranchNo'
+    description: 'This field references the BranchNo in table AsBranch, this branch installs the ATM.'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+  - name: 'RMCHF'
+    description: 'This field is used for the Bancomat CHF cash account'
+  - name: 'RMEUR'
+    description: 'This field is used for the Bancomat EUR cash account'
+  - name: 'BMCHF'
+    description: 'This field is used for the debit account of Bancomat CHF withdraw through Telekurs Payserv'
+  - name: 'BMEUR'
+    description: 'This field is used for the debit account of Bancomat EUR withdraw through Telekurs Payserv'
+  - name: 'TransportCHF'
+    description: 'This field is used for the transport CHF cash account'
+  - name: 'TransportEUR'
+    description: 'This field is used for the Transport EUR cash account'
+  - name: 'PayInCHF'
+    description: 'for Einzahlung'
+  - name: 'PayInEUR'
+    description: 'Einzahlung Euro'
+  - name: 'EnableEUROut'
+    description: ''
+  - name: 'EnableCHFIn'
+    description: ''
+  - name: 'EnableEURIn'
+    description: ''
+  - name: 'SeriesNo'
+    description: 'Bancomat series number defined by VRX. This field is used for back compatibility.'
+  - name: 'JournalPort'
+    description: ''
+  - name: 'RemoteControlPort'
+    description: ''
+  - name: 'Deactivate'
+    description: 'if true, de-installed'
+  - name: 'ATMServerName'
+    description: ''

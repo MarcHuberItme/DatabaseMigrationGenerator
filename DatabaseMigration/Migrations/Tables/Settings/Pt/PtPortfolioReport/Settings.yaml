@@ -1,0 +1,70 @@
+table:
+  name: 'PtPortfolioReport'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Portfolio report'
+    - german:
+        formTitle: 'Portfolio report'
+    - french:
+        formTitle: 'Portfolio report'
+  columns:
+  - name: 'JobId'
+    description: ''
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'PortfolioId'
+    description: 'Id(PtPortfolio)'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'PositionId'
+    description: 'Id(PtPosition)'
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+  - name: 'Quantity'
+    description: 'Quantity (PtPosition)'
+  - name: 'Currency'
+    description: 'Currency(PrReference)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'InstrumentTypeNo'
+    description: 'InstrumentTypeNo(PrPublic)'
+    genericControls:
+      refTable: 'PrPublicInstrumentType'
+      refField: 'InstrumentTypeNo'
+  - name: 'ShortName'
+    description: 'ShortName(PrPublicText)'
+  - name: 'VdfInstrumentSymbol'
+    description: 'VdfInstrumentSymbol(PrPublic)'
+  - name: 'IdentTextForSorting'
+    description: 'to sort in crystal report'
+  - name: 'UnitNo'
+    description: 'UnitNo(PrPublic)'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'InstrumentPrice'
+    description: 'InstrumentPrice(GetInstrumentPrice)'
+  - name: 'GroupNo'
+    description: 'GroupNo (PrLocGroup)'
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'GroupNo'
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true

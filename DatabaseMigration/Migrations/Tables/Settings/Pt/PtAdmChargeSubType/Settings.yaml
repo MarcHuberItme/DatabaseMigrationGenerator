@@ -1,0 +1,70 @@
+table:
+  name: 'PtAdmChargeSubType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargeSubType'
+        helpText: 'PtAdmChargeSubType'
+    - german:
+        formTitle: 'PtAdmChargeSubType'
+        helpText: 'PtAdmChargeSubType'
+  columns:
+  - name: 'GroupNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeGroup'
+      refField: 'GroupNo'
+      defColumnPos: 1
+  - name: 'SubTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'TaxReportChargeTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTaxReportRelChargeType'
+      refField: 'TaxReportRelChargeTypeNo'
+  - name: 'CreditAccountNo'
+    description: ''
+  - name: 'TransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+  - name: 'HasVAT'
+    description: ''
+  - name: 'VATTaxTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsVatCode'
+      refField: 'VATTaxTypeNo'
+  - name: 'ProfitCenterNo'
+    description: ''
+    genericControls:
+      refTable: 'AsProfitCenter'
+      refField: 'ProfitCenterNo'
+  - name: 'DepotSelected'
+    description: ''
+  - name: 'AccountSelected'
+    description: ''
+  - name: 'ExcludeNegativeAccount'
+    description: ''
+  - name: 'UseAccountAdmModel'
+    description: 'for charge like account management charge, retained post charge'
+  - name: 'HasBasePosCharge'
+    description: ''
+  - name: 'ExtraForeignPosChargeRule'
+    description: ''
+  - name: 'PortfolioRebateRule'
+    description: ''

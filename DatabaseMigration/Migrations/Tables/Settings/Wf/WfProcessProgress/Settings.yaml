@@ -1,0 +1,44 @@
+table:
+  name: 'WfProcessProgress'
+  description: '\r\n\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'ProcessId'
+    description: ''
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'MapNo'
+    description: ''
+    genericControls:
+      refTable: 'WfMap'
+      refField: 'MapNo'
+  - name: 'StepNo'
+    description: ''
+  - name: 'StepType'
+    description: ''
+  - name: 'Status'
+    description: ''
+  - name: 'StartDate'
+    description: ''
+  - name: 'FinishDate'
+    description: ''
+  - name: 'WaitCount'
+    description: ''
+  - name: 'TimeOut'
+    description: ''
+  - name: 'InterActiveWaitCount'
+    description: ''
+  - name: 'DynamicItems'
+    description: ''
+  - name: 'Agent'
+    description: 'This field contains the name of the user who worked on the interactive step (If the task was for all users, this field will contain the user group and role group names instead as everyone in the group have to work on the step [Format: UserGroup=groupname,RoleGroup=groupname]). Will be null for other step types.'

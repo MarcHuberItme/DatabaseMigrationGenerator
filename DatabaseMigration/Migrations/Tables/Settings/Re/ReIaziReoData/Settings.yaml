@@ -1,0 +1,73 @@
+table:
+  name: 'ReIaziReoData'
+  description: 'To stored the XML data received through IAZI integration Service. XML will be stored separatly for every Real Estate object.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'IAZI REO Data'
+        helpText: 'IAZI REO Data'
+    - german:
+        formTitle: 'IAZI REO Data'
+        helpText: 'IAZI REO Data'
+  columns:
+  - name: 'Category'
+    description: 'IAZI Category No of the object. For example Single Family House, Residential Building or Apartment.'
+    genericControls:
+      refTable: 'ReIaziCategoryType'
+      refField: 'CategoryTypeNo'
+      defColumnPos: 2
+  - name: 'ObjectID'
+    description: 'Object Refernce or IAZI Id provided in IAZI application.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IaziREOGuid'
+    description: 'Guid from IAZi Application'
+  - name: 'Town'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'Zip'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'Street'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'HouseNo'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'XMLData'
+    description: ''
+  - name: 'BranchNo'
+    description: ''
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 8
+  - name: 'HblUserName'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      defColumnPos: 8
+  - name: 'ProcessId'
+    description: ''
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'IsConverted'
+    description: 'Flag will be set to true when the record is converted to a Finstar Real Estate Object.'
+  - name: 'ImportDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,26 @@
+table:
+  name: 'PtShadowAccountStatus'
+  description: 'Status of shadow accounts. Defined by Primanet based on finnova-codes.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Pension Accounts states'
+    - german:
+        formTitle: 'Stati Vorsorgekonten'
+    - french:
+        formTitle: 'Statut comptes prévoyance'
+  columns:
+  - name: 'StatusNo'
+    description: 'Number of status, equal to finnova STATUS_CD'
+    genericControls:
+      defColumnPos: 1

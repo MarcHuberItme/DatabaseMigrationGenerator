@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetGroupListWithLabel'
+  description: 'same functionality as in GetGroupList but input is a label instead of the id'

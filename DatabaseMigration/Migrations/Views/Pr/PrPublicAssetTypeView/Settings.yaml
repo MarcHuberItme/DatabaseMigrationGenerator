@@ -1,0 +1,3 @@
+view:
+  name: 'PrPublicAssetTypeView'
+  description: 'View to determine the instrumnets which have to be coosen to calculate the asset type.'

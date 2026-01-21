@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetTrialBalanceForAuditors'
+  description: 'retrieve the balance information of all main ledger accounts for the closing\r\ninclude also the balance at the beginning of the year\r\nthis information is provided to the auditors (MJET)'

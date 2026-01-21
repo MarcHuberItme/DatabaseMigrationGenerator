@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PsJobTable_SetPrintStatus'
+  description: 'Updates the status of a record in a print selection and raises an error if the record was already processed. Event if this is very unlikely to happen, the state of the existing actual record has to be checked to prevent double processing of mail output.'

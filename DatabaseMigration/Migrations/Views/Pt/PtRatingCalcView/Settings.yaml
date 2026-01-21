@@ -1,0 +1,3 @@
+view:
+  name: 'PtRatingCalcView'
+  description: 'Perform Calculation of Partner Standard Rating'

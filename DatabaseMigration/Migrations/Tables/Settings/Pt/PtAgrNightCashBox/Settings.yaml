@@ -1,0 +1,74 @@
+table:
+  name: 'PtAgrNightCashBox'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerID'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAgrNightCashBox'
+        helpText: 'PtAgrNightCashBox'
+    - german:
+        formTitle: 'Nachttresor'
+        helpText: 'Nachttresor'
+    - french:
+        formTitle: 'Trésor de nuit'
+        helpText: 'Trésor de nuit'
+  columns:
+  - name: 'PartnerID'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'BeginDate'
+    description: ''
+  - name: 'ExpirationDate'
+    description: ''
+  - name: 'PeriodOfNotice'
+    description: ''
+  - name: 'Interval'
+    description: ''
+  - name: 'Remark'
+    description: ''
+  - name: 'VersionNo'
+    description: ''
+  - name: 'PrintDate'
+    description: ''
+  - name: 'ChargeStartDate'
+    description: ''
+  - name: 'DebitAccountID'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'BranchNo'
+    description: ''
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+  - name: 'PayInAccountID'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'KeysDepository'
+    description: ''
+  - name: 'NumberOfCashbox'
+    description: ''
+  - name: 'KeysCashbox'
+    description: ''

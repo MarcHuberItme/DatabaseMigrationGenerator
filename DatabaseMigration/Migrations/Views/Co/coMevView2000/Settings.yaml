@@ -1,0 +1,3 @@
+view:
+  name: 'coMevView2000'
+  description: 'View für die Anzeige der SNB Werte aus der Deckungsausscheidung per Monatsende nur für Wertschrifeneinzelpositionen'

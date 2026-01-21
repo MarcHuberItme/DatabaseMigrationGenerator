@@ -1,0 +1,35 @@
+table:
+  name: 'OaTwoFaTransLog'
+  description: 'Root table for saving logs of initialized two-factor authentication requests.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'SessionId'
+    description: 'Referring to two-factor authentication session.'
+  - name: 'InitiationDatetime'
+    description: 'Datetime when the two-factor request was initiated.'
+  - name: 'UserId'
+    description: 'Id of the user in the external two-factor authentication provider.'
+  - name: 'AgreementId'
+    description: 'Agreement identification of the user that the request was initiated for.'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'TwoFaProviderTenantId'
+    description: 'Id of the two-factor authentication provider in the system.'
+    genericControls:
+      refTable: 'OaTwoFaProviderTenant'
+      refField: 'Id'
+  - name: 'MessageContent'
+    description: 'Content of the two-factor authentication request.'
+  - name: 'UseCase'
+    description: 'Type of the two-factor authentication use-case.\r\nSome known ones:\r\n- paymentConfirmation\r\n- login\r\n- signContract'
+  - name: 'Factor'
+    description: 'Factor of the two-factor authentication request.\r\nKnown factor examples:\r\n- totp\r\n- sms\r\n- qr_code\r\n- mobile_approval'

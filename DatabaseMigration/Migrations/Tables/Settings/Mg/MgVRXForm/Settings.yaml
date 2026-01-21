@@ -1,0 +1,29 @@
+table:
+  name: 'MgVRXForm'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'VRX Forms'
+    - german:
+        formTitle: 'VRX Bilder'
+  columns:
+  - name: 'ApplicationArea'
+    description: 'Arbeitsgebiet aus FIS-VRX'
+    genericControls:
+      defColumnPos: 1
+  - name: 'VRXAccountTypes'
+    description: 'List of the account types from Vrx (separeted with ","). This Field is only used for the application area "10" (accounts).'
+  - name: 'VRXCommand'
+    description: 'Bildnummer'
+    genericControls:
+      defColumnPos: 3

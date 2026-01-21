@@ -1,0 +1,35 @@
+table:
+  name: 'PtFrontDeskCoinMoney'
+  description: 'Schweizer Münzen an der Kasse'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Coin Money (Front Desk)'
+        helpText: 'Coin Money (Front Desk)'
+    - german:
+        formTitle: 'Münzen (Schalter)'
+        helpText: 'Münzen (Schalter)'
+  columns:
+  - name: 'BranchNo'
+    description: ''
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 1
+  - name: 'ReportDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValueHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 3

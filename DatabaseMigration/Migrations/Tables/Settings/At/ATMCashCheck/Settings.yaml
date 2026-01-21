@@ -1,0 +1,83 @@
+table:
+  name: 'ATMCashCheck'
+  description: 'Kassensturz'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ATMCashCheck'
+        helpText: 'ATMCashCheck'
+    - german:
+        formTitle: 'ATMCashCheck'
+        helpText: 'ATMCashCheck'
+  columns:
+  - name: 'CheckDateTime'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'DeviceID'
+    description: ''
+    genericControls:
+      refTable: 'AsATMConfig'
+      refField: 'DeviceID'
+      defColumnPos: 2
+  - name: 'Flag'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CountCHFBM'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'TotalCHFBM'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'CountEurBM'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'TotalEurBM'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'CountCHFBED'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'TotalCHFBED'
+    description: ''
+    genericControls:
+      defColumnPos: 13
+  - name: 'CountEurBED'
+    description: ''
+    genericControls:
+      defColumnPos: 15
+  - name: 'TotalEurBED'
+    description: ''
+    genericControls:
+      defColumnPos: 17
+  - name: 'CountCHFIn'
+    description: ''
+    genericControls:
+      defColumnPos: 18
+  - name: 'TotalCHFIn'
+    description: ''
+    genericControls:
+      defColumnPos: 19
+  - name: 'CountEURIn'
+    description: ''
+    genericControls:
+      defColumnPos: 20
+  - name: 'TotalEURIn'
+    description: ''
+    genericControls:
+      defColumnPos: 21

@@ -1,0 +1,18 @@
+table:
+  name: 'PtSHDBReqText'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 3
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'EventID'
+    description: ''
+  - name: 'ReqText'
+    description: ''

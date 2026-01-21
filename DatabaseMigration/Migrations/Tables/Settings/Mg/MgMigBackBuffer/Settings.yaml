@@ -1,0 +1,38 @@
+table:
+  name: 'MgMigBackBuffer'
+  description: 'Vrx Backmigration transactions that should not be send to VRX trough the online channel will be buffered in this table and will be saved at the end of the day into a file that will be delivered to FIS-VRX.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Vrx Backmigration Buffer'
+    - german:
+        formTitle: 'Vrx Backmigration Buffer'
+    - french:
+        formTitle: 'Vrx Backmigration Buffer'
+    - italian:
+        formTitle: 'Vrx Backmigration Buffer'
+  columns:
+  - name: 'Record'
+    description: 'Vrx Record'
+  - name: 'BatchStatus'
+    description: '0 record to be selectected.\r\n1 record has been written to file'
+  - name: 'FileId'
+    description: ''
+    genericControls:
+      refTable: 'MgMigBackFileExport'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Transtype'
+    description: ''
+  - name: 'RecName'
+    description: ''
+  - name: 'VrxKey'
+    description: 'key that identifies the record in vrx'

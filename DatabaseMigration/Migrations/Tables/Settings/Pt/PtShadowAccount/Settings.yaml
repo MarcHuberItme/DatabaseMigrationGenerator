@@ -1,0 +1,168 @@
+table:
+  name: 'PtShadowAccount'
+  description: 'Shadow account for insurance policies or pension products which are issued by external providers like Primanet or Die Mobiliar or Liberty'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'AccountNo'
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtPortfolio'
+      parentRelationField: 'PortfolioId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Pension Accounts'
+    - german:
+        formTitle: 'Vorsorgekonten'
+    - french:
+        formTitle: 'Comptes de prévoyance'
+  columns:
+  - name: 'ProcessId'
+    description: 'Id of the process to verify an account.'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'AccountNo'
+    description: 'External number of account or insurance policy.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'AccountNoEdited'
+    description: 'Formatted version of AccountNo'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ShadowProductNo'
+    description: 'Type of shadow product.'
+    genericControls:
+      refTable: 'PtShadowProduct'
+      refField: 'ShadowProductNo'
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'StatusNo'
+    description: 'Status of the shadow account, given by external product provider.'
+    genericControls:
+      refTable: 'PtShadowAccountStatus'
+      refField: 'StatusNo'
+      defColumnPos: 4
+  - name: 'IsCustomerVerified'
+    description: '0 = Product is newly opend\r\n1 = Assignemnt of product to customer is verified\r\n'
+  - name: 'PortfolioId'
+    description: 'Relation to customers portfolio'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      createNavigationIndex: true
+  - name: 'AccountId'
+    description: 'Relation to PtAccountBase, only needed if there PtShadowAccount is used to store additional information to existing cutomer account. (Privor)'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'InstitutionAccountId'
+    description: 'Relation to connected financing account, e.g. for Privit or Revor FZ'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Currency'
+    description: 'Currency of shadow account.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 5
+  - name: 'OpeningDate'
+    description: 'Date of opening the account / insurance policy'
+    genericControls:
+      isNoUpdate: true
+  - name: 'MaturityDate'
+    description: 'Maturity date of the product.'
+  - name: 'ContractPeriod'
+    description: 'Duration of the contract in years'
+  - name: 'TerminationDate'
+    description: 'Date when the product was definitely termitated.'
+  - name: 'HasBeneficiaryRule'
+    description: '1 = There is a beneficiary rule\r\n0 = There is n beneficiary rule for this account / contract'
+  - name: 'Beneficiary'
+    description: 'Name of the Beneficiary.'
+  - name: 'PledgedAmount'
+    description: 'Amount which is pledged, e.g. for mortgages.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'PledgedLastDate'
+    description: 'Date of last pledging'
+  - name: 'PledgeType'
+    description: 'VPF_ART_CD from Primanet.\r\n0 = no pledging\r\n1 = successive pledged\r\n2 = amount pledged'
+  - name: 'WefAmount'
+    description: 'Amount already paid out for WEF'
+    genericControls:
+      defColumnPos: 7
+  - name: 'WefLastDate'
+    description: 'Date when last WEF-payment was made'
+  - name: 'InterestRateBvg'
+    description: 'Interest rate of capital coverd by BVG law'
+  - name: 'InterestRateNonBvg'
+    description: 'Interest rate for capital above BVG'
+  - name: 'AccruedInterestBvg'
+    description: 'Accrued interest for capital covered by BVG'
+  - name: 'AccruedInterestNonBvg'
+    description: 'Accrued interest for capital above BVG'
+  - name: 'BalanceBvg'
+    description: 'Balance of capital covered by BVG'
+  - name: 'BalanceNonBvg'
+    description: 'Balance of capital above BVG'
+  - name: 'SecurityValue'
+    description: 'Value of all securities related to this account.'
+  - name: 'TotalValue'
+    description: 'Value of entire shadow account. \r\n= BalanceBvg + BalanceNonBvg + AccruedInterestBvg + AccruedInterestNonBvg + SecurityValue'
+    genericControls:
+      defColumnPos: 8
+  - name: 'ValuationDate'
+    description: ''
+  - name: 'PayableAtDeath'
+    description: 'Capital payable at death of insured person'
+  - name: 'SinglePremium'
+    description: 'Premium for Insurance with only one premium.'
+  - name: 'Pension'
+    description: 'Amount of yearly pension.'
+  - name: 'PensionOverplus'
+    description: 'Amount of yearly pension plus expectec participation on gain.'
+  - name: 'PensionPeriodRuleNo'
+    description: 'Periodicity of pension payment.'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+  - name: 'Refund'
+    description: 'Is product with refund? \r\n(Rückgewähr bei Rentenversicherung)'
+  - name: 'PreviousMasterdataExport'
+    description: 'Datetime of second last masterdata export to Primanet'
+  - name: 'LatestMasterdataExport'
+    description: 'Datetiem ot last export to Primanet'
+  - name: 'CustomerReference'
+    description: 'for Liberty Flex Accounts'
+  - name: 'TransferToLiberty'
+    description: 'Flag, if the account is to transfer to Liberty'
+  - name: 'TransferDate'
+    description: ''
+  - name: 'TransferAccountId'
+    description: 'new AccountId'
+    genericControls:
+      refTable: 'PtShadowAccount'
+      refField: 'Id'
+  - name: 'TransferOrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrder'
+      refField: 'Id'
+  - name: 'OpeningNumber'
+    description: 'für Liberty-Schattenkonto\r\nHBL generiert die Eröffnungsnummer und sendet diese an Liberty. Liberty schickt Bestand (0) an HBL mit Liberty-KtNr und HBL-Eröffnungsnummer. Die Eröffnungsnummer setzt sich aus Partnernummer + einer dreistelligen Laufnummer zusammen.'
+  - name: 'ContractPartnerNo'
+    description: 'refers to PtShadowProduct.ContractPartnerNo'

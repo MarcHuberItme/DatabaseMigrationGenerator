@@ -1,0 +1,27 @@
+table:
+  name: 'OaTwoFaSession'
+  description: 'Represents a two-factor authentication session.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'SessionId'
+    description: 'Identifier of the session given and known by the 2-factor authentication provider.'
+  - name: 'TenantId'
+    description: 'Refers to the provider tenant administered in the system.'
+    genericControls:
+      refTable: 'OaTwoFaProviderTenant'
+      refField: 'Id'
+  - name: 'StartDateTime'
+    description: ''
+  - name: 'ExpiryDateTime'
+    description: ''
+  - name: 'UserId'
+    description: ''

@@ -1,0 +1,251 @@
+table:
+  name: 'PtPrintTransMessage'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'TransactionId'
+    description: 'Reference to PtTransaction'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'TransMessageId'
+    description: 'Average Price of all corresponding PtTransTrade-records'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+  - name: 'PaymentCurrency'
+    description: 'Settlement (Payment) Currency 3-digit Code.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'PaymentAmount'
+    description: 'Payment (settlement) amount in currency of "PaymentCurrency"'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TransMsgStatusNo'
+    description: 'This field has 4 possible status:\r\n- NULL = normal\r\n- this original transaction is cancelled\r\n- this is a cancellation transaction\r\n- Rektifikat'
+    genericControls:
+      refTable: 'PtTransMsgStatus'
+      refField: 'TransMsgStatusNo'
+  - name: 'DebitGroupKey'
+    description: 'possible key format: yyyymmddhhmmssqqq where \r\nyyyymmdd = date, hhmmss = time\r\nqqq = sequence no within the a second\r\nThis format is used e.g. for StandingOrder or QuickOrder to force a single debit advise.'
+  - name: 'DebitAdvice'
+    description: '0 = no advice, Info is handled by account statement\r\n1 = as part of transaction processing, multi item advice\r\n2 = as part of transaction processing, single advice\r\n3 = as multi item advice at end of day, \r\n4 = as part of transaction processing, total amount advice (Summenanzeige ohne Details)\r\n9 = report on demand (for internal accounts)\r\nFor StandingOrder, QuickOrder and similar orders  the value is to set to 1'
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+  - name: 'DebitAccountNo'
+    description: 'AccountNo of debit account'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'DebitPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitPrReferenceId'
+    description: '//Denormalization\r\nProduct Reference Id of debit account. It is associates to a row in PrReference\r\nProduct Reference is at the most generalized level in Product hierarchy.'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitAccountCurrency'
+    description: '//denormalization\r\nCurrency code of Debit account'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 11
+  - name: 'DebitCustomerReference'
+    description: '//denormalization\r\nDebitCustomerReference to load from PtAccountBase\r\nSIC Incoming: 56 - Ordering Party Reference'
+  - name: 'DebitRate'
+    description: 'Cross Rate of Debit Currency and Settlement Currency\r\nRate to calculate DebitAmount from PaymentAmount\r\nThe rate is to be delivered by CPM and CSS if the currency is different.\r\nThe rate is to set to 1.00 if the currency is equal'
+  - name: 'DebitAmount'
+    description: 'Amout to debit the account'
+  - name: 'DebitOrderingName'
+    description: 'Name or address of the ordering person if different of DebitName\r\n(not supported in standing order)\r\nFor Payrout: We store in this field the original OrderingPartyAddress (can be compared with the DebitName that is built by Finstar itself)'
+  - name: 'DebitValueDate'
+    description: 'Same as PaymentDate as default.'
+  - name: 'DebitTextNo'
+    description: 'Text to show on account statement\r\n(Not supported in standing order)'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+  - name: 'DebitPaymentInformation'
+    description: ''
+  - name: 'DebitMessageType'
+    description: 'Order/Payment Message Type. For example A10 for a SIC Customer payment'
+  - name: 'DebitTransText'
+    description: 'Free Text information. It will be automatically copied to PtTrasItem.TransText for debit booking'
+    genericControls:
+      multiLine: true
+  - name: 'SalaryFlag'
+    description: 'True if the payment is a salary payment.\r\nUsed to suppress detail information on debit advise and/or\r\nto suppress the payment advise for the payee'
+  - name: 'CardBaseId'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrCardBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CardNo'
+    description: 'CardNo only used in case of payments/withdraws at ATM''s or POS.\r\n'
+  - name: 'CreditGroupKey'
+    description: 'Depending on a special Rule (is to be defined by NMU), \r\ndefault key format: yyyymmddhhmmssqqq where \r\nyyyymmdd = date, hhmmss = time\r\nqqq = sequence no within the a second'
+  - name: 'CreditAdvice'
+    description: '0 = no advice, Info is handled by account statement\r\n1 = as part of transaction processing multi item advice\r\n2 = as part of transaction processing single advice\r\n3 = as multi item advice at end of day, \r\n9 = report on demand (for internal accounts)\r\nFor StandingOrder, QuickOrder and similar orders  the value is to set to 1'
+    genericControls:
+      refTable: 'PtAdviceType'
+      refField: 'AdviceTypeNo'
+  - name: 'CreditAccountNo'
+    description: 'AccountNo of credit account'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'CreditPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditPrReferenceId'
+    description: '//Denormalization\r\nProduct Reference Id of credit account. It is associates to a row in PrReference\r\nProduct Reference is at the most generalized level in Product hierarchy.'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditAccountCurrency'
+    description: '//denormalization\r\nCurrency code of Credit account'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 10
+  - name: 'CreditCustomerReference'
+    description: '//denormalization\r\nCreditCustomerReference to load from PtAccountBase'
+  - name: 'CreditRate'
+    description: 'Cross Rate of Credit Currency and Settlement Currency\r\nRate to calculate CreditAmount from PaymentAmount\r\nThe rate is to be delivered by CPM and CSS if the currency is different.\r\nThe rate is to set to 1.00 if the currency is equal'
+  - name: 'CreditAmount'
+    description: 'Amout to debit the account'
+  - name: 'CreditBeneficiaryName'
+    description: 'Name or address of the receiving person/company\r\n'
+    genericControls:
+      multiLine: true
+      defColumnPos: 4
+  - name: 'CreditValueDate'
+    description: 'Same as PaymentDate as default.'
+  - name: 'CreditPaymentInformation'
+    description: 'Message from der payer to the payee, e.g. reason for the payment.'
+    genericControls:
+      multiLine: true
+  - name: 'CreditTextNo'
+    description: 'Text to show on account statement'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+  - name: 'CreditEsrReference'
+    description: 'ReferenceNo of the swiss standard payment slip (blue and/or orange).'
+  - name: 'CreditMessageType'
+    description: 'Order/Payment Message Type. For example A10 for a SIC Customer payment'
+  - name: 'CreditTransText'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'TransReferenceKey'
+    description: 'It is TransactionReferenceNo in case of SIC/EUROSIC . Its purpose is to avoid double processing of incoming message.'
+  - name: 'SourceTableName'
+    description: 'PtPaymentOrderDetail / PtStandingOrder etc..'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'SourceRecId'
+    description: 'Id of the source table'
+  - name: 'MsgSequenceNumber'
+    description: ''
+  - name: 'TransNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'TransNo'
+  - name: 'TransGroupNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'TransNo'
+  - name: 'TransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+  - name: 'TransDate'
+    description: ''
+  - name: 'PaymentOrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrder'
+      refField: 'Id'
+  - name: 'PrintPaymentAdviceBatchId'
+    description: ''
+  - name: 'DebitPaymentAdviceId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentAdvice'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditPaymentAdviceId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentAdvice'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitSingleReportName'
+    description: ''
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'ReportName'
+  - name: 'DebitMultiReportName'
+    description: ''
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'ReportName'
+  - name: 'CreditSingleReportName'
+    description: ''
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'ReportName'
+  - name: 'CreditMultiReportName'
+    description: ''
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'ReportName'
+  - name: 'DebitBookingCompleted'
+    description: ''
+    minValue: '0'
+    maxValue: '1'
+  - name: 'CreditBookingCompleted'
+    description: ''
+    minValue: '0'
+    maxValue: '1'
+  - name: 'PaymentOrderStatus'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderStatus'
+      refField: 'StatusNo'
+  - name: 'TransTypeId'
+    description: ''
+  - name: 'DebitTotalCharges'
+    description: ''
+  - name: 'CreditTotalCharges'
+    description: ''

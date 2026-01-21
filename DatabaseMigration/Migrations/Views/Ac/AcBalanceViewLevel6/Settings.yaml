@@ -1,0 +1,3 @@
+view:
+  name: 'AcBalanceViewLevel6'
+  description: 'Balance selection in detailed level 6 (Last detailed level)\r\n\r\n2015-09-07/ram: add AcBalanceStructure .BalanceSheetTypeNo'

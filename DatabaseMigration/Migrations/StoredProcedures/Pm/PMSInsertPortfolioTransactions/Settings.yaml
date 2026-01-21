@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PMSInsertPortfolioTransactions'
+  description: 'This procedure inserts all cash flow relevant transactions from or to a given portfolio to PmPerfTransData.\r\n-> Detail implementation moved to PMSGetPortfolioTransactions (12.05.2022)'

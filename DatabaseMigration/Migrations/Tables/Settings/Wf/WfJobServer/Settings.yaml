@@ -1,0 +1,24 @@
+table:
+  name: 'WfJobServer'
+  description: 'This table is used by the workflow execution components to translate a logical job name in a physical server- and queuename.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Job Servers and Queues'
+    - german:
+        formTitle: 'Jobservers und Queues'
+  columns:
+  - name: 'LogicalName'
+    description: 'Logical Name of the server which will be used to translate to physical ServerName and fetch the relaated QueueName.'
+  - name: 'ServerName'
+    description: 'Physical name of the machine.'
+  - name: 'QueueName'
+    description: 'Name of the queue residing on the server.'

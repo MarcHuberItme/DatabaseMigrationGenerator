@@ -1,0 +1,21 @@
+table:
+  name: 'AsAdviceRuleTrans'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'AdviceRuleCode'
+    description: ''
+    genericControls:
+      refTable: 'AsAdviceRule'
+      refField: 'AdviceRuleCode'
+      defColumnPos: 1

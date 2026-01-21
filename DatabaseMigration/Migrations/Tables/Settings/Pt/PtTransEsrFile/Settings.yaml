@@ -1,0 +1,47 @@
+table:
+  name: 'PtTransEsrFile'
+  description: 'Used to register the prepared files to transfer by E-Banking to the customer'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'FinstarFilename'
+    description: 'System filename of a generated transferfile\r\nFormat: Esr_AccountNo_DateTime (Esr-aaaaaaaaa-yyyymmdd-hhmmss)    \r\n'
+    genericControls:
+      defColumnPos: 1
+  - name: 'UserFilename'
+    description: 'User defined filename given at request time.\r\nAn individual file will be created for each selected account. \r\nAll files of one selection will have the same UserFilename'
+    genericControls:
+      defColumnPos: 2
+  - name: 'DateFrom'
+    description: 'Begin transdate of the selection period within the file\r\n(DateTo of the pervious period plus one day)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'DateTo'
+    description: 'End transdate of the selection period within the file\r\n'
+    genericControls:
+      defColumnPos: 4
+  - name: 'NumberOfPayments'
+    description: 'Number of payments within the file (without totalrecords )'
+  - name: 'TransferTime'
+    description: 'Date/Time of the transfer of the file to the customer'
+  - name: 'EbankingId'
+    description: 'Id of the EBanking agreement of the logged in user'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'TotalAmount'
+    description: ''
+  - name: 'IsForMammut'
+    description: 'Flag to indicate that file was created for Mammut Software'

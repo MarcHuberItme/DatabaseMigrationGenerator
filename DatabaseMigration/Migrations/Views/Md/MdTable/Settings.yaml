@@ -1,0 +1,201 @@
+view:
+  name: 'MdTable'
+  description: 'View over MdTableDataDef and MdTableDeviationBank\r\n8-tung: folgenden Update nach Transfer laufen lassen:\r\nUpdate MdTableDataDef Set TableType = 3 Where TableName = ''MdTable''\r\n2022-06-13/ram: AND-Bedingung in Konbination mit LEFT OUTER JOIN und nicht als WHERE-Bedingung'
+frontendView:
+  name: 'MdTable'
+  description: 'Sicht der Metadaten über Tab. MdTableDataDef und MdTableDeviationBank'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: d18c2bae-7838-4b83-a18e-29041114c63e
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Table Meta Data'
+    - german:
+        formTitle: 'Tabellenkontrolle'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+    isNotNull: true
+    defaultValue: '(GetDate())'
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+    isNotNull: true
+    defaultValue: '(GetDate())'
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'HdStatusFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdNoUpdateFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdTriggerControl'
+    dataType: 'tinyint'
+  - name: 'TableName'
+    description: 'Name of the table in the database'
+    dataType: 'varchar'
+    isNotNull: true
+    isUnique: true
+    prec: 30
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TableType'
+    description: 'Type of the table\r\n1 = Table to edit with generic editor\r\n2 = Table to edit with specialized editor\r\n3 = Tabel has no editor\r\n4 = Header Table\r\n5 = Dummy table, just a front end representing a view'
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      refTable: 'MdTableType'
+      refField: 'TableType'
+  - name: 'GroupId'
+    description: 'Id of the group the table belongs to.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'MdGroup'
+      refField: 'Id'
+  - name: 'DefArchive'
+    description: 'True if archiving is switched on.'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'VisumLevel'
+    description: 'Level of confirmation\r\n1=No confirmation\r\n2=Process group\r\n4=Single row\r\n8=None, group activation\r\n'
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'MdVisumLevel'
+      refField: 'VisumLevel'
+  - name: 'VisumNumber'
+    description: 'Number of confirmations needed for this table'
+    dataType: 'tinyint'
+    minValue: '0'
+  - name: 'HasAsText'
+    description: 'Flag, True(1) = This table has text in asText'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'CacheLevel'
+    description: 'Level of caching\r\n0 = No Caching allowed'
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      refTable: 'MdCacheLevel'
+      refField: 'CacheLevel'
+  - name: 'PhysicalDelete'
+    description: 'Flag which causes the Generic Components to delete a record physically\r\nTrue = Delete Physically\r\nFalse = Mark as deleted by setting the HdVersionNo to 999 999 999'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsGroupable'
+    description: 'Flag to mark a table a groupable :\r\nTrue = Standard grouping possible\r\nFalse = Standard grouping disabled'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'TableUsageNo'
+    description: 'Usage of the table\r\n1 = For production\r\n2 = In Production DB, but only for test purposes\r\n3 = Used in testarchive only'
+    dataType: 'tinyint'
+    minValue: '1'
+    maxValue: '3'
+    defaultValue: '1'
+  - name: 'DomainType'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    defaultValue: '10'
+  - name: 'DescField'
+    description: 'Name of the fields which represents a description of the record and can be displayed in the text portion of a combo box, separated by ;'
+    dataType: 'varchar'
+    prec: 128
+  - name: 'IsNavigationRoot'
+    description: 'Marks a table as leader in the Navigation Viewer.'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'ApplicationKey'
+    description: 'Field name of the Application key used for the navigation tree.'
+    dataType: 'varchar'
+    prec: 30
+  - name: 'NavigationConditionField'
+    description: 'Contains the Navigation Condition Fields for a table. Is Used only for the DataNavigationViewer.'
+    dataType: 'varchar'
+    prec: 200
+  - name: 'RootTable'
+    description: 'Name of the Root Table if the actual table id part of the navigation tree.\r\nContains ''ROOT'' if the table itself is navigation root.'
+    dataType: 'varchar'
+    prec: 30
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'ParentTable'
+    description: 'Parent table, used for the navigation tree.'
+    dataType: 'varchar'
+    prec: 30
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'ParentRelationField'
+    description: 'Name of the  foreign key which references the id in the parent table. Is used only for the DataNavigationSystem!'
+    dataType: 'varchar'
+    prec: 30
+  - name: 'ParentIdField'
+    description: 'Id-Field of the parent tabel which is is referenced by the foreign key ParentRelationField. Is Used only for DataNavigationSystem.'
+    dataType: 'varchar'
+    prec: 30
+  - name: 'IsSharedNode'
+    description: 'True if all records of that table can are repredented by only one node in the Navigation Viewer.'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsHiddenNode'
+    description: 'True if the entry of AsNavigationIndex should not be displayed in the navigation tree.'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'DoBackMigrate'
+    description: 'Indicates whether table has to be back-migrated to VRX'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'FunctionGroupNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ChangeNoticeLevel'
+    description: '0 = none\r\n1 = update and insert'
+    dataType: 'tinyint'
+    isNotNull: true
+    defaultValue: '0'

@@ -1,0 +1,38 @@
+table:
+  name: 'AsMailCost'
+  description: '1 = Packingcost / Couvert\r\n2 = Mailcost / Porto'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'CostType'
+    description: '1 - Packing cost.\r\n2 - Mailing cost.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CarrierType'
+    description: ''
+    genericControls:
+      refTable: 'AsCarrierType'
+      refField: 'CarrierTypeNo'
+      defColumnPos: 2
+  - name: 'CountryGroup'
+    description: ''
+    genericControls:
+      refTable: 'AsGroup'
+      refField: 'Id'
+      defColumnPos: 3
+  - name: 'CostVolumeGroup1A'
+    description: ''
+  - name: 'CostVolumeGroup1B'
+    description: ''
+  - name: 'CostVolumeGroup1C'
+    description: ''
+  - name: 'CostVolumeGroup2'
+    description: ''
+  - name: 'CostVolumeGroup3'
+    description: ''

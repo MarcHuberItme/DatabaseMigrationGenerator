@@ -1,0 +1,24 @@
+table:
+  name: 'CyAssetClass'
+  description: 'Classification of Currencies for Asset Allocation\r\n\r\n30.08.2017 (SKL) DomainType changed from 10 to 30. This table is used (inlcusive Text parts!) in PM1 (current PMS system from Expersoft) for Strategy Criteria (in co called CID10 mode, i.e. is identical for entire PM1 solution which is the same for all participating banks, currently SAL, SCO, HBL)'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Currency Class'
+    - german:
+        formTitle: 'Währungsklasse'
+  columns:
+  - name: 'ClassNo'
+    description: 'Number of the Currency Asset Class.'
+  - name: 'Sequence'
+    description: 'Order field for the Asset Classes in the Report.'

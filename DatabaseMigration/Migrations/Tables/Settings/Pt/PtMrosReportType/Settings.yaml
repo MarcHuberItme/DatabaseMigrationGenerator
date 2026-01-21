@@ -1,0 +1,31 @@
+table:
+  name: 'PtMrosReportType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'PtMrosReportType'
+        helpText: 'PtMrosReportType'
+    - german:
+        formTitle: 'PtMrosReportType'
+        helpText: 'PtMrosReportType'
+    - french:
+        formTitle: 'PtMrosReportType'
+        helpText: 'PtMrosReportType'
+    - italian:
+        formTitle: 'PtMrosReportType'
+        helpText: 'PtMrosReportType'
+  columns:
+  - name: 'ReportTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

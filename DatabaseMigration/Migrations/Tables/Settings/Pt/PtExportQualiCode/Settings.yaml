@@ -1,0 +1,24 @@
+table:
+  name: 'PtExportQualiCode'
+  description: 'Value-Code for exported bookings. These codes are definde by Primanet based on finnova QUALI_CD'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Quali Code'
+    - german:
+        formTitle: 'Quali Code'
+  columns:
+  - name: 'QualiCode'
+    description: 'Value Code based on finnova QUALI_CD'
+    genericControls:
+      defColumnPos: 1

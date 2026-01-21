@@ -1,0 +1,33 @@
+table:
+  name: 'OaApiParameter'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'OaApiParameter'
+        helpText: 'OaApiParameter'
+    - german:
+        formTitle: 'OaApiParameter'
+        helpText: 'OaApiParameter'
+    - french:
+        formTitle: 'OaApiParameter'
+        helpText: 'OaApiParameter'
+    - italian:
+        formTitle: 'OaApiParameter'
+        helpText: 'OaApiParameter'
+  columns:
+  - name: 'GroupId'
+    description: ''
+  - name: 'Name'
+    description: ''
+  - name: 'Value'
+    description: ''
+  - name: 'Description'
+    description: ''

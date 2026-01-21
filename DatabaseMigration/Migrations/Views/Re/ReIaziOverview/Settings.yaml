@@ -1,0 +1,204 @@
+view:
+  name: 'ReIaziOverview'
+  description: 'Real estate Data used for the IAZI valuation. This view will be used to display information on frontend Form.'
+frontendView:
+  name: 'ReIaziOverview'
+  description: 'to display data used for Iazi Valuation'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Iazi Overview'
+    - german:
+        formTitle: 'Iazi Overview'
+    - french:
+        formTitle: 'Iazi Overview'
+  columns:
+  - name: 'BuildingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+  - name: 'PremisesId'
+    description: 'relation zum Grundstück'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+  - name: 'PremisesType'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'RePremisesType'
+      refField: 'PremisesType'
+  - name: 'GBNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 15
+  - name: 'GBNoAdd'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'GBPlanNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 15
+  - name: 'Street'
+    description: 'if it''s not the same as the street of the premises (if the field is NULL the value of the premises record is used - not stored twice)\r\nFIS-2000:GR_GBDE.STRASSE'
+    dataType: 'nvarchar'
+    prec: 30
+    genericControls:
+      defColumnPos: 1
+  - name: 'HouseNo'
+    description: 'if it''s not the same as the premisies HouseNo (if the field is NULL the value of the premises record is used - not stored twice)'
+    dataType: 'nvarchar'
+    prec: 15
+  - name: 'Zip'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 6
+  - name: 'Town'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+  - name: 'YearOfConstruction'
+    description: 'Baujahr (e.g. 2002) \r\nFIS-2000: GR_GBDE.BAUJAHR'
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 3
+  - name: 'YearOfTotalChange'
+    description: 'year of a total change (Total Umbau oder grössere Renovation) of the Building'
+    dataType: 'int'
+  - name: 'AreaM2'
+    description: 'Fläche des Gebäudes / Wohnung (Nutzfläche bei Büro- und Geschäftshäusern)\r\n\r\nFIS-2000:GR_GBDE.FLAECHE_WHG'
+    dataType: 'money'
+    scale: 4
+  - name: 'LivingArea'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'VolumeM3'
+    description: 'Rauminhalt (Kubikmeter)\r\n\r\nFIS-2000:GR_GBDE.GBDE_INHT'
+    dataType: 'money'
+    scale: 4
+  - name: 'SurfaceM2'
+    description: 'Surface of the balconies/terraces  in m2 (bei STWE) IAZI\r\nFIS-2000: NNF_TERRASSE'
+    dataType: 'money'
+    scale: 4
+  - name: 'VolumnNorm'
+    description: 'Volumenorm / Raumnorm\r\nSIA, Effektiv etc.\r\nFIS-2000: GR_GBDE.GBDE_INHT_TYP_CD'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReBuildingVolumeType'
+      refField: 'Id'
+  - name: 'BuildingCondition'
+    description: 'Gebäude Zustand - Building condition\r\n\r\nFIS-2000: GR_GBDE.GBDE_ZUSTAND_CD'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReBuildingConditionType'
+      refField: 'Id'
+  - name: 'BuildingQuality'
+    description: 'Developing Standard (Ausbaustandard) - IAZI Bauqualität / building quality'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReBuildingQuality'
+      refField: 'Quality'
+  - name: 'FloorNo'
+    description: 'Number of floors / Anzahl Stockwerke (IAZI) - the number of dwellings are in a subtable (ReDwellings)'
+    dataType: 'smallint'
+  - name: 'WetCellsNo'
+    description: 'Number of wet cells / Anzahl Nasszellen (IAZI) - beim MFH aus ReDwelling zusammenaddieren !'
+    dataType: 'smallint'
+  - name: 'ElevatorNo'
+    description: 'Anzahl Aufzüge / number of elevators'
+    dataType: 'smallint'
+  - name: 'IsLuxus'
+    description: 'Luxusobjekt\r\n0 = Nein\r\n1 = Yes'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'RoofFloorDev'
+    description: 'Dachstockausbau möglich ? / Roof floor development is possible'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'RentAmount'
+    description: 'Gesamtmiete pro Jahr ich CHF / total rent for one year in CHF\r\n(only displayed in case of rent (usetype)) - NETTO, d.h. EFFEKTIV erziehlt\r\nBruttomiete=RentAmount+EmptyAmount+SupportAmount+AddExpAmount'
+    dataType: 'money'
+  - name: 'RentRateBusiness'
+    description: 'Mietanteil in % der aus Geschäftstätigkeit stammt\r\nRenting portion in % from business activity comes \r\n(FIS-2000. Berechnen 100 - GR_STAMM.WHG_ANT_SATZ)\r\nPFB: Zur Berechnung des Etragswertes wird dieser Satz verwendet (100-RentRateBusiness) = % Satz Wohnen\r\n'
+    dataType: 'float'
+    minValue: '0'
+    maxValue: '100'
+  - name: 'AreaM2Business'
+    description: 'Geschäftsnutzfläche\r\nBusiness effective area \r\n(IAZI: Büro- und Geschäftshäuser / MFH)'
+    dataType: 'money'
+    scale: 4
+  - name: 'AreaM2Office'
+    description: 'Büronutzfläche\r\nOffice effective area \r\n(IAZI: Büro- und Geschäftshäuser / MFH)'
+    dataType: 'money'
+    scale: 4
+  - name: 'AreaM2Store'
+    description: 'Area for Store. IAZI = lagerfläche'
+    dataType: 'money'
+    scale: 4
+  - name: 'AreaM2Education'
+    description: 'IAZI = Unterrichtfläche'
+    dataType: 'money'
+    scale: 4
+  - name: 'AreaM2Medical'
+    description: 'medizinischfläche'
+    dataType: 'money'
+    scale: 4
+  - name: 'SituationWithinBuildingId'
+    description: 'Nur bei Eigentumswohnungen zu verwenden ! Situierung der Wohnung innerhalb des Gebäudes.'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReBuildingSit'
+      refField: 'Id'
+  - name: 'ParkingPlaceNo'
+    description: 'number of parking places / Abstellplätze (for IAZI)  - nur PfB'
+    dataType: 'smallint'
+  - name: 'UndergroundNo'
+    description: 'number of parking places in an underground bulding (for IAZI)'
+    dataType: 'smallint'
+  - name: 'GarageNo'
+    description: 'number of separate garages (for IAZI)'
+    dataType: 'smallint'
+  - name: 'HasMultipleFloors'
+    description: 'for STWE: set if appartment extends over multiple floors'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'FlatNo'
+    description: 'Anzahl Wohnungen im MFH (für IAZI STWE-Schätzung)'
+    dataType: 'smallint'
+  - name: 'MinergieStandardType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReMinergieStandardType'
+      refField: 'TypeNo'
+  - name: 'SeparateWC'
+    description: 'Separate WC'
+    dataType: 'smallint'
+  - name: 'SituationInTown'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReSituationAllocation'
+      refField: 'Id'
+  - name: 'HasServitute'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'BuildRightEndDate'
+    description: ''
+    dataType: 'datetime'

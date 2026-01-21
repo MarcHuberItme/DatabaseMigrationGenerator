@@ -1,0 +1,41 @@
+table:
+  name: 'ReValuationTenant'
+  description: 'Valuation data per tenant and building kept here'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'valuation values / tenant'
+    - german:
+        formTitle: 'Schätzungswerte / Mieter'
+  columns:
+  - name: 'ValuationId'
+    description: ''
+    genericControls:
+      refTable: 'ReValuation'
+      refField: 'Id'
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+  - name: 'RentPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'RentPartnerName'
+    description: ''
+  - name: 'RentPartnerFirstName'
+    description: ''
+  - name: 'RentPerYear'
+    description: ''
+  - name: 'RentPerYearBase'
+    description: '1 = calculated value\r\n2 = given value'

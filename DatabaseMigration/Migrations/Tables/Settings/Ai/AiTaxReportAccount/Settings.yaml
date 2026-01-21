@@ -1,0 +1,64 @@
+table:
+  name: 'AiTaxReportAccount'
+  description: 'Informationen zur Steuermeldung von Konten und Portfolios.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Reported account'
+    - german:
+        formTitle: 'Meldung Konto / Portfolio'
+    - french:
+        formTitle: 'Compte rendu'
+  columns:
+  - name: 'TaxReportId'
+    description: 'Verbindung zur Steuermeldung'
+    genericControls:
+      refTable: 'AiTaxReport'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'AccountNo'
+    description: 'Kontonummer, stammt von PtAccountBase. Als Format wird IBAN verwendet.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'AccountHolder'
+    description: 'Verbindung zum Steuerprogramm Partner'
+    genericControls:
+      refTable: 'AiTaxDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'RefTaxReportAccountId'
+    description: 'Referenz zur vorhergehenden Steuermeldung des Accounts falls Korrekturen erfolgen.'
+    genericControls:
+      refTable: 'AiTaxReportAccount'
+      refField: 'Id'
+  - name: 'Currency'
+    description: 'Währung (Währungscode)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Balance'
+    description: 'Saldo/Portfoliowert'
+  - name: 'AccountClosed'
+    description: 'Dieses Feld wird mit dem TerminationDate aus Tab. PtAccountBase resp. PtPortfolio befüllt.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'IsDormantAccount'
+    description: 'nachrichtenloses Konto vorhanden'
+  - name: 'IsUndocumentedAccount'
+    description: 'undokumentiertes Konto vorhanden'
+  - name: 'StatusNo'
+    description: 'Verarbeitungsstatus'
+    genericControls:
+      refTable: 'AiTaxReportEntryStatus'
+      refField: 'StatusNo'
+      defColumnPos: 5

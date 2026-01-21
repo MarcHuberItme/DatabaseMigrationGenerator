@@ -1,0 +1,43 @@
+table:
+  name: 'PtAccountPaybackStatus'
+  description: 'Status of indirect amortisations per calendar year. Shows progress of indirect amortisations.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Amortisation status'
+        helpText: 'Progress status of indirect amortisations'
+    - german:
+        formTitle: 'Status Amortisation'
+        helpText: 'Fortschritt / Status der indirekten Amortisationen'
+    - french:
+        formTitle: 'Status de l''amortissement'
+        helpText: 'Progres / Status des amortissement indirects'
+    - italian:
+        formTitle: 'Stato del ammortamento'
+        helpText: 'Progresso / stato dei ammortamenti indiretti'
+  columns:
+  - name: 'Year'
+    description: 'Related Contract Year'
+    genericControls:
+      defColumnPos: 1
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountPaybackStatusType'
+      refField: 'StatusNo'
+      defColumnPos: 1
+  - name: 'StatusDate'
+    description: 'Date on which the status was set on this payback record\r\n--\r\nDatum, an welchem der aktuelle Status gesetzt wurde'
+  - name: 'PaybackId'
+    description: 'Reference to PtAccountPayback which is represented by this status\r\n--\r\nReferenz zu PtAccountPayback, Referenz zur indirekten Amortisation welche diesen Status aufweist'
+    genericControls:
+      refTable: 'PtAccountPayback'
+      refField: 'Id'

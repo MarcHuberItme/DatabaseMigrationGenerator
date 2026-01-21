@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'InsertPaybackLog'
+  description: 'insert log information for account payback'

@@ -1,0 +1,41 @@
+table:
+  name: 'MdControlProperty'
+  description: 'Properties of a control that can be edited by the FormShaper control'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: d18c2bae-7838-4b83-a18e-29041114c63e
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Properties of Control'
+    - german:
+        formTitle: 'Properties of Control'
+  columns:
+  - name: 'ControlName'
+    description: 'Name of the Control the property belongs to.'
+    genericControls:
+      refTable: 'MdControl'
+      refField: 'ControlName'
+      defColumnPos: 1
+  - name: 'PropertyName'
+    description: 'Name of the Property that can be edited by the FormShaper control'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValueType'
+    description: 'Data Type of the property'
+    genericControls:
+      refTable: 'MdControlValueType'
+      refField: 'ValueType'
+  - name: 'MinValue'
+    description: 'Minimum value if ValueType is numeric'
+  - name: 'MaxValue'
+    description: 'Maximum Value if ValueType is numeric'
+  - name: 'AssignToControl'
+    description: 'True =  the value of this property will be assigned to the control\r\nFalse = the value will not be assigned to the control (the property will be used only by the application)'
+  - name: 'UserChangeable'
+    description: 'Indicates whether the property is changeable by the end user.'

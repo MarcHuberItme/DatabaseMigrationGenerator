@@ -1,0 +1,28 @@
+table:
+  name: 'PrPublicDistribFrequency'
+  description: 'VDF-Domaine: 4948 DISTRUNIT'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Distribution frequency'
+    - german:
+        formTitle: 'Ausschüttungsfrequenz'
+  columns:
+  - name: 'DistribFrequencyNo'
+    description: 'Maintained by VDF-Metadata'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PMSDistFrequencyNo'
+    description: 'Mapping with PMS codes'
+  - name: 'PM1DistFrequencyNo'
+    description: 'Temporarily added new column to support Netfolio and PM1 in parallel phase'

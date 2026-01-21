@@ -1,0 +1,178 @@
+table:
+  name: 'FaBase'
+  description: 'Base table for fatca information'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'US-Program'
+    - german:
+        formTitle: 'US-Programm'
+    - french:
+        formTitle: 'FATCA'
+  columns:
+  - name: 'PartnerId'
+    description: 'Reference to partner'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'IsStructure'
+    description: '1 = structure (e.g. trust)\r\n0 = Individual account'
+    genericControls:
+      isNoUpdate: true
+  - name: 'StartDate'
+    description: 'Begin of tax liability'
+    genericControls:
+      defColumnPos: 1
+  - name: 'EndDate'
+    description: 'End of tax liability'
+    genericControls:
+      defColumnPos: 2
+  - name: 'OpeningDate'
+    description: 'Opening date of the customer.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ClosingDate'
+    description: 'Closin gdate of the account.'
+  - name: 'OpeningPeriod'
+    description: '20 = before August 1, 2008\r\n30 = between August 1, 2008 and February 28,2009\r\n50 = after February 28, 2009'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Domicile'
+    description: 'Domicile of the partner as it is stored as main-domicile in PtFiscalCountry or Country in PtAddress with AddressTypeNo = 11'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      isNoUpdate: true
+  - name: 'History'
+    description: 'Story behind, why is the account a bank''s customer.'
+  - name: 'MaxTmpBalanceUsd'
+    description: 'Maximum month end balance of the given PartnerNo during the applicable period.\r\nDoes not contain ''same parnter'' balances or joint accounts.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'MaxOwnBalanceUSD'
+    description: 'Maximum month end balance of the account merged with accounts representing the same partner during the applicable period.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'MaxTotalBalanceUSD'
+    description: 'Maximum month end balance of the account and its joint accounts during the applicable period.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsUsCiticen'
+    description: 'True if one of customer''s nationalities is U.S.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasUsDomicile'
+    description: 'True if one of the customer''s domicile is U.S.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasUsAddress'
+    description: 'True if one of the custoemr''s addresses is in the U.S.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'MailsToUsAddress'
+    description: 'True if there is a correpondence rule to an  U.S. address.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasUsPhoneNumber'
+    description: 'True if one of the customer''s phonennumbers is an U.S. number.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'StandingInstructions'
+    description: 'True if there are standing instructions for payments to an account in the U.S.'
+  - name: 'GrantsToUsAddress'
+    description: 'True if there are power of attorney or signature authority granted to a person with U.S. address.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'InCareOf_Inside'
+    description: 'True if there is only one "in care of" address, which is located in the U.S.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'InCareOf_Outside'
+    description: 'True if there is only one "in care of" address, which is located oztside the U.S.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'OnlyHoldMail'
+    description: 'True if there is only a hold mail address available.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'UsBasket'
+    description: 'True if there is any hint to an U.S. account in context of U.S. witholding tax.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'RmInquiryUsAccount'
+    description: 'True if RM inquiry  delivers a hint to an U.S. account.'
+  - name: 'RmComment'
+    description: 'Comment of relationship manager.'
+  - name: 'OtherIndicia'
+    description: 'True for other indicia which is manually searched and found\r\n(Full-Text Search etc)\r\n'
+  - name: 'OtherIndiciaDescription'
+    description: 'Description of ''othe Indicia'''
+  - name: 'HasIndicia'
+    description: 'True if any of the US-Indicators is true'
+  - name: 'NonUs_Dba'
+    description: 'True if there is an Non-U.S. declaration in conjunction with U.S. witholding tax.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasW9'
+    description: 'True customer signed a form W-9.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'W9Date'
+    description: 'Date of signature on form W-9.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TIN'
+    description: 'U.S. tax identification number'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasWaiver'
+    description: 'True if the customer signed a waiver to allow the bank to disclose the customer''s data.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'OVDP'
+    description: 'True if customer was in a Offshore Voluntary Disclosure Program.'
+  - name: 'PaidForTaxStataement'
+    description: 'True if custoemer orderd a payable tay statement in the past.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'US_Securities'
+    description: 'True if there were U.S. securities in the customer''s portfolio.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasRelatedUsAccounts'
+    description: 'True if related U.S. accounts have U.S. status.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsUsPerson'
+    description: 'True if the summary of electronic search says the person is an  U.S. person'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsUsRelatedAccount'
+    description: 'True if IsUsPerson = 1 and MaxTotalBalanceUSD > 50''000'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CounterEvidence'
+    description: 'Describes the counter evidence.'
+  - name: 'NonUsStatusApproved'
+    description: 'True if the Non-U.S. status of an account is approved.'
+  - name: 'Mitigation'
+    description: 'Describes the documents that proof the discloure of the account.'
+  - name: 'DisclosureApproved'
+    description: 'True if the disclosure of the account is approved.'
+  - name: 'USDomicileOverride'
+    description: 'Flag to set Us Domicile, even if information in system says it is a non Domizile.\r\nMight be used for entities outside the U.S.'
+  - name: 'UsCiticenOverride'
+    description: 'Flag to set UsCiticenship, even if information in system says it is a non US-Citicen:\r\nMight be used for entities outside the U.S.'

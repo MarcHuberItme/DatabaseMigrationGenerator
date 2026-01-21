@@ -1,0 +1,39 @@
+table:
+  name: 'PtUserTimeActivity'
+  description: 'Time activity e.g.: holiday, illness, military service,...'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Time Activity'
+    - german:
+        formTitle: 'Rapportart'
+  columns:
+  - name: 'ActivityNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'StatisticField'
+    description: 'Name des Feldes für Statistic Record'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TimeFramedActivity'
+    description: 'true = von/bis nötig\r\nfalse = von/bis nicht nötig'
+  - name: 'UsableByUser'
+    description: 'Mitarbeiter darf Aktivität verwenden\r\n0 = Nein\r\n1 = Ja'
+  - name: 'UsableBySuperior'
+    description: 'Vorgesetzter darf Aktivität verwenden\r\n0 = Nein\r\n1 = Ja'
+  - name: 'UsableByManager'
+    description: 'Personalchef  darf Aktivität verwenden \r\n0 = Nein\r\n1 = Ja'
+  - name: 'CheckSchedule'
+    description: 'If set True PtUserTimeSchedule has to be considered for  time calculation'

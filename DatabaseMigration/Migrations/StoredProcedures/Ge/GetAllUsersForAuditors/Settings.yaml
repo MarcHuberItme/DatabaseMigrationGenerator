@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAllUsersForAuditors'
+  description: 'Retrieve all active users and additionally inactive users that have been deleted last year\r\nUsed for the end of year data export of the auditors\r\nMJET'

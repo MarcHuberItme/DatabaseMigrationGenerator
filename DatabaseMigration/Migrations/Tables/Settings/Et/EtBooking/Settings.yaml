@@ -1,0 +1,62 @@
+table:
+  name: 'EtBooking'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Book_Id'
+    description: ''
+  - name: 'BookDate'
+    description: 'Booking date'
+  - name: 'BookReason'
+    description: ''
+  - name: 'BookSequence'
+    description: ''
+  - name: 'LC_cat'
+    description: ''
+  - name: 'BO_ID'
+    description: ''
+    genericControls:
+      refTable: 'EtBo'
+      refField: 'bo_id'
+      hasDetailBtn: true
+  - name: 'BOR_ID'
+    description: ''
+    genericControls:
+      refTable: 'EtBor'
+      refField: 'bor_id'
+      hasDetailBtn: true
+  - name: 'BookCurr'
+    description: ''
+  - name: 'BookAmount'
+    description: ''
+  - name: 'TaxEventCurr'
+    description: ''
+  - name: 'TaxEventXrate'
+    description: ''
+  - name: 'Tax_Category'
+    description: ''
+  - name: 'Trx_id'
+    description: ''
+    genericControls:
+      refTable: 'EtTrx'
+      refField: 'trx_id'
+  - name: 'Ext_ref'
+    description: ''
+  - name: 'Instr_ref'
+    description: ''
+  - name: 'book_info'
+    description: ''
+  - name: 'DeliveryStatus'
+    description: ''
+  - name: 'DeliveryInfo'
+    description: ''

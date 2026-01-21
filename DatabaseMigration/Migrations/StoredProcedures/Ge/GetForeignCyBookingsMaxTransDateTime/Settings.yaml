@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetForeignCyBookingsMaxTransDateTime'
+  description: 'Get Max(TransDateTime) for the bookings of foreign currency accounts\r\n\r\n2024-06-28/ram: Optimierung gemäss FIN-10833 (Philippe Moser)'

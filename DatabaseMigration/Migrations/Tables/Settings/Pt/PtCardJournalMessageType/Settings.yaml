@@ -1,0 +1,19 @@
+table:
+  name: 'PtCardJournalMessageType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'MessageType'
+    description: '01 = Karte bestellen\r\n02 = Karten mutieren\r\n03 = Karte löschen\r\n04 = Kartendetail abfragen\r\n05 = Bestellung stornieren\r\n06 = Karte löschen (Ende des nächsten Monats)\r\n09 = Kartensperre\r\n10 = Karte entsperren\r\n11 = Sperrmutation durch SIX\r\n12 = Karte durch SIX gesperrt\r\n13 = Karte durch SIX entsperrt\r\n16 = Journal-Datei Abfrage\r\n17 = Kunde mutieren\r\n18 = Kunde löschen\r\n19 = Bestandsliste erstellen\r\n20 = PIN bestellen\r\n24 = PIN zurücksetzen\r\n27 = Rückmeldung Kartenproduzent\r\n28 = Betrugsverdacht\r\n31 = Skript Aktivität\r\n32 = Bankenstamm\r\n33 = Charge Back\r\n35 = White list action'
+    genericControls:
+      defColumnPos: 1

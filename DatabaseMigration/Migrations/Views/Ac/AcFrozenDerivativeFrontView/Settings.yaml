@@ -1,0 +1,107 @@
+view:
+  name: 'AcFrozenDerivativeFrontView'
+  description: ''
+frontendView:
+  name: 'AcFrozenDerivativeFrontView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+  - name: 'HdStatusFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'ReportDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 1
+  - name: 'IsTradingBook'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 2
+  - name: 'DerivativeTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AcDerivativeType'
+      refField: 'DerivativeTypeNo'
+      defColumnPos: 3
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'ContractKey'
+    description: ''
+    dataType: 'varchar'
+    prec: 15
+    genericControls:
+      defColumnPos: 5
+  - name: 'DateTo'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ContractCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      defColumnPos: 7
+  - name: 'ContractAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 8
+  - name: 'OpponentCurrency'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 9
+  - name: 'OpponentAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 10
+  - name: 'ReplacementValue'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 11
+  - name: 'Description'
+    description: ''
+    dataType: 'varchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 12

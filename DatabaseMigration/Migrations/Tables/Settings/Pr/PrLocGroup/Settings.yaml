@@ -1,0 +1,48 @@
+table:
+  name: 'PrLocGroup'
+  description: 'Group of  portfolios representing the physical location of securities.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Physical location group'
+    - german:
+        formTitle: 'Depotstellengruppe'
+  columns:
+  - name: 'GroupNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'MgVrxDpstGr'
+    description: 'Alte Depotstellen Gruppen-Nummer\r\nFür TOFF-Bestände wird hier die VRX-Depostellengruppe Long eingetragen'
+    genericControls:
+      defColumnPos: 2
+      isOnlyForMig: true
+  - name: 'MgVrxDpstGrShort'
+    description: 'Für TOFF-Bestände wird hier die VRX-Depostellengruppe Short eingetragen'
+    genericControls:
+      defColumnPos: 3
+      isOnlyForMig: true
+  - name: 'NoReporting'
+    description: 'NoReporting = False: normal Position\r\n\r\nNoReporting = True: The positions from this location group mustn''t display on the reports, because the positions (own Kassenobligation) are at home by the customer and not in the portfolio (safe keeping account).'
+  - name: 'TradingSystemGroupId'
+    description: 'With this field its possible to declare a TradingSystemGroupId for a LocGroup.\r\nThis PrLocGroup.TradingSystemGroupId will overrule the PreferredListing (PrPublicTradingPlace.TradingSystemGroupId).'
+    genericControls:
+      refTable: 'PtTradingSystemGroup'
+      refField: 'Id'
+  - name: 'FireTypeOfCredit'
+    description: 'Value is used for FiRE interface to find out the pledged securities\r\nLocations that do not represent pledged must have the value NULL\r\n09.04.2010/mct'
+    genericControls:
+      refTable: 'AcFireC520'
+      refField: 'Code'
+  - name: 'BusinessIdentifierCode'
+    description: 'BIC of the counterparty (for instance HYPLCH22).\r\nUsed for the security position API (FIN-7797).\r\n\r\n\r\n'

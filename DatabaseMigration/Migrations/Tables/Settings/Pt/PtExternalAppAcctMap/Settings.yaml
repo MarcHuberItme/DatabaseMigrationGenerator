@@ -1,0 +1,43 @@
+table:
+  name: 'PtExternalAppAcctMap'
+  description: 'Mapping to reference account. This information is used for payments to reference accounts in other banks'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ExternalAppPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtExternalAppPartner'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'FinstarAccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ExternalBIC'
+    description: 'BIC of the bank with reference account'
+  - name: 'ExternalIBAN'
+    description: 'Reference Account'
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'BeneficiaryName'
+    description: 'BeneficiaryName if different than service account holder'
+  - name: 'BeneficiaryAddress'
+    description: 'BeneficiaryAddress if different than service bank account holder'
+  - name: 'IsToGenerateAcctStmt'
+    description: '1= Generate account statment, for example camt.053'

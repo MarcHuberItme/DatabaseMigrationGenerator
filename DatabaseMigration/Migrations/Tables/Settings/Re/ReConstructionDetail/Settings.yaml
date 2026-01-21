@@ -1,0 +1,31 @@
+table:
+  name: 'ReConstructionDetail'
+  description: 'Konstruktionsbeschrieb, z.B. bei Fundament = Betonplatten, Pfählung etc.\r\n\r\n\r\n\r\n'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Construction Detail'
+    - german:
+        formTitle: 'Konstruktionsbeschrieb'
+  columns:
+  - name: 'ConstructionDetailNo'
+    description: 'GR_KONSTR_AUSP_CD'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ConstructionTypeId'
+    description: 'GR_KONSTR_KRIT_CD'
+    genericControls:
+      refTable: 'ReConstructionType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'SortNo'
+    description: ''

@@ -1,0 +1,42 @@
+table:
+  name: 'AxTaxDetailATXType'
+  description: 'Mit dieser Tabelle (und der Tabelle AiTaxStatus) kann pro Kunde definiert werden, für welches Land, in welcher Währung und in welcher Sprache ein TaxReport erstellt werden soll.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Detail ATX'
+    - german:
+        formTitle: 'Detail ATX'
+  columns:
+  - name: 'TaxDetailATXTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'CountryATX'
+    description: 'normally this field contains CountryCode (e.g. CHF) and fix ''REP'''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CurrencyATX'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'LanguageATX'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'CorrItemId'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+      defColumnPos: 5

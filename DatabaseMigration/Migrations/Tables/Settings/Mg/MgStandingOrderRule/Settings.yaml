@@ -1,0 +1,35 @@
+table:
+  name: 'MgStandingOrderRule'
+  description: 'Temporäre Tabelle für das Ausblenden der Beträge von Daueraufträgen im E-Banking'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'StandingOrderRule'
+        helpText: 'StandingOrderRule'
+    - german:
+        formTitle: 'StandingOrderRule'
+        helpText: 'StandingOrderRule'
+  columns:
+  - name: 'AccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'OrderStatus'
+    description: '0 = StandingOrder in E-Banking not allowed\r\n1 = StandingOrder in E-Banking is allowed'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SalaryStatus'
+    description: '0 = Do not show amount  in E-Banking if SalaryPayment \r\n1 = Show all amount for all Payments'
+    genericControls:
+      defColumnPos: 3

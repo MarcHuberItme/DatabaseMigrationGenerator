@@ -1,0 +1,49 @@
+table:
+  name: 'PsJob'
+  description: 'Contains the information for a specific printing Job'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Printing Job'
+    - german:
+        formTitle: 'Druckauftrag'
+  columns:
+  - name: 'ReportId'
+    description: 'Id of the report definition which is to print in the actual job.'
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'Id'
+      defColumnPos: 3
+  - name: 'JobName'
+    description: 'Name of the report job. This is also the name of the temporary table in the database.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'WhereClause'
+    description: 'Where clause that defines the selection of the reports to print'
+    genericControls:
+      multiLine: true
+  - name: 'VirtualDate'
+    description: 'Date which is used in the document and in AsDocument.\r\nIt might differ from the effective formatting date.'
+  - name: 'DeliveryDate'
+    description: 'Date the mail has to be sent. If null, the DeliveryRulNo of the correspondence rule is applied.'
+  - name: 'StaticFieldValues'
+    description: 'Comma separated Name=Value pairs that contain the name of static fields and their values.'
+  - name: 'JobStatus'
+    description: 'Status of the Job'
+    genericControls:
+      refTable: 'PsJobStatus'
+      refField: 'JobStatus'
+      defColumnPos: 2
+  - name: 'LastStartTime'
+    description: 'Time the last print job was started'
+  - name: 'LastFinishTime'
+    description: 'Time the print Job was finished.'
+  - name: 'SkipForCancel'
+    description: 'Is used in the corporate actions application. No cancel statements will be produced in case of cancel.'

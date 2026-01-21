@@ -1,0 +1,3 @@
+view:
+  name: 'EtFwhtValuation'
+  description: 'View to retreive the historic values vor FWHT valuation'

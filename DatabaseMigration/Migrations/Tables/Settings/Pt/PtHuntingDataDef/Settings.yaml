@@ -1,0 +1,44 @@
+table:
+  name: 'PtHuntingDataDef'
+  description: 'Table to define the matching fields of a csv.File and the table PtHunting'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'KindOfData'
+    description: '0 - Twixtel\r\n1 - Baublatt\r\n2 - Special Action'
+    genericControls:
+      defColumnPos: 1
+  - name: 'VersionNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Separator'
+    description: 'The Column delimiter (separator) in the input file. If null then space is used in the application.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ProfileName'
+    description: 'Profile to show the data needed to visualize the imported data in a usable way.'
+  - name: 'MinimalAmount'
+    description: ''
+  - name: 'MotiveOpenType'
+    description: ''
+    genericControls:
+      refTable: 'PtHuntingOpen'
+      refField: 'MotiveOpenTypeNo'
+  - name: 'HeaderRow'
+    description: '0 - Header row is not present\r\n1 - Header row is not present (FirstRow)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'DetermineConsTeam'
+    description: 'if true then the ConsultantTeam is determined with the import.'
+  - name: 'CheckForPartner'
+    description: 'if true then the available addressdata are used to look for a maching Data in PtBase and PtAddress.'

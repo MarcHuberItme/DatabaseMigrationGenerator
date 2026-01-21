@@ -1,0 +1,70 @@
+table:
+  name: 'PtShadowBookingCash'
+  description: 'CashTransaction, history of ShadowBooking'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Bookings Cash'
+    - german:
+        formTitle: 'Buchungen Cash'
+  columns:
+  - name: 'ShadowBookingId'
+    description: 'reference to ShadowBooking'
+    genericControls:
+      refTable: 'PtShadowBooking'
+      refField: 'Id'
+  - name: 'Identification'
+    description: 'Identification of the transaction (Finnova)'
+  - name: 'BookingTypeCode'
+    description: 'booking type code (Finnova)'
+  - name: 'BookingType'
+    description: 'booking type'
+    genericControls:
+      defColumnPos: 2
+  - name: 'DebitCreditCode'
+    description: 'debit / credit code (1 = debit, 2 = credit)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Price'
+    description: 'price'
+    genericControls:
+      defColumnPos: 4
+  - name: 'GrossAmountAcc'
+    description: 'gross amount in account currency'
+    genericControls:
+      defColumnPos: 5
+  - name: 'FeesAcc'
+    description: 'fees in account currency'
+    genericControls:
+      defColumnPos: 6
+  - name: 'NetAmountAcc'
+    description: 'net amount in account currency'
+    genericControls:
+      defColumnPos: 7
+  - name: 'ExternalBookingText'
+    description: 'external booking text'
+    genericControls:
+      defColumnPos: 8
+  - name: 'BookingType2Code'
+    description: 'booking type 2 code (Finnova; 1=savings deposit, 2=correction current year)'
+  - name: 'BookingType2'
+    description: 'booking type 2'
+  - name: 'Amount'
+    description: 'Amount (always positive - debit or credit is handled in own field)'
+    genericControls:
+      defColumnPos: 9
+  - name: 'BookingDate'
+    description: 'booking date'
+  - name: 'ValueDate'
+    description: 'value date'
+    genericControls:
+      defColumnPos: 1

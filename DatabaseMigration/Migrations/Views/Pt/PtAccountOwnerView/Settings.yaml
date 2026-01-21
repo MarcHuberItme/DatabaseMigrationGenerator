@@ -1,0 +1,32 @@
+view:
+  name: 'PtAccountOwnerView'
+  description: 'to show AccountNoEdited plus owner as TextShort in frontend'
+frontendView:
+  name: 'PtAccountOwnerView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAccountOwnerView'
+        helpText: 'PtAccountOwnerView'
+    - german:
+        formTitle: 'PtAccountOwnerView'
+        helpText: 'PtAccountOwnerView'
+    - french:
+        formTitle: 'PtAccountOwnerView'
+        helpText: 'PtAccountOwnerView'
+    - italian:
+        formTitle: 'PtAccountOwnerView'
+        helpText: 'PtAccountOwnerView'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true

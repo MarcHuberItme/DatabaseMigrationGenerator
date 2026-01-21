@@ -1,0 +1,35 @@
+table:
+  name: 'PtQuestionGroup'
+  description: 'Defines a group of question that can be used in partner administration'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'Label'
+    uiTableDescription:
+    - english:
+        formTitle: 'Partner Questions Group'
+        helpText: 'Partner Questions Group'
+    - german:
+        formTitle: 'Partner Questions Group'
+        helpText: 'Partner Questions Group'
+  columns:
+  - name: 'Label'
+    description: 'Label that identifies a question group'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 2
+  - name: 'Condition'
+    description: ''
+    genericControls:
+      defColumnPos: 3

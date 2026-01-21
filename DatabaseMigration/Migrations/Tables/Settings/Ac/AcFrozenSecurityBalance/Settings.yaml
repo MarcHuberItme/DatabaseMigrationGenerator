@@ -1,0 +1,263 @@
+table:
+  name: 'AcFrozenSecurityBalance'
+  description: 'Diese Tabelle enthält den monatlichen Snapshot der Wertschriftenbestände'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Frozen security balance'
+        helpText: 'Frozen security balance'
+    - german:
+        formTitle: 'Snapshot der WS-Bestände'
+        helpText: 'Snapshot der WS-Bestände'
+  columns:
+  - name: 'ReportDate'
+    description: 'Berichtsdatum'
+    genericControls:
+      isNoUpdate: true
+  - name: 'PartnerId'
+    description: 'PartnerId des Portfoliobesitzers (aus PtPortfolio)'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PortfolioId'
+    description: 'Portfolio Identifikation (aus PtPortfolio)'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PortfolioNo'
+    description: 'Portfolio Nr. (aus PtPortfolio)'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'PortfolioNo'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PortfolioTypeNo'
+    description: 'Portfoliotyp (aus PtPortfolio)'
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      isNoUpdate: true
+  - name: 'PortfolioLocGroupId'
+    description: 'Depotstellen-Gruppennummer (aus PtPortfolio)'
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PortfolioNostroTypeId'
+    description: 'Siehe PtPortfolio'
+    genericControls:
+      refTable: 'PtPortfolioNostroType'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PositionId'
+    description: 'Positionsidentifikation (PtPosition)'
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'ProdLocGroupId'
+    description: 'Depotstellen-Gruppennummer aus (PtPosition)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'PosNostroTypeId'
+    description: 'aus PtPosition'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Quantity'
+    description: 'Bestand'
+    genericControls:
+      isNoUpdate: true
+  - name: 'BeginDate'
+    description: ''
+  - name: 'MaturityDate'
+    description: 'Verfall gemäss PrReference bzw. Instrumentstammdaten (PrPublic/PrPublicCf)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'OutstandingInterestDueDate'
+    description: ''
+  - name: 'InterestRate'
+    description: 'Zinssatz gemäss Instrument (PrPublic/PrPublicCf)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ProductId'
+    description: 'ProduktIdentifkation (PrPublic)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsinNo'
+    description: 'IsinNo (PrPublic)'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'IsinNo'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'FundCatSchemeCode'
+    description: 'Fondstyp gemäss Instrumentstammdaten'
+    genericControls:
+      refTable: 'PrPublicFundCatScheme'
+      refField: 'FundCatSchemeCode'
+      isNoUpdate: true
+  - name: 'RefTypeNo'
+    description: 'Referenztyp gemäss Instrumentenstamm (PrPublic)'
+    genericControls:
+      refTable: 'PrPublicRefType'
+      refField: 'RefTypeNo'
+      isNoUpdate: true
+  - name: 'SecurityType'
+    description: 'Titelart gemäss Instumentenstamm (PrPublic)'
+    genericControls:
+      refTable: 'PrPublicSecurityType'
+      refField: 'SecurityType'
+      isNoUpdate: true
+  - name: 'InstrumentFormNo'
+    description: 'Instrumentenform gemäss Instrumentenstammdaten (PrPublic)'
+    genericControls:
+      refTable: 'PrPublicInstrumentForm'
+      refField: 'InstrumentFormNo'
+      isNoUpdate: true
+  - name: 'InstrumentTypeNo'
+    description: 'Instrumententyp gemäss Instrumentenstammdaten (PrPublic)'
+    genericControls:
+      refTable: 'PrPublicInstrumentType'
+      refField: 'InstrumentTypeNo'
+      isNoUpdate: true
+  - name: 'NamingPartnerId'
+    description: 'PartnerId des Instruments (PrPublic)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'RedemptionCode'
+    description: 'Rückzahlungscode (PrPublic)'
+    genericControls:
+      refTable: 'PrPublicRedemptionCode'
+      refField: 'RedemptionCode'
+      isNoUpdate: true
+  - name: 'InstrumentCountryCode'
+    description: 'Land für das Instrument'
+    genericControls:
+      isNoUpdate: true
+  - name: 'FundTypeNo'
+    description: 'Fondstyp'
+    genericControls:
+      refTable: 'PrPublicFundType'
+      refField: 'FundTypeNo'
+      isNoUpdate: true
+  - name: 'DepositTypeForFire'
+    description: 'Code für Art der Deckung im Fire'
+    genericControls:
+      refTable: 'AcFireDepositType'
+      refField: 'DepositTypeNo'
+      isNoUpdate: true
+  - name: 'PortfolioNoText'
+    description: 'PortfolioNr. als Textfeld'
+    genericControls:
+      isNoUpdate: true
+  - name: 'OwnSecurityValueHoCu'
+    description: 'Buchwert gemäss FIBU in Bilanzwährung (nur bei eigenen Positionen)'
+  - name: 'RankingNo'
+    description: 'Rang'
+    genericControls:
+      refTable: 'PrPublicRanking'
+      refField: 'RankingNo'
+  - name: 'Currency'
+    description: 'Währung'
+  - name: 'CodeC520'
+    description: 'Geschäftsart für Fire Feld C520'
+    genericControls:
+      refTable: 'AcFireC520'
+      refField: 'Code'
+      defColumnPos: 30
+  - name: 'FireStockExListingCode'
+    description: 'Kotierung Wertschriften für FiRE gemäss Datadictionary Fire'
+    genericControls:
+      refTable: 'AcFireStockExListing'
+      refField: 'ListingCode'
+  - name: 'IssuerPartnerId'
+    description: 'PartnerId des Emittenten'
+  - name: 'TimeUnitNo'
+    description: 'Periodizität der Ausschüttungen'
+    genericControls:
+      refTable: 'PrPublicTimeUnit'
+      refField: 'TimeUnitNo'
+  - name: 'InterestTypeNo'
+    description: 'Art der Zinszahlung (wiederkehrend, einmalig, ...)'
+    genericControls:
+      refTable: 'PrPublicInterestType'
+      refField: 'InterestTypeNo'
+  - name: 'MarketValueHoCu'
+    description: 'Marktwert in Bilanzwährung'
+  - name: 'AccruedInterestHoCu'
+    description: 'Marchzinsen in Bilanzwährung'
+  - name: 'NominalCurrency'
+    description: 'Nominalwährung'
+  - name: 'IsCustomer'
+    description: '1 = Kundenposition, 0 = eigene Wertschriften'
+  - name: 'CodeC541'
+    description: 'Wert für die Konsolidierung der Beteiligungen in FiRE'
+    genericControls:
+      refTable: 'AcFireC541'
+      refField: 'Code'
+  - name: 'CodeC533'
+    description: ''
+    genericControls:
+      refTable: 'AcFireC533'
+      refField: 'C533'
+  - name: 'PledgeKey'
+    description: 'Schlüssel für die Verknüpfung von Verpfändungen'
+  - name: 'DerivativeTypeNo'
+    description: 'Derivattyp'
+    genericControls:
+      refTable: 'AcDerivativeType'
+      refField: 'DerivativeTypeNo'
+  - name: 'UnderlyingMarketValueHoCu'
+    description: 'Wert des Underlying in Bilanzwährung'
+    minValue: '0'
+  - name: 'ContractValueHoCu'
+    description: 'Kontraktwert in Bilanzwährung'
+    minValue: '0'
+  - name: 'Delta'
+    description: 'Call Optionen haben ein Delta von 0 bis maximal 1.\r\nPut Optionen haben ein Delta von 0 bis -1\r\n\r\nOption ist ausserhalb des Geldes (Delta wird immer kleiner)\r\nOption ist at the money (Delta beträgt ca. 0,5)\r\nOption ist über den Strike (Delta näher sich einem Delta von 1)\r\nOption weit über den Strike (Delta = 1)'
+    minValue: '-1'
+    maxValue: '1'
+  - name: 'HQLA'
+    description: 'Information about quality of HQLA in SNB GC basket.'
+  - name: 'Pawned'
+    description: '1 = verpfändet\r\n0 = unbelastet, liquidirbar'
+  - name: 'CollNo'
+    description: 'Number of Collateral, from CoMevView2000'
+  - name: 'RemainingQuantity'
+    description: ''
+  - name: 'RemainingMarketValueHoCu'
+    description: 'Verbleibender Restwert der Position, nach Abzug der durch die Sicherheitenverwaltung eingebrachten Teilpositionen.'
+  - name: 'CollateralValueHoCu'
+    description: 'Zugewiesener Behlehnungswert aus CoMevView2000 (Feld PosCollateralValueCHFAdjust)'
+  - name: 'IsCollateral'
+    description: '1 = This record was imported form the collaterals (CoMevView2000)\r\n0 = This record was original from Portfolio Freeze (Original "FreezeSecuritesData")'
+  - name: 'QuarterlyBuyCHF'
+    description: 'Kàufe pro Quartal für Feld C569'
+  - name: 'QuarterlySellCHF'
+    description: 'Verkäufe pro Quartal für Feld C570'
+  - name: 'HQLAmanual'
+    description: 'Information about quality of HQLA in SNB GC basket (manually recorded).'
+  - name: 'PledgedAmount'
+    description: 'verpfändeter Betrag'
+  - name: 'PledgedTo'
+    description: 'verpfändet bis'
+  - name: 'Pledgee'
+    description: 'Pfandnehmer'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true

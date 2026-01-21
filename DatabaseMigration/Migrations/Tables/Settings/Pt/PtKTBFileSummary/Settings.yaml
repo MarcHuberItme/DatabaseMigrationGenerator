@@ -1,0 +1,60 @@
+table:
+  name: 'PtKTBFileSummary'
+  description: 'KTB file summary records'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FileImportProcessId'
+    description: ''
+    genericControls:
+      refTable: 'CMFileImportProcess'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransMessageInId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessageIn'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'MsgSequenceNumber'
+    description: 'Sequence number of the record in KTB file (Record_Seq_Nr)'
+  - name: 'TotalCreditN'
+    description: 'Total Credit from Normal transactions (including charges). = Sum(Field 22) with Field 21=0 and Field 52 =''N''\r\n+ Sum(Amount) with Field S21=0'
+  - name: 'NumCreditN'
+    description: 'Total number of normal credit transactions, counter for field TotalCreditN.'
+  - name: 'TotalDebitN'
+    description: 'Total Debit from Normal transactions (including charges). = Sum(Field 22) with Field 21=1 and Field 52 =''N''\r\n+ Sum(Amount) with Field S21=1'
+  - name: 'NumDebitN'
+    description: 'Total number of normal debit transactions, counter for field TotalDebitN.'
+  - name: 'TotalCreditR'
+    description: 'KTB Field  T25. Total credit from Reversals.\r\n= Sum(Field 22) with ReversalTypes > 0 and Field 21=0'
+  - name: 'NumCreditR'
+    description: 'counter for KTB field T25 (TotalCreditR)'
+  - name: 'TotalDebitR'
+    description: 'KTB Field  T27. Total Debit from Reversals.\r\n= Sum(Field 22) with ReversalTypes > 0 and Field 21=1'
+  - name: 'NumDebitR'
+    description: 'counter for KTB field T27 (TotalDebitR)'
+  - name: 'IsNetSettlementDebit'
+    description: 'Verr_Art_Total\r\n0 = Credit\r\n1 = Debit\r\nKTB field T31'
+  - name: 'TotalNetSettlement'
+    description: ''
+  - name: 'TotalNumTransactions'
+    description: ''
+  - name: 'SettlementCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'SettlementCurrencyNumber'
+    description: 'Numerischer ISO-Währungscode'
+  - name: 'CurrencyExponent'
+    description: ''
+  - name: 'MessageTypeIn'
+    description: ''

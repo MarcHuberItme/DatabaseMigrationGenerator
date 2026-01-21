@@ -1,0 +1,36 @@
+table:
+  name: 'PtSMSRecipient'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtSMSRecipient'
+        helpText: 'PtSMSRecipient'
+    - german:
+        formTitle: 'PtSMSRecipient'
+        helpText: 'PtSMSRecipient'
+  columns:
+  - name: 'ReqID'
+    description: ''
+    genericControls:
+      refTable: 'PtSMSReqProcess'
+      refField: 'Id'
+  - name: 'PartnerID'
+    description: ''
+  - name: 'MobileNo'
+    description: ''
+  - name: 'TransRefNo'
+    description: ''
+  - name: 'NeedConfirm'
+    description: ''
+  - name: 'DeliveryFailed'
+    description: ''

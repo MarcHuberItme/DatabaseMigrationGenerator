@@ -1,0 +1,3 @@
+view:
+  name: 'PtAgrSecurityAccountView'
+  description: 'show all accounts that use a security agreement as guaranty 10.04.2006'

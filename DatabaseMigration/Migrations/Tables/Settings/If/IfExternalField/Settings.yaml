@@ -1,0 +1,21 @@
+table:
+  name: 'IfExternalField'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'IfExternalKeyRecordId'
+    description: 'Id of the IfExternalKeyRecord that IfExternalField refers to.'
+    genericControls:
+      refTable: 'IfExternalKeyRecord'
+      refField: 'Id'
+  - name: 'FieldName'
+    description: 'Name of the external records field.'
+  - name: 'FieldValue'
+    description: 'Value of the external record''s field.'

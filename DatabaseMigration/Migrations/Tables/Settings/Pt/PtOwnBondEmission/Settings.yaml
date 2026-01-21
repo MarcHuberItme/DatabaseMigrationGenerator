@@ -1,0 +1,93 @@
+table:
+  name: 'PtOwnBondEmission'
+  description: 'Own Bond emission detail'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Own Bond emission'
+    - german:
+        formTitle: 'Kassenobligation Emission'
+  columns:
+  - name: 'PortfolioId'
+    description: 'customer portfolio id where the issued bond will be placed'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountRefId'
+    description: 'account to be debited... a customer account or the cash desk account'
+    genericControls:
+      refTable: 'PrReference'
+      refField: 'Id'
+  - name: 'CreditMode'
+    description: '0 = cash\r\n1 = customer account\r\n2 = intermediate account'
+    minValue: '0'
+    maxValue: '2'
+  - name: 'IsPhysicalBond'
+    description: '1 = it''s a physical bond 0 = it''s an electronic bond (buchforderung)'
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'BoolVal'
+  - name: 'ValueDate'
+    description: 'Valutadatum'
+  - name: 'ServiceCenterNo'
+    description: 'Geschäftsstelle'
+    genericControls:
+      refTable: 'AsProfitCenter'
+      refField: 'ProfitCenterNo'
+  - name: 'BondRefId'
+    description: ''
+    genericControls:
+      refTable: 'PrReference'
+      refField: 'Id'
+  - name: 'BondCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'BondValue'
+    description: 'total bond value'
+  - name: 'CashDeskAccountNo'
+    description: 'Kassenkonto'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+  - name: 'TransactionId'
+    description: 'Bookin information about this emission'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'BondEmissionCharge'
+    description: ''
+  - name: 'Period'
+    description: 'Laufzeit in Jahren'
+  - name: 'AgentId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'LanguageNo'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'ReceiptPrintDate'
+    description: 'in case the bond is sent to the customer by mail then\r\nwe have to print a receipt that has to be sent back with\r\nthe signature of the customer.'
+  - name: 'NetAmount'
+    description: ''
+  - name: 'SendBondByMail'
+    description: '1 = Bond will be sent by mail and customer sends back the receipt\r\n\r\nDifferent text has to be printed on the advice'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TextIntermediate'
+    description: ''

@@ -1,0 +1,120 @@
+view:
+  name: 'PtAccruedOwnSecurityDetailView'
+  description: 'used to collect all own bond, own trading and own investment for accrued closing booking\r\n2011-12-13/ram: Feld MaturityDate aus PrReferenceMaturityView anstelle PrReference im 2. Select\r\n2012.01.24 change for IssuerPartnerNoList'
+frontendView:
+  name: 'PtAccruedOwnSecurityDetailView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAccruedOwnSecurityDetai'
+        helpText: 'PtAccruedOwnSecurityDetailView'
+    - german:
+        formTitle: 'PtAccruedOwnSecurityDetai'
+        helpText: 'PtAccruedOwnSecurityDetailView'
+  columns:
+  - name: 'VaRunID'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'GroupName'
+    description: ''
+    dataType: 'varchar'
+    prec: 18
+    genericControls:
+      defColumnPos: 1
+  - name: 'PartnerID'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      defColumnPos: 1
+  - name: 'PtDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 103
+    genericControls:
+      defColumnPos: 1
+  - name: 'PortfolioID'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValuationDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PositionID'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+  - name: 'PosQuantity'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 4
+  - name: 'PosCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      defColumnPos: 5
+  - name: 'ISINNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+    genericControls:
+      defColumnPos: 6
+  - name: 'PositionDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 19
+    genericControls:
+      defColumnPos: 6
+  - name: 'RatePrCuCHF'
+    description: ''
+    dataType: 'float'
+    genericControls:
+      defColumnPos: 7
+  - name: 'MarketValueCHF'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 8
+  - name: 'AccruedInterestCHF'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 9
+  - name: 'MaturityDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 10
+  - name: 'ActualInterest'
+    description: ''
+    dataType: 'float'
+    genericControls:
+      defColumnPos: 11

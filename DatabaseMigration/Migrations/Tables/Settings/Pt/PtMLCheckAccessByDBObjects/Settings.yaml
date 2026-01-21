@@ -1,0 +1,132 @@
+table:
+  name: 'PtMLCheckAccessByDBObjects'
+  description: 'Personen mit Zugriff via E-Banking-Vertrag\r\nDB = Digital Banking'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccessByDBId'
+    description: ''
+    genericControls:
+      refTable: 'PtMLCheckAccessByDB'
+      refField: 'Id'
+  - name: 'AccessorPartnerId'
+    description: 'PtMLCheckAccessByDB.AccessorId'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Accessor'
+    description: 'PtDescriptionView.PtDescription'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'AccessedPartnerId'
+    description: 'PtMLCheckAccessByDB.AccessedPartnerId\r\nId des Kunden, auf welchen per Digital Banking zugegriffen wird'
+    genericControls:
+      isNoUpdate: true
+  - name: 'AccessedPartner'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'AccessedObject'
+    description: 'Art des Objekts, auf welches zugegriffen wird. Kann Konto oder Portfolio sein'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'AccessedObjectNoEdited'
+    description: 'editierte Nummer des Objekts, auf welches zugegriffen wird'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'AccessedObjectTypeNo'
+    description: 'Typ des Objekts (Kontoart, Portfoliotyp)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'AccessedObjectType'
+    description: 'AsText.TextShort'
+    genericControls:
+      isNoUpdate: true
+  - name: 'AccessedObjectCurrency'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'AccessedObjectReference'
+    description: 'Rubrik'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'ValidTo'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'InternetbankingAllowed'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'DefaultForPayment'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'QueryRestriction'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'QueryDetailRestriction'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'BalanceRestriction'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'OrderRestriction'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'PerformanceChartRestriction'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'SalaryPaymentRestriction'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'PaymentVisumNo'
+    description: ''
+    genericControls:
+      refTable: 'PtVisumNo'
+      refField: 'VisumNo'
+      isNoUpdate: true
+  - name: 'StandingOrderVisumNo'
+    description: ''
+    genericControls:
+      refTable: 'PtVisumNo'
+      refField: 'VisumNo'
+      isNoUpdate: true
+  - name: 'DTAVisumNo'
+    description: ''
+    genericControls:
+      refTable: 'PtVisumNo'
+      refField: 'VisumNo'
+      isNoUpdate: true
+  - name: 'IsToDelete'
+    description: 'Flag, welches angibt, ob ein Record gelöscht werden darf. Macht bei Stammdaten keinen Sinn'
+  - name: 'Comment'
+    description: 'Kommentar des Kunden'
+    genericControls:
+      multiLine: true
+  - name: 'CheckStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckDetailState'
+      refField: 'CheckDetailStateNo'
+      defColumnPos: 4
+      isNoUpdate: true

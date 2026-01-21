@@ -1,0 +1,41 @@
+table:
+  name: 'ReValueType'
+  description: 'Werte können auf  die nächst mögliche Stufe kumuliert werden. Eingaben sind aber nur auf einer Stufe möglich\r\nWERDEN FIX für die Programmierung verwendet !\r\nz.B. Gebäudeversicherung'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Value Type'
+    - german:
+        formTitle: 'Werttyp'
+  columns:
+  - name: 'ValueTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ForBase'
+    description: ''
+  - name: 'ForPremises'
+    description: ''
+  - name: 'ForBuilding'
+    description: ''
+  - name: 'PfBValueTypeNo'
+    description: 'If this value is not NULL, the value type is used for the Pfandbriefbank'
+  - name: 'IsInteractive'
+    description: '1 = allowed (manual input is possible)\r\n0 = not allowed (values are generated automatically)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'SortNo'
+    description: ''
+  - name: 'Deckpri'
+    description: 'Sofern am gleichen Tag/Uhrzeit zwei Werte vorhanden sind (RePremisesValues) wird definiert ab dieser Wert für die Deckungsaauscheidung relevant ist.\r\nDomain:\r\n0 - Wert für Deckungsuasscheidung ignorieren\r\n1-200 relevant für Deckungssausauscheidung\r\n(noch keine Prio umgesetzt  der View)'

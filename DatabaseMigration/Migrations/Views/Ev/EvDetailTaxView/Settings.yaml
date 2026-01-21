@@ -1,0 +1,123 @@
+view:
+  name: 'EvDetailTaxView'
+  description: ''
+frontendView:
+  name: 'EvDetailTaxView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'EventDetailId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ManTaxRegulationCode'
+    description: ''
+    dataType: 'char'
+    prec: 4
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+      defColumnPos: 1
+  - name: 'NodeSecondTree'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 2
+  - name: 'SlpEuInterestTaxCode'
+    description: ''
+    dataType: 'char'
+    prec: 4
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+  - name: 'ManEuInterestTaxCode'
+    description: ''
+    dataType: 'char'
+    prec: 4
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+      defColumnPos: 3
+  - name: 'TaxRegulationId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'Id'
+  - name: 'TaxCountry'
+    description: ''
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 4
+  - name: 'TaxReportClass'
+    description: ''
+    dataType: 'char'
+    prec: 1
+    genericControls:
+      refTable: 'EvTaxReportClass'
+      refField: 'TaxReportClass'
+      defColumnPos: 9
+  - name: 'ManuallyInput'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 10
+  - name: 'ValidFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'TaxRateId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 11
+  - name: 'TaxRatePendChanges'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      defColumnPos: 9
+  - name: 'TaxTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'EvTaxType'
+      refField: 'TaxTypeNo'
+      defColumnPos: 5
+  - name: 'TaxRateDebit'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 6
+  - name: 'TaxRateDa'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 7
+  - name: 'TaxRateReclaim'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 8

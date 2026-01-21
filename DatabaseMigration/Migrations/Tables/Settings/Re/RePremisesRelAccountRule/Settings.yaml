@@ -1,0 +1,26 @@
+table:
+  name: 'RePremisesRelAccountRule'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'RePremisesRelAccountRule'
+        helpText: 'RePremisesRelAccountRule'
+    - german:
+        formTitle: 'RePremisesRelAccountRule'
+        helpText: 'RePremisesRelAccountRule'
+  columns:
+  - name: 'RuleNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

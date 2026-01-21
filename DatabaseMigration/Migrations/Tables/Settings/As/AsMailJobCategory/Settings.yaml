@@ -1,0 +1,31 @@
+table:
+  name: 'AsMailJobCategory'
+  description: 'Categories of MailOutput Jobs:\r\n1 = internal Mail (including detour groups)\r\n2 = ESR\r\n3 = externally printed mail (without detour groups)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Mail Job Category'
+    - german:
+        formTitle: 'Druckkategorie'
+  columns:
+  - name: 'JobCategoryNo'
+    description: 'Number of the Category'
+    genericControls:
+      noUpdatePos: 1
+  - name: 'MailConfigSetNo'
+    description: 'A Mail-Config set, which contains the necessary document add-ons, can be assigen ed to a job category.'
+    genericControls:
+      refTable: 'AsMailConfigSet'
+      refField: 'SetNo'
+      noUpdatePos: 2
+  - name: 'Command'
+    description: 'Batch-Command that has to be exrcuted after building the PDF-Stream'

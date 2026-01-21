@@ -1,0 +1,66 @@
+table:
+  name: 'PtESGPreference'
+  description: 'ESG-Preference (Environment, Social and Governance) per Partner/Portfolio'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+  columns:
+  - name: 'PartnerId'
+    description: 'ForeignKey to PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'ESGPreferenceTypeId'
+    description: 'ForeignKey to AsESGPreferenceType'
+    genericControls:
+      refTable: 'AsESGPreferenceType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidTo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'Text'
+    description: 'Remarks'
+    genericControls:
+      multiLine: true
+  - name: 'CreatedBy'
+    description: 'Name of the one who has created the ESG-Preference'
+    genericControls:
+      defColumnPos: 5
+  - name: 'CreatedAt'
+    description: 'Date when the ESG-Preference was created'
+    genericControls:
+      defColumnPos: 6
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'ContactReportId'
+    description: ''
+    genericControls:
+      refTable: 'PtContactReportSelectView'
+      refField: 'Id'
+      hasDetailBtn: true

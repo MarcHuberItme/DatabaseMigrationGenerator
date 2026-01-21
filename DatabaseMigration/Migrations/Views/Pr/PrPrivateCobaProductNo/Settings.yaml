@@ -1,0 +1,3 @@
+view:
+  name: 'PrPrivateCobaProductNo'
+  description: 'Zeigt alle Produkte an, die den Korrespondenzbanken zugeordnet sind'

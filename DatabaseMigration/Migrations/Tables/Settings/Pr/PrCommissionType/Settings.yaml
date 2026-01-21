@@ -1,0 +1,90 @@
+table:
+  name: 'PrCommissionType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Commission Type'
+    - german:
+        formTitle: 'Kommissionsart'
+  columns:
+  - name: 'CommissionTypeNo'
+    description: 'Idenitficaion of the commission type'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PricePeriod'
+    description: 'Time periode on that the prices in the table ''PrCommissionPrice'' are based.\r\nThe period is given as a number of months.\r\nNULL = in case of daily / or if periode is irrelevant'
+    minValue: '1'
+    maxValue: '12'
+    genericControls:
+      defColumnPos: 3
+  - name: 'MigValue'
+    description: 'Vrx Migration Value (KOMMART)'
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'BeginBalanceNegative'
+    description: 'If True then if BalanceValueBegin is negative then the balance to add to the basis value for calculating the commission\r\n(Baukredit: d.h. negativer Anfangssaldo wird zum Sollumsatz addiert)'
+  - name: 'BeginBalancePositive'
+    description: 'If True then if BalanceValueBegin is positive then the balance to add to the basis value for calculating the commission'
+  - name: 'DebitVolume'
+    description: 'If True the DebitVolume (Sollumsatz)  is to include'
+  - name: 'CreditVolume'
+    description: 'If True the CreditVolume (Habenumsatz) is to include'
+  - name: 'MaxDebit'
+    description: 'If True then MaxDebit (Höchster Sollsaldo) is to include - gemäss Valutadatum / per Valuedate'
+  - name: 'MaxCredit'
+    description: 'If True then MaxCredit (höchster Habensaldo) is to include'
+  - name: 'AdditionalRuleNo'
+    description: 'A rule no, used for addressing a hard coded rule for additional requirement that cannot specified with the existing parameters. \r\nNot needed so far!'
+  - name: 'CommissionPerDay'
+    description: 'This commission is applied based no of days when transaction has happened\r\nCommPrice * NumberOfDays\r\n\r\n\r\nnot to be used any more --> new table PrExpenseType 24.11.2005/mct'
+  - name: 'CommissionPerMonth'
+    description: 'This commission is applied based no of months when transaction between transbegin and transend\r\nCommPrice * NumberOfmonths\r\n\r\nnot to be used any more --> new table PrExpenseType 24.11.2005/mct'
+  - name: 'CommissionAtClosing'
+    description: 'This commission is applied once per closing\r\n\r\nnot to be used any more --> new table PrExpenseType 24.11.2005/mct'
+  - name: 'CommissionAtFinalTermination'
+    description: 'This commission is applied when customer is closing its account\r\n\r\nnot to be used any more --> new table PrExpenseType 24.11.2005/mct'
+  - name: 'IsExpense'
+    description: 'Expenses occured on Closing are treated as special kind of commisions.\r\n\r\nnot to be used any more --> new table PrExpenseType 24.11.2005/mct'
+  - name: 'AvgBalanceNegative'
+    description: 'This commission is applied on InterestNosNegative Values'
+  - name: 'AvgUnusedCreditLimit'
+    description: 'This commission is applied on ProvisionNosNegative Values'
+  - name: 'MaxPercentage'
+    description: 'Maxium value in relation to the debit interest, \r\ne.g. 50 % means that the commission may not be higher than 50 % of the interest.\r\nIf <Null> no limitation has to be respected.'
+  - name: 'DailyStatement'
+    description: 'Kosten für Tagesauzug\r\n\r\nnot to be used any more --> new table PrExpenseType 24.11.2005/mct'
+  - name: 'PeriodicalStatement'
+    description: 'Kosten für periodische / regelmässige Auszüge (automatischer Abruf aufgrund Regel)\r\n\r\nnot to be used any more --> new table PrExpenseType 24.11.2005/mct'
+  - name: 'AdditionalStatement'
+    description: 'Kosten für ausserordentliche Auszüge (Einzelabruf)\r\n\r\nnot to be used any more --> new table PrExpenseType 24.11.2005/mct'
+  - name: 'AdditionalClosingCalculation'
+    description: '1 = Spesen bei ausserordentlichen Abschlussberechnungen (ohne Verbuchung) z.B. Todesfall-Bescheinigung \r\n\r\nnot to be used any more --> new table PrExpenseType 24.11.2005/mct'
+  - name: 'PaymentFreeOfCharge'
+    description: '1 = Zahlungsverkehr ist kostenlos\r\n\r\nnot to be used any more --> new table PrExpenseType 24.11.2005/mct'
+  - name: 'MgMigRate'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'CorrItemGroupId'
+    description: 'Group of corr items on which this commission type is applicable. \r\nUsed in:\r\n  - Mail charging (commission type 200 & 201)\r\n\r\nnot to be used any more --> new table PrExpenseType 24.11.2005/mct'
+    genericControls:
+      refTable: 'AsCorrItemGroup'
+      refField: 'Id'
+  - name: 'TransChargeTypeNo'
+    description: 'Trans charge type no that corresponds to this commission type.\r\nUsed in:\r\n  - Mailing system, corr type costs.\r\n\r\nnot to be used any more --> new table PrExpenseType 24.11.2005/mct'
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'ChargeNo'

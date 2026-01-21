@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CyImportCurrencyRates'
+  description: 'Read cyRateImport and CyRecentRate for Rate Import Gui\r\n30.03.2016/wwp read RI3 with HdVersionNo between 1 and 999999998'

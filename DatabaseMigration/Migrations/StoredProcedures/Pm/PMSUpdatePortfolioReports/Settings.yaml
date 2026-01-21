@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PMSUpdatePortfolioReports'
+  description: 'This procedure recalculates the year to date (YTD) and the total performance for a given portfolio number (or any in case of ''null''). Any record (PmPerfReport) with a valuation date later than ''From'' date will be affected.'

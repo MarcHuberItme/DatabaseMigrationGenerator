@@ -1,0 +1,71 @@
+view:
+  name: 'PtTransFrontDeskChargesView'
+  description: ''
+frontendView:
+  name: 'PtTransFrontDeskChargesView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransMessageId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+  - name: 'TransItemId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PositionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'TransChargeTypeId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'Id'
+  - name: 'ValueDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'RelatedToDebit'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsDebitAmount'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'AmountChargeCurrency'
+    description: ''
+    dataType: 'money'
+  - name: 'Amount'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+  - name: 'AmountValue'
+    description: ''
+    dataType: 'money'
+  - name: 'ImmediateCharge'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Comment'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100

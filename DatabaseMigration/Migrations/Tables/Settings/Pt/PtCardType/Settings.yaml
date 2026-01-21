@@ -1,0 +1,78 @@
+table:
+  name: 'PtCardType'
+  description: 'object of the card, for example credit, debit, etc.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Card Type'
+    - german:
+        formTitle: 'Kartentyp'
+    - french:
+        formTitle: 'Type de carte'
+  columns:
+  - name: 'CardType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'TemplateNo'
+    description: ''
+    genericControls:
+      refTable: 'PtCardRohling'
+      refField: 'TemplateNo'
+  - name: 'DebitFunction'
+    description: ''
+  - name: 'CreditFunction'
+    description: ''
+  - name: 'DepositFunction'
+    description: ''
+  - name: 'IdentificationFunction'
+    description: 'used for PKI smartcards'
+  - name: 'IsForCashierDeskKeyboard'
+    description: ''
+  - name: 'InternallyProduced'
+    description: 'i.e. "Schalterkarte"'
+  - name: 'IsAccountRelated'
+    description: ''
+  - name: 'TKOrder'
+    description: 'is ordered viaTelekurs'
+  - name: 'MgtStringFormat'
+    description: '0-9 : Actual Number\r\nX : Wild Card for any character\r\nM: Number (for month)\r\nY: Number (for year)\r\nA: Number (for AccountNumber)\r\nN: Number (for CardNumber)'
+  - name: 'MgtStringRegularExpression'
+    description: ''
+  - name: 'TKCardType'
+    description: 'Code for CardType used from Telekurs\r\nPossible values:\r\n0 Maestro card\r\n1 Debit mastercard\r\n2 V PAY card\r\n3 Visa debit\r\n6 Bank card'
+  - name: 'IsMultiAccountCardType'
+    description: '1= this Cardtype can be used for multiaccount function'
+  - name: 'DateLimit'
+    description: 'After this date, the card product valid for display (history), but no new entries are possible.'
+  - name: 'ProcessorNo'
+    description: 'Determine the type of processor to be used for processing card changes.'
+    genericControls:
+      refTable: 'PtCardTypeProcessorType'
+      refField: 'ProcessorNo'
+  - name: 'FormProfileName'
+    description: 'Name of the Profile in FsCardAdmin.frmCard2'
+  - name: 'SequenceName'
+    description: ''
+    genericControls:
+      refTable: 'AsSequence'
+      refField: 'SequenceName'
+  - name: 'NoPowerOfAttorneyNeeded'
+    description: 'Bezieht sich nur auf Karten, welche auf dem kontoführenden Stamm im Zusammenhang mit einer Kontaktperson erfasst werden.'
+  - name: 'ServiceType'
+    description: ''
+    genericControls:
+      refTable: 'PtCardServiceType'
+      refField: 'ServiceType'
+  - name: 'IsRelevantForRevGWG'
+    description: ''

@@ -1,0 +1,75 @@
+view:
+  name: 'PtPositionSecuritiesTrMessView'
+  description: ''
+frontendView:
+  name: 'PtPositionSecuritiesTrMessView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Position data incl TrMess'
+    - german:
+        formTitle: 'PositionsDaten inkl TrMes'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'Quantity'
+    description: ''
+    dataType: 'money'
+  - name: 'PositionCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'ReferenceData'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'PublicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'InstrumentTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicInstrumentType'
+      refField: 'InstrumentTypeNo'
+  - name: 'NominalCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'IsinNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+  - name: 'UnitNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'ShortName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 19
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'Type'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+  - name: 'TransNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 12

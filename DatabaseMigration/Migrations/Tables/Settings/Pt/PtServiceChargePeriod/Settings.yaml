@@ -1,0 +1,111 @@
+table:
+  name: 'PtServiceChargePeriod'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtServiceChargePeriod'
+        helpText: 'PtServiceChargePeriod'
+    - german:
+        formTitle: 'PtServiceChargePeriod'
+        helpText: 'PtServiceChargePeriod'
+  columns:
+  - name: 'ChargeJobNo'
+    description: ''
+    genericControls:
+      refTable: 'PtServiceChargeExecJob'
+      refField: 'JobNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ServiceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtServiceNameList'
+      refField: 'ServiceTypeNo'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'PartnerID'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'PartnerNo'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+      defColumnPos: 3
+  - name: 'ChargePeriodNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'Currency'
+    description: ''
+  - name: 'ChargeAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'VATTaxRate'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'TaxAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'PeriodBegin'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'PeriodEnd'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'DebitAccountID'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 11
+  - name: 'CalculationDate'
+    description: ''
+    genericControls:
+      defColumnPos: 12
+  - name: 'BookingDate'
+    description: ''
+    genericControls:
+      defColumnPos: 13
+  - name: 'ReportingDate'
+    description: ''
+    genericControls:
+      defColumnPos: 14
+  - name: 'ReverseDate'
+    description: ''
+    genericControls:
+      defColumnPos: 15
+  - name: 'TransactionID'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitAccountCurrency'
+    description: ''
+  - name: 'DebitAmountAcctCu'
+    description: ''
+  - name: 'TaxAmountAcctCu'
+    description: ''
+  - name: 'ExRate'
+    description: ''

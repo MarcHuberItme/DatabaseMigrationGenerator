@@ -1,0 +1,27 @@
+view:
+  name: 'ReBCIndexView'
+  description: 'Creates a list of all banks which are customers of the Pfandbriefbank.'
+frontendView:
+  name: 'ReBCIndexView'
+  description: 'Front End View containing the SWISS Banking Number of the customer banks of the Pfandbriefbank. Used to fill a generic combobox.'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 4
+    uiTableDescription:
+    - english:
+        formTitle: 'Swiss banking Numbers'
+    - german:
+        formTitle: 'BC Verzeichnis Pfb-Kunden'
+  columns:
+  - name: 'BCNumber'
+    description: ''
+    dataType: 'smallint'
+  - name: 'BankName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 60

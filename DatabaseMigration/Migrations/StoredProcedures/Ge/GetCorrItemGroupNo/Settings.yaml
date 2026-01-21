@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetCorrItemGroupNo'
+  description: 'to get the default-correspondence of a certain partner'

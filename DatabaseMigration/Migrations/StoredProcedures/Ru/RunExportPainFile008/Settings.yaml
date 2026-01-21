@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'RunExportPainFile008'
+  description: 'Generating LSV invoices pain 008 files for SIX.\r\nadded rule for tenant AWI + ASGA 14.12.2021/mct\r\nPtAddress.NameLine instead of FullAddress 22.03.2022/tsh\r\nCheck for HdVersionNo for PtAccountDirectDebiting and PtExternalAccountMap 28.03.2022/tsh\r\nMoved the block with write the LsvExportDateTime stamp to the end of the SP 29.03.2022/tsh'

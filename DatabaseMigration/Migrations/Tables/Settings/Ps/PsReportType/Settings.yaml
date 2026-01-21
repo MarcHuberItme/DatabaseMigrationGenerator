@@ -1,0 +1,23 @@
+table:
+  name: 'PsReportType'
+  description: 'Types of Reports'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Report Types'
+    - german:
+        formTitle: 'Reportarten'
+  columns:
+  - name: 'ReportTypeNo'
+    description: 'Type of report'
+    genericControls:
+      defColumnPos: 1

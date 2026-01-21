@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'UpdateExposureValue'
+  description: 'Updates ExposureValue, ExposureDate in RePledgeRegister, called after the PledgeRegisters were sent to the Pfandbriefbank'

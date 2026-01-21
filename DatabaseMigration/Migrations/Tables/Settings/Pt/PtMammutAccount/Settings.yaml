@@ -1,0 +1,24 @@
+table:
+  name: 'PtMammutAccount'
+  description: 'List of accounts interfaced with Mammut'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'LastEsrFileTransDate'
+    description: 'Last TransDate for which the Esr file was created for account'
+  - name: 'IsIso20022Format'
+    description: ''

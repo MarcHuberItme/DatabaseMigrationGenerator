@@ -1,0 +1,40 @@
+table:
+  name: 'PtPaymentCardChargeSetting'
+  description: 'Settings for charges involved in card payment'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'CardTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtCardType'
+      refField: 'CardType'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ChageTypeInterchangeFee'
+    description: ''
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'ChargeNo'
+      defColumnPos: 2
+  - name: 'ChageTypeTransactionFee'
+    description: ''
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'ChargeNo'
+      defColumnPos: 3
+  - name: 'SchemeFeeAccount'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ProcessingFeeAccount'
+    description: ''
+    genericControls:
+      defColumnPos: 5

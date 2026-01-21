@@ -1,0 +1,24 @@
+table:
+  name: 'PtHuntingTemplate'
+  description: 'To store the letter templates used in Partner Hunting'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PtHuntingId'
+    description: ''
+    genericControls:
+      refTable: 'PtHunting'
+      refField: 'Id'
+  - name: 'TemplateId'
+    description: ''
+    genericControls:
+      refTable: 'AsTemplate'
+      refField: 'Id'
+  - name: 'SendDate'
+    description: 'The date when the letter is sent to the customer'

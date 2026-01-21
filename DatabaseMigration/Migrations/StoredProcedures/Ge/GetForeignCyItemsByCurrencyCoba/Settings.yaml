@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetForeignCyItemsByCurrencyCoba'
+  description: 'select correspondence bank bookins on the specified range of valuedate for the given currency'

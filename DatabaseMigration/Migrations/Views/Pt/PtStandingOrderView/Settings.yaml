@@ -1,0 +1,113 @@
+view:
+  name: 'PtStandingOrderView'
+  description: 'View for searching standing orders'
+frontendView:
+  name: 'PtStandingOrderView'
+  description: 'frontend view for partner standing order search'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'standing order search'
+    - german:
+        formTitle: 'Übersicht Daueraufträge'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'OrderNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PeriodRuleNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 2
+  - name: 'PeriodRuleBase'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4
+    genericControls:
+      defColumnPos: 3
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 4
+  - name: 'PaymentAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 5
+  - name: 'PayeeId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsPayee'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'CreditAccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'Beneficary'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      defColumnPos: 8
+  - name: 'TransTypeOrig'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransTypeOrig'
+      refField: 'TransTypeOrig'
+      defColumnPos: 9
+  - name: 'FullPayment'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 10
+  - name: 'NextSelectionDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 11

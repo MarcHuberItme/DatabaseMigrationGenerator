@@ -1,0 +1,24 @@
+table:
+  name: 'PtCheckMatchCategory'
+  description: 'Match category of Person Check.\r\nActually, it contains the result categories of ''Telekurs PEP-Check'''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Check Match Category'
+    - german:
+        formTitle: 'Checkergebnis-Kategorie'
+  columns:
+  - name: 'CategoryNo'
+    description: 'Number of the check category'
+    genericControls:
+      defColumnPos: 1

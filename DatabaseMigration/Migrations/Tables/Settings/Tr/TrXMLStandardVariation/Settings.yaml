@@ -1,0 +1,27 @@
+table:
+  name: 'TrXMLStandardVariation'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'XML Standard Variation'
+        helpText: 'XML Standard Variation'
+    - german:
+        formTitle: 'XML Standard Variation'
+        helpText: 'XML Standard Variation'
+    - french:
+        formTitle: 'XML Standard Variation'
+        helpText: 'XML Standard Variation'
+  columns:
+  - name: 'VariationCode'
+    description: ''
+    genericControls:
+      defColumnPos: 1

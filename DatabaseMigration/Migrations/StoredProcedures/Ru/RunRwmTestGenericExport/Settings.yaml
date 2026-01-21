@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'RunRwmTestGenericExport'
+  description: 'this is a test that will produce an output. will be used to generate export files'

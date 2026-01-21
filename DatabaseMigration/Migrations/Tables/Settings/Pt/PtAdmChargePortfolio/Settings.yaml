@@ -1,0 +1,150 @@
+table:
+  name: 'PtAdmChargePortfolio'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargePortfolio'
+        helpText: 'PtAdmChargePortfolio'
+    - german:
+        formTitle: 'PtAdmChargePortfolio'
+        helpText: 'PtAdmChargePortfolio'
+  columns:
+  - name: 'ChargeJobID'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeExecJob'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PortfolioID'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'AdmChargeType'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeSubType'
+      refField: 'SubTypeNo'
+      defColumnPos: 2
+  - name: 'PortfolioNoEdited'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsVVPortfolio'
+    description: ''
+  - name: 'IsVAPortfolio'
+    description: ''
+  - name: 'MetalAccountID'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'MetalAccountNoEdited'
+    description: ''
+  - name: 'DebitAccountID'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'ChargeAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'TaxAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'DebitAccountCurrency'
+    description: ''
+  - name: 'ExRate'
+    description: ''
+  - name: 'DebitAmountAcctCu'
+    description: ''
+  - name: 'TaxAmountAcctCu'
+    description: ''
+  - name: 'CalculationDate'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'BookingDate'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'ReportingDate'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'TransactionID'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'InlandRabatt'
+    description: ''
+  - name: 'InlandDiscountAmount'
+    description: ''
+  - name: 'VVChargeRate'
+    description: ''
+  - name: 'VAChargeRate'
+    description: ''
+  - name: 'Gebant'
+    description: ''
+  - name: 'AdHocRebate'
+    description: ''
+  - name: 'ReverseDate'
+    description: ''
+  - name: 'StaffRebate'
+    description: ''
+  - name: 'ChargeAmountBk'
+    description: ''
+  - name: 'TaxAmountBk'
+    description: ''
+  - name: 'ProRataRate'
+    description: ''
+  - name: 'ForPositionLink'
+    description: ''
+  - name: 'EffectiveAmount'
+    description: ''
+  - name: 'EffectiveRate'
+    description: ''
+  - name: 'AdmChargeRebate'
+    description: ''
+  - name: 'DepotSelected'
+    description: ''
+  - name: 'AccountSelected'
+    description: ''
+  - name: 'ExcludeNegativeAccount'
+    description: ''
+  - name: 'PeriodFrom'
+    description: ''
+  - name: 'PeriodTo'
+    description: ''
+  - name: 'IsExCustody'
+    description: ''
+  - name: 'TaxableCharge'
+    description: 'VA charge amount for tax declaration'
+  - name: 'TaxableVAT'
+    description: 'VA charge VAT amount for tax declaration'
+  - name: 'DebitSelection'
+    description: ''
+  - name: 'TotalAsset'
+    description: ''

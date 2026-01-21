@@ -1,0 +1,25 @@
+table:
+  name: 'PtPositionClassificationType'
+  description: 'Classification type of the splitting of the quantitiy or Value of a position'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Position Classification'
+    - german:
+        formTitle: 'Positionseinteilungstyp'
+  columns:
+  - name: 'ClassificationTypeNo'
+    description: 'Classification type of the splitting of the quantitiy or Value of a position'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

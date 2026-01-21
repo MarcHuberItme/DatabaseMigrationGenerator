@@ -1,0 +1,3 @@
+view:
+  name: 'MgAvProdAccountMappingInitView'
+  description: 'View For Avobis Product Mapping to Abwicklungskonto\r\nThis view is needed only at migration time to initialize the correctly the balance of the credit side when automated booking is performed'

@@ -1,0 +1,27 @@
+table:
+  name: 'PsReportRelation'
+  description: 'Technical table to link reports and subreports. This table is maintained by the check-in functionality of FsReportAdmin'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Report Relations'
+    - german:
+        formTitle: 'Reportbeziehungen'
+  columns:
+  - name: 'MainReportId'
+    description: 'Id of the main report.'
+    genericControls:
+      refTable: 'PsReportFile'
+      refField: 'Id'
+  - name: 'SubReportId'
+    description: 'Id of the subreport'
+    genericControls:
+      refTable: 'PsReportFile'
+      refField: 'Id'

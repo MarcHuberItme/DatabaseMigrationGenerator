@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'FreezeAccountData'
+  description: '04.10.2024/daga: Konto Stammdaten - add condition for terminated accounts with balance <> 0'

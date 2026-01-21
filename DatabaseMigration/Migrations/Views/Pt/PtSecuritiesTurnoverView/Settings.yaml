@@ -1,0 +1,3 @@
+view:
+  name: 'PtSecuritiesTurnoverView'
+  description: 'Prepares the data for securities ''TurnoverRegister'' report'

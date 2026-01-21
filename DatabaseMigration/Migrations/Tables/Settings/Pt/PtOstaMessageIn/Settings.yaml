@@ -1,0 +1,14 @@
+table:
+  name: 'PtOstaMessageIn'
+  description: 'Incoming messages from OSTA (Online to Standortbank) containing inventory change information for bank owned ATMs'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Message'
+    description: ''

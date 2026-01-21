@@ -1,0 +1,41 @@
+table:
+  name: 'ReConstructionType'
+  description: 'Gebäudekonstruktion /  Construction Type\r\n\r\n\r\n\r\nFIS-2000: GR_KONSTR_ART_CD (Codes entsprechen 1:1 den Werten aus FIS-2000 (GR_KONSTR_KRIT_CD)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Construction Type'
+    - german:
+        formTitle: 'Gebäudekonstruktion'
+  columns:
+  - name: 'ConstructionType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ForBuildingType01'
+    description: 'if checked this record is shown in the drop down of the BuildingType01'
+  - name: 'ForBuildingType02'
+    description: 'if checked this record is shown in the drop down of the BuildingType02'
+  - name: 'ForBuildingType03'
+    description: 'if checked this record is shown in the drop down of the BuildingType03'
+  - name: 'ForBuildingType04'
+    description: 'if checked this record is shown in the drop down of the BuildingType04'
+  - name: 'ForBuildingType07'
+    description: 'if checked this record is shown in the drop down of the BuildingType07'
+  - name: 'ForBuildingType10'
+    description: 'if checked this record is shown in the drop down of the BuildingType10'
+  - name: 'ForBuildingType15'
+    description: 'if checked this record is shown in the drop down of the BuildingType15'
+  - name: 'ForBuildingType90'
+    description: 'if checked this record is shown in the drop down of the BuildingType90'
+  - name: 'SortNo'
+    description: ''

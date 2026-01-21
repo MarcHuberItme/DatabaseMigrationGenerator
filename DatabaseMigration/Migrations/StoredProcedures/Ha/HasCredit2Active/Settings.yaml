@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'HasCredit2Active'
+  description: 'Return value of system parameter: Credit.HasCredit2Active'

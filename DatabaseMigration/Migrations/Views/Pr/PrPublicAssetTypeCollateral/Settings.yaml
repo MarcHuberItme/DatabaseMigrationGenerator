@@ -1,0 +1,3 @@
+view:
+  name: 'PrPublicAssetTypeCollateral'
+  description: 'View for th AD-HOC Report "CollateralRateException"'

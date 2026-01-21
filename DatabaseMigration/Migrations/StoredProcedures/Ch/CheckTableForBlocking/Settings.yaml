@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CheckTableForBlocking'
+  description: '--- MARKED TO BE REMOVED --- (if no one is using it)'

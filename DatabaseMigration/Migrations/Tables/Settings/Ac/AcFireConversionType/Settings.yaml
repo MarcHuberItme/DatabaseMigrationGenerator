@@ -1,0 +1,26 @@
+table:
+  name: 'AcFireConversionType'
+  description: 'Fiere Field Conversion Type'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Fiere Field Conversion Ty'
+        helpText: 'Fiere Field Conversion Type'
+    - german:
+        formTitle: 'Fiere Field Conversion Ty'
+        helpText: 'Fiere Field Conversion Type'
+  columns:
+  - name: 'ConversionTypeNo'
+    description: '0 = No action, use database default value\r\n1 = Set individual default Value\r\n2 = Use source value\r\n3 = Use AsInterfaceConversion\r\n4 = Use internal dynamic conversion\r\n5 = Call special internal method'
+    genericControls:
+      defColumnPos: 1

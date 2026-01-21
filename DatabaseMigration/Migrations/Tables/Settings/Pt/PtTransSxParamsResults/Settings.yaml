@@ -1,0 +1,96 @@
+table:
+  name: 'PtTransSxParamsResults'
+  description: 'Table with the calculated results of the params'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransSxParamsId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxParams'
+      refField: 'Id'
+  - name: 'TestStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxTestStatusNo'
+      refField: 'TestStatusNo'
+      defColumnPos: 4
+  - name: 'Quantity'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Price'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'TradeCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'AccountCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ManOwnCommission'
+    description: ''
+  - name: 'ManBrokerageCommission'
+    description: ''
+  - name: 'ManSWXVirtXFee'
+    description: ''
+  - name: 'ManEurexFee'
+    description: ''
+  - name: 'ManUKStampDuty'
+    description: ''
+  - name: 'ManFedTurnoverTax'
+    description: ''
+  - name: 'ManUSBackupWithholdingTax'
+    description: ''
+  - name: 'ManEuTax'
+    description: ''
+  - name: 'SysOwnCommission'
+    description: ''
+  - name: 'SysBrokerageCommission'
+    description: ''
+  - name: 'SysSWXVirtXFee'
+    description: ''
+  - name: 'SysEurexFee'
+    description: ''
+  - name: 'SysUKStampDuty'
+    description: ''
+  - name: 'SysFedTurnoverTax'
+    description: ''
+  - name: 'SysUSBackupWithholdingTax'
+    description: ''
+  - name: 'SysEuTax'
+    description: ''
+  - name: 'MarketValue'
+    description: ''
+  - name: 'MaturityDate'
+    description: ''
+  - name: 'InterestRate'
+    description: ''
+  - name: 'AccruedInterest'
+    description: ''
+  - name: 'InterestBearingDays'
+    description: ''
+  - name: 'MaturityInDays'
+    description: ''
+  - name: 'MaturityInYears'
+    description: ''
+  - name: 'MarketValuePlusAccruedInterest'
+    description: ''
+  - name: 'SumInTradeCurrency'
+    description: ''
+  - name: 'SumInAccountCurrency'
+    description: ''
+  - name: 'ExchangeRate'
+    description: ''

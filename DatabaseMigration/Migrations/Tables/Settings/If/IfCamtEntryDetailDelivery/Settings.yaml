@@ -1,0 +1,145 @@
+table:
+  name: 'IfCamtEntryDetailDelivery'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'TransformId'
+    description: ''
+    genericControls:
+      refTable: 'IfDeliveryHistory'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'EntryId'
+    description: ''
+    genericControls:
+      refTable: 'IfCamtEntryDelivery'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Amount'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'CreditDebitIndicator'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'EndToEndId'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'Reference'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ReferenceType'
+    description: 'ISR Reference, QRR or SCOR'
+  - name: 'OrderingPartyAddress'
+    description: 'Ordering Party Full Address\r\nPrecision accoring to source table'
+    genericControls:
+      multiLine: true
+  - name: 'BeneficiaryAddress'
+    description: 'Beneficiary''s address\r\nPrecision accoring to source table'
+    genericControls:
+      multiLine: true
+  - name: 'BeneficiaryName'
+    description: 'Full beneficiary name.'
+  - name: 'BeneficiaryStreetName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'BeneficiaryBuildingNo'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'BeneficiaryPostCode'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'BeneficiaryTownName'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'BeneficiaryCountry'
+    description: '1-1 to ISO 20022 Message'
+  - name: 'UltimateDebtorAddress'
+    description: ''
+  - name: 'UltimateDebtorName'
+    description: ''
+  - name: 'UltimateDebtorStreetName'
+    description: ''
+  - name: 'UltimateDebtorBuildingNo'
+    description: ''
+  - name: 'UltimateDebtorPostCode'
+    description: ''
+  - name: 'UltimateDebtorTownName'
+    description: ''
+  - name: 'UltimateDebtorCountry'
+    description: ''
+  - name: 'UltimateCreditorAddress'
+    description: ''
+  - name: 'UltimateCreditorName'
+    description: ''
+  - name: 'UltimateCreditorStreetName'
+    description: ''
+  - name: 'UltimateCreditorBuildingNo'
+    description: ''
+  - name: 'UltimateCreditorPostCode'
+    description: ''
+  - name: 'UltimateCreditorTownName'
+    description: ''
+  - name: 'UltimateCreditorCountry'
+    description: ''
+  - name: 'DebtorAccount'
+    description: ''
+  - name: 'CreditorAccount'
+    description: ''
+  - name: 'AdditionalInformation'
+    description: 'TransText / BeneficiaryMessage'
+    genericControls:
+      multiLine: true
+  - name: 'UnstructuredRmtInf'
+    description: ''
+  - name: 'AcctSvcrReference'
+    description: ''
+  - name: 'TotalChargesAndTaxAmount'
+    description: ''
+  - name: 'TotalChargesAndTaxCurrency'
+    description: ''
+  - name: 'OrderingPartyName'
+    description: 'Debtor name'
+  - name: 'OrderingPartyStreetName'
+    description: ''
+  - name: 'OrderingPartyBuildingNo'
+    description: ''
+  - name: 'OrderingPartyPostCode'
+    description: ''
+  - name: 'OrderingPartyTownName'
+    description: ''
+  - name: 'OrderingPartyCountry'
+    description: ''
+  - name: 'TxCode'
+    description: ''
+  - name: 'TxFamilyCode'
+    description: ''
+  - name: 'TxSubFamilyCode'
+    description: ''
+  - name: 'OrderingPartyAddressLine1'
+    description: 'Address line for hybrid address'
+  - name: 'OrderingPartyAddressLine2'
+    description: 'Address line for hybrid address'
+  - name: 'BeneficiaryAddressLine1'
+    description: 'Address line for hybrid address'
+  - name: 'BeneficiaryAddressLine2'
+    description: 'Address line for hybrid address'
+  - name: 'UltimateDebtorAddressLine1'
+    description: 'Address line for hybrid address'
+  - name: 'UltimateDebtorAddressLine2'
+    description: 'Address line for hybrid address'
+  - name: 'UltimateCreditorAddressLine1'
+    description: 'Address line for hybrid address'
+  - name: 'UltimateCreditorAddressLine2'
+    description: 'Address line for hybrid address'

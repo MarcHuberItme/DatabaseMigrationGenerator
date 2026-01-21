@@ -1,0 +1,64 @@
+view:
+  name: 'CMPaymentSubmissionStatusView'
+  description: 'The view serves as a centralized status dashboard for payment submissions, tracking their lifecycle from initial import through to final processing status (acceptance or rejection).'
+frontendView:
+  name: 'CMPaymentSubmissionStatusView'
+  description: 'The view serves as a centralized status dashboard for payment submissions, tracking their lifecycle from initial import through to final processing status (acceptance or rejection). \r\n\r\nCreated for data class generation purpose.\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PaymentSubmissionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'CMFileImportProcess'
+      refField: 'Id'
+  - name: 'CreateDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'ChangeDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'PaymentSubmissionStatus'
+    description: ''
+    dataType: 'nchar'
+    isNotNull: true
+    prec: 4
+  - name: 'MessageId'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'ReasonCode'
+    description: ''
+    dataType: 'nchar'
+    prec: 4
+  - name: 'InstructionItemStatus'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4
+  - name: 'ReasonInformation'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 2000
+  - name: 'DebtorAccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ApprovingAgreementId1'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ApprovingAgreementId2'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'InstructionId'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50

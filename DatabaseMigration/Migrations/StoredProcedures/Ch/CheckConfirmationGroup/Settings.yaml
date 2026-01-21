@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CheckConfirmationGroup'
+  description: '- Delivers information about confirmation group\r\n- Updates status from 3 (group pending) to 4(fully confirmed,not activated), if applicable'

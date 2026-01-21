@@ -1,0 +1,38 @@
+table:
+  name: 'PtSWIFTTradeChargeType'
+  description: 'Mapping table for Amount qualifier'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'PtSWIFTTradeChargeType'
+        helpText: 'PtSWIFTTradeChargeType'
+    - german:
+        formTitle: 'PtSWIFTTradeChargeType'
+        helpText: 'PtSWIFTTradeChargeType'
+  columns:
+  - name: 'ChargeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'ChargeNo'
+      defColumnPos: 1
+  - name: 'TextNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      defColumnPos: 2
+  - name: 'AmountQualifier'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ChargeCurrencyRule'
+    description: '0, origin\r\n1, title\r\n2, account'

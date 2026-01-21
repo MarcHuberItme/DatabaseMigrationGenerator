@@ -1,0 +1,43 @@
+table:
+  name: 'PrPublicKeyFigureMapping'
+  description: 'with this table each key figure for each provider can be defined'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Key figure mapping'
+        helpText: 'Key figure mapping'
+    - german:
+        formTitle: 'Kennzahl Mapping'
+        helpText: 'Kennzahl Mapping'
+  columns:
+  - name: 'ProviderNo'
+    description: 'i.e. 1 (Edgelab)'
+    genericControls:
+      refTable: 'PrPublicKeyFigureProvider'
+      refField: 'ProviderNo'
+      defColumnPos: 1
+  - name: 'KeyFigureTypeNo'
+    description: 'i.e. 1 (PRC)'
+    genericControls:
+      refTable: 'PrPublicKeyFigureType'
+      refField: 'KeyFigureTypeNo'
+      defColumnPos: 2
+  - name: 'ProviderKeyFigureName'
+    description: 'i.e. Edgelab PRC'
+    genericControls:
+      defColumnPos: 3
+  - name: 'CurrencyDefault'
+    description: 'default currency: use this currency if Portfolio-Currency is not an available currency (PrPublicKeyFigureCurrency)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 4

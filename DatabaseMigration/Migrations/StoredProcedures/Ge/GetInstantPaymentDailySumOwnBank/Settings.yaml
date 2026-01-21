@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetInstantPaymentDailySumOwnBank'
+  description: 'Returns the sum for all executed instant payments for the given sender account of the given day, for OwnBank.'

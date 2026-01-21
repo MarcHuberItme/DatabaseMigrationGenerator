@@ -1,0 +1,36 @@
+table:
+  name: 'AsParameter'
+  description: 'Contains all program parameters, evry parameter belongs to one parameter group of AsParameterGroup'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Parameter'
+    - german:
+        formTitle: 'Parameter'
+    - french:
+        formTitle: 'Parameter'
+  columns:
+  - name: 'ParamGroupId'
+    description: 'Foreign Key that identifies the Parameter Group the parameter belongs to.'
+    genericControls:
+      refTable: 'AsParameterGroup'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'Name'
+    description: 'Parameter Name'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Value'
+    description: 'Parameter Value'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Description'
+    description: 'Short Description of the parameter'

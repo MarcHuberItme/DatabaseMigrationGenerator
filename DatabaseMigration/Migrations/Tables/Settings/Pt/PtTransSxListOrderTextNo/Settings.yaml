@@ -1,0 +1,28 @@
+table:
+  name: 'PtTransSxListOrderTextNo'
+  description: 'Table to translate the output of the softlogic SxOrderRestriction for listingorders.\r\nIn a listingorder it is necessary to present the corresponding Portfolio. That''s why it needs another AsMessagText.TextNo than a single order.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ListingOrder TextNo'
+        helpText: 'Translation table for listingorder TextNo from SxOrderRestriction'
+    - german:
+        formTitle: 'ListingOrder TextNo'
+        helpText: 'Übersetzungs-Tabelle für Listenaufträge TextNo von SxOrderRestriction'
+  columns:
+  - name: 'TextNo'
+    description: 'Output of the softlogic SxOrderRestriction'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TextNoListingOrder'
+    description: 'TextNo used for listingorder'

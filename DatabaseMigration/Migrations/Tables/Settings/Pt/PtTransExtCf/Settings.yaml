@@ -1,0 +1,52 @@
+table:
+  name: 'PtTransExtCf'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'External cash flows'
+    - german:
+        formTitle: 'Externe Kapitalflüsse'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'TransMessageId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+  - name: 'PositionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+  - name: 'AccountCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'InflowAmountAcCu'
+    description: 'External cashflow:\r\nInflow amount to the portfolio in account currency'
+  - name: 'CashDrainAmountAcCu'
+    description: 'External cashflow:\r\nCash drain amount from the portfolio in account currency'
+  - name: 'PortfolioCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'InflowAmountPfCu'
+    description: 'External cashflow:\r\nInflow amount to the portfolio in portfolio currency'
+  - name: 'CashDrainAmountPfCu'
+    description: 'External cashflow:\r\nCash drain amount from the portfolio in porfolio currency'

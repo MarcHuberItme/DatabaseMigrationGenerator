@@ -1,0 +1,3 @@
+view:
+  name: 'PtTransItemMLLastYearView'
+  description: 'All Main ledger account bookings (PtTransItem)\r\nThis view is used for the external auditors data export that is performed at the beginning of every year (MJET)'

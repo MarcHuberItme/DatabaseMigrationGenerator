@@ -1,0 +1,60 @@
+table:
+  name: 'ReCoProperty'
+  description: 'Liegenschaft hat Miteigentumsanteile an einem GB-Nummer, welche im System nicht erfasst ist.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'ReNote'
+      parentRelationField: 'NoteId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Co Property'
+    - german:
+        formTitle: 'Miteigentumsanteil'
+  columns:
+  - name: 'NoteId'
+    description: 'Anmerkung'
+    genericControls:
+      refTable: 'ReNote'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      createNavigationIndex: true
+  - name: 'UnitTypeNo'
+    description: 'GR_EIGTANT_EINH_CD'
+    genericControls:
+      refTable: 'ReCoUnitType'
+      refField: 'UnitTypeNo'
+  - name: 'Number'
+    description: 'EIGTANT_EINH_ANT'
+  - name: 'Amount'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Denominator'
+    description: 'Nenner zum Eigentumsanteil'
+  - name: 'Designation'
+    description: 'MITEIGT_BEZ'
+    genericControls:
+      multiLine: true
+  - name: 'GBNo'
+    description: ''
+  - name: 'GBNoAdd'
+    description: ''
+  - name: 'GBPlanNo'
+    description: ''
+  - name: 'Remark'
+    description: 'BEM'
+    genericControls:
+      multiLine: true
+      defColumnPos: 4

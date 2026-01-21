@@ -1,0 +1,80 @@
+view:
+  name: 'CoListView'
+  description: 'A list view used for collaterals api to get all collaterals of  a partner in a slim object with  generic fields.'
+frontendView:
+  name: 'CoListView'
+  description: 'A table definition that helps generating C# code for the actual CoListView view behind.\r\nThis table is not created as an actual SQL db.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+    genericControls:
+      isNoUpdate: true
+  - name: 'TypeName'
+    description: 'TypeName of the collateral, e.g. "Account", "CustodyAccount", "Guarantee", "InsurancePolicy", "RightOfLien", "Other". The value depends on TypeNo.'
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 30
+    genericControls:
+      isNoUpdate: true
+  - name: 'TypeNo'
+    description: 'TypeNo of the collateral. One of \r\n1000 = account\r\n\n2000 = custodyAccount\r\n\n4000 = guarantee\r\n\n5000 = insurancePolicy\r\n\n6000 = other\r\n\n7000 = RightOfLien\r\nThe name version is available in the TypeName property.'
+    dataType: 'smallint'
+    isNotNull: true
+  - name: 'SubTypeNo'
+    description: 'A bank-individual subtypeNo for the collateral that  serves as detail-categorization.'
+    dataType: 'smallint'
+    isNotNull: true
+  - name: 'SubTypeId'
+    description: 'Id of the subtype, pointing to CoSubtype.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'SubTypeTranslationKey'
+    description: 'AsText.TextLong that shall in the future contain the translationKey for the collateral subtype.'
+    dataType: 'nvarchar'
+    prec: 500
+  - name: 'OwnerId'
+    description: 'FK to the owning PtBase.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'SequenceNumber'
+    description: 'Unique SequenceNumber of the Collateral.'
+    dataType: 'int'
+    isNotNull: true
+    isUnique: true
+  - name: 'IsInactive'
+    description: 'Whether the collateral is inactive or not.'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ActivationDate'
+    description: 'Date when the collateral has been activated.'
+    dataType: 'datetime'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ReferenceId'
+    description: 'Points to the the object inside Finstar which defines the collateral''s underlying security. The table which it points to depends on the collateral type.\r\n1000 = (PtAccountBase) moneyAccount\n\r\n2000 = (PtPortfolio) investmentPortfolio\r\n\n4000 = (CoBase) guaranteeCollateral\r\n\n5000 = (PrInsurancePolice) insurancePolicyCollateral\n\r\n6000 = (CoBase) otherCollateral\r\n\n7000 = (ReObligation) RightOfLien'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'Value'
+    description: 'Only specific collateral types have a value:\r\n4000 Guarantee\r\n6000 Other'
+    dataType: 'money'
+  - name: 'LanguageNo'
+    description: 'The languageNo of the description field.\r\nSome collaterals have a description that cannot be translated. In that case the languageNo is NULL.\r\nWhen searching this view you should always specify a condition like\r\n... AND (LanguageNo = 2 OR LanguageNo IS NULL)'
+    dataType: 'tinyint'
+  - name: 'Description'
+    description: 'A text description of the collateral which is assembled from multiple fields and text.\r\nThe values contain labels for translaction with marked with {label} and some values and texts that are already translated to the LanguageNo language, where AsText is available.'
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 200

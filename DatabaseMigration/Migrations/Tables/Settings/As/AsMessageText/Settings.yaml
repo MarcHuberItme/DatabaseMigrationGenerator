@@ -1,0 +1,27 @@
+table:
+  name: 'AsMessageText'
+  description: 'table with messages and errors to give back to the enduser'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 2
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Message text'
+    - german:
+        formTitle: 'Meldungstext'
+  columns:
+  - name: 'TextNo'
+    description: 'Number of the text to be showed to the enduser. Negative numbers refers to information, positive numbers to errors.'
+  - name: 'LanguageNo'
+    description: 'Number of the text language'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'Text'
+    description: 'Text of the message to be showed to the enduser.'

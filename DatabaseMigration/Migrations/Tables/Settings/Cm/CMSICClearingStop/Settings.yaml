@@ -1,0 +1,36 @@
+table:
+  name: 'CMSICClearingStop'
+  description: 'Maintains information about the Clearing stop for SIC Communication system'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'VariationId'
+    description: ''
+    genericControls:
+      refTable: 'CMSICVariation'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ClearingDate'
+    description: ''
+  - name: 'ClearingStop1'
+    description: ''
+  - name: 'ClearingStop2'
+    description: ''
+  - name: 'ClearingStop3'
+    description: ''
+  - name: 'BCNo'
+    description: ''
+  - name: 'TransRefNo'
+    description: ''
+  - name: 'ClearingDayInfoId'
+    description: ''
+    genericControls:
+      refTable: 'CMSICClearingDayInfo'
+      refField: 'Id'

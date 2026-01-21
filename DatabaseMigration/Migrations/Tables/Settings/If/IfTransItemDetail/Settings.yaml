@@ -1,0 +1,142 @@
+table:
+  name: 'IfTransItemDetail'
+  description: 'detail information of a booking entry\r\nremove of VATCalculation field'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransItemDetailId'
+    description: ''
+  - name: 'ExtractId'
+    description: ''
+  - name: 'TransItemId'
+    description: 'FK from PtTransItem (Collector Item)'
+    genericControls:
+      refTable: 'PtTransItem'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'MessageId'
+    description: 'Copy from original ''PtTransItem'' record'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'TransMsgStatusNo'
+    description: 'This field has 4 possible status:\r\n- NULL = normal\r\n- this original transaction is cancelled\r\n- this is a cancellation transaction\r\n- Rektifikat'
+    genericControls:
+      refTable: 'PtTransMsgStatus'
+      refField: 'TransMsgStatusNo'
+  - name: 'RealDate'
+    description: 'Copy from original ''PtTransItem'' record'
+  - name: 'DebitQuantity'
+    description: 'Copy from original ''PtTransItem'' record'
+    genericControls:
+      isNoUpdate: true
+  - name: 'DebitAmount'
+    description: 'Copy from original ''PtTransItem'' record'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CreditQuantity'
+    description: 'Copy from original ''PtTransItem'' record'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CreditAmount'
+    description: 'Copy from original ''PtTransItem'' record'
+    genericControls:
+      defColumnPos: 2
+  - name: 'SourceCvAmountTypeNo'
+    description: 'Amount type for booking in the portfolio bookkeeping (also called as cost value system)'
+    genericControls:
+      refTable: 'PtTransCvAmountType'
+      refField: 'CvAmountTypeNo'
+  - name: 'TextNo'
+    description: 'Copy from original ''PtTransItem'' record'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      defColumnPos: 3
+  - name: 'ServiceCenterNo'
+    description: 'Copy from original ''PtTransItem'' record'
+    genericControls:
+      refTable: 'AsProfitCenter'
+      refField: 'ProfitCenterNo'
+      isNoUpdate: true
+  - name: 'Project'
+    description: 'Copy from original ''PtTransItem'' record'
+  - name: 'PeriodFrom'
+    description: 'Copy from original ''PtTransItem'' record'
+    genericControls:
+      isNoUpdate: true
+  - name: 'PeriodTo'
+    description: 'Copy from original ''PtTransItem'' record'
+    genericControls:
+      isNoUpdate: true
+  - name: 'BudgetValue'
+    description: 'Copy from original ''PtTransItem'' record'
+    genericControls:
+      isNoUpdate: true
+  - name: 'VatCode'
+    description: 'Copy from original ''PtTransItem'' record'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TransText'
+    description: 'Copy from original ''PtTransItem'' record'
+    genericControls:
+      multiLine: true
+      defColumnPos: 4
+  - name: 'CompletionDate'
+    description: 'Date to decide if transaction operations have definitely finished and if the record can be stored into archive storage'
+  - name: 'IsClosingItem'
+    description: '0 = false = no closing item\r\n1 = true = is closing item (=Abschlussbuchung)\r\nCopy from original ''PtTransItem'' record'
+  - name: 'TransactionId'
+    description: 'Id of original transaction (Table PtTransaction)'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransItemCreationTime'
+    description: 'Copy of value ''HdCreateDate'' from corresponding original record in table ''PtTransItem'''
+  - name: 'SourceKey'
+    description: 'Copy of value ''SourceKey'' from corresponding original record in table ''PtTransItem'''
+  - name: 'CardNo'
+    description: 'Copy of value ''CardNo'' from corresponding original record in table ''PtTransItem'''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ClearingNo'
+    description: '- Clearing number of card issuing bank (for ATM transactions only)'
+    genericControls:
+      defColumnPos: 6
+  - name: 'SourcePositionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SourceAmountCvAcCu'
+    description: 'Amount in currency of source position (field SourcePositionId) for cost value system'
+  - name: 'CvAmountTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransCvAmountType'
+      refField: 'CvAmountTypeNo'
+  - name: 'AmountCvAcCu'
+    description: ''
+  - name: 'CvBookStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtCvBookStatus'
+      refField: 'CvBookStatusNo'
+  - name: 'SourceCvBookStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtCvBookStatus'
+      refField: 'CvBookStatusNo'
+  - name: 'SourcePosIsCvRelevant'
+    description: ''

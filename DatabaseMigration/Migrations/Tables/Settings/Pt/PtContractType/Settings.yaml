@@ -1,0 +1,94 @@
+table:
+  name: 'PtContractType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Contract Type'
+    - german:
+        formTitle: 'Kontraktart'
+  columns:
+  - name: 'ContractType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ProductNo'
+    description: 'Product for the money market contract. The product'
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      hasDetailBtn: true
+  - name: 'MinimumAmount'
+    description: 'The minimum amount that should be invested to open a certain type of money market contract. This field is no more used. The limits have been moved to table ''PtContractLimit'''
+  - name: 'IsDebit'
+    description: 'Indicates if direct money market contract with the partner. Debits the partner account (partner is investing) or credits the partner current account.'
+  - name: 'IsFxTrade'
+    description: 'Determines if the contract type is for forex trade.'
+  - name: 'VisumNeeded'
+    description: 'Determines if a contract requires a "visum"  before confirmation'
+  - name: 'IsCallContract'
+    description: 'If true then contract type defines a call contract'
+  - name: 'IsFiduciary'
+    description: 'Specifies if the contract type defines a fiduciary contract'
+  - name: 'OrderTypeCapitalPayment'
+    description: 'Order Type number for capital payment'
+    genericControls:
+      refTable: 'PtPaymentOrderType'
+      refField: 'OrderTypeNo'
+  - name: 'AllowMultipleInvestors'
+    description: 'Specifies if the contract can have multiple investors. If true the contract must have more than one investing parties.'
+  - name: 'NumAdvanceClosingDay'
+    description: 'Number of days in advance a contract should be selected for closing'
+  - name: 'FiduciaryBorrowProductNo'
+    description: 'Product number for fiduciary borrower'
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      hasDetailBtn: true
+  - name: 'IsRepo'
+    description: 'Flag specifies if the money market is Repo'
+  - name: 'EmissionsabgabeRate'
+    description: 'This is the rate in Percentage for calculation of Emissionsabgabe. If it is 0 then no Emissionsabgabe will be calculated.'
+  - name: 'IsBond'
+    description: ''
+  - name: 'CapitalPaybackRequired'
+    description: '0 = Default , Message Box will be displayed with Yes/No Choice\r\n1 = Prolongation with capital payback, No Message Box\r\n2 = Force prolongation without capital payback. No Message Box\r\n'
+  - name: 'FiduciaryCommOnLender'
+    description: '1= Fiduciary commission is paid by lender\r\n0 = Fiduciary commission is paid by borrower'
+  - name: 'PeriodRuleNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+  - name: 'PeriodRuleBase'
+    description: ''
+  - name: 'NeedPeriodicClosing'
+    description: ''
+  - name: 'IsFxSpot'
+    description: ''
+  - name: 'IsToAllowCrossMonthSel'
+    description: '0 = Advance selection cannot cross into the next month\r\n1 = Advance selection can go into the next month'
+  - name: 'UseCapitalAccountCorr'
+    description: 'preferred MMAccount correspondence from capital account. default is from portfolio correspondence'
+  - name: 'IsBankSideFxContract'
+    description: ''
+  - name: 'PostBookingContractStatus'
+    description: 'Value for PtContract.Status after bookings have been generated. This value is set by the booking generation modules e.g. FsTransaction.BookForex.FsForexTransaction'
+    genericControls:
+      refTable: 'PtContractStatus'
+      refField: 'ContractStatusNo'
+  - name: 'NkkFreePeriodDays'
+    description: 'number of days for this NKKFreePeriod (in case of cembra it''s 30 days)\r\nNULL - contract has No NKKfreePeriod\r\nNicht Kündigungskommission\r\ncommission on the amount that was not announced before'
+  - name: 'IsTransferable'
+    description: ''

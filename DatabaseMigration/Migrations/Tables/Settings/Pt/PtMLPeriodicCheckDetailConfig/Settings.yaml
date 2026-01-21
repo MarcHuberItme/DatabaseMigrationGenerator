@@ -1,0 +1,63 @@
+table:
+  name: 'PtMLPeriodicCheckDetailConfig'
+  description: 'definiert welche einzelnen Schritte der Detailprüfungen durchgeführt werden ollen'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML detail checks config'
+    - german:
+        formTitle: 'GWG Detailprüfung Konfig'
+    - french:
+        formTitle: 'Conf.vérifi.détaillées ML'
+    - italian:
+        formTitle: 'ML detail checks config'
+  columns:
+  - name: 'TemplateNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckTemplates'
+      refField: 'TemplateNo'
+      defColumnPos: 1
+  - name: 'StepNo'
+    description: 'Detailprüfungs-Schritt'
+    genericControls:
+      multiLine: true
+      refTable: 'PtMLPeriodicCheckDetailSteps'
+      refField: 'DetailCheckStepNo'
+      defColumnPos: 2
+  - name: 'IsActive'
+    description: 'Flag, welches definiert, ob diese Detailprüfung für diese Bank und diesen Kundentypen aktiviert ist.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'DataTable'
+    description: ''
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 4
+  - name: 'ConfigTable'
+    description: ''
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 5
+  - name: 'DataSelection'
+    description: 'The query that will be executed'
+    genericControls:
+      multiLine: true
+  - name: 'ParentReferenceTable'
+    description: 'Tablename of the Parent Table to display the hierarchy'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'ParentReferenceFieldName'
+    description: 'the Field Name of the Parent Table Reference FK'

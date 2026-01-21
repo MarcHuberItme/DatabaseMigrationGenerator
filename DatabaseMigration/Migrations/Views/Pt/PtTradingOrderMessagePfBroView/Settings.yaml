@@ -1,0 +1,145 @@
+view:
+  name: 'PtTradingOrderMessagePfBroView'
+  description: '17.11.2025/wwo: undo change made for 3.52 (OrderNAVAmount) the view is used for update the Broker-OrderQuantity.'
+frontendView:
+  name: 'PtTradingOrderMessagePfBroView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TradingOrderId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTradingOrder'
+      refField: 'Id'
+  - name: 'IsStockExOrder'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'StockExRef'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+  - name: 'TradingSystemId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTradingSystem'
+      refField: 'Id'
+  - name: 'TraderPrintoutStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PreferredPublicListingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicListingView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PriceCorrectionFactor'
+    description: 'only necessary if there is no prpubliclisting (to create a prpubliclisting-record automatically)'
+    dataType: 'money'
+  - name: 'NonVerse'
+    description: 'only necessary if there is no prpubliclisting (to create a prpubliclisting-record automatically)'
+    dataType: 'money'
+  - name: 'PriceQuoteType'
+    description: 'only necessary if there is no prpubliclisting (to create a prpubliclisting-record automatically)'
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicPriceQuoteType'
+      refField: 'PriceQuoteType'
+  - name: 'PublicTradingPlaceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsOffExchange'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'LocGroupId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+  - name: 'OrderDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'OrderQuantity'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'Quantity'
+    description: ''
+    dataType: 'money'
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'SecurityPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SecurityPrReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SettlementRate'
+    description: 'used for brokers without a corresponding foreign account'
+    dataType: 'float'
+  - name: 'AccountPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountPrReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountRate'
+    description: 'not used'
+    dataType: 'float'
+  - name: 'PortfolioSxBrokerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioSxBroker'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsOtcDerivat'
+    description: 'Flag if it''s an OTC Derivat'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsNotBestExecution'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'

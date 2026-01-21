@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxCreateTaxReportTransactionInitEnd'
+  description: 'List of all security balances per date\r\n'

@@ -1,0 +1,38 @@
+table:
+  name: 'PtPaymentOrderTypeRule'
+  description: 'Assignment - PtPaymnetOrderType vs Rule'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Business Rule Assignment'
+        helpText: 'Business Rule Assignment'
+    - german:
+        formTitle: 'Geschäftsregeln Zuweisung'
+        helpText: 'Zuweisung von Geschäftsregeln'
+    - french:
+        formTitle: 'Attrib. de règles métier'
+        helpText: 'Attribution de règles métier'
+  columns:
+  - name: 'PaymentOrderTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderType'
+      refField: 'OrderTypeNo'
+      defColumnPos: 1
+  - name: 'RuleNo'
+    description: ''
+    genericControls:
+      refTable: 'AsBusinessRule'
+      refField: 'RuleNo'
+      defColumnPos: 2
+  - name: 'SequenceNo'
+    description: ''

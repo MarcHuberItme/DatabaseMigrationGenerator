@@ -1,0 +1,93 @@
+table:
+  name: 'AsDocScanFailure'
+  description: 'contains the details for each scanner output file, that could not automatically be processed by the scanner import programm.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Document Scan Failures'
+        helpText: 'Document Scan Failures'
+    - german:
+        formTitle: 'Scanner Import Fehler'
+        helpText: 'Scanner Import Fehler'
+    - french:
+        formTitle: 'Échecs numérisation docum'
+  columns:
+  - name: 'ScanSourceId'
+    description: ''
+    genericControls:
+      refTable: 'AsDocScanSource'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'BatchName'
+    description: 'Scanner batch name'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'FileName'
+    description: 'scanner output filename'
+    genericControls:
+      isNoUpdate: true
+  - name: 'FileSize'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'ScanDate'
+    description: 'scanner output date'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'ScanUser'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'BarcodeValue'
+    description: 'barcode value of the scanned document'
+    genericControls:
+      isNoUpdate: true
+  - name: 'NumberOfPages'
+    description: 'number of pages of the output file'
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'DocumentNo'
+    description: 'document number of the output file'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ScanErrorNo'
+    description: ''
+    genericControls:
+      refTable: 'AsDocScanError'
+      refField: 'ScanErrorNo'
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'FailureReasonId'
+    description: 'Possible failure reasons'
+    genericControls:
+      refTable: 'AsDocScanFailureReason'
+      refField: 'Id'
+  - name: 'ScanStatusNo'
+    description: 'document import status'
+    genericControls:
+      refTable: 'AsDocScanStatus'
+      refField: 'ScanStatusNo'
+      defColumnPos: 8
+      isNoUpdate: true
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ScanProcessId'
+    description: ''
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'

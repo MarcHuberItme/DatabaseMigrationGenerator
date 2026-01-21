@@ -1,0 +1,46 @@
+table:
+  name: 'MgReValuationExt'
+  description: 'table for migration into ReValuationExt'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PremisesId'
+    description: ''
+  - name: 'BuildingId'
+    description: ''
+  - name: 'ValuationExtTypeNo'
+    description: ''
+  - name: 'ValuationDate'
+    description: ''
+  - name: 'PartnerRelId'
+    description: ''
+  - name: 'ReasonTypeNo'
+    description: ''
+  - name: 'RealValue'
+    description: ''
+  - name: 'EarningValue'
+    description: ''
+  - name: 'MarketValue'
+    description: ''
+  - name: 'SelfRentValue'
+    description: ''
+  - name: 'TaxValue'
+    description: ''
+  - name: 'LimitOfEncumbrances'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'MigrationId'
+    description: ''
+  - name: 'MigrationDate'
+    description: ''
+  - name: 'MigrationStatus'
+    description: ''

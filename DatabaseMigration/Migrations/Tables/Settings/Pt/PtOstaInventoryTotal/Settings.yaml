@@ -1,0 +1,34 @@
+table:
+  name: 'PtOstaInventoryTotal'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'OSTA Inventory Total'
+    - german:
+        formTitle: 'OSTA Bestandstotal'
+  columns:
+  - name: 'InventoryId'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaInventory'
+      refField: 'Id'
+  - name: 'Service'
+    description: ''
+    genericControls:
+      refTable: 'PtOstaServiceType'
+      refField: 'Value'
+  - name: 'Amount'
+    description: ''
+  - name: 'Currency'
+    description: ''
+  - name: 'TransactionCount'
+    description: ''

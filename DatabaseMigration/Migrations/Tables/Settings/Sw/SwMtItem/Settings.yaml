@@ -1,0 +1,48 @@
+table:
+  name: 'SwMtItem'
+  description: 'Items of MT940'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      isNavigationRoot: true
+      rootTable: 'SwMtItem'
+      parentTable: 'ROOT'
+  columns:
+  - name: 'MTAccountId'
+    description: ''
+    genericControls:
+      refTable: 'SwMtAccount'
+      refField: 'Id'
+  - name: 'MessageNumber'
+    description: 'AUSZU'
+  - name: 'TransItemId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItem'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransDate'
+    description: 'TransDate of TransItem'
+  - name: 'ValueDate'
+    description: 'ValueDate of TransItem'
+  - name: 'CreditDebit'
+    description: 'C / D for Credit or Debit'
+  - name: 'Currency'
+    description: 'Last Sign of ISO Currency Symbol\r\nF for CHF'
+  - name: 'Amount'
+    description: 'Amount of TransItem'
+  - name: 'MultiPurposeField'
+    description: 'Field 86 from SWIFT MT940 Datastructure'
+  - name: 'Transmitted'
+    description: '0 = false = not transmitted'
+  - name: 'ProcessId'
+    description: 'Data preparation processId. Use to update records at day end after relevant files has been created'

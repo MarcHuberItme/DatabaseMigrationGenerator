@@ -1,0 +1,67 @@
+table:
+  name: 'PtChild'
+  description: 'Children of a partner (for financial-consulting)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Child'
+    - german:
+        formTitle: 'Kinder'
+    - french:
+        formTitle: 'Enfants'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key; Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'Name'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Firstname'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'DateOfBirth'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'SexStatusNo'
+    description: 'foreign-key;  candidate-key of PtSexStatus (SexStatusNo)'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+  - name: 'Education'
+    description: ''
+  - name: 'EducationEnd'
+    description: ''
+  - name: 'EducationCosts'
+    description: 'eductation cost of a child (used for financial planning)'
+  - name: 'FinancialAidFlag'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Nationality'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'

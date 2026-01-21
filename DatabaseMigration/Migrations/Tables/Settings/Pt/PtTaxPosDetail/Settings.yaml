@@ -1,0 +1,63 @@
+table:
+  name: 'PtTaxPosDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TaxPosId'
+    description: ''
+    genericControls:
+      refTable: 'PtTaxPos'
+      refField: 'Id'
+  - name: 'TransItemId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItem'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PositionIncomeId'
+    description: ''
+    genericControls:
+      refTable: 'PtPositionIncome'
+      refField: 'Id'
+  - name: 'TransDate'
+    description: ''
+  - name: 'TransText'
+    description: ''
+  - name: 'Quantity'
+    description: ''
+  - name: 'BaseQuantity'
+    description: ''
+  - name: 'TaxableAmountHoCu'
+    description: ''
+  - name: 'TaxAmountDaHoCu'
+    description: ''
+  - name: 'TradePriceCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'TradePrice'
+    description: ''
+  - name: 'TaxableAmountPrCu'
+    description: 'Origin TaxAmount with position currency/payment currency for eSTVZ'
+  - name: 'RatePrCuHoCu'
+    description: 'exchange rate from position currency to home currency for eSTVZ'
+  - name: 'PrPyCurrency'
+    description: 'account currency or dividend payment currency for eSTVZ'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'ExDate'
+    description: ''
+  - name: 'IncomeTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'EvIncomeType'
+      refField: 'IncomeTypeNo'

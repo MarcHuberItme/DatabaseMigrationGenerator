@@ -1,0 +1,38 @@
+table:
+  name: 'MgSwissTown'
+  description: 'Migration Table needed to find out the political swisstown for the hometown during foreward migration, not needed for backmigration.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 3
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Swiss Town (Migration)'
+    - german:
+        formTitle: 'Schweizer Ortschaften'
+  columns:
+  - name: 'Zip'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Town'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CantonSymbol'
+    description: ''
+    genericControls:
+      refTable: 'AsCanton'
+      refField: 'CantonSymbol'
+      defColumnPos: 3
+  - name: 'SwissTownNo'
+    description: ''
+    genericControls:
+      refTable: 'AsSwissTown'
+      refField: 'SwissTownNo'
+      defColumnPos: 4

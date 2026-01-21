@@ -1,0 +1,189 @@
+table:
+  name: 'PtTransMessageMod'
+  description: 'pending and settled modifications of PtTransMessage\r\nprimarily used for modifications of stock exchange orders, 20.07.04/kgy'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransactionId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransMessageId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderDate'
+    description: 'If IsAccepted = false: date of the mutation\r\nIf IsAccepted = true: orig orderdate of pttransmessage'
+  - name: 'IsCancelRequest'
+    description: ''
+  - name: 'StockExRefNew'
+    description: 'new LocalOrderId (SWX)'
+  - name: 'StockExRefOrig'
+    description: 'original LocalOrderId (SWX)'
+  - name: 'OrderQuantityNew'
+    description: ''
+  - name: 'OrderQuantityDesired'
+    description: ''
+  - name: 'OrderQuantityOrig'
+    description: ''
+  - name: 'PublicTradingPlaceIdNew'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PublicTradingPlaceIdOrig'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PaymentCurrencyOrig'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'PaymentCurrencyNew'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'PaymentDateNew'
+    description: ''
+  - name: 'PaymentDateOrig'
+    description: ''
+  - name: 'TransSxRebateNoNew'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxRebate'
+      refField: 'TransSxRebateNo'
+  - name: 'TransSxRebateNoOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxRebate'
+      refField: 'TransSxRebateNo'
+  - name: 'SecurityAccountNoNew'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+  - name: 'SecurityAccountNoOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+  - name: 'SecurityPortfolioNoNew'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'PortfolioNo'
+  - name: 'SecurityPortfolioNoOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'PortfolioNo'
+  - name: 'SecurityPortfolioIdNew'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SecurityPortfolioIdOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SecurityPrReferenceIdNew'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+  - name: 'SecurityPrReferenceIdOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+  - name: 'SecurityAccountCurrencyNew'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'SecurityAccountCurrencyOrig'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'AccountAccountNoNew'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+  - name: 'AccountAccountNoOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+  - name: 'AccountPortfolioNoNew'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'PortfolioNo'
+  - name: 'AccountPortfolioNoOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'PortfolioNo'
+  - name: 'AccountPortfolioIdNew'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+  - name: 'AccountPortfolioIdOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+  - name: 'AccountPrReferenceIdNew'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountPrReferenceIdOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountAccountCurrencyNew'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'AccountAccountCurrencyOrig'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'IsRequested'
+    description: 'the modification is requested'
+  - name: 'IsAccepted'
+    description: 'the modification is accepted'
+  - name: 'IsDeclined'
+    description: 'the modification is declined'
+  - name: 'ProcessId'
+    description: ''
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'

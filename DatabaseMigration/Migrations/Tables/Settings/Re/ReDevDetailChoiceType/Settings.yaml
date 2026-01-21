@@ -1,0 +1,38 @@
+table:
+  name: 'ReDevDetailChoiceType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Development ChoiceType'
+        helpText: 'Development ChoiceType'
+    - german:
+        formTitle: 'Ausbauart Auswahlliste'
+        helpText: 'Ausbauart Auswahlliste'
+  columns:
+  - name: 'DevTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReDevType'
+      refField: 'DevTypeNo'
+      defColumnPos: 1
+  - name: 'ChoiceType'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'IaziValue'
+    description: ''
+  - name: 'DevTypeId'
+    description: ''
+    genericControls:
+      refTable: 'ReDevType'
+      refField: 'Id'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DeleteCardChangeRequest'
+  description: 'Physically deletes a PtAgrCard record representing a card change request.'

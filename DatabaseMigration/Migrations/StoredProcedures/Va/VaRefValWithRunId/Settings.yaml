@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaRefValWithRunId'
+  description: '!! Diese Stored Proc kommt nicht mehr zur Anwendung da in VaValuationStatus (ValuationStatusNo 41) der SQL-Code direkt implementiert wurde!!\r\n13.06.2023 / wwo: FIN-9440 - Consider PrPublicListing.OrderStatusNoSx to priorize a PublicTradingPlaceId of the PrPublicPrice.\r\n31.07.2023 / wwo: FIN-8569 - Use PriceDate instead of LogicalPriceDate for sorting (priorizing).'

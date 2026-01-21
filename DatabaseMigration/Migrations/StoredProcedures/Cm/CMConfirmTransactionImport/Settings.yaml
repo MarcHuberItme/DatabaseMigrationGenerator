@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CMConfirmTransactionImport'
+  description: 'Confirms import of transactions from a file'

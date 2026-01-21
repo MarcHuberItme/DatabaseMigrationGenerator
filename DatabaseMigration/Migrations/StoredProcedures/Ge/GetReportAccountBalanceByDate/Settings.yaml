@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetReportAccountBalanceByDate'
+  description: 'Retrieve the Balance for an account by date\r\n\r\n--Author		: Rolf Amstad\r\n--Date Created	: 29-April-2005\r\n--Date Modified        : 11-Jan-2007 \r\n                                  (neu wird PtPositionId anstelle der AccountId verwendet und zusätzlich noch der Zinssaldo per Stichtag ermittelt)\r\n                                : 2007-05-02  berücksichtigen DetailCounter aus PtTransItem\r\n                                : 2007-12-04  PtTransItem.RealDate wird nun auch berücksichtigt\r\n                                : 2023-08-02/FIN-9318/daga Condition added for PtTransItem HdVersionNo between 1 and 999999998'

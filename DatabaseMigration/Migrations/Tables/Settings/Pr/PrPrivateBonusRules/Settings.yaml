@@ -1,0 +1,38 @@
+table:
+  name: 'PrPrivateBonusRules'
+  description: 'Bonus Rules for Product'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Bonus Rules For Product'
+    - german:
+        formTitle: 'Bonus Rules For Product'
+    - french:
+        formTitle: 'Bonus Rules For Product'
+    - italian:
+        formTitle: 'Bonus Rules For Product'
+  columns:
+  - name: 'ProductNo'
+    description: 'Associated ProductNo'
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      hasDetailBtn: true
+  - name: 'ValidFrom'
+    description: 'At a given time one Bonus Rules is active. ValidFrom is the starting date for the bonus period. \r\n\r\nN.B. : Bonus become inactive for a period if BonusRate = 0'
+  - name: 'BonusRate'
+    description: 'It is specified in %. It is the rate of bonus amount.\r\n\r\nBonus Amount = ( CreditInterestNos / No of Days ) * BonusRate %\r\n\r\nN.B. : Bonus become inactive for a period if BonusRate = 0'
+  - name: 'MinimumBalance'
+    description: 'It is the minimum balance which has to be maintained over a period to be eligible for bonus'
+  - name: 'MaximumWithdraw'
+    description: 'This is limit imposed due to Maximum Possible Withdraw Amount.\r\n\r\n\r\nRelated Fields :\r\nPtTransItem.IsBonuLimitedByMaxWithdraw'

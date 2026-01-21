@@ -1,0 +1,81 @@
+table:
+  name: 'PtTransItemHoCu'
+  description: 'Bewertete Fremdwährungsbuchung.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Bewertete Fwg-Buchung'
+        helpText: 'Bewertete Fwg-Buchung'
+    - german:
+        formTitle: 'Bewertete Fwg-Buchung'
+        helpText: 'Bewertete Fwg-Buchung'
+  columns:
+  - name: 'PositionHoCuId'
+    description: ''
+    genericControls:
+      refTable: 'PtPositionHoCu'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'TransItemId'
+    description: ''
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TransItemDetailId'
+    description: ''
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'DebitAmountAcCu'
+    description: 'Sollbetrag in Kontowährung'
+    genericControls:
+      defColumnPos: 3
+  - name: 'DebitAmountHoCu'
+    description: 'Sollbetrag in CHF'
+    genericControls:
+      defColumnPos: 4
+  - name: 'CreditAmountAcCu'
+    description: 'Habenbetrag in Kontowährung'
+    genericControls:
+      defColumnPos: 5
+  - name: 'CreditAmountHoCu'
+    description: 'Habenbetrag in CHF'
+    genericControls:
+      defColumnPos: 6
+  - name: 'CurrencyRate'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'CyTradeId'
+    description: ''
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 8
+      isNoUpdate: true
+  - name: 'TransDate'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'TransTextNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      hasDetailBtn: true
+      defColumnPos: 10
+  - name: 'BatchRunId'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+      isNoUpdate: true

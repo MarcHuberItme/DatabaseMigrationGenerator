@@ -1,0 +1,46 @@
+table:
+  name: 'PtMLPeriodicCheckDetailState'
+  description: 'Status GWG-Subprüfungen\r\n\r\nnicht klar, ob überhaupt benötigt'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Check Status'
+    - german:
+        formTitle: 'GWG Status Subprüfungen'
+    - french:
+        formTitle: 'Statut sous-examen ML'
+  columns:
+  - name: 'CheckDetailStateNo'
+    description: 'Status der Subprüfung:\r\n\r\n10 - gestartet\r\n20 - bei Kunde\r\n30 - gemahnt\r\n40 - Ausnahme\r\n50 - Freigabe\r\n90 - Abgeschlossen\r\n'
+    genericControls:
+      defColumnPos: 1
+  - name: 'IsDefaultStartState'
+    description: 'Status, welcher zu Beginn gesetzt wird. Kann nur bei einem Status = true sein.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsFinalState'
+    description: 'Flag, welches definiert, ob es sich um einen abschliessenden Status handelt und das Datum, an welchem dieser Status erreicht wurde als LastPeriodicCheckDate übernommen werden soll und somit zur Berechnung des NextPeriodicCheckDate verwendet wird. Kann bei mehreren Stati = true sein.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Description'
+    description: 'Beschreibung des Status'
+    genericControls:
+      multiLine: true
+  - name: 'ValidFrom'
+    description: 'Zeitliche Gültigkeit des Records, Startdatum'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValidTo'
+    description: 'Zeitliche Gültigkeit des Records, Enddatum'
+    genericControls:
+      defColumnPos: 5

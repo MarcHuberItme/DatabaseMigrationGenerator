@@ -1,0 +1,92 @@
+table:
+  name: 'PrPublicSecurityType'
+  description: 'VDF-Domaine: 7845 SPEZINSTRGRPID (INSTRGRPSCHEME = TKT)'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Security type'
+    - german:
+        formTitle: 'Titelart'
+  columns:
+  - name: 'SecurityType'
+    description: 'Maintained by VDF-Metadata'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CollateralRateInlandForCurr'
+    description: 'Collateral rate for inland in a foreign currency'
+    genericControls:
+      defColumnPos: 4
+  - name: 'CollateralRateInlandOwnCurr'
+    description: 'Collateral rate for inland in the own currency'
+    genericControls:
+      defColumnPos: 5
+  - name: 'CollateralRateForeignOwnCurr'
+    description: 'Collateral rate for abroad in the own currency'
+    genericControls:
+      defColumnPos: 6
+  - name: 'CollateralRateForeignForCurr'
+    description: 'Collateral rate for abroad in a foreign currency'
+    genericControls:
+      defColumnPos: 7
+  - name: 'SecurityTypeGroupNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicSecurityTypeGroup'
+      refField: 'SecurityTypeGroupNo'
+      defColumnPos: 2
+  - name: 'VrxTitArt'
+    description: ''
+    genericControls:
+      refTable: 'MgT01'
+      refField: 'TitArt'
+      defColumnPos: 3
+  - name: 'PenaltySetNo'
+    description: 'Penalty set for price evaluation'
+    genericControls:
+      refTable: 'PrPublicPricePenalty'
+      refField: 'PenaltySetNo'
+      defColumnPos: 8
+  - name: 'EBsell'
+    description: 'Defines if the instrument is allowed for selling through Ebanking.'
+  - name: 'EBbuy'
+    description: 'Defines if the instrument is allowed for buying through Ebanking.'
+  - name: 'CheckRequestNumberWeek'
+    description: ''
+  - name: 'PMSSecurityType'
+    description: ''
+  - name: 'Possiblecol'
+    description: 'als Colleteral eralubt ?'
+  - name: 'Pricover'
+    description: 'Priorität der Deckung'
+    genericControls:
+      refTable: 'CoPricov'
+      refField: 'Pricover'
+  - name: 'SubPricover'
+    description: 'Subpriorität innerhalb Pricover'
+  - name: 'Typecov'
+    description: 'Art der Deckung'
+    genericControls:
+      refTable: 'CoTypecov'
+      refField: 'Typecov'
+  - name: 'CompTypeNoV'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'CompTypeNoF'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'PM1SecurityType'
+    description: 'Temporarily added new field so that old and now PMS Systems can work in parallel'

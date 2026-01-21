@@ -1,0 +1,49 @@
+table:
+  name: 'ReObligationGBRel'
+  description: 'Ein SB kann 1 - n GB-Nummern Zuordnungen haben.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'GB Relation'
+    - german:
+        formTitle: 'GB No Zuordnung'
+  columns:
+  - name: 'ObligationId'
+    description: ''
+    genericControls:
+      refTable: 'ReObligation'
+      refField: 'Id'
+  - name: 'SwissTownNo'
+    description: 'Politische Gemeinde, wo das Grundstück sich befindet. Über eine Zuordnung der pol. Gemeinden zu den Grundbuchämtern, findet man das passende GB-Amt.'
+    genericControls:
+      refTable: 'AsSwissTown'
+      refField: 'SwissTownNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'GBNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'GBNoAdd'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'GBPlanNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'SwissTownPartNo'
+    description: ''
+    genericControls:
+      refTable: 'AsSwissTownPartView'
+      refField: 'SwissTownPartNo'
+      hasDetailBtn: true
+      defColumnPos: 5

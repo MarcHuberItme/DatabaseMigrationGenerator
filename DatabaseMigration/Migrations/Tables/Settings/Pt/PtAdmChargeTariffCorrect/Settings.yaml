@@ -1,0 +1,59 @@
+table:
+  name: 'PtAdmChargeTariffCorrect'
+  description: 'Tariff correction for opening and closing'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargeTariffCorrect'
+        helpText: 'PtAdmChargeTariffCorrect'
+    - german:
+        formTitle: 'PtAdmChargeTariffCorrect'
+        helpText: 'PtAdmChargeTariffCorrect'
+  columns:
+  - name: 'ChargeGroupNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeGroup'
+      refField: 'GroupNo'
+      defColumnPos: 1
+  - name: 'Rebate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'MinChargeRebate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'StartMonth'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'EndMonth'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'ValidTo'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'AsOpening'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'AsClosing'
+    description: ''
+    genericControls:
+      defColumnPos: 9

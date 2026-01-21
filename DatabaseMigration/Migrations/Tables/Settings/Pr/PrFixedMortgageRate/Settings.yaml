@@ -1,0 +1,36 @@
+table:
+  name: 'PrFixedMortgageRate'
+  description: 'Table contains fixed mortgage interest rates'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Fixed Mortgage Rate'
+    - german:
+        formTitle: 'Festhypotheken Zinssätze'
+  columns:
+  - name: 'PrivateCompTypeId'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ValidFrom'
+    description: 'Interest Rate is valid from this date'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Years'
+    description: 'duration for this fixed period'
+    genericControls:
+      defColumnPos: 3
+  - name: 'InterestRate'
+    description: 'Interest Rate for this fixed period'
+    genericControls:
+      defColumnPos: 4

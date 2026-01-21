@@ -1,0 +1,50 @@
+view:
+  name: 'PtContractFXClientPartnerView'
+  description: ''
+frontendView:
+  name: 'PtContractFXClientPartnerView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ContractId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtContract'
+      refField: 'Id'
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'ContributionAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'PartnerDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 200
+  - name: 'FxDebitAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'FxCreditAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'ConversionRate'
+    description: ''
+    dataType: 'float'
+  - name: 'IsFxBuyer'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '1'

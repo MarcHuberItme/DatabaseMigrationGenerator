@@ -1,0 +1,29 @@
+table:
+  name: 'AsMailConfigPageItem'
+  description: 'This table contains the configuration block parameters information for the Mail Output system.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    visumLevel: 1
+    cacheLevel: 3
+    descField: 'Name'
+    uiTableDescription:
+    - english:
+        formTitle: 'Mail Configuration'
+        helpText: 'Mail Configuration'
+    - german:
+        formTitle: 'Mail Configuration'
+        helpText: 'Mail Configuration'
+  columns:
+  - name: 'SetNo'
+    description: ''
+    genericControls:
+      refTable: 'AsMailConfigSet'
+      refField: 'SetNo'
+  - name: 'Name'
+    description: 'Name of the page item. e.g. barCode, omrCode, batchPageNo etc.'
+    genericControls:
+      defColumnPos: 1

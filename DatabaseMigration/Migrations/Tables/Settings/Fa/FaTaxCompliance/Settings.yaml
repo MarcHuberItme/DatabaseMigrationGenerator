@@ -1,0 +1,19 @@
+table:
+  name: 'FaTaxCompliance'
+  description: 'Describes the known US-Compliance state of the customer\r\n0 = Unclear\r\n10 = W9, disclosure assumed\r\n20 = Disclosure approved'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'ComplianceStatus'
+    description: ''
+    genericControls:
+      defColumnPos: 1

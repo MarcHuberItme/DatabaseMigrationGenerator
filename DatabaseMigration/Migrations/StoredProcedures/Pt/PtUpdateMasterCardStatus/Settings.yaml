@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtUpdateMasterCardStatus'
+  description: 'Sets Status in PtPaymentMasterCard to 1 for inserted Lines in PtPaymentKTB (KTBMapping), otherwise the Status remains 0 (see KTB-Status), If CMSMiscellaneousFeeDetails in PtPaymentMCMiscellaneousFees is NULL, these Lines are not mapped to KTB'

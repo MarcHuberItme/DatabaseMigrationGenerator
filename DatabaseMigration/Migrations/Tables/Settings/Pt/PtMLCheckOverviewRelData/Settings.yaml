@@ -1,0 +1,83 @@
+table:
+  name: 'PtMLCheckOverviewRelData'
+  description: 'In dieser Tabelle werden relevante Daten gespeichert, welche für die Ermittlung der Prüfungsart und des Templates benötigt werden.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Periodic Check'
+    - german:
+        formTitle: 'GWG Prüf-Art / Template'
+  columns:
+  - name: 'PeriodicCheckOverviewId'
+    description: 'ForeignKey to PtMLPeriodicCheckOverview (1:1)'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckOverview'
+      refField: 'Id'
+  - name: 'PeriodicCheckTypeNoPF'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckType'
+      refField: 'CheckTypeNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PeriodicCheckTypeNoACT'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckType'
+      refField: 'CheckTypeNo'
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'PeriodicCheckTypeNoOTH'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckType'
+      refField: 'CheckTypeNo'
+      isNoUpdate: true
+  - name: 'hasDigitalBanking'
+    description: 'wird auf true gesetzt, wenn in der Tabelle PtMLPeriodicCheckDBContracts\r\nmindestens ein aktiver EBanking Vertrag vorhanden ist.'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'DBLastLoginDate'
+    description: 'es wird das jüngste Login aller vorhandenen Verträge hier gespeichert\r\nMAX(PtMLPeriodicCheckDBContracts.LastLoginDate)'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'BaaSClientNo'
+    description: 'Referenz zu PBaaSPartner.BaaSClientNo'
+    genericControls:
+      refTable: 'PtBaaSPartnerClient'
+      refField: 'ClientNo'
+      isNoUpdate: true
+  - name: 'BaaSChannelNo'
+    description: 'Referenz zu: PtBaaSPartner.BaaSPeriodicCheckChannelNo\r\nDefault Kanal für diesen BaaS Partner'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckChannel'
+      refField: 'ChannelNo'
+      isNoUpdate: true
+  - name: 'hasVSBPendingBlocking'
+    description: 'Flag, welches angibt ob der VSB Check noch pendent ist und eine entsprechende Sperre besteht'
+    genericControls:
+      isNoUpdate: true
+  - name: 'isIdentificationNeeded'
+    description: 'Flag welches gesetzt wird, wenn eine Identifikation notwendig wird.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'SpecialConsultantChannelNo'
+    description: 'ChannelNo des Kunden in der Tabelle PtMlMapConsultantsToChannel oder NULL'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckChannel'
+      refField: 'ChannelNo'
+      isNoUpdate: true
+  - name: 'isANDRelationship'
+    description: '1 wird nur gesetzt, wenn es sich bei den Mitinhabern um eine UND Beziehung handelt'
+    genericControls:
+      isNoUpdate: true

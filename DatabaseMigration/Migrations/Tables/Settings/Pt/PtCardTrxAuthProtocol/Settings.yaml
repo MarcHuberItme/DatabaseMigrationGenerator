@@ -1,0 +1,24 @@
+table:
+  name: 'PtCardTrxAuthProtocol'
+  description: 'Supported protocols for card transaction authorization.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Protocol'
+        helpText: 'Protocol'
+    - german:
+        formTitle: 'Protokoll'
+        helpText: 'Protokoll'
+  columns:
+  - name: 'Protocol'
+    description: 'Protocol name and version'
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPartnerTmeRNbrTransInPeriod'
+  description: 'Prepare a list of partners which should checked. Rule 112'

@@ -1,0 +1,91 @@
+table:
+  name: 'PtMrosTransaction'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtMrosTransaction'
+        helpText: 'PtMrosTransaction'
+    - german:
+        formTitle: 'PtMrosTransaction'
+        helpText: 'PtMrosTransaction'
+  columns:
+  - name: 'ReportId'
+    description: ''
+    genericControls:
+      refTable: 'PtMrosReport'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'SuspectId'
+    description: ''
+    genericControls:
+      refTable: 'PtMrosSuspect'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'ReportedAccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtMrosAccount'
+      refField: 'Id'
+      defColumnPos: 3
+  - name: 'TransDate'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'ValueDate'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'TransNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'TransMessageId'
+    description: ''
+  - name: 'TransItemId'
+    description: ''
+  - name: 'DetailCounter'
+    description: ''
+  - name: 'TransItemDetailId'
+    description: ''
+  - name: 'TextNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'IsDebit'
+    description: ''
+  - name: 'AmountCHF'
+    description: ''
+  - name: 'AccountCurrency'
+    description: ''
+  - name: 'DebitAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'CreditAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'Rate'
+    description: ''
+  - name: 'Comments'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IsCPEntity'
+    description: ''
+  - name: 'CPName'
+    description: ''
+  - name: 'CPFirstName'
+    description: ''

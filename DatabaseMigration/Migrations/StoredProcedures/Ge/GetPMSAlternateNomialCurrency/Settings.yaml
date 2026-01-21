@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPMSAlternateNomialCurrency'
+  description: ''

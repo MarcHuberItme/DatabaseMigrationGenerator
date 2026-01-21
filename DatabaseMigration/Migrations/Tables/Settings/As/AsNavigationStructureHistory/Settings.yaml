@@ -1,0 +1,32 @@
+table:
+  name: 'AsNavigationStructureHistory'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 75acefc4-0a56-4966-97a8-53e8b891ec08
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Navigation structure hist'
+    - german:
+        formTitle: 'Navigationstrukur History'
+  columns:
+  - name: 'NavigationStructureId'
+    description: '*** Refrential Intergity  (!!! Restored with cascade delete/update enforced now (Imran - Sep. 6, 2001))'
+    genericControls:
+      refTable: 'AsNavigationStructureMaster'
+      refField: 'Id'
+  - name: 'FromStatus'
+    description: ''
+  - name: 'ToStatus'
+    description: ''
+  - name: 'ActionDate'
+    description: ''
+  - name: 'Agent'
+    description: ''
+  - name: 'Comments'
+    description: ''

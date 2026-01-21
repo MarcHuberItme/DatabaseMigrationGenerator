@@ -1,0 +1,59 @@
+table:
+  name: 'BpTaskHistory'
+  description: 'History of JCS jobs.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'History of JCS jobs'
+    - german:
+        formTitle: 'History of JCS jobs'
+    - french:
+        formTitle: 'History of JCS jobs'
+    - italian:
+        formTitle: 'History of JCS jobs'
+  columns:
+  - name: 'RunCount'
+    description: 'Number of executions.'
+  - name: 'JobBaseId'
+    description: 'Reference to basic job.'
+    genericControls:
+      refTable: 'BpJobBase'
+      refField: 'Id'
+  - name: 'JobDesc'
+    description: 'Job description (Assembly, ClassName, ...)'
+  - name: 'Param'
+    description: 'Job parameter'
+  - name: 'Priority'
+    description: ''
+    genericControls:
+      refTable: 'BpTaskPriority'
+      refField: 'TaskPriority'
+  - name: 'Success'
+    description: 'Task successful'
+  - name: 'JobAgent'
+    description: ''
+  - name: 'StartTime'
+    description: ''
+  - name: 'EndTime'
+    description: ''
+  - name: 'Comment'
+    description: 'Job comment.'
+  - name: 'TaskBlockId'
+    description: 'Link to taskblock'
+    genericControls:
+      refTable: 'BpTaskBlock'
+      refField: 'Id'
+  - name: 'JobFlowJobId'
+    description: 'Link to jobflow job'
+    genericControls:
+      refTable: 'BpJobFlowJob'
+      refField: 'Id'

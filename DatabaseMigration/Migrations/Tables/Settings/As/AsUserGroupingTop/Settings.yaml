@@ -1,0 +1,25 @@
+table:
+  name: 'AsUserGroupingTop'
+  description: 'Group Description zu Auswertungszwecken (qklikview)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'User Group top'
+    - german:
+        formTitle: 'User Group top'
+    - french:
+        formTitle: 'User Group top'
+  columns:
+  - name: 'TopNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

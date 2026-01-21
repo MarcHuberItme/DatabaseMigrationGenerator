@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'FreezeSecuritiesData'
+  description: 'save securities data snapshot at end of month.\r\nSource Tables: PtPositionFireView \r\nDestination Tables: AcFrozenSecurityBalance'

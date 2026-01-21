@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DbCleanupJobDeleteHandlerV2'
+  description: 'New Version of the Delete Handler for the DbCleanupJob. This also helps separate the new version of DbCleanup Job from the old one, without any interference. Having a SP to handle the delete Part, gives us the flexibility, of being able to change this query whenever we want with a history.'

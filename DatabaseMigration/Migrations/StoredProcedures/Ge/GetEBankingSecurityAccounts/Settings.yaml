@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetEBankingSecurityAccounts'
+  description: 'Get the security account overview data for ebanking'

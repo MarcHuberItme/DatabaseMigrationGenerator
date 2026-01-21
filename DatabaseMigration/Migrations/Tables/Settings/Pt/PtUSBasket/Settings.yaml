@@ -1,0 +1,31 @@
+table:
+  name: 'PtUSBasket'
+  description: 'Basket-Category for US-Tax-Regulation\r\n16.12.2015 new domain type (old was 40) because SAL has other BasketNo''s)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Basket'
+    - german:
+        formTitle: 'US Basket'
+    - french:
+        formTitle: 'US Basket'
+  columns:
+  - name: 'BasketNo'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+  - name: 'MigValue'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountOverview'
+  description: '2021-03-15/ram: ShadowProductNo = 500 ersetzt durch: Select ShadowProductNo From PtShadowProduct Where FileProductNo = 4\r\n2022-03-29/ram: FileProductNo 18 und ShadowProductNo 505 (Fz und 3a mit WS) nicht berücksichtigen als Schattenkonto\r\n2022-04-13/ram: ShadowProductNo 525 überlesen'

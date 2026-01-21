@@ -1,0 +1,41 @@
+table:
+  name: 'ReValuationTurnOver'
+  description: 'FIS2000: GR_STZ_UMS'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Valuation TurnOver'
+    - german:
+        formTitle: 'Schätzung Umsatz'
+  columns:
+  - name: 'ValuationId'
+    description: ''
+    genericControls:
+      refTable: 'ReValuation'
+      refField: 'Id'
+  - name: 'BusinessTypeNo'
+    description: 'FIS2000: GR_DET_UMSMIETE_CD'
+    genericControls:
+      refTable: 'ReBusinessType'
+      refField: 'BusinessTypeNo'
+      defColumnPos: 1
+  - name: 'TurnOver'
+    description: 'FIS2000: UMSMIETE'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TurnOverRentRate'
+    description: 'FIS2000: UMSMIETE_SATZ'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Designation'
+    description: ''
+    genericControls:
+      defColumnPos: 2

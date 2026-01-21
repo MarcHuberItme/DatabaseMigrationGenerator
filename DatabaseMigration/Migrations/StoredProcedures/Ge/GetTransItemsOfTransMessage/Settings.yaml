@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetTransItemsOfTransMessage'
+  description: 'This stored procedure returns bookings for a Transmessage id.  This sp merges bookings from PttransItemDetail and PttransItem.\r\n\r\n2023-08-02/FIN-9318/daga: condition added for PtTransItem HdVersionNo between 1 and 999999998'

@@ -1,0 +1,88 @@
+view:
+  name: 'PrAvailableSafeDepositView'
+  description: 'get a list of available safe deposits'
+frontendView:
+  name: 'PrAvailableSafeDepositView'
+  description: 'get a list of available safe deposits'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'BranchNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 1
+  - name: 'BranchText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 2
+  - name: 'BoxNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 4
+  - name: 'TypeText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 5
+  - name: 'PriceValidFrom'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 8
+  - name: 'Price'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    scale: 2
+    genericControls:
+      defColumnPos: 6
+  - name: 'MinAmount'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    scale: 2
+    genericControls:
+      defColumnPos: 7
+  - name: 'TypeLanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 9
+  - name: 'BranchLanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      defColumnPos: 10
+  - name: 'DepositDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 55
+    genericControls:
+      defColumnPos: 11

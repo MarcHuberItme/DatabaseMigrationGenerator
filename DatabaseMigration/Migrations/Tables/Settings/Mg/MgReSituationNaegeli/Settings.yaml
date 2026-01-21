@@ -1,0 +1,42 @@
+table:
+  name: 'MgReSituationNaegeli'
+  description: 'table for migration into ReSituationNaegeli'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PremisesId'
+    description: ''
+  - name: 'SituationGeneral'
+    description: ''
+  - name: 'SituationTraffic'
+    description: ''
+  - name: 'UseIntensity'
+    description: ''
+  - name: 'LivingSektor'
+    description: ''
+  - name: 'TradeSektor'
+    description: ''
+  - name: 'IndustrySektor'
+    description: ''
+  - name: 'IncreaseFactor'
+    description: ''
+  - name: 'ReductionFactor'
+    description: ''
+  - name: 'ValuationFlag'
+    description: ''
+  - name: 'SituationNaegeli'
+    description: ''
+  - name: 'ValueDate'
+    description: ''
+  - name: 'MigrationId'
+    description: ''
+  - name: 'MigrationDate'
+    description: ''
+  - name: 'MigrationStatus'
+    description: ''

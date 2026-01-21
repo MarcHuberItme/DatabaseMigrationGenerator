@@ -1,0 +1,63 @@
+table:
+  name: 'RePremisesType'
+  description: 'Premises Type'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Premises Type'
+    - german:
+        formTitle: 'Grundstuecktyp'
+  columns:
+  - name: 'PremisesType'
+    description: 'e.g. EFH, MFH, STWE'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IaziValue'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PfandRegValue'
+    description: 'Value for the interface to the Pfandregister (Pfandbriefbank)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsLand'
+    description: 'es handelt sich um Land (kein Bauland), welches genauer spezifiziert werden muss.'
+  - name: 'ZGBType'
+    description: 'Type gemäss ZGB (nurText)'
+  - name: 'ForBaseType01'
+    description: ''
+  - name: 'ForBaseType02'
+    description: ''
+  - name: 'ForBaseType03'
+    description: ''
+  - name: 'ForBaseType04'
+    description: ''
+  - name: 'EnvironmentCostRateMin'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'EnvironmentCostRateMax'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'EarningRateMinLiving'
+    description: 'Kapitalisierungssatz (Minimum) (Total von Zinssatz und Zuschlag muss grösser / gleich Minimum sein)'
+  - name: 'EarningRateMinTradeM2'
+    description: 'Kapitalisierungssatz (Minimum) (Total von Zinssatz und Zuschlag muss grösser / gleich Minimum sein)'
+  - name: 'EarningRateMinTradeRent'
+    description: 'Kapitalisierungssatz (Minimum) (Total von Zinssatz und Zuschlag muss grösser / gleich Minimum sein)'
+  - name: 'SortNo'
+    description: ''
+  - name: 'HasPfBQuality'
+    description: 'defines premisestypes that can be forwarded to "PfabdbriefBank"'

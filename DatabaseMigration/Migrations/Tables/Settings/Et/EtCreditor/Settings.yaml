@@ -1,0 +1,68 @@
+table:
+  name: 'EtCreditor'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FsPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'FsSyncNo'
+    description: ''
+    genericControls:
+      refTable: 'EtSync'
+      refField: 'SyncNo'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'FsTransferNo'
+    description: ''
+    genericControls:
+      refTable: 'EtTransfer'
+      refField: 'TransferNo'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'crdt_id'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'fsta_id'
+    description: ''
+  - name: 'name'
+    description: ''
+  - name: 'accr_int_pool'
+    description: ''
+  - name: 'optional01'
+    description: ''
+  - name: 'optional02'
+    description: ''
+  - name: 'optional03'
+    description: ''
+  - name: 'optional04'
+    description: ''
+  - name: 'optional05'
+    description: ''
+  - name: 'optional06'
+    description: ''
+  - name: 'optional07'
+    description: ''
+  - name: 'optional08'
+    description: ''
+  - name: 'optional09'
+    description: ''
+  - name: 'optional10'
+    description: ''
+  - name: 'cmnt'
+    description: ''
+  - name: 'status'
+    description: ''

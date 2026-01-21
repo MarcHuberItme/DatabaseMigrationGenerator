@@ -1,0 +1,97 @@
+view:
+  name: 'ReOwnerView'
+  description: 'View combining ReOwner, ReBasePtRel and PtDescriptionView'
+frontendView:
+  name: 'ReOwnerView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'owner view'
+    - german:
+        formTitle: 'Eigentümer'
+  columns:
+  - name: 'ReBaseId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'ReBase'
+      refField: 'Id'
+  - name: 'PartnerRelId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'ReBasePtRel'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PropertyTypeNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+    genericControls:
+      refTable: 'RePropertyType'
+      refField: 'PropertyTypeNo'
+      defColumnPos: 1
+  - name: 'Number'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Denominator'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 3
+  - name: 'UnitTypeNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'ReCoUnitType'
+      refField: 'UnitTypeNo'
+      defColumnPos: 4
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 6
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 7
+  - name: 'ValidFrom'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 8
+  - name: 'ValidTo'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 9
+  - name: 'ValidPer'
+    description: ''
+    dataType: 'datetime'

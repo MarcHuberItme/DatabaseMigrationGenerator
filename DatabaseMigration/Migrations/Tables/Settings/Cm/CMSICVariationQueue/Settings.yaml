@@ -1,0 +1,33 @@
+table:
+  name: 'CMSICVariationQueue'
+  description: 'Queues for configurations in CMSICVariation'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'VariationId'
+    description: ''
+    genericControls:
+      refTable: 'CMSICVariation'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ExchangeName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'QueueName'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'TypeNo'
+    description: ''
+    genericControls:
+      refTable: 'CMSICVariationQueueType'
+      refField: 'TypeNo'
+      defColumnPos: 4

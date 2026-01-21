@@ -1,0 +1,36 @@
+table:
+  name: 'FaBaseRelation'
+  description: 'Relations between Persons, under Fatca consideration'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'FaBaseId'
+    description: ''
+    genericControls:
+      refTable: 'FaBase'
+      refField: 'Id'
+  - name: 'RelatedPartnerId'
+    description: 'Id of partner to which a relation exisits'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'FaRelationType'
+    description: '10 = Related partner is a joint account\r\n20 = Related partner is a beneficial owner\r\n30 = Related partner is the same partner\r\n\r\n110 = Power of attorney or signature authority is granted to related partner\r\n120 = Correpondence was sent to related partner\r\n130 = Related partner has access to account by e-banking'
+    genericControls:
+      refTable: 'FaBaseRelationType'
+      refField: 'RelationTypeNo'
+      defColumnPos: 2
+  - name: 'ValidFrom'
+    description: 'Begin of relation'
+  - name: 'ValidTo'
+    description: 'End of relation'

@@ -1,0 +1,3 @@
+view:
+  name: 'PtAccountClosingPeriodTaxInfo'
+  description: 'Show the information of the closings needed by the tax report'

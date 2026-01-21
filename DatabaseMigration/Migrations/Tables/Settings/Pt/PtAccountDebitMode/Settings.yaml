@@ -1,0 +1,19 @@
+table:
+  name: 'PtAccountDebitMode'
+  description: 'Rule to use when debiting the pending amount:\r\n\r\n- 1 CheckBalance\r\n- 2 Match Transaction with InvoiceNo\r\n- 3 No Check, force debit'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'DebitModeNo'
+    description: 'identification key for the debitmode'
+    genericControls:
+      defColumnPos: 1

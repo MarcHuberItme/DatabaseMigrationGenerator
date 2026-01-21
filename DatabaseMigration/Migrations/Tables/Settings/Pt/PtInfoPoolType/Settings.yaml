@@ -1,0 +1,25 @@
+table:
+  name: 'PtInfoPoolType'
+  description: 'classification of remarks in PtInfoPoolPartner, PtInfoPoolAccount, etc.\r\nfor example ''Education'', ''general Information'', etc.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+  columns:
+  - name: 'InfoTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'UsedForPartner'
+    description: 'All InfoPoolTypes having set this flag to true will appear on the form for InfoPoolPartners.'
+  - name: 'UsedForAccount'
+    description: 'All InfoPoolTypes having set this flag to true will appear on the form for InfoPoolAccount.'
+  - name: 'UsedForPortfolio'
+    description: 'All InfoPoolTypes having set this flag to true will appear on the form for InfoPoolPortfolio.'

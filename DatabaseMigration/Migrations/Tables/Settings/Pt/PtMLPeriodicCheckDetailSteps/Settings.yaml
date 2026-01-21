@@ -1,0 +1,32 @@
+table:
+  name: 'PtMLPeriodicCheckDetailSteps'
+  description: 'einzelne Schritte der Detailprüfungen'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML steps detail checks'
+    - german:
+        formTitle: 'GWG SchritteDetailprüfung'
+    - french:
+        formTitle: 'Vérif détaillées étape ML'
+    - italian:
+        formTitle: 'ML steps detail checks'
+  columns:
+  - name: 'DetailCheckStepNo'
+    description: 'Steps:\r\n- 10 Stammdaten\r\n- 11 Nationalität\r\n- 12 Adresse\r\n- 13 Telefon\r\n- 14 EMail\r\n- 15 Steuerstatus\r\n- 20 wirtschaftliche Berechtigung\r\n- 30 Vollmacht\r\n- 31 E-Banking Zugriff\r\n -32 E-Banking Zugriff Objekte\r\n- 33 Kontaktperson\r\n- 34 Karteninhaber'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Description'
+    description: 'Beschreibung der Prüfungsschritte'
+    genericControls:
+      multiLine: true

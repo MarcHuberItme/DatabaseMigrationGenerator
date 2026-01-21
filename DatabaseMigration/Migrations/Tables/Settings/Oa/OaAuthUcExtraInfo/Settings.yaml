@@ -1,0 +1,56 @@
+table:
+  name: 'OaAuthUcExtraInfo'
+  description: 'Configuration of Use Case Key Value Objects to pass to futurae\r\n'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: '2FA Auth UC KeyValue Conf'
+    - german:
+        formTitle: '2FA Auth UC KeyValue Conf'
+    - french:
+        formTitle: '2FA Auth UC KeyValue Conf'
+    - italian:
+        formTitle: '2FA Auth UC KeyValue Conf'
+  columns:
+  - name: 'UseCaseNo'
+    description: ''
+    minValue: '0'
+    genericControls:
+      refTable: 'OaAuthUseCase'
+      refField: 'UseCaseNo'
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'LanguageNo'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+      defColumnPos: 2
+      noUpdatePos: 2
+  - name: 'SortNo'
+    description: ''
+    minValue: '1'
+    maxValue: '100'
+    genericControls:
+      defColumnPos: 3
+      noUpdatePos: 3
+  - name: 'ObjectKey'
+    description: 'Futurae authenticate ExtraInfo ObjectKey'
+    genericControls:
+      defColumnPos: 4
+      noUpdatePos: 4
+  - name: 'ObjectValue'
+    description: 'Futurae authenticate ExtraInfo ObjectValue'
+    genericControls:
+      multiLine: true
+      defColumnPos: 5
+      noUpdatePos: 5

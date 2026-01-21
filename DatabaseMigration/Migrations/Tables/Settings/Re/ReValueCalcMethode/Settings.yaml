@@ -1,0 +1,36 @@
+table:
+  name: 'ReValueCalcMethode'
+  description: 'Kalkulationsart für den betreffenden Wert\r\nz.B. 1 x Realwert / 2 x Substanzwert etc.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'calculation methode'
+    - german:
+        formTitle: 'Kalkulationsart'
+  columns:
+  - name: 'ValueTypeNo'
+    description: 'Einschränken der Drop Down'
+    genericControls:
+      refTable: 'ReValueType'
+      refField: 'ValueTypeNo'
+      defColumnPos: 1
+  - name: 'ValueCalcMethodeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'SortNo'
+    description: ''
+  - name: 'PfandRegValue'
+    description: ''
+    genericControls:
+      defColumnPos: 3

@@ -1,0 +1,37 @@
+table:
+  name: 'PsJobMailInset'
+  description: 'Attachments to mails produced by the printing system'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Mail Insets'
+    - german:
+        formTitle: 'Postbeilagen'
+  columns:
+  - name: 'JobId'
+    description: 'Reference to the print job'
+    genericControls:
+      refTable: 'PsJob'
+      refField: 'Id'
+  - name: 'MailInsetId'
+    description: 'Reference to mail inset'
+    genericControls:
+      refTable: 'AsMailInset'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ForElectronicMail'
+    description: 'True if inset has to be attached to e-mails. Can only be True if the same field in AsMailInset is also True.'
+  - name: 'ForPaperMail'
+    description: 'True if the mail inset has to be attached to paper mail. Can only be true if the same field in AsMailInset is also true.'
+  - name: 'FilterStatement'
+    description: 'The statement is applied as ADODB Filter-Statement to the current selection record. The mail inset is only attached if the statement is empty or if it evaluates to true.'
+    genericControls:
+      multiLine: true

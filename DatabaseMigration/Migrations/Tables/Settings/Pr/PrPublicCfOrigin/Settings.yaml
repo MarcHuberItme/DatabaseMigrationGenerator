@@ -1,0 +1,54 @@
+table:
+  name: 'PrPublicCfOrigin'
+  description: 'a'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublicCf'
+      parentRelationField: 'PublicCfId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Cash Flow Amount'
+    - german:
+        formTitle: 'Cash Flow Beträge'
+  columns:
+  - name: 'PublicCfId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicCf'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'OriginNo'
+    description: 'VDF: XCD.XCH.4817'
+    genericControls:
+      refTable: 'PrPublicOrigin'
+      refField: 'OriginNo'
+      defColumnPos: 1
+  - name: 'Currency'
+    description: 'VDF: XCD.XCH.6804'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'Amount'
+    description: 'VDF: XCD.XCH.5833'
+    genericControls:
+      defColumnPos: 3
+  - name: 'QuoteTypeNo'
+    description: 'VDF: XCD.XCH.4812'
+    genericControls:
+      refTable: 'PrPublicQuoteType'
+      refField: 'QuoteTypeNo'

@@ -1,0 +1,55 @@
+table:
+  name: 'PtSecuritiesReport'
+  description: 'Intermediate table to build the Report ''Effektenjounal'' for the EBK'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Securities Tradingreport'
+    - german:
+        formTitle: 'Effektenjounal EBK'
+  columns:
+  - name: 'OrderNo'
+    description: 'corresponds to ''PtTransaction.OrderNo'''
+  - name: 'TransNo'
+    description: 'corresponds to ''PtTransaction.TransNo'''
+  - name: 'IsinNo'
+    description: 'ISIN-Number from ''PrPublic'''
+  - name: 'SecurityName'
+    description: 'Short Name of the traded security.'
+  - name: 'ReportDate'
+    description: 'Corresponds to the field ''PtTransactionTradeView.OrderDate'' and designates the DateTime of relevant events to be reported during the life cycle of an order'
+  - name: 'ValidTo'
+    description: 'depending on dataconditions, corresponds to ''PtTransaction.ValidTo'' or ''PtTransactionMod.ValidToNew'''
+  - name: 'TransactionType'
+    description: 'refers to ''PtTransaction.TransTypeNo'''
+  - name: 'InstrumentType'
+    description: 'refers to ''PrPublic.InstrumentTypeNo'''
+  - name: 'PriceLimit'
+    description: 'price limit in the order, corresponds to ''PtTransaction.PriceLimit'', may also be set in PtTransactionMod.'
+  - name: 'Price'
+    description: 'Price recieved or paid in the trade.'
+  - name: 'OrderQuantity'
+    description: 'whole number of titles of the order'
+  - name: 'TradeQuantity'
+    description: 'traded quantity of a (partial) trade of the order'
+  - name: 'TradingPlace'
+    description: 'corresponds to the field ''PtTransmessage.PublicTradingPlace'''
+  - name: 'ClearingNo'
+    description: 'Debit- or Credit-ClearingNo of ''PtTransMessage''.'
+  - name: 'Partner'
+    description: 'Debit- or Credit-PortfolioId of ''PtTransMessage''.'
+  - name: 'CounterParty'
+    description: 'Debit- or Credit-PortfolioId of ''PtTransMessage''.'
+  - name: 'ValueDate'
+    description: 'Correstonds to ''PtTransMessage.Paymentdate'' and reflects the valudate of the trade.'
+  - name: 'UpdateStatus'
+    description: 'corresponds to the field ''PtTansMessage.UpdateStatus'''

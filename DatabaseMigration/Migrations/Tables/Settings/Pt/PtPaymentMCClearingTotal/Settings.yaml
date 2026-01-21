@@ -1,0 +1,55 @@
+table:
+  name: 'PtPaymentMCClearingTotal'
+  description: 'Contains Fields for MasterCard File-Processing relevant for Section Clearing Total (CT)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'SettlementCurrency'
+    description: 'DE 50 (Currency Code, Settlement) defines currency for amounts in "Reconciliation currency"\r\nThe data is in original format according to IPM clearing formats manual'
+  - name: 'CurrencyExponents'
+    description: 'PDS 0148 (Currency Exponents) explicitly identifies the implicit decimal point locations associated with each ISO standard currency code used in a message.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'SettlementIndicator'
+    description: 'PDS 0165 (Settlement Indicator) indicates the settlement impact of amounts in an IPM message.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'ReconciledFile'
+    description: 'PDS 0300 (Reconciled, File) identifies in Reconciliation messages the logical file to which the reconciliation totals pertain.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'MemberActivity'
+    description: 'PDS 0302 (Reconciled, Member Activity) indicates in Reconciliation messages whether the related reconciliation totals represent acquiring activity, issuing activity, or fee collection activity.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'AccountRange'
+    description: 'PDS 0370 (Reconciled, Account Range) identifies in Reconciliation messages the specific customer issuing account range to which the reconciliation totals pertain.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'DebitsTransactionAmountTC'
+    description: 'PDS 0380 (Debits, Transaction Amount in Transaction Currency) provides in Reconciliation messages the total of transaction amounts that have a debit impact on processing. The total is in the transaction currency.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'CreditsTransactionAmountTC'
+    description: 'PDS 0381 (Credits, Transaction Amount in Transaction Currency) provides in Reconciliation messages the total of transaction amounts that have a credit impact on processing. The total is in the transaction currency.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'AmountNetTransactionTC'
+    description: 'PDS 0384 (Amount, Net Transaction in Transaction Currency) provides in Reconciliation messages the net total of transaction amounts that have a debit impact on processing and those that have a credit impact on processing. The net total is in the transaction currency.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'DebitsTransactionAmountRC'
+    description: 'PDS 0390 (Debits, Transaction Amount in Reconciliation Currency) provides in Reconciliation messages the total of transaction amounts that have a debit impact on processing. The total is in the message receiver’s reconciliation currency.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'CreditsTransactionAmountRC'
+    description: 'PDS 0391 (Credits, Transaction Amount in Reconciliation Currency) provides in Reconciliation messages the total of transaction amounts that have a credit impact on processing. The total is in the reconciliation currency.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'DebitsFeeAmountsRC'
+    description: 'PDS 0392 (Debits, Fee Amounts in Reconciliation Currency) provides in Reconciliation messages the total of fee amounts that have a debit impact on processing. The total is in the reconciliation currency.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'CreditsFeeAmountsRC'
+    description: 'PDS 0393 (Credits, Fee Amounts in Reconciliation Currency) provides in Reconciliation messages the total of fee amounts that have a credit impact on processing. The total is in the reconciliation currency.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'AmountNetTransactionRC'
+    description: 'PDS 0394 (Amount, Net Transaction in Reconciliation Currency) provides in Reconciliation messages the net total of the transaction amounts that have a debit impact on processing and those that have a credit impact on processing. The net total is in the reconciliation currency.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'AmountNetFeeRC'
+    description: 'PDS 0395 (Amount, Net Fee in Reconciliation Currency) provides in Reconciliation messages the net total of fee amounts that have a debit impact on processing and those that have a credit impact on processing. The net total is in the reconciliation currency.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'AmountNetTotalRC'
+    description: 'PDS 0396 (Amount, Net Total in Reconciliation Currency) provides in Reconciliation messages the net total of transaction and fee amounts. The net total is in the reconciliation currency.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'DebitsTransactionNumber'
+    description: 'PDS 0400 (Debits, Transaction Number) provides in Reconciliation messages the number of transactions whose transaction amounts have a debit impact on processing.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'CreditsTransactionNumber'
+    description: 'PDS 0401 (Credits, Transaction Number) provides in Reconciliation messages the number of transactions whose transaction amounts have a credit impact on processing.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'TotalTransactionNumber'
+    description: 'PDS 0402 (Total, Transaction Number) provides in Reconciliation messages the number of transactions whose transaction amounts have either a debit or a credit impact on processing.\r\nThe data is in original format according to IPM clearing formats manual.'
+  - name: 'PtPaymentMastercardId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentMasterCard'
+      refField: 'Id'

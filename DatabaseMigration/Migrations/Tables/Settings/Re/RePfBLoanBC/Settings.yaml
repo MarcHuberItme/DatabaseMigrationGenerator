@@ -1,0 +1,54 @@
+table:
+  name: 'RePfBLoanBC'
+  description: 'Total Darlehensanteil pro Bank (Einer Serie / Tranche)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Loan'
+    - german:
+        formTitle: 'Darlehentotal pro Bank'
+  columns:
+  - name: 'LoanId'
+    description: ''
+    genericControls:
+      refTable: 'RePfBLoan'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TotalAllocation'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'BcId'
+    description: ''
+    genericControls:
+      refTable: 'RePfBRelBC'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'SerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'Tranche'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'PfBNo'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'Serie'
+    description: 'Beschreibende Bezeichnung zur Serie (Auflistung)'
+    genericControls:
+      defColumnPos: 7

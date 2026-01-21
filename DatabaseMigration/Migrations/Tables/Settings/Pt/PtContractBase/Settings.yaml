@@ -1,0 +1,39 @@
+table:
+  name: 'PtContractBase'
+  description: 'wird nicht mehr verwendet !'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Kontrakt'
+    - german:
+        formTitle: 'Kontrakt'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'ContractNo'
+    description: ''
+  - name: 'ContractType'
+    description: ''
+  - name: 'AgentId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'InternalRemark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ExternalRemark'
+    description: ''
+    genericControls:
+      multiLine: true

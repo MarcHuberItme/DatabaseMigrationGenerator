@@ -1,0 +1,24 @@
+table:
+  name: 'PtEventDocument'
+  description: 'Storage for bulk mail documents.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Bulk mail document'
+        helpText: 'Bulk mail document'
+  columns:
+  - name: 'EventId'
+    description: 'PtEvent foreign key'
+    genericControls:
+      refTable: 'PtEvent'
+      refField: 'Id'
+  - name: 'Content'
+    description: 'the document content'

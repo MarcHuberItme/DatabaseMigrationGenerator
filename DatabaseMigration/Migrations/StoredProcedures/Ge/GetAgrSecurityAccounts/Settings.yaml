@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAgrSecurityAccounts'
+  description: 'get a list of accounts that use the given security agreement as guarantie'

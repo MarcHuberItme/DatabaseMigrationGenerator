@@ -1,0 +1,80 @@
+table:
+  name: 'PtCheckResult'
+  description: 'Stores the result of the automated person checks, eg PEP-Check from Telekurs'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Person Check Results'
+    - german:
+        formTitle: 'Ergebnis Personenprüfung'
+  columns:
+  - name: 'ProfileId'
+    description: ''
+    genericControls:
+      refTable: 'PtProfile'
+      refField: 'Id'
+  - name: 'CheckTypeNo'
+    description: 'Type of the Person Check:\r\n10 = Telekurs PEP-Check'
+    genericControls:
+      defColumnPos: 1
+  - name: 'MatchCategoryNo'
+    description: 'Actual category of the Search\r\n0 if there is actually no match'
+    genericControls:
+      refTable: 'PtCheckMatchCategory'
+      refField: 'CategoryNo'
+      defColumnPos: 2
+  - name: 'MatchDate'
+    description: 'Date when the actual PepMatchCategory changed'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Score'
+    description: 'Score of the match in %'
+  - name: 'ProcessId'
+    description: 'Id of the Workflow Process to handle the match'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'BankVerificationResultNo'
+    description: 'Conclusion of the bank concerning the match of the partner'
+    genericControls:
+      refTable: 'PtCheckVerificationType'
+      refField: 'VerifyResultNo'
+      defColumnPos: 4
+  - name: 'VerificationUser'
+    description: 'Short name of the user which verified the search result'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+  - name: 'IsActualized'
+    description: 'Internal flag for the PEP-batchprocess to find the entries which are not in the list any more.'
+  - name: 'MatchListContent'
+    description: 'Content of the record in the match list which caused the match.'
+    genericControls:
+      multiLine: true
+  - name: 'Comment'
+    description: 'Space for additional comments.'
+    genericControls:
+      multiLine: true
+  - name: 'ListEntityKey'
+    description: 'Key, most likely an id, of the List-Entity who has matched.'
+    genericControls:
+      noUpdatePos: 4
+  - name: 'WhiteListHash'
+    description: 'Hash-Value which is used for the Whitelisting mechanism.'
+  - name: 'ScanExecutionId'
+    description: 'Link to the ScanExecution. With this link it''s possible to see how this matched was created (Index-Version, Search-Properties etc.).'
+    genericControls:
+      refTable: 'NcScanExecution'
+      refField: 'Id'
+  - name: 'MatchListHtml'
+    description: ''
+  - name: 'VersionId'
+    description: ''

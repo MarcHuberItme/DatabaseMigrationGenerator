@@ -1,0 +1,17 @@
+view:
+  name: 'AcNogaKlasse'
+  description: ''
+frontendView:
+  name: 'AcNogaKlasse'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns: []

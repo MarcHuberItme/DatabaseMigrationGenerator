@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CyRateRule_GetRuleForImport'
+  description: 'Get Rate Rule'

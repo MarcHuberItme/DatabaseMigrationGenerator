@@ -1,0 +1,23 @@
+table:
+  name: 'OaNotificationAccount'
+  description: 'Link between PtAccountBase and OaNotificationRule. Each NotificationRole can be assigned to one or more accounts. Used for E-Banking and other apps.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'NotificationRuleId'
+    description: 'OaNotificationRule.Id reference'
+    genericControls:
+      refTable: 'OaNotificationRule'
+      refField: 'Id'
+  - name: 'AccountId'
+    description: 'PtAccountBase.Id reference'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'

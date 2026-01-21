@@ -1,0 +1,26 @@
+table:
+  name: 'OaResourceType'
+  description: 'Defines specific types of resources or entities for which we can specify access control. Sometimes there is a matching table, sometimes not. Not every table needs to be a valid target for access control.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Resource Types'
+    - german:
+        formTitle: 'Ressourcenarten'
+  columns:
+  - name: 'Name'
+    description: 'Name of the resource. Can be a fully qualified name, like fs.financing.mortgage.account'
+  - name: 'TableName'
+    description: 'If the type of resource has a corresponding Finstar table, the name is placed here, otherwise null.'
+  - name: 'Description'
+    description: 'A description of the entity.'

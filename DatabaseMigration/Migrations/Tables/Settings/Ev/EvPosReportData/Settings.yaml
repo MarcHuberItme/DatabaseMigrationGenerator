@@ -1,0 +1,111 @@
+table:
+  name: 'EvPosReportData'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'SelectionPosId'
+    description: ''
+    genericControls:
+      refTable: 'EvSelectionPos'
+      refField: 'Id'
+  - name: 'TransMsgNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'SecEventDetailId'
+    description: ''
+    genericControls:
+      refTable: 'EvDetail'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SecTransMessageId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Pos1Quantity'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Pos1LocGroupId'
+    description: ''
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'Pos2Quantity'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'Pos2LocGroupId'
+    description: ''
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'AmountCompQuantity'
+    description: ''
+  - name: 'AccEventDetailId'
+    description: ''
+    genericControls:
+      refTable: 'EvDetail'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccTransMessageId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PrReference'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PosTitleNo'
+    description: ''
+  - name: 'ExtRatePyCuAcCu'
+    description: ''
+  - name: 'ExtRatePyCuHoCu'
+    description: ''
+  - name: 'TaxableAmountPyCu'
+    description: ''
+  - name: 'TaxableAmountHoCu'
+    description: ''
+  - name: 'VatTaxRate'
+    description: ''
+  - name: 'VatBaseAmountAcCu'
+    description: ''
+  - name: 'VatBaseAmountHoCu'
+    description: ''
+  - name: 'VatExtRateAcCuHoCu'
+    description: ''
+  - name: 'VatAmountAcCu'
+    description: ''
+  - name: 'VatAmountHoCu'
+    description: ''
+  - name: 'NetAmountAcCu'
+    description: ''
+  - name: 'IsConformStatement'
+    description: ''
+  - name: 'IsCancelStatement'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'PrintSubjectToCollection'
+    description: ''
+  - name: 'PrintedDate'
+    description: ''
+  - name: 'SuppressReport'
+    description: ''

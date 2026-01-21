@@ -1,0 +1,58 @@
+table:
+  name: 'AcDerivativeType'
+  description: 'Art des Basiswertes bei Derivate'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Underlying Type'
+    - german:
+        formTitle: 'Art des Basiswertes'
+    - french:
+        formTitle: 'Types sous-jacents'
+  columns:
+  - name: 'DerivativeTypeNo'
+    description: ''
+  - name: 'FireUnderlyingTypeValue'
+    description: ''
+  - name: 'FireAccountTradingBookBuy'
+    description: ''
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+  - name: 'FireAccountTradingBookSell'
+    description: ''
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+  - name: 'FireAccountBankingBookBuy'
+    description: ''
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+  - name: 'FireAccountBankingBookSell'
+    description: ''
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+  - name: 'ReceiveFix'
+    description: ''
+  - name: 'PayFix'
+    description: ''
+  - name: 'FireAccountTradingBookBuyOld'
+    description: ''
+  - name: 'FireAccountTradingBookSellOld'
+    description: ''
+  - name: 'FireAccountBankingBookBuyOld'
+    description: ''
+  - name: 'FireAccountBankingBookSellOld'
+    description: ''

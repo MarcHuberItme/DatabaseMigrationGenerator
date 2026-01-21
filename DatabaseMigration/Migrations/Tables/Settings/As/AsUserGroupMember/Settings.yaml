@@ -1,0 +1,33 @@
+table:
+  name: 'AsUserGroupMember'
+  description: 'Defines the membership of a user (AsGroup) to a user group (AsUserGroup)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Usergroup membership'
+    - german:
+        formTitle: 'Benutzergruppenzugehörigk'
+  columns:
+  - name: 'UserGroupName'
+    description: 'Name of the user group. Since the field UserGroupName in AsUserGroup is unique for workflow purposes, it is referenced here directly. This makes querying users of a certain group name even faster.'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 1
+  - name: 'UserId'
+    description: 'Id of a user in AsUser.\r\nThe user is referenced by Id instead of UserName. This allows to make the field UserName updateable as soon as the workflow system handles the ID''s correctly.'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'IsDefault'
+    description: 'if true, this is the default-member in this group.  the default-member is responsible for all jobs, which can''t be assigned from the workflow-system (there is no member defined for this role)'

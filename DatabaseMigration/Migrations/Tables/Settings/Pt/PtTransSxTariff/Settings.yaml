@@ -1,0 +1,88 @@
+table:
+  name: 'PtTransSxTariff'
+  description: 'Berechnungsbasis für Börsentarif'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Stock Exchange Tariff'
+    - german:
+        formTitle: 'Börsentarif Basis'
+  columns:
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'TariffNo'
+    description: 'first digit has to be unique for the customer PtTransMessageCharges'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'AccessNo'
+    description: 'Defines which amount shall be taken to find the limit (e.g. Brutto or Netto)'
+    genericControls:
+      refTable: 'PtTransSxTariffAccess'
+      refField: 'AccessNo'
+  - name: 'ChargeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'ChargeNo'
+      defColumnPos: 3
+  - name: 'CalculationUnit'
+    description: 'Unit for the tariff calculation, eg\r\n1 per piece\r\n100 = per 100 Units\r\n1000 = per 1000 Units'
+    minValue: '1'
+  - name: 'LimitCurrency'
+    description: 'Currency of the amount in field limit, table PtTransSxTariffScale'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'AmountCurrency'
+    description: 'Currency of the calculated amount. If this field is null, the PaymentCurrency will be used.\r\nThis currency will be placed in the PtTransMessageCharge.Currency (belongs to the main-ledger account, settlement)'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'FixAddCurrency'
+    description: 'Currency of the amount that has to be added per scale'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'MinMaxCurrency'
+    description: 'Currency of the minimum / maximum amount'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'MinAmount'
+    description: 'Minimum amount'
+  - name: 'MaxAmount'
+    description: 'Maximum amount'
+  - name: 'IsTariffPercent'
+    description: 'If true, the tariff is given in percent, otherwise as an absolute amount.'
+  - name: 'CalculationNo'
+    description: 'Defines how the basis for the calculation of the commission shall be taken (e.g. Brutto or Netto)'
+    genericControls:
+      refTable: 'PtTransSxTariffAccess'
+      refField: 'AccessNo'
+  - name: 'RoundingRule'
+    description: 'This rounding rule defines the rounding of the BasisAmount (AccessAmount).\r\n'
+    genericControls:
+      refTable: 'AsRoundingRule'
+      refField: 'RoundingRule'
+  - name: 'RoundingOption'
+    description: 'Option to choose whether the rounding shall be taken on an absolute value or depending oh the sign'
+  - name: 'ChargeExternalExpense'
+    description: 'If true, the broker commission will be charged to the customer'
+  - name: 'RoundingRuleFee'
+    description: 'Rounding rule for the fee (PtTransMessageCharge.AmountChargeCurrency). If is null the rounding rule of the AmountCurrency will be used.'
+    genericControls:
+      refTable: 'AsRoundingRule'
+      refField: 'RoundingRule'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPtAccountComposedPriceByAccountId'
+  description: 'Ge tPtAccountComposedPrice records by accountId'

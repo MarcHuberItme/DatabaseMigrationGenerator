@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountClosingPeriodLastWithValuationDate'
+  description: 'GetAccountClosingPeriodLast for Historically Valuation'

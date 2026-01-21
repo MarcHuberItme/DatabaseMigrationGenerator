@@ -1,0 +1,35 @@
+table:
+  name: 'PtAssetStrategy'
+  description: 'Asset Stratgy for PMS (Anlagestrategie)\r\n\r\nDie Assetstrategie ist abhängig von der Risikoneigung (auf PtProfile), des Anlagehorzionts, der Referenzwährung und der Risikofähigkeit des Kunden\r\n\r\n(SKL: the table is bank specific rather than general codes one. It is also bank specific in the current PMS - PM1/Expersoft).'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Asset Strategy'
+    - german:
+        formTitle: 'Anlagestrategie'
+  columns:
+  - name: 'AssetStrategyNo'
+    description: 'Number of a asset strategy, e.g. Einkommen, Rendite, Ausgewogen, Wachstum etc.'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IsETF'
+    description: 'value 1 as ETF mandat'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TaxablePercentage'
+    description: 'percentage of VA charge which is allowed in tax declaration'
+    genericControls:
+      defColumnPos: 3
+  - name: 'CumChargeMode'
+    description: 'when true, charge is added from all sub-range charge'

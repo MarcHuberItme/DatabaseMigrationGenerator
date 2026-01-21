@@ -1,0 +1,21 @@
+table:
+  name: 'PtTransEsrFileData'
+  description: 'Contains file contents, for example xml for the downloaded files'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransEsrFileId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransEsrFile'
+      refField: 'Id'
+  - name: 'FileData'
+    description: ''

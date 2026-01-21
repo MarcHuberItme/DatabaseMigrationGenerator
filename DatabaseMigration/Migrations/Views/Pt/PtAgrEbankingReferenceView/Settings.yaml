@@ -1,0 +1,54 @@
+view:
+  name: 'PtAgrEbankingReferenceView'
+  description: ''
+frontendView:
+  name: 'PtAgrEbankingReferenceView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'SeqNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 3
+  - name: 'AgreementRef'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 3
+  - name: 'PtDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      defColumnPos: 5
+  - name: 'MgVTNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 2
+  - name: 'ContactPersonId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtContactPerson'
+      refField: 'Id'
+      hasDetailBtn: true

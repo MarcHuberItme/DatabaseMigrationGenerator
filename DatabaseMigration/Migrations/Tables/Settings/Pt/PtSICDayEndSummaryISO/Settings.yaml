@@ -1,0 +1,76 @@
+table:
+  name: 'PtSICDayEndSummaryISO'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransMessageInId'
+    description: ''
+  - name: 'ExternalMessageId'
+    description: ''
+  - name: 'ExternalCreateTime'
+    description: ''
+  - name: 'ClearingNumber'
+    description: ''
+  - name: 'ClearingSystem'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'PageNumber'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsLastPage'
+    description: ''
+  - name: 'ReconsType'
+    description: 'Reconcilliation Type'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ReportBlockId'
+    description: ''
+  - name: 'ReportDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'FromDate'
+    description: ''
+  - name: 'ToDate'
+    description: ''
+  - name: 'SettlementAccount'
+    description: ''
+  - name: 'ParticipantName'
+    description: ''
+  - name: 'ParticipantAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'BalanceType'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'BalanceAmount'
+    description: ''
+  - name: 'BalanceCurrency'
+    description: ''
+  - name: 'BalanceSignIndicator'
+    description: ''
+  - name: 'NumEntries'
+    description: ''
+  - name: 'NetAmount'
+    description: ''
+  - name: 'NetAmountSignIndicator'
+    description: ''
+  - name: 'TotalDebitEntries'
+    description: ''
+  - name: 'SumDebitEntries'
+    description: ''
+  - name: 'TotalCreditEntries'
+    description: ''
+  - name: 'SumCreditEntries'
+    description: ''

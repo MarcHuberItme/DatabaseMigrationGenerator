@@ -1,0 +1,39 @@
+table:
+  name: 'PtProfileSuspect'
+  description: 'details about the money launder risk category'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    descField: 'SuspectCategoryNo'
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtProfile'
+      parentRelationField: 'ProfileId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+  columns:
+  - name: 'ProfileId'
+    description: ''
+    genericControls:
+      refTable: 'PtProfile'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'SuspectCategoryNo'
+    description: ''
+    genericControls:
+      refTable: 'PtProfileSuspectCategory'
+      refField: 'SuspectCategoryNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Score'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true

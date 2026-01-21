@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPartnerLanguageNo'
+  description: 'Get language for partner by PartnerId'

@@ -1,0 +1,64 @@
+table:
+  name: 'ReLegalLien'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Legal Lien'
+    - german:
+        formTitle: 'gesetzliches Pfandrecht'
+    - french:
+        formTitle: 'gage légal'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'LegalLienType'
+    description: ''
+    genericControls:
+      refTable: 'ReLegalLienType'
+      refField: 'LegalLienType'
+      defColumnPos: 1
+  - name: 'Amount'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Stipulation'
+    description: 'befristet\r\n0 = Nein\r\n1 = Ja'
+  - name: 'StipulationDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ForValuation'
+    description: 'FIS-2000: STZ_RELE_CD'
+    genericControls:
+      refTable: 'ReEnvironmentAddValuation'
+      refField: 'ValuationNo'
+      defColumnPos: 6
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 4
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'

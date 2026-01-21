@@ -1,0 +1,24 @@
+table:
+  name: 'RePledgeErrorLog'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'PledgeRegisterId'
+    description: ''
+    genericControls:
+      refTable: 'RePledgeRegister'
+      refField: 'Id'
+  - name: 'ErrorText'
+    description: ''
+  - name: 'RunId'
+    description: 'will store the Id of one Particulare Run of the validate'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'swMtAccoountsPFM'
+  description: 'List of acconts for PFM (Persona Finanace Manageent) software'

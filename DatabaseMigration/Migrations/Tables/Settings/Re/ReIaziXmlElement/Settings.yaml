@@ -1,0 +1,76 @@
+table:
+  name: 'ReIaziXmlElement'
+  description: 'To define all the element of IAZi XML element for IAZI data synchronization with finstar.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'IAZI Element'
+    - german:
+        formTitle: 'IAZI Export feld'
+  columns:
+  - name: 'ElementName'
+    description: 'Element Name of IAZI XML field.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CodeTableName'
+    description: 'Name of the Finstar table which contains values for codes or Type No. This value is manadatory if isCodeType is True.'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'CodeFieldName'
+    description: 'Name of the Finstar Field,which contains values for codes or Type No for Finstar Side. This value is manadatory if isCodeType is True.'
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'IaziFieldName'
+    description: 'Name of the Finstar Field,which contains values for codes or Type No for IAZI Side. This value is manadatory if isCodeType is True.'
+  - name: 'isCodeType'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'isForEFH'
+    description: 'is this field applicable for Single Family House (EFH)'
+    genericControls:
+      defColumnPos: 5
+  - name: 'isForMFH'
+    description: 'is this field applicable for Multi Family House (MFH).'
+    genericControls:
+      defColumnPos: 6
+  - name: 'isForSTWE'
+    description: 'is this field applicable for Apartment STWE.'
+    genericControls:
+      defColumnPos: 7
+  - name: 'isSum'
+    description: 'is this field a sum of multiple type objects. for example total Parkings etc.'
+    genericControls:
+      noUpdatePos: 8
+  - name: 'isRange'
+    description: 'If the element has a vaule in Range for example 1.1 to 2.0'
+    genericControls:
+      defColumnPos: 9
+  - name: 'FinstarTypeField'
+    description: 'This field is used when XLM element is and evaluation and will store the Name of the Finstar Field which is a foreignKey in Choice Type Tables.'
+  - name: 'FinstarTypeValue'
+    description: 'This field is used when XLM element is and evaluation and will store the Value of the Finstar Type which is a foreignKey in Choice Type Tables. It can be a Type No or ID of the parent table for which the choice table has the value.'
+  - name: 'isValuationResult'
+    description: 'This flag will indicate if the element is the main data of real estate or if its the result of an valution.'
+  - name: 'isRating'
+    description: 'This falg will be true if the IAZI element is a rating of condition or location etc. In this case the FinstarTypeNo field should have the type for which this valuation result is applicable.'
+    genericControls:
+      defColumnPos: 10
+  - name: 'isForStpz'
+    description: 'This flag will be true if this Element will be transferred to Stpz data.'
+  - name: 'isForBuildRight'
+    description: ''
+  - name: 'Deactivated'
+    description: ''

@@ -1,0 +1,161 @@
+view:
+  name: 'PtFxContractPartnerDetailView'
+  description: 'Detail view for forex contracts.'
+frontendView:
+  name: 'PtFxContractPartnerDetailView'
+  description: 'Created for code generation purposes.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'ContractId'
+    description: 'Identifier of the contract.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'ContractNo'
+    description: 'Contract number.'
+    dataType: 'int'
+  - name: 'ExternalRemark'
+    description: 'External remark about contract.'
+    dataType: 'nvarchar'
+    prec: 200
+  - name: 'InternalRemark'
+    description: 'Internal remark about contract.'
+    dataType: 'nvarchar'
+    prec: 200
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'HdCreator'
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'HdChangeUser'
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+  - name: 'ContractualAmnt'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'AgentId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'DeTourGroup'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 32
+  - name: 'StatusNo'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'StatusId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'TransactionId'
+    description: 'Id of the related transaction.'
+    dataType: 'uniqueidentifier'
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'Side'
+    description: 'SELL = Partner is selling\r\nBUY = Partner is buying'
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 4
+  - name: 'BuyCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'SellCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'OrderDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'DateFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'DateTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'DateOfTermination'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ContractTypeNo'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+  - name: 'ContractTypeId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'BranchNo'
+    description: ''
+    dataType: 'int'
+  - name: 'PartnerPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 8
+  - name: 'PartnerDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 400
+  - name: 'DebitAccountNo'
+    description: 'Account debited.'
+    dataType: 'decimal'
+    prec: 11
+  - name: 'CreditAccountNo'
+    description: 'Account credited.'
+    dataType: 'decimal'
+    prec: 11
+  - name: 'ContributionToContractualAmnt'
+    description: 'Partner contribution to the contractual amount.'
+    dataType: 'money'
+    scale: 4
+  - name: 'ClientMarginValue'
+    description: ''
+    dataType: 'float'
+  - name: 'ClientMarginType'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 3
+  - name: 'ClientMarginTypeId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ConversionRate'
+    description: ''
+    dataType: 'float'
+  - name: 'MarketRate'
+    description: ''
+    dataType: 'float'
+  - name: 'ParticipantId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'ParticipantHdVersionNo'
+    description: 'PtContractPartner HdVersionNo'
+    dataType: 'int'
+    isNotNull: true

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPortfolioDataForSx'
+  description: 'Replacement for the method: ReadPtPortfolioData from FsStockExOrder.FsTxGetData.'

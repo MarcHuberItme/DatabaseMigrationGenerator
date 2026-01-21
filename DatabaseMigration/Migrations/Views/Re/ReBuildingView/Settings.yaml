@@ -1,0 +1,83 @@
+view:
+  name: 'ReBuildingView'
+  description: 'This view is used along with front end table ReBuildingView to populate the building earning details in Pledge Administration system.'
+frontendView:
+  name: 'ReBuildingView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'BuildingTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReBuildingType'
+      refField: 'BuildingTypeNo'
+      defColumnPos: 1
+  - name: 'BuildingStyleNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReBuildingStyle'
+      refField: 'BuildingStyleNo'
+  - name: 'YearOfConstruction'
+    description: ''
+    dataType: 'int'
+  - name: 'YearOfTotalChange'
+    description: ''
+    dataType: 'int'
+  - name: 'InsuranceNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 2
+  - name: 'AreaM2'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'VolumeM3'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'VolumeTypeId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReBuildingVolumeType'
+      refField: 'Id'
+  - name: 'RentAmountDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'RentAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 4
+  - name: 'EmptyAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'SupportAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'AddExpAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'RentRateBusiness'
+    description: ''
+    dataType: 'float'
+  - name: 'RentRateOwn'
+    description: ''
+    dataType: 'float'

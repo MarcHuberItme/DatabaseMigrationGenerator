@@ -1,0 +1,205 @@
+table:
+  name: 'PtAccountComponent'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 2
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountBaseId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Component'
+    - german:
+        formTitle: 'Komponenten'
+    - french:
+        formTitle: 'Composant'
+  columns:
+  - name: 'ContractBaseId'
+    description: 'foreign-key;  Id of PtContractBase'
+    genericControls:
+      refTable: 'PtContract'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'AccountBaseId'
+    description: 'foreign-key;  Id of PtAccountBase'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'PrivateComponentId'
+    description: 'foreign-key;  Id of PrPrivateComponent'
+    genericControls:
+      refTable: 'PrPrivateComponent'
+      refField: 'Id'
+  - name: 'PrivateCompTypeId'
+    description: 'type of component (copied by create-account from PrPrivateComponent)\r\nforeign-key;  Id of PrPrivateCompType'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'PriorityOfInterestCalculation'
+    description: 'Interest Calculation Priority of Component'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PriorityOfPayback'
+    description: 'Payback Priority of Component'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PriorityOfLegalReporting'
+    description: 'Legal Reporting Priority of Component'
+    genericControls:
+      defColumnPos: 4
+  - name: 'IsOldComponent'
+    description: 'if true, the component is inactive (for example after a product-change)'
+    genericControls:
+      defColumnPos: 5
+  - name: 'Duration'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'DurationTypeId'
+    description: 'foreign-key;  Id of PrDurationType\r\ntime units:   - Day (d)   - Month (m)   - Year (y)'
+    genericControls:
+      refTable: 'PrDurationType'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PrivateCompCharacteristicNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivateCompCharacteristic'
+      refField: 'CharacteristicNo'
+      defColumnPos: 10
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 11
+  - name: 'MgVBNR'
+    description: 'xsd. 15.03.2010. Changed to accomodate large values in BSZ'
+    genericControls:
+      isOnlyForMig: true
+      isNoUpdate: true
+  - name: 'MgVBSUBKTNR'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+      isNoUpdate: true
+  - name: 'MgLIMITE'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVERKWERT'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgDECKWERT'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgRANG'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVORGANG'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVERFALL'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+      isOnlyForMig: true
+  - name: 'MgBEMERKUNG'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgGBNR'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgOBJPLZ'
+    description: 'Bei Drittbanken enthält dieser Wert die Swisstown Nummer !'
+    minValue: '0'
+    maxValue: '9999'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgOBJPLZZUSATZ'
+    description: ''
+    minValue: '0'
+    maxValue: '9999'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgOBJTYP'
+    description: ''
+    genericControls:
+      refTable: 'MgA21'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgVWDATUM'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVWART'
+    description: ''
+    genericControls:
+      refTable: 'MgA68'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgANLGWERT'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVARLIM'
+    description: ''
+    minValue: '0'
+    maxValue: '100'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgMAXLIMITE'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgTOLERANZ'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgVrxKey'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgReactivation'
+    description: 'component has to be reactivated (perform insert in backmigration)'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgLocation'
+    description: 'Contry (Location) of building.\r\n\r\nSpecial requirement for FGB which has mortgages abroad and has to report them in SNB Report M011.\r\n\r\nThis is a temporary solution which will be replaced by the final collateral managamant solution.'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      isOnlyForMig: true
+  - name: 'SyncValue'
+    description: 'Amount, synchronized by application from PtAccountCompValue; Field was created for Issue FIN-3158 Anpassungen Komponenten-Node and is used for Synchronisation purposes by application; MIGRATION not needed, leave it empty'
+    genericControls:
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'SyncValidFrom'
+    description: 'Start date of component value, synchronized from PtAccountCompValue; Field was created for Issue FIN-3158 Anpassungen Komponenten-Node and is used for Synchronisation purposes by application; MIGRATION not needed, leave it empty'
+    genericControls:
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'SyncValidTo'
+    description: 'End date of component value, synchronized from PtAccountCompValue; Field was created for Issue FIN-3158 Anpassungen Komponenten-Node and is used for Synchronisation purposes by application; MIGRATION not needed, leave it empty'
+    genericControls:
+      defColumnPos: 8

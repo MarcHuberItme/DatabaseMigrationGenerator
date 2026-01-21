@@ -1,0 +1,50 @@
+table:
+  name: 'ReBuildingRoomValuation'
+  description: 'Valuation relevant data for ReBuildingRoom'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'ValuationId'
+    description: ''
+    genericControls:
+      refTable: 'ReValuation'
+      refField: 'Id'
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+  - name: 'DwellingId'
+    description: ''
+    genericControls:
+      refTable: 'ReDwelling'
+      refField: 'Id'
+  - name: 'BuildingRoomId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuildingRoom'
+      refField: 'Id'
+  - name: 'RentPerMonthIntLiving'
+    description: ''
+  - name: 'RentPerMonthExtLiving'
+    description: ''
+  - name: 'RentPerMonthIntTrade'
+    description: ''
+  - name: 'RentPerMonthExtTrade'
+    description: ''
+  - name: 'PriceM2'
+    description: 'Price per m2'
+  - name: 'UsageRate'
+    description: 'usage of rooms in % (hotel)'
+  - name: 'UsageInDaysPerYear'
+    description: 'usage of rooms in days per year (hotel)'
+  - name: 'PriceUnit'
+    description: 'price per unit and day'

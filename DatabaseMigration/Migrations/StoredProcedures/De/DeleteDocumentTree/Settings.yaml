@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DeleteDocumentTree'
+  description: 'Deletes precreated documents which have to be generated again.\r\nEffected tables:	AsDocument, AsDocumentData, AsDocumentIndex, AsMailOutput, AsMailOutputJobXML, AsMailOutputJob, 		AsMailOuputJobDoc, AsMailOutputInset'

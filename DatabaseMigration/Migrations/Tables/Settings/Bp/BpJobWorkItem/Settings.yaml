@@ -1,0 +1,55 @@
+table:
+  name: 'BpJobWorkItem'
+  description: 'JCS Work items for worker jobs'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    descField: 'Description'
+    uiTableDescription:
+    - english:
+        formTitle: 'JCS Work Item'
+    - german:
+        formTitle: 'JCS Work Item'
+    - french:
+        formTitle: 'JCS Work Item'
+    - italian:
+        formTitle: 'JCS Work Item'
+  columns:
+  - name: 'JobWorkerId'
+    description: ''
+    genericControls:
+      refTable: 'BpJobWorker'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'TaskId'
+    description: ''
+    genericControls:
+      refTable: 'BpTask'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'RefId'
+    description: 'Reference to the work related item Id'
+  - name: 'RefTable'
+    description: 'Reference to the work related item Table'
+  - name: 'Param'
+    description: 'Work item parameters'
+  - name: 'Description'
+    description: 'User readable description of the Work Item'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Status'
+    description: 'Status of work item'
+    genericControls:
+      refTable: 'BpJobWorkItemStatus'
+      refField: 'Status'
+  - name: 'RunCount'
+    description: 'Number of work item executions'
+  - name: 'LastRunDate'
+    description: 'Date of the last execution.'

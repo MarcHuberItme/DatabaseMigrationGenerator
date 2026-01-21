@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DeleteCardShowLastFoTransactions'
+  description: 'Deletes all entries in table PtCardShowLastFoTransactions'

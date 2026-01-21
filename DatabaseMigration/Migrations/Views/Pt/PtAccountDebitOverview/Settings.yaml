@@ -1,0 +1,147 @@
+view:
+  name: 'PtAccountDebitOverview'
+  description: '2011-09-09/mct: MgSachB durch ConsultantTeamName ersetzt'
+frontendView:
+  name: 'PtAccountDebitOverview'
+  description: 'Overview for open invoices and reminders'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+  - name: 'HdPendingSubChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'ReferenceNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 27
+    genericControls:
+      defColumnPos: 1
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      defColumnPos: 14
+  - name: 'PartnerDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 15
+  - name: 'InvoiceCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 4
+  - name: 'InitialAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 5
+  - name: 'PendingAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 6
+  - name: 'InvoiceTransDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7
+  - name: 'InvoiceValueDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 8
+  - name: 'InvoiceDueDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 9
+  - name: 'InvoiceType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsInvoiceType'
+      refField: 'InvoiceType'
+      defColumnPos: 10
+  - name: 'InvoiceNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 11
+  - name: 'ReminderCount'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 12
+  - name: 'SuppressInvoice'
+    description: ''
+    dataType: 'varchar'
+    prec: 5
+    genericControls:
+      defColumnPos: 13
+  - name: 'BranchNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 14
+  - name: 'ConsultantTeamName'
+    description: ''
+    dataType: 'varchar'
+    isNotNull: true
+    prec: 32
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 15
+  - name: 'PrintDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 16
+  - name: 'FormerAccountNo'
+    description: 'field in PtAccountBase, required for Avobis as they use the front system number for searching purpose'
+    dataType: 'nvarchar'
+    prec: 30
+    genericControls:
+      defColumnPos: 15

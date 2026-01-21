@@ -1,0 +1,74 @@
+table:
+  name: 'CyRateRule'
+  description: 'Rules how the rates have to be stored\r\n\r\nDefined per currency pair and payment instrument\r\ne.g. USD/CHF Forex or EUR/CHF Accountancy'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Store rules'
+    - german:
+        formTitle: 'Speicherungsregeln'
+  columns:
+  - name: 'CySymbolOriginate'
+    description: 'Symbol of the originate currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 1
+  - name: 'CySymbolTarget'
+    description: 'Symbol of the target currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'PaymentInstrumentNo'
+    description: 'Instrument of payment, e.g. small bills, traveler checks etc.'
+    genericControls:
+      refTable: 'CyPaymentInstrument'
+      refField: 'PaymentInstrumentNo'
+      defColumnPos: 3
+  - name: 'RateValidity'
+    description: 'Amount of days a rate is valid'
+  - name: 'MemoryPoolValidity'
+    description: 'Amount of days a rate is stored in memory pool'
+  - name: 'RecentValidity'
+    description: 'Amount of days a rate resides in the recent database. CyRateType contains the default value for this field.'
+  - name: 'ArchiveValidity'
+    description: 'Amount of days a rate is stored in the archiv table. CyRateType contains the default value for this field.'
+  - name: 'Tolerance'
+    description: 'Tolearnce for new rates compared to the old rate'
+  - name: 'SizeCodeLimit'
+    description: 'Limit to define if the rate for small amounts or the rate for large amounts is to apply.'
+  - name: 'FeedSymbol'
+    description: 'currency pair symbol - for example: \r\nTelekurs: pseudo valor number: 275000 for CHF/USD\r\nReuters: code CHF/EUR\r\nBloomberg: code EUR Currency'
+  - name: 'FeedUpdateInterval'
+    description: 'update interval in minutes\r\n0 = continous\r\n5 - every 5 minutes'
+  - name: 'FeedUpdateFrom'
+    description: 'update rates from time e.g. 08:00'
+  - name: 'FeedUpdateTo'
+    description: 'update rates till time e.g. 17:00\r\nif its equal to UpdateFrom - update runs just once a day'
+  - name: 'LimitingValue'
+    description: 'This limiting value (currency = CySymbolOriginate) for currency conversion. Account Manager can only convert a currency upto a maximum limit. If LimitingValue is being crossed, trader has to get involved personally in that case.'
+  - name: 'ExpirationManager'
+    description: 'Timeout Interval for the offer made by Currency Position Module. If Account Manager is making an offer this interval is used'
+  - name: 'ExpirationTrader'
+    description: 'Timeout Interval for the offer made by Currency Position Module. If Trader is making an offer this interval is used.'
+  - name: 'Ric'
+    description: 'this field is now used for Bloomberg (17.03.2016)\r\nReuters instrument code\r\n(used by Datascope import)'
+  - name: 'DifferenceMax'
+    description: 'Rate Import max difference in procent'
+    minValue: '0'
+    maxValue: '1000'
+  - name: 'DataScopeFactor'
+    description: 'this field is now used for Bloomberg (17.03.2016)\r\nDatascope Factor for Rate Import'
+    minValue: '1'
+  - name: 'SaveInverseRate'
+    description: 'Flag for rate import. Save inverse rate'

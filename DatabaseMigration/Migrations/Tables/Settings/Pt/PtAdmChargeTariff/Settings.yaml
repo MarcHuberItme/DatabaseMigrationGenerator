@@ -1,0 +1,90 @@
+table:
+  name: 'PtAdmChargeTariff'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargeTariff'
+        helpText: 'PtAdmChargeTariff'
+    - german:
+        formTitle: 'PtAdmChargeTariff'
+        helpText: 'PtAdmChargeTariff'
+  columns:
+  - name: 'ChargeGroup'
+    description: '0, Depotgebühren\r\n1, VA Gebühren\r\n2, Metallkonti'
+    genericControls:
+      refTable: 'PtAdmChargeGroup'
+      refField: 'GroupNo'
+      defColumnPos: 1
+  - name: 'AdmChargeType'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeSubType'
+      refField: 'SubTypeNo'
+      defColumnPos: 5
+  - name: 'TitleType'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeTitleType'
+      refField: 'TypeNo'
+      defColumnPos: 2
+  - name: 'AssetType'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeAssetRange'
+      refField: 'TypeNo'
+      defColumnPos: 3
+  - name: 'MetalType'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeMetalType'
+      refField: 'TypeNo'
+      defColumnPos: 4
+  - name: 'ChargeBase'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeBase'
+      refField: 'UnitNo'
+  - name: 'ValidFrom'
+    description: 'charge start date'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ChargeRate'
+    description: ''
+  - name: 'ChargeRateWithoutVAT'
+    description: 'charge rate to calculate charge with VAT. "ChargeRate" as total rate'
+  - name: 'PercentageWithoutVAT'
+    description: 'Percentage chargeable without VAT'
+  - name: 'ChargeAmount'
+    description: ''
+  - name: 'MinChargeCHF'
+    description: ''
+  - name: 'MaxChargeCHF'
+    description: ''
+  - name: 'MinChargeWithDiscount'
+    description: ''
+  - name: 'DiscountRate'
+    description: ''
+  - name: 'PortfolioTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      defColumnPos: 8
+  - name: 'NotAsCH'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'NotAsDefault'
+    description: ''
+    genericControls:
+      defColumnPos: 10

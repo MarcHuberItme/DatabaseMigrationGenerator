@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetObligationTotal'
+  description: 'Selection of all obligations that have a relation to premises\r\n(Selektion aller Schuldbriefe, die sich auf ein Grundstück beziehen)'

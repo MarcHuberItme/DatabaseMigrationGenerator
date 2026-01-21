@@ -1,0 +1,50 @@
+table:
+  name: 'PtEbInvestPresentation'
+  description: 'E-Banking Investment Instruments to present in a list to the e-banking user.\r\nUser can access details of it and trigger a stockex order\r\n\r\ne.g. HBL Asset Management products (investment funds) can be presented over this list'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'E-Banking Invest. Product'
+        helpText: 'E-Banking Invest. Product'
+    - german:
+        formTitle: 'E-Banking Invest. Product'
+        helpText: 'E-Banking Invest. Product'
+  columns:
+  - name: 'PublicId'
+    description: 'Instrument Id (PrPublicId)'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'IconTypeNo'
+    description: 'Icon to use for this instrument, Icon wil be displayed in e-banking'
+    genericControls:
+      refTable: 'PtEbInvestIcon'
+      refField: 'IconTypeNo'
+      defColumnPos: 2
+      noUpdatePos: 2
+  - name: 'MonthPerformanceDate'
+    description: 'Date of the monthly performance.\r\ne.g.\r\nToday is 20.04.2020\r\nWe show the last month performance (March)\r\nIn this case the value in this field would be 31.03.2020\r\n\r\ninformation can be entered manually from a user or updated periodically with a batch job.\r\n'
+    genericControls:
+      defColumnPos: 3
+      noUpdatePos: 3
+  - name: 'MonthPerformanceValue'
+    description: ''
+  - name: 'YearPerformanceDate'
+    description: ''
+  - name: 'YearPerformanceValue'
+    description: ''
+  - name: 'SortNo'
+    description: ''

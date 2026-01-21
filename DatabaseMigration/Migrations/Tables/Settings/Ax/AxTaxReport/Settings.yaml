@@ -1,0 +1,59 @@
+table:
+  name: 'AxTaxReport'
+  description: 'Beinhaltet die Headerinformationen für den Export an Alphatax (TaxSource). Entspricht einem XML-File.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax report'
+    - german:
+        formTitle: 'TaxSource-Meldung'
+  columns:
+  - name: 'TaxProgramNo'
+    description: 'Verbindung zum Steuerprogramm'
+    genericControls:
+      refTable: 'AiTaxProgram'
+      refField: 'TaxProgramNo'
+      defColumnPos: 1
+  - name: 'StartDate'
+    description: 'Datum von'
+    genericControls:
+      defColumnPos: 3
+  - name: 'EndDate'
+    description: 'End Date'
+  - name: 'ReportTypeNo'
+    description: 'Typ der Meldung'
+    genericControls:
+      refTable: 'AiTaxReportType'
+      refField: 'ReportTypeNo'
+      defColumnPos: 4
+  - name: 'ReportStatusNo'
+    description: 'Status der Meldung'
+    genericControls:
+      refTable: 'AiTaxReportStatus'
+      refField: 'ReportStatusNo'
+      defColumnPos: 5
+  - name: 'RefTaxReportId'
+    description: 'Referenz zur vorhergehenden Steuermeldung falls Korrekturen erfolgen.'
+    genericControls:
+      refTable: 'AxTaxReport'
+      refField: 'Id'
+  - name: 'FileName'
+    description: ''
+  - name: 'SecuritiesCheckOkay'
+    description: 'filled in stored proc AxValidateTaxReportData'
+  - name: 'BalancesCheckOkay'
+    description: 'filled in stored proc AxValidateTaxReportData'
+  - name: 'TransDateCheckOkay'
+    description: 'filled in stored proc AxValidateTaxReportData'
+  - name: 'FXrateCheckOkay'
+    description: 'filled in stored proc AxValidateTaxReportData'
+  - name: 'PricesCheckOkay'
+    description: 'filled in stored proc AxValidateTaxReportData'

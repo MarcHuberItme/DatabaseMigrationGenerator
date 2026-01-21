@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetETAccountCorrespondence'
+  description: 'Account level correspondence information to merge in account document'

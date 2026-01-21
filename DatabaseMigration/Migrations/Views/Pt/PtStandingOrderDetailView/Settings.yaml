@@ -1,0 +1,43 @@
+view:
+  name: 'PtStandingOrderDetailView'
+  description: ''
+frontendView:
+  name: 'PtStandingOrderDetailView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'StandingOrderId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtStandingOrder'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'DetailSequence'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 2
+  - name: 'DetailPaymentAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 4
+  - name: 'DetailReferenceNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 27
+    genericControls:
+      defColumnPos: 5
+  - name: 'DetailExecutedDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6

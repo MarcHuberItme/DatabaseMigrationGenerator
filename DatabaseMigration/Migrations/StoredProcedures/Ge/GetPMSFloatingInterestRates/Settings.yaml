@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPMSFloatingInterestRates'
+  description: 'returns portfolio number containing the security involved in the transaction'

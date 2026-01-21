@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetBalance_AvailableExtended_WithLatestTransTime'
+  description: 'This stored procedure clones GetBalance_AvailableExtended and adds the LatestTransactionDate'

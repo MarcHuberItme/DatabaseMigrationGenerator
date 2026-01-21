@@ -1,0 +1,35 @@
+table:
+  name: 'PtPaymentMCCSELimit'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'UsageLimitCode'
+    description: 'Limit code. Final codes will be provided during implementation.'
+  - name: 'MaxNumber'
+    description: 'Volume limit value. For example 10 transactions.'
+  - name: 'MaxAmount'
+    description: 'Single amount limit value (per transaction).'
+  - name: 'MaxSingleAmount'
+    description: ''
+  - name: 'CurrencyCode'
+    description: 'Currency in ISO 4217 code (i.e. EUR, USD, PLN). It should be the settlement currency for given account/card.'
+  - name: 'ActivityPeriodDateFrom'
+    description: 'Start of the limit period.'
+  - name: 'ActivityPeriodDateTo'
+    description: 'End of the limit period. Date must be greater or equal to "activity period date from".'
+  - name: 'UsedNumber'
+    description: 'Current state of limit usage - number of already performed transactions.'
+  - name: 'UsedAmount'
+    description: 'Current state of limit usage - amount of already performed transactions.'
+  - name: 'PaymentMasterCardCseID'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentMasterCardCSE'
+      refField: 'Id'

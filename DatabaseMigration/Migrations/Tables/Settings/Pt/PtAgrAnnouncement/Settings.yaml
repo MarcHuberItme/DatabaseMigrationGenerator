@@ -1,0 +1,29 @@
+table:
+  name: 'PtAgrAnnouncement'
+  description: 'An new Announcement (Event or Feature --> new InstantPayment) which is related to the terms and conditions'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'E-Banking event'
+    - german:
+        formTitle: 'E-Banking Ereignis'
+    - french:
+        formTitle: 'Événement e-banking'
+  columns:
+  - name: 'ActivatedAt'
+    description: 'Date when the Announcement will be active for the e-banking users'
+  - name: 'ExpiredAt'
+    description: 'Date when the announcement is no longer active.'
+  - name: 'Link'
+    description: 'Link to website for more information'

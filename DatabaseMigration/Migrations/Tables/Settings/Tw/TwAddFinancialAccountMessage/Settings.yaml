@@ -1,0 +1,46 @@
+table:
+  name: 'TwAddFinancialAccountMessage'
+  description: 'Contains the message to add an account as available TWINT account. Adding authorized accounts requires strong authentication with a secToken.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: bad6dd0b-5ed3-4cee-b419-0b3faf9ddacc
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Add Account Message'
+    - german:
+        formTitle: 'Add Account Message'
+  columns:
+  - name: 'HeaderMessageId'
+    description: 'Id of TwHeaderMessage'
+    genericControls:
+      refTable: 'TwHeaderMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'SystemInfoId'
+    description: 'Id of TwSystemInfo'
+    genericControls:
+      refTable: 'TwSystemInfo'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'SecToken'
+    description: 'Token for further registration flow'
+    genericControls:
+      isNoUpdate: true
+  - name: 'PrivateCustomerId'
+    description: 'TWINT contract id'
+  - name: 'Iban'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true

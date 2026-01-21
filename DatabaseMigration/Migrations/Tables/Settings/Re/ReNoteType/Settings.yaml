@@ -1,0 +1,42 @@
+table:
+  name: 'ReNoteType'
+  description: 'FIS-2000:GR_ANM_ART'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Notetype'
+    - german:
+        formTitle: 'Anmerkungsart'
+  columns:
+  - name: 'NoteTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ToBeAdded'
+    description: '0 = Subtraction (no)\r\n1 = Addition (yes)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'EnterAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ForValuation'
+    description: ''
+    genericControls:
+      refTable: 'ReEnvironmentAddValuation'
+      refField: 'ValuationNo'
+      defColumnPos: 4
+  - name: 'ForValuationFixed'
+    description: ''
+  - name: 'SortNo'
+    description: ''

@@ -1,0 +1,67 @@
+table:
+  name: 'PtAccountDebitControlCorr'
+  description: 'save information where to send invoices and advices for a debit control entry'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'DebitControlId'
+    description: 'foreign key of PtAccountDebitControl.Id\r\n'
+    genericControls:
+      refTable: 'PtAccountDebitControl'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'AddressId'
+    description: 'receiver address'
+    genericControls:
+      refTable: 'PtAddress'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'AttentionOf'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CarrierTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsCarrierType'
+      refField: 'CarrierTypeNo'
+      defColumnPos: 3
+  - name: 'DeliveryRuleNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 4
+  - name: 'DetourGroup'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'CorrItemId'
+    description: ''
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PrintDate'
+    description: 'Date when the document was printed'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsPrimaryCorrAddress'
+    description: ''
+    genericControls:
+      isNoUpdate: true

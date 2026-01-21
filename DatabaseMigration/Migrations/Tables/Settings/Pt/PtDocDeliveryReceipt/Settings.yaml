@@ -1,0 +1,34 @@
+table:
+  name: 'PtDocDeliveryReceipt'
+  description: 'Receipt for documents that where retained and then delivered to the partner'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Document Delivery Receipt'
+    - german:
+        formTitle: 'Dok. Empfangsbestätigung'
+  columns:
+  - name: 'AgrRetainedMailId'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrRetainedMail'
+      refField: 'Id'
+  - name: 'DeliveryDate'
+    description: 'date when the document were delivered'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'DeliveryTypeId'
+    description: 'collected, send per mail'
+    genericControls:
+      refTable: 'PtDocDeliveryType'
+      refField: 'Id'
+      defColumnPos: 2

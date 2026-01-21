@@ -1,0 +1,66 @@
+table:
+  name: 'FaManualSearch'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'FaManualSearch'
+        helpText: 'FaManualSearch'
+    - german:
+        formTitle: 'FaManualSearch'
+        helpText: 'FaManualSearch'
+  columns:
+  - name: 'FaBaseId'
+    description: ''
+    genericControls:
+      refTable: 'FaBase'
+      refField: 'Id'
+  - name: 'IsUsCiticen'
+    description: ''
+  - name: 'IsStructure'
+    description: ''
+  - name: 'HasUsDomicile'
+    description: ''
+  - name: 'HasUsAddress'
+    description: ''
+  - name: 'MailsToUsAddress'
+    description: ''
+  - name: 'HasUsPhoneNumber'
+    description: ''
+  - name: 'StandingInstructions'
+    description: ''
+  - name: 'GrantsToUsAddress'
+    description: ''
+  - name: 'InCareOf_Inside'
+    description: ''
+  - name: 'InCareOf_Outside'
+    description: ''
+  - name: 'OnlyHoldMail'
+    description: ''
+  - name: 'UsBasket'
+    description: ''
+  - name: 'NonUs_Dba'
+    description: ''
+  - name: 'HasW9'
+    description: ''
+  - name: 'W9Date'
+    description: ''
+  - name: 'TIN'
+    description: ''
+  - name: 'HasWaiver'
+    description: ''
+  - name: 'OVDP'
+    description: ''
+  - name: 'PaidForTaxStatement'
+    description: ''
+  - name: 'HasRelatedUsAccount'
+    description: ''

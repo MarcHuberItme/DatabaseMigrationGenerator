@@ -1,0 +1,32 @@
+table:
+  name: 'PtPaymentRejectReturnCode'
+  description: 'Map PtPaymentRejectReason to PtPaymentReturnCode\r\nUsed for SIC returns'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPaymentRejectReturnCode'
+    - german:
+        formTitle: 'PtPaymentRejectReturnCode'
+    - french:
+        formTitle: 'PtPaymentRejectReturnCode'
+    - italian:
+        formTitle: 'PtPaymentRejectReturnCode'
+  columns:
+  - name: 'RejectCode'
+    description: 'References PtPaymentRejectReason'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ReturnCode'
+    description: 'References PtPaymentReturnCode'
+    genericControls:
+      defColumnPos: 2

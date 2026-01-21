@@ -1,0 +1,3 @@
+view:
+  name: 'AsGroupLabelDataRows'
+  description: 'Joins Group label with Group members to retrurn traget data rows'

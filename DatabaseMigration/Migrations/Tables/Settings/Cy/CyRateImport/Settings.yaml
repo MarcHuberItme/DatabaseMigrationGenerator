@@ -1,0 +1,40 @@
+table:
+  name: 'CyRateImport'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ProviderNo'
+    description: ''
+    genericControls:
+      refTable: 'CyProvider'
+      refField: 'ProviderNo'
+      defColumnPos: 1
+  - name: 'PaymentInstrumentNo'
+    description: ''
+    genericControls:
+      refTable: 'CyPaymentInstrument'
+      refField: 'PaymentInstrumentNo'
+  - name: 'CySymbolOriginate'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'CySymbolTarget'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'RateDate'
+    description: ''
+  - name: 'Rate'
+    description: ''
+  - name: 'Description'
+    description: ''

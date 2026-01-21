@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'RptETPBonitaetKapBu'
+  description: 'For ETP reporting\r\n\r\n2025-11-05/FIN-14042 rename SP (remove Umlaute RptETPBonitätKapBu)\r\n2023-08-02/FIN-9318/daga: condition added for PtTransItem HdVersionNo between 1 and 999999998'

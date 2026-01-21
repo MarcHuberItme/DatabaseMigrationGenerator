@@ -1,0 +1,108 @@
+view:
+  name: 'CoEngDetViewAcc'
+  description: 'Zeigt die historischen Werte pro Konto für das Gesamtengagement an'
+frontendView:
+  name: 'CoEngDetViewAcc'
+  description: 'Zeigt historische Werte pro Konto für das Gesamtengagament an'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'account engagement'
+        helpText: 'account engagement'
+    - german:
+        formTitle: 'account engagement'
+        helpText: 'account engagement'
+  columns:
+  - name: 'veragrp'
+    description: 'aus coveradet'
+    dataType: 'int'
+    genericControls:
+      refTable: 'CoVeragrp'
+      refField: 'Veragrp'
+  - name: 'veradate'
+    description: 'aus coveradet'
+    dataType: 'decimal'
+    prec: 38
+    scale: 38
+  - name: 'accountid'
+    description: 'aus coveradet'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+  - name: 'AccountNoText'
+    description: 'aus Ptaccountbase'
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'AccountNoEdited'
+    description: 'aus Ptaccountbase'
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'Clientid'
+    description: 'asu coengdetcalc'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+  - name: 'debitbalance'
+    description: 'aus coengdetcalc'
+    dataType: 'money'
+  - name: 'existinglimit'
+    description: 'aus coengdetcalc'
+    dataType: 'money'
+  - name: 'intrestoutstanding'
+    description: 'aus coengdetcalc'
+    dataType: 'money'
+  - name: 'existingamoamount'
+    description: 'aus coengdetcalc'
+    dataType: 'money'
+  - name: 'existingdateamo'
+    description: 'aus coengdetcalc'
+    dataType: 'datetime'
+  - name: 'valuationallowance'
+    description: 'aus coengdetcalc'
+    dataType: 'money'
+  - name: 'Compwbbez'
+    description: 'aus coengdetcalc'
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'accengagament'
+    description: 'aus coengdetcalc'
+    dataType: 'money'
+  - name: 'newlimit'
+    description: 'aus coengdetcalc'
+    dataType: 'money'
+  - name: 'newamoamount'
+    description: 'aus coengdetcalc'
+    dataType: 'money'
+  - name: 'newdateamo'
+    description: 'aus coengdetcalc'
+    dataType: 'datetime'
+  - name: 'weakblanko'
+    description: 'aus cobaseasscalc'
+    dataType: 'money'
+  - name: 'blanko'
+    description: 'aus cobaseasscalc'
+    dataType: 'money'
+  - name: 'unkurant'
+    description: 'aus cobaseasscalc'
+    dataType: 'money'
+  - name: 'kurant'
+    description: 'aus cobaseasscalc'
+    dataType: 'money'
+  - name: 'kurantgpf'
+    description: 'aus cobaseasscalc'
+    dataType: 'money'
+  - name: 'kurantoerk'
+    description: 'aus cobaseasscalc'
+    dataType: 'money'
+  - name: 'totamount'
+    description: 'aus cobaseasscalc'
+    dataType: 'money'

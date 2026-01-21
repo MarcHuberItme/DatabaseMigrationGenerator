@@ -1,0 +1,59 @@
+table:
+  name: 'WfNotification'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'NotificationTypeNo'
+    description: 'Type of the notification:\r\n1 = Timeout notification\r\n2 = Message'
+    genericControls:
+      refTable: 'WfNotificationType'
+      refField: 'NotificationTypeNo'
+  - name: 'NotificationId'
+    description: ''
+  - name: 'MessageId'
+    description: ''
+    genericControls:
+      refTable: 'WfMessage'
+      refField: 'Id'
+  - name: 'UserName'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+  - name: 'ProcessId'
+    description: ''
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'StepType'
+    description: ''
+  - name: 'StepNo'
+    description: ''
+  - name: 'StepLabel'
+    description: ''
+  - name: 'Priority'
+    description: ''
+  - name: 'StartDate'
+    description: ''
+  - name: 'Comments'
+    description: ''
+  - name: 'Status'
+    description: ''
+    genericControls:
+      refTable: 'WfNotificationStatus'
+      refField: 'NotificationStatus'
+  - name: 'MapNo'
+    description: ''
+    genericControls:
+      refTable: 'WfMap'
+      refField: 'MapNo'
+  - name: 'StepDescription'
+    description: ''

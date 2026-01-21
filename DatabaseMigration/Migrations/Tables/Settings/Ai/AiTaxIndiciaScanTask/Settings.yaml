@@ -1,0 +1,57 @@
+table:
+  name: 'AiTaxIndiciaScanTask'
+  description: 'tasks for tax indicia'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax Indicia scan task'
+    - german:
+        formTitle: 'Steuer Indiziensuche'
+    - french:
+        formTitle: 'Tâche d''analyse de la tax'
+  columns:
+  - name: 'TaxProgramNo'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxProgram'
+      refField: 'TaxProgramNo'
+      defColumnPos: 1
+  - name: 'SequenceNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'TaskName'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'SqlCommand'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IsSuspended'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ReportDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'ExecStart'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'ExecCompleted'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+      isNoUpdate: true

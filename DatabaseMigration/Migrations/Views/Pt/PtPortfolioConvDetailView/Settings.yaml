@@ -1,0 +1,86 @@
+view:
+  name: 'PtPortfolioConvDetailView'
+  description: 'front end view for PtPortfolioConversionDetail record. 27.12.2004/mct'
+frontendView:
+  name: 'PtPortfolioConvDetailView'
+  description: 'view frontend to show to the user a list of converted portfolios.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'HdPendingSubChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'PortfolioConversionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ConversionDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ConversionStatusNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtConversionStatus'
+      refField: 'ConversionStatusNo'
+      defColumnPos: 2
+  - name: 'OriginalPortfolioTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      defColumnPos: 3
+  - name: 'NewPortfolioTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      defColumnPos: 4
+  - name: 'ActualPortfolioTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      defColumnPos: 5
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 6
+  - name: 'CustomerReference'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 7
+  - name: 'PartnerName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 8
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 9
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 10

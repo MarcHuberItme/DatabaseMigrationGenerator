@@ -1,0 +1,54 @@
+table:
+  name: 'MgNeonDataStatusReset'
+  description: 'Status reset for already created and ordered cards that encountered errors.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'MgNeonDataStatusReset'
+        helpText: 'MgNeonDataStatusReset'
+    - german:
+        formTitle: 'MgNeonDataStatusReset'
+        helpText: 'MgNeonDataStatusReset'
+  columns:
+  - name: 'Id'
+    description: 'NOTE: IsIdentityColumn manually set to 1!'
+    genericControls:
+      isIdentity: true
+  - name: 'ImportDate'
+    description: ''
+  - name: 'ProcessDate'
+    description: ''
+  - name: 'PartnerNo'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+  - name: 'IBAN'
+    description: ''
+  - name: 'CardType'
+    description: ''
+  - name: 'CardTypeNo'
+    description: ''
+  - name: 'Language'
+    description: ''
+  - name: 'CardNo'
+    description: ''
+  - name: 'SerialNo'
+    description: ''
+  - name: 'CardId'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrCard'
+      refField: 'Id'
+  - name: 'Status'
+    description: '0 - imported\r\n1 - processed\r\n2 - erroneous'
+  - name: 'Error'
+    description: ''

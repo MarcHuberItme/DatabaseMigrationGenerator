@@ -1,0 +1,27 @@
+table:
+  name: 'AsMailOutputJobXml'
+  description: 'This table stores all the XML files prepared for a job for later re-processing / re-printing.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'JobId'
+    description: ''
+    genericControls:
+      refTable: 'AsMailOutputJob'
+      refField: 'Id'
+  - name: 'JobFileNo'
+    description: 'Sequential number of XML-file within job.'
+  - name: 'XMLData'
+    description: ''
+  - name: 'XMLFileName'
+    description: ''
+  - name: 'StartPage'
+    description: ''
+  - name: 'EndPage'
+    description: ''

@@ -1,0 +1,27 @@
+table:
+  name: 'PtTaxReportEarningMode'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtTaxReportEarningMode'
+        helpText: 'PtTaxReportEarningMode'
+    - german:
+        formTitle: 'PtTaxReportEarningMode'
+        helpText: 'PtTaxReportEarningMode'
+    - french:
+        formTitle: 'PtTaxReportEarningMode'
+        helpText: 'PtTaxReportEarningMode'
+  columns:
+  - name: 'TypeNo'
+    description: '0, any entry existed, hbl\r\n1, every entry counted'

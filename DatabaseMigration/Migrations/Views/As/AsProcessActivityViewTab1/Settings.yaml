@@ -1,0 +1,64 @@
+view:
+  name: 'AsProcessActivityViewTab1'
+  description: ''
+frontendView:
+  name: 'AsProcessActivityViewTab1'
+  description: 'ProcessInfo Tab (Process''s Statics)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ProcessName'
+    description: ''
+    dataType: 'varchar'
+    isNotNull: true
+    isUnique: true
+    prec: 50
+  - name: 'ProcessType'
+    description: ''
+    dataType: 'varchar'
+    isNotNull: true
+    prec: 50
+  - name: 'ProcessGroup'
+    description: ''
+    dataType: 'varchar'
+    isNotNull: true
+    prec: 20
+  - name: 'ProcessGroupNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'ProcessNoInGroup'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'ExecutableProject'
+    description: ''
+    dataType: 'varchar'
+    isNotNull: true
+    prec: 30
+  - name: 'ExecutableClassName'
+    description: ''
+    dataType: 'varchar'
+    isNotNull: true
+    prec: 30
+  - name: 'StartParameters'
+    description: ''
+    dataType: 'varchar'
+    prec: 100
+  - name: 'SpecialInformation'
+    description: ''
+    dataType: 'varchar'
+    prec: 200
+  - name: 'EngineDescriptor'
+    description: ''
+    dataType: 'varchar'
+    prec: 20
+  - name: 'EnginePackageCount'
+    description: ''
+    dataType: 'smallint'

@@ -1,0 +1,98 @@
+view:
+  name: 'PtCorrAccountInternalView'
+  description: 'View for editing correspondence rules of main ledger accounts.\r\n8-tung: folgenden Update nach Transfer laufen lassen:\r\nUpdate MdTableDataDef Set TableType = 1 Where TableName = ''PtCorrAccountInternalView'''
+frontendView:
+  name: 'PtCorrAccountInternalView'
+  description: 'View as dummy tsble to edit correspondence rules of main ledger accounts.\r\nIdentical structure, but no confirmation defined.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Correspondence'
+    - german:
+        formTitle: 'Korrespondenz'
+    - french:
+        formTitle: 'correspondance'
+  columns:
+  - name: 'AccountId'
+    description: 'foreign-key; Id of PtAccountBase\r\n'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PortfolioIdCorr'
+    description: 'if set, instructions on portfoliolevel are used\r\nno updates allowed because of Vrx Migration 13.02.2002/mct'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'AddressId'
+    description: 'candidate-key; foreign-key of PtAddressView (View)\r\nNo updates allowed because of Vrx Migration 26.02.2002/mct'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAddressView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'AttentionOf'
+    description: 'in attention of (optional)'
+    dataType: 'nvarchar'
+    prec: 30
+  - name: 'CarrierTypeNo'
+    description: 'foreign-key; candidate-key of AsCarrierType (CarrierTypeNo)'
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsCarrierType'
+      refField: 'CarrierTypeNo'
+      defColumnPos: 4
+  - name: 'DeliveryRuleNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 3
+  - name: 'DetourGroup'
+    description: 'foreign-key;  candidate-key of AsUserGroup (UserGroupName)'
+    dataType: 'varchar'
+    prec: 32
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 2
+  - name: 'MgVrxKey'
+    description: ''
+    dataType: 'varchar'
+    prec: 52
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgKOEDAK'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'IsPrimaryCorrAddress'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'

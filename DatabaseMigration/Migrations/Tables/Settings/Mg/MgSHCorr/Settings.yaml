@@ -1,0 +1,51 @@
+table:
+  name: 'MgSHCorr'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'MgSHCorr'
+        helpText: 'MgSHCorr'
+    - german:
+        formTitle: 'MgSHCorr'
+        helpText: 'MgSHCorr'
+  columns:
+  - name: 'PartnerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ReceiverNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'AddressNo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'CorrItemGroupNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'AddrCount'
+    description: ''
+  - name: 'Type'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'MgComment'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'MgSeqNo'
+    description: ''
+  - name: 'BankName'
+    description: ''

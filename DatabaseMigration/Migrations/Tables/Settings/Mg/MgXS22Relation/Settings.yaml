@@ -1,0 +1,31 @@
+table:
+  name: 'MgXS22Relation'
+  description: 'Technical table guaranties that "Vollmachten" can be saved in the database when master and slave partner are there. Only for forward migration use!'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'VRX Tabelle XS22'
+    - german:
+        formTitle: 'VRX Tabelle XS22'
+  columns:
+  - name: 'AccountNo'
+    description: ''
+  - name: 'VPartnerNo'
+    description: ''
+  - name: 'VBART'
+    description: 'VRX Relation number (technical number, not important for finstar!)'
+  - name: 'MasterPartnerId'
+    description: ''
+  - name: 'SlavePartnerId'
+    description: ''
+  - name: 'FisDbKey'
+    description: ''

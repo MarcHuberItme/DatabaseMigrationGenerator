@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DelPrintJob'
+  description: '-Delete a print job and removes all the depending data'

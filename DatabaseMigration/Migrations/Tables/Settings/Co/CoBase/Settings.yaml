@@ -1,0 +1,271 @@
+table:
+  name: 'CoBase'
+  description: 'Sicherheiten'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'OwnerId'
+    uiTableDescription:
+    - english:
+        formTitle: 'Colleteral'
+    - german:
+        formTitle: 'Sicherheiten'
+  columns:
+  - name: 'OwnerId'
+    description: 'Partnernummer Sicherheitengeber, immer gefüllt'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'CollType'
+    description: 'Typ der Sicherheit \r\n1000 Konto\r\n2000 Wertschriften\r\n4000 Bürgschaften\r\n5000 Versicherungen\r\n6000 Übrige\r\n7000 Grundpfand\r\n'
+    genericControls:
+      refTable: 'CoType'
+      refField: 'Colltype'
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'Collsubtype'
+    description: 'Subtyp der Sicherheit'
+    genericControls:
+      refTable: 'CoSubtype'
+      refField: 'Collsubtype'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'PortfolioId'
+    description: 'gefüllt nur bei colltype Wertschriften (Portfoliolaufnummer)'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountId'
+    description: 'gefüllt nur bei colltype Konto (Kontolaufnummer)'
+    genericControls:
+      refTable: 'PtAccountCollateralView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Insurancepolice'
+    description: 'Laufnummer Versicherung gefüllt nur bei Colltype Versicherung'
+    genericControls:
+      refTable: 'PrInsurancePolice'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ObligationId'
+    description: 'Laufnummer Grundpfand nur bei Colltype Grundpfand gefüllt'
+    genericControls:
+      refTable: 'ReObligationSearchView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Collno'
+    description: 'Nummer der Sicherheit, mit assequence ''CO_NO'' gelöst'
+    genericControls:
+      defColumnPos: 8
+      isNoUpdate: true
+  - name: 'Matflag'
+    description: 'bei true muss die Sicherheit periodisch überprüft werden (Default kommt von\r\nTabelle CoSubtype)'
+    genericControls:
+      defColumnPos: 11
+  - name: 'Nextmatdate'
+    description: 'nächste Überprüfung der Sicherheit'
+    genericControls:
+      defColumnPos: 12
+  - name: 'Lastmatdate'
+    description: 'letzte Überprüfung der Sicherheit'
+    genericControls:
+      defColumnPos: 13
+  - name: 'Description'
+    description: 'generierte Bezeichnung, Aufbau abhängig vom colltype\r\n\r\n1000 Kontoguthaben          -> Kontorubrik wenn leer Produktbezeichnung\r\n2000 Wertschriften             -> Portfoliorubrik wenn leer Typbezeichnung\r\n4000 Bürgschaften             -> Name Sicherheitengeber\r\n5000 Versicherungen         -> Name Versicherung\r\n6000 Übrige                       -> Name Drittbank/Vorsorgeinrichtung\r\n7000 Grundpfand               -> Strasse, Ort, erstes Grundstück'
+    genericControls:
+      defColumnPos: 10
+  - name: 'Extkey'
+    description: 'generierte externer Schlüssel, Aufbau abhängig vom colltype\r\n\r\n1000 Kontoguthaben          -> Kontonummer\r\n2000 Wertschriften             -> Portfolionummer\r\n4000 Bürgschaften             -> CollNo\r\n5000 Versicherungen         -> Policen Nummer\r\n6000 Übrige                       -> CollNo\r\n7000 Grundpfand               -> GB_NR.PARZELLEN_NR.PLAN_NR'
+    genericControls:
+      defColumnPos: 9
+  - name: 'Inactflag'
+    description: 'Status Flag\r\nBei False sind bei Subart Wertschriften und Subart Konto die Sicherheit\r\nverpfändet.\r\nKann nur auf True gesetzt werden, wenn kein Eintrag mit der CollateralId in\r\nder Tabelle CoBaseAss besteht, wenn True darf Sicherheit nicht mehr einem Kreditkonto zugewiesen werden.'
+  - name: 'Bcurrency'
+    description: 'Währung , nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige\r\n Hier fix CHF, bezieht sich auf alle Betragsfelder von COBase'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Bvalue'
+    description: 'Wert der Sicherheit, nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'Uvalue1'
+    description: 'Wert1 der Sicherheit, nur gefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Uvalue2'
+    description: 'Wert2 der Sicherheit, nur gefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Bdate'
+    description: 'Datum von Bvalue , nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'Bcomstat'
+    description: 'nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\nWirtschaftlicher Existenz Status vom Bürgen nach Ausübung\r\n000 gegeben\r\n010 fraglich\r\n020 nicht gegeben\r\n'
+    genericControls:
+      refTable: 'CoComstat'
+      refField: 'Comstat'
+  - name: 'Bmoralstat'
+    description: 'nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\nMoralischer Status nach Ausübung Bürgschaft\r\n000 vertretbar\r\n010 knapp vertretbar\r\n020 nicht vertretbar'
+    genericControls:
+      refTable: 'CoMoralstat'
+      refField: 'Moralstat'
+  - name: 'BIncremark'
+    description: 'Bemerkung zum  (Einkommen) nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+    genericControls:
+      multiLine: true
+  - name: 'Bwealthremark'
+    description: 'Bemerkung zum Vermögen  nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+    genericControls:
+      multiLine: true
+  - name: 'Bremarkcont'
+    description: 'Bemerkung für Vetrag, nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+    genericControls:
+      multiLine: true
+  - name: 'Bremarkcont1'
+    description: 'Bemerkung1 für Vetrag, nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+    genericControls:
+      multiLine: true
+  - name: 'Bremarkcont2'
+    description: 'Bemerkung2 für Vetrag, nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+    genericControls:
+      multiLine: true
+  - name: 'Bremark'
+    description: 'Bemerkung  nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+    genericControls:
+      multiLine: true
+  - name: 'Bremark1'
+    description: 'Bemerkung -1 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+    genericControls:
+      multiLine: true
+  - name: 'Bremark2'
+    description: 'Bemerkung -2 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+    genericControls:
+      multiLine: true
+  - name: 'Bremark3'
+    description: 'Bemerkung -3 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+    genericControls:
+      multiLine: true
+  - name: 'Bremarkjudge1'
+    description: 'Bemerkung-1 für Beurteilung  nur gefüllt bei Colltype\r\n4000 Bürgschaften'
+    genericControls:
+      multiLine: true
+  - name: 'Bremarkjudge2'
+    description: 'Bemerkung-2 für Beurteilung  nur gefüllt bei Colltype\r\n4000 Bürgschaften'
+    genericControls:
+      multiLine: true
+  - name: 'Bwealth1'
+    description: 'Vermögenszahl-1 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'Bwealth2'
+    description: 'Vermögenszahl-2 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'Bwealth3'
+    description: 'Vermögenszahl-3 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'Bwealth4'
+    description: 'Vermögenszahl-4 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'Bwealth5'
+    description: 'Vermögenszahl-5 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'Bwealth6'
+    description: 'Vermögenszahl-6 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'Bwealth7'
+    description: 'Vermögenszahl-7 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'Bwealth8'
+    description: 'Vermögenszahl-8 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'Bwealthp1'
+    description: 'Prozentzahl1 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'Bwealthp2'
+    description: 'Prozentzahl2 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'BInc1'
+    description: 'Einkommenzahl 1 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'Binc2'
+    description: 'Einkommenzahl2 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'BInc3'
+    description: 'Einkommenzahl3 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'BInc4'
+    description: 'Einkommenzahl4 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'BInc5'
+    description: 'Einkommenzahl5 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'BInc6'
+    description: 'Einkommenzahl6 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'BInc7'
+    description: 'Einkommenzahl7 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'BInc8'
+    description: 'Einkommenzahl8 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'BInc9'
+    description: 'Einkommenzahl9 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'BInc10'
+    description: 'Einkommenzahl10 nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'BIncp1'
+    description: 'Prozentzahl 1 (Einkommen) nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'BIncp2'
+    description: 'Prozentzahl 2 (Einkommen) nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'BIncp3'
+    description: 'Prozentzahl 3 (Einkommen) nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'BIncp4'
+    description: 'Prozentzahl 4 (Einkommen) nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\n6000 Übrige'
+  - name: 'Bmanstat'
+    description: 'nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\nManagament Beurteilung'
+    genericControls:
+      refTable: 'CoManstat'
+      refField: 'Manstat'
+  - name: 'Bprodstat'
+    description: 'nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\nProdukt Beurteilung'
+    genericControls:
+      refTable: 'CoProdstat'
+      refField: 'Prodstat'
+  - name: 'Bmachstat'
+    description: 'nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\nProduktionsmittel Beurteilung'
+    genericControls:
+      refTable: 'CoMachstat'
+      refField: 'Machstat'
+  - name: 'Bdivstat'
+    description: 'nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\nDividenenpolitik Beurteilung'
+    genericControls:
+      refTable: 'CoDivstat'
+      refField: 'Divstat'
+  - name: 'Bfutstat'
+    description: 'nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\nZukunftsaussichten Beurteilung'
+    genericControls:
+      refTable: 'CoFutstat'
+      refField: 'Futstat'
+  - name: 'botherjudg'
+    description: 'nur gefüllt bei Colltype\r\n4000 Bürgschaften\r\nSonstige Beurteilung'
+  - name: 'Uaccountnr'
+    description: 'Kontonummer Drittbank nur gefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Uinsurancenr'
+    description: 'Versicherungsnummer  nur gefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Unameinsbank'
+    description: 'Name der Bank / Versicherung nur gefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Uadr1'
+    description: 'Adresszeile 1\r\nder Bank / Versicherung nur gefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Uadr2'
+    description: 'Adresszeile 2\r\nder Bank / Versicherung nur gefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Uadr3'
+    description: 'Adresszeile 3\r\nder Bank / Versicherung nur gefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Uadr4'
+    description: 'Adresszeile 4\r\nder Bank / Versicherung nur gefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Uadr5'
+    description: 'Adresszeile 5\r\nder Bank / Versicherung nur gefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Ubvgrent'
+    description: 'BVG \r\nAlterleistung pro Jahr\r\ngefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Ubvgdead'
+    description: 'BVG \r\nTodesfallleistung \r\ngefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Ubvginvrent'
+    description: 'BVG \r\nInvalidenrente pro Jahr\r\ngefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Ubvgfree'
+    description: 'BVG \r\nFreizügikeitsleistung\r\ngefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'Ubvgfreeple'
+    description: 'BVG \r\nverpfändbare Freizügikeitsleistung\r\ngefüllt bei Colltype\r\n6000 Übrige'
+  - name: 'ActivateDate'
+    description: 'Date when this collateral and all assigments should be activated'
+  - name: 'InactivateDate'
+    description: 'Date when this collateral and all assigments should be inactivated'
+  - name: 'ExecDate'
+    description: 'Lasttime the periodic Job set the inactive flag based on the fields ActivateDate / InactivateDAte'
+  - name: 'ExecMsgnr'
+    description: 'Error Msg if periodic process could not activate or deactivae a collateral'
+    genericControls:
+      refTable: 'CoMsg'
+      refField: 'CoMsgNr'
+      hasDetailBtn: true

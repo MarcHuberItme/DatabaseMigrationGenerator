@@ -1,0 +1,241 @@
+table:
+  name: 'PtTradingOrderMessageMod'
+  description: 'pending and settled modifications of PtTradingOrderMessage\r\nprimarily used for modifications of stock exchange orders, 20.07.04/kgy'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TradingOrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtTradingOrder'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TradingOrderMessageId'
+    description: ''
+    genericControls:
+      refTable: 'PtTradingOrderMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsCancelRequest'
+    description: ''
+  - name: 'StockExRefNew'
+    description: 'new LocalOrderId (SWX)'
+  - name: 'StockExRefOrig'
+    description: 'original LocalOrderId (SWX)'
+  - name: 'OrderQuantityNew'
+    description: ''
+  - name: 'OrderQuantityDesired'
+    description: ''
+  - name: 'OrderQuantityOrig'
+    description: ''
+  - name: 'PublicTradingPlaceIdNew'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PublicTradingPlaceIdOrig'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TradingSystemIdNew'
+    description: ''
+    genericControls:
+      refTable: 'PtTradingSystem'
+      refField: 'Id'
+  - name: 'TradingSystemIdOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtTradingSystem'
+      refField: 'Id'
+  - name: 'PaymentCurrencyNew'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'PaymentCurrencyOrig'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'PaymentDateNew'
+    description: ''
+  - name: 'PaymentDateOrig'
+    description: ''
+  - name: 'TransSxRebateNoNew'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxRebate'
+      refField: 'TransSxRebateNo'
+  - name: 'TransSxRebateNoOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxRebate'
+      refField: 'TransSxRebateNo'
+  - name: 'TextForRebateOrig'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'TextForRebateNew'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'TextToForexTraderOrig'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'TextToForexTraderNew'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'PortfolioSxBrokerId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioSxBroker'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SecurityPortfolioIdNew'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioViewNoPL'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SecurityPortfolioIdOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SecurityPrReferenceIdNew'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+  - name: 'SecurityPrReferenceIdOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+  - name: 'AccountPortfolioIdNew'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+  - name: 'AccountPortfolioIdOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+  - name: 'AccountPrReferenceIdNew'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountPrReferenceIdOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountPrReferenceIdChargeFutN'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountPrReferenceIdChargeFutO'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SettlementRateNew'
+    description: ''
+  - name: 'SettlementRateOrig'
+    description: ''
+  - name: 'AccountRateNew'
+    description: ''
+  - name: 'AccountRateOrig'
+    description: ''
+  - name: 'OrderDisposerIdNew'
+    description: 'used for listing and pooled orders'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderDisposerIdOrig'
+    description: 'used for listing and pooled orders'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderMiddlemanIdNew'
+    description: 'used for listing and pooled orders'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderMiddlemanIdOrig'
+    description: 'used for listing and pooled orders'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ToBePooledNew'
+    description: 'refers to PtTradingOrder.ToBePooled'
+  - name: 'ToBePooledOrig'
+    description: 'refers to PtTradingOrder.ToBePooled'
+  - name: 'OrderAdvisoryNoNew'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxOrderAdvisory'
+      refField: 'OrderAdvisoryNo'
+  - name: 'OrderAdvisoryNoOrig'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxOrderAdvisory'
+      refField: 'OrderAdvisoryNo'
+  - name: 'IsRequested'
+    description: 'the modification is requested'
+  - name: 'IsAccepted'
+    description: 'the modification is accepted'
+  - name: 'IsDeclined'
+    description: 'the modification is declined'
+  - name: 'ModDisposerId'
+    description: 'disposer of the modification'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsNoRectificationText'
+    description: ''
+  - name: 'ProcessId'
+    description: ''
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'ProcessIdPartner'
+    description: 'only used if the modification source is from a partner (partner -> trader)\r\nif PM1: Id of the order in PtTransSxPM1Order\r\nelse: processid of the mod-workflow in BSZ\r\n\r\n'
+  - name: 'GoiApp'
+    description: 'This field will be filled if the modification (cancellation) was entered via GenericOrderInterface.'
+    genericControls:
+      refTable: 'PtTransSxGoiApp'
+      refField: 'App'
+  - name: 'GoiChannel'
+    description: 'This field will be filled if the modification (cancellation) was entered via GenericOrderInterface.'
+    genericControls:
+      refTable: 'PtTransSxGoiChannel'
+      refField: 'Channel'
+  - name: 'ModRequestKey'
+    description: 'Key of the caller (AssetMax) requested the modification.'

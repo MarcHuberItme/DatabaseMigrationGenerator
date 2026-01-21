@@ -1,0 +1,25 @@
+table:
+  name: 'PrPublicKeyFigureType'
+  description: 'this table contain all possible types of key figures'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Key figure type'
+        helpText: 'Key figure type'
+    - german:
+        formTitle: 'Kennzahl Typ'
+        helpText: 'Kennzahl Typ'
+  columns:
+  - name: 'KeyFigureTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

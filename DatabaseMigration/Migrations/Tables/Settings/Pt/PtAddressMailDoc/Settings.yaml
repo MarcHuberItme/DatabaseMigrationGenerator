@@ -1,0 +1,24 @@
+table:
+  name: 'PtAddressMailDoc'
+  description: 'This table contains the list of IDs of the documents sent to partners in a specific mail (The record of which is in PtAddressMail).'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AddressMailid'
+    description: ''
+    genericControls:
+      refTable: 'PtAddressMail'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'DocumentId'
+    description: ''
+    genericControls:
+      refTable: 'AsDocument'
+      refField: 'Id'
+      defColumnPos: 1

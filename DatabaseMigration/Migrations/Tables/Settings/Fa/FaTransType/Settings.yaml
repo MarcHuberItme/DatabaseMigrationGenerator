@@ -1,0 +1,19 @@
+table:
+  name: 'FaTransType'
+  description: 'Type of external transactions'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'TransactionType'
+    description: ''
+    genericControls:
+      defColumnPos: 1

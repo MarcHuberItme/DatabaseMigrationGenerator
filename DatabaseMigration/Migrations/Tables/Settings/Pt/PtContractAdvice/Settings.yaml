@@ -1,0 +1,55 @@
+table:
+  name: 'PtContractAdvice'
+  description: 'The table contains contract changes for call and renewal of fix term contract without change in capital. This table is also used to generate advices where payment advice is not otherwise created.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ContractPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtContractPartner'
+      refField: 'Id'
+  - name: 'ModificationDate'
+    description: ''
+  - name: 'ValueDate'
+    description: 'The effective value date for interest calculation'
+  - name: 'IsInterestChange'
+    description: 'True if modification involves interest change'
+  - name: 'OldInterestRate'
+    description: ''
+  - name: 'NewInterestRate'
+    description: ''
+  - name: 'IsRenewal'
+    description: 'Ture if it is renewal of fix term contract without change in capital'
+  - name: 'IsPrinted'
+    description: ''
+  - name: 'PrintDate'
+    description: ''
+  - name: 'IsForexStart'
+    description: 'The advice is for start of Forext contract'
+  - name: 'IsForexTermination'
+    description: 'Specifies that advice is for forex contract termination'
+  - name: 'PositionId'
+    description: 'Relevant for closing advices'
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+  - name: 'IsClosing'
+    description: ''
+  - name: 'IsContractSuspension'
+    description: 'Flag to specify that the advice is for contract suspension'
+  - name: 'BalanceAfterClosing'
+    description: ''
+  - name: 'IsForexStorno'
+    description: 'Specifies that advice is for storno/reveral of a forex contract'
+  - name: 'MarketOperationId'
+    description: 'Reference to Contract''s MarketOperation'
+    genericControls:
+      refTable: 'PtContractMarketOperation'
+      refField: 'Id'

@@ -1,0 +1,180 @@
+view:
+  name: 'PtETaxSecurityPaymentView'
+  description: ''
+frontendView:
+  name: 'PtETaxSecurityPaymentView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtETaxSecurityPaymentView'
+        helpText: 'PtETaxSecurityPaymentView'
+    - german:
+        formTitle: 'PtETaxSecurityPaymentView'
+        helpText: 'PtETaxSecurityPaymentView'
+    - french:
+        formTitle: 'PtETaxSecurityPaymentView'
+        helpText: 'PtETaxSecurityPaymentView'
+    - italian:
+        formTitle: 'PtETaxSecurityPaymentView'
+        helpText: 'PtETaxSecurityPaymentView'
+  columns:
+  - name: 'TaxReportJobNo'
+    description: ''
+    dataType: 'int'
+  - name: 'TaxReportDataId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'DepotNumber'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 11
+  - name: 'TaxPosId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ElementType'
+    description: ''
+    dataType: 'varchar'
+    prec: 15
+  - name: 'TaxReportClass'
+    description: ''
+    dataType: 'char'
+    prec: 1
+  - name: 'PaymentDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ExDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'QuotationType'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+  - name: 'Quantity'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'AmountCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'AmountPerUnit'
+    description: ''
+    dataType: 'decimal'
+    prec: 28
+    scale: 10
+  - name: 'Amount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ExchangeRate'
+    description: ''
+    dataType: 'float'
+  - name: 'GrossRevenueA'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'GrossRevenueACanton'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'GrossRevenueB'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'GrossRevenueBCanton'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'WithHoldingTaxClaim'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'LumpSumTaxCredit'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LumpSumTaxCreditPercent'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'LumpSumTaxCreditAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'NonRecoverableTaxPercent'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'NonRecoverableTaxAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'AdditionalWithHoldingTaxUSA'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'Iup'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Conversion'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Gratis'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'SecuritiesLending'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'LendingFee'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Retrocession'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Undefined'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Kursliste'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Sign'
+    description: ''
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HelpPosSequence'
+    description: ''
+    dataType: 'int'
+  - name: 'HelpTaxDetailId'
+    description: ''
+    dataType: 'uniqueidentifier'

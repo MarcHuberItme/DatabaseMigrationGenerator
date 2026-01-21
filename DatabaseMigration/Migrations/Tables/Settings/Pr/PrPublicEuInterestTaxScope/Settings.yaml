@@ -1,0 +1,24 @@
+table:
+  name: 'PrPublicEuInterestTaxScope'
+  description: 'VDF-Domaine: 4923 K-366'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'EU Interest tax scope'
+    - german:
+        formTitle: 'EU Zinssteuer Scope'
+  columns:
+  - name: 'EuInterestTaxScopeNo'
+    description: 'Maintained by VDF-Metadata'
+    genericControls:
+      defColumnPos: 1

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountPayInPayOutInfo'
+  description: 'Purpose :\r\nThis procedure returns the account permission of payin or payout information\r\nAuthor : Abdul Nasir Khan\r\nDate Created : 16-May-2003\r\nDate Modified : 12-Oct-2003'

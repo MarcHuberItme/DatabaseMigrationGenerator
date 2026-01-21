@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetUserProfile'
+  description: 'Stored procedure to retrieve the additional property values for a given user profile.'

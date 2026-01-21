@@ -1,0 +1,32 @@
+table:
+  name: 'PtAgrEBankingObProvider'
+  description: 'Which agreement contains which provider'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Agreement Provider'
+    - german:
+        formTitle: 'Agreement Provider'
+    - french:
+        formTitle: 'Agreement Provider'
+    - italian:
+        formTitle: 'Agreement Provider'
+  columns:
+  - name: 'ProviderId'
+    description: 'Reference to provider'
+    genericControls:
+      refTable: 'ObProvider'
+      refField: 'Id'
+  - name: 'AgreementId'
+    description: 'Reference to agreement'
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'

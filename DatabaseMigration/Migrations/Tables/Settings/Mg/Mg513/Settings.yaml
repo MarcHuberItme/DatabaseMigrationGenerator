@@ -1,0 +1,27 @@
+table:
+  name: 'Mg513'
+  description: 'FIS-VRX Vermittler codes'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 3
+    descField: 'PartnerNo'
+    uiTableDescription:
+    - english:
+        formTitle: 'Vermittler'
+    - german:
+        formTitle: 'Vermittler'
+  columns:
+  - name: 'MigValue'
+    description: 'Vermittler code'
+    minValue: '0'
+    maxValue: '9999'
+    genericControls:
+      defColumnPos: 1
+      isOnlyForMig: true
+  - name: 'PartnerNo'
+    description: 'Partner No'

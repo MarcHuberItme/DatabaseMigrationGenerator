@@ -1,0 +1,21 @@
+table:
+  name: 'PtPaymentMCMiscellaneousFees'
+  description: 'Contains Fields for MasterCard File-Processing relevant for Section Miscellaneous Fees (MF)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PtPaymentMasterCardId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentMasterCard'
+      refField: 'Id'
+  - name: 'CMSTransactionDescription'
+    description: 'Merchant name'
+  - name: 'CMSMiscellaneousFeeDetails'
+    description: ''

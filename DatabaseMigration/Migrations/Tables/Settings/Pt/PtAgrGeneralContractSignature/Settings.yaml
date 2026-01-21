@@ -1,0 +1,43 @@
+table:
+  name: 'PtAgrGeneralContractSignature'
+  description: 'Agreement general contract: select all partners who have to sign'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAgrGeneralContract'
+      parentRelationField: 'GeneralContractId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'General Contract Signatur'
+    - german:
+        formTitle: 'Rahmenvertrag Unterschrif'
+    - french:
+        formTitle: 'Signature contrat général'
+  columns:
+  - name: 'GeneralContractId'
+    description: 'foreign-key;  Id of PtAgrGeneralContract'
+    genericControls:
+      refTable: 'PtAgrGeneralContract'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'IsTaken'
+    description: ''
+    genericControls:
+      defColumnPos: 2

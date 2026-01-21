@@ -1,0 +1,16 @@
+table:
+  name: 'MdDomainType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: d18c2bae-7838-4b83-a18e-29041114c63e
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'DomainType'
+    description: ''
+  - name: 'Description'
+    description: ''

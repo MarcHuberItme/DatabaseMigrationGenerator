@@ -1,0 +1,42 @@
+table:
+  name: 'ReIaziWSProcess'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'ReIaziWSProcess'
+        helpText: 'ReIaziWSProcess'
+    - german:
+        formTitle: 'ReIaziWSProcess'
+        helpText: 'ReIaziWSProcess'
+  columns:
+  - name: 'FsTaskId'
+    description: ''
+  - name: 'UserName'
+    description: ''
+  - name: 'ObjectId'
+    description: ''
+  - name: 'ReqXML'
+    description: ''
+  - name: 'ReqTime'
+    description: ''
+  - name: 'RetXML'
+    description: ''
+  - name: 'RetTime'
+    description: ''
+  - name: 'ProcessStatus'
+    description: ''
+  - name: 'JobType'
+    description: 'Describe as "AdHoc" + user + "ddmmyyyyHHMMSS"\r\nOr "Batch" + "ddmmyyyyHHMMSS"'
+  - name: 'ExecInfo'
+    description: 'As execution info'
+  - name: 'Comment'
+    description: ''

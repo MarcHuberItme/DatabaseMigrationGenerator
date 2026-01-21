@@ -1,0 +1,28 @@
+table:
+  name: 'AsNavigationIndexSub'
+  description: 'Sub-Table to AsNavigationIndex for shared or hidden nodes'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'Id'
+    description: 'Id corresponds to the record it represents.'
+  - name: 'TableName'
+    description: 'Name of the table the original record belongs to.'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'NavigationIndexId'
+    description: 'Id of the record in AsNavigation index that visualizes the states of the current entry.'
+    genericControls:
+      refTable: 'AsNavigationIndex'
+      refField: 'Id'
+  - name: 'ConfStatus'
+    description: 'Actual confirmation status of the original record.'

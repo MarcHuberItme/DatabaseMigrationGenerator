@@ -1,0 +1,57 @@
+table:
+  name: 'PtCollectPartnerDataSQLs'
+  description: 'tasks to collect various partner data'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PartnerData collect tasks'
+    - german:
+        formTitle: 'PartnerData collect tasks'
+    - french:
+        formTitle: 'PartnerData collect tasks'
+  columns:
+  - name: 'ProcessNo'
+    description: ''
+    genericControls:
+      refTable: 'PtCollectPartnerDataProcess'
+      refField: 'ProcessNo'
+      defColumnPos: 1
+  - name: 'SequenceNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'TaskName'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'SqlCommand'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IsSuspended'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ReportDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'ExecStart'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'ExecCompleted'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+      isNoUpdate: true

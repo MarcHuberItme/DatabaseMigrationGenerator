@@ -1,0 +1,59 @@
+table:
+  name: 'MgSHPaymentInstruction'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'MgSHPaymentInstruction'
+        helpText: 'MgSHPaymentInstruction'
+    - german:
+        formTitle: 'MgSHPaymentInstruction'
+        helpText: 'MgSHPaymentInstruction'
+  columns:
+  - name: 'IDNo'
+    description: '24, internal account\r\n25, external \r\n99, depotbank'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PartnerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'DBPortfolioNo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'BCNo'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'AccountNoExt'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'PCNo'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'PCNoUnformatted'
+    description: ''
+  - name: 'MgComment'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'MgSeqNo'
+    description: ''
+  - name: 'BankName'
+    description: ''

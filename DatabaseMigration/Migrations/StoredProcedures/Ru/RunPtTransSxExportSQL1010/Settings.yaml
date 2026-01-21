@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'RunPtTransSxExportSQL1010'
+  description: 'Used because performance issues. Using a stored proc instead of normal select the execution plan can be managed.'

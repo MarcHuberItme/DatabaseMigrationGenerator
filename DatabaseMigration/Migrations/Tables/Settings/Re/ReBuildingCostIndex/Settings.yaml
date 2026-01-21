@@ -1,0 +1,43 @@
+table:
+  name: 'ReBuildingCostIndex'
+  description: 'Baukosten Index'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Building Cost Index'
+    - german:
+        formTitle: 'Baukosten Index'
+  columns:
+  - name: 'CantonSymbol'
+    description: ''
+    genericControls:
+      refTable: 'AsCanton'
+      refField: 'CantonSymbol'
+      defColumnPos: 1
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'BaseYear'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'IndexPoints'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'PriceM3'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'SortNo'
+    description: ''

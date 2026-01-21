@@ -1,0 +1,50 @@
+table:
+  name: 'PtShadowProduct'
+  description: 'Defines products types for the shadow accounts used to display pension products issued by Primanet, Mobiliar or others.'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Shadow Product'
+    - german:
+        formTitle: 'Produkt für Schattenkonto'
+    - french:
+        formTitle: 'Produit compte prévoyance'
+  columns:
+  - name: 'ShadowProductNo'
+    description: 'Number of the shadow product (actually defined by entris based on finnova codes)'
+    genericControls:
+      defColumnPos: 1
+  - name: 'FileProductNo'
+    description: 'Group of products have to be exported or imported from different files. According to Primanet specifications, this FileProductNo is part of the file name.'
+    genericControls:
+      refTable: 'PtExportFileType'
+      refField: 'FileTypeNo'
+      defColumnPos: 2
+  - name: 'ProfileName'
+    description: 'Name of the display-profile to present the product.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ContractPartner'
+    description: 'Provider of the pension product.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ContractPartnerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'FinstarProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      defColumnPos: 6

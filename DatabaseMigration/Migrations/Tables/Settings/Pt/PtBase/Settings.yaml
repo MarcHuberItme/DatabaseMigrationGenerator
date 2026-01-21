@@ -1,0 +1,324 @@
+table:
+  name: 'PtBase'
+  description: 'Partner Base Data'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 2
+    cacheLevel: 1
+    descField: 'BranchNo;PartnerNoEdited;Name'
+    navigation:
+      isNavigationRoot: true
+      applicationKey: 'PartnerNoEdited'
+      navigationConditionField: 'BusinessTypeCode,HasAddlAuthorized,HasInstruments,IsAuthorised,LegalStatusNo,NogaCode2008,PartnerNo,PrivacyLockNo,RepStatusNo,SegmentNo,ServiceLevelNo,SexStatusNo'
+      rootTable: 'PtBase'
+      parentTable: 'ROOT'
+    uiTableDescription:
+    - english:
+        formTitle: 'Partner Base'
+    - german:
+        formTitle: 'Partner'
+    - french:
+        formTitle: 'Partenaire'
+  columns:
+  - name: 'PartnerNoText'
+    description: 'Textual expression of the partner number with leading zeros (there exists 5-/6-digit numbers)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'PartnerNo'
+    description: 'Numeric expression of the partner number (for optimation)'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PartnerNoEdited'
+    description: 'Edited textual expression of the partner number'
+    genericControls:
+      isNoUpdate: true
+  - name: 'SexStatusNo'
+    description: 'foreign-key;  candidate-key of PtSexStatus\r\nGender of the partner like Maleperson, Femaleperson, Organisation'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+  - name: 'LegalStatusNo'
+    description: 'foreign-key;  candidate-key of PtLegalStatus\r\nby private person: unmarried, married, divorced, widowed \r\nby companies: AG, GmbH, etc.'
+    genericControls:
+      refTable: 'PtLegalStatus'
+      refField: 'LegalStatusNo'
+  - name: 'LegalStatusDate'
+    description: 'date of the legal status (for example date of marriage or foundation date of a company)'
+  - name: 'ConfessionNo'
+    description: 'foreign-key;  candidate-key of PtConfession'
+    genericControls:
+      refTable: 'PtConfession'
+      refField: 'ConfessionNo'
+  - name: 'ServiceLevelNo'
+    description: 'foreign-key;  candidate-key of PtServiceLevel\r\nactual Service Level of a partner\r\nMarketing, Savings, Commercial, Financial, Officials without active relations to the bank'
+    genericControls:
+      refTable: 'PtServiceLevel'
+      refField: 'ServiceLevelNo'
+  - name: 'BusinessTypeCode'
+    description: 'foreign-key;  candidate-key of PtBusinessType\r\nofficial table with all relevant business types (Noga code)'
+    genericControls:
+      refTable: 'PtBusinessType'
+      refField: 'NogaCode'
+      hasDetailBtn: true
+  - name: 'OwnersDomicileCountryNo'
+    description: 'foreign-key;  candidate-key of AsCountry\r\ncountry of the owner (official table with ISO-code)\r\nMutterland bei ausl. beherrschter Gesellschaft'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'Title'
+    description: 'title like doctor, professor, etc.'
+  - name: 'FirstName'
+    description: 'forename'
+    genericControls:
+      defColumnPos: 3
+  - name: 'MiddleName'
+    description: 'second forename'
+  - name: 'UseMiddleName'
+    description: '1 = middle name (second first name) is used for the address\r\n0 = middle name is not used for the address'
+  - name: 'Name'
+    description: 'family name'
+    genericControls:
+      defColumnPos: 2
+  - name: 'NameCont'
+    description: 'NameContinous; in addition if the name of the partner is too long for the field ''Name'''
+  - name: 'MaidenName'
+    description: 'Name of a women before she has married'
+  - name: 'YearOfBirth'
+    description: 'If date of birth is not available'
+  - name: 'DateOfBirth'
+    description: 'birthday (only used for natürliche Personen) it''s not anymore used for organisations (AG e.g.) - see legalstatusdate'
+    genericControls:
+      defColumnPos: 5
+  - name: 'DateOfDeath'
+    description: 'Date of death for private persons\r\nDate of liquidation of organisations'
+  - name: 'OpeningDate'
+    description: 'date of opening the partner'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TerminationDate'
+    description: 'date of ''deleting'' the partner'
+  - name: 'SegmentNo'
+    description: 'partner segment (Betreuungs-, Beratungs- oder Servicekunden)'
+    genericControls:
+      refTable: 'PtSegment'
+      refField: 'SegmentNo'
+  - name: 'ConsultantTeamName'
+    description: 'foreign-key;  candidate-key of PtConsultantTeam\r\nteam who attend and consult to a partner'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 6
+  - name: 'FirstClassMail'
+    description: 'True if first class mail (e.g. for using a color printer)'
+  - name: 'ProfitCenterNo'
+    description: 'foreign-key;  candidate-key of AsProfitCenter\r\nfor internal controlling'
+    genericControls:
+      refTable: 'AsProfitCenter'
+      refField: 'ProfitCenterNo'
+  - name: 'PrivacyLockNo'
+    description: 'foreign-key; candidate-key of AsPrivacyLock (PrivacyLock)\r\ndata protection, only defined persons have access'
+    genericControls:
+      refTable: 'AsPrivacyLock'
+      refField: 'PrivacyLock'
+  - name: 'AgentId'
+    description: 'person who placed the partner\r\nforeign-key, Id of PtDescriptionView (View to create the descriptionfield of PtBase)'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'MotiveToOpenNo'
+    description: 'foreign-key; candidate-key of AsMotiveOpenType (MotiveOpenTypeNo)\r\nmotivation of BusinessContact'
+    genericControls:
+      refTable: 'AsMotiveOpenType'
+      refField: 'MotiveOpenTypeNo'
+  - name: 'MotiveToCloseNo'
+    description: 'foreign-key; candidate-key of AsMotiveCloseType (MotiveCloseTypeNo)\r\nmotive of terminate business relations'
+    genericControls:
+      refTable: 'AsMotiveCloseType'
+      refField: 'MotiveCloseTypeNo'
+  - name: 'InternRatingCodeNo'
+    description: 'is to be removed because of the use of PtRating\r\n\r\nforeign-key;  candidate-key of AsInternRatingCode'
+    genericControls:
+      refTable: 'AsInternRatingCode'
+      refField: 'InternRatingCodeNo'
+  - name: 'ChangeNameOrder'
+    description: 'Only relevant for couples to know if the wife wants to keep the maiden name in front of the name of her husband.'
+  - name: 'BcNo'
+    description: 'BC No - only used for Pfandbriefbank - not visible for banking applikation itself'
+  - name: 'VdfInstituteSymbol'
+    description: 'VDF: IAD.GEI.K985.3801\r\nInstitution symbol for identification a partner in the VDF-Import\r\n'
+  - name: 'VdfDocGen'
+    description: 'VDF: IAD.IAD.K801.0813\r\nGeneration of the last IAD-Doc, which was received from VDF'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: IAD.MGA.7895\r\nMessage status of IAD-Doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'InstituteStatusNo'
+    description: 'VDF: IAD.IAB.3806\r\nThis indicates whether the institution is an inactive (deleted) or an active one.'
+    genericControls:
+      refTable: 'PtInstituteStatus'
+      refField: 'InstituteStatusNo'
+  - name: 'InstituteTypeNo'
+    description: 'VDF: IAD.IAB.3807\r\nInstitution type\r\ne.g. company, public body, etc.'
+    genericControls:
+      refTable: 'PtInstituteType'
+      refField: 'InstituteTypeNo'
+  - name: 'BranchNo'
+    description: 'Number of the branch the partner is assigned to'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+  - name: 'RepStatusNo'
+    description: 'Bevormundete Person (patronized person),'
+    genericControls:
+      refTable: 'PtLegalRepStatus'
+      refField: 'RepStatusNo'
+  - name: 'HasInstruments'
+    description: 'Is true, if for this partner exists one or more instruments (one or more instruments where field IssuerId = the primary key of this record).\r\nThis field will be actualized by triggers from table PrPublic.'
+  - name: 'IsAuthorised'
+    description: '1 = ist selber wirtschaftlich berechtigt\r\n0 = hat wirtschaftlich Berechtigte eingesetzt (master relation 20 oblig.)'
+  - name: 'PrivacyGroupNo'
+    description: 'Needed for record-level data protection'
+    genericControls:
+      refTable: 'AsPrivacyGroup'
+      refField: 'PrivacyGroupNo'
+  - name: 'MgVrxKey'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgKDKAT'
+    description: ''
+    genericControls:
+      refTable: 'MgA05'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgWIRTSZWEIG'
+    description: ''
+    genericControls:
+      refTable: 'MgA46'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgVWVOLLM'
+    description: ''
+    genericControls:
+      refTable: 'MgA22'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgSACHB'
+    description: ''
+    genericControls:
+      refTable: 'MgA02'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgSITZ'
+    description: ''
+    genericControls:
+      refTable: 'MgA01'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgCLEARNR'
+    description: ''
+    maxValue: '99999'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgSEGANR'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgMIGST'
+    description: 'Information about Migration state! Are already Partner data in both environment? Are Account Data in both environment?'
+    minValue: '0'
+    maxValue: '128'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgRFORMCD'
+    description: ''
+    genericControls:
+      refTable: 'MgA93'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgRETROCD'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgREFZEICHEN'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgANREDECD'
+    description: ''
+    genericControls:
+      refTable: 'MgA94'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgRATINGCD'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      refTable: 'MgA49'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'MgAUSBILEND'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgPILOTKUNDE'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      refTable: 'MgPilotKunde'
+      refField: 'MigValue'
+      isOnlyForMig: true
+  - name: 'NogaCode2008'
+    description: 'New noga codes launched in 2008'
+    genericControls:
+      refTable: 'PtNoga2008'
+      refField: 'NogaCode'
+      hasDetailBtn: true
+  - name: 'NogaCode2008Ok'
+    description: 'Display whether a new noga-code was found or not\r\n\r\n- If only 1 similar noga-code was found in table PtNogaRelation this boolean will be      set to true\r\n- If more than 1 (or none) similar noga-code were found in the PtNogaRelation table     this boolean will be set to false\r\n- If the user sets/selects the noga-code manually, this boolean will be set to true as     well'
+  - name: 'ArCode'
+    description: ''
+    genericControls:
+      refTable: 'AcBankCounterparty'
+      refField: 'ArCode'
+      noUpdatePos: 100
+  - name: 'NamingRuleNo'
+    description: 'Namensrecht 1.1.2013'
+    genericControls:
+      refTable: 'PtNamingRule'
+      refField: 'RuleNo'
+  - name: 'HasToCheckOwnerVSB'
+    description: 'Dieses Feld wird vom Eröffnungswizard auf TRUE gesetzt, wenn der Kontrollinhaber gem. Eröffnungsfragen festgestellt werden muss. Dient dann als Anker für die Kontrolle.'
+  - name: 'CountryOfBirth'
+    description: 'steht für das Geburtsland eines Partners'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+  - name: 'BusinessSegmentNo'
+    description: 'SEBA Feld für das erweiterte Kundensegment für Fatca/QI'
+    genericControls:
+      refTable: 'PtBusinessSegment'
+      refField: 'BusinessSegmentNo'
+  - name: 'DateOfVSBComplChecked'
+    description: 'Datum, wann der Partner vollständig dokumentiert ist.'
+  - name: 'ProcessId'
+    description: 'Id of the VSB Workflow'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'HasAddlAuthorized'
+    description: 'zusätzliche wirtschaftlich berechtigte Personen\r\nAnforderung von Cembra FIN-10360'
+  - name: 'ExcludeFromDepositProtection'
+    description: 'Gewisse Kundengruppen aus der Einlagensicherung müssen mit einem Wert von CHF 0 berücksichtigt werden. Dazu zählen alle Finanzintermediäre und weitere Branchen / Unternehmen.\r\n\r\nFinanzintermediär gem. BankV Art. 42c Abs. 2'

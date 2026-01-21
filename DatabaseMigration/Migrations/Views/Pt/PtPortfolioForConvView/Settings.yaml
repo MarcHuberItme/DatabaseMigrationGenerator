@@ -1,0 +1,3 @@
+view:
+  name: 'PtPortfolioForConvView'
+  description: 'View of all finstar portfolios.\r\nNeeded to find out the portfolios to convert from a portfoliotype in a new one.'

@@ -1,0 +1,31 @@
+table:
+  name: 'EtTransfer'
+  description: 'Controls the transfer process to exchange data beteen the staging area and the EasyTax XML files.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransferNo'
+    description: 'Sequence'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TransferType'
+    description: ''
+    genericControls:
+      refTable: 'EtTransferType'
+      refField: 'TransferType'
+      defColumnPos: 2
+  - name: 'TransferDate'
+    description: ''
+  - name: 'Status'
+    description: ''
+    genericControls:
+      refTable: 'PtExportStatus'
+      refField: 'StatusNo'
+  - name: 'FileName'
+    description: ''

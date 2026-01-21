@@ -1,0 +1,68 @@
+table:
+  name: 'ReImmission'
+  description: 'Information about immission\r\n\r\n\r\nFIS-2000: GR_IMMIS'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'immission'
+    - german:
+        formTitle: 'Immissionen'
+    - french:
+        formTitle: 'Immissions'
+    - italian:
+        formTitle: 'Immissioni'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ImmissionTypeNo'
+    description: 'Immissionsart / GR_IMMIS_CD'
+    genericControls:
+      refTable: 'ReImmissionType'
+      refField: 'ImmissionTypeNo'
+      defColumnPos: 1
+  - name: 'ImmissionIntensity'
+    description: 'Immissions Intensität\r\n\r\ngering / mittel / stark'
+    genericControls:
+      refTable: 'ReImmissionIntensity'
+      refField: 'IntensityCode'
+      defColumnPos: 2
+  - name: 'Originator'
+    description: ''
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'OriginatorNogaCode'
+    description: 'Branche des Verursachers'
+    genericControls:
+      refTable: 'PtBusinessType'
+      refField: 'NogaCode'
+      hasDetailBtn: true
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'MemberUniqueKey'
+    description: 'PfB spezifisch: Jede Mitgliedbank vergibt für den gemeldeten Record eine eindeutige Identifikation. Diese benötigt sie um über E-Banking die Daten zu mutieren. Diese eindeutige Kennung muss die Mitgliedbank bei sich speichern.'
+  - name: 'SourceType'
+    description: ''
+    genericControls:
+      refTable: 'ReImmissionSourceType'
+      refField: 'Id'

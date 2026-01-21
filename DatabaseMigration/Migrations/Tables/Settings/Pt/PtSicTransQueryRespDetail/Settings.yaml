@@ -1,0 +1,57 @@
+table:
+  name: 'PtSicTransQueryRespDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'QueryResponseId'
+    description: ''
+    genericControls:
+      refTable: 'PtSicTransQueryResponse'
+      refField: 'Id'
+  - name: 'InstructedPmtBICId'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++PmtTo\r\n+++++MmbId\r\n++++++FinInstnId\r\n+++++++BICFI'
+  - name: 'InstructedPmtMemberId'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++PmtTo\r\n+++++MmbId\r\n++++++FinInstnId\r\n+++++++ClrSysMmbId\r\n++++++++MmbId'
+  - name: 'InstructedPmtOtherId'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++PmtTo\r\n+++++MmbId\r\n++++++FinInstnId\r\n+++++++Othr\r\n++++++++Id'
+  - name: 'InstructingPmtBICId'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++PmtFr\r\n+++++MmbId\r\n++++++FinInstnId\r\n+++++++BICFI'
+  - name: 'InstructingPmtMemberId'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++PmtFr\r\n+++++MmbId\r\n++++++FinInstnId\r\n+++++++ClrSysMmbId\r\n++++++++MmbId'
+  - name: 'PaymentStatusCode'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++Pmt\r\n+++++Sts\r\n++++++Cd\r\n+++++++Prtry'
+  - name: 'PaymentStatusTime'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++Pmt\r\n+++++Sts\r\n++++++DtTm\r\n+++++++DtTm'
+  - name: 'PaymentCancellationCode'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++Pmt\r\n+++++Sts\r\n++++++Rsn\r\n+++++++Prtry'
+  - name: 'PaymentSettlementAmt'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++Pmt\r\n+++++IntrBkSttlmAmt\r\n++++++AmtWthCcy'
+  - name: 'PaymentSettlementCcy'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++Pmt\r\n+++++IntrBkSttlmAmt\r\n++++++AmtWthCcy'
+  - name: 'PaymentCode'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++Pmt\r\n+++++Purp'
+  - name: 'PaymentType'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++Pmt\r\n+++++PmtMtd\r\n++++++Prtry'
+  - name: 'PaymentPriority'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++Pmt\r\n+++++Prty\r\n++++++Prtry'
+  - name: 'PaymentInstructionCopy'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++Pmt\r\n+++++InstrCpy'
+  - name: 'PaymentTransactionId'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++Pmt\r\n+++++TxId'
+  - name: 'PaymentSettlementDate'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++Pmt\r\n+++++IntrBkSttlmDt'
+  - name: 'AccountEntrySettAcct'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++AcctNtry\r\n+++++Acct\r\n++++++Id\r\n+++++++Othr\r\n++++++++Id'
+  - name: 'AccountEntryDate'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++AcctNtry\r\n+++++Ntry\r\n++++++Dt\r\n+++++++DtTm'
+  - name: 'AccountEntryAdditionalInfo'
+    description: 'BizRpt\r\n+TxRpt\r\n++TxOrErr\r\n+++Tx\r\n++++AcctNtry\r\n+++++Ntry\r\n++++++AddtlNtryInf'
+  - name: 'OperationalErrorCode'
+    description: 'OprlErr\r\n+Err\r\n++Prtry'

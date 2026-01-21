@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CyRateRecent_GetSingleRate'
+  description: 'Proc to quickly access a certain rate from CSS'

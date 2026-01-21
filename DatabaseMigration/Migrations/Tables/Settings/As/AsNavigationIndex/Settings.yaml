@@ -1,0 +1,43 @@
+table:
+  name: 'AsNavigationIndex'
+  description: 'Contains redundant information about a data structure and is used by the navigation viewer. The goal of this table is to speed up the build of the navigation tree. The redundancy is maintained by the data access components.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 75acefc4-0a56-4966-97a8-53e8b891ec08
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Navigation Index'
+    - german:
+        formTitle: 'Navigation Index'
+  columns:
+  - name: 'TableName'
+    description: 'Name of the table that is referenced by the current entry.'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'TableId'
+    description: 'Id of the record in the table given by ''CurrentTableName'' that is referenced by the current entry.'
+  - name: 'ParentTableName'
+    description: 'Name of the parent table of the table in ''CurrentTableName''.'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'ParentTableId'
+    description: 'Id of the parent record of the record that is referenced by the current entry.'
+  - name: 'RootTableName'
+    description: 'Name of the table that is root in the navigation tree.'
+  - name: 'RootTableId'
+    description: 'Id of the record in ''RootTableName'' that is the root record for the record referenced by the current entry.'
+  - name: 'ChildConditionKey'
+    description: 'Can contain redundant values of the record referenced by the current entry. The values are used by the navigation viewer to decide wheter separated nodes have to be displayed or not.'
+  - name: 'ApplicationKey'
+    description: 'Contains the value of the application key in the record teferenced by the current entry.'
+  - name: 'Status'
+    description: 'Status of the record referenced by the current entry. The status is used by the navigation viewer to display the status of a node.'

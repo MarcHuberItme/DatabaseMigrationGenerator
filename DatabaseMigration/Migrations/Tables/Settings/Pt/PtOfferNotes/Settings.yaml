@@ -1,0 +1,51 @@
+table:
+  name: 'PtOfferNotes'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'OfferId'
+    navigation:
+      rootTable: 'PtEbInfo'
+      parentTable: 'PtEbInfo'
+      parentRelationField: 'EbInfoId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Offer Notes'
+    - german:
+        formTitle: 'Offertaktivitäten'
+  columns:
+  - name: 'EbInfoId'
+    description: ''
+    genericControls:
+      refTable: 'PtEbInfo'
+      refField: 'Id'
+      hasDetailBtn: true
+      createNavigationIndex: true
+  - name: 'OfferId'
+    description: ''
+    genericControls:
+      refTable: 'PtOfferTypeDesc'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'NotesDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'NotesTopic'
+    description: 'Betreff'
+    genericControls:
+      defColumnPos: 2
+  - name: 'NotesText'
+    description: ''
+    genericControls:
+      multiLine: true

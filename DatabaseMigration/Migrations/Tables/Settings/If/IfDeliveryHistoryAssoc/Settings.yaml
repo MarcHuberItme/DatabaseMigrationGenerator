@@ -1,0 +1,26 @@
+table:
+  name: 'IfDeliveryHistoryAssoc'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'DeliveryHistoryId'
+    description: ''
+    genericControls:
+      refTable: 'IfDeliveryHistory'
+      refField: 'Id'
+  - name: 'DeliveryDetailHistoryId'
+    description: ''
+    genericControls:
+      refTable: 'IfDeliveryDetailHistory'
+      refField: 'Id'

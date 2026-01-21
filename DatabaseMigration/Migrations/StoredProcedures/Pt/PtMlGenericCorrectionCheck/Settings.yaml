@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtMlGenericCorrectionCheck'
+  description: 'the idea is to pass in the configtable, datatable, the originalfield- and correctedfield name, in order to check if there is a correction present'

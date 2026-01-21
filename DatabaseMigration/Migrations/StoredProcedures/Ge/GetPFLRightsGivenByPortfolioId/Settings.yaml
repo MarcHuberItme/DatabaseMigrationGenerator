@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPFLRightsGivenByPortfolioId'
+  description: '"Get portfolio level rights given by a partner searching by PortfolioId"\r\nGets a list of partners/contactpersons with some specific data (see below) that are given rights\r\nto a certain portfolio\r\nData returned per record:\r\nA.PartnerId,\r\nA.ContactPersonId,\r\nA.PortfolioId,\r\nA.Rights\r\n'

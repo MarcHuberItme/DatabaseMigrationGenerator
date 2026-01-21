@@ -1,0 +1,26 @@
+table:
+  name: 'PtTransMsgStatus'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Transaction status'
+    - german:
+        formTitle: 'Abwicklungsstatus'
+  columns:
+  - name: 'TransMsgStatusNo'
+    description: 'Defines the status of a record in PtTransMessage and/or a record in PtTransItem\r\n1 = set to original transacton if a storno has happend \r\n2 = set to a storno transaction\r\n3 = set to a new transaction for a previous storned transaction\r\n'
+    minValue: '1'
+    maxValue: '3'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

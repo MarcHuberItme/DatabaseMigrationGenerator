@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'ResetFailedPaymentScanTransfer'
+  description: 'reset payment scan order transfer in case of error, so that user can reedit data.\r\nAlready transfered data will be reset so that the order is in a consistent state.'

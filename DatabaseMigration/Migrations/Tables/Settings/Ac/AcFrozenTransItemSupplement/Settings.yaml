@@ -1,0 +1,37 @@
+table:
+  name: 'AcFrozenTransItemSupplement'
+  description: 'Diese Tabelle enthält den monatlichen Snapshot der nachträglichen Abschlussbuchungen'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Closing bookings suppl.'
+    - german:
+        formTitle: 'Nachträgl. Abschlussbuch.'
+  columns:
+  - name: 'ReportDate'
+    description: ''
+  - name: 'TransId'
+    description: ''
+  - name: 'PositionId'
+    description: ''
+  - name: 'TransItemId'
+    description: ''
+  - name: 'RealDate'
+    description: ''
+  - name: 'TransDate'
+    description: ''
+  - name: 'DebitAmount'
+    description: ''
+  - name: 'CreditAmount'
+    description: ''
+  - name: 'ClosingItem'
+    description: ''
+  - name: 'ComponentId'
+    description: ''

@@ -1,0 +1,35 @@
+table:
+  name: 'BpJobWorker'
+  description: 'JCS Job Worker definition for work item processing.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    descField: 'WorkerKey'
+    uiTableDescription:
+    - english:
+        formTitle: 'JCS Job Worker'
+    - german:
+        formTitle: 'JCS Job Worker'
+    - french:
+        formTitle: 'JCS Job Worker'
+    - italian:
+        formTitle: 'JCS Job Worker'
+  columns:
+  - name: 'WorkerKey'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'JobBaseId'
+    description: ''
+    genericControls:
+      refTable: 'BpJobBase'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'AddParam'
+    description: 'Additional job parameters.'

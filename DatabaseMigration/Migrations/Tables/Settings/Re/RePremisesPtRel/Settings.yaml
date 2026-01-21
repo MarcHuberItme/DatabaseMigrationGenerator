@@ -1,0 +1,95 @@
+table:
+  name: 'RePremisesPtRel'
+  description: 'Premises - Partner Relation'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Partner Relation'
+    - german:
+        formTitle: 'Partner Verbindung'
+    - french:
+        formTitle: 'terrain relation'
+  columns:
+  - name: 'ReBaseId'
+    description: ''
+    genericControls:
+      refTable: 'ReBase'
+      refField: 'Id'
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+  - name: 'PremisesPtRelTypeNo'
+    description: 'e.g. Mieter des gesamten Grundstücks'
+    genericControls:
+      refTable: 'RePremisesPtRelType'
+      refField: 'PremisesPtRelTypeNo'
+      defColumnPos: 1
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'Name'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'FirstName'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'DateOfBirth'
+    description: ''
+  - name: 'SexStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+  - name: 'Street'
+    description: ''
+  - name: 'HouseNo'
+    description: ''
+  - name: 'Zip'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'Town'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'CountryCode'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'ValidPer'
+    description: ''
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'ValidTo'
+    description: ''
+  - name: 'Remark'
+    description: ''

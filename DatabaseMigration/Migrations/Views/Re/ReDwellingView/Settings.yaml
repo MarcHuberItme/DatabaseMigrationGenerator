@@ -1,0 +1,103 @@
+view:
+  name: 'ReDwellingView'
+  description: ''
+frontendView:
+  name: 'ReDwellingView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'dwelling view'
+    - german:
+        formTitle: 'Wohnungsview'
+  columns:
+  - name: 'BuildingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+  - name: 'DwellingTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReDwellingType'
+      refField: 'DwellingTypeNo'
+      defColumnPos: 2
+  - name: 'FloorType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReBuildingFloorType'
+      refField: 'FloorType'
+      defColumnPos: 1
+  - name: 'AreaM2'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'NettoFlag'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'SurfaceM2'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'WetCellsNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'IsRented'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PartnerNo'
+    description: 'type should be "decimal 8,0", but ADO does not support this format correctly when preparing and empty recordset (GetEmptyRecordSet ... append-instruction) --> therefore we use the type "int"'
+    dataType: 'int'
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+    genericControls:
+      defColumnPos: 3
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 4
+  - name: 'RentAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'EmptyAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'SupportAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'AddExpAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'ApartmentNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 5
+  - name: 'SortNoFloorType'
+    description: ''
+    dataType: 'smallint'
+  - name: 'SortNoDwellingType'
+    description: ''
+    dataType: 'smallint'

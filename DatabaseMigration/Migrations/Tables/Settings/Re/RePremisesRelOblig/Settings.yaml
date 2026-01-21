@@ -1,0 +1,93 @@
+table:
+  name: 'RePremisesRelOblig'
+  description: 'Grundstück zu Grundstück (Grundlasten) - ZGB 782 - 792\r\nDie Grundlasten verpflichten den Eigentümer zu einer eigentlichen Leistung. Meistens wird diese Pflicht durch eine Zahlung erledigt.\r\n\r\nz.B. Unterhaltszahlung an eine Strasse'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      navigationConditionField: 'ObligTypeNo'
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Premises Relation Oblig.'
+    - german:
+        formTitle: 'Dienstb/Grundlast (Last)'
+    - french:
+        formTitle: 'charges de base'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ObligTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'RePremisesRelObligType'
+      refField: 'ObligTypeNo'
+      defColumnPos: 1
+  - name: 'StipulationDate'
+    description: 'Befristungsdatum'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Stipulation'
+    description: 'Befristet ja / Nein'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Amount'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ForValuation'
+    description: 'FIS-2000: STZ_RELE_CD'
+    genericControls:
+      refTable: 'ReEnvironmentAddValuation'
+      refField: 'ValuationNo'
+      defColumnPos: 5
+  - name: 'FreeOfCharge'
+    description: 'free of charge  / unentgeltlich (Wohnrecht/Nutzniessung)\r\nFIS-2000:GR_WOHNREC.GR_WOHREC_ART_CD'
+  - name: 'InterestRate'
+    description: '(Wohnrecht/Nutzniessung)'
+    minValue: '1'
+    maxValue: '8'
+  - name: 'HasAdditionalPartners'
+    description: '1 = more than 2 partners involved (Wohnrecht/Nutzniessung)'
+  - name: 'IsNaturalPartner'
+    description: '(Wohnrecht/Nutzniessung)'
+  - name: 'SupportAmount'
+    description: '(Wohnrecht/Nutzniessung)'
+  - name: 'InterestAmount'
+    description: '(Wohnrecht/Nutzniessung)'
+  - name: 'PremisesPtRelId1'
+    description: ''
+    genericControls:
+      refTable: 'RePremisesPtRel'
+      refField: 'Id'
+  - name: 'PremisesPtRelId2'
+    description: ''
+    genericControls:
+      refTable: 'RePremisesPtRel'
+      refField: 'Id'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 6
+  - name: 'AmountPerYear'
+    description: ''

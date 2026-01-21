@@ -1,0 +1,41 @@
+table:
+  name: 'AcBalanceStructureAL2'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Balance Structure Level 2'
+    - german:
+        formTitle: 'Bilanzstruktur Level 2'
+    - french:
+        formTitle: 'Structure du bilan Level2'
+  columns:
+  - name: 'AL2'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'BalanceSheetTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceSheetType'
+      refField: 'BalanceSheetTypeNo'
+      defColumnPos: 2
+  - name: 'WithinAL1'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceStructureAL1'
+      refField: 'AL1'
+      defColumnPos: 3
+  - name: 'ReportColumn'
+    description: '1 = debit (left column)\r\n2 = credit (right column)\r\n3 = only one column (debit and credit compensation)'
+    genericControls:
+      defColumnPos: 4

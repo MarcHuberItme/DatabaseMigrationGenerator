@@ -1,0 +1,19 @@
+table:
+  name: 'PtExportFileType'
+  description: 'Kind of export file'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'FileTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

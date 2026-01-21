@@ -1,0 +1,86 @@
+table:
+  name: 'PtServiceChargeJobDef'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtServiceChargeJobDef'
+        helpText: 'PtServiceChargeJobDef'
+    - german:
+        formTitle: 'PtServiceChargeJobDef'
+        helpText: 'PtServiceChargeJobDef'
+  columns:
+  - name: 'DefSeqNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ServiceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtServiceNameList'
+      refField: 'ServiceTypeNo'
+      defColumnPos: 1
+  - name: 'PrefixTransText'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'NominalPricePeriodNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 2
+  - name: 'ChargePeriodNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 3
+  - name: 'IsFixMode'
+    description: ''
+  - name: 'ChargeYear'
+    description: ''
+  - name: 'IsActualYear'
+    description: ''
+  - name: 'IsRollMode'
+    description: ''
+  - name: 'ScheduledAtBegin'
+    description: ''
+  - name: 'ScheduledAtEnd'
+    description: ''
+  - name: 'ScheduledDateMode'
+    description: '(m,1), 1 month earlier\r\n(m,0), same month\r\n(w,1), 1 week earlier\r\n(w,0), same week\r\n(d,15), 15 days earlier'
+  - name: 'HasVAT'
+    description: ''
+  - name: 'VATTaxTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsVatCode'
+      refField: 'VATTaxTypeNo'
+  - name: 'TransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+      defColumnPos: 5
+  - name: 'ProfitCenterNo'
+    description: ''
+    genericControls:
+      refTable: 'AsProfitCenter'
+      refField: 'ProfitCenterNo'
+  - name: 'HasDebitAdvice'
+    description: ''
+  - name: 'PrintJobName'
+    description: ''
+  - name: 'HasStaffRebate'
+    description: ''

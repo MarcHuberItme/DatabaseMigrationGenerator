@@ -1,0 +1,53 @@
+table:
+  name: 'CoPtAccountComponent'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'CoPtAccountComponent'
+        helpText: 'CoPtAccountComponent'
+    - german:
+        formTitle: 'CoPtAccountComponent'
+        helpText: 'CoPtAccountComponent'
+    - french:
+        formTitle: 'CoPtAccountComponent'
+        helpText: 'CoPtAccountComponent'
+  columns:
+  - name: 'OriginAccountComponentId'
+    description: ''
+  - name: 'AccountBaseId'
+    description: ''
+  - name: 'PrivateComponentId'
+    description: ''
+  - name: 'PrivateCompTypeId'
+    description: ''
+  - name: 'PriorityOfInterestCalculation'
+    description: ''
+  - name: 'PriorityOfPayback'
+    description: ''
+  - name: 'PriorityOfLegalReporting'
+    description: ''
+  - name: 'IsOldComponent'
+    description: ''
+  - name: 'Duration'
+    description: ''
+  - name: 'DurationTypeId'
+    description: ''
+  - name: 'PrivateCompCharacteristicNo'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'VeraGrp'
+    description: ''
+  - name: 'PosCompTypeNo'
+    description: ''

@@ -1,0 +1,39 @@
+table:
+  name: 'PtDsContactInfoTransfer'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PartnerTransferId'
+    description: ''
+    genericControls:
+      refTable: 'PtDsPartnerTransfer'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'BusinessPhonenumber'
+    description: ''
+  - name: 'City'
+    description: ''
+  - name: 'Country'
+    description: ''
+  - name: 'EmailAddress'
+    description: ''
+  - name: 'HouseNumber'
+    description: ''
+  - name: 'MobilePhoneNumber'
+    description: ''
+  - name: 'PhoneNumber'
+    description: ''
+  - name: 'PrivatePhoneNumber'
+    description: ''
+  - name: 'Street'
+    description: ''
+  - name: 'ZipCode'
+    description: ''

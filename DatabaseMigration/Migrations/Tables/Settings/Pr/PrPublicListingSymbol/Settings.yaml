@@ -1,0 +1,40 @@
+table:
+  name: 'PrPublicListingSymbol'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublicListing'
+      parentRelationField: 'PublicListingId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+  columns:
+  - name: 'PublicListingId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicListing'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ListingScheme'
+    description: 'VDF: TKHXD.HLT.7846'
+    genericControls:
+      refTable: 'PrPublicListingScheme'
+      refField: 'ListingScheme'
+      defColumnPos: 1
+  - name: 'ListingSymbol'
+    description: 'VDF: TKHXD.HLT.7806'
+    genericControls:
+      defColumnPos: 2
+  - name: 'UseAsIdentification'
+    description: ''
+    genericControls:
+      defColumnPos: 3

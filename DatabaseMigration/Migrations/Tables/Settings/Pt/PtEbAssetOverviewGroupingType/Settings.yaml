@@ -1,0 +1,24 @@
+table:
+  name: 'PtEbAssetOverviewGroupingType'
+  description: 'This table defines the possible groupings for the AssetOverview Service. By default the following criteria are already implemented: 0 = Category, 1 = Currency, 2 = Owner, 3 = CustomerReference'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'AssetOverview grouping'
+    - german:
+        formTitle: 'Vermögensübersicht Group'
+  columns:
+  - name: 'GroupNo'
+    description: ''
+  - name: 'IsActive'
+    description: 'Checks if the asset overview grouing type is active'

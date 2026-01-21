@@ -1,0 +1,107 @@
+view:
+  name: 'VaPositionView'
+  description: '6.1.2025 / rohn: new field [IsAccountPos] added. True if position is from an account, false otherwise (security pos)'
+frontendView:
+  name: 'VaPositionView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'VaRunId'
+    description: '6.1.2025 / rohn: new field [IsAccountPos] added. True if position is from an account, false otherwise (security pos)'
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PositionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ProdReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PublicPriceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PriceDate'
+    description: ''
+    dataType: 'smalldatetime'
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'ValuationCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'PriceCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'Rate'
+    description: ''
+    dataType: 'float'
+  - name: 'RatePrCuVaCu'
+    description: ''
+    dataType: 'float'
+  - name: 'RatePrCuCHF'
+    description: ''
+    dataType: 'float'
+  - name: 'RatePrCurAcCur'
+    description: ''
+    dataType: 'float'
+  - name: 'MarketValuePrCu'
+    description: ''
+    dataType: 'float'
+  - name: 'AccruedInterestPrCu'
+    description: ''
+    dataType: 'float'
+  - name: 'AccruedInterestVaCu'
+    description: ''
+    dataType: 'float'
+  - name: 'MarketValueCHF'
+    description: 'Collateral value in balance sheet currency'
+    dataType: 'float'
+  - name: 'AccruedInterestCHF'
+    description: ''
+    dataType: 'float'
+  - name: 'Delay'
+    description: ''
+    dataType: 'decimal'
+    prec: 10
+    scale: 4
+  - name: 'CollateralRate'
+    description: ''
+    dataType: 'float'
+  - name: 'NotActual'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PriceQuoteType'
+    description: ''
+    dataType: 'int'
+  - name: 'NoReporting'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Quantity'
+    description: ''
+    dataType: 'money'
+  - name: 'MarketValueVaCu'
+    description: 'market value in portfolio currency'
+    dataType: 'float'
+  - name: 'IsAccountPos'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true

@@ -1,0 +1,36 @@
+table:
+  name: 'ATMSupportEAddr'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ATMSupportEAddr'
+        helpText: 'ATMSupportEAddr'
+    - german:
+        formTitle: 'ATMSupportEAddr'
+        helpText: 'ATMSupportEAddr'
+  columns:
+  - name: 'PartnerID'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'EMail'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'SMS'
+    description: ''
+    genericControls:
+      defColumnPos: 3

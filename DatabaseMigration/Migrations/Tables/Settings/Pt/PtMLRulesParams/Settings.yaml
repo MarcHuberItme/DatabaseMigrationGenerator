@@ -1,0 +1,26 @@
+table:
+  name: 'PtMLRulesParams'
+  description: 'To store the information: about the parameters; needed by which rules.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+  columns:
+  - name: 'RuleID'
+    description: 'Which rule is binded with the parameters'
+    genericControls:
+      refTable: 'PtMLRules'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ParamID'
+    description: 'id of the parameter which is binded with a rule'
+    genericControls:
+      refTable: 'PtMLParameters'
+      refField: 'Id'
+      defColumnPos: 2

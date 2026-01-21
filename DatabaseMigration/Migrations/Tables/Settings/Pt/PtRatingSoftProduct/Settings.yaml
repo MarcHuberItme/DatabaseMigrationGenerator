@@ -1,0 +1,33 @@
+table:
+  name: 'PtRatingSoftProduct'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Products'
+    - german:
+        formTitle: 'Produkte/DL/Märkte'
+  columns:
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Weight'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Score'
+    description: ''
+    genericControls:
+      defColumnPos: 3

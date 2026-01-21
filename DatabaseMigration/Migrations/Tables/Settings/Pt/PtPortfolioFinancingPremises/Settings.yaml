@@ -1,0 +1,39 @@
+table:
+  name: 'PtPortfolioFinancingPremises'
+  description: 'Table to store the premises which are financed with this mortgage. The premises are needed to create the credit contract. \r\n\r\nTabelle um die zu finanzierenden Objekte zu speichern, wird benötigt um den Kredit-Rahmenvertrag zu erstellen'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Financed Premises'
+        helpText: 'Financed Premises'
+    - german:
+        formTitle: 'Financed Premises'
+        helpText: 'Financed Premises'
+    - french:
+        formTitle: 'Financed Premises'
+        helpText: 'Financed Premises'
+    - italian:
+        formTitle: 'Financed Premises'
+        helpText: 'Financed Premises'
+  columns:
+  - name: 'PortfolioFinancingId'
+    description: 'Referenz zu PtPortfolioFinancing'
+    genericControls:
+      refTable: 'PtPortfolioFinancing'
+      refField: 'Id'
+  - name: 'PremisesId'
+    description: 'Referenz zu rePremises - used to load the following information from rePremises:\r\nRePremises.LandregistryNo\r\nRePremises.Street\r\nRePremises.HouseNo\r\nRePremises.Zip\r\nRePremises.Town'
+    genericControls:
+      refTable: 'ReBasePremisesView'
+      refField: 'PremisesId'
+      hasDetailBtn: true
+      defColumnPos: 1

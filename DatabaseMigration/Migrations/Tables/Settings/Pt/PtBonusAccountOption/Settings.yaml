@@ -1,0 +1,21 @@
+table:
+  name: 'PtBonusAccountOption'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'BonusTypeNo'
+    description: '0 = (Defualt) Bonus + Correction\r\n1 = Ignore bonus restrictions (Bonus + Correction)\r\n2 = No Bonus'
+  - name: 'CalculateBonus'
+    description: '1= Bonus Calculation should take place\r\n0 = No Bonus Calculation should take place'
+  - name: 'IgnoreRestrictions'
+    description: 'This option is only meaningful when PtBonusAccountOption.CalculateBonus = 1\r\n1= Award bonus without checking the account.\r\n0 = Perform bonus award restriction checks.'

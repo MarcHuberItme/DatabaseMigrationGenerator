@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'SetPtTransactionProcQueueFailureStatus'
+  description: 'This stored procedure set the status in  tPtTransactionProcQueueFailure to 1, when the PtTransaction record is already processed.'

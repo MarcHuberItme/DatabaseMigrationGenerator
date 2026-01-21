@@ -1,0 +1,160 @@
+table:
+  name: 'PtTransDeliveryShares'
+  description: 'This table is used to record pending delivery'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Delivery'
+    - german:
+        formTitle: 'Delivery'
+  columns:
+  - name: 'RefNo'
+    description: 'As a complete delivery'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SeqNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'SecomNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'TransNo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ExtRefNo'
+    description: 'Customer reference at broker'
+    genericControls:
+      defColumnPos: 4
+  - name: 'RequestDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'TradeDate'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'RequestBankID'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'ShareholderID'
+    description: 'partner ID of the customer'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 8
+  - name: 'ShareholderNo'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'DeliveryType'
+    description: '"credit", "debit"'
+    genericControls:
+      defColumnPos: 9
+  - name: 'DeliveryQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'QuantityType'
+    description: '"share", "title", "right"'
+    genericControls:
+      defColumnPos: 11
+  - name: 'TitleNo'
+    description: ''
+    genericControls:
+      defColumnPos: 12
+  - name: 'TitleLocType'
+    description: '"homebank", "otherbank", "shareholder"'
+    genericControls:
+      defColumnPos: 13
+  - name: 'TitlePrintDate'
+    description: ''
+    genericControls:
+      defColumnPos: 14
+  - name: 'IsNotOrigin'
+    description: ''
+  - name: 'CptyBankID'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 15
+  - name: 'NewShareholderID'
+    description: ''
+    genericControls:
+      defColumnPos: 16
+  - name: 'NewShareholderNo'
+    description: ''
+    genericControls:
+      defColumnPos: 16
+  - name: 'CptyDeliverySeqNo'
+    description: ''
+    genericControls:
+      defColumnPos: 17
+  - name: 'IsInternalStep'
+    description: 'indicates the internal delivery step'
+  - name: 'IsDepotExternal'
+    description: '0, internal booking; 1, external booking'
+    genericControls:
+      defColumnPos: 18
+  - name: 'DeliveryDateTime'
+    description: 'Null: pending'
+    genericControls:
+      defColumnPos: 19
+  - name: 'PortfolioID'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 24
+  - name: 'BrokerPortfolioID'
+    description: 'When delivery instruction comes from trading application, this field indicates broker PortfolioID for the counterparty. In othercase, the value is null'
+  - name: 'DepotbankID'
+    description: 'Request bank may be not same as DepotBank'
+  - name: 'IsShareMove'
+    description: '0, Share trade; 1, share move'
+    genericControls:
+      defColumnPos: 20
+  - name: 'CptyPartnerID'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CptyPortfolioID'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'BReqDocDateTime'
+    description: 'date when the letter for reminding the buyer db of register instruction is printed'
+    genericControls:
+      defColumnPos: 21
+  - name: 'BDocDateTime'
+    description: 'date when the documents for buyer db after register instruction are printed'
+    genericControls:
+      defColumnPos: 22
+  - name: 'SDocDateTime'
+    description: 'date when the documents for seller db after register instruction are printed'
+    genericControls:
+      defColumnPos: 23
+  - name: 'ForPayback'
+    description: ''

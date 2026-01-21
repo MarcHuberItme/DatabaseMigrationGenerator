@@ -1,0 +1,40 @@
+table:
+  name: 'PtShadowProductSettings'
+  description: 'Special settings for shadow products'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Shadow Product Settings'
+    - german:
+        formTitle: 'Einstellungen Vorsorge'
+    - french:
+        formTitle: 'Shadow Product Settings'
+    - italian:
+        formTitle: 'Shadow Product Settings'
+  columns:
+  - name: 'ShadowProductId'
+    description: 'Reference to PtShadowProduct'
+    genericControls:
+      refTable: 'PtShadowProduct'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'IsVisibleForEBanking'
+    description: 'Desicion if product will be visible for ebanking'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsAbsoluteTrendActive'
+    description: 'Desicion if absolute securities trend is active'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsPerformanceActive'
+    description: 'Desicion if securities performance is active'
+    genericControls:
+      defColumnPos: 4

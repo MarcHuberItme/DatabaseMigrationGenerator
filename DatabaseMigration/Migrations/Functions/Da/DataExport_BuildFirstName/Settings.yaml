@@ -1,0 +1,3 @@
+function:
+  name: 'DataExport_BuildFirstName'
+  description: 'Builds FirstName based on Name and MiddleName\r\nIS used for DocWiz DataExport'

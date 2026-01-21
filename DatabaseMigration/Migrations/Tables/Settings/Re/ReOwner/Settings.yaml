@@ -1,0 +1,55 @@
+table:
+  name: 'ReOwner'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'ReBase'
+      parentRelationField: 'ReBaseId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Owner'
+    - german:
+        formTitle: 'Eigentümer'
+  columns:
+  - name: 'ReBaseId'
+    description: ''
+    genericControls:
+      refTable: 'ReBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'PartnerRelId'
+    description: 'owner'
+    genericControls:
+      refTable: 'ReBasePtRel'
+      refField: 'Id'
+  - name: 'PropertyTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'RePropertyType'
+      refField: 'PropertyTypeNo'
+      defColumnPos: 1
+  - name: 'Number'
+    description: 'part of property'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Denominator'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'UnitTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReCoUnitType'
+      refField: 'UnitTypeNo'
+      defColumnPos: 4

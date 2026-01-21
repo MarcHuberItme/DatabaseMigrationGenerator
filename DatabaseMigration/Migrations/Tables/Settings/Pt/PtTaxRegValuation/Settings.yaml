@@ -1,0 +1,30 @@
+table:
+  name: 'PtTaxRegValuation'
+  description: 'Defines the valuation which is taken for an entry in TaxRegBalance'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'FiscalYear'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'VaRunId'
+    description: ''
+    genericControls:
+      refTable: 'VaRun'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'ValuationDate'
+    description: 'Redundant to valuation date in VaRun\r\n(VaRun might get deleted!)'
+    genericControls:
+      defColumnPos: 3

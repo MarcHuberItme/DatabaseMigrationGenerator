@@ -1,0 +1,45 @@
+table:
+  name: 'AcFireCounterParty'
+  description: 'Information about counterparties for Fire.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'C510'
+    description: 'Art der Gegenpartei'
+    genericControls:
+      refTable: 'AcFireC510'
+      refField: 'C510Code'
+  - name: 'C026Deri'
+    description: 'Typisierung zentrale Gegenpartei für Derivate'
+    genericControls:
+      refTable: 'AcFireC026'
+      refField: 'C026'
+  - name: 'C026Repo'
+    description: 'Typisierung zebtrale Gegenpartei für REPO'
+    genericControls:
+      refTable: 'AcFireC026'
+      refField: 'C026'
+  - name: 'C026DF'
+    description: 'Typisierung für Ausfallfonds zentrale Gegenpartei.'
+    genericControls:
+      refTable: 'AcFireC026'
+      refField: 'C026'
+  - name: 'ArCode'
+    description: 'Bank Gegenpartei gem. SNB-Liste\r\nFür Ermittlung der Adressausfallrisiken in Fire.'
+    genericControls:
+      refTable: 'AcBankCounterparty'
+      refField: 'ArCode'

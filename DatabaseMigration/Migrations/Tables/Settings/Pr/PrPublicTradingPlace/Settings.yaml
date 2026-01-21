@@ -1,0 +1,114 @@
+table:
+  name: 'PrPublicTradingPlace'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'ShortName'
+    uiTableDescription:
+    - english:
+        formTitle: 'Trading place'
+    - german:
+        formTitle: 'Börsenplatz'
+  columns:
+  - name: 'VdfDocGen'
+    description: 'VDF: IHD.IHD.K801.0813\r\nGeneration of the last IHD-Doc, which was received from VDF'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: IHD.MGA.7895\r\nMessage status of FAD-Doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'VdfInstituteSymbol'
+    description: 'VDF: IHD.GEI.K985.3801\r\nInstitution symbol for identification a trading place in the VDF-Import'
+    genericControls:
+      defColumnPos: 5
+  - name: 'InstituteStatusNo'
+    description: 'VDF: IAD.IAB.3806\r\nThis indicates whether the trading place is an inactive (deleted) or an active one.'
+    genericControls:
+      refTable: 'PtInstituteStatus'
+      refField: 'InstituteStatusNo'
+  - name: 'InstituteTypeNo'
+    description: 'VDF: IAD.IAB.3807\r\nInstitution type\r\ne.g. company, public body, etc.'
+    genericControls:
+      refTable: 'PtInstituteType'
+      refField: 'InstituteTypeNo'
+      defColumnPos: 9
+  - name: 'CountryCode'
+    description: 'VDF: IHD.IAC.3991\r\nDomicile'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'ShortName'
+    description: 'VDF: IHD.GEL.3822'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Name'
+    description: 'VDF: IHD.GEL.3823'
+    genericControls:
+      defColumnPos: 2
+  - name: 'StreetAddress'
+    description: 'VDF: IHD.IAE.9994-A'
+  - name: 'Zip'
+    description: 'VDF: IHD.IAE.7901\r\n'
+  - name: 'Town'
+    description: 'VDF: IHD.IAE.7902\r\n'
+    genericControls:
+      defColumnPos: 4
+  - name: 'State'
+    description: 'VDF: IHD.IAE.9994-B'
+  - name: 'InternetDomain'
+    description: 'VDF: IHD.IAE.9994-C'
+  - name: 'DataCoverageTypeNo'
+    description: 'VDF: IHD.IBT.3914\r\n'
+    genericControls:
+      refTable: 'PrPublicDataCoverageType'
+      refField: 'DataCoverageTypeNo'
+  - name: 'UseListingSymbols'
+    description: 'not maintained by VDF\r\nIf UseListingSymbol = True, the listing symbols (ergonomic flag = True)  from this trading place will be saved in database'
+  - name: 'SelPrioInt'
+    description: 'internal priority for trading place selection\r\n1 = highest priority, 2 = second priority and so on'
+    genericControls:
+      defColumnPos: 6
+  - name: 'SelPrioEb'
+    description: 'priority for trading place selection for e-banking\r\n1 = highest priority, 2 = second priority and so on'
+    genericControls:
+      defColumnPos: 7
+  - name: 'MarketIdentCode'
+    description: 'VDF: IHD.IAI.3801'
+    genericControls:
+      defColumnPos: 8
+  - name: 'TradingSystemGroupId'
+    description: 'TradingSystem Group'
+    genericControls:
+      refTable: 'PtTradingSystemGroup'
+      refField: 'Id'
+      defColumnPos: 9
+  - name: 'IsTradeWithTime'
+    description: '1= by entering a trade the tradetime is mandatory'
+  - name: 'ValueDayDeferment'
+    description: 'Based on the TradeDate the ValueDate is built up by the amount of days.'
+  - name: 'ValueDayType'
+    description: 'The ValueDate can be built up by ValueDayDeferment in working days, calendar days or manually (1=working days; 2=calendar days; 3=manually)'
+    genericControls:
+      refTable: 'PrPublicTradingPlaceValueDay'
+      refField: 'ValueDayType'
+  - name: 'InterestDaysDetermination'
+    description: 'true=until trade date; false=until value date'
+  - name: 'InterestDaysStartEnd'
+    description: 'true=inclusive date from and date until; false=exclusive date from and date until'
+  - name: 'DayCountConvNo'
+    description: 'Convention to determine the amount of days between two dates'
+    genericControls:
+      refTable: 'PrPublicDayCountConv'
+      refField: 'DayCountConvNo'
+  - name: 'DoneForDayType'
+    description: '1 = Börsengruppe1 (8:00)\r\n2 = Börsengruppe2 (18:00)'

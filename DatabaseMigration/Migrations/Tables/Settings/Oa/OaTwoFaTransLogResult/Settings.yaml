@@ -1,0 +1,26 @@
+table:
+  name: 'OaTwoFaTransLogResult'
+  description: 'Results for two-factor transactions.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'SessionId'
+    description: 'Referring to the two-factor authentication session.'
+  - name: 'DeviceId'
+    description: 'Id of the device in the external two-factor authentication provider system that the result comes from.'
+  - name: 'Result'
+    description: 'Result of the two-factor authentication transaction.'
+    genericControls:
+      refTable: 'OaTwoFaTransResultType'
+      refField: 'TypeNo'
+  - name: 'OriginalResult'
+    description: 'Original result coming from two-factor authentication provider system.'
+  - name: 'DateTime'
+    description: 'Date-time of the result.'

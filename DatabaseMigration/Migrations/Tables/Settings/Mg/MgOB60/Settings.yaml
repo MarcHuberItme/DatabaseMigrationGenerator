@@ -1,0 +1,39 @@
+table:
+  name: 'MgOB60'
+  description: 'VRX  Kassenobligationen-Buchungen (OB60)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'VRX OB60'
+    - german:
+        formTitle: 'VRX OB60'
+  columns:
+  - name: 'ObligNr'
+    description: ''
+  - name: 'BNr'
+    description: 'BuchungsNummer'
+  - name: 'BDatum'
+    description: 'Buchungsdatum'
+  - name: 'BCD'
+    description: 'Buchungscode\r\n1 = Soll\r\n2 = Haben'
+  - name: 'TXCD'
+    description: 'Textcode'
+  - name: 'Valuta'
+    description: ''
+  - name: 'Betrag'
+    description: 'Buchungsbetrag'
+  - name: 'TransCd'
+    description: 'Transcode (>1 = Kapitaltransaktionen)\r\n1 = Zins\r\n2 = Abschluss\r\n8 = Kapital Zu-/Ab-Gang\r\n9 = EZ von Sparkassa\r\n10 = EZ von Konto-Korrent\r\n11 = Konversion\r\n12 = EZ von Anlageheft/Kto\r\n15 = Uebernahme\r\n20 = Umwandlung Buchforderung'
+  - name: 'RueckVal'
+    description: 'Rückvalutierung\r\nSollstell-Valuta/Zinsverfall'
+  - name: 'MigrationStatus'
+    description: 'Status für die Migrationsverarbeitung\r\n\r\n00 = Daten werden geladen\r\n01 = Daten geladen\r\n02 = PortfolioId''s ermittelt (nicht relevant für Buchungen)\r\n03 = Record gecheckt i.O.\r\n04 = BondCf.Nettobetrag <> OB60.Betrag\r\n05 = Record erfolgreich migriert'
+  - name: 'ErrorDescription'
+    description: ''

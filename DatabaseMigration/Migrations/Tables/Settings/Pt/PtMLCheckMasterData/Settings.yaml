@@ -1,0 +1,308 @@
+table:
+  name: 'PtMLCheckMasterData'
+  description: 'In dieser Tabelle werden beim Start einer Prüfung die selektierten Werte gespeichert. Diese werden dem Kunden präsentiert (via Formular, BeratungsSuite, SelfService via API)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PeriodicCheckId'
+    description: 'Id der periodischen Prüfung'
+    genericControls:
+      refTable: 'PtMLPeriodicCheck'
+      refField: 'Id'
+  - name: 'PeriodicCheckStartDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'CorrectionDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PartnerId'
+    description: 'Id des Kunden'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PartnerNoEdited'
+    description: 'Edited textual expression of the partner number'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Title'
+    description: 'title like doctor, professor, etc.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TitleCorrected'
+    description: ''
+  - name: 'Name'
+    description: 'family name'
+    genericControls:
+      isNoUpdate: true
+  - name: 'NameCorrected'
+    description: ''
+  - name: 'FirstName'
+    description: 'forename'
+    genericControls:
+      isNoUpdate: true
+  - name: 'FirstNameCorrected'
+    description: ''
+  - name: 'MiddleName'
+    description: 'second forename'
+    genericControls:
+      isNoUpdate: true
+  - name: 'MiddleNameCorrected'
+    description: ''
+  - name: 'UseMiddleName'
+    description: '1 = middle name (second first name) is used for the address\r\n0 = middle name is not used for the address'
+    genericControls:
+      isNoUpdate: true
+  - name: 'UseMiddleNameCorrected'
+    description: ''
+  - name: 'NameCont'
+    description: 'NameContinous; in addition if the name of the partner is too long for the field ''Name'''
+    genericControls:
+      isNoUpdate: true
+  - name: 'NameContCorrected'
+    description: ''
+  - name: 'MaidenName'
+    description: 'Name of a women before she has married'
+    genericControls:
+      isNoUpdate: true
+  - name: 'MaidenNameCorrected'
+    description: ''
+  - name: 'ChangeNameOrder'
+    description: 'Only relevant for couples to know if the wife wants to keep the maiden name in front of the name of her husband.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'ChangeNameOrderCorrected'
+    description: ''
+  - name: 'DateOfBirth'
+    description: 'birthday (only used for natürliche Personen) it''s not anymore used for organisations (AG e.g.) - see legalstatusdate'
+    genericControls:
+      isNoUpdate: true
+  - name: 'DateOfBirthCorrected'
+    description: ''
+  - name: 'DateOfDeath'
+    description: 'Date of death for private persons\r\nDate of liquidation of organisations'
+    genericControls:
+      isNoUpdate: true
+  - name: 'DateOfDeathCorrected'
+    description: ''
+  - name: 'SexStatusNo'
+    description: 'foreign-key;  candidate-key of PtSexStatus\r\nGender of the partner like Maleperson, Femaleperson, Organisation'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+      isNoUpdate: true
+  - name: 'SexStatusNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+  - name: 'SexStatus'
+    description: 'AsText.TextShort'
+  - name: 'LegalStatusNo'
+    description: 'foreign-key;  candidate-key of PtLegalStatus\r\nby private person: unmarried, married, divorced, widowed \r\nby companies: AG, GmbH, etc.'
+    genericControls:
+      refTable: 'PtLegalStatus'
+      refField: 'LegalStatusNo'
+      isNoUpdate: true
+  - name: 'LegalStatusNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtLegalStatus'
+      refField: 'LegalStatusNo'
+  - name: 'LegalStatus'
+    description: 'AsText.TextShort'
+  - name: 'LegalStatusDate'
+    description: 'date of the legal status (for example date of marriage or foundation date of a company)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'LegalStatusDateCorrected'
+    description: ''
+  - name: 'RepStatusNo'
+    description: 'Bevormundete Person (patronized person),'
+    genericControls:
+      refTable: 'PtLegalRepStatus'
+      refField: 'RepStatusNo'
+      isNoUpdate: true
+  - name: 'RepStatusNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtLegalRepStatus'
+      refField: 'RepStatusNo'
+  - name: 'RepStatus'
+    description: 'AsText.TextShort'
+  - name: 'NamingRuleNo'
+    description: 'Namensrecht 1.1.2013'
+    genericControls:
+      refTable: 'PtNamingRule'
+      refField: 'RuleNo'
+      isNoUpdate: true
+  - name: 'NamingRuleNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtNamingRule'
+      refField: 'RuleNo'
+  - name: 'NamingRule'
+    description: 'AsText.TextShort'
+  - name: 'NogaCodeNo'
+    description: 'New noga codes launched in 2008'
+    genericControls:
+      refTable: 'PtNoga2008'
+      refField: 'NogaCode'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'NogaCodeNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtNoga2008'
+      refField: 'NogaCode'
+      hasDetailBtn: true
+  - name: 'NogaCodeCorrected'
+    description: 'Kunde wird String eingeben; GwG-MA muss dann den korrekten NogaCode2008 erfassen.'
+    genericControls:
+      multiLine: true
+  - name: 'NogaCode'
+    description: 'PtNoga2008.TextLong'
+  - name: 'BranchNo'
+    description: 'Number of the branch the partner is assigned to'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      isNoUpdate: true
+  - name: 'Branch'
+    description: 'AsText.TextShort'
+  - name: 'CorrLanguageNo'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+      isNoUpdate: true
+  - name: 'CorrLanguageNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'CorrLanguage'
+    description: 'AsText.TextShort'
+  - name: 'ServiceLevelNo'
+    description: ''
+    genericControls:
+      refTable: 'PtServiceLevel'
+      refField: 'ServiceLevelNo'
+      isNoUpdate: true
+  - name: 'ServiceLevel'
+    description: 'AsText.TextShort'
+  - name: 'OwnDomicileCountryNo'
+    description: 'foreign-key;  candidate-key of AsCountry\r\ncountry of the owner (official table with ISO-code)\r\nMutterland bei ausl. beherrschter Gesellschaft'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'OwnDomicileCountryNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+  - name: 'OwnDomicileCountry'
+    description: 'AsText.TextShort'
+  - name: 'IsAuthorised'
+    description: '1 = ist selber wirtschaftlich berechtigt\r\n0 = hat wirtschaftlich Berechtigte eingesetzt (master relation 20 oblig.)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsAuthorisedCorrected'
+    description: ''
+  - name: 'SegmentNo'
+    description: 'partner segment (Betreuungs-, Beratungs- oder Servicekunden)'
+    genericControls:
+      refTable: 'PtSegment'
+      refField: 'SegmentNo'
+      isNoUpdate: true
+  - name: 'Segment'
+    description: 'AsText.TextShort'
+  - name: 'PrivacyLockNo'
+    description: 'foreign-key; candidate-key of AsPrivacyLock (PrivacyLock)\r\ndata protection, only defined persons have access'
+    genericControls:
+      refTable: 'AsPrivacyLock'
+      refField: 'PrivacyLock'
+      isNoUpdate: true
+  - name: 'PrivacyLock'
+    description: 'AsText.TextShort'
+  - name: 'PrivacyGroupNo'
+    description: 'Needed for record-level data protection'
+    genericControls:
+      refTable: 'AsPrivacyGroup'
+      refField: 'PrivacyGroupNo'
+      isNoUpdate: true
+  - name: 'PrivacyGroup'
+    description: 'AsText.TextShort'
+  - name: 'AgentId'
+    description: 'person who placed the partner\r\nforeign-key, Id of PtDescriptionView (View to create the descriptionfield of PtBase)'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'AgentDescription'
+    description: ''
+  - name: 'CountryOfBirthCode'
+    description: 'steht für das Geburtsland eines Partners'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'CountryOfBirthCodeCorrected'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+  - name: 'CountryOfBirth'
+    description: 'AsText.TextShort'
+  - name: 'DateOfVSBComplChecked'
+    description: 'Datum, wann der Partner vollständig dokumentiert ist.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'RelationshipPurposeNo'
+    description: 'Zweck der Geschäftsbeziehung aus Tab. PtProfile'
+    genericControls:
+      refTable: 'PtProfilePurposeType'
+      refField: 'PurposeTypeNo'
+      isNoUpdate: true
+  - name: 'RelationshipPurposeNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtProfilePurposeType'
+      refField: 'PurposeTypeNo'
+  - name: 'CompanyUID'
+    description: 'UID (HR-Eintrag) aus Tab. PtIdentification'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CompanyUIDCorrected'
+    description: ''
+  - name: 'IsToDelete'
+    description: 'Flag, welches angibt, ob der Record gelöscht werden soll'
+  - name: 'HasChanges'
+    description: 'Flag, welches angibt, ob der Kunde Änderungen vorgenommen hat'
+    genericControls:
+      isNoUpdate: true
+  - name: 'Comment'
+    description: 'Kommentar des Kunden'
+    genericControls:
+      multiLine: true
+  - name: 'CheckStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckDetailState'
+      refField: 'CheckDetailStateNo'
+      isNoUpdate: true

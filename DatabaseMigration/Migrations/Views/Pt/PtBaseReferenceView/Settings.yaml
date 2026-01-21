@@ -1,0 +1,46 @@
+view:
+  name: 'PtBaseReferenceView'
+  description: 'This view is used for the PartnerReferenceView object of the domain layer.\r\nEntities refering to Partner do so through a thin PartnerReferenceView object and do this quite often. Hence the view.'
+frontendView:
+  name: 'PtBaseReferenceView'
+  description: 'This view is used for the PartnerReferenceView object of the domain layer.\r\nEntities refering to PtBase do so through a thin PartnerReferenceView object.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PartnerId'
+    description: 'Unique id of the PtBase'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'PartnerNo'
+    description: 'PartnerNo of the ptBase'
+    dataType: 'decimal'
+    isNotNull: true
+    isUnique: true
+    prec: 8
+  - name: 'PartnerNoEdited'
+    description: 'PartnerNoEdited of the ptBase'
+    dataType: 'nvarchar'
+    isNotNull: true
+    isUnique: true
+    prec: 10
+  - name: 'PartnerNoText'
+    description: 'PartnerNoText of the ptBase'
+    dataType: 'nvarchar'
+    isNotNull: true
+    isUnique: true
+    prec: 8
+  - name: 'ReportAdrLine'
+    description: 'ReportAdrLine of the partner''s main address'
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'NameLine'
+    description: 'NameLine of the partner''s main address'
+    dataType: 'nvarchar'
+    prec: 70

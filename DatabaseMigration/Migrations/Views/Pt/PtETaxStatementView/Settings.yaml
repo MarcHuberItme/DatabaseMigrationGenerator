@@ -1,0 +1,113 @@
+view:
+  name: 'PtETaxStatementView'
+  description: ''
+frontendView:
+  name: 'PtETaxStatementView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtETaxStatementView'
+        helpText: 'PtETaxStatementView'
+    - german:
+        formTitle: 'PtETaxStatementView'
+        helpText: 'PtETaxStatementView'
+    - french:
+        formTitle: 'PtETaxStatementView'
+        helpText: 'PtETaxStatementView'
+    - italian:
+        formTitle: 'PtETaxStatementView'
+        helpText: 'PtETaxStatementView'
+  columns:
+  - name: 'TaxReportJobNo'
+    description: ''
+    dataType: 'int'
+  - name: 'TaxReportDataId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'Id'
+    dataType: 'varchar'
+    isNotNull: true
+    isUnique: true
+    prec: 80
+  - name: 'CreationDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'TaxPeriod'
+    description: ''
+    dataType: 'smallint'
+  - name: 'PeriodFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'PeriodTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Country'
+    description: ''
+    dataType: 'char'
+    prec: 2
+  - name: 'Canton'
+    description: 'as canton list'
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'TotalTaxValue'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'TotalGrossRevenueA'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'TotalGrossRevenueACanton'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'TotalGrossRevenueB'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'TotalGrossRevenueBCanton'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'TotalWithHoldingTaxClaim'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'MinorVersion'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ClientNumber'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'Salutation'
+    description: ''
+    dataType: 'smallint'
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'LastName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'HelpDomicileCountry'
+    description: ''
+    dataType: 'char'
+    prec: 2

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CheckIfOrderRequestAlreadyExistsInMsgStore'
+  description: 'Check in table MsGoiOutTraderMsg whether a message already exists.'

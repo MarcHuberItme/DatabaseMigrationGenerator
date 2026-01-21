@@ -1,0 +1,37 @@
+table:
+  name: 'PtMMCommissionRule'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'CommissionTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtCommissionType'
+      refField: 'CommissionTypeNo'
+      defColumnPos: 1
+  - name: 'Currency'
+    description: 'The currency relevant to the limit. We can specify multiple limits for the same contract type and currency.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'MinCommission'
+    description: 'The minimum amount of commission that can be a charged for a certain contract type, currency and optionally the limit. If the commission calculated is less than this value, the value of this field will be used as commission, if specified.'
+  - name: 'MaxCommission'
+    description: 'The maximum amount of commission that can be a charged for a certain contract type, currency and optionally the limit. If the commission calculated is more than this value, the value of this field will be used as commission, if specified.'
+  - name: 'ValidFrom'
+    description: 'Start date for the limit'
+    genericControls:
+      defColumnPos: 3
+  - name: 'MaxInterestPercentage'
+    description: ''

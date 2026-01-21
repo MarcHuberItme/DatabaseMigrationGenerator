@@ -1,0 +1,29 @@
+table:
+  name: 'PtPaymentInstantExternalText'
+  description: 'this contains the already grouped field GroupedExternalReasonNo for the MasterId-field in AsText'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPaymentInstantExtText'
+        helpText: 'PtPaymentInstantExternalText'
+    - german:
+        formTitle: 'PtPaymentInstantExtText'
+        helpText: 'PtPaymentInstantExternalText'
+    - french:
+        formTitle: 'PtPaymentInstantExtText'
+        helpText: 'PtPaymentInstantExternalText'
+    - italian:
+        formTitle: 'PtPaymentInstantExtText'
+        helpText: 'PtPaymentInstantExternalText'
+  columns:
+  - name: 'ExternalReasonNo'
+    description: 'already grouped LastResponseStatusNo for the MasterId-field in AsText'

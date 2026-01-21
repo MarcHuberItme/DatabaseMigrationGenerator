@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAcctWithdrawConditions'
+  description: 'Returns withdraw limits based on withdraw rules and account notices. Also returns sum of withdraw transactions in period\r\n2023-10-13/ram: calculate withdraw-limit, die Variable @ReferenceDate wurde im Query durch die Variable @TransDate ersetzt'

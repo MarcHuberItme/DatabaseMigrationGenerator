@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetClosedAccount'
+  description: ''

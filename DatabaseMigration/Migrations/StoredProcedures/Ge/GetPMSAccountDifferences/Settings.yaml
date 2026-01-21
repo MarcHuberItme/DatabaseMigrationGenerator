@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPMSAccountDifferences'
+  description: 'Returns current account differences between Finstar Valuation and latest Netfolio position balances retrieved from Netfolio'

@@ -1,0 +1,17 @@
+table:
+  name: 'OaTwoFaTransResultType'
+  description: 'Internal system interpretation of the two-factor authentication result.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'TypeNo'
+    description: ''

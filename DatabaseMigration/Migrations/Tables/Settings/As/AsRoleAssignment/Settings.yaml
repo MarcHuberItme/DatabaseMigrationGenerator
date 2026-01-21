@@ -1,0 +1,29 @@
+table:
+  name: 'AsRoleAssignment'
+  description: 'Assign AsRole to AsGroupMember'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Role to GroupMember'
+    - german:
+        formTitle: 'Zuordnung Rolle - Gruppe'
+  columns:
+  - name: 'UserGroupMemberId'
+    description: 'This is the Id of a usergroup membership.'
+    genericControls:
+      refTable: 'AsUserGroupMember'
+      refField: 'Id'
+  - name: 'RoleName'
+    description: 'Identification of the role. Since the role name in AsRole has to be unique for workflow purposes, we reference it here directly.'
+    genericControls:
+      refTable: 'AsRole'
+      refField: 'RoleName'
+      defColumnPos: 2

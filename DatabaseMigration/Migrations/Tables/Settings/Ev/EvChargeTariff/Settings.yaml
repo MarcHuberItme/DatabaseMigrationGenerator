@@ -1,0 +1,59 @@
+table:
+  name: 'EvChargeTariff'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'EventTariffNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ChargeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'ChargeNo'
+      defColumnPos: 2
+  - name: 'ChargeNoForeignDomicile'
+    description: ''
+    genericControls:
+      refTable: 'PtTransChargeType'
+      refField: 'ChargeNo'
+      defColumnPos: 3
+  - name: 'AreForeignCharges'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'Currency'
+    description: 'for MinAmount and LimitAmount'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 5
+  - name: 'MinAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'ChargePercentage'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'LimitAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'LimitChargePercentage'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'ConsiderNetAmount'
+    description: ''

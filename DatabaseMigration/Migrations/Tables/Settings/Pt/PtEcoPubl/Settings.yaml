@@ -1,0 +1,40 @@
+table:
+  name: 'PtEcoPubl'
+  description: 'Kategorie = sh'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtEcoInfo'
+      parentRelationField: 'EcoId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'SHAB-Publication'
+    - german:
+        formTitle: 'SHAB Publikationen'
+  columns:
+  - name: 'EcoId'
+    description: ''
+    genericControls:
+      refTable: 'PtEcoInfo'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'PublDate'
+    description: 'SHAB-Datum'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PublSection'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PublURL'
+    description: ''

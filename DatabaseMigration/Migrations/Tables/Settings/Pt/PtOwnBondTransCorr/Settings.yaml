@@ -1,0 +1,81 @@
+table:
+  name: 'PtOwnBondTransCorr'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'SourceTableName'
+    description: 'PtOwnBondEmission\r\nPtOwnBondCfFrontDesk\r\nPtOwnBondTransfer'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'SourceRecordId'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'AddressId'
+    description: ''
+    genericControls:
+      refTable: 'PtAddressView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'AttentionOf'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CarrierTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsCarrierType'
+      refField: 'CarrierTypeNo'
+      defColumnPos: 3
+  - name: 'DeliveryRuleNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'DetourGroup'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 5
+  - name: 'CopyNumber'
+    description: ''
+  - name: 'ReportName'
+    description: ''
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'ReportName'
+      hasDetailBtn: true
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'PrintDate'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'PrintUser'
+    description: 'this field is filled when the document was printed locally'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'IsDeliveryOut'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsConformAdvice'
+    description: ''

@@ -1,0 +1,59 @@
+table:
+  name: 'AiTaxReportCountry'
+  description: 'List of all CRS (Common Reporting Standard; aka AIA - AutomatischesInformationsAustausch) countries participating in the program (TaxProgramNo 1)'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'CRS Countries'
+    - german:
+        formTitle: 'AIA Staaten'
+    - french:
+        formTitle: 'EAR Etats'
+    - italian:
+        formTitle: 'Paesi CRS'
+  columns:
+  - name: 'CountryCode'
+    description: 'CRS partner country ISO code'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 1
+  - name: 'CRSCountry'
+    description: 'ISO code of the country to which the report will be sent. All special tax countries (like channel islands or french tax havens etc.) are reported to the main country (GB or FR etc).'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 2
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidTo'
+    description: ''
+  - name: 'IsReciprocal'
+    description: 'IsReciprocal: \r\nTrue - the country sends the data to CH and vice versa.\r\nFalse - CH does not send the data'
+  - name: 'Comment'
+    description: 'notes regarding the particular country'
+    genericControls:
+      multiLine: true
+  - name: 'ValidFromCARF'
+    description: 'CARF = Crypto-Asset Reporting Framework'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValidToCARF'
+    description: ''
+  - name: 'IsReciprocalCARF'
+    description: 'IsReciprocalCARF: \r\nTrue - the country sends the data to CH and vice versa.\r\nFalse - CH does not send the data'
+  - name: 'CommentCARF'
+    description: 'notes regarding the particular country'
+    genericControls:
+      multiLine: true

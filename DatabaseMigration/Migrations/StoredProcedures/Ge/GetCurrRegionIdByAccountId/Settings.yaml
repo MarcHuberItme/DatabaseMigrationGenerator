@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetCurrRegionIdByAccountId'
+  description: 'Retrieve the PrivateCurrencyRegionId for an account\r\n\r\n07.06.2004/mct'

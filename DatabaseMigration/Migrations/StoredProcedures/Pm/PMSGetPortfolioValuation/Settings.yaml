@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PMSGetPortfolioValuation'
+  description: 'This SP sums up all cash and security position for a given portfolio and VaRunId.'

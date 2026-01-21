@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetCoBaseAssCalcByAccountId'
+  description: 'Get data from CoBaseAssCalc and other tables by account id'

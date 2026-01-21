@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPMSAccountPosMig'
+  description: 'Get account positions for initial migration'

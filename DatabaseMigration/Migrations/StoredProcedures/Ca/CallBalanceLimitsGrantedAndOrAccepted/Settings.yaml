@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CallBalanceLimitsGrantedAndOrAccepted'
+  description: 'Get back whether GetBalance_LimitsAccepted and / or GetBalance_LimitsGranted has to call.'

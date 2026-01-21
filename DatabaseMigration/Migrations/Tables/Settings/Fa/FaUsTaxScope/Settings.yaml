@@ -1,0 +1,24 @@
+table:
+  name: 'FaUsTaxScope'
+  description: 'Scope for Fatca:\r\n0 = in Evaluation\r\n1 = US-Person\r\n2 = Non-UsPerson\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Fatca Scope'
+    - german:
+        formTitle: 'Fatca Scope'
+  columns:
+  - name: 'ScopeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

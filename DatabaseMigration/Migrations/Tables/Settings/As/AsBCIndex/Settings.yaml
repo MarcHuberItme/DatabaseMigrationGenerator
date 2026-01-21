@@ -1,0 +1,104 @@
+table:
+  name: 'AsBCIndex'
+  description: 'SWISS Banking Number'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    descField: 'BCNumber'
+    uiTableDescription:
+    - english:
+        formTitle: 'banking number'
+    - german:
+        formTitle: 'BC Verzeichnis CH'
+    - french:
+        formTitle: 'BC directory CH'
+  columns:
+  - name: 'BankGroup'
+    description: 'Banks/Institutions are divided in so called Bankgroups. Actually there are 9 groups: \r\n1 = SNB\r\n2 = UBS\r\n3 = free\r\n4 = CS\r\n5 = CS\r\n6 = RBA banks\r\n7 = cantonal banks\r\n8 = Raiffeisen, Einzelinstitute\r\n8 = Raiffeisenbanken, single Institutions\r\n9 = Postfinance'
+  - name: 'BCNumber'
+    description: 'Each bank/institution is identified by a BC-Number. BC-Numbers have a length \r\nfrom 3 to 5 digits.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'BranchId'
+    description: 'unique identificator with BC-Number\r\nBranchId = 0000 ("Kopfstelle")\r\nBranchId > 0001 (branches)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'BCNumberNew'
+    description: 'In case that this field is filled, the banking number in the field "BCNumber" is not valid anymore.\r\nA concatenation always takes place with the BranchId.\r\nEvery field of this record, with the exception of the BCNumber and the BranchId, refer to the new BCNumber. The old information is overwritten.'
+    genericControls:
+      defColumnPos: 13
+  - name: 'SICNumber'
+    description: 'BC-Number for the SIC and the euroSIC use.\r\nAlways ilustrated with 6 digits:'
+    genericControls:
+      defColumnPos: 3
+  - name: 'HeadOffice'
+    description: 'Head office BC-Number'
+    genericControls:
+      defColumnPos: 4
+  - name: 'BCType'
+    description: 'Field where the type of the BC-Number is defined.\r\nThere are 3 Types:\r\n1 = Head office\r\n2 = "Kopfstelle"\r\n3 = Branch'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'SICParticipation'
+    description: 'Provides the information if the bank/institution shares in SIC.\r\n0 = No participation		BCV = ""\r\n1 = Participant		BCV = "S"\r\n2 = Participant (indirect	BCV = "I" \r\n      connection with the SNB)\r\n(BCV = printed BC-Index)\r\n3 = Participant SIC\r\n4 = Participant SIC as QR-IDD for payments with QR-Reference in SIC'
+  - name: 'EuroSICParticipation'
+    description: 'Provides the information if the bank/institution shares in euroSIC.\r\n0 = No participation		BCV = ""\r\n1 = Participant		BCV = "€"\r\n(BCV = printed BC-Index)\r\n3 = Participant euroSIC\r\n4 = Participant euroSIC as QR-IDD for payments with QR-Reference in euroSIC'
+  - name: 'LanguageCode'
+    description: '1 = German\r\n2 = French\r\n3 = Italian'
+  - name: 'ShortName'
+    description: 'Short name of the bank/institution.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'BankName'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'Domicile'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'PostalAddress'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'ZipCode'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'Place'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'Phone'
+    description: ''
+  - name: 'Fax'
+    description: ''
+  - name: 'CountryDiallingCode'
+    description: ''
+  - name: 'ISOCode'
+    description: ''
+  - name: 'GiroAccount'
+    description: 'A leading "*" signifies that the Giro account belongs to a superior BC-Number.'
+  - name: 'BICAddress'
+    description: 'Formatted BIC Address (XXXX XX XX XXX)'
+    genericControls:
+      defColumnPos: 12
+  - name: 'InstantPaymentParticipation'
+    description: '1 = BC number is valid to use in SIC instant payments.'
+  - name: 'BCNumberBelongsTo'
+    description: 'IID of the bank/financial institution to which this QR IID is assigned to. It only contains a value, if the field iidType contains a QR_IID.'
+  - name: 'RTGSCustomerPayments'
+    description: 'Available for RTGS customer payments.'
+  - name: 'LsvBddChfParticipation'
+    description: 'Participation in LSV+/BDD in CHF (as debtor FI).'
+  - name: 'LsvBddEurParticipation'
+    description: 'Participation in LSV+/BDD in EUR (as debtor FI).'

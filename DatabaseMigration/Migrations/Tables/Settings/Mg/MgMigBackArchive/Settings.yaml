@@ -1,0 +1,47 @@
+table:
+  name: 'MgMigBackArchive'
+  description: 'Backmigration Details of sent data to FIS-VRX'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+  columns:
+  - name: 'RemoteHost'
+    description: 'Fis Vrx Host IP Address'
+    genericControls:
+      isNoUpdate: true
+  - name: 'RemotePort'
+    description: 'Fis Vrx Port Number'
+    genericControls:
+      isNoUpdate: true
+  - name: 'SendDate'
+    description: 'Date and time when Data was sent to FIS-VRX'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'VrxTableName'
+    description: 'FIS-VRX recordname!'
+    genericControls:
+      refTable: 'MgVrxTable'
+      refField: 'VrxTableName'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'MgVrxKey'
+    description: 'FIS-VRX Database Key'
+    genericControls:
+      defColumnPos: 2
+      isOnlyForMig: true
+      isNoUpdate: true
+  - name: 'SentData'
+    description: 'Enire data sent to FIS-VRX including header!'
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'VrxAnswer'
+    description: ''

@@ -1,0 +1,36 @@
+table:
+  name: 'OaAppIdpClient'
+  description: 'The OaAppIdpClient represents the relationship between OaApp and OaIdp which essentially specifies the client of an identity provider.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'AppId'
+    description: 'The app (Fintech) for which a client to the identity provider should be provisioned.'
+    genericControls:
+      refTable: 'OaApp'
+      refField: 'Id'
+  - name: 'IdpId'
+    description: 'The (logical) idp to which this client should be provisioned.'
+    genericControls:
+      refTable: 'OaIdp'
+      refField: 'Id'
+  - name: 'ClientId'
+    description: 'The clientId this client (the OaApp) should use when communicating with the identity provider.\r\nThis should be automatically set to OaApp.AppIdentifier but it can be overriden.'
+  - name: 'JwksUrl'
+    description: 'The JWKS URL of the client (JSON Web Key Set). This is used for zero trust based authentication of the client with the identity provider.\r\nThis is the primary method for authenticating clients to the IdP.\r\nIf missing, the client won''t be able to authenticate unless  another authentication method is configured.'
+  - name: 'IsConfidential'
+    description: 'Whether the client is a confidential client (trusted and secured backend application) or an untrusted user application that runs in the browser or on a customer device.\r\nConfidential clients should provide JwksUrls for zero trust based client authentication with  private key-signed JWTs.\r\nNon-confidential clients must use Authorization Code Flow with PKCE to sign in users.'
+  - name: 'IsEnabled'
+    description: 'Whether the client is enabled.\r\n\r\nWhen this is set to true, the client will be activated at the identity provider.\r\nWhen this is changed to false, the client will be deactivated.'
+  - name: 'LastTimeProvisioningRequested'
+    description: 'A timestamp denoting when idp provisioning has been requested the last time for that client.'
+  - name: 'LastTimeProvisioningCompleted'
+    description: 'A timestamp denoting when idp provisioning has been completed the last time for that client.'

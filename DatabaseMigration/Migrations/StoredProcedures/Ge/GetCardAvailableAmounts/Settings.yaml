@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetCardAvailableAmounts'
+  description: 'get expenses and available amounts for a given card.'

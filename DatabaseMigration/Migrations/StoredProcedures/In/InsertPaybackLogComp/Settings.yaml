@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'InsertPaybackLogComp'
+  description: 'insert account component reduced amount detail information on a payback'

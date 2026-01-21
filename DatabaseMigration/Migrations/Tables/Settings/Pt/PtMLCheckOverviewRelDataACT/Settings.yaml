@@ -1,0 +1,53 @@
+table:
+  name: 'PtMLCheckOverviewRelDataACT'
+  description: 'speichert die für die Ermittlung der Prüfart relevanten Konten'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Check rel. data ACT'
+    - german:
+        formTitle: 'GWG Check rel. Konten'
+  columns:
+  - name: 'CheckOverviewRelDataId'
+    description: 'ForeignKey to PtMLCheckOverviewRelData'
+    genericControls:
+      refTable: 'PtMLCheckOverviewRelData'
+      refField: 'Id'
+  - name: 'AccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountAllView'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ProductNo'
+    description: 'Kontoart des Kontos'
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'PeriodicCheckTypeNo'
+    description: 'Wird via Tabelle PtMLCheckRelevantAccounts ermittelt im Query'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckType'
+      refField: 'CheckTypeNo'
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'hasVSBPendingBlocker'
+    description: 'true wenn eine Pendenz mit der BlockReasonId gemäss Systemparamter "VSB | BlockReason" besteht welche die AccountId dieses Kontos refrenziert'
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'isTerminated'
+    description: 'true wenn das vorliegende Konto saldiert ist (TerminationDate NOT NULL)'
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true

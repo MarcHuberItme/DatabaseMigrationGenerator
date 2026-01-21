@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetFixedAccPriceDev'
+  description: 'retrieves the detail for the fixed interest price deviation. 05.08.2004/mct'

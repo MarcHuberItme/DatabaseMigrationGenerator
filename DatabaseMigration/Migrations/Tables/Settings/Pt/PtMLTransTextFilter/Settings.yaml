@@ -1,0 +1,28 @@
+table:
+  name: 'PtMLTransTextFilter'
+  description: 'Filters transactions based on keywords in TransText. For examples, payments to COOP, migros and Lidl are ignored.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Ignored Trans. Text'
+    - german:
+        formTitle: 'Ignorierte Trans. Texte'
+    - french:
+        formTitle: 'Texte de trans. ignorées'
+    - italian:
+        formTitle: 'Testo di trans. ignorati'
+  columns:
+  - name: 'Keyword'
+    description: 'Keyword used for filtering'
+  - name: 'IsTransIgnored'
+    description: 'Indicates if the transaction text is ignored'
+  - name: 'Description'
+    description: 'Optional description'

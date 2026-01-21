@@ -1,0 +1,163 @@
+table:
+  name: 'CoPremres'
+  description: 'Resultatstabelle Grundstück für die Ermittlung der Belehnung  (Belehungskategorie)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'resulttable pledge premis'
+    - german:
+        formTitle: 'Resultatstabelle Grundst.'
+  columns:
+  - name: 'Copremresult'
+    description: 'Resultat vom Entscheidungsbaum, Resultat \r\nBelehungskategorie Wert 0 hat feste Bedeutung (automatisch rechnen)'
+    minValue: '0'
+    maxValue: '9999'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Possiblecol'
+    description: 'als Colleteral eraubt ?'
+  - name: 'Pricover1'
+    description: 'Priorität Deckung erster Teil'
+    genericControls:
+      refTable: 'CoPricov'
+      refField: 'Pricover'
+  - name: 'CompTypeNo1F'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'CompTypeNo1V'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'Pricover2'
+    description: 'Priorität Deckung zweiter Teil'
+    genericControls:
+      refTable: 'CoPricov'
+      refField: 'Pricover'
+  - name: 'CompTypeNo2V'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'CompTypeNo2F'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'Pricover3'
+    description: 'Priorität Deckung dritter Teil'
+    genericControls:
+      refTable: 'CoPricov'
+      refField: 'Pricover'
+  - name: 'CompTypeNo3V'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'CompTypeNo3F'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'Typecov1'
+    description: 'Typ Deckung erster Teil'
+    genericControls:
+      refTable: 'CoTypecov'
+      refField: 'Typecov'
+  - name: 'Typecov2'
+    description: 'Typ Deckung zweiter Teil'
+    genericControls:
+      refTable: 'CoTypecov'
+      refField: 'Typecov'
+  - name: 'Typecov3'
+    description: 'Typ Deckung dritter Teil'
+    genericControls:
+      refTable: 'CoTypecov'
+      refField: 'Typecov'
+  - name: 'Pledgevalueper1'
+    description: 'Belehungswert in % erster Teil'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Pledgevalueper2'
+    description: 'Belehnungswert in % für den zweiten Teil (8-Tung hier ist das Delta zum ersten Teil gemeint)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Pledgevalueper3'
+    description: 'Belehnungswert in % für den dritten Teil (8-Tung hier ist das Delta zum ersten und zweiten Teil gemeint)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Dateonpremise'
+    description: 'Wenn true )kann dieser Datensatz direkt einer Schuldbrief / Grundstückverbindung zugewiesen werden'
+    genericControls:
+      defColumnPos: 6
+  - name: 'Description'
+    description: 'Beschreibung vom Resultat'
+    genericControls:
+      multiLine: true
+  - name: 'C540'
+    description: '\r\nWenn versorgt beinhaltet das die Fire Account Nummer für die Schnittstelle, anderenfalls keine Übergabe an Fire\r\n\r\nBei den anderen Typen wird das C540 Feld der Fireschnittstelle von einem anderen Ort versorgt:\r\nTyp der Sicherheit\r\n1000 Konto               -> Bestehendes Mapping in AC... Tabellen\r\n2000 Wertschriften   -> Bestehendes Mapping in AC... Tabellen\r\nalle anderen in CoSubtyoe'
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+  - name: 'C536'
+    description: 'Feld C536 der Fire Schnittstelle:\r\nWertbereich\r\n0 	Default \r\n10 	Bauland \r\n11 	Bauland mit zukünftiger Nutzung als Wohnliegenschaft \r\n20 	Wohnliegenschaften \r\n21 	Wohnliegenschaften bei Verletzung der SBVg-Richtlinien für Hypothekarfinanzierungen \r\n30 	landwirtschaftliche Liegenschaften \r\n40 	Büro- und Geschäftshäuser \r\n50 	multifunktionale Gewerbeobjekte \r\n60 	grossgewerbliche Objekte \r\n70 	Industrielle Objekte \r\n90 	Andere, inkl. nicht bewohnte Wohnliegenschaften \r\n \r\nCode 21 wird im Rahmen der Fireschnittstlle gesetzt (20 auf 21, wenn pro anglieferten Kredit eines der Felder MinimumCapitalViolated oder  MinimumAmortisationViolated von der Tabelle Ptaccountbase auf True ist)  \r\n'
+    minValue: '0'
+    genericControls:
+      refTable: 'AcFireC536'
+      refField: 'C536'
+      defColumnPos: 5
+  - name: 'UseC536BusinessPartTotalEW'
+    description: 'Die Deckungsausscheidung zerlegt das jeweilge Grundstück im Abhängikeit vom Anteil Wohen zum Anteil Gewerbe in mehreren Kuranten / unkruante Teile...'
+  - name: 'C536BusinessPartTotalEW'
+    description: ''
+    genericControls:
+      refTable: 'AcFireC536'
+      refField: 'C536'
+  - name: 'RbCompTypeNo1F'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'RbCompTypeNo1V'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'RbCompTypeNo2F'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'RbCompTypeNo2V'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'RbCompTypeNo3F'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'RbCompTypeNo3V'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'DescriptionGes'
+    description: 'Enthält optional eine Beschreibung für das Gesamtengagement'
+  - name: 'SubPrio1Add'
+    description: 'Wird beim ermittlen der Subpriorität für die Deckungsausscheidung als Basis genommen \r\n(Subprio1Add + Rang vom Schuldbrief)'
+  - name: 'UseLiqValue'
+    description: 'Wenn gesetzt, muss bei der Berechnung vom Schuldbrief der Liquidationswert vom Grundstück als Basis genommen werden (soferen Liquidationswert < visierter Marktwert)'

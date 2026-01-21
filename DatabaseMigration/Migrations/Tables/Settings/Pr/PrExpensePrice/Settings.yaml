@@ -1,0 +1,52 @@
+table:
+  name: 'PrExpensePrice'
+  description: 'expense price\r\n\r\nPrices in other currencies should be saved in a separate table called\r\nPrExpenseCurrencyPrice. This table is already defined in the design\r\ndocument for commissions and expenses, but will be implemented only \r\nif really necessary in a second step. 24.11.2005/mct'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'expense price'
+    - german:
+        formTitle: 'Spesenpreise'
+  columns:
+  - name: 'ExpenseRulesetNo'
+    description: ''
+    genericControls:
+      refTable: 'PrExpenseRuleset'
+      refField: 'ExpenseRulesetNo'
+      defColumnPos: 1
+  - name: 'ExpenseTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrExpenseType'
+      refField: 'ExpenseTypeNo'
+      defColumnPos: 2
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 4
+  - name: 'Price'
+    description: 'expense price'
+    minValue: '0'
+    genericControls:
+      defColumnPos: 5
+  - name: 'PriceElectronicDelivery'
+    description: 'If the pricing is for document delivery, this field is to define different charges for electronic delivery.'
+    minValue: '0'
+    genericControls:
+      defColumnPos: 6
+  - name: 'NumFreePayments'
+    description: 'the free payments when calculate expense of withdraw payments'

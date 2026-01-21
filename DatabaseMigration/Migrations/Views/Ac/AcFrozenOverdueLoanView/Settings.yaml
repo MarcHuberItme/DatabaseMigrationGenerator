@@ -1,0 +1,3 @@
+view:
+  name: 'AcFrozenOverdueLoanView'
+  description: 'detail data about overdue loans for fire'

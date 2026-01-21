@@ -1,0 +1,16 @@
+table:
+  name: 'PtInsaFileTypeCode'
+  description: 'Codes for the different Insa-Filetypes: VALOT, XHOLDINGS etc.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'FileTypeCode'
+    description: 'Codes for the different Insa-Filetypes: VALOT, XHOLDINGS etc.'

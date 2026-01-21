@@ -1,0 +1,119 @@
+table:
+  name: 'TdOrders'
+  description: 'Report Order Table'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 83458b04-5fa9-42c9-a46e-a39780ca3259
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Report Order Table'
+        helpText: 'Report Order Table'
+    - german:
+        formTitle: 'STAZ / EVV Bestellungen'
+        helpText: 'STAZ / EVV Bestellungen'
+    - french:
+        formTitle: 'Rapport Datalevel'
+        helpText: 'Rapport Datalevel'
+    - italian:
+        formTitle: 'Report Order Table'
+        helpText: 'Report Order Table'
+  columns:
+  - name: 'PartnerId'
+    description: 'Finstar Partner Identification - Depending on TdSyncPartnerView'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'PortfolioId'
+    description: 'Finstar Portfolio Identification - Depending on TdSyncPortfolioView'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'OriginatorPartnerId'
+    description: 'Finstar Partner Identification if the order is placed by a third party'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'TdOrderType'
+    description: 'Order Type (Dropdown: TdCode.ReportOrderType)'
+    genericControls:
+      refTable: 'TdSrcCodesOrderTypeView'
+      refField: 'OrderType'
+      defColumnPos: 2
+  - name: 'TdPeriodYear'
+    description: 'Report Order-Year'
+    minValue: '2000'
+    maxValue: '9999'
+  - name: 'TdPeriodFrom'
+    description: 'Report Order-From Date'
+  - name: 'TdPeriodTo'
+    description: 'Report Order-To Date'
+  - name: 'TdReportType'
+    description: 'Report Type (Dropdown: TdCodeReportType)'
+    genericControls:
+      refTable: 'TdSrcCodesOrderReportTypeView'
+      refField: 'ReportType'
+      defColumnPos: 1
+  - name: 'TdReportCountry'
+    description: 'Report Country for Detailinformation on International Reports only (Dropdown: TdCodeReportCountry)'
+    genericControls:
+      refTable: 'TdSrcCodesOrderCountryView'
+      refField: 'ReportCountry'
+  - name: 'TdReportCurrency'
+    description: 'Report Currency (Dropdown: TdCodeReportCurrency)'
+    genericControls:
+      refTable: 'TdSrcCodesOrderReportCcyView'
+      refField: 'ReportCurrency'
+  - name: 'TdReportLanguage'
+    description: 'Report Language (Dropdown: TdCodeReportLanguage)'
+    genericControls:
+      refTable: 'TdSrcCodesOrderLanguageView'
+      refField: 'ReportLanguage'
+  - name: 'TdSerialType'
+    description: 'Serial Type Information for Report Production (Dropdown: TdCodeReportSerialType)'
+    genericControls:
+      refTable: 'TdSrcCodesOrderSerialTypeView'
+      refField: 'SerialType'
+  - name: 'TdSerialDay'
+    description: 'Serial Day for automated Report Production (First to Fifth possible banking day (1 - 5), depending on the Order Serial Type choosen)'
+    minValue: '0'
+    maxValue: '7'
+  - name: 'TdSerialSequence'
+    description: 'Serial Sequence for automated Report Production (Defines the sequence, depending on the selected type)'
+    minValue: '1'
+    maxValue: '99'
+  - name: 'TdSerialMonthYearly'
+    description: 'Serial definition for number of Month when Serialtype is Yearly)'
+    minValue: '1'
+    maxValue: '12'
+  - name: 'TdOrderReference'
+    description: 'Free Text for Order-Reference Description'
+  - name: 'TdOrderDeactivated'
+    description: 'Order-Status: 0 = Active; 1 = Inactive'
+    minValue: '0'
+    maxValue: '1'
+  - name: 'TdOrderStatusAPI'
+    description: 'Order Processing - Technical Status (Default-Value: NULL)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TdOrderStatusUser'
+    description: 'Order Processing - User Status'
+    genericControls:
+      isNoUpdate: true

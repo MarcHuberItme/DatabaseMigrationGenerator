@@ -1,0 +1,50 @@
+table:
+  name: 'PtSafeDepositVisit'
+  description: 'table contain visit protocols of safe deposits'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAgrSafeDepositBox'
+      parentRelationField: 'AgrSafeDepositBoxId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtSafeDepositVisit'
+        helpText: 'PtSafeDepositVisit'
+    - german:
+        formTitle: 'PtSafeDepositVisit'
+        helpText: 'PtSafeDepositVisit'
+  columns:
+  - name: 'AgrSafeDepositBoxId'
+    description: 'foreign-key; Id of PtAgrSafeDepositBox'
+    genericControls:
+      refTable: 'PtAgrSafeDepositBox'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'VisitorId'
+    description: 'authorized partner who "visit" a safe deposit box'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ContactID'
+    description: ''
+    genericControls:
+      refTable: 'PtContactPersonView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'VisitDate'
+    description: 'date of visit'
+    genericControls:
+      defColumnPos: 2

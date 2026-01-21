@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPendingEsrData'
+  description: 'Gets pending EsrData for EBanking'

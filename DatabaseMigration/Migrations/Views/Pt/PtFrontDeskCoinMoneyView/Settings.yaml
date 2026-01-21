@@ -1,0 +1,59 @@
+view:
+  name: 'PtFrontDeskCoinMoneyView'
+  description: ''
+frontendView:
+  name: 'PtFrontDeskCoinMoneyView'
+  description: 'Schweizer Münzen an der Kasse'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Coin Money (Front Desk)'
+        helpText: 'Coin Money (Front Desk)'
+    - german:
+        formTitle: 'Münzen (Schalter)'
+        helpText: 'Münzen (Schalter)'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'BranchNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 1
+  - name: 'ReportDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValueHoCu'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 3
+  - name: 'MappingTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AcFireMappingType'
+      refField: 'MappingTypeNo'
+  - name: 'FireAccountNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'

@@ -1,0 +1,125 @@
+table:
+  name: 'PtFormOrderType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'FormType'
+    - german:
+        formTitle: 'Formulartyp'
+  columns:
+  - name: 'FormTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TemplateName'
+    description: 'Template name for payment slip, Quick etc'
+    genericControls:
+      refTable: 'AsTemplateView'
+      refField: 'DocName'
+      defColumnPos: 3
+  - name: 'TemplateNameLabel'
+    description: 'Template name for labels'
+    genericControls:
+      refTable: 'AsTemplateView'
+      refField: 'DocName'
+  - name: 'TemplateNameOrderCard'
+    description: 'Template name for Ordercard'
+    genericControls:
+      refTable: 'AsTemplateView'
+      refField: 'DocName'
+  - name: 'TemplateNameLetter'
+    description: 'Template name for accompanying letter (Quick)'
+    genericControls:
+      refTable: 'AsTemplateView'
+      refField: 'DocName'
+  - name: 'TemplateSpareVoucher'
+    description: 'Ersatzbeleg bei Quick-Bestellungen (leeres Template, da beim Ersatzbeleg keine variablen Daten gedruckt werden!)'
+    genericControls:
+      refTable: 'AsTemplateView'
+      refField: 'DocName'
+  - name: 'SlipCodeWithAmount'
+    description: 'Belegartcode (BC) nur bei ESR (mit Betrag)\r\n01 = ESR in CHF \r\n21 = ESR in Euro'
+  - name: 'SlipCodeWithoutAmount'
+    description: 'Belegartcode (BC) nur bei ESR (ohne Betrag)\r\n04 = ESR+ in CHF\r\n31 = ESR+ in Euro'
+  - name: 'ModuloValue'
+    description: 'Modulo-Wert für Anzahl Exemplare  (bezieht sich auf eine Seite)'
+  - name: 'MinQuantity'
+    description: 'Mindestanzahl Formulare pro Auftrag. Default, der für diese Formularart vorgschlagen wird.'
+  - name: 'MaxQuantity'
+    description: 'Maximal zulässige Anzahl Formulare pro Auftrag'
+  - name: 'IsContinuousForm'
+    description: 'Endlosformulare (ja/nein)'
+  - name: 'IsNotToPrint'
+    description: 'The form in box TemplateName is not printed (only for overview)'
+  - name: 'IsSimpleForm'
+    description: 'einfaches, ohne grosse Hintergrundlogik aufzubereitendes Formular\r\nz.B. Rimessenbordereau, Auslandvergütungsauftrag'
+  - name: 'IsESR'
+    description: 'oranger Einzahlungsschein ESR (ja / nein)'
+  - name: 'IsForBooklet'
+    description: 'ES für Hefte (ja / nein)\r\nda pro Heft eine Bestellkarte gedruckt werden soll'
+  - name: 'IsForOwner'
+    description: 'Eigeneinzahler (ja/nein)'
+  - name: 'IsForFixCurrency'
+    description: '0= Währungen gem. Produktekatalog (PrPrivateCurrRegion)\r\n1= zugelassen momentan für CHF und EUR'
+  - name: 'IsForFrontPrinting'
+    description: 'Definiert ob diese Formularart über das Frontend gedruckt werden darf\r\n(0= nein / 1=ja)'
+  - name: 'IsQuick'
+    description: 'Formular Quickvergütungsauftrag  (ja/nein)'
+  - name: 'Barcode1Left'
+    description: 'x-coordinate in cm where the first barcode has to be printed (used for Quick)'
+  - name: 'Barcode2Left'
+    description: 'x-coordinate in cm where the second barcode has to be printed (used for Quick)'
+  - name: 'PaperBinTemplate'
+    description: 'übersteuert Standard-Schacht des Druckers'
+  - name: 'PaperBinLabel'
+    description: ''
+  - name: 'PaperBinOrderCard'
+    description: ''
+  - name: 'PaperBinLetter'
+    description: ''
+  - name: 'PaperBinSpareVoucher'
+    description: ''
+  - name: 'PaperSizeTemplate'
+    description: 'übersteuert Standard-Papiergrösse des Druckers'
+  - name: 'PaperSizeLabel'
+    description: ''
+  - name: 'PaperSizeOrderCard'
+    description: ''
+  - name: 'PaperSizeLetter'
+    description: ''
+  - name: 'PaperSizeSpareVoucher'
+    description: ''
+  - name: 'IsQRSlip'
+    description: 'Einzahlungsscheine mit QR Code\r\n(ersetzt den roten ES)'
+  - name: 'IsQRSlipWithRefNo'
+    description: 'Einzahlungsscheine mit QR Code und QR Referenznummer\r\n(ersetzt den orangen ES)'
+  - name: 'QRSlip1xPos'
+    description: 'Single value indicating the horizontal destination coordinates where the image will be printed. Units of measure = mm'
+  - name: 'QRSlip1yPos'
+    description: 'Single value indicating the vertical destination coordinates where the image will be printed. Units of measure = mm'
+  - name: 'QRSlip2xPos'
+    description: ''
+  - name: 'QRSlip2yPos'
+    description: ''
+  - name: 'QRSlip3xPos'
+    description: ''
+  - name: 'QRSlip3yPos'
+    description: ''
+  - name: 'IsFactNoOnForm'
+    description: 'Fakture-Nr. auf Rechnungsformular drucken (nur relevant bei QR Faktura A4)'
+  - name: 'FactNoxPos'
+    description: 'Single value indicating the horizontal destination coordinates where the Factura No will be printed. Units of measure = mm'
+  - name: 'FactNoyPos'
+    description: 'Single value indicating the vertical destination coordinates where the Factura No will be printed. Units of measure = mm'

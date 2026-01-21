@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'FetchPendingTransEsrData'
+  description: 'Fetches pending entries from PtTransEsrData to PtTransEsrFetched table, assingning it give filed Id'

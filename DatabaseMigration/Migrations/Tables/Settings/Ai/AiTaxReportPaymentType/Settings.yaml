@@ -1,0 +1,36 @@
+table:
+  name: 'AiTaxReportPaymentType'
+  description: 'Zahlungstyp (Dividende, Zins, Erlös, usw.)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment type'
+    - german:
+        formTitle: 'Zahlungstyp'
+    - french:
+        formTitle: 'Type de paiement'
+  columns:
+  - name: 'PaymentTypeNo'
+    description: '- FATCA501 = Dividends\r\n- FATCA502 = Interest\r\n- FATCA503 = Gross Proceeds/Redemptions\r\n- FATCA504 = Other - FATCA. (Example: Foreign reportable amount)'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TaxProgramNo'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxProgram'
+      refField: 'TaxProgramNo'
+      defColumnPos: 2
+  - name: 'Code'
+    description: 'Steuerprogramm spezifischer Code.\r\nFatca: FATCA501, FATCA502, FATCA503, FATCA504'
+    genericControls:
+      defColumnPos: 3

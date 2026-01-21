@@ -1,0 +1,36 @@
+table:
+  name: 'WfProcessLog'
+  description: 'This table contains the old processes detail. Which have been completed and removed from the main WfProcess table.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'WfProcessLog'
+  columns:
+  - name: 'ProcessId'
+    description: ''
+  - name: 'MapNo'
+    description: ''
+  - name: 'Status'
+    description: ''
+  - name: 'CreationDate'
+    description: ''
+  - name: 'FinishDate'
+    description: ''
+  - name: 'VariableInstanceSet'
+    description: ''
+  - name: 'DynamicDescription'
+    description: ''
+  - name: 'InstantiationType'
+    description: ''
+  - name: 'Agent'
+    description: ''
+  - name: 'Instantiator'
+    description: ''

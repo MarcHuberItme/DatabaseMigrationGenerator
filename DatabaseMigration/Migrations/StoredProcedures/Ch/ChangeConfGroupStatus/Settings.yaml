@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'ChangeConfGroupStatus'
+  description: 'Changes the status of a confirmation process group.\r\nUpdates AsUnconfirmed, AsNavigationIndex and AsNavigationIndexSub'

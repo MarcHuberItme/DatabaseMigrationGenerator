@@ -1,0 +1,43 @@
+table:
+  name: 'PtMLReportedBookingsTemp'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'LogId'
+    description: ''
+    genericControls:
+      refTable: 'PtMLMonitoringLog'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransItemId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItem'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ReportedAmount'
+    description: ''
+  - name: 'PaymentCurrency'
+    description: ''
+  - name: 'PaymentAmount'
+    description: ''
+  - name: 'TransText'
+    description: ''
+  - name: 'BookingDescription'
+    description: ''
+  - name: 'TextNo'
+    description: ''
+  - name: 'TransMessageId'
+    description: ''
+  - name: 'PaymentOrderNo'
+    description: ''
+  - name: 'IsCurrentPeriod'
+    description: ''

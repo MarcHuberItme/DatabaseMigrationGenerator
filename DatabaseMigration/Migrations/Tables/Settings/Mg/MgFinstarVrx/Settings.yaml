@@ -1,0 +1,31 @@
+table:
+  name: 'MgFinstarVrx'
+  description: 'Finstar Vrx Mapping'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'VrxTableName'
+    description: ''
+    genericControls:
+      refTable: 'MgVrxTable'
+      refField: 'VrxTableName'
+  - name: 'VrxFieldName'
+    description: ''
+  - name: 'FinstarTableName'
+    description: ''
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'FinstarFieldName'
+    description: ''
+  - name: 'FinstarCodeTable'
+    description: ''
+  - name: 'FinstarCodeField'
+    description: ''

@@ -1,0 +1,130 @@
+view:
+  name: 'PtBlockingView'
+  description: 'view with a union of PtBlocking and PrPublicBlocking'
+frontendView:
+  name: 'PtBlockingView'
+  description: 'universal table for locking a certain record of a table (for example to lock a proxy)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Blocking'
+    - german:
+        formTitle: 'Sperrung'
+    - french:
+        formTitle: 'Blocage'
+  columns:
+  - name: 'TableName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 30
+  - name: 'ParentTableName'
+    description: ''
+    dataType: 'varchar'
+    prec: 30
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ParentId'
+    description: 'foreign-key;  Id of the referenced table'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      isNoUpdate: true
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'BlockDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 5
+  - name: 'BlockIssuer'
+    description: 'Person who initiates the blocking (can be a internal or external person)'
+    dataType: 'nvarchar'
+    prec: 65
+    genericControls:
+      defColumnPos: 4
+  - name: 'BlockReason'
+    description: 'foreign-key; Id of PtBlockReason\r\n\r\nno updates because of migration / 20.07.05 mct'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtBlockReason'
+      refField: 'Id'
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'BlockComment'
+    description: 'reason'
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      multiLine: true
+      defColumnPos: 3
+  - name: 'ReleaseDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ReleaseIssuer'
+    description: 'Person who allows us to release the existing blocking instruction (can be a internal or external person)'
+    dataType: 'nvarchar'
+    prec: 65
+  - name: 'ReleaseReason'
+    description: 'foreign-key; Id of PtReleaseReason'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtReleaseReason'
+      refField: 'Id'
+  - name: 'ReleaseComment'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      multiLine: true
+  - name: 'IsPermanent'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsWarning'
+    description: '0 = is blocking (effektive Sperrung - im Fall von Sperrungen wird z.B die Karte am ATM eingezogen)\r\n1 = is only a warning (d.h. wird nur in den inaktiven Programmen berücksichtigt, nicht z.B. im ATM Betrieb).'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'BoolVal'
+      defColumnPos: 8
+  - name: 'ReleaseDateEstimated'
+    description: 'this date is not used to check the blocking, it''s just for information'
+    dataType: 'datetime'
+  - name: 'BlockedQuantity'
+    description: 'this field is used if only a part of a securityposition is blocked'
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 7
+  - name: 'OverrideComment'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      multiLine: true
+  - name: 'OverrideUserId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true

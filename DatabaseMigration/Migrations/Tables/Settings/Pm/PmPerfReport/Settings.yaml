@@ -1,0 +1,116 @@
+table:
+  name: 'PmPerfReport'
+  description: 'Table contains monthly performance figures per portfolio and chosen method.\r\n-> Figures are visualized in the portfolio report and on the Finstar GUI.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Performance Report'
+    - german:
+        formTitle: 'Performance Report'
+    - french:
+        formTitle: 'Rapport de performance'
+    - italian:
+        formTitle: 'Rapporto prestazioni'
+  columns:
+  - name: 'ValuationDate'
+    description: 'Last updated valuation date.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Currency'
+    description: 'Portfolio valuation currency'
+    genericControls:
+      defColumnPos: 7
+  - name: 'Cashflow'
+    description: 'Valuation of the external cashflow (total) from or to a portfolio within the given interval.'
+    genericControls:
+      defColumnPos: 8
+  - name: 'CapitalIn'
+    description: 'Valuation of incoming capital to a portfolio within the given interval.'
+    genericControls:
+      defColumnPos: 9
+  - name: 'CapitalOut'
+    description: 'Valuation of outgoing capital from a portfolio within the given interval.'
+    genericControls:
+      defColumnPos: 10
+  - name: 'SecIn'
+    description: 'Valuation of securities booked-in to a portfolio within the given interval.'
+    genericControls:
+      defColumnPos: 11
+  - name: 'SecOut'
+    description: 'Valuation of securities booked-out from a portfolio within the given interval.'
+    genericControls:
+      defColumnPos: 12
+  - name: 'PerfMTD'
+    description: 'Accumulated monthly performance.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PerfYTD'
+    description: 'Accumulated yearly performance.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'PerfTotal'
+    description: 'Accumulated performance since begin of measurement.'
+    genericControls:
+      defColumnPos: 5
+  - name: 'PerfMethod'
+    description: 'Currently only TWR (0) supported.'
+  - name: 'ValuationAtBegin'
+    description: ''
+    genericControls:
+      defColumnPos: 13
+  - name: 'ValuationAtEnd'
+    description: ''
+    genericControls:
+      defColumnPos: 14
+  - name: 'ManagementFees'
+    description: ''
+    genericControls:
+      defColumnPos: 15
+  - name: 'DepotFees'
+    description: ''
+    genericControls:
+      defColumnPos: 16
+  - name: 'TransactionFees'
+    description: ''
+    genericControls:
+      defColumnPos: 17
+  - name: 'TaxFees'
+    description: ''
+    genericControls:
+      defColumnPos: 18
+  - name: 'Interests'
+    description: ''
+    genericControls:
+      defColumnPos: 19
+  - name: 'AccruedInterests'
+    description: ''
+    genericControls:
+      defColumnPos: 20
+  - name: 'MarchInterests'
+    description: ''
+    genericControls:
+      defColumnPos: 21
+  - name: 'Coupons'
+    description: ''
+    genericControls:
+      defColumnPos: 22
+  - name: 'Source'
+    description: 'Data source: Calculated (0), Migrated (1)'
+    genericControls:
+      refTable: 'PmPerfDataSource'
+      refField: 'SourceType'
+      defColumnPos: 6
+  - name: 'VersionNo'
+    description: 'Performance processor version. Initial version: 1'

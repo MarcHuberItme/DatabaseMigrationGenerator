@@ -1,0 +1,158 @@
+table:
+  name: 'PtAccountDebitControl'
+  description: 'Control of outstanding values like mortgage interests, mortgage paybacks, fees that cannot be debited directly etc.\r\n\r\ncomponent FsDebitControl.FsDebitInvoice should be used to save new invoices\r\n27.03.2006/mct'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'DebitControl'
+    - german:
+        formTitle: 'DebitControl'
+  columns:
+  - name: 'ReferenceNo'
+    description: 'ESR-ReferenceNo'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PartnerId'
+    description: 'Id of the related PtBase'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'InvoiceCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'InitialAmount'
+    description: 'Initial invoice amount'
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'PendingAmount'
+    description: ''
+    minValue: '0'
+    genericControls:
+      defColumnPos: 5
+  - name: 'InvoiceTransDate'
+    description: 'Date when the Invoice was created'
+    genericControls:
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'InvoiceValueDate'
+    description: 'Valuedate of the pending payment'
+    genericControls:
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'InvoiceDueDate'
+    description: 'Date when the pending payment is due.'
+    genericControls:
+      defColumnPos: 8
+      isNoUpdate: true
+  - name: 'InvoiceType'
+    description: 'Type of the invoice, e.g.\r\nMortgage Interest\r\nMortgage Payback\r\nFees for SafeDepositBox, etc.\r\n'
+    genericControls:
+      refTable: 'AsInvoiceType'
+      refField: 'InvoiceType'
+      defColumnPos: 9
+      isNoUpdate: true
+  - name: 'RelatedTableName'
+    description: 'Invoice source tablename, e.g. \r\nPtAccountClosingPeriod for unpaid mortgage interests\r\nPtAccountPayback for unpaid Payback amounts\r\nPtAgrSafeDepositBox for unpaid fees\r\nPtPortfolio for unpaid fees'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      isNoUpdate: true
+  - name: 'RelationId'
+    description: 'Relation to the Id within the related table'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TargetPositionId'
+    description: 'Id of the Positon to credit the payment, e.g.\r\nfor Mortgage interest and Payback = Mortgage account\r\nfor pending SafeDepositBox fee = MainLedgeraccount "Outstanding fees" \r\netc.'
+  - name: 'OpenIssueId'
+    description: 'Id of a related open issue (optional)'
+    genericControls:
+      refTable: 'PtOpenIssue'
+      refField: 'Id'
+  - name: 'InvoiceNo'
+    description: 'retrieve value from AsSequence ''InvoiceNo'''
+    genericControls:
+      defColumnPos: 10
+      isNoUpdate: true
+  - name: 'AccountId'
+    description: 'Optional field, required to generate the mail output of the invoices and of the\r\nreminder.'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'PortfolioId'
+    description: 'Optional field, required to generate the mail output of the invoices and of the\r\nreminder.'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'EsrNoEdited'
+    description: 'EsrNo that will be set by the debit control application (retrieved from System Parameters)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'EsrCodeLine'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'ReferenceNoEdited'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'DebitAccountId'
+    description: 'account to be debited'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitModeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountDebitMode'
+      refField: 'DebitModeNo'
+  - name: 'InternalRemark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SuppressInvoice'
+    description: 'if this flag is set then no invoice should be sent to the customer.\r\nThis happens when the bank clerk decides for example to debit another account or to overdraw the account.'
+    genericControls:
+      defColumnPos: 11
+  - name: 'ScheduledPrintDate'
+    description: 'date when the invoice has to be printed'
+    genericControls:
+      isNoUpdate: true
+  - name: 'MatchedTransItemId'
+    description: 'id of the matched pttransitem with this amount'
+  - name: 'AlertId'
+    description: 'time when the notification was send to the bank staff'
+    genericControls:
+      refTable: 'AsInvoiceAlert'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'CompletionDate'
+    description: 'date when the pending amount was payed'
+    genericControls:
+      isNoUpdate: true
+  - name: 'UseQRBill'
+    description: 'When UseQR-Bill is checked, the invoice uses new QR-Bill'
+  - name: 'LsvExportDateTime'
+    description: 'DateTime when the LSV export started.'

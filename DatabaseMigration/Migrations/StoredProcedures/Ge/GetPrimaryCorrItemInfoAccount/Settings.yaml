@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPrimaryCorrItemInfoAccount'
+  description: 'get the primary correspondence information... it will return always one record'

@@ -1,0 +1,22 @@
+table:
+  name: 'OaNotificationInstantConfig'
+  description: 'Custom configurations for instant payment triggered notification rules.Used by E-Banking and other apps.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'MinAmount'
+    description: 'Minimum payment amount for instant payment push notifications to be triggered'
+  - name: 'MaxAmount'
+    description: 'Maximum payment amount for instant payment push notifications to be triggered'
+  - name: 'NotificationRuleId'
+    description: 'OaNotificationrule.Id reference.'
+    genericControls:
+      refTable: 'OaNotificationRule'
+      refField: 'Id'

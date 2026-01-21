@@ -1,0 +1,3 @@
+view:
+  name: 'AsDocumentIndexView'
+  description: 'View to join document tables to show an overview of documents of a certain record.'

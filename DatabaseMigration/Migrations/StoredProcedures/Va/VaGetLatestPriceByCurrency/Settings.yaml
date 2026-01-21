@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaGetLatestPriceByCurrency'
+  description: 'Used from Frontend and GOI to get the last price of an instrument based on the logic of the valuation.\r\n02.10.2025/wwo: select new fields PrPublic.PhysicalUnitTypeNo, PrPublicPrice.PriceRepUnitAmount and PrPublicPrice.PriceUnit to call new function GetMarketValueWithPrPublicPriceData (FIN-14217).'

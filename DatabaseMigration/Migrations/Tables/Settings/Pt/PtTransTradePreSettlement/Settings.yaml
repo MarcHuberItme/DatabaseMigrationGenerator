@@ -1,0 +1,68 @@
+table:
+  name: 'PtTransTradePreSettlement'
+  description: 'Security trades from automatic trading system (GLOX) without settlement data (FIX: 150= F).'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Trade without settlement'
+    - german:
+        formTitle: 'Abschluss ohne Settlement'
+  columns:
+  - name: 'TransMessageId'
+    description: 'Relation to PtTransMessage\r\nthis id will be getted by the inserting of the PtTradingOrderMessage record. \r\nThis gives the possibility to enter PtTransTrade records \r\nbefore the record in the PtTransMessage exists. That means thats an existing PtTransMessage record is not necessary (=no DB Integrity)\r\n'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PortfolioId'
+    description: 'PortfolioId of the broker\r\nis null if the order is a listorder (averageprice) with several brokers.'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Quantity'
+    description: 'For shares = number of traded shares\r\nFor bonds  = nominal traded amount'
+    genericControls:
+      defColumnPos: 2
+  - name: 'CompletionDate'
+    description: 'Concept of SQL Data Partioning. \r\nIt is first value is MAXDATE (9999-12-31). It is then later changed by another process responsible for the task of Partioning.'
+  - name: 'Currency'
+    description: 'Currency of the price'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'Price'
+    description: 'Price based on unit or percentage of nominal value\r\n'
+    genericControls:
+      defColumnPos: 4
+  - name: 'PriceDate'
+    description: 'Date and time of the trade'
+    genericControls:
+      defColumnPos: 1
+  - name: 'StockExRef'
+    description: 'StockExRef\r\nSWX/VirtX = Trade_Id\r\nOthers may be a string value'
+  - name: 'LastMkt'
+    description: 'Field used for orders traded over XSWM (Swiss@Mid).\r\nIt is possible that in one order (PtTradingOrderMessage) there are PtTransTrade with different LastMkt.'
+  - name: 'PriceDateExtern'
+    description: 'In this field we will save the datetime of the trade getted from glox (also in PriceDate).\r\nThis field is used because it is not possible to save milliseconds in VB6 in a datetime-field. It is possible to store it in the DB but the milliseconds will be "rounded" (xx0, xx3, xx7).'
+  - name: 'MemberId'
+    description: 'used if portfolioId cannot be evaluated (no entry for MemberId exists in PtPortfolioSxBroker)'
+  - name: 'TransTradeId'
+    description: 'Id of the corresponding PtTransTrade (Executionreport(Calculated)).'
+    genericControls:
+      refTable: 'PtTransTrade'
+      refField: 'Id'
+  - name: 'OrigId'
+    description: 'used for SIX-Reporting of reversal transaction. With this field it is possible to refer to the original transaction.'
+    genericControls:
+      refTable: 'PtTransTradePreSettlement'
+      refField: 'Id'

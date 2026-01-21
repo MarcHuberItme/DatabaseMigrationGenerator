@@ -1,0 +1,63 @@
+table:
+  name: 'PtPartnerProcRule'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPartnerProcRule'
+        helpText: 'PtPartnerProcRule'
+    - german:
+        formTitle: 'PtPartnerProcRule'
+        helpText: 'PtPartnerProcRule'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'ActivityRuleCode'
+    description: ''
+    genericControls:
+      refTable: 'AsActivityRule'
+      refField: 'ActivityRuleCode'
+      defColumnPos: 1
+  - name: 'PeriodRuleNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 2
+  - name: 'PeriodRuleBase'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ActivityDate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'CorrPartnerID'
+    description: ''
+    genericControls:
+      refTable: 'PtCorrPartner'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'EnforceAlways'
+    description: ''
+  - name: 'SkipDefault'
+    description: ''

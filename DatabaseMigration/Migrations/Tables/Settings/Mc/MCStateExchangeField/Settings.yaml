@@ -1,0 +1,32 @@
+table:
+  name: 'MCStateExchangeField'
+  description: 'Value record for imported CSE entry.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'CSE field'
+        helpText: 'CSE field'
+    - german:
+        formTitle: 'CSE field'
+        helpText: 'CSE field'
+  columns:
+  - name: 'RecordId'
+    description: 'header record foreign key'
+    genericControls:
+      refTable: 'MCStateExchangeRecord'
+      refField: 'Id'
+  - name: 'FieldTypeId'
+    description: 'field type foreign key'
+    genericControls:
+      refTable: 'MCStateExchangeFieldType'
+      refField: 'Id'
+  - name: 'Value'
+    description: 'field value'

@@ -1,0 +1,13 @@
+table:
+  name: 'DvStatus'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 94c2d033-c482-4cd0-842b-8498330b12a6
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns: []

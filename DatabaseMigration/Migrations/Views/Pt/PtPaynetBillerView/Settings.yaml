@@ -1,0 +1,40 @@
+view:
+  name: 'PtPaynetBillerView'
+  description: 'Gets information about a paynet biller'
+frontendView:
+  name: 'PtPaynetBillerView'
+  description: 'Returning paynet biller information'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccountIdent'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 34
+  - name: 'AccountIdentType'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 7
+  - name: 'BillerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'BillerStatus'
+    description: ''
+    dataType: 'smallint'
+  - name: 'BillerName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'PaynetBillerId'
+    description: 'Paynet biller id (refers to PtPaynetBiller.PaynetBillerId)'
+    dataType: 'nvarchar'
+    prec: 36

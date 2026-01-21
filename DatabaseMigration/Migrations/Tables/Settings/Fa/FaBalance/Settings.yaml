@@ -1,0 +1,54 @@
+table:
+  name: 'FaBalance'
+  description: 'End-of-Month balances of customers assets'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'FaBaseId'
+    description: ''
+    genericControls:
+      refTable: 'FaBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ValuationDate'
+    description: 'Date the valution is calculated for. If no security rates are available for that date, the rates for the last business day before the given date are taken'
+    genericControls:
+      defColumnPos: 1
+  - name: 'VaRunId'
+    description: 'ID if the valuation batch process'
+    genericControls:
+      refTable: 'VaRun'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OwnAssetsCHF'
+    description: 'Value in CHF for own assetes of the catual account.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'AssetsToMergeCHF'
+    description: 'Assets from other accounts of the same partner.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'JointAssetsCHF'
+    description: 'Valie in CHF in joint accounts.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'RateUSDCHF'
+    description: 'average exchange rate CHF/USD at the valuation date'
+    genericControls:
+      defColumnPos: 5
+  - name: 'OwnBalanceUSD'
+    description: 'Value of OwnAssetsCHF and AssetsToMergeCHF in USD'
+    genericControls:
+      defColumnPos: 6
+  - name: 'TotalBalanceUSD'
+    description: 'Value of OwnAssetsCHF and AssetsToMergeCHF in USD.'
+    genericControls:
+      defColumnPos: 7

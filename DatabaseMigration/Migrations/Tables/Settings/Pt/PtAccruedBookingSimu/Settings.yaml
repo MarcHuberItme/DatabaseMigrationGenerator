@@ -1,0 +1,96 @@
+table:
+  name: 'PtAccruedBookingSimu'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAccruedBookingSimu'
+        helpText: 'PtAccruedBookingSimu'
+    - german:
+        formTitle: 'PtAccruedBookingSimu'
+        helpText: 'PtAccruedBookingSimu'
+  columns:
+  - name: 'SimuID'
+    description: ''
+  - name: 'IsBooking'
+    description: ''
+  - name: 'GroupName'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValueDateEnd'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'SeqNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'BookingAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'TextNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'DebitAccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'DebitCustomerReference'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'DebitBalance'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'DebitBalanceOld'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'DebitBalanceNew'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'CreditAccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'CreditCustomerReference'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'CreditBalance'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'CreditBalanceOld'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'CreditBalanceNew'
+    description: ''
+    genericControls:
+      defColumnPos: 12
+  - name: 'TransText'
+    description: ''
+    genericControls:
+      defColumnPos: 13

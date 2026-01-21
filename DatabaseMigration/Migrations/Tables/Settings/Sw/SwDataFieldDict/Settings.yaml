@@ -1,0 +1,29 @@
+table:
+  name: 'SwDataFieldDict'
+  description: 'SWIFT data field dictionary'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'SwDataFieldDict'
+        helpText: 'SwDataFieldDict'
+    - german:
+        formTitle: 'SwDataFieldDict'
+        helpText: 'SwDataFieldDict'
+  columns:
+  - name: 'ISO'
+    description: ''
+  - name: 'MsgTagDesp'
+    description: ''
+  - name: 'MsgTag'
+    description: ''
+  - name: 'Qualifier'
+    description: ''

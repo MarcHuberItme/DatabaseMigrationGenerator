@@ -1,0 +1,232 @@
+table:
+  name: 'PtRatingStandard'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Credit worthiness'
+    - german:
+        formTitle: 'Bonität'
+    - french:
+        formTitle: 'Solvabilité'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'FinAcceptabilityNo'
+    description: 'Tragbarkeits-Beurteilung'
+    genericControls:
+      refTable: 'PtRatingFinAcceptability'
+      refField: 'AcceptabilityNo'
+  - name: 'FinSelfFinancingNo'
+    description: 'Eigenfinanzierungsgrad (ausgewiesen)'
+    genericControls:
+      refTable: 'PtRatingFinSelfFinancing'
+      refField: 'SelfFinancingNo'
+  - name: 'FinROENo'
+    description: 'Eigenkapital Rendite ROE'
+    genericControls:
+      refTable: 'PtRatingFinROE'
+      refField: 'FinROENo'
+  - name: 'FinCFAvgNo'
+    description: 'durchschn. CF Rendite der letzten 3 Jahre'
+    genericControls:
+      refTable: 'PtRatingFinCFAvg'
+      refField: 'FinCFAvgNo'
+  - name: 'FinCFPlannedNo'
+    description: 'gechätzte Cash--flow Rendite'
+    genericControls:
+      refTable: 'PtRatingFinCFPlanned'
+      refField: 'FinCFPlannedNo'
+  - name: 'FinDeptFactorNo'
+    description: 'Verschuldungsfaktor'
+    genericControls:
+      refTable: 'PtRatingFinDeptFactor'
+      refField: 'DeptFactorNo'
+  - name: 'FinQuickRatioNo'
+    description: 'Liquidität 2. Stufe (quick ratio)'
+    genericControls:
+      refTable: 'PtRatingFinQuickRatio'
+      refField: 'QuickRatioNo'
+  - name: 'FinAudit'
+    description: ''
+    genericControls:
+      refTable: 'PtRatingFinAudit'
+      refField: 'AuditNo'
+  - name: 'FinNPL'
+    description: 'überfällige HBL Forderungen'
+    genericControls:
+      refTable: 'PtRatingFinNPL'
+      refField: 'NPLNo'
+  - name: 'FinLight'
+    description: 'nur Tragbarkeitsberechnung'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 6
+  - name: 'RatingDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'RatingResult'
+    description: 'Bonitätsnote'
+    genericControls:
+      defColumnPos: 2
+  - name: 'RatingResultFin'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'RatingResultSoft'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'RatingResultNat'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'SoftRepresentationNo'
+    description: 'Auftreten'
+    genericControls:
+      refTable: 'PtRatingSoftRep'
+      refField: 'RepresentationNo'
+  - name: 'SoftCharacterNo'
+    description: 'Ruf / Charakter'
+    genericControls:
+      refTable: 'PtRatingSoftChar'
+      refField: 'CharacterNo'
+  - name: 'SoftManagementEducationNo'
+    description: 'Management Ausbildung'
+    genericControls:
+      refTable: 'PtRatingSoftManEdu'
+      refField: 'ManagementEducationNo'
+  - name: 'SoftManagementGoalNo'
+    description: 'Management Erfolgsnachweis'
+    genericControls:
+      refTable: 'PtRatingSoftManGoal'
+      refField: 'ManagementGoalNo'
+  - name: 'SoftNextNo'
+    description: 'Nachfolge-Regelung'
+    genericControls:
+      refTable: 'PtRatingSoftNext'
+      refField: 'SoftNextNo'
+  - name: 'SoftEarningNo'
+    description: 'Dividendenpolitik / Privatbezüge'
+    genericControls:
+      refTable: 'PtRatingSoftEarning'
+      refField: 'SoftEarningNo'
+  - name: 'SoftProductionNo'
+    description: 'Produktionsmittel'
+    genericControls:
+      refTable: 'PtRatingSoftProduction'
+      refField: 'ProductionNo'
+  - name: 'SoftProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PtRatingSoftProduct'
+      refField: 'ProductNo'
+  - name: 'SoftBudgetNo'
+    description: 'Budget-Erreichnung (CF letzte Jahre)'
+    genericControls:
+      refTable: 'PtRatingSoftBudget'
+      refField: 'BudgetNo'
+  - name: 'SoftRiskNo'
+    description: ''
+    genericControls:
+      refTable: 'PtRatingSoftRisk'
+      refField: 'RiskNo'
+  - name: 'SoftLocationNo'
+    description: 'Standort-Eignung'
+    genericControls:
+      refTable: 'PtRatingSoftLocation'
+      refField: 'LocationNo'
+  - name: 'SoftFutureNo'
+    description: 'Zukunftsaussichten'
+    genericControls:
+      refTable: 'PtRatingSoftFuture'
+      refField: 'FutureNo'
+  - name: 'SoftClientRelationNo'
+    description: 'Kundenpotential / -bindung'
+    genericControls:
+      refTable: 'PtRatingSoftClientRelation'
+      refField: 'ClientRelationNo'
+  - name: 'SoftClientRelationRemark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'NatRepresentationNo'
+    description: 'Auftreten (nat. Person)'
+    genericControls:
+      refTable: 'PtRatingNatRep'
+      refField: 'RepresentationNo'
+  - name: 'NatCharacterNo'
+    description: 'Charakter / Ruf (nat. Person)'
+    genericControls:
+      refTable: 'PtRatingNatChar'
+      refField: 'CharacterNo'
+  - name: 'NatFutureNo'
+    description: 'Zukunftsaussichten (nat. Person)'
+    genericControls:
+      refTable: 'PtRatingNatFut'
+      refField: 'FutureNo'
+  - name: 'NatLifeStandardNo'
+    description: 'Lebensstandard (nat.Person)'
+    genericControls:
+      refTable: 'PtRatingNatLifeStand'
+      refField: 'LifeStandardNo'
+  - name: 'NatOtherFinancialsNo'
+    description: 'übrige finanzielle Verhältnisse (nat. Person)'
+    genericControls:
+      refTable: 'PtRatingNatFin'
+      refField: 'FinancialsNo'
+  - name: 'NatAcceptabilityNo'
+    description: 'Tragbarkeits Beurteilung (nat. Person)'
+    genericControls:
+      refTable: 'PtRatingNatAccept'
+      refField: 'AcceptabilityNo'
+  - name: 'NatNPL'
+    description: 'überfällige HBL Forderungen'
+    genericControls:
+      refTable: 'PtRatingNatNPL'
+      refField: 'NPLNo'
+  - name: 'IsFrozen'
+    description: ''
+  - name: 'FrozenText'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 7
+  - name: 'ManualOverrideValueNo'
+    description: 'Manuelle Übersteuerung um einen gewissen Wert (wird zum Resultat der autom. berechneten Bonitätnote addiert).'
+    genericControls:
+      refTable: 'PtRatingStandardOvr'
+      refField: 'ManualOverrideValueNo'
+  - name: 'BusinessID'
+    description: ''
+    genericControls:
+      refTable: 'PtBusinessRatio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PrivateID'
+    description: ''
+    genericControls:
+      refTable: 'PtRatingPrivateCalc'
+      refField: 'Id'
+      hasDetailBtn: true

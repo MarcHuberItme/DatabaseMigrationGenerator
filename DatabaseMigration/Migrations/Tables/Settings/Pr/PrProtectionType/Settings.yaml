@@ -1,0 +1,22 @@
+table:
+  name: 'PrProtectionType'
+  description: 'Determines the way a product is calculated to generate the capital amount for its protection against losses.'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Protection Type'
+    - german:
+        formTitle: 'Sicherungs-Typ'
+  columns:
+  - name: 'ProtectionTypeNo'
+    description: 'characterizes the way a product is involved in the capital requirement calculation of the protection insurance.'
+    genericControls:
+      defColumnPos: 1

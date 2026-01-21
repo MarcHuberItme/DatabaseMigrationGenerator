@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetForeignCyContractsAllByValueDate'
+  description: 'reads forex and moneymarket contracts at once'

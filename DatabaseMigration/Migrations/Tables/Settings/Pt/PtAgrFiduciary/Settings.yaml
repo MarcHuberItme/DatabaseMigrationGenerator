@@ -1,0 +1,45 @@
+table:
+  name: 'PtAgrFiduciary'
+  description: 'agreement between a partner and the bank about Fiduciary;\r\ncan be a stand-alone agreement or a component of the BaseAgreement'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Fiduciary contract'
+    - german:
+        formTitle: 'Treuhandvertrag'
+    - french:
+        formTitle: 'Contrat fiduciaire'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key; Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'VersionNo'
+    description: ''
+  - name: 'PrintDate'
+    description: ''
+  - name: 'BeginDate'
+    description: ''
+  - name: 'ExpirationDate'
+    description: ''
+  - name: 'PeriodOfNotice'
+    description: 'period of time to cancel the deal; in days, month or years'
+  - name: 'Interval'
+    description: 'foreign-key;  candidate-key of AsInterval (Interval)\r\n(VB-function DateAdd)  d, m, yyyy of the PeriodOfNotice'
+    genericControls:
+      refTable: 'AsInterval'
+      refField: 'Interval'

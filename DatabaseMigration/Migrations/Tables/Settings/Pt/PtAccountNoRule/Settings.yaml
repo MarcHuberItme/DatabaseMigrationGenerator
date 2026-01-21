@@ -1,0 +1,37 @@
+table:
+  name: 'PtAccountNoRule'
+  description: 'This table defines the rules for generating account number.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Rules for account number'
+        helpText: 'Rules for account number'
+    - german:
+        formTitle: 'Nummerierungsregeln'
+        helpText: 'Nummerierungsregeln'
+  columns:
+  - name: 'RuleNo'
+    description: 'Unique rule number'
+  - name: 'AcctStructure'
+    description: 'Defines the data structure of an account number. \r\nFor partner number based account is a combination of "P","R" and "C". \r\nFor sequence number based account is a combination of "S",constant number and "C". \r\nExample: "PPPPPPRRC", "SSSSSSC"'
+  - name: 'EditFormat'
+    description: 'Editable format for the account number. "Z", hide leading zero, "X", account number, any other char as delimiter. Example: "xxx.xxx.xxx", "zxx-xxx-xxx".'
+  - name: 'AcctSegment'
+    description: 'a combination of account range, which is used only for partner number based account. \r\nExample: "10-40, 50-70, 85-95"'
+  - name: 'SequenceName'
+    description: 'Name used for sequence number, which can be used to retrieve highest sequence number used from table AsSequence.'
+  - name: 'CheckDigRuleNo'
+    description: 'to reference the check digit rule number from table AsCheckDigitNoRule for check digit algorithm.'
+    genericControls:
+      refTable: 'AsCheckDigitRule'
+      refField: 'RuleNo'

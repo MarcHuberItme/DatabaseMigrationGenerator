@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountComposedPriceMM'
+  description: 'Retrieves composed prices for a MoneyMarket account\r\n\r\n--Author		: Rolf Amstad\r\n--Date Created	: 15-June-2009\r\n--Date Modified        : \r\n                                :'

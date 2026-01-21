@@ -1,0 +1,41 @@
+table:
+  name: 'MgVS10'
+  description: 'Mapping Valorennummer zu Titelart'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'FIS Valorenstamm'
+    - german:
+        formTitle: 'FIS Valorenstamm'
+  columns:
+  - name: 'ValNrTK'
+    description: 'Valorennummer Telekurs'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ValAnr'
+    description: 'Valorenanrechtsnummer'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TitArt'
+    description: 'FisVrx-Titelart'
+    genericControls:
+      refTable: 'MgT01'
+      refField: 'TitArt'
+      defColumnPos: 3
+  - name: 'RechArt'
+    description: ''
+  - name: 'VrxSector'
+    description: ''
+  - name: 'VrxShortText'
+    description: ''
+    genericControls:
+      defColumnPos: 4

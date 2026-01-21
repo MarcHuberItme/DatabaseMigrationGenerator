@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'UpdatePaybackYearToDateAmount'
+  description: 'Prepares the data for the Indirect Amortisations Control - Report\r\nModified for Release 3.31 - FES\r\n2023-08-02/FIN-9318/daga: condition added for PtTransItem HdVersionNo between 1 and 999999998'

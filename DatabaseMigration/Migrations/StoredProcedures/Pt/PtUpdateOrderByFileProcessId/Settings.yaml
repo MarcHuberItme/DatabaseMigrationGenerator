@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtUpdateOrderByFileProcessId'
+  description: '- Checks if all the orders for a file have been successfully imported. if all imported successfully then marks them as ''PENDING PROCESSING''\r\n- Marks the order under consideration as "WITH ERROR" if any payment has some error'

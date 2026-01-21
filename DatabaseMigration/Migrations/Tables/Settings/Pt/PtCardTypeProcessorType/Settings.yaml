@@ -1,0 +1,36 @@
+table:
+  name: 'PtCardTypeProcessorType'
+  description: 'Card type processor types'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Card type processor'
+        helpText: 'Card type processor'
+    - german:
+        formTitle: 'Kartentyp Prozessor'
+        helpText: 'Kartentyp Prozessor'
+    - french:
+        formTitle: 'Processeur de type carte'
+        helpText: 'Processeur de type carte'
+  columns:
+  - name: 'ProcessorNo'
+    description: 'Unique number of processor'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Internal'
+    description: 'Internal card management = 1 (SIX Debit Online - integrated\r\nInternal card management = 0 (Viseca One - not integrated)'
+  - name: 'WebUri'
+    description: 'Web URI for external card processor (e.g. Viseca One URI). Used for App2App switch.'
+  - name: 'AndroidUri'
+    description: 'Android URI for external card processor (e.g. Viseca One URI). Used for App2App switch.'
+  - name: 'IOSUri'
+    description: 'iOS URI for external card processor (e.g. Viseca One URI). Used for App2App switch.'

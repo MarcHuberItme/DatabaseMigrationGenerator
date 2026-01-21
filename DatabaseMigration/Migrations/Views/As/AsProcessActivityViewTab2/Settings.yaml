@@ -1,0 +1,51 @@
+view:
+  name: 'AsProcessActivityViewTab2'
+  description: ''
+frontendView:
+  name: 'AsProcessActivityViewTab2'
+  description: 'Run Info (Process''s Dynamics)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'StartType'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'IsPrivileged'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsStartableByPrivileged'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'DailyGoAfterHour'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'DailyGoAfterMinute'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'DailyGoBeforeHour'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'DailyGoBeforeMinute'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'RunAtStartup'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'RunOnStation'
+    description: ''
+    dataType: 'varchar'
+    prec: 20
+  - name: 'RunOptional'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true

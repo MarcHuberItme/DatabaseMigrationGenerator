@@ -1,0 +1,54 @@
+table:
+  name: 'PtTransEsrData'
+  description: 'Esr-Daten für Filetransfer an E-Banking-Kunden'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Esr-Daten'
+    - german:
+        formTitle: 'Esr-Daten'
+  columns:
+  - name: 'AccountId'
+    description: 'Customer account there the incoming ESR payment is credited.\r\nMain ledger accounts are not allowed'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'TransDate'
+    description: 'TransDate same as in the related PtTransItem'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ReferenceNo'
+    description: 'Reference number issued by the custumer to handle his own accountancy'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Amount'
+    description: 'Payment amount in product currency'
+    genericControls:
+      defColumnPos: 4
+  - name: 'SourceKey'
+    description: 'Used to prevent duplicate insert of the same record\r\n- Migration:            Filename without extension  & SeqNo (Format <0 :nnnnnnnnnnnn-ssss)\r\n- Finstar:                 UniqueId of PtTransItemDetail'
+    genericControls:
+      defColumnPos: 5
+  - name: 'DataString'
+    description: 'Datastring to build the ESR Transfile for the customer\r\n100  bytes are Data, including Transdate, ReferenceNo and Amount\r\n26    bytes are blank\r\n2      bytes are CrLf'
+  - name: 'TransEsrFileId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransEsrFile'
+      refField: 'Id'
+  - name: 'AccountNoIban'
+    description: 'Account number in IBAN Format, as needed by camt.054'
+  - name: 'ValueDate'
+    description: ''
+  - name: 'Currency'
+    description: ''
+  - name: 'TransMessageId'
+    description: ''

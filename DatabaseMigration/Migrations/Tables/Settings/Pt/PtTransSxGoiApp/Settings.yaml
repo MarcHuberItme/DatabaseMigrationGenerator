@@ -1,0 +1,26 @@
+table:
+  name: 'PtTransSxGoiApp'
+  description: 'Possible application for the generic order interface GOI.\r\nE.g. AssetMax, PM1, SCO, EBanking'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Source Application GOI'
+        helpText: 'Source Application for GOI'
+    - german:
+        formTitle: 'Source Applikation GOI'
+        helpText: 'Source Applikation für GOI'
+  columns:
+  - name: 'App'
+    description: 'Application calling the GOI (e.g. AssetMax, E-Banking, PM1...)'
+    genericControls:
+      defColumnPos: 1

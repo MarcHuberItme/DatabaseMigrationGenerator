@@ -1,0 +1,86 @@
+table:
+  name: 'ReBuildingStyle'
+  description: 'Gebäude-Art (Angebaut, freistehend, Mittelhaus, Eckhaus), ist abhängig vom gewählten Gebäudetyp. Wenn der Typ nicht 1,2,3,4,7,10 ist, wird immer alles angezeigt.\r\nDepending on the BuildingType (filtered with checkboxes) not all the BuildingStyles are possible. If the BuildingType is not considered (that is called everything except 1,2,3,4,7,10) all Building Styles have to be shown in the dropdown.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Building Style'
+    - german:
+        formTitle: 'Gebäudeart'
+  columns:
+  - name: 'BuildingStyleNo'
+    description: 'FIS-2000:  GBDE_ART_CD'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IaziValue'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PfandRegValue'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ForBuildingType01'
+    description: 'if checked this record is shown in the drop down of the BuildingType 01 Single family house (Einfamilienhaus)'
+  - name: 'ForBuildingType02'
+    description: 'if checked this record is shown in the drop down of the BuildingType 02 Multi-family house (Mehrfamilienhaus)'
+  - name: 'ForBuildingType03'
+    description: 'if checked this record is shown in the drop down of the BuildingType 03 - STWE live (Wohnen)'
+  - name: 'ForBuildingType04'
+    description: 'if checked this record is shown in the drop down of the BuildingType 04 - STWE various (übrige)'
+  - name: 'ForBuildingType05'
+    description: 'Gewerbe / Industrie'
+  - name: 'ForBuildingType06'
+    description: 'Wohnen / Gewerbe'
+  - name: 'ForBuildingType07'
+    description: 'if checked this record is shown in the drop down if BuildingType = 07 (various / übrige)'
+  - name: 'ForBuildingType08'
+    description: 'Reserve'
+  - name: 'ForBuildingType09'
+    description: 'Reserve'
+  - name: 'ForBuildingType10'
+    description: 'if checked this record is shown in the drop down of the BuildingType 10 - Hotel / Restaurant'
+  - name: 'ForBuildingType13'
+    description: ''
+  - name: 'ForBuildingType15'
+    description: 'if checked this record is shown in the drop down of the BuildingType 15 - Büro- und Geschäftshaus'
+  - name: 'ForBuildingType90'
+    description: 'is defined a parking possibility (will be automatically counted and displayed in the ReBase) - if checked this record is shown in the drop down of the BuildingType 90 - Parkmöglichkeiten'
+  - name: 'SortNo'
+    description: ''
+  - name: 'ForDwellingBuildingType01'
+    description: 'if checked this record is shown in the drop down for a Dwelling of the BuildingType 01 Single family house (Einfamilienhaus)'
+  - name: 'ForDwellingBuildingType02'
+    description: 'if checked this record is shown in the drop down for a Dwelling of the BuildingType 02 Multi-family house (Mehrfamilienhaus)'
+  - name: 'ForDwellingBuildingType03'
+    description: 'if checked this record is shown in the drop down for a Dwelling of the BuildingType 03 - STWE live (Wohnen)'
+  - name: 'ForDwellingBuildingType04'
+    description: 'if checked this record is shown in the drop down for a dwelling of the BuildingType 04 - STWE various (übrige)'
+  - name: 'ForDwellingBuildingType05'
+    description: 'Gewerbe / Industrie'
+  - name: 'ForDwellingBuildingType06'
+    description: 'Wohnen / Gewerbe'
+  - name: 'ForDwellingBuildingType07'
+    description: 'if checked this record is shown in the drop down of a dwelling if BuildingType = 07 (various / übrige)'
+  - name: 'ForDwellingBuildingType08'
+    description: 'Reserve'
+  - name: 'ForDwellingBuildingType09'
+    description: 'Reserve'
+  - name: 'ForDwellingBuildingType10'
+    description: 'if checked this record is shown in the drop down for a dwelling of the BuildingType 10 - Hotel / Restaurant'
+  - name: 'ForDwellingBuildingType13'
+    description: ''
+  - name: 'ForDwellingBuildingType15'
+    description: 'if checked this record is shown in the drop down for a dwelling of the BuildingType 15 - Büro- und Geschäftshaus'
+  - name: 'ForDwellingBuildingType90'
+    description: 'is defined a parking possibility (will be automatically counted and displayed in the ReBase) - if checked this record is shown in the drop down for a dwelling of the BuildingType 90 - Parkmöglichkeiten'

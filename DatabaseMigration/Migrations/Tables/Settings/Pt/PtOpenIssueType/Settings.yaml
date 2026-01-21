@@ -1,0 +1,47 @@
+table:
+  name: 'PtOpenIssueType'
+  description: 'types of open issues'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'types of open issues'
+    - german:
+        formTitle: 'Pendenzentyp'
+    - french:
+        formTitle: 'Point en suspens type'
+  columns:
+  - name: 'TypeNo'
+    description: 'candidate-key\r\n(90 = nachrichtenlos fix because of migration)'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Alertdefault'
+    description: 'checkbox - if checked - all open issues with this type have the alert-flag on true'
+  - name: 'PreActivation'
+    description: 'Workflow can be actived before the defined Targetdate. This field defines the number of DAYS the workflow should be started in advance. (default)'
+  - name: 'WorkflowMapName'
+    description: 'Workflow-MapName'
+  - name: 'EndStatusNo'
+    description: 'If OpenIssue will be modificated to this status, pending workflow-process will be terminated.'
+    genericControls:
+      refTable: 'PtOpenIssueStatus'
+      refField: 'StatusNo'
+  - name: 'AllowProlongation'
+    description: 'If true, prolongation is allowed (after date-modification the workflow-process will be terminated). \r\nIf false, prolongation is not allowed (workflow only terminate the process when EndStatus is set).'
+  - name: 'DefaultGroup'
+    description: 'If partner hasn''t got a ConsultantTeam the Workflow will take this Group.'
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'IsSerious'
+    description: 'A serious issue becomes a blocking if it is ignored upon its timeout (PtOpenIssue.TargetDate)'

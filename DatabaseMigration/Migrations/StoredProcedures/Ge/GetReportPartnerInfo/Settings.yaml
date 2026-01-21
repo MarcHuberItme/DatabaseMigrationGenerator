@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetReportPartnerInfo'
+  description: '--Author		: Rolf Amstad\r\n--Date Created	: 05-December-2003\r\n--Date Modified        : 16-December-2008   Add table PtRatingConsolidation\r\n--                              : 15-February-2009     Add fields NogaCode2008, NogaCode2008Ok\r\n--                              : 21-May-2010            Record mit dem neuesten Datum aus Tab. PtBusinessRatio berücksichtigen\r\n--                              : 18-July-2016             Add fields RC.RatingCode, RC.Rate'

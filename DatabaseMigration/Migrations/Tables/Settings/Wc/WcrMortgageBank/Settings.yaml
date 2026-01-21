@@ -1,0 +1,33 @@
+table:
+  name: 'WcrMortgageBank'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'WcrMortgageBank'
+        helpText: 'WcrMortgageBank'
+    - german:
+        formTitle: 'WcrMortgageBank'
+        helpText: 'WcrMortgageBank'
+    - french:
+        formTitle: 'WcrMortgageBank'
+        helpText: 'WcrMortgageBank'
+  columns:
+  - name: 'ReportDate'
+    description: ''
+  - name: 'ReportId'
+    description: ''
+    genericControls:
+      refTable: 'WcrMessageReport'
+      refField: 'Id'
+  - name: 'Date'
+    description: ''
+  - name: 'LoanPortfolio'
+    description: ''

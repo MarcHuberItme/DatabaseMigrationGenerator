@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPositionDetailCfInfo'
+  description: 'stored procedure used from own bond application.\r\nRetrieves all necessary cash flow information to process payback and interest payment 18.03.2008/mct'

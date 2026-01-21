@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AsTemplate_GetTemplateInfo'
+  description: 'Check if template was changed since last read by comparing the HdEditStamp value.\r\nIf the edit stamp is different return the new AsTemplate detail record.\r\nThis stored procedure is used for AsTemplate caching on the application server.'

@@ -1,0 +1,90 @@
+table:
+  name: 'PtAgrCardBase'
+  description: 'agreement between a partner and the bank about cards;\r\ncan be a stand-alone agreement or a component of the BaseAgreement'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      navigationConditionField: 'PartnerId'
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Agreement about cards'
+    - german:
+        formTitle: 'Kartenverträge'
+    - french:
+        formTitle: 'Gestion des cartes'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key; Id of PtBase\r\nId of the cardholder'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      createNavigationIndex: true
+  - name: 'ContactPersonId'
+    description: 'This field is used when a contact person (for example Chief Financial Officer) within a company (PtBase) should get a card.'
+    genericControls:
+      refTable: 'PtContactPersonView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountId'
+    description: 'main account for this card. Additional accounts for the card can be defined in table PtAgrCardRelation.'
+    genericControls:
+      refTable: 'PtAccountAllView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CardType'
+    description: 'Card type, eg. \r\nEC, Diners, Amexco, Visa, MasterCard'
+    genericControls:
+      refTable: 'PtCardType'
+      refField: 'CardType'
+      defColumnPos: 2
+  - name: 'CardNo'
+    description: 'Card number as it is printed on the card'
+    genericControls:
+      defColumnPos: 1
+  - name: 'VersionNo'
+    description: ''
+  - name: 'PrintDate'
+    description: ''
+  - name: 'BeginDate'
+    description: ''
+  - name: 'ExpirationDate'
+    description: ''
+  - name: 'PeriodOfNotice'
+    description: 'period of time to cancel the deal; in days, month or years'
+  - name: 'TimeInterval'
+    description: 'foreign-key;  candidate-key of AsInterval (Interval)\r\n(VB-function DateAdd)  d, m, yyyy'
+    genericControls:
+      refTable: 'AsInterval'
+      refField: 'Interval'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'AuthorizationNo'
+    description: 'Old from VRX, in the current Application it has no functional use any more, but is correctly set: \r\n	0 = own Partner; 1 = ContactPerson\r\nis authorized. \r\nIts important as the card order program ECCardOrder checks it. (wbe)'
+  - name: 'LastChargeDate'
+    description: ''
+  - name: 'ChargePrintDate'
+    description: ''
+  - name: 'CardNoNew'
+    description: 'Viseca: zukünftige Kartennummer\r\nBei Verfall der alten Karte wird dieses Feld nach CardNo übertragen und anschliessend auf NULL gesetzt.'
+  - name: 'CardTransferDate'
+    description: 'Viseca: Ausstellungsdatum der zukünftigen neuen Karte\r\nBei Verfall der alten Karte wird dieses Feld auf NULL gesetzt.'
+  - name: 'CardExtendedInformation'
+    description: 'Extended card information to forward to the physical card producer (e.g. mastercard addinfo tag).\r\nThis could be an information we get from a fintech in the onboarding process and we just forward to the card producer and it is then e.g. printed on the card.'
+  - name: 'IsPhysicalCard'
+    description: ''

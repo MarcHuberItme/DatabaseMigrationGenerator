@@ -1,0 +1,95 @@
+table:
+  name: 'PtAccountPayback'
+  description: 'Payback definition and control'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 2
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountBaseId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PayBack'
+    - german:
+        formTitle: 'Amortisation'
+    - french:
+        formTitle: 'Amortissement'
+  columns:
+  - name: 'AccountBaseId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'PeriodRuleNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 2
+  - name: 'PreviousSelectionDate'
+    description: ''
+  - name: 'NextSelectionDate'
+    description: 'At the beginning it is the FirstSelectionDate.\r\nLater it is the calculated next payback date.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Installment'
+    description: 'this is the amount that is to pay back within the period'
+    genericControls:
+      defColumnPos: 5
+  - name: 'DueAmount'
+    description: 'This is the remaining amount to pay back.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'PrepaidAmount'
+    description: 'Prepaid amount, will be deducted from the following instalment.'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'AccountComponentId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountCompView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PaybackTypeNo'
+    description: 'Reference to PtAccountPaybackType.PaybackTypeNo. Shows if this is a direct amortisation, an indirect amortisation or an annuity.\r\n--\r\nReferenz zu PtAccountPaybackType.PaybackTypeNo. Wir werden zukünftig verschieden Amortisationsarten haben (aktuell: direkt, indirekt, Annuität) welche wiederum unterschiedliche Pflichtfelder / optionale Felder haben.'
+    genericControls:
+      refTable: 'PtAccountPaybackType'
+      refField: 'AccountPaybackTypeNo'
+      defColumnPos: 1
+  - name: 'YearToDateAmount'
+    description: 'Amount amortized this year up to the current date\r\n--\r\nder bisher in diesem Kalenderjahr auf die verbundenen Konti einbezahlte Betrag der indirekten Amortisation'
+    genericControls:
+      defColumnPos: 7
+  - name: 'AnnualDueAmount'
+    description: 'Total yearly amount which has to be amortized\r\n--\r\nDer gesamthaft in diesem Kalenderjahr geschuldete Amortisationsbetrag, wird berechnet aufgrund der erfassten Werte für "Installment" und "Periodizität". Auf Basis der Periodizität kann ermittelt werden wie oft die Amortisation pro Jahr ausgeführt werden soll, multipliziert mit der Rate (Installment) ergibt sich der pro Jahr geschuldete Betrag.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'PreviousControlDate'
+    description: 'Current last control date for the payed amortisations\r\n--\r\nDatum, an welchem für indirekte Amortisationen die Kontrolle der bereits einbezahlten Mittel auf die hinterlegten Säule 3 Konti das letztes Mal durchgeführt wurde.'
+  - name: 'IsExt'
+    description: 'If = 1, this indirect amortisation works via a third party like a foreign bank or an insurance company.\r\n--\r\nFlag welches für indirekte Amortisationen verwendet wird, welche über eine externe Lösung (Konto bei anderem Institut, Versicherungslösung, Fondslösung) einbezahlt werden. In diesem Fall ist eine Kontrolle nicht möglich.'
+  - name: 'UseMaxAmount'
+    description: 'Is =yes, this amortisation automatically uses the maximum possible amount (for employed poeple).\r\n--\r\nFlag welches beschreibt, ob bei indirekten Amortisation automatisch der Maximalbetrag (mit 2. Säule) eingesetzt werden soll. Ist dieses Flag gesetzt, muss der maximal erlaubte Betrag ins Feld Installment übernommen werden. Der periodische Job muss zudem für die nächste Ausführung jeweils den Betrag updaten. Der gültige Wert kann aus der Tabelle PtStandingOrderPreDefAmount bezogen werden. Für nicht Selbstständigerwerbende ist dies der im aktuellen Jahr gültige Record mit PreDefTypeNo = 1.'
+  - name: 'UseMaxAmountSelfEmpl'
+    description: 'Is =yes, this amortisation automatically uses the maximum possible amount (for self employed poeple).\r\n--\r\nFlag welches beschreibt, ob bei indirekten Amortisation automatisch der Maximalbetrag (ohne 2. Säule) eingesetzt werden soll. Ist dieses Flag gesetzt, muss der maximal erlaubte Betrag ins Feld Installment übernommen werden. Der periodische Job muss zudem für die nächste Ausführung jeweils den Betrag updaten. Der gültige Wert kann aus der Tabelle PtStandingOrderPreDefAmount bezogen werden. Für nicht Selbstständigerwerbende ist dies der im aktuellen Jahr gültige Record mit PreDefTypeNo = 2.'
+  - name: 'IsAnnu'
+    description: 'If = 1, this Payback is an Annuity. Replaces the paybacktypeno 30 in the new Annuity-Solution.\r\n--\r\nFlag, wenn =1 handelt es sich bei diesem Payback-Node um eine Annuität.'
+  - name: 'InstallmentAnnu'
+    description: 'Annuality-amount (Rate per Annuality-payment)\r\n--\r\nBetrag pro Annualitäts-Zahlung. Wenn Annualität vierteljährlich ist und hier 1000 drinsteht, dann bezahlt der Kunde pro Jahr 4000 CHF für Zinsen und Amortisation'
+    genericControls:
+      defColumnPos: 6
+  - name: 'MortgageLimitReductionOnly'
+    description: ''

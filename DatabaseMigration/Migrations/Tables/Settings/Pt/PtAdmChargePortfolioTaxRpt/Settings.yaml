@@ -1,0 +1,105 @@
+table:
+  name: 'PtAdmChargePortfolioTaxRpt'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargePortfolioTaxRp'
+        helpText: 'PtAdmChargePortfolioTaxRpt'
+    - german:
+        formTitle: 'PtAdmChargePortfolioTaxRp'
+        helpText: 'PtAdmChargePortfolioTaxRpt'
+  columns:
+  - name: 'TaxRptChargeID'
+    description: ''
+  - name: 'TaxRptJobNo'
+    description: ''
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ChargeJobID'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeExecJob'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TaxYear'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PartnerNo'
+    description: ''
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'PortfolioID'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'PortfolioNoEdited'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'DebitAccountID'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'ChargeAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'TaxAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'DebitAccountCurrency'
+    description: ''
+  - name: 'ExRate'
+    description: ''
+  - name: 'DebitAmountAcctCu'
+    description: ''
+  - name: 'TaxAmountAcctCu'
+    description: ''
+  - name: 'DisableBooking'
+    description: ''
+  - name: 'CalculationDate'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'BookingDate'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'ReportingDate'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'ReverseDate'
+    description: ''
+  - name: 'TransactionID'
+    description: ''
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsManualInput'
+    description: ''
+  - name: 'IsBatchJob'
+    description: ''
+  - name: 'DebitSelection'
+    description: ''

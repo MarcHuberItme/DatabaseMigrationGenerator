@@ -1,0 +1,3 @@
+view:
+  name: 'PtExternalPayeeAddressView'
+  description: 'View for getting address of exeternal Payee'

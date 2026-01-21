@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPOVATList'
+  description: '21.05.2019 SKL: Change in the SP GetPOATLIST is needed. In the line with PosDetailOld left join is required. In case when there is no old ther eis no data return.'

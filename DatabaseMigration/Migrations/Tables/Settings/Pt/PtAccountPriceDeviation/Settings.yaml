@@ -1,0 +1,82 @@
+table:
+  name: 'PtAccountPriceDeviation'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 2
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAccountBase'
+      parentRelationField: 'AccountBaseId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Price Deviation'
+    - german:
+        formTitle: 'Preisabweichung'
+    - french:
+        formTitle: 'Écart de prix'
+  columns:
+  - name: 'AccountBaseId'
+    description: 'foreign-key;  Id of PtAccountBase. This field is not allowed to be NULL. A deviation has to have an associated accountbase record.\r\nA deviation is either applied to whole account or just a particular component of an account.'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'AccountComponentId'
+    description: 'foreign-key;  Id of PtAccountCompView (View of PtAccountComponent and AsText). This field can be NULL. If this field is NULL then the deviation is supposed to be applied to whole Account.'
+    genericControls:
+      refTable: 'PtAccountCompView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'CreditDeviation'
+    description: 'true = used for all credit components\r\nfalse = used for all debit components'
+  - name: 'ValidFrom'
+    description: 'Start date of deviation validity time range'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValidTo'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'InterestRate'
+    description: 'Deviating Interest Rate of referenced Account Component'
+    genericControls:
+      defColumnPos: 2
+  - name: 'CommissionRate'
+    description: 'Deviating Commission Rate of referenced Account Component'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ProvisionRate'
+    description: 'Deviating Provision Rate of referenced Account Component'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ReasonType'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountPriceDevType'
+      refField: 'DeviationReasonType'
+      defColumnPos: 7
+  - name: 'ReasonText'
+    description: 'Individual description of the reason of the price deviation'
+    genericControls:
+      multiLine: true
+  - name: 'IsFixedInterestRate'
+    description: 'this record was built automatically, because of a defined duration on the related component. InterestRate is choosen from table PrFixedMortgageRate and is valid for the whole duration.'
+  - name: 'IsStandardPriceDeviation'
+    description: '1 = Standardpreis aus PtAccountPriceDevType'
+  - name: 'IsAbsolute'
+    description: '0 = not absolut\r\n1 = is absolut (e.g. free interest)'
+  - name: 'MinimumRate'
+    description: 'If MinimumRate is specified and current interest rate is lower than MinimumRate, this value will be used to calculate interest rate'
+  - name: 'MaximumRate'
+    description: 'If MaximumRate is specified and current interest rate is higher than MaximumRate, this value will be used to calculate interest rate'

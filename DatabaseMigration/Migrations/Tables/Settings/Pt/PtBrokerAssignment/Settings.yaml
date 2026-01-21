@@ -1,0 +1,31 @@
+table:
+  name: 'PtBrokerAssignment'
+  description: 'This table is used for determination of a broker (PtPortfolio) for a given trading place.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Broker assignment'
+    - german:
+        formTitle: 'Brokerzuordnung'
+  columns:
+  - name: 'PublicTradingPlaceId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'Priority'
+    description: ''

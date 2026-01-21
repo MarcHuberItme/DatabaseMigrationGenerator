@@ -1,0 +1,24 @@
+table:
+  name: 'AsDbJobConfigMapping'
+  description: 'Contains mappings between two different DBs. This is used by a job to correctly map Db1.FieldA to Db2.FieldB'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+  columns:
+  - name: 'ConfigurationId'
+    description: 'AsDbJobConfig FK'
+    genericControls:
+      refTable: 'AsDbJobConfig'
+      refField: 'Id'
+  - name: 'SourceField'
+    description: 'Name of the field in the source database.'
+  - name: 'DestinationField'
+    description: 'Field name in the destination DB (Finstar DB)'

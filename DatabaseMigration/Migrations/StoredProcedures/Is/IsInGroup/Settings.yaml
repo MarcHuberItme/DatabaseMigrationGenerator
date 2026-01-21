@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'IsInGroup'
+  description: 'Check if the InputParameter GroupId is a default.\r\nIf yes, check if there is any record in AsGroupMember with the InputParameter TargetRowId but without the GroupTypeId (part of primary-key of AsGroup). \r\n\r\nIf no, check if there is any entry in AsGroupMember with the InputParamter TargetRowId and the InputParameter GroupId.\r\n'

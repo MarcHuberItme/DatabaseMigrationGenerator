@@ -1,0 +1,31 @@
+table:
+  name: 'PtMLPeriodicChecksToStart'
+  description: 'Gmer Einstufung: Bei einer abweichenden Einstufung muss hier für diesen Partner \r\nein Eintrag gemacht werden.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PartnerId'
+    description: 'Id des betroffenen Partners'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PartnerNo'
+    description: 'Partnernummer des betroffenen Partners'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+  - name: 'StartDate'
+    description: 'es wird das heutige Datum eingetragen'
+  - name: 'ReasonNo'
+    description: 'es wird der Wert 30 eingetragen'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckReason'
+      refField: 'ReasonNo'

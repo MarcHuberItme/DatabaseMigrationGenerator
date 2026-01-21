@@ -1,0 +1,26 @@
+table:
+  name: 'AsInterface'
+  description: 'Parent table for the conversion of codes in external interfaces (e.g. VDF-Import)'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Name'
+    description: 'Interface name\r\nIs used for identification in the VB-Code.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'InterfaceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsInterfaceType'
+      refField: 'InterfaceTypeNo'
+      defColumnPos: 2
+      isNoUpdate: true

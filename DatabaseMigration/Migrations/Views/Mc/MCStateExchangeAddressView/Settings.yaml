@@ -1,0 +1,3 @@
+view:
+  name: 'MCStateExchangeAddressView'
+  description: 'Address records from MasterCard CSE report.'

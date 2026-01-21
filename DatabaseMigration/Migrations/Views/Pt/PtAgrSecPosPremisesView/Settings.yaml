@@ -1,0 +1,3 @@
+view:
+  name: 'PtAgrSecPosPremisesView'
+  description: 'Relation between PtAgrSecurity - RePremises'

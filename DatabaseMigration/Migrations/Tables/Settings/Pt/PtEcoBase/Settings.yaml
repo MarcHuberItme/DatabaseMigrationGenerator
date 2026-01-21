@@ -1,0 +1,82 @@
+table:
+  name: 'PtEcoBase'
+  description: 'Kategorie = fgd'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtEcoInfo'
+      parentRelationField: 'EcoId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'basic data / solvency'
+    - german:
+        formTitle: 'Grunddaten/Bonität'
+  columns:
+  - name: 'EcoId'
+    description: ''
+    genericControls:
+      refTable: 'PtEcoInfo'
+      refField: 'Id'
+  - name: 'Name'
+    description: '<firmengrunddaten>.<firmenname>'
+  - name: 'DomAdd'
+    description: '<firmengrunddaten>.<firmendomizil>.<adresszusatz>'
+  - name: 'DomStreetNo'
+    description: '<firmengrunddaten>.<firmendomizil>.<strasse>'
+  - name: 'DomZip'
+    description: '<firmengrunddaten>.<firmendomizil>.<plz>'
+  - name: 'DomTown'
+    description: '<firmengrunddaten>.<firmendomizil>.<ort>'
+  - name: 'DomCanton'
+    description: '<firmengrunddaten>.<firmendomizil>.<kanton>'
+  - name: 'DomCountry'
+    description: '<firmengrunddaten>.<firmendomizil>.<land>'
+  - name: 'PostAdd'
+    description: '<firmengrunddaten>.<firmenpostadresse>.<adresszusatz>'
+  - name: 'PostStreetNo'
+    description: '<firmengrunddaten>.<firmenpostadresse>.<strasse>'
+  - name: 'PostZip'
+    description: '<firmengrunddaten>.<firmenpostadresse>.<plz>'
+  - name: 'PostTown'
+    description: '<firmengrunddaten>.<firmenpostadresse>.<ort>'
+  - name: 'PostCanton'
+    description: '<firmengrunddaten>.<firmenpostadresse>.<kanton>'
+  - name: 'PostCountry'
+    description: '<firmengrunddaten>.<firmenpostadresse>.<land>'
+  - name: 'IsMonitored'
+    description: '<firmengrunddaten>.<monitoring selected>'
+  - name: 'MonitoredURL'
+    description: '<firmengrunddaten>.<monitoringselectedurl>'
+  - name: 'PhoneNo'
+    description: '<firmengrunddaten>.<firmentelefon>'
+  - name: 'FaxNo'
+    description: '<firmengrunddaten>.<firmenfax>'
+  - name: 'Purpose'
+    description: '<firmengrunddaten>.<firmenzweck>'
+    genericControls:
+      multiLine: true
+  - name: 'LegalStatus'
+    description: '<firmengrunddaten>.<firmenrechtsform>'
+  - name: 'CapitalText'
+    description: '<firmengrunddaten>.<firmenkapital>.<betrag>'
+  - name: 'CapitalIndication'
+    description: '<firmengrunddaten>.<firmenkapital>.<hinweis>'
+  - name: 'CapitalReleased'
+    description: '<firmengrunddaten>.<firmenkapital>.<liberierung>'
+  - name: 'CapitalTitle'
+    description: '<firmengrunddaten>.<firmenkapital>.<titel>'
+  - name: 'FirstPublDate'
+    description: '<firmengrunddaten>.<firmenersteshabpublikation>.<datum>'
+  - name: 'LastPublDate'
+    description: '<firmengrunddaten>.<firmenletzteshabpublikation>.<datum>'
+  - name: 'LastPublURL'
+    description: '<firmengrunddaten>.<firmenletzteshabpublikation>.<url>'

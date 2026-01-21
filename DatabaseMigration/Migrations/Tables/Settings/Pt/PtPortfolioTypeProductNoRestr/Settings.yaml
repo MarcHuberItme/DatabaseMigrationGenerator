@@ -1,0 +1,38 @@
+table:
+  name: 'PtPortfolioTypeProductNoRestr'
+  description: 'With this table its possible to restrict instruments for a portfoliotype'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Portfoliotype restriction'
+    - german:
+        formTitle: 'PortfolioType Restriktion'
+    - french:
+        formTitle: 'Restriction portfoliotype'
+  columns:
+  - name: 'PortfolioTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'IsNotAllowed'
+    description: '1= for this PortfolioTypeNo or this ProductNo it is not allowed to use for a stockex order. \r\nUsed for ProductNo 2071'

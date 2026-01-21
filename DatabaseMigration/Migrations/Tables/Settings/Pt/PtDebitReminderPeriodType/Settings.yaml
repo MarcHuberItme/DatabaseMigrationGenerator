@@ -1,0 +1,36 @@
+table:
+  name: 'PtDebitReminderPeriodType'
+  description: 'this table defines the period for issuing reminder based on the invoice type.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ReminderPeriod'
+        helpText: 'ReminderPeriod'
+    - german:
+        formTitle: 'ReminderPeriod'
+        helpText: 'ReminderPeriod'
+  columns:
+  - name: 'InvoiceType'
+    description: 'the type of the invoice'
+    genericControls:
+      refTable: 'AsInvoiceType'
+      refField: 'InvoiceType'
+  - name: 'Interval'
+    description: 'the standard period defined\r\n''yyyy'' as year\r\n''d'' as day\r\n''m'' as month'
+    genericControls:
+      refTable: 'AsInterval'
+      refField: 'Interval'
+  - name: 'ReminderPeriod'
+    description: 'the number of the intervals for the reminder period'
+  - name: 'SeqNo'
+    description: 'the sequence number for the same invoice type'

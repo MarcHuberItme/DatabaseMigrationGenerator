@@ -1,0 +1,26 @@
+table:
+  name: 'AsATMText'
+  description: 'This table is used to show the different language version texts displayed or printed in ATM'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ATMText'
+        helpText: 'ATMText'
+    - german:
+        formTitle: 'ATMText'
+        helpText: 'ATMText'
+  columns:
+  - name: 'TextNo'
+    description: 'The unique number of the text'
+  - name: 'Description'
+    description: 'Explains the content of TextNo'

@@ -1,0 +1,23 @@
+table:
+  name: 'PrPrivateSecurityLevel'
+  description: 'classify the securty levels that exists for a component\r\ne.g.: marketable, not easy marketable, blank'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'SecurityLevelNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Score'
+    description: 'LGD pro Gruppe'
+    genericControls:
+      defColumnPos: 2

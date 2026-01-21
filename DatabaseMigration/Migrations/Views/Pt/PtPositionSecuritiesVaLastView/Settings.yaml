@@ -1,0 +1,246 @@
+view:
+  name: 'PtPositionSecuritiesVaLastView'
+  description: 'Based on PtPositonSecuritiesView, including latest valuation data'
+frontendView:
+  name: 'PtPositionSecuritiesVaLastView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Position data'
+        helpText: 'PtPositionSecuritiesView'
+    - german:
+        formTitle: 'Daten der Positionen'
+        helpText: 'PtPositionSecuritiesView'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PositionCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsinNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+    genericControls:
+      defColumnPos: 3
+  - name: 'Quantity'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Description'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 19
+    genericControls:
+      defColumnPos: 5
+  - name: 'ReferenceData'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 6
+  - name: 'InstrumentTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicInstrumentType'
+      refField: 'InstrumentTypeNo'
+      defColumnPos: 7
+  - name: 'HasPendingOrder'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 8
+  - name: 'PublicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublic'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 9
+  - name: 'PublicDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      defColumnPos: 16
+  - name: 'ShortName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 19
+  - name: 'LongName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 300
+  - name: 'NominalCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 10
+  - name: 'VDFInstrumentSymbol'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+    genericControls:
+      defColumnPos: 11
+  - name: 'UnitNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+      defColumnPos: 12
+  - name: 'SecurityType'
+    description: ''
+    dataType: 'varchar'
+    prec: 8
+  - name: 'IssuerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ProdReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrReference'
+      refField: 'Id'
+      defColumnPos: 13
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+      defColumnPos: 14
+  - name: 'ProdLocGroupId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrLocGroupView'
+      refField: 'Id'
+      defColumnPos: 15
+  - name: 'IsToClose'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ObjectObjectSeqNo'
+    description: ''
+    dataType: 'int'
+  - name: 'ObligationObjectSeqNo'
+    description: ''
+    dataType: 'int'
+  - name: 'InsuranceObjectSeqNo'
+    description: ''
+    dataType: 'int'
+  - name: 'ObjectId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ObligationId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'InsuranceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'ObjectDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+    genericControls:
+      defColumnPos: 17
+  - name: 'PortfolioName'
+    description: 'PtPortfolio.CustomerReference'
+    dataType: 'nvarchar'
+    prec: 200
+  - name: 'VaRunId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'VaRun'
+      refField: 'Id'
+  - name: 'ValuationDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'PublicPriceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicPrice'
+      refField: 'Id'
+  - name: 'PriceDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'PriceCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'ValuationCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'Rate'
+    description: ''
+    dataType: 'float'
+  - name: 'RatePrCuVaCu'
+    description: ''
+    dataType: 'float'
+  - name: 'RatePrCuCHF'
+    description: ''
+    dataType: 'float'
+  - name: 'RatePrCurAcCur'
+    description: ''
+    dataType: 'float'
+  - name: 'MarketValueVaCu'
+    description: ''
+    dataType: 'money'
+  - name: 'MarketValueCHF'
+    description: ''
+    dataType: 'money'
+  - name: 'AccruedInterestVaCu'
+    description: ''
+    dataType: 'money'
+  - name: 'AccruedInterestCHF'
+    description: ''
+    dataType: 'money'
+  - name: 'CollateralRate'
+    description: ''
+    dataType: 'float'
+  - name: 'CollateralValueVaCu'
+    description: ''
+    dataType: 'money'
+  - name: 'CollateralValueCHF'
+    description: ''
+    dataType: 'money'
+  - name: 'PublicTradingPlaceName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 120
+  - name: 'PriceQuoteType'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicPriceQuoteType'
+      refField: 'PriceQuoteType'

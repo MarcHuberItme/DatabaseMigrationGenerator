@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetCorrPartner11'
+  description: 'to get the Correspondence assigned with the 11-address of a certain partner'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaPosFuturesWithRunId'
+  description: 'Futures Valuation for each PosQuant Position'

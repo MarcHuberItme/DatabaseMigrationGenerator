@@ -1,0 +1,25 @@
+table:
+  name: 'PsBranchLabel'
+  description: 'Contains the branch-dependen test labels for reports'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'Label'
+    uiTableDescription:
+    - english:
+        formTitle: 'Branch Labels'
+    - german:
+        formTitle: 'Filialabhängige Texte'
+  columns:
+  - name: 'Label'
+    description: 'Name of the branch-dependent label'
+    genericControls:
+      defColumnPos: 1

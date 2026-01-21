@@ -1,0 +1,52 @@
+table:
+  name: 'AsNavigationStructureMaster'
+  description: 'Master table containing e record for each Navigation Tree definition.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 75acefc4-0a56-4966-97a8-53e8b891ec08
+    visumLevel: 1
+    cacheLevel: 2
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Navigation  Master'
+    - german:
+        formTitle: 'Navigation  Master'
+  columns:
+  - name: 'RootTableName'
+    description: ''
+  - name: 'StructureName'
+    description: ''
+  - name: 'Version'
+    description: ''
+  - name: 'Status'
+    description: 'Development=1\r\nCompleted=2\r\nProduction = 4\r\nSuspended=8\r\nRetired = 16'
+  - name: 'Author'
+    description: ''
+  - name: 'DateCreated'
+    description: ''
+  - name: 'DateModified'
+    description: ''
+  - name: 'Description'
+    description: ''
+  - name: 'LangIds'
+    description: ''
+  - name: 'EditFlag'
+    description: ''
+  - name: 'LockId'
+    description: ''
+  - name: 'LockedOn'
+    description: ''
+  - name: 'LockedBy'
+    description: ''
+  - name: 'ModifiedBy'
+    description: ''
+  - name: 'NotifyOnRelease'
+    description: ''
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'ValidTo'
+    description: ''

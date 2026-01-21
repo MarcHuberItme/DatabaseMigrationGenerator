@@ -1,0 +1,84 @@
+view:
+  name: 'PtAgrServiceChargeView'
+  description: ''
+frontendView:
+  name: 'PtAgrServiceChargeView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAgrServiceChargeView'
+        helpText: 'PtAgrServiceChargeView'
+    - german:
+        formTitle: 'PtAgrServiceChargeView'
+        helpText: 'PtAgrServiceChargeView'
+    - french:
+        formTitle: 'PtAgrServiceChargeView'
+        helpText: 'PtAgrServiceChargeView'
+    - italian:
+        formTitle: 'PtAgrServiceChargeView'
+        helpText: 'PtAgrServiceChargeView'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ServiceTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtServiceNameList'
+      refField: 'ServiceTypeNo'
+      defColumnPos: 2
+  - name: 'ChargeStartDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'DebitAccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'ExpirationDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 5
+  - name: 'Rebate'
+    description: ''
+    dataType: 'float'
+    genericControls:
+      defColumnPos: 6
+  - name: 'BeginDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'PeriodOfNotice'
+    description: ''
+    dataType: 'int'
+  - name: 'Interval'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 5
+  - name: 'VersionNo'
+    description: ''
+    dataType: 'int'
+  - name: 'Remark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100

@@ -1,0 +1,30 @@
+table:
+  name: 'PtMLPeriodicCheckType'
+  description: 'Verwaltung der Checktypen einer GWG-Prüfung'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Check Type'
+    - german:
+        formTitle: 'GWG Prüfungstyp'
+    - french:
+        formTitle: 'ML Type de chèque'
+  columns:
+  - name: 'CheckTypeNo'
+    description: '- 10 voll\r\n- 20 erleichtert\r\n- 30 keine Prüfung\r\n'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Priority'
+    description: 'Priorität der Prüfung'
+    genericControls:
+      defColumnPos: 2

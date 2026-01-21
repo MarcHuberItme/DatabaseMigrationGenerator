@@ -1,0 +1,21 @@
+view:
+  name: 'PtSADPaymentView'
+  description: ''
+frontendView:
+  name: 'PtSADPaymentView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'OrderNo'
+    description: ''
+    dataType: 'int'
+  - name: 'SequenceNo'
+    description: ''
+    dataType: 'int'

@@ -1,0 +1,55 @@
+view:
+  name: 'PtEbShadowProdSettingsListView'
+  description: 'Settings for shadow products'
+frontendView:
+  name: 'PtEbShadowProdSettingsListView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ShadowProductId'
+    description: 'Shadow product id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 1
+  - name: 'IsVisibleForEBanking'
+    description: 'Define if product is visible for ebanking'
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 2
+  - name: 'CategoryId'
+    description: 'Category id'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 3
+  - name: 'CategoryAsText'
+    description: 'Category text'
+    dataType: 'nvarchar'
+    prec: 25
+    genericControls:
+      defColumnPos: 4
+  - name: 'LanguageNo'
+    description: 'Language number'
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 5
+  - name: 'IsAbsoluteTrendActive'
+    description: 'Flag if absolute performance is active'
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 6
+  - name: 'IsPerformanceActive'
+    description: 'Flag if securities performance is active'
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 7

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountNoWhenEBankingConnectionIsValid'
+  description: 'Used for validation of the account for an E-Banking contract.'

@@ -1,0 +1,28 @@
+table:
+  name: 'PtMLTransTypeNoFilter'
+  description: 'Contains transaction types that are ignored. For examples, transactions are ignored if the TransTypeNo flags are set to salary.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Ignored Trans. Types'
+    - german:
+        formTitle: 'Ignorierte Trans. Arten'
+    - french:
+        formTitle: 'Types de trans. ignorées'
+    - italian:
+        formTitle: 'Tipi di trans. ignorati'
+  columns:
+  - name: 'TransTypeNo'
+    description: 'Transaction type number'
+  - name: 'IsTransIgnored'
+    description: 'Indicates if the transaction type is ignored'
+  - name: 'Description'
+    description: 'Optional description'

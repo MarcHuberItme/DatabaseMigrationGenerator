@@ -1,0 +1,49 @@
+table:
+  name: 'PtTransSxTSSchema'
+  description: 'This table is used to define which fields in MsnTSOrders are used for which order XML document'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtTransSxTSSchema'
+    - german:
+        formTitle: 'PtTransSxTSSchema'
+    - french:
+        formTitle: 'PtTransSxTSSchema'
+  columns:
+  - name: 'FieldName'
+    description: 'the name of the field in MsnTSOrders'
+  - name: 'FinStarFieldName'
+    description: 'The field name used in FinStar domain'
+  - name: 'SeqNo'
+    description: 'just for the returning order'
+  - name: 'OrderSubmit'
+    description: '"T", field is used for normal order submit\r\n"F", field is not used for normal order submit'
+  - name: 'OrderDeleteSubmit'
+    description: '"T" and "F"'
+  - name: 'ConditionalSubmit'
+    description: '"T" and "F" for conditional order submit'
+  - name: 'ConditionalDeleteSubmit'
+    description: '"T" and "F"'
+  - name: 'OrderMessage'
+    description: '"T" and "F"'
+  - name: 'ConditionalMessage'
+    description: '"T" and "F"'
+  - name: 'TradeMessage'
+    description: ''
+  - name: 'TradeSlipMessage'
+    description: ''
+  - name: 'OrderCallback'
+    description: ''
+  - name: 'TradeCallback'
+    description: ''
+  - name: 'TradeSlipCallback'
+    description: ''

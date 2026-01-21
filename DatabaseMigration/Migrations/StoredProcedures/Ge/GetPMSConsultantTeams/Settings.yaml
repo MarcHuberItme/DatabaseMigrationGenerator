@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPMSConsultantTeams'
+  description: 'Returns list of consultant teams for PMS Partners'

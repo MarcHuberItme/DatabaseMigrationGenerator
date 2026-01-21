@@ -1,0 +1,39 @@
+table:
+  name: 'BpTaskHaTokenCtrl'
+  description: 'JCS High Availability job configuration'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'JCS HA Job Config'
+    - german:
+        formTitle: 'JCS HA Job Config'
+    - french:
+        formTitle: 'JCS HA Job Config'
+    - italian:
+        formTitle: 'JCS HA Job Config'
+  columns:
+  - name: 'TaskId'
+    description: 'The TaskId'
+    genericControls:
+      refTable: 'BpTask'
+      refField: 'Id'
+  - name: 'HasToken'
+    description: 'When is set to true, this HA-Job will be executed.'
+  - name: 'LastCycleStart'
+    description: ''
+  - name: 'LastCycleEnd'
+    description: ''
+  - name: 'LastError'
+    description: ''
+  - name: 'LastErrorMessage'
+    description: ''
+    genericControls:
+      multiLine: true

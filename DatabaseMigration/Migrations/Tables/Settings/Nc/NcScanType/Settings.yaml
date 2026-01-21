@@ -1,0 +1,23 @@
+table:
+  name: 'NcScanType'
+  description: 'Possible scan types. Expl.: Customer base checks, Transaction-checks, SHAB-checks etc.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0ebe92b4-009e-4d5f-b882-c8d9daf72042
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'NameMatching Scan Types'
+    - german:
+        formTitle: 'Namematching Scan-Typen'
+  columns:
+  - name: 'Type'
+    description: 'Type for a scan. Expl.: 1 (KdCompliance, customer base check), 2 (Transaction-checks) etc.'
+    genericControls:
+      defColumnPos: 1

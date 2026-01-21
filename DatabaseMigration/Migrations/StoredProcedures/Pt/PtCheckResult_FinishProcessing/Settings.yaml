@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtCheckResult_FinishProcessing'
+  description: 'Finalizes processing for PEP-Check by detecting the partners that did not match any more.'

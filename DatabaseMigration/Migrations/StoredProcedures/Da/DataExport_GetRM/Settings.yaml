@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DataExport_GetRM'
+  description: 'Get Information about the Relationship Manager of a given Partner. \r\nIs used by DocWiz DataExport'

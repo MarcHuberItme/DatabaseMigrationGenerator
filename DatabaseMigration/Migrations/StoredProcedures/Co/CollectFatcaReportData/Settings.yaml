@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CollectFatcaReportData'
+  description: '2016-02-02/ram: Aufnahme Selektion für die Zahlungen (Payments)\r\n2016-09-15/ram: Aufnahme Saldierungsdatum Depot/Konto => AccountClosed\r\n2016-09-29/ram: Aufnahme Selektion für FATCA503 (Payments)\r\n2018-03-01/ram: Selektion auf VaRun.RunTypeNo geändert (alt: >1 )\r\n2018-03-12/skl: Selektion für FATCA503 korrigiert (Problem zwischen Wert und Währung. Brutto Wert muss geliefert werden)\r\n2023-08-02/FIN-9318/daga: condition added for PtTransItem HdVersionNo between 1 and 999999998\r\n2025-07-15/FIN-13596/tsh: Check IsAiaRelevant also on portfolio, not just on accounts.\r\n2025-07-23/FIN-13594/tsh: Bring just partners with accounts/depots or that are in relation 20+70.'

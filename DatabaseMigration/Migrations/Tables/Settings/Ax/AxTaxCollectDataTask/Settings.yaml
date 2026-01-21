@@ -1,0 +1,55 @@
+table:
+  name: 'AxTaxCollectDataTask'
+  description: 'sql statements for taxsource'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'tax source sql statements'
+    - german:
+        formTitle: 'TaxSource SQL statements'
+  columns:
+  - name: 'SequenceNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'TaskName'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'SqlCommand'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IsSuspended'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'StartDate'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'EndDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'ExecStart'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'ExecCompleted'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+      isNoUpdate: true
+  - name: 'Comment'
+    description: ''

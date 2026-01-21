@@ -1,0 +1,69 @@
+table:
+  name: 'PtAccountClosingPeriodCorrHist'
+  description: 'Definition of the closing periods correction history'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Closing Period corr. hist'
+    - german:
+        formTitle: 'Abschlussperi Korr Histor'
+    - french:
+        formTitle: 'Période de clôture corr.'
+  columns:
+  - name: 'AccountClosingPeriodId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountClosingPeriod'
+      refField: 'Id'
+  - name: 'CorrectionDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'DebitInterestCorrection'
+    description: 'Manual Correction field for Debit Interest Amounts.\r\n'
+  - name: 'IsDebitCorrectionAbs'
+    description: 'Rule for Booking:\r\nThis value effects the amount booked at the time of closing.\r\nFalse  ==  DebitInterestSum + DebitInterestCorrection + DebitInterestAdjustment\r\nTrue == DebitInterestCorrection \r\n-----------------------------------------------------------------------------------------------------\r\nRule for Report Display:\r\nFalse  ==  Debit Interest = Values from PtAccountClosingResult.InterestAmount  (where IsDebit = 1)\r\n	Adjustments = PtAccountClosingPeriod.DebitInterestAdjustment\r\n	Correction = PtAccountClosingPeriod.DebitInterestCorrection \r\n\r\nTrue == 	Debit Interest = Values from PtAccountClosingResult.InterestAmount  (where IsDebit = 1)\r\n	Adjustment = PtAccountClosingPeriod.DebitInterestAdjustment\r\n	Correction = DebitInterestCorrection - (PtAccountClosingPeriod.DebitInterestSum + PtAccountClosingPeriod.DebitInterestAdjustment)'
+  - name: 'CreditInterestCorrection'
+    description: 'Manual Correction field for Credit Interest Amounts'
+  - name: 'IsCreditCorrectionAbs'
+    description: 'Rule for Booking:\r\nThis value effects the amount booked at the time of closing.\r\nFalse  ==  CreditInterestSum + CreditInterestCorrection + CreditInterestAdjustment\r\nTrue == CreditInterestCorrection\r\n-----------------------------------------------------------------------------------------------------\r\nRule for Report Display:\r\nFalse  ==  Credit Interest = Values from PtAccountClosingResult.InterestAmount  (where IsDebit = 0)\r\n	Adjustments = PtAccountClosingPeriod.CreditInterestAdjustment\r\n	Correction = PtAccountClosingPeriod.CreditInterestCorrection\r\n\r\nTrue == 	Credit Interest = Values from PtAccountClosingResult.InterestAmount  (where IsDebit = 0)\r\n	Adjustment = PtAccountClosingPeriod.CreditInterestAdjustment\r\n	Correction = CreditInterestCorrection - (PtAccountClosingPeriod.CreditInterestSum + PtAccountClosingPeriod.CreditInterestAdjustment)\r\n'
+  - name: 'ExpensesCorrection'
+    description: 'Manual Correction field for Expenses Amounts'
+  - name: 'IsExpenseCorrectionAbs'
+    description: 'Rule for Booking:\r\nThis value effects the amount booked at the time of closing.\r\nFalse  ==  TransactionalExpensesSum + PostFinanceExpensesSum + RuleBasedExpensesSum + ExpensesCorrection + ExpensesAdjustment\r\nTrue == ExpensesCorrection\r\n-----------------------------------------------------------------------------------------------------\r\nRule for Report Display:\r\nFalse  ==  Expenses = TransactionalExpensesSum + PostFinanceExpensesSum + RuleBasedExpensesSum \r\n	Adjustments = ExpensesAdjustment\r\n	Correction = ExpensesCorrection \r\n\r\nTrue == Expenses = TransactionalExpensesSum + PostFinanceExpensesSum + RuleBasedExpensesSum \r\n	Adjustment = ExpensesAdjustment\r\n	Correction = ExpensesCorrection - ( TransactionalExpensesSum + PostFinanceExpensesSum + RuleBasedExpensesSum + ExpensesAdjustment)\r\n'
+  - name: 'SpecialCommCorrection'
+    description: 'Manual Correction field for Commission Amounts.'
+  - name: 'IsSpecialCommCorrectionAbs'
+    description: 'Rule for Booking:\r\nThis value effects the amount booked at the time of closing.\r\nFalse  ==  SpecialCommSum + SpecialCommCorrection + SpecialCommAdjustment\r\nTrue == SpecialCommCorrection\r\n-----------------------------------------------------------------------------------------------------\r\nRule for Report Display:\r\nFalse  ==  VST = PtAccountClosingPeriod.SpecialCommSum\r\n	Adjustments = SpecialCommAdjustment\r\n	Correction = SpecialCommCorrection\r\n\r\nTrue == VST = PtAccountClosingPeriod.SpecialCommSum\r\n	Adjustment = SpecialCommAdjustment\r\n	Correction = SpecialCommCorrection - ( SpecialCommSum + SpecialCommAdjustment )'
+  - name: 'BonusCorrection'
+    description: 'Bonus Correction Amount'
+  - name: 'IsBonusCorrectionAbs'
+    description: 'Rule for Booking:\r\nThis value effects the amount booked at the time of closing.\r\nFalse  ==  PtAccountClosingPeriod.Bonus + BonusCorrection + BonusAdjustment\r\nTrue == BonusCorrection\r\n-----------------------------------------------------------------------------------------------------\r\nRule for Report Display:\r\nFalse  ==  Bonus = PtAccountClosingPeriod.Bonus\r\n	Adjustments = BonusAdjustment\r\n	Correction = BonusCorrection\r\n\r\nTrue == Bonus = PtAccountClosingPeriod.Bonus\r\n	Adjustment = BonusAdjustment\r\n	Correction = BonusCorrection- ( PtAccountClosingPeriod.Bonus + BonusAdjustment )'
+  - name: 'BonusRuleOption'
+    description: 'Bonus rules resctitions can be ignored for some prevelidged customers (like board members / CEOs)'
+    genericControls:
+      refTable: 'PtBonusAccountOption'
+      refField: 'BonusTypeNo'
+  - name: 'WithdrawCommissionCorrection'
+    description: ''
+  - name: 'IsWithdrawCommCorrectionAbs'
+    description: ''
+  - name: 'DebitFeeCorrection'
+    description: ''
+  - name: 'IsDebitFeeCorrectionAbsolute'
+    description: ''
+  - name: 'CreditFeeCorrection'
+    description: ''
+  - name: 'IsCreditFeeCorrectionAbsolute'
+    description: ''
+  - name: 'Remarks'
+    description: ''
+    genericControls:
+      multiLine: true

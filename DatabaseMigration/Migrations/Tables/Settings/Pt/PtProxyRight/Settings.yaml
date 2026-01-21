@@ -1,0 +1,27 @@
+table:
+  name: 'PtProxyRight'
+  description: 'authority to represent somebody else alone (singleproxy) or with others (collectiveproxy) HISTORY darf auf keinen Fall ausgeschaltet werden ! Nachweis des Bevollmächtigten Registers.'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Proxy Right'
+    - german:
+        formTitle: 'Vollmachtsberechtigung'
+  columns:
+  - name: 'ProxyRightNo'
+    description: 'candidate-key'
+    genericControls:
+      isNoUpdate: true
+  - name: 'HasRight'
+    description: '1 = positive Vollmacht (d.h. defaultmässig Vollmachten vorhanden)\r\n0 = negative Vollmacht (d.h. defaultmässig keine Vollmacht)'
+  - name: 'IsCollective'
+    description: 'designates a collective right\r\n1 = collective right\r\n0 = not a collective right\r\n'

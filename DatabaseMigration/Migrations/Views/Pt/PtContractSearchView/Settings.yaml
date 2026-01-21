@@ -1,0 +1,271 @@
+view:
+  name: 'PtContractSearchView'
+  description: ''
+frontendView:
+  name: 'PtContractSearchView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ContractNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ContractType'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtContractType'
+      refField: 'ContractType'
+      defColumnPos: 2
+  - name: 'AgentId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'InternalRemark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      multiLine: true
+  - name: 'ExternalRemark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+    genericControls:
+      multiLine: true
+  - name: 'OrderDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'Amount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'DateFrom'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 5
+  - name: 'DateTo'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'CommissionType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtCommissionType'
+      refField: 'CommissionTypeNo'
+  - name: 'InterestRate'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+  - name: 'InterestPaymentDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'InterestPaymentPeriod'
+    description: ''
+    dataType: 'smallint'
+  - name: 'InterestPracticeType'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsInterestPractice'
+      refField: 'PracticeType'
+  - name: 'WithholdingTaxType'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsWithholdingTaxType'
+      refField: 'WithholdingTaxType'
+  - name: 'VrxData'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 2000
+    genericControls:
+      multiLine: true
+  - name: 'Status'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtContractStatus'
+      refField: 'ContractStatusNo'
+      defColumnPos: 11
+  - name: 'SequenceNo'
+    description: ''
+    dataType: 'smallint'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 7
+  - name: 'TerminationDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ChangeMinNoticeDays'
+    description: ''
+    dataType: 'int'
+  - name: 'FxSellCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 12
+  - name: 'FxBuyCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 13
+  - name: 'FxTransId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ConfirmationUser'
+    description: ''
+    dataType: 'varchar'
+    prec: 20
+  - name: 'StartDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'AdjustAmtOnRenew'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsRenewed'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsCapitalModified'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'DeTourGroup'
+    description: ''
+    dataType: 'varchar'
+    prec: 32
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'CapitalAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 10
+  - name: 'BranchNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 14
+  - name: 'BCapitalAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'BPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsMigrated'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsContractReset'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'ValueDateInterestChange'
+    description: ''
+    dataType: 'datetime'
+  - name: 'EmissionsabgabeAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'EmissionsabgabeCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'IsEmissionsabgabeCharged'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'ContactMediaNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsContactMedia'
+      refField: 'MediaNo'
+  - name: 'AdditionalInfo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+  - name: 'FxBuyCurrMktRate'
+    description: ''
+    dataType: 'float'
+  - name: 'FxSellCurrMktRate'
+    description: ''
+    dataType: 'float'
+  - name: 'FxMarginEquivAmount'
+    description: ''
+    dataType: 'money'

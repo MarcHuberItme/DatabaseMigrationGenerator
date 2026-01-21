@@ -1,0 +1,33 @@
+table:
+  name: 'PtAdmChargeValSelected'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargeValSelected'
+        helpText: 'PtAdmChargeValSelected'
+    - german:
+        formTitle: 'PtAdmChargeValSelected'
+        helpText: 'PtAdmChargeValSelected'
+  columns:
+  - name: 'JobID'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeExecJob'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'VaRunID'
+    description: ''
+    genericControls:
+      refTable: 'VaRun'
+      refField: 'Id'
+      defColumnPos: 2

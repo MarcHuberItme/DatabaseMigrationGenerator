@@ -1,0 +1,50 @@
+table:
+  name: 'ReBuildingQualityDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'ReBuilding'
+      parentRelationField: 'BuildingId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'BuildingQualityDetail'
+        helpText: 'BuildingQualityDetail'
+    - german:
+        formTitle: 'Bauqualität Detail'
+        helpText: 'Bauqualität Detail'
+    - french:
+        formTitle: 'Qualité de onstruire'
+        helpText: 'Construire des détails de qualité'
+    - italian:
+        formTitle: 'Qualità di costruzione'
+        helpText: 'Costruisci dettagli di qualità'
+  columns:
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'QualityDetailType'
+    description: ''
+    genericControls:
+      refTable: 'ReBuildingQualityDetailType'
+      refField: 'QualityDetailType'
+      defColumnPos: 1
+  - name: 'ChoiceType'
+    description: ''
+    genericControls:
+      refTable: 'ReBuildingQualityChoiceType'
+      refField: 'Id'
+      defColumnPos: 2

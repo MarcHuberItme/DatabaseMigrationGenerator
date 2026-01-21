@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'UpdateMortgageAdvicePrintStatus'
+  description: 'used to update PrintStatus in PostProcessingTask of MortgageAdvice report. 11.10.2007/mct\r\n2012-05-04/ram: add ''TREUHANDAMORT''\r\n2012-05-15/ram: add ''OR M.DebitAccountNo=@AccountNo'''

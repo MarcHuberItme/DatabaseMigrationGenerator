@@ -1,0 +1,51 @@
+table:
+  name: 'PtPrintFailedOrder'
+  description: 'Intermediate table to enhance the printing with the reportconsole.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'Id'
+    description: ''
+  - name: 'EvaluationDate'
+    description: 'DateTime when the record was inserted'
+  - name: 'PrintStatus'
+    description: 'Status of the print processing\r\n	0 = not printed\r\n	1 = printed'
+  - name: 'CorrItemId'
+    description: 'Id of the table ''AsCorrItem'', not referenced'
+  - name: 'OrderId'
+    description: 'Id of the table ''PtPaymentOrder'''
+  - name: 'OrderNo'
+    description: 'OrderNo of the reported Paymentorder'
+  - name: 'OrderType'
+    description: 'Type of the paymentorder'
+  - name: 'OrderStatus'
+    description: 'Status of the paymentorder'
+  - name: 'ReportName'
+    description: 'name of the report to be printed'
+  - name: 'OrderDate'
+    description: 'Corresponds to the same field in ''PtPaymentOrder'''
+  - name: 'ValueDate'
+    description: 'Corresponds to the same field in ''PtPaymentOrder'''
+  - name: 'ScheduleDate'
+    description: 'Corresponds to the same field in ''PtPaymentOrder'''
+  - name: 'AccountId'
+    description: ''
+  - name: 'AccountNo'
+    description: ''
+  - name: 'AccountNoEdited'
+    description: ''
+  - name: 'AccountNoIBANForm'
+    description: ''
+  - name: 'PaymentAmount'
+    description: ''
+  - name: 'Currency'
+    description: ''
+  - name: 'Charges'
+    description: ''

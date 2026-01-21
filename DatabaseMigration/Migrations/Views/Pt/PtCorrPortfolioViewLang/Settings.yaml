@@ -1,0 +1,3 @@
+view:
+  name: 'PtCorrPortfolioViewLang'
+  description: 'Based on PtPortfolio, but enriched by the correspondence of the target address.'

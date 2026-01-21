@@ -1,0 +1,28 @@
+table:
+  name: 'PtServiceNameList'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtServiceNameList'
+        helpText: 'PtServiceNameList'
+    - german:
+        formTitle: 'PtServiceNameList'
+        helpText: 'PtServiceNameList'
+  columns:
+  - name: 'ServiceTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'WithNode10'
+    description: ''

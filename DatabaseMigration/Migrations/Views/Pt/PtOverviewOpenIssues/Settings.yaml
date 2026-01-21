@@ -1,0 +1,3 @@
+view:
+  name: 'PtOverviewOpenIssues'
+  description: '2025-03-19: add field Oi.Id\r\ndelete ''AND Lang.LanguageNo = 2'''

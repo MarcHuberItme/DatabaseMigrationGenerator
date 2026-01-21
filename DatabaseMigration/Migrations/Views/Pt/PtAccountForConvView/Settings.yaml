@@ -1,0 +1,3 @@
+view:
+  name: 'PtAccountForConvView'
+  description: 'View of all finstar accounts. \r\nNeeded to find out the accounts to convert from a product in a new one.'

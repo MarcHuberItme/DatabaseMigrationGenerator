@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtPaymentOrderDetailUpdateAccountNo'
+  description: 'Updates SenderAccountNo in PtPaymentOrderDetail to match the SenderAccountNo in PtPaymentOrder'

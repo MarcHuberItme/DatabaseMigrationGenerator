@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'IbAuth_GetMobileCodeData'
+  description: 'Returns all relevant mobile code information of the specified secure list (used by EbAuthService .NET).'

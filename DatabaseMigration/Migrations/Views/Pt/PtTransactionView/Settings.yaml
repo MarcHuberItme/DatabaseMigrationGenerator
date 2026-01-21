@@ -1,0 +1,57 @@
+view:
+  name: 'PtTransactionView'
+  description: 'verwendet in frmTransaction Form - zum Bearbeiten von Transaktionen (z.B. wenn Bonitätsprüfung nicht erfolgreich war)'
+frontendView:
+  name: 'PtTransactionView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TransTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+      defColumnPos: 4
+  - name: 'OrderMediaNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransOrderMedia'
+      refField: 'OrderMediaNo'
+  - name: 'TransDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TransDateTime'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ProcessStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ValueCheck'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'RealDate'
+    description: ''
+    dataType: 'datetime'

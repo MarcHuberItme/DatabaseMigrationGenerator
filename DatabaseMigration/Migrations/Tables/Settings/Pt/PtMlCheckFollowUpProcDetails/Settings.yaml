@@ -1,0 +1,54 @@
+table:
+  name: 'PtMlCheckFollowUpProcDetails'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ProcessId'
+    description: ''
+    genericControls:
+      refTable: 'PtMlCheckFollowUpProcesses'
+      refField: 'Id'
+  - name: 'CorrectedFieldTable'
+    description: ''
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'CorrectedFieldName'
+    description: 'wird übernommen aus der jeweiligen Daten-/ ConfigTabelle'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'OriginalRecordId'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'OriginalTableName'
+    description: 'Name der Ursprungstabelle'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+      isNoUpdate: true
+  - name: 'OriginalFieldName'
+    description: 'Name des Feldes in der Ursprungstabelle'
+    genericControls:
+      isNoUpdate: true
+  - name: 'OriginalValue'
+    description: 'Datum an welchem der Prozess abgeschlossen wurde'
+    genericControls:
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'CorrectedValue'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+      isNoUpdate: true

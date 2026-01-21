@@ -1,0 +1,39 @@
+table:
+  name: 'CyPosition'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TradeBookId'
+    description: 'Trade Book Identification'
+    genericControls:
+      refTable: 'CyTradeBook'
+      refField: 'Id'
+  - name: 'TradeInstrument'
+    description: '1 - Forex\r\n2 - Bill\r\n'
+    genericControls:
+      refTable: 'CyPaymentInstrument'
+      refField: 'PaymentInstrumentNo'
+  - name: 'Currency'
+    description: 'ISIN symbol for currency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'SettlementDate'
+    description: 'Settlement date defines the settlement date of the transaction to take place.\r\nIt can current date or future date'
+  - name: 'BookBalance'
+    description: 'Book balance in foreign currency'
+  - name: 'BookValue'
+    description: 'Value of the currency after applying Trader Spread'
+  - name: 'ValuationRate'
+    description: 'Rate of currency at the time of valuation'
+  - name: 'ValuationValue'
+    description: 'Value at the time of valuation'
+  - name: 'TraderSpread'
+    description: 'Difference of the value earned by the trader'

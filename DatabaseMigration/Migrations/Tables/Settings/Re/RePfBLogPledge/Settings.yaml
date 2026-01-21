@@ -1,0 +1,44 @@
+table:
+  name: 'RePfBLogPledge'
+  description: 'PledgeRecords of Pfandbriefbank Logs'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'LogPledge'
+    - german:
+        formTitle: 'Pfandregister Log'
+  columns:
+  - name: 'LogId'
+    description: 'Relation to RePfBLog'
+    genericControls:
+      refTable: 'RePfBLog'
+      refField: 'Id'
+  - name: 'MemberUniqueKey'
+    description: 'MemberUniqueKey of the PledgeRegister\r\nePledge/ePledge_Data/ePledgeLog/PledgeRegisterLog/MemberUniqueKey'
+  - name: 'PledgeRegisterNo'
+    description: 'Number of the PledgeRegister\r\nePledge/ePledge_Data/ePledgeLog/PledgeRegisterLog/PledgeRegisterNo'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PledgeRegisterPartNo'
+    description: 'PartNumber of the PledgeRegister\r\nePledge/ePledge_Data/ePledgeLog/PledgeRegisterLog/PledgeRegisterPartNo'
+    genericControls:
+      defColumnPos: 2
+  - name: 'UpdateStatus'
+    description: 'Status of the PledgeRegister\r\nePledge/ePledge_Data/ePledgeLog/PledgeRegisterLog/UpdateStatus'
+    genericControls:
+      defColumnPos: 3
+  - name: 'UpdateMessage'
+    description: 'UpdateMessage corresponding to UpdateStatus\r\nePledge/ePledge_Data/ePledgeLog/PledgeRegisterLog/UpdateMessage'
+    genericControls:
+      defColumnPos: 4
+  - name: 'HasErrors'
+    description: 'True if UpdateStatus <> 2000'
+    genericControls:
+      defColumnPos: 5

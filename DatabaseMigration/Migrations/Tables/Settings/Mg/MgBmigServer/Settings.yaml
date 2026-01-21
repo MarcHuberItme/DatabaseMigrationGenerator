@@ -1,0 +1,45 @@
+table:
+  name: 'MgBmigServer'
+  description: 'configuration of backmigration queue engine'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'LogicalName'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ServerName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'QueueName'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'RemoteHost'
+    description: 'IP address of the remote host'
+    genericControls:
+      defColumnPos: 4
+  - name: 'RemotePort'
+    description: 'Port Number of the remote host'
+    genericControls:
+      defColumnPos: 5
+  - name: 'SunNo'
+    description: 'communication number for vrx'
+  - name: 'VrxTimeout'
+    description: 'Timeout in milliseconds for vrx'
+    minValue: '1000'
+    maxValue: '1000000'
+  - name: 'ShareQueue'
+    description: 'share mode for the queue 0 = do not share, 1= allow share'
+  - name: 'QueueTimeout'
+    description: 'Queue Timeout'
+  - name: 'BufferToFile'
+    description: ''

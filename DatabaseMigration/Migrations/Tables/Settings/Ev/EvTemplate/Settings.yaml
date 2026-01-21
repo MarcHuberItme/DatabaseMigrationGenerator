@@ -1,0 +1,90 @@
+table:
+  name: 'EvTemplate'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'TemplateNo'
+    uiTableDescription:
+    - english:
+        formTitle: 'Event Template'
+    - german:
+        formTitle: 'Ereignisvorlage'
+    - french:
+        formTitle: 'Modèle d''événement'
+  columns:
+  - name: 'TemplateNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TemplateGroupNo'
+    description: ''
+    genericControls:
+      refTable: 'EvTemplateGroup'
+      refField: 'TemplateGroupNo'
+      defColumnPos: 2
+  - name: 'TemplateStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'EvTemplateStatus'
+      refField: 'TemplateStatusNo'
+      defColumnPos: 3
+  - name: 'TransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+      defColumnPos: 4
+  - name: 'PaymentTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPaymentType'
+      refField: 'PaymentTypeNo'
+  - name: 'TemplateAddInfoCode'
+    description: ''
+    genericControls:
+      refTable: 'EvTemplateAddInfo'
+      refField: 'TemplateAddInfoCode'
+      defColumnPos: 5
+  - name: 'PositionCalcTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPositionCalcType'
+      refField: 'PositionCalcTypeNo'
+  - name: 'OnlyNotification'
+    description: ''
+  - name: 'NotificationTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'EvNotificationType'
+      refField: 'NotificationTypeNo'
+  - name: 'DefaultMailControlTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'EvMailControlType'
+      refField: 'MailControlTypeNo'
+  - name: 'OnlyPtPositionIncome'
+    description: ''
+  - name: 'CalcWithholdingTax'
+    description: ''
+  - name: 'ProfileName'
+    description: ''
+  - name: 'Comment'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'PMSFunctionCode'
+    description: 'functioncode passing to a pms system (netfolio) to recognize the transaction'
+    genericControls:
+      defColumnPos: 6
+  - name: 'OnlyPtPositionIncomeWithReport'
+    description: ''

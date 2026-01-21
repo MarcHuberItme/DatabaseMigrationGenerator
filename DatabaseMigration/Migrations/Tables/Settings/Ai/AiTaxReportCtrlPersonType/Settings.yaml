@@ -1,0 +1,35 @@
+table:
+  name: 'AiTaxReportCtrlPersonType'
+  description: 'Controlling Person Type by Passive and Trusts\r\nit correpsonds to the Ednum in CRS XSD: CrsCtrlgPersonType_EnumType\r\nCurrently with values from CRS801 - CRS813'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Controlling Person Type'
+    - german:
+        formTitle: 'Controlling Person Type'
+    - french:
+        formTitle: 'Contrôle type de person'
+  columns:
+  - name: 'CtrlgPersonTypeNo'
+    description: 'Internal CodeNo fpr the Controlling Person Type'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TaxProgramNo'
+    description: 'TaxProgramNo to which it refers to (FATCA, AIA, etc)'
+    genericControls:
+      refTable: 'AiTaxProgram'
+      refField: 'TaxProgramNo'
+      defColumnPos: 2
+  - name: 'Code'
+    description: 'Controlling Person Type code which will be used in XML file and is defined in the XSD under CrsCtrlgPersonType_EnumType\r\nCurrently with values from CRS801 - CRS813'
+    genericControls:
+      defColumnPos: 3

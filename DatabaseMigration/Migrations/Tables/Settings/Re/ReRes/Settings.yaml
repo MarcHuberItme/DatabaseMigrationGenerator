@@ -1,0 +1,66 @@
+table:
+  name: 'ReRes'
+  description: 'FIS-2000:GR_VORM'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Reservation'
+    - german:
+        formTitle: 'Vormerkung'
+    - french:
+        formTitle: 'réserve'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ResTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReResType'
+      refField: 'ResTypeNo'
+      defColumnPos: 1
+  - name: 'StipulationDate'
+    description: 'valid to in case of stipulation of a time limit (Stipulation Flag has to be true if a date is entered in that field)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Stipulation'
+    description: 'befristet'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ForValuation'
+    description: 'FIS-2000: STZ_RELE_CD'
+    genericControls:
+      refTable: 'ReEnvironmentAddValuation'
+      refField: 'ValuationNo'
+      defColumnPos: 6
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Amount'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 5

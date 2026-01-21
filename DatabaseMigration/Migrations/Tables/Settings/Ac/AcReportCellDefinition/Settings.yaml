@@ -1,0 +1,54 @@
+table:
+  name: 'AcReportCellDefinition'
+  description: 'This table contains the cell definitions'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 2
+    physicalDelete: true
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Report cell definition'
+    - german:
+        formTitle: 'Report Zellendefinitionen'
+  columns:
+  - name: 'ReportId'
+    description: 'Report id'
+    genericControls:
+      refTable: 'AcReport'
+      refField: 'Id'
+  - name: 'CellName'
+    description: 'Cell name'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PageNo'
+    description: 'Sheet number'
+    minValue: '1'
+  - name: 'Col'
+    description: 'Excel column number'
+    minValue: '1'
+  - name: 'Row'
+    description: 'Excel row number'
+    minValue: '1'
+  - name: 'ValueFieldName'
+    description: 'Value field name'
+  - name: 'RuleList'
+    description: 'Rule list'
+  - name: 'CriteriaKeyList'
+    description: 'ARS instruction'
+  - name: 'CellNo'
+    description: 'Cell Number'
+  - name: 'PageName'
+    description: ''
+  - name: 'RoundingRule'
+    description: 'To round the value by using the FinStar Numeric Rounding Module'
+    genericControls:
+      refTable: 'AsRoundingRule'
+      refField: 'RoundingRule'
+  - name: 'DivisionFactor'
+    description: 'To obtain the result in 1,000(s) or 1,000,000(s)\r\nIn case of zero , The division factor will not be appliied'

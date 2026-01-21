@@ -1,0 +1,35 @@
+table:
+  name: 'PtMLSQLs'
+  description: 'This table is used to store the SQL statements to be executed to maintain the\r\nMoneyLaunderSuspect field of the table PtProfile.\r\n\r\nExecution Plan:\r\n\r\nFor the purpose an additional field ''ProxySuspectFactor'' will be introduced in the PtProfile.\r\nThe purpose of this field is to reduce the database activity as well as to maintain the original data as long as possible, before the new defintion of the Partners is ready, when updating the MoneyLaunderSupect of the partners in batch process.\r\n\r\n1. Set ProxySuspect to 0 where it is not 0.\r\n2. Set ProxySuspect to 2 where it is matching criteria for 2.\r\n3. Set ProxySuspect to 1 where it is matching criteria for 1.\r\n4. Mover ProxySuspect to real field where it is not equal to to real field.\r\n1.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+  columns:
+  - name: 'CategoryNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ExecutionSequence'
+    description: 'This field determines the execution order of the SQLs.\r\nSQLs will be executed in the ascending order of this fields.\r\nThese SQLs only means to update the MoneyLaunderingSuspect field of the table PtProfile.\r\n\r\n'
+    genericControls:
+      defColumnPos: 2
+  - name: 'SuspectPoints'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Comments'
+    description: 'The description about the SQL Statement.'
+    genericControls:
+      multiLine: true
+      defColumnPos: 4
+  - name: 'SQLDescription'
+    description: 'This field will be holding the text (Script) of the SQL, to be executed.\r\nWhere necessary the SQL statement will be having a place holder in\r\nthe form of <<...>> which will be replaced by the list of Suspicious countries\r\non run time.'
+    genericControls:
+      multiLine: true

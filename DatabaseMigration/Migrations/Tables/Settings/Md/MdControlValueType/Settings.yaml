@@ -1,0 +1,14 @@
+table:
+  name: 'MdControlValueType'
+  description: 'Data Types of property values'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: d18c2bae-7838-4b83-a18e-29041114c63e
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ValueType'
+    description: 'Possible Type of control value'

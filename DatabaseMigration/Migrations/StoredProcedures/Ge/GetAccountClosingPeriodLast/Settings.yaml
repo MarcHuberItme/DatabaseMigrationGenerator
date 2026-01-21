@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountClosingPeriodLast'
+  description: '--Author : abdul nasir khan (12-Aug-2004)\r\n--Purpose : This function returns the last Closing Period (PtAccountClosingPeriod) \r\n--Modified : 12-Aug-2004 / anasir'

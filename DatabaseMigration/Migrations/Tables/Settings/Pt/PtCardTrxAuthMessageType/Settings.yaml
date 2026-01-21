@@ -1,0 +1,36 @@
+table:
+  name: 'PtCardTrxAuthMessageType'
+  description: 'Supported message types for card transaction authorization.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    descField: 'MessageTypeIdentifier;Protocol'
+    uiTableDescription:
+    - english:
+        formTitle: 'Message Type'
+        helpText: 'Message Type'
+    - german:
+        formTitle: 'Meldungstyp'
+        helpText: 'Meldungstyp'
+  columns:
+  - name: 'MessageTypeIdentifier'
+    description: 'Message type identifier, unique per protocol'
+    genericControls:
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'Protocol'
+    description: 'Protocol'
+    genericControls:
+      defColumnPos: 2
+      noUpdatePos: 2
+  - name: 'Description'
+    description: ''
+    genericControls:
+      noUpdatePos: 3

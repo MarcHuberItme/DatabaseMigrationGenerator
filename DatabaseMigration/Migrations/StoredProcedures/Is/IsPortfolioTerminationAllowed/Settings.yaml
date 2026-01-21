@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'IsPortfolioTerminationAllowed'
+  description: 'The ckeck is passed if first field of first line returns ''Saldierung Ok'' (Thanks to Kenny)'

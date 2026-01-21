@@ -1,0 +1,27 @@
+table:
+  name: 'RoTransactionProcessBatch'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'RoTransactionProcessBatch'
+        helpText: 'RoTransactionProcessBatch'
+    - german:
+        formTitle: 'RoTransactionProcessBatch'
+        helpText: 'RoTransactionProcessBatch'
+  columns:
+  - name: 'Id'
+    description: ''
+  - name: 'BatchNo'
+    description: ''
+  - name: 'TransactionId'
+    description: ''
+  - name: 'Status'
+    description: ''

@@ -1,0 +1,44 @@
+table:
+  name: 'PtMLPeriodicCheckChannel'
+  description: 'Verwaltung der Kanäle für GWG-Prüfungen\r\n(Kundenberater, E-Banking, Fintech-App, etc.)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Channels'
+    - german:
+        formTitle: 'GWG Kanäle'
+    - french:
+        formTitle: 'Canal ML'
+  columns:
+  - name: 'ChannelNo'
+    description: 'Channel Number:\r\n\r\n- 10 KuBe\r\n- 20 E-Banking\r\n- 30 Fintech\r\n- 40 Korrespondenz\r\n- 50 keine Zuweisung\r\n- 60 out of scope'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Description'
+    description: 'Beschreibung des Channels'
+    genericControls:
+      multiLine: true
+  - name: 'RelatedStartStateNo'
+    description: 'Default Start Status'
+    genericControls:
+      refTable: 'PtMLPeriodicCheckState'
+      refField: 'StateNo'
+      defColumnPos: 4
+  - name: 'ValidFrom'
+    description: 'Zeitliche Gültigkeit des Records, Startdatum'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValidTo'
+    description: 'Zeitliche Gültigkeit des Records, Enddatum'
+    genericControls:
+      defColumnPos: 3

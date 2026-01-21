@@ -1,0 +1,28 @@
+table:
+  name: 'PtPaymentSenderChargesConfig'
+  description: 'Values for sender charges per type and product'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      defColumnPos: 1
+  - name: 'PaymentOrderTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderType'
+      refField: 'OrderTypeNo'
+      defColumnPos: 2
+  - name: 'Amount'
+    description: ''
+    genericControls:
+      defColumnPos: 3

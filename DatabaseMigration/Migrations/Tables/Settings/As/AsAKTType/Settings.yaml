@@ -1,0 +1,30 @@
+table:
+  name: 'AsAKTType'
+  description: 'AKT Type\r\nused to know if a AKT can provide EUR'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Type of the AKT'
+        helpText: 'Type of the AKT'
+    - german:
+        formTitle: 'Typ des AKT'
+        helpText: 'Typ des AKT'
+  columns:
+  - name: 'AKTType'
+    description: ''
+  - name: 'IsWithEUR'
+    description: 'flag if the AKT provides the currency EUR'
+  - name: 'IsWithXML'
+    description: 'determines if the interface-file has XML-Format'
+  - name: 'IsTsUser32'
+    description: 'determines if it''s a TSUser32 ATK'

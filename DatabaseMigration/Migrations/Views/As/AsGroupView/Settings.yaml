@@ -1,0 +1,47 @@
+view:
+  name: 'AsGroupView'
+  description: 'A view to get all group types, groups, labels, and group members.'
+frontendView:
+  name: 'AsGroupView'
+  description: 'A view that combines all the AsGroupType, AsGroup, and AsGroupMember tables along with the label for each group type and group. This view is added to support efficient classification of records of various polymorphic tables such as PtPortfolioType, PrPrivate or CoBase for various services of the RESTful Open APIs.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'GroupTypeTableName'
+    description: 'The name of the table whose records are grouped.'
+    dataType: 'varchar'
+    isNotNull: true
+    prec: 30
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'GroupTypeId'
+    description: 'The id of the group type.'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'AsGroupType'
+      refField: 'Id'
+  - name: 'GroupTypeLabel'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'GroupId'
+    description: 'The id the group that belongs to a group type and has several group members.\r\nThis can be null when the group type has no groups defined yet.'
+    dataType: 'uniqueidentifier'
+  - name: 'GroupLabel'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'GroupMemberId'
+    description: 'The id of the relation between group and the actual tartget member in the table referenced by GroupTypeTableName.'
+    dataType: 'uniqueidentifier'
+  - name: 'GroupMemberTargetRowId'
+    description: 'The unique Finstar id of the group member record from the table identified by GroupTypeTableName.\r\nThis can be null if the groupType has no groups or the group has no group members assigned.'
+    dataType: 'uniqueidentifier'

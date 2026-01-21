@@ -1,0 +1,3 @@
+view:
+  name: 'WfVwNumberOfLinks'
+  description: 'This view returns the type and no. of links emerging from each step in a table.\r\nIt is used in the WfVwTaskbox to see if a timeout link was present for a step or not.'

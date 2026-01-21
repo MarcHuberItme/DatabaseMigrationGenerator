@@ -1,0 +1,22 @@
+table:
+  name: 'PrPublicListingOrderStatusSx'
+  description: 'table to define if a PrPublicListing should always or never be available for stockexorders'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - german:
+        formTitle: 'Status für Börsenauftrag'
+  columns:
+  - name: 'OrderStatusNo'
+    description: '10 = always available for stockexorders\r\n20 = never available for stockexorders'
+    genericControls:
+      defColumnPos: 1

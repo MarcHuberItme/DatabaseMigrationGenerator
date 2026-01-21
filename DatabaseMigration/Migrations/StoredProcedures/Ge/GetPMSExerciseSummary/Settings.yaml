@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPMSExerciseSummary'
+  description: 'returns information about quantities of securities debited/credit during exercise an option or right and payment amount and account'

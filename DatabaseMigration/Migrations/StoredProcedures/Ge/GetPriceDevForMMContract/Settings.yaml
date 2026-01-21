@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPriceDevForMMContract'
+  description: 'Get currently valid account price deviations for a money market contract'

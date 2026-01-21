@@ -1,0 +1,3 @@
+view:
+  name: 'CoEngCliSameView'
+  description: '/* View CoEngcliSameView, stellt ausgehenden von einem Kunden alle andere Kunden aus den Gemeinschaften (Typ 90) zur Verfügung. \r\nEgal ob der Kunde als Master oder Slave einer Beziehung fungiert (Feld parterno)\r\nTyp 90: Nur Rolle vom Type 7 angezeogt (gleicher Partner)\r\n*/'

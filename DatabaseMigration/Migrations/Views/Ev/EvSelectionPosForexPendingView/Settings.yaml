@@ -1,0 +1,3 @@
+view:
+  name: 'EvSelectionPosForexPendingView'
+  description: 'View used in ForexPosition application (Devisenpositionsführung)\r\nto retrieve the pending corporate action bookings.'

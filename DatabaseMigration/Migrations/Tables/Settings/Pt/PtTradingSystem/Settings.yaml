@@ -1,0 +1,54 @@
+table:
+  name: 'PtTradingSystem'
+  description: 'Trading system (platform)\r\ne.g. SWX manual, SWX automatic, Keytrader'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    descField: 'TradingSystemCode'
+    uiTableDescription:
+    - english:
+        formTitle: 'Trading system'
+    - german:
+        formTitle: 'Handelssystem'
+  columns:
+  - name: 'TradingSystemCode'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'TradingSystemGroupId'
+    description: ''
+    genericControls:
+      refTable: 'PtTradingSystemGroup'
+      refField: 'Id'
+  - name: 'DefaultPortfolioId'
+    description: 'SWX: Null\r\nVirt-X: X-Clear\r\nKeytrader: UBS-Depotstelle'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsDefaultPortfolioMandatory'
+    description: 'If true, DefaultPortfolioId cannot be overwritten.'
+  - name: 'AutoOrderRouting'
+    description: 'if true, the order can be transfered to the stock exchange by a electronical interface.\r\nif false, the order has to be placed by the exchange trader.'
+  - name: 'ElectronicalInterfaceName'
+    description: 'Instance name of electronical interface'
+  - name: 'IsAutoCreateStatementPossible'
+    description: 'Is an automatically settlement without a manual control possible?'
+  - name: 'CalculateBrokerCharge'
+    description: 'Does the broker charge has to be calculated?\r\nif true, the charge has to be calculated with the SLP.\r\nif false, the broker charge has be setted manually.'
+  - name: 'IsInactive'
+    description: '1= record will not be displayed in the Frontend during Placement an order.'
+  - name: 'RoutingDestination'
+    description: 'Destination where the order should be routed in GLOX (DeliverToCompId)'
+  - name: 'SendDirectToTradingSystemStart'
+    description: ''
+  - name: 'SendDirectToTradingSystemEnd'
+    description: 'Orders entered on a workingday between the fields SendDirectToTradingSystemStart and SendDirectToTradingSystemEnd will be placed immediately (without Starting Trading-Workflow).'

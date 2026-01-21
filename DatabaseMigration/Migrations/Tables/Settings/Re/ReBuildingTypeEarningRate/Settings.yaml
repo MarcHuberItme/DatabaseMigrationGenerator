@@ -1,0 +1,36 @@
+table:
+  name: 'ReBuildingTypeEarningRate'
+  description: 'Kapitalisierungszinse für Ertragswert pro Gebäude'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Earning Rate %'
+    - german:
+        formTitle: 'Kapitalisierungszins %'
+  columns:
+  - name: 'BuildingTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReBuildingType'
+      refField: 'BuildingTypeNo'
+      defColumnPos: 1
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'RateBusiness'
+    description: 'Satz in % / Kapitalisierungssatz für Gewerbe (Pfandbriefbank)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'RateLiving'
+    description: 'Kapitalisierungssatz für Wohnen (Pfandbriefbank)'
+    genericControls:
+      defColumnPos: 4

@@ -1,0 +1,33 @@
+table:
+  name: 'PtTransSxCOMGetAccFromPf'
+  description: 'Transfer-Tabelle für COM+Call GetAccountFromPortfolioList(FsPartner.FsPortfolioAccount).\r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtTransSxCOMGetAccFromPf'
+    - german:
+        formTitle: 'PtTransSxCOMGetAccFromPf'
+  columns:
+  - name: 'SecurityPortfolioId'
+    description: 'Input'
+    genericControls:
+      hasDetailBtn: true
+  - name: 'SecurityPrReferenceId'
+    description: 'Input'
+  - name: 'AccountSelectionType'
+    description: 'Output'
+  - name: 'AccountPrReferenceId'
+    description: 'Output'
+  - name: 'AccountAccountId'
+    description: 'Output'
+  - name: 'AccountAccountNo'
+    description: 'Output'
+  - name: 'AsPayeeId'
+    description: 'Output'

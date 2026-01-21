@@ -1,0 +1,41 @@
+table:
+  name: 'CoDokFieldcalc'
+  description: 'Wert eines Feld im generierten Kommerzdokument (Input für TXControl)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'field value'
+    - german:
+        formTitle: 'field value'
+  columns:
+  - name: 'CoDokcalcid'
+    description: 'Dokument'
+    genericControls:
+      refTable: 'CoDokCalc'
+      refField: 'Id'
+  - name: 'Fieldname'
+    description: 'Feld'
+    genericControls:
+      refTable: 'CoDokField'
+      refField: 'Fieldname'
+  - name: 'Fieldtype'
+    description: 'redundant aus codokfield'
+    genericControls:
+      refTable: 'CoTypeField'
+      refField: 'Fieldtype'
+  - name: 'Valueamount'
+    description: 'Gefüllt abhängig von Fieldtype'
+  - name: 'Valuedate'
+    description: 'Gefüllt abhängig von Fieldtype'
+  - name: 'Valuechar'
+    description: 'Gefüllt abhängig von Fieldtype'
+  - name: 'Valuebit'
+    description: 'Gefüllt abhängig von Fieldtype'

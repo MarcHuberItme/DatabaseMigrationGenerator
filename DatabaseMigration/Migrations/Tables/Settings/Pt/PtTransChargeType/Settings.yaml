@@ -1,0 +1,92 @@
+table:
+  name: 'PtTransChargeType'
+  description: 'Type of charges e.g.\r\n- Expences, fees\r\n- taxes\r\n- agio/disagio'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Charge types'
+        helpText: 'Charge types'
+    - german:
+        formTitle: 'Spesenarten'
+        helpText: 'Spesenarten'
+  columns:
+  - name: 'ChargeNo'
+    description: 'Min 10 / Max 99'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ImmediateCharge'
+    description: '1 = If True then include the value at processing the transaction\r\n0 = If False then just remark the value for charging at closing time of the account\r\n(Kontoabschluss oder Saldierung)'
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'BoolVal'
+  - name: 'ShowToUser'
+    description: '0 = If True this charge type will be presented to user for selection on the form\r\n1 = If False this charge type is only used for automatic process'
+  - name: 'AccountParameterName'
+    description: 'Name of finstar system parameter.\r\nAll account numbers are defined at one place under the group name of  "AccountNoAssignment" in System Parameters.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TextNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      defColumnPos: 2
+  - name: 'IsForDebit'
+    description: 'This charge type can be used for debit transactions.'
+  - name: 'IsForCredit'
+    description: 'This charge type can be used for credit transactions'
+  - name: 'IsForStockExchange'
+    description: '0 = no stock exchange\r\n1 = is stock exchange'
+  - name: 'IsForOwnCommission'
+    description: 'stock exchange\r\n0= not for own commission\r\n1= for own commission'
+  - name: 'IsForAccruedInterest'
+    description: 'stock exchange\r\n0 = not for Accrued Interest\r\n1 =  for Accrued Interest'
+  - name: 'IsForForeignCommission'
+    description: 'stock exchange\r\n0= not for foreign commission\r\n1= for broker foreign commission'
+  - name: 'IsForForeignCommissionSep'
+    description: 'stock exchange\r\nlike IsForForeignCommission but for a separate commission (necesserary for BSZ)'
+  - name: 'IsForWithholdingTax'
+    description: 'stockexchange\r\n1= is for withholding tax (italien instrument domicil)'
+  - name: 'IsForStampDuty'
+    description: 'stock exchange:\r\nused for the stamp journal'
+  - name: 'IsForUKStampDuty'
+    description: 'stock exchange:\r\nused for the report'
+  - name: 'IsForBrokerInput'
+    description: ''
+  - name: 'IsForCorpActTax'
+    description: ''
+  - name: 'IsForCorpActCommission'
+    description: ''
+  - name: 'CvAmountTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTransCvAmountType'
+      refField: 'CvAmountTypeNo'
+      defColumnPos: 4
+  - name: 'IsGrouped'
+    description: '1 = If True, it is charged among other charges/expenses and changed to PrPrivate.ExpenseAccNo\r\n(1 = Kontonummer in PrPrivate wird verwendet, 0 = Kontonummer aus PtTransChargeType wird für die verbuchung verwendet)'
+  - name: 'SeqNo'
+    description: 'sequence number'
+  - name: 'isMwstApplicable'
+    description: 'This falg will be true for charges where Mwst has to be calculated based on the charges amount.'
+  - name: 'IsRelevantForBuyCharges'
+    description: ''
+  - name: 'IsToSendOut'
+    description: 'Whether the charge information has to be sent out, for example in SIC message.'
+  - name: 'IsForPostMandat'
+    description: ''
+  - name: 'IsWithdrawCommRelevant'
+    description: 'To specify if the charge is Withdraw commission relevant. This flag is considered only if charge is "Immediate".'
+  - name: 'OaTransformTypeNo'
+    description: ''

@@ -1,0 +1,75 @@
+table:
+  name: 'PtAgrSecurity'
+  description: 'Agreement with the bank for the security of someones loan'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Security agreement'
+    - german:
+        formTitle: 'Sicherheitenvereinbarung'
+    - french:
+        formTitle: 'Accord de garantie'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key;  Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'AgrTypeNo'
+    description: 'agreement type (e.g. Bürgschaft, Faustpfandverschreibung, ...)'
+    genericControls:
+      refTable: 'AsSecurityAgrType'
+      refField: 'AgrTypeNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ReferenceNo'
+    description: 'together with PartnerId and AgrTypeNo it identifies the security agreement.\r\nusefull for easier identification and better access of the agreement'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'PartnerIdBeneficiary'
+    description: 'PartnerId of the partner that can benefit of that agreement'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'ExclusiveAccountId'
+    description: 'this security agreement can only be used for that account.'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'PeriodOfNotice'
+    description: 'period of time to cancel the deal; in days, month or years'
+  - name: 'Interval'
+    description: 'foreign-key;  candidate-key of AsInterval (Interval)\r\n(VB-function DateAdd)  d, m, yyyy of the PeriodOfNotice'
+    genericControls:
+      refTable: 'AsInterval'
+      refField: 'Interval'
+  - name: 'Description'
+    description: 'informative description of the agreement'
+    genericControls:
+      multiLine: true
+  - name: 'BeginDate'
+    description: ''
+    genericControls:
+      isOnlyForMig: true

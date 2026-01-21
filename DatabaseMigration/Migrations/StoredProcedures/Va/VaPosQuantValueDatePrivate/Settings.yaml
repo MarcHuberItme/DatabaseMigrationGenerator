@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaPosQuantValueDatePrivate'
+  description: '02.05.2018/wwo: do not ignore PtTransItem with ValueDate = ValuationDate'

@@ -1,0 +1,26 @@
+table:
+  name: 'MgProductInstruments'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PaymentInstrument'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Description'
+    description: ''
+    genericControls:
+      defColumnPos: 3

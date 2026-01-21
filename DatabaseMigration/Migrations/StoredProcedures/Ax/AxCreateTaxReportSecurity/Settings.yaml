@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxCreateTaxReportSecurity'
+  description: 'select all instrument of AxTransactions and insert them into AxTaxReportSecurity'

@@ -1,0 +1,51 @@
+table:
+  name: 'VaLatestValuationForPortfolio'
+  description: 'Contains the latest valuation for each portfolio (source data taken from VaPositionView). To avoid locking problems, there are up to three entries per portfolio in this table. The most actual entry is referenced by table VaLatestRunRef.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'VaRunId'
+    description: ''
+  - name: 'ValuationDate'
+    description: ''
+  - name: 'PartnerId'
+    description: ''
+  - name: 'PortfolioId'
+    description: ''
+  - name: 'PortfolioNo'
+    description: ''
+  - name: 'PartnerNo'
+    description: ''
+  - name: 'PortfolioTypeNo'
+    description: ''
+  - name: 'ValuationCurrency'
+    description: ''
+  - name: 'MarketValueVaCu'
+    description: ''
+  - name: 'MarketValueAccPosVaCu'
+    description: 'Market value of account positions (valuation currency)'
+  - name: 'MarketValueSecPosVaCu'
+    description: 'Market value of security positions in portfolio  (valuation currency)'
+  - name: 'MarketValueCHF'
+    description: ''
+  - name: 'MarketValueAccPosCHF'
+    description: 'Market value of account positions in CHF'
+  - name: 'MarketValueSecPosCHF'
+    description: 'Market value of security positions in CHF'
+  - name: 'AccrInterestVaCu'
+    description: ''
+  - name: 'AccruedInterestCHF'
+    description: ''
+  - name: 'CollateralValueVaCu'
+    description: ''
+  - name: 'CollateralValueCHF'
+    description: ''
+  - name: 'CollateralId'
+    description: ''

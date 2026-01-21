@@ -1,0 +1,24 @@
+table:
+  name: 'PtBillConsolidator'
+  description: 'List of EBPP consolidators'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'EBPP Consolidator'
+    - german:
+        formTitle: 'EBPP Consolidator'
+  columns:
+  - name: 'ConsolidatorNo'
+    description: 'Number of the consolidator'
+    genericControls:
+      defColumnPos: 1

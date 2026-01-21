@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DeleteAllAccountComp'
+  description: 'deletes all account components for an account'

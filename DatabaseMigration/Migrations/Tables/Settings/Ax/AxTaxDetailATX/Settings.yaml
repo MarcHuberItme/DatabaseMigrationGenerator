@@ -1,0 +1,54 @@
+table:
+  name: 'AxTaxDetailATX'
+  description: 'Mit dieser Tabelle (und der Tabelle AiTaxStatus) kann pro Kunde definiert werden, für welches Land, in welcher Währung und in welcher Sprache ein TaxReport erstellt werden soll.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'AiTaxStatus'
+      parentRelationField: 'TaxStatusId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Detail ATX'
+    - german:
+        formTitle: 'Detail ATX'
+  columns:
+  - name: 'TaxStatusId'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxStatus'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ValidTo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'TaxDetailATXTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AxTaxDetailATXType'
+      refField: 'TaxDetailATXTypeNo'
+      defColumnPos: 3
+  - name: 'IsWithAttachment'
+    description: 'flag if to the taxsource pdf an addiitionally pdf should be attached'
+  - name: 'ChargeRebate'
+    description: 'TaxSource report charge individual rebate (percentage)'
+  - name: 'DebitAccountId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true

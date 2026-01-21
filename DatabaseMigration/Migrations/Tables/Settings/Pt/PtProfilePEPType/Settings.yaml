@@ -1,0 +1,28 @@
+table:
+  name: 'PtProfilePEPType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Political exposed person'
+    - german:
+        formTitle: 'Politisch exponierte Pers'
+  columns:
+  - name: 'PEPTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'GmeRWeighting'
+    description: 'Definiert, welches Gewicht für die GmeR-Einstufung der PEP-Typ hat.'
+    genericControls:
+      defColumnPos: 2

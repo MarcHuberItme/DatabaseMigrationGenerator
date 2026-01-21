@@ -1,0 +1,3 @@
+view:
+  name: 'CoSumFireView'
+  description: 'Fire verlangt bei der Übergabe vom Wert der Sicherheit bei Zuweisung auf mehrere Kreditkonti einer Sicherheit ein prozentuales Aufteilen vom Verkehrswert auf die verschieden Zuweisung. Diese View stellt einen Faktor (vkadjustfak) zur Verfügung. Zum Berechnen Fire Wert Sicherheit: VKAdjust  = pledgevalueass (aus cobaseasscal) * vkadjustfak (aus dieser View)\r\nDetails siehe View Kommentar\r\nReferenz auf cobase entfernt'

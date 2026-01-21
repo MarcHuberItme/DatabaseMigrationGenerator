@@ -1,0 +1,61 @@
+table:
+  name: 'PsReportFileHistory'
+  description: 'Contains the language dependent report files.\r\nHas internal history mechnisme to PsReportFileArchive'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Report Files'
+    - german:
+        formTitle: 'Reportdateien'
+  columns:
+  - name: 'ReportFileId'
+    description: ''
+  - name: 'ReportId'
+    description: ''
+    genericControls:
+      refTable: 'PsReport'
+      refField: 'Id'
+  - name: 'LanguageNo'
+    description: 'Language of the report'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'InputParameters'
+    description: 'Comma separated list of input parameters which are defined in the report.\r\nThe list is maintained by the check-in functionality of FsReportAdmin'
+  - name: 'CheckOutUser'
+    description: 'Name of the user that checked out a report. Null if the report is checked in.'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+  - name: 'CheckOutDate'
+    description: 'Date and time when a report is checked out. Null if the report is checked in.'
+  - name: 'HasDocNoBarCode'
+    description: 'True if the report contains an image named DocNoBarCode. The field is maintained by the check-in functionality of FsReportAdmin'
+  - name: 'HasQualityCode'
+    description: 'True if the report has an input parameter named QualityCode. The field is maintained by the chek-in functionality of FsReportAdmin'
+  - name: 'HasBranchLabels'
+    description: 'True if the report contains labels with the prefix bra. This marks labesl that have to be replaces with branch specific text stored in PsBranchLabelText'
+  - name: 'ReportFile'
+    description: 'The rpt file produced by crystal reports'
+  - name: 'CheckInUser'
+    description: 'Name of the last user that checked in the report.'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      defColumnPos: 1
+  - name: 'CheckInDate'
+    description: 'Date and Time of the last CheckIn.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'CheckInComment'
+    description: 'Field for change comments.'
+    genericControls:
+      multiLine: true

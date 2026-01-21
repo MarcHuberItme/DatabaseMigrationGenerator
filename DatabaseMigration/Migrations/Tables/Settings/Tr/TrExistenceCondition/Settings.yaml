@@ -1,0 +1,38 @@
+table:
+  name: 'TrExistenceCondition'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'MsgFieldRelationShipId'
+    description: ''
+    genericControls:
+      refTable: 'TrMsgFieldRelationship'
+      refField: 'Id'
+  - name: 'Op1CondOptCode'
+    description: ''
+  - name: 'Op1SequenceId'
+    description: ''
+    genericControls:
+      refTable: 'TrSequence'
+      refField: 'Id'
+  - name: 'Op1Id'
+    description: ''
+  - name: 'Op2CondOptCode'
+    description: ''
+  - name: 'Op2SequenceId'
+    description: ''
+  - name: 'Op2Id'
+    description: ''
+  - name: 'Opt2ValueList'
+    description: ''
+  - name: 'CondOperatorCode'
+    description: ''
+  - name: 'OperatorCode'
+    description: ''

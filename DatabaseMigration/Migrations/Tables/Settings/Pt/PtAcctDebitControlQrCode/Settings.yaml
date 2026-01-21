@@ -1,0 +1,28 @@
+table:
+  name: 'PtAcctDebitControlQrCode'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAcctDebitControlQrCode'
+        helpText: 'PtAcctDebitControlQrCode'
+    - german:
+        formTitle: 'PtAcctDebitControlQrCode'
+        helpText: 'PtAcctDebitControlQrCode'
+    - french:
+        formTitle: 'PtAcctDebitControlQrCode'
+        helpText: 'PtAcctDebitControlQrCode'
+  columns:
+  - name: 'AccountDebitControlId'
+    description: ''
+  - name: 'QrCode'
+    description: ''

@@ -1,0 +1,32 @@
+table:
+  name: 'PrBondRateIsin'
+  description: 'Cashbond ISIN details'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Bond Rate ISIN'
+        helpText: 'Bond Rate ISIN'
+    - german:
+        formTitle: 'Bond Rate ISIN'
+        helpText: 'Bond Rate ISIN'
+    - french:
+        formTitle: 'Bond Rate ISIN'
+        helpText: 'Bond Rate ISIN'
+  columns:
+  - name: 'BondRate'
+    description: 'Percentage of Bond Rate'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Isin'
+    description: ''
+    genericControls:
+      defColumnPos: 2

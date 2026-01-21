@@ -1,0 +1,182 @@
+table:
+  name: 'PtMLCheckAccessCP'
+  description: 'Personen mit Zugriff via Kontaktperson'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'AccessId'
+    description: 'Id der Zugriffsprüfung'
+    genericControls:
+      refTable: 'PtMLCheckAccess'
+      refField: 'Id'
+  - name: 'CPId'
+    description: 'Id des Kontaktpersonen-Rekords'
+    genericControls:
+      refTable: 'PtContactPerson'
+      refField: 'Id'
+  - name: 'CPTitle'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'CPTitleCorrected'
+    description: ''
+  - name: 'CPName'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'CPNameCorrected'
+    description: ''
+  - name: 'CPFirstName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'CPFirstNameCorrected'
+    description: ''
+  - name: 'CPDateOfBirth'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'CPDateOfBirthCorrected'
+    description: ''
+  - name: 'CPRoleId'
+    description: ''
+    genericControls:
+      refTable: 'PtContactPersonRole'
+      refField: 'Id'
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'CPRoleIdCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtContactPersonRole'
+      refField: 'Id'
+  - name: 'CPRoleNo'
+    description: ''
+    genericControls:
+      refTable: 'PtContactPersonRole'
+      refField: 'RoleNo'
+      isNoUpdate: true
+  - name: 'CPRoleNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtContactPersonRole'
+      refField: 'RoleNo'
+  - name: 'CPRole'
+    description: 'AsText.TextShort'
+  - name: 'CPLanguageNo'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+      isNoUpdate: true
+  - name: 'CPLanguageNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'CPLanguage'
+    description: 'AsText.TextShort'
+  - name: 'CPDomicile'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'CPDomicileCorrected'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+  - name: 'CPNationality'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'CPNationalityCorrected'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+  - name: 'CPSexStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+      isNoUpdate: true
+  - name: 'CPSexStatusNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+  - name: 'CPSexStatus'
+    description: 'AsText.TextShort'
+  - name: 'CPFormalAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+      isNoUpdate: true
+  - name: 'CPFormalAddressCorrected'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'CPMailBusiness'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'CPMailBusinessCorrected'
+    description: ''
+  - name: 'CPMailPrivate'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'CPMailPrivateCorrected'
+    description: ''
+  - name: 'CPPhone'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'CPPhoneCorrected'
+    description: ''
+  - name: 'CPPhoneMobile'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'CPPhoneMobileCorrected'
+    description: ''
+  - name: 'CPDigitalBanking'
+    description: 'Kontaktperson in E-Banking-Vertrag vorhanden'
+    genericControls:
+      isNoUpdate: true
+  - name: 'CPProxy'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'IsToDelete'
+    description: 'Flag, welches angibt, ob ein Record gelöscht werden darf. Macht bei Stammdaten keinen Sinn'
+  - name: 'HasChanges'
+    description: 'Flag, welches angibt, ob der Kunde Änderungen vorgenommen hat'
+  - name: 'Comment'
+    description: 'Kommentar des Kunden'
+    genericControls:
+      multiLine: true
+  - name: 'CheckStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckDetailState'
+      refField: 'CheckDetailStateNo'
+      defColumnPos: 4
+      isNoUpdate: true

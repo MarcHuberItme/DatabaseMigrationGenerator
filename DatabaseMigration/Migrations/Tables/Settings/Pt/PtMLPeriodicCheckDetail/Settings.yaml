@@ -1,0 +1,30 @@
+table:
+  name: 'PtMLPeriodicCheckDetail'
+  description: 'einzelne Schritte der Detailprüfungen'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML detail checks'
+    - german:
+        formTitle: 'GWG Detailprüfung'
+    - french:
+        formTitle: 'Vérif. détaillées du ML'
+  columns:
+  - name: 'DetailCheckNo'
+    description: 'Prüfungsschritte:\r\n- 10 Stammdaten\r\n- 20 wirtschaftliche Berechtigung\r\n- 30 Zugriffsrechte\r\n'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Description'
+    description: 'Beschreibung der Detailprüfung'
+    genericControls:
+      multiLine: true

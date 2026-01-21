@@ -1,0 +1,21 @@
+table:
+  name: 'PtPaymentReturnCode'
+  description: 'Return codes for sending payments back to external sender'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'PaymentReturnCode'
+    description: ''
+  - name: 'ISOReturnCode'
+    description: ''
+    genericControls:
+      defColumnPos: 1

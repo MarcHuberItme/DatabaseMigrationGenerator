@@ -1,0 +1,57 @@
+table:
+  name: 'PtPrintPaymentAdviceCorr'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'PrintPaymentAdviceDayId'
+    description: ''
+  - name: 'PaymentAdviceId'
+    description: ''
+  - name: 'AddressId'
+    description: ''
+    genericControls:
+      refTable: 'PtAddressView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'AttentionOf'
+    description: ''
+  - name: 'CarrierTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsCarrierType'
+      refField: 'CarrierTypeNo'
+      defColumnPos: 1
+  - name: 'DeliveryRuleNo'
+    description: ''
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+  - name: 'DetourGroup'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'IsPrimaryCorrAddress'
+    description: ''
+  - name: 'CopyNumber'
+    description: ''
+  - name: 'Printed'
+    description: ''
+  - name: 'LanguageNo'
+    description: ''
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'AccountDesc'
+    description: ''

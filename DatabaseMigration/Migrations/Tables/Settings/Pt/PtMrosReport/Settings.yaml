@@ -1,0 +1,65 @@
+table:
+  name: 'PtMrosReport'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtMrosReport'
+        helpText: 'PtMrosReport'
+    - german:
+        formTitle: 'PtMrosReport'
+        helpText: 'PtMrosReport'
+    - french:
+        formTitle: 'PtMrosReport'
+        helpText: 'PtMrosReport'
+  columns:
+  - name: 'ReportDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ReportTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMrosReportType'
+      refField: 'ReportTypeNo'
+      defColumnPos: 1
+  - name: 'ReportReference'
+    description: 'entity_reference'
+    genericControls:
+      defColumnPos: 3
+  - name: 'fiu_ref_number'
+    description: 'reference number between FIU and RE'
+  - name: 'ReportCode'
+    description: ''
+    genericControls:
+      refTable: 'PtMrosReportCode'
+      refField: 'ReportCode'
+  - name: 'PeriodBegin'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'PeriodEnd'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'reason'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'action'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'BankInternalComment'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 8

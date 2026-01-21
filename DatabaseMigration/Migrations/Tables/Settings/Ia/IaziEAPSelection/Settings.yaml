@@ -1,0 +1,29 @@
+table:
+  name: 'IaziEAPSelection'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'IaziEAPSelection'
+        helpText: 'IaziEAPSelection'
+    - german:
+        formTitle: 'IaziEAPSelection'
+        helpText: 'IaziEAPSelection'
+  columns:
+  - name: 'FieldDesc'
+    description: ''
+  - name: 'ListItem'
+    description: ''
+  - name: 'Value'
+    description: ''
+  - name: 'LanguageNo'
+    description: ''

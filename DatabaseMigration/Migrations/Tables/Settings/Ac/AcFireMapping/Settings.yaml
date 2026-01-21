@@ -1,0 +1,35 @@
+table:
+  name: 'AcFireMapping'
+  description: 'Record Mapping Fire'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'FireAccountNo'
+    description: ''
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+  - name: 'MappingTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AcFireMappingType'
+      refField: 'MappingTypeNo'
+      defColumnPos: 1
+  - name: 'DepositTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AcFireDepositType'
+      refField: 'DepositTypeNo'
+      defColumnPos: 3
+  - name: 'SuppressFireExport'
+    description: ''
+  - name: 'FireAccountNoOld'
+    description: ''

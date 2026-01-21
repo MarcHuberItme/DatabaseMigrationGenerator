@@ -1,0 +1,519 @@
+view:
+  name: 'PtTransStockExView'
+  description: 'View to enter and manage Stock Exchange Orders'
+frontendView:
+  name: 'PtTransStockExView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransMsgStatusNo'
+    description: 'PtTransMessage.TransMsgStatusNo\r\nused to decide if its a rectification'
+    dataType: 'int'
+  - name: 'CancelTradOrderMsgId'
+    description: 'PtTradingOrderMessage.Id\r\nused for a rectification'
+    dataType: 'uniqueidentifier'
+  - name: 'TradingSystemGroupId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTradingSystemGroup'
+      refField: 'Id'
+  - name: 'TradingSystemId'
+    description: 'used for the rectification'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTradingSystem'
+      refField: 'Id'
+  - name: 'IsAlreadyTraded'
+    description: 'used for the workflow-taskbox'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsKeepingInterest'
+    description: 'used for the workflow-taskbox'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsAutoOrderRouting'
+    description: 'flag if with the automatic tradingsystem'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'OrderStatusNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransSxOrderStatus'
+      refField: 'OrderStatusNo'
+  - name: 'PublicTradingPlaceId'
+    description: 'PtTransMessage.PublicTradingPlaceId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsOffExchange'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'PaymentCurrency'
+    description: 'PtTransMessage.PaymentCurrency'
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'PaymentDate'
+    description: 'PtTransMessage.OrderQuantity\r\nin this table only used for the rectification'
+    dataType: 'datetime'
+  - name: 'OrderQuantity'
+    description: 'PtTransMessage.OrderQuantity'
+    dataType: 'money'
+  - name: 'MarketValue'
+    description: 'used to check the authorization-value'
+    dataType: 'money'
+    defaultValue: '0'
+  - name: 'TransSxRebateNo'
+    description: 'PtTransMessage.TransSxRebateNo'
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtTransSxRebate'
+      refField: 'TransSxRebateNo'
+  - name: 'TextForRebate'
+    description: 'for a rebate a text is mandatory'
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+  - name: 'IsStockExOrder'
+    description: 'only used for a broker-rectification'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'AccountRate'
+    description: 'used for the rectification'
+    dataType: 'float'
+  - name: 'SettlementRate'
+    description: 'used for rectification if two currencies are involved (accountcurrency and settlementcurrency are not CHF).'
+    dataType: 'float'
+  - name: 'AccountRateBroker'
+    description: 'used for the rectification'
+    dataType: 'float'
+  - name: 'SettlementRateBroker'
+    description: 'used for the rectification'
+    dataType: 'float'
+  - name: 'SecurityPortfolioIdBroker'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SecurityPrReferenceIdBroker'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountPortfolioIdBroker'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountPrReferenceIdBroker'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountPrReferenceIdBroFutures'
+    description: 'Bei Futures ist hier das Terminkonto'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'LocGroupIdBroker'
+    description: 'this field is maybe used for the delivery, for shure not for a stockexorder'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+  - name: 'SecurityPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioViewNoPL'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SecurityPrReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'LocGroupId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+  - name: 'AccountPortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountPrReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountPrReferenceIdFutures'
+    description: 'Bei Futures ist hier das Terminkonto'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CvAmountTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtTransCvAmountType'
+      refField: 'CvAmountTypeNo'
+  - name: 'TradingOrderId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTradingOrder'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 12
+    genericControls:
+      defColumnPos: 4
+  - name: 'TransNoOrig'
+    description: ''
+    dataType: 'decimal'
+    prec: 12
+  - name: 'OrderNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 12
+  - name: 'OrderDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'OrderMediaNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransOrderMedia'
+      refField: 'OrderMediaNo'
+  - name: 'TransTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransType'
+      refField: 'TransTypeNo'
+  - name: 'PublicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'ExtUnknownIsinNo'
+    description: 'this field is only used if an order entered in the extern tradingsystem (sungard) includes an Isin unknown in finstar.\r\n'
+    dataType: 'nvarchar'
+    prec: 12
+  - name: 'ExtUnknownIsinNoStatus'
+    description: 'this field is only used if an order entered in the extern tradingsystem (sungard) includes an Isin unknown in finstar.\r\n1= VdfRequest sent\r\n5= VdfRequest answer successfull\r\n9= PublicId set'
+    dataType: 'smallint'
+  - name: 'IsInstrumentFastOpening'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'PrPublicShortName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'UsIrsIncomeCode'
+    description: 'PrPublic.UsIrsIncomeCode'
+    dataType: 'int'
+  - name: 'SmallDenom'
+    description: 'PrPublic.SmallDenom'
+    dataType: 'money'
+  - name: 'IssuerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsMaturityDate'
+    description: 'is field maturity necessary.\r\nThis field will be needless with the GOI.\r\nGOI checks the PrPublicRefType'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'MaturityDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'InterestRate'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+  - name: 'IsShortToff'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsOwnBond'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'TitleNo'
+    description: 'only used for own bonds'
+    dataType: 'int'
+  - name: 'SpecialKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'ObligationId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'ReObligation'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'InsurancePoliceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrInsurancePolice'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PreferredPublicListingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicListingOrderView'
+      refField: 'Id'
+  - name: 'ObjectId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrObject'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsTradingOrderType'
+      refField: 'OrderTypeNo'
+  - name: 'PriceLimit'
+    description: ''
+    dataType: 'money'
+  - name: 'TriggerPrice'
+    description: ''
+    dataType: 'money'
+  - name: 'ValidFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ValidToRule'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsValidToRule'
+      refField: 'RuleTypeNo'
+  - name: 'ValidTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'TextToTrader'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+    genericControls:
+      multiLine: true
+  - name: 'TextToPartner'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 300
+    genericControls:
+      multiLine: true
+  - name: 'TextToBackOffice'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+    genericControls:
+      multiLine: true
+  - name: 'TextToForexTrader'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+    genericControls:
+      multiLine: true
+  - name: 'OrderDisposerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'OrderMiddlemanId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AllocationStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'PlaceStatus'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'SecurityBookingSide'
+    description: ''
+    dataType: 'char'
+    prec: 1
+  - name: 'IsSxOrderAuthValueSpecial'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsEBankingWithBlocking'
+    description: 'used for ebanking or PM1 order with blocking, pledges'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsRestrictionWarning'
+    description: 'used for ebanking or PM1 order with order restriction'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsOtherWarning'
+    description: 'used for PM1 order with warning (not restriction warning)'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsFondsSaving'
+    description: 'flag if it''s a fonds saving order (used for bsz - special own tax fee)'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsFondsBuyWithConsulting'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'BankInternalReferencePartner'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'BankShortNamePartner'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 3
+  - name: 'BankInternalReferenceTrader'
+    description: 'only used for bsz-orders created by autotradingsystem (hbl)'
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'IsFondsToNAV'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'OrderAdvisoryNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransSxOrderAdvisory'
+      refField: 'OrderAdvisoryNo'
+  - name: 'IsGenerateContactReport'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'ContactReportId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtContactReport'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'GoiApp'
+    description: 'Filled if the order was entered via Client Order Interface'
+    dataType: 'nvarchar'
+    prec: 30
+    genericControls:
+      refTable: 'PtTransSxGoiApp'
+      refField: 'App'
+  - name: 'GoiChannel'
+    description: 'Filled if the order was entered via Client Order Interface'
+    dataType: 'nvarchar'
+    prec: 30
+    genericControls:
+      refTable: 'PtTransSxGoiChannel'
+      refField: 'Channel'
+  - name: 'IsBlockingWarning'
+    description: 'used for GOI.\r\nThis field will replace the field IsEBankingWithBlocking for each customer if listing order.'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'WarningInfo'
+    description: 'Customer based Warning info presented to the trader. \r\nFormat: #23467;;Z1;;Z2;;Z3 || #23468 || #23469;;Z1\r\n\r\n#23467= AsMessageText.TextNo\r\nZ1= Parameter 1 (für MsgBox)\r\nZ2= Parameter 2 (für MsgBox)\r\nZ3= Parameter 3 (für MsgBox)\r\n\r\nFor a listingorder WarningInfo in the placement wf will also include the corresponding customer Portfolio (i.e. P16326707:#23467;;Z1;;Z2;;Z3 || #23468 || #23469;;Z1 |||| P55482716:#23454;;Z1 || #23460)\r\nThis field will used in future when Goi will validate the whole order.\r\nThen the fields IsRestrictionWarning and IsOtherWarning will not be used anymore.'
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'ExtOrderCreator'
+    description: 'Name or what ever of the ordercreator from the external system (User e.g. Marc)'
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'ExtOrderMandator'
+    description: 'Mandator of the external system (Client e.g. EV or PSS AG).\r\nThis field is like a sub key of the field BankInternalReferencePartner.\r\nFor orders from FIX (AssetMax) it contains: Custom-Tag 6667'
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'IsNotBestExecution'
+    description: 'This flag will be set to true from GOI if MarketIdentCode is deliverd from caller.\r\n--> PtTradingOrderMessage.IsNotBestExecution'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsWithESGWarning'
+    description: '-> PtTradingOrderMessage.IsWithESGWarning'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'IsOrderByNAVAmount'
+    description: 'only used for fonds-buy-orders (PtTradingOrder.IsFondsToNAV = 1).'
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'OrderNAVAmount'
+    description: 'NetAssetValue: only used for fonds-buy-orders (PtTradingOrder.IsFondsToNAV = 1).'
+    dataType: 'money'

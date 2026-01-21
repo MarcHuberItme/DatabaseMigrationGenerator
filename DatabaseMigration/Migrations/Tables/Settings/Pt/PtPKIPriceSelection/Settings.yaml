@@ -1,0 +1,26 @@
+table:
+  name: 'PtPKIPriceSelection'
+  description: 'price-list for the PKI-devices /-mediums'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PKI Price Selection'
+    - german:
+        formTitle: 'PKI Preis Selektion'
+  columns:
+  - name: 'PriceTypeNo'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PriceFactor'
+    description: 'Factor the price has to be calculated with.\r\ne.g. 30% rebate = PriceFactor 0.7'

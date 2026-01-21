@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DataExport_GetPartnerReferences'
+  description: 'Retriefes data about referenced partners for DocWiz DataExport'

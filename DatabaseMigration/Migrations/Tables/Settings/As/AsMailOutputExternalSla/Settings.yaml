@@ -1,0 +1,35 @@
+table:
+  name: 'AsMailOutputExternalSla'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c1a52d85-2b4e-4419-b86a-2be5c47bad9d
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'External Mail Print SLA'
+    - german:
+        formTitle: 'Ext. Jobspez. MailOutput'
+    - french:
+        formTitle: 'Mail spéc. externe SLA'
+  columns:
+  - name: 'SlaNo'
+    description: 'SLA-No (currently given by Swiss Post Solutions), contains general job specifications for external print jobs.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Description'
+    description: 'Short descriptin which is used in the file name for SPS.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'SPSPostage'
+    description: 'Postage Code of SPS for this SLA, if static (as desired by SPS)\r\nA = A-Post\r\nC = B1-Post\r\nB = B2-Post\r\nIs used in NOP-Headers'
+    genericControls:
+      defColumnPos: 3
+  - name: 'MaxSheetInExternalXML'
+    description: 'if NULL or 0 then the Value from Sys Parameter ''MaxSheetsInExternalXML'' is taken\r\nif > 0 then the min. Value must be greater equal than 500'

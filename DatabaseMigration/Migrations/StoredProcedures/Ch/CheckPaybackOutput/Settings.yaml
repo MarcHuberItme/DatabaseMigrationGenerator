@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CheckPaybackOutput'
+  description: 'Find out if all account payback documents have been produced'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetALRightsReceived'
+  description: '"Get account level rights received"\r\nGets a list of accounts with some specific data (see below) for which a certain partner/contactperson has rights to access them\r\nData returned per record:\r\nPB.Id As PartnerId,\r\nPB.Name,\r\nPB.FirstName,\r\nPB.NameCont,\r\nPB.PartnerNoEdited,\r\nPP.Id As PortfolioId,\r\nPP.PortfolioNoEdited,\r\nPP.CustomerReference As PortfolioReference,\r\nPA.Id As AccountId,\r\nPA.AccountNoEdited,\r\nPA.CustomerReference As AccountReference'

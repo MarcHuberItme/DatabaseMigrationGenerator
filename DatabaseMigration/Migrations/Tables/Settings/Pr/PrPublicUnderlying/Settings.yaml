@@ -1,0 +1,47 @@
+table:
+  name: 'PrPublicUnderlying'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Underlying'
+    - german:
+        formTitle: 'Underlying'
+  columns:
+  - name: 'VdfDocGen'
+    description: 'VDF: XUD.XUD.0813\r\nGeneration of the last XUD-Doc, which was received from VDF'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: XUD.MGA.7895\r\nMessage status of XUD-Doc'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'VdfIdentification'
+    description: 'VDF: XUD.XUI.7820'
+    genericControls:
+      defColumnPos: 1
+  - name: 'UnderlyingTypeNo'
+    description: 'VDF: XUD.XCU.4936\r\n'
+    genericControls:
+      refTable: 'PrPublicUnderlyingType'
+      refField: 'UnderlyingTypeNo'
+      defColumnPos: 2
+  - name: 'UnderlyingFuncNo'
+    description: 'VDF: XUD.XCU.4937\r\n'
+    genericControls:
+      refTable: 'PrPublicUnderlyingFunc'
+      refField: 'UnderlyingFuncNo'
+      defColumnPos: 3
+  - name: 'UnderlyingFormula'
+    description: 'VDF: XUD.XCU.9998'
+    genericControls:
+      multiLine: true

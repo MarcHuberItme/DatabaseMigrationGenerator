@@ -1,0 +1,22 @@
+table:
+  name: 'MdCacheLevel'
+  description: 'Level of Caching'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: d18c2bae-7838-4b83-a18e-29041114c63e
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Cach-Level'
+    - german:
+        formTitle: 'Cache-Stufe'
+  columns:
+  - name: 'CacheLevel'
+    description: 'Cache Level'
+  - name: 'Description'
+    description: 'Englisch description of Cache Level'

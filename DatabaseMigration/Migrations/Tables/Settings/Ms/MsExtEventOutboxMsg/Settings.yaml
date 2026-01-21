@@ -1,0 +1,34 @@
+table:
+  name: 'MsExtEventOutboxMsg'
+  description: 'Contains all outgoing events going to external systems.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdMessageStore'
+  genericComponents:
+    tableType: 6
+    groupId: 47a738e9-4dcb-41bc-8fcc-bb1699c6b097
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+  columns:
+  - name: 'App'
+    description: 'from AsExternalApplication.ApplicationCode'
+    genericControls:
+      refTable: 'AsExternalApplication'
+      refField: 'ApplicationCode'
+  - name: 'EventNo'
+    description: ''
+  - name: 'EventData'
+    description: ''
+  - name: 'ChannelTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'EsPushChannelType'
+      refField: 'ChannelTypeNo'
+  - name: 'EventSubscriptionNo'
+    description: ''
+    genericControls:
+      refTable: 'EsEventSubscription'
+      refField: 'EventSubscriptionNo'
+  - name: 'EventChannelConfig'
+    description: 'Additional event specific configuration data (key/value pairs) for the channel (i.e. values for placeholders in a channel base URL such as {id}). Format: Same as TxParameter.'

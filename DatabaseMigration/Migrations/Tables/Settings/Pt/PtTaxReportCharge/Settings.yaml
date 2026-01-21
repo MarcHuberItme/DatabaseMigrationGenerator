@@ -1,0 +1,53 @@
+table:
+  name: 'PtTaxReportCharge'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FromDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'MinAmountClient'
+    description: ''
+  - name: 'MinAmountStaff'
+    description: ''
+  - name: 'AmountOnlyHBLN'
+    description: ''
+  - name: 'AmountPerPos'
+    description: ''
+  - name: 'AmountPerPosU'
+    description: ''
+  - name: 'AddAmountEarningA'
+    description: ''
+  - name: 'AddAmountEarningB'
+    description: ''
+  - name: 'AddAmountEarningP'
+    description: ''
+  - name: 'AddAmountEarningU'
+    description: ''
+  - name: 'AddAmountEarningMode'
+    description: '0, charge once if any earning entry existed\r\n1, charge for every earning entry'
+    genericControls:
+      refTable: 'PtTaxReportEarningMode'
+      refField: 'TypeNo'
+  - name: 'PosEarningStaffRebate'
+    description: ''
+  - name: 'ChargeableAccountProducts'
+    description: ''
+  - name: 'MinAmountPortfolio'
+    description: ''
+  - name: 'MaxAmountPortfolio'
+    description: ''
+  - name: 'MinMaxAmountMode'
+    description: '0, partner level, hbl\r\n1, portfolio level, scobasg'
+    genericControls:
+      refTable: 'PtTaxReportMinMaxMode'
+      refField: 'TypeNo'

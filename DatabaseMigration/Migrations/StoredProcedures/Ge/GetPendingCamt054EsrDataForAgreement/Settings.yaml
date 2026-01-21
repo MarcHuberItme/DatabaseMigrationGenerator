@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPendingCamt054EsrDataForAgreement'
+  description: ''

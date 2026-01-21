@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetCamt054TransactionsForDate'
+  description: 'Load transactions for a data for camt.054'

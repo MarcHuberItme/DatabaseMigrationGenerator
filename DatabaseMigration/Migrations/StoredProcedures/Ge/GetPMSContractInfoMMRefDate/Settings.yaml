@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPMSContractInfoMMRefDate'
+  description: 'Returns money market contract information for PMS'

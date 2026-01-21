@@ -1,0 +1,33 @@
+table:
+  name: 'AsFinstarVersion'
+  description: 'Release Information Table which allows\r\n- to define a ''Main Release'' depending on Sub-Releases of single Finstar Applications\r\n- to define if a Main Release is actually valid and accepted or not'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Finstar Release'
+    - german:
+        formTitle: 'Finstar Release'
+  columns:
+  - name: 'MainRelease'
+    description: 'Main Release Descriptor of a Finstar Release'
+    genericControls:
+      defColumnPos: 1
+  - name: 'IsValidRelease'
+    description: 'Defines if a Client Station with the Main Release is allowed to run'
+  - name: 'RelVersSystem'
+    description: 'Release Version for "System" Component'
+  - name: 'RelVersGeneral'
+    description: 'Release Version for "General" Component'
+  - name: 'RelVersBatchServer'
+    description: 'Release Version for "Batch Server" Component'
+  - name: 'RelVersApplicationServer'
+    description: 'Release Version for "Application Server" Component'
+  - name: 'RelVersFrontEnd'
+    description: 'Release Version for "Front End" Component'

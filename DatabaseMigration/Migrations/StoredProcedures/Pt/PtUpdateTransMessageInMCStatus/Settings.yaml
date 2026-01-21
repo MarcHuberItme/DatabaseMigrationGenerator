@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtUpdateTransMessageInMCStatus'
+  description: 'Sets Status in PtTransMessageInMasterCard to 10 for inserted Lines in MasterCard-Tables (StagingJob), otherwise the Status remains 9'

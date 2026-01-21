@@ -1,0 +1,29 @@
+table:
+  name: 'PmPerfDataSource'
+  description: 'This code table describes the source of performance data (e.g. migrated, calculated...)'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Performance'
+        helpText: 'Performance data source'
+    - german:
+        formTitle: 'Performance'
+        helpText: 'Datenquelle Performance'
+    - french:
+        formTitle: 'Performance'
+        helpText: 'Source de données sur les performances'
+    - italian:
+        formTitle: 'Performance'
+        helpText: 'Fonte di dati sulle prestazioni'
+  columns:
+  - name: 'SourceType'
+    description: '- Calculated (0)\r\n- Migrated (1)'

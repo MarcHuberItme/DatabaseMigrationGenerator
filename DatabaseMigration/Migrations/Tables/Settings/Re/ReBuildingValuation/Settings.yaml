@@ -1,0 +1,67 @@
+table:
+  name: 'ReBuildingValuation'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Building Valuation'
+    - german:
+        formTitle: 'Gebäude Schätzung'
+  columns:
+  - name: 'ValuationId'
+    description: ''
+    genericControls:
+      refTable: 'ReValuation'
+      refField: 'Id'
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+  - name: 'AddExpFlag'
+    description: ''
+  - name: 'PriceM2a'
+    description: ''
+  - name: 'PriceM2b'
+    description: ''
+  - name: 'PriceM2c'
+    description: ''
+  - name: 'PriceM3a'
+    description: ''
+  - name: 'PriceM3b'
+    description: ''
+  - name: 'PriceM3c'
+    description: ''
+  - name: 'DeValuationRate1'
+    description: ''
+  - name: 'DeValuationRate2'
+    description: ''
+  - name: 'BuildingIdAssoc'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+  - name: 'DeValuationRateOnInvestM3'
+    description: ''
+  - name: 'UseInvestEffM2'
+    description: ''
+  - name: 'UseInvestEffM3'
+    description: ''
+  - name: 'RentPerMonthIntLiving'
+    description: ''
+  - name: 'RentPerMonthExtLiving'
+    description: ''
+  - name: 'RentPerMonthIntTrade'
+    description: ''
+  - name: 'RentPerMonthExtTrade'
+    description: ''
+  - name: 'RentPerMonthBase'
+    description: '1 = base is external value\r\n2 = base is internal value'

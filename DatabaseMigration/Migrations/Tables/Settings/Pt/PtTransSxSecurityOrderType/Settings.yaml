@@ -1,0 +1,32 @@
+table:
+  name: 'PtTransSxSecurityOrderType'
+  description: 'this table contains all tradable securitytypes and defines which kind of trading is possible.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    isGroupable: true
+  columns:
+  - name: 'SecurityType'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicSecurityType'
+      refField: 'SecurityType'
+      defColumnPos: 1
+  - name: 'OrderTypeMarket'
+    description: 'Null= OrderType is allowed\r\nW= OrderType is allowed, but a warning occurs\r\nE= OrderType is not allowed, an error occurs'
+    genericControls:
+      defColumnPos: 2
+  - name: 'OrderTypeLimit'
+    description: 'Null= OrderType is allowed\r\nW= OrderType is allowed, but a warning occurs\r\nE= OrderType is not allowed, an error occurs'
+    genericControls:
+      defColumnPos: 3
+  - name: 'OrderTypeConditional'
+    description: 'Null= OrderType is allowed\r\nW= OrderType is allowed, but a warning occurs\r\nE= OrderType is not allowed, an error occurs'
+    genericControls:
+      defColumnPos: 4

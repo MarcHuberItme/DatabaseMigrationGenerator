@@ -1,0 +1,116 @@
+table:
+  name: 'PtFxConfirmationIn'
+  description: 'MT 300 Foreign Exchange Confirmation'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'TransMessageInId'
+    description: ''
+  - name: 'BeneficiaryBIC'
+    description: 'Receiver BIC 16x'
+  - name: 'SenderBIC'
+    description: 'Sender BIC 16x'
+  - name: 'OrderingPartyReference'
+    description: ':108: Message User Reference (MUR)'
+  - name: 'ExternalMessageId'
+    description: '121 Reference Transaction'
+  - name: 'BookingInformation'
+    description: ':20: SenderReference 16x'
+  - name: 'RelatedReference'
+    description: ':21: Related Reference 16x'
+  - name: 'TypeOfOperation'
+    description: ':22A: Type of Operation 4!c'
+  - name: 'CommonReference'
+    description: ':22C: Common Reference 4!a2!c4!n4!a2!c\r\n'
+  - name: 'PartyAId'
+    description: ':82A: Party A Identifier  [/1!a][/34x]'
+  - name: 'PartyACode'
+    description: ':82A: Party A Code 4!a2!a2!c[3!c]'
+  - name: 'PartyAAddress'
+    description: ':82A: Party A Address 4*35x'
+    genericControls:
+      multiLine: true
+  - name: 'PartyBId'
+    description: ':87A: Party B Identifier'
+  - name: 'PartyBCode'
+    description: ':87A: Party B Code'
+  - name: 'PartyBAddress'
+    description: ':87A: Party B Address'
+    genericControls:
+      multiLine: true
+  - name: 'AgreementType'
+    description: ':77H: Agreement Type  6a'
+  - name: 'AgreementDate'
+    description: ':77H: Agreement Date 8!n'
+  - name: 'AgreementVersion'
+    description: ':77H: Agreement Version 4!n'
+  - name: 'YearOfDefinitions'
+    description: ':14C: Year of Definitions 4!n'
+  - name: 'TradeDate'
+    description: ':30T: Trade Date  8!n'
+  - name: 'ValueDate'
+    description: ':30V: Value Date  8!n'
+  - name: 'ExchangeRate'
+    description: ':36: Exchange Rate 12d'
+  - name: 'BoughtCurrency'
+    description: ':32B: Currency of Amount Bought (3!a)'
+  - name: 'BoughtAmount'
+    description: ':32B: Amount Bought (15d)'
+  - name: 'BoughtReceivingAgentId'
+    description: ':57A: Bought Receiving Agent Id  [/1!a][/34x]'
+  - name: 'BoughtReceivingAgentCode'
+    description: ':57A: Bought Receiving Agent Code 4!a2!a2!c[3!c]'
+  - name: 'BoughtReceivingAgentAddress'
+    description: ':57A: Bought Receiving Agent Address 4*35x'
+    genericControls:
+      multiLine: true
+  - name: 'SoldCurrency'
+    description: ':32B: Currency of Amount Sold (3!a)'
+  - name: 'SoldAmount'
+    description: ':32B: Amount Sold(15d)'
+  - name: 'SoldDeliveryAgentId'
+    description: ':53A: Sold Delivery Agent Id  [/1!a][/34x]'
+  - name: 'SoldDeliveryAgentCode'
+    description: ':53A: Sold Delivery Agent Code 4!a2!a2!c[3!c]'
+  - name: 'SoldDeleiveryAgentAddress'
+    description: ':53A: Sold Deleivery Agent Address 4*35x'
+    genericControls:
+      multiLine: true
+  - name: 'SoldReceivingAgentId'
+    description: ':57A: Sold Receiving Agent Id 4!a2!a2!c[3!c]'
+  - name: 'SoldReceivingAgentCode'
+    description: ':57A: Sold Receiving Agent Code 4!a2!a2!c[3!c]'
+  - name: 'SoldReceivingAgentAddress'
+    description: ':57A: Sold Receiving Agent Address 4*35x'
+    genericControls:
+      multiLine: true
+  - name: 'ContactInformation'
+    description: ':29A: Contact Information 4*35x'
+  - name: 'DealingMethodCode'
+    description: ':24D: Dealing Method Code 4!c'
+  - name: 'DealingMethodInfo'
+    description: ':24D: Dealing Method Information [/35x]'
+  - name: 'DealingBranchPartyAId'
+    description: ':84A: Dealing Branch Party A Id  [/1!a][/34x]'
+  - name: 'DealingBranchPartyACode'
+    description: ':84A: Dealing Branch Party A Code 4!a2!a2!c[3!c]'
+  - name: 'DealingBranchPartyALocation'
+    description: ':84A: Dealing Branch Party A Location [35x]'
+  - name: 'DealingBranchPartyAAddress'
+    description: ':84A: Dealing Branch Party A Address [4*35x]'
+    genericControls:
+      multiLine: true
+  - name: 'Status'
+    description: 'Process Status like Pending, Processed, Error or Skipped'
+    genericControls:
+      refTable: 'SwiftFxConfirmationStatus'
+      refField: 'Status'

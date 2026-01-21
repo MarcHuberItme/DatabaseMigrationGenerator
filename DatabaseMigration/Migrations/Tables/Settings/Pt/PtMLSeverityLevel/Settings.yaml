@@ -1,0 +1,31 @@
+table:
+  name: 'PtMLSeverityLevel'
+  description: 'Contains helper text for probability'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Severity level'
+    - german:
+        formTitle: 'Schweregrad'
+    - french:
+        formTitle: 'Niveau de gravité'
+    - italian:
+        formTitle: 'Livello di gravità'
+  columns:
+  - name: 'Probability'
+    description: 'Probability border'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'SeverityLevel'
+    description: 'Severity level text for the probability.'
+    genericControls:
+      defColumnPos: 2

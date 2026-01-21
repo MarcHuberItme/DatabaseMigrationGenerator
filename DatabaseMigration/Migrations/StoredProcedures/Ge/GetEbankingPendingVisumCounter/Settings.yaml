@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetEbankingPendingVisumCounter'
+  description: 'This stored procedure returns a counter for the pending visum that the ebanking user is allowed to give visum.\r\n- Fileimport\r\n- PaymentOrder\r\n- StandingOrder\r\nEntries that the user entered himself are not counted, because another user has to give the visum.'

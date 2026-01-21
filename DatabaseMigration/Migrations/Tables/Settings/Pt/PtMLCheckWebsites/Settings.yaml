@@ -1,0 +1,58 @@
+table:
+  name: 'PtMLCheckWebsites'
+  description: 'In dieser Tabelle werden beim Start einer Prüfung die selektierten Werte gespeichert. Diese werden dem Kunden präsentiert (via Formular, BeratungsSuite, SelfService via API)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'CheckMasterDataId'
+    description: 'Id des zugehörigen MasterData Records.'
+    genericControls:
+      refTable: 'PtMLCheckMasterData'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'WebAddressId'
+    description: 'Referenz zu PtWebAddress'
+    genericControls:
+      refTable: 'PtWebAddress'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'WebAddress'
+    description: 'Explanation of the web address'
+    genericControls:
+      multiLine: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'WebAddressCorrected'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Remarks'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'RemarksCorrected'
+    description: ''
+  - name: 'IsToDelete'
+    description: ''
+  - name: 'HasChanges'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'Comment'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'CheckStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckDetailState'
+      refField: 'CheckDetailStateNo'
+      defColumnPos: 2
+      isNoUpdate: true

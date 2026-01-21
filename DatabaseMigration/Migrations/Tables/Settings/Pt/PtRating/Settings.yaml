@@ -1,0 +1,125 @@
+table:
+  name: 'PtRating'
+  description: 'rating of a partner; relationship-entity of PtBase and AsRatingCode'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Soft Factor Rating'
+    - german:
+        formTitle: 'Soft Factor Rating'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key; Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      createNavigationIndex: true
+  - name: 'RatingNo'
+    description: 'Unique identification number, used by ImRating.\r\nThe number is built as document number and is printed as part of the barcode on question form!'
+    genericControls:
+      isNoUpdate: true
+  - name: 'RatingDate'
+    description: 'date of the rating\r\nused for calculation of "Veränderung der Ausfallwahrscheinlichkeiten über einen Zeitraum"'
+    genericControls:
+      defColumnPos: 1
+  - name: 'RatingAgencyId'
+    description: ''
+    genericControls:
+      refTable: 'AsRatingAgency'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'RatingCodeId'
+    description: 'foreign-key; Id of AsRatingCode'
+    genericControls:
+      refTable: 'AsRatingCode'
+      refField: 'Id'
+      defColumnPos: 8
+  - name: 'InternRatingCodeNo'
+    description: 'used for calculation of "Veränderung der Ausfallwahrscheinlichkeiten über einen Zeitraum"'
+    genericControls:
+      refTable: 'AsInternRatingCode'
+      refField: 'InternRatingCodeNo'
+      isNoUpdate: true
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtRatingStatus'
+      refField: 'StatusNo'
+      defColumnPos: 3
+  - name: 'RatingCompanyId'
+    description: ''
+    genericControls:
+      refTable: 'PtRatingCompany'
+      refField: 'Id'
+  - name: 'CompanyUnit'
+    description: ''
+  - name: 'LineOfBusiness'
+    description: ''
+    genericControls:
+      refTable: 'PtRatingLineOfBusiness'
+      refField: 'BusinessTypeNo'
+  - name: 'Country'
+    description: 'Location of the company unit, used for statistics'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'RatingPerson'
+    description: 'Person who did the rating (Default Windows-User)'
+  - name: 'RatingExecDate'
+    description: 'date when the rating process has been done\r\n'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ModelNo'
+    description: ''
+    genericControls:
+      refTable: 'AsRatingImModel'
+      refField: 'ModelNo'
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'TypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AsRatingImType'
+      refField: 'TypeNo'
+      defColumnPos: 5
+  - name: 'LevelNo'
+    description: ''
+    genericControls:
+      refTable: 'AsRatingImLevel'
+      refField: 'LevelNo'
+      defColumnPos: 6
+  - name: 'InfoDegreeApplicable'
+    description: 'Information degree % of the applicable criterias'
+  - name: 'InfoDegreeTotal'
+    description: 'Information degree % all criterias\r\nInformationsgrad % aller Kriterien'
+  - name: 'ImRatingAvgX'
+    description: 'X = Weakness / Threats (maximum value = 5)'
+  - name: 'ImRatingAvgY'
+    description: 'Y = Strengh / Opportunities  (maximum value = 5)'
+  - name: 'InitialPIN'
+    description: 'The initial PIN is stored as plaintext'
+  - name: 'InitialPUK'
+    description: 'The initial PUK is stored as plaintext'
+  - name: 'PUK'
+    description: 'Encrypted (MD5 algorithm) PUK signature!\r\nThis value has always 32 characters.'
+  - name: 'PIN'
+    description: 'Encrypted (MD5 algorithm) PIN signature!\r\nThis value has always 32 characters.'
+  - name: 'PINWrongCounter'
+    description: 'Counter which indicates if this assessment is still valid whith that PIN.'
+  - name: 'PUKWrongCounter'
+    description: 'Counter which indicates if this assessment is still valid whith that PUK.'

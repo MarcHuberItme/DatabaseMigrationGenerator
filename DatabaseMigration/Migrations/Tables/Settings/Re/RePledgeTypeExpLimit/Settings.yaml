@@ -1,0 +1,41 @@
+table:
+  name: 'RePledgeTypeExpLimit'
+  description: 'Höchstwert und Belehnungssatz % für Pfandobjektart'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Limits'
+    - german:
+        formTitle: 'Höchstwerte Belehnung'
+  columns:
+  - name: 'PledgeTypeId'
+    description: ''
+    genericControls:
+      refTable: 'RePledgeType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ValidFrom'
+    description: ''
+  - name: 'LimitFrom'
+    description: 'Betrag ab > xxxxx'
+  - name: 'LimitTo'
+    description: 'Betrag bis <= xxxx'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Rate'
+    description: 'Satz in %'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValueTypeNo'
+    description: 'Basiswert, der für die Berechnung gilt'
+    genericControls:
+      refTable: 'ReValueType'
+      refField: 'ValueTypeNo'

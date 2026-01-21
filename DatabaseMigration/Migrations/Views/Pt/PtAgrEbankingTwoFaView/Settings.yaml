@@ -1,0 +1,91 @@
+view:
+  name: 'PtAgrEbankingTwoFaView'
+  description: 'E-Banking agreement two factor authentication view.'
+frontendView:
+  name: 'PtAgrEbankingTwoFaView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'SecureListId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'AgreementId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtAgrEBanking'
+      refField: 'Id'
+  - name: 'AgreementNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+    isNotNull: true
+  - name: 'AgreementExpirationDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'IsFuturaeActive'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'FuturaeUserId'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 36
+  - name: 'LastFuturaeDevActShortCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'LastFuturaeDevActQrCodeDataUri'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 2000
+  - name: 'LastFuturaeActCodeExpDateTime'
+    description: ''
+    dataType: 'datetime'
+  - name: 'CurrentFuturaeTwoFaTenantId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'IsKobilActive'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'KobilUserId'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'LastKobilDevActCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'LastKobilDevActCodeExpDateTime'
+    description: ''
+    dataType: 'datetime'
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'FuturaeMigDueDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'IsSecureListAvailable'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsMatrixListAvailable'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true

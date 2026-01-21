@@ -1,0 +1,39 @@
+table:
+  name: 'EtSync'
+  description: 'Controls the process to sync Finstar and the StagingArea'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'SyncNo'
+    description: 'Sequence Number'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SyncDate'
+    description: 'Date of the Sync Process'
+    genericControls:
+      defColumnPos: 2
+  - name: 'SyncType'
+    description: ''
+    genericControls:
+      refTable: 'EtSyncType'
+      refField: 'SyncType'
+      defColumnPos: 3
+  - name: 'SelectionFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'SelectionTo'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'Status'
+    description: 'Status of the process'
+    genericControls:
+      refTable: 'PtExportStatus'
+      refField: 'StatusNo'

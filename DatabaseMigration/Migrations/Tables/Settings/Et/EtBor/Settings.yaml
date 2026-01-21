@@ -1,0 +1,95 @@
+table:
+  name: 'EtBor'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 2ff0c162-5e66-40c2-b2f7-6f3afd0c03bb
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'FsTaxRegulationId'
+    description: 'References the tax regulation record'
+    genericControls:
+      refTable: 'PtTaxRegulation'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'FsTaxRegOwnerId'
+    description: 'References the beneficial owner'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'FsAgrTaxRegId'
+    description: 'Points to the EU Interst tax instructions of the customer'
+    genericControls:
+      refTable: 'PtAgrTaxRegulation'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'FsPortfolioId'
+    description: 'Points to the default-portfolio of the creditor.'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'FsSyncNo'
+    description: ''
+    genericControls:
+      refTable: 'EtSync'
+      refField: 'SyncNo'
+      hasDetailBtn: true
+  - name: 'FsTransferNo'
+    description: ''
+    genericControls:
+      refTable: 'EtTransfer'
+      refField: 'TransferNo'
+      hasDetailBtn: true
+  - name: 'bor_id'
+    description: ''
+  - name: 'bo_id'
+    description: ''
+    genericControls:
+      refTable: 'EtBo'
+      refField: 'bo_id'
+      hasDetailBtn: true
+  - name: 'crdt_id'
+    description: ''
+    genericControls:
+      refTable: 'EtCreditor'
+      refField: 'crdt_id'
+      hasDetailBtn: true
+  - name: 'dep_id'
+    description: ''
+    genericControls:
+      refTable: 'EtDeposit'
+      refField: 'dep_id'
+      hasDetailBtn: true
+  - name: 'jur'
+    description: ''
+  - name: 'jur_subcat'
+    description: ''
+  - name: 'bor_fwht_status'
+    description: ''
+  - name: 'bor_start'
+    description: ''
+  - name: 'bor_end'
+    description: ''
+  - name: 'bo_share'
+    description: ''
+  - name: 'confirmation_date1'
+    description: ''
+  - name: 'confirmation_user1'
+    description: ''
+  - name: 'confirmation_date2'
+    description: ''
+  - name: 'confirmation_user2'
+    description: ''
+  - name: 'eusd'
+    description: ''
+  - name: 'status'
+    description: ''

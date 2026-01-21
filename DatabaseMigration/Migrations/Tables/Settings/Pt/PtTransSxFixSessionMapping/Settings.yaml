@@ -1,0 +1,30 @@
+table:
+  name: 'PtTransSxFixSessionMapping'
+  description: 'Persistent mapping of a specific FIX session to a FIX message. Any incoming message needs to be assigned to a FIX session so that an outgoing GOI message can be mapped back to the correct session.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Session Mapping'
+    - german:
+        formTitle: 'Session Mapping'
+  columns:
+  - name: 'BeginString'
+    description: 'Identifies beginning of new message and protocol version. ALWAYS FIRST FIELD IN MESSAGE. (Tag = 8)'
+  - name: 'SenderCompId'
+    description: 'Assigned value used to identify firm sending message (tag 49)'
+  - name: 'TargetCompId'
+    description: 'Assigned value used to identify receiving firm (Tag = 56)'
+  - name: 'SubId'
+    description: ''
+  - name: 'ClOrdId'
+    description: 'Unique identifier for Order as assigned by the buy-side (institution, broker, intermediary etc.) (identified by SenderCompID (49) or OnBehalfOfCompID (115) as appropriate). Uniqueness must be guaranteed within a single trading day. Firms, particularly those which electronically submit multi-day orders, trade globally or throughout market close periods, should ensure uniqueness across days, for example by embedding a date within the ClOrdID (11) field.'
+  - name: 'ExtOrderMandator'
+    description: ''

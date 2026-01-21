@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccountIssueConvDetails'
+  description: 'get a list of PtAccountConversionDetail that require PtOpenIssue update. 07.01.2005/mct'

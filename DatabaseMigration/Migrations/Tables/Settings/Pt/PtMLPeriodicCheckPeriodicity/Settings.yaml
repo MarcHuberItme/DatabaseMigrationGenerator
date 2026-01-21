@@ -1,0 +1,53 @@
+table:
+  name: 'PtMLPeriodicCheckPeriodicity'
+  description: 'Verwaltung der Periodiziäten von GWG-Prüfungen (z.B. nächste Prüfung)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Check Periodicity'
+    - german:
+        formTitle: 'GWG Prüfungsperiodizität'
+    - french:
+        formTitle: 'Périodicité audits du GWG'
+  columns:
+  - name: 'MLSuspectNo'
+    description: 'MoneyLaunderSuspect aus Tabelle PtProfileMoneyLaunderSuspect'
+    genericControls:
+      refTable: 'PtProfileMoneyLaunderSuspect'
+      refField: 'MoneyLaunderSuspect'
+      defColumnPos: 1
+  - name: 'MLCustomerTypeNo'
+    description: 'TypeNo aus Tabelle PtMLCustomerTypeNo'
+    genericControls:
+      refTable: 'PtMLCustomerType'
+      refField: 'TypeNo'
+      defColumnPos: 2
+  - name: 'MonthsUntilNextCheck'
+    description: 'Anzahl der Monate, welche zum Datum der letzten Kontrolle addiert werden, um das neue Kontrolldatum zu berechnen'
+    genericControls:
+      defColumnPos: 3
+  - name: 'DaysBeforeCheckForOpenIssue'
+    description: 'Anzahl der Tage, welche vom nächsten Kontrolldatum abgezogen werden, um die Endfälligkeit des Termins für den Kundenberater festzulegen'
+    genericControls:
+      defColumnPos: 4
+  - name: 'DaysBeforeTaskActivation'
+    description: 'Anzahl der Tage, welche vom nächsten Kontrolldatum abgezogen werden, um den Kundenberater zu benachrichtigen'
+    genericControls:
+      defColumnPos: 5
+  - name: 'LeadTimeMonth'
+    description: 'Die Vorlaufzeit legt fest wieviele Monate vor Erreichen des Startdatums oder Datum nächste Prüfung eine Prüfung gestartet wird.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ValidFrom'
+    description: 'Zeitliche Gültigkeit des Records, Startdatum'
+  - name: 'ValidTo'
+    description: 'Zeitliche Gültigkeit des Records, Enddatum'

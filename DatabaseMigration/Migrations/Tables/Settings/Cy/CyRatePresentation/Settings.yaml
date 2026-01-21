@@ -1,0 +1,61 @@
+table:
+  name: 'CyRatePresentation'
+  description: 'Rules for currency calculation and presentation'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Presentation rules'
+    - german:
+        formTitle: 'Währungs-Darstellung'
+  columns:
+  - name: 'CySymbolOriginate'
+    description: 'Symbol of the originate currency.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'CySymbolTarget'
+    description: 'Target currency.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'RndTypeRate'
+    description: 'Rounding for calculation from originat to target currency'
+    genericControls:
+      refTable: 'AsRoundingRule'
+      refField: 'RoundingRule'
+  - name: 'RndTypeRateInv'
+    description: 'Rounding if calculation goes ''backwards'' (from target to originator)'
+    genericControls:
+      refTable: 'AsRoundingRule'
+      refField: 'RoundingRule'
+  - name: 'RndTypeRatePrec'
+    description: 'Rounding for precise requirements, e.g. interbank trading'
+    genericControls:
+      refTable: 'AsRoundingRule'
+      refField: 'RoundingRule'
+  - name: 'RndTypeRatePrecInv'
+    description: 'Rounding for backward calculation(from target to originator) for prcise requirements, e.g. interbank trading'
+    genericControls:
+      refTable: 'AsRoundingRule'
+      refField: 'RoundingRule'
+  - name: 'FactorOriginate'
+    description: 'Factor of originate currency for presentation.'
+  - name: 'FactorTarget'
+    description: 'Factor of target currency for presentation.'
+  - name: 'FactorOriginateInv'
+    description: 'Factor of originate currency for inverse presentation'
+  - name: 'FactorTargetInv'
+    description: 'Factor of target currency for inverse presentation'

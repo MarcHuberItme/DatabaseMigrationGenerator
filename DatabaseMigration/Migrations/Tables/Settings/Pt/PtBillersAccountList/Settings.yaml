@@ -1,0 +1,35 @@
+table:
+  name: 'PtBillersAccountList'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'BillerListID'
+    description: 'Foreign Key'
+    genericControls:
+      refTable: 'PtBillerList'
+      refField: 'Id'
+  - name: 'BillerAccountNo'
+    description: 'Biller''s accountNo of its finance institut. Acount-No, IBAN, ESR-Membernumber or PC-Account.\r\nESR-Membernumber and PC-Account are formatet like: xx-nnnnnn-p. E.g.: 01-3041-2'
+  - name: 'BillerBankNo'
+    description: 'Depending on BillerBankType (ClearingNo, BIC-Numer etc.)'
+  - name: 'BillerBankType'
+    description: 'PC = Postfinance    BC =   ClearingNo\r\nBIC = Swift                 BLZ = Bankleitzahl\r\n'
+  - name: 'BillerBESRID'
+    description: 'BESRID in der ESR-Referenz bei ESR-Zahlung Bank. Die BESRID steht immer am Beginn der ESR-Referenz.\r\nBei den anderen Zahlungsarten fehlt dieses Feld.'
+  - name: 'BillerCurrency'
+    description: 'Currency of the Account'
+  - name: 'BillerESRregistration'
+    description: 'true: Biller supports direct registration (ESR-registration), otherwise not supported'
+  - name: 'BillerPaymentMethod'
+    description: 'Enum:\r\nESR-ALT\r\nESR-NEU\r\nIPI\r\nGENERIC_BTREF'
+  - name: 'BillerTrxRefType'
+    description: 'Enumeration:\r\nES = Zahlung auf Bank- oder PC-Konto\r\nESR = ESR-Zahlung\r\nBESR = ESR-Zahlung Bank\r\nIPI = IPI-Zahlung'

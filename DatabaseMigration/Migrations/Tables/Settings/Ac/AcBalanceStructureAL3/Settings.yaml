@@ -1,0 +1,37 @@
+table:
+  name: 'AcBalanceStructureAL3'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Balance Structure Level 3'
+    - german:
+        formTitle: 'Bilanzstruktur Level 3'
+    - french:
+        formTitle: 'Structure du bilan Level3'
+  columns:
+  - name: 'AL3'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'BalanceSheetTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceSheetType'
+      refField: 'BalanceSheetTypeNo'
+      defColumnPos: 1
+  - name: 'WithinAL2'
+    description: ''
+    genericControls:
+      refTable: 'AcBalanceStructureAL2'
+      refField: 'AL2'
+      defColumnPos: 3

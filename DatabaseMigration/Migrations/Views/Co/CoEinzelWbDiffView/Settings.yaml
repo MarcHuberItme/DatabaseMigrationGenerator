@@ -1,0 +1,3 @@
+view:
+  name: 'CoEinzelWbDiffView'
+  description: 'Zeigt die Veränderung der EinzelWB (prev und diff Felder) pro Veragruppe auf'

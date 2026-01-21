@@ -1,0 +1,51 @@
+table:
+  name: 'PrPrivateCompPrice'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Private Component Price'
+    - german:
+        formTitle: 'Preis Produkt-Komponente'
+  columns:
+  - name: 'PrivateComponentNo'
+    description: 'foreign-key;  Candidate-key of PrPrivateComponent'
+    genericControls:
+      refTable: 'PrPrivateComponent'
+      refField: 'PrivateComponentNo'
+      isNoUpdate: true
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'InterestRate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'CommissionRate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ProvisionRate'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'StandardPriceNo'
+    description: 'foreign-key;  Candidate-key of PrStandardPriceType'
+    genericControls:
+      refTable: 'PrStandardPriceType'
+      refField: 'StandardPriceNo'
+      defColumnPos: 1
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

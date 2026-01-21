@@ -1,0 +1,27 @@
+table:
+  name: 'PtPaymentChargeTypeCode'
+  description: 'payment charge type detail classification\r\ne.g. sender, receiver, network'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment Charge Type Code'
+        helpText: 'Payment Charge Type Code'
+    - german:
+        formTitle: 'Code der Zahlungsgebührar'
+        helpText: 'Code der Zahlungsgebührart'
+    - french:
+        formTitle: 'Code de type de frais de'
+        helpText: 'Code de type de frais de'
+  columns:
+  - name: 'CodeNo'
+    description: ''

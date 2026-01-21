@@ -1,0 +1,31 @@
+table:
+  name: 'PtOrderDetailChange'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'PaymentOrderDetailId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderDetail'
+      refField: 'Id'
+  - name: 'PaymentOrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrder'
+      refField: 'Id'
+  - name: 'MutField'
+    description: ''
+  - name: 'StandingOrderId'
+    description: ''
+    genericControls:
+      refTable: 'PtStandingOrder'
+      refField: 'Id'

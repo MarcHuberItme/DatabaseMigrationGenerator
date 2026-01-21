@@ -1,0 +1,294 @@
+view:
+  name: 'PtAccruedClosingDetailView'
+  description: 'used to collect accrued/periodic closing detail for account\r\n29-09-2011/ram: zusätzliche Felder aufgenommen\r\n20.10.2011/ram: Felder ''BalanceValueEnd''  und ''ValueProductCurrency'' nur umrechnen und runden wenn WRG <> ''CHF''\r\n11.11.2011/ram: DueValueProductCurrency wird von Pos.ValueProductCurrency subtrahiert  (Hypothekarprodukte)\r\n18.11.2011/ram: beim join auf Tab. CyRateRecent ''And ACP.PeriodType=2'' gelöscht\r\n13.01.2012/ram: Modifikation vom 18.11.2011 wieder rückgängig gemacht\r\n16.01.2012/msn: Condition beim join auf Tab. CyRateRecent ''And (ACP.PeriodType=2 Or (ACP.PeriodType=1 And ACP.ConversionRate Is Null))'' geändert.\r\n25.08.2015/msn: Add NKK (WithdrawCommission)'
+frontendView:
+  name: 'PtAccruedClosingDetailView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAccruedClosingDetailVie'
+        helpText: 'PtAccruedClosingDetailView'
+    - german:
+        formTitle: 'PtAccruedClosingDetailVie'
+        helpText: 'PtAccruedClosingDetailView'
+  columns:
+  - name: 'AccountID'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'AccountNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      defColumnPos: 2
+  - name: 'ProductNo'
+    description: ''
+    dataType: 'int'
+  - name: 'TransDateBegin'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TransDateEnd'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ValueDateEnd'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 5
+  - name: 'IsCreditCorrectionAbs'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'CreditInterestSum'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CreditInterestAdjustment'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CreditInterestCorrection'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CreditInterest'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CreditInterestCHF'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 6
+  - name: 'IsDebitCorrectionAbs'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'DebitInterestSum'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'DebitInterestAdjustment'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'DebitInterestCorrection'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'DebitInterest'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'DebitInterestCHF'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 7
+  - name: 'IsBonusCorrectionAbs'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Bonus'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'BonusAdjustment'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'BonusCorrection'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'BonusReal'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 8
+  - name: 'IsExpenseCorrectionAbs'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'TransactionalExpensesSum'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'RuleBasedExpensesSum'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ExpensesAdjustment'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ExpensesCorrection'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'PostFinanceExpensesSum'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'Expense'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'ExpenseCHF'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 9
+  - name: 'IsSpecialCommCorrectionAbs'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'SpecialCommSum'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'SpecialCommAdjustment'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'SpecialCommCorrection'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'InterestBasedCommSum'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'Commission'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CommissionCHF'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 10
+  - name: 'IsWithdrawCommCorrectionAbs'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'WithdrawCommissionSum'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'WithdrawCommissionCorrection'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'WithdrawCommission'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'WithdrawCommissionCHF'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 11
+  - name: 'IsCreditFeeCorrectionAbsolute'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'CreditFeeSum'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CreditFeeAdjustment'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CreditFeeCorrection'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CreditFee'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CreditFeeCHF'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 12
+  - name: 'IsDebitFeeCorrectionAbsolute'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'DebitFeeSum'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'DebitFeeAdjustment'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'DebitFeeCorrection'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'DebitFee'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'DebitFeeCHF'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 13
+  - name: 'BalanceValueEnd'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 14
+  - name: 'Rate'
+    description: ''
+    dataType: 'float'
+    genericControls:
+      defColumnPos: 15
+  - name: 'PeriodType'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ValueProductCurrency'
+    description: ''
+    dataType: 'money'
+    scale: 4
+    genericControls:
+      defColumnPos: 16

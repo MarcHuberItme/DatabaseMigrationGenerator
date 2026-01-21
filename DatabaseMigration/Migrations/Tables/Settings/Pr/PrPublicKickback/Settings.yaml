@@ -1,0 +1,41 @@
+table:
+  name: 'PrPublicKickback'
+  description: 'This table is used to import the fonds kickback data from the swisscanto-excel.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Kickback Excel Import'
+    - german:
+        formTitle: 'Retrozessionen Excel Imp'
+  columns:
+  - name: 'YearMonth'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'PublicId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'KickbackRate'
+    description: ''
+    minValue: '0.0001'
+    genericControls:
+      defColumnPos: 3
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicKickbackStatus'
+      refField: 'KickbackStatusNo'
+      defColumnPos: 4

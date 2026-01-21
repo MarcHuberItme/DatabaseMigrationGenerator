@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AiTaxReportAiaPaymentSelection'
+  description: 'Selects payments as convolution of reportable partners and transactions classified as reportable for AIA (CRS) Report\r\n\r\n2023-08-02/FIN-9318/daga: condition added for PtTransItem HdVersionNo between 1 and 999999998'

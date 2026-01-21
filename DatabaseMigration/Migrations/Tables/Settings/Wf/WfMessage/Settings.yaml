@@ -1,0 +1,29 @@
+table:
+  name: 'WfMessage'
+  description: 'Contains messages that can be sent through the workflow system'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Workflow Messages'
+    - german:
+        formTitle: 'Workflow Meldungen'
+  columns:
+  - name: 'MessageDate'
+    description: 'Date the message was sent.'
+  - name: 'Sender'
+    description: 'Name of the user that sent the message.'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+  - name: 'Subject'
+    description: 'Title of the message'
+  - name: 'Body'
+    description: 'Body of the Message.'

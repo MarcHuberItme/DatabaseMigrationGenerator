@@ -1,0 +1,3 @@
+view:
+  name: 'AcFrozenDerivative_RvView'
+  description: 'Berechnung der Wiederbeschaffungswerte pro Kunde mit Berücksichtigung der Nettingverträge'

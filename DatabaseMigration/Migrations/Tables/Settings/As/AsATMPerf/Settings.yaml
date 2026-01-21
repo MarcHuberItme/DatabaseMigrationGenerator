@@ -1,0 +1,31 @@
+table:
+  name: 'AsATMPerf'
+  description: 'For evaluating ATM performance'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'AsATMPerf'
+        helpText: 'AsATMPerf'
+    - german:
+        formTitle: 'AsATMPerf'
+        helpText: 'AsATMPerf'
+  columns:
+  - name: 'StartDateTime'
+    description: 'the time receiving message'
+  - name: 'DeviceID'
+    description: 'DeviceID of ATM'
+  - name: 'MsgType'
+    description: 'Message type'
+  - name: 'ECode'
+    description: 'ECode in the message'
+  - name: 'TransNo'
+    description: 'TransNo in the message'
+  - name: 'ProcTime'
+    description: 'The duration (second) between receiving message and sending replying message'

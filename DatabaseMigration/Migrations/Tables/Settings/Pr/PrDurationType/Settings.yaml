@@ -1,0 +1,29 @@
+table:
+  name: 'PrDurationType'
+  description: 'Einheit'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Duration Type'
+    - german:
+        formTitle: 'Laufzeit Typ'
+  columns:
+  - name: 'DurationType'
+    description: 'D = Day / M = Month / Y = Year'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Tolerance'
+    description: 'tolerance expressed in the next lower unit. \r\nfor duration calculation \r\ne.g. if the entry year has a tollerance of 2 then a duration between 36 and 38 months will return 3 years. 20.07.2004/mct'
+    minValue: '0'
+    maxValue: '60'
+    genericControls:
+      defColumnPos: 2

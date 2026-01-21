@@ -1,0 +1,24 @@
+table:
+  name: 'MdTableType'
+  description: 'Translation of the table types'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: d18c2bae-7838-4b83-a18e-29041114c63e
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Table Type'
+    - german:
+        formTitle: 'Tabellentyp'
+  columns:
+  - name: 'TableType'
+    description: 'Number of the table type'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Description'
+    description: 'English description of table type'

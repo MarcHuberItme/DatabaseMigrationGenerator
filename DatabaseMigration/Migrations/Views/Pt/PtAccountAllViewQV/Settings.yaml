@@ -1,0 +1,3 @@
+view:
+  name: 'PtAccountAllViewQV'
+  description: 'View for selecting an account (incl. terminated account) in QlikView\r\n2020-01-10: add field C.QrIbanForm'

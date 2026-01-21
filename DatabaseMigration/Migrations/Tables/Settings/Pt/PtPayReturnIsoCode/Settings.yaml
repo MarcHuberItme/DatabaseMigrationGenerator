@@ -1,0 +1,24 @@
+table:
+  name: 'PtPayReturnIsoCode'
+  description: 'Used for the payment message if a customer''s payment is returned'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment return iso codes'
+    - german:
+        formTitle: 'Payment return iso codes'
+    - french:
+        formTitle: 'Payment return iso codes'
+    - italian:
+        formTitle: 'Payment return iso codes'
+  columns: []

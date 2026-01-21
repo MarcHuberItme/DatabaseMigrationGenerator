@@ -1,0 +1,209 @@
+table:
+  name: 'PtTradingOrderMessage'
+  description: 'Details (customer and broker) of the PtTradingOrder\r\nsome value of this table will be moved to PtTransMessage'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Detail PtTradingOrder'
+    - german:
+        formTitle: 'Detail PtTradingOrder'
+  columns:
+  - name: 'TradingOrderId'
+    description: 'reference to PtTradingOrder'
+    genericControls:
+      refTable: 'PtTradingOrder'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'IsStockExOrder'
+    description: '-> PtTransMessage.IsStockExOrder'
+  - name: 'BankInternalReference'
+    description: '-> PtTransMessage.BankInternalReference'
+    genericControls:
+      defColumnPos: 1
+  - name: 'OrderStatusNo'
+    description: 'this field replaces PtTransMessage.OrderStatusNo\r\nStatus of the order from the StockEx system\r\n0= pending (unreleased) open\r\n1= pending (unreleased) accepted\r\n2= pending (unreleased) replaced\r\n4= triggered (released) open\r\n5= triggered (released) accepted\r\n6= triggered (released) replaced\r\n10= partially filled\r\n11= filled\r\n16= trade cancel\r\n17= expired\r\n18= rejected\r\n19= cancelled'
+    genericControls:
+      refTable: 'PtTransSxOrderStatus'
+      refField: 'OrderStatusNo'
+  - name: 'ModifyUserName'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+  - name: 'StockExRef'
+    description: 'this field replaces PtTransMessage.StockExRef\r\nfield to reference and communicate with the automatic trading system.\r\nonly used if PtTradingSystem.AutoOrderRouting = 1\r\n<unreleased> = order not accepted (modification in finstar not allowed)\r\n<rejected> = order was rejected (modfication in finstar allowed)\r\nelse\r\norder is accepted (contains BankInternalReference (if order was entered in Finstar otherwise it contain ClOrdId from GLOX-order), modification in finstar allowed)\r\n'
+  - name: 'IsParentOrder'
+    description: 'flag to check if the order is a parent order in the tradingsystem (used for i.g. orderds)\r\nthis field will be removed'
+  - name: 'TradingSystemId'
+    description: '-> PtTransMessage.TradingSystemId\r\n'
+    genericControls:
+      refTable: 'PtTradingSystem'
+      refField: 'Id'
+  - name: 'PublicTradingPlaceId'
+    description: '-> PtTransMessage.PublicTradingPlaceId\r\nTrading place\r\ne.g. SWX, Virt-X, NYSE, Frankfurt, London, Xetra'
+    genericControls:
+      refTable: 'PrPublicTradingPlace'
+      refField: 'Id'
+  - name: 'IsOffExchange'
+    description: 'if the trade is outside the exchange trading time'
+  - name: 'OrderQuantity'
+    description: '-> PtTransMessage.OrderQuantity\r\n'
+  - name: 'Quantity'
+    description: 'used for the allocation manually'
+  - name: 'PaymentCurrency'
+    description: '-> PtTransMessage.PaymentCurrency'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'PaymentDate'
+    description: '-> PtTransMessage.PaymentDate\r\nused for backoffice-modification'
+  - name: 'MaturityDate'
+    description: 'weder in PtTradingOrderMessage noch in PtTransMessage\r\nthis field replaces PtTransMessage.MaturityDate\r\n[Bonds]\r\nMaturity date for fixed term transaction, e.g. bonds'
+  - name: 'InterestRate'
+    description: 'weder in PtTradingOrderMessage noch in PtTransMessage\r\nthis field replaces PtTransMessage.InterestRate\r\n[Bonds]\r\nInterest rate for fixed term transaction, e.g. bonds'
+  - name: 'TransMsgStatusNo'
+    description: '-> PtTransMessage.TransMsgStatusNo\r\nused for rectification'
+    genericControls:
+      refTable: 'PtTransMsgStatus'
+      refField: 'TransMsgStatusNo'
+  - name: 'CancelTradOrderMsgId'
+    description: 'If the transaction is a cancellation transaction or a Rektifikat, this field references the cancelled original transaction'
+    genericControls:
+      refTable: 'PtTradingOrderMessage'
+      refField: 'Id'
+  - name: 'PooledTradOrderMsgId'
+    description: 'if a record is pooled by the backoffice, the original record gets in this field the Id of the new PtTradingOrderMessage record.'
+    genericControls:
+      refTable: 'PtTradingOrderMessage'
+      refField: 'Id'
+  - name: 'SecurityPortfolioId'
+    description: '-> PtTransMessage.DebitPortfolioId or CreditPortfolioId\r\n-> PtTransMessage.DebitPortfolioNo or CreditPortfolioNo\r\n'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+  - name: 'SecurityPrReferenceId'
+    description: '-> PtTransMessage.DebitPrReferenceId or CreditPrReferenceId\r\n-> PtTransMessage.DebitAccountNo or CreditAccountNo\r\n-> PtTransMessage.DebitAccountCurrency or CreditAccountCurrency'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+  - name: 'LocGroupId'
+    description: '-> PtTransMessage.DebitLocGroupId or CreditLocGroupId\r\n'
+    genericControls:
+      refTable: 'PrLocGroup'
+      refField: 'Id'
+  - name: 'AccountPortfolioId'
+    description: '-> PtTransMessage.DebitPortfolioId or CreditPortfolioId\r\n-> PtTransMessage.DebitPortfolioNo or CreditPortfolioNo\r\n'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+  - name: 'AccountPrReferenceId'
+    description: '-> PtTransMessage.DebitPrReferenceId or CreditPrReferenceId\r\n-> PtTransMessage.DebitAccountNo or CreditAccountNo\r\n-> PtTransMessage.DebitAccountCurrency or CreditAccountCurrency'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+  - name: 'AccountPrReferenceIdChargeFut'
+    description: 'this field is only used for the futures orders. \r\nthe charges (PtTransMessageCharge) refers to this field.\r\nthe market value (PtTransMessage) refer to the AccountPrReferenceId.\r\n'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+  - name: 'TransSxRebateNo'
+    description: '-> PtTransMessage.TransSxRebateNo'
+    genericControls:
+      refTable: 'PtTransSxRebate'
+      refField: 'TransSxRebateNo'
+  - name: 'TextForRebate'
+    description: 'for a rebate a text is mandatory'
+    genericControls:
+      multiLine: true
+  - name: 'TextToForexTrader'
+    description: 'this field replaces the field in the table PtTradingOrder (is necesserary for pooled orders)'
+    genericControls:
+      multiLine: true
+  - name: 'TransMessageId'
+    description: 'this id will be filled by the inserting of this record. \r\n\r\nthis gives the possibility to enter PtTransTrade  and PtTransMessageCharge records \r\nbefore the record in the PtTransMessage exists.\r\nWhen the PtTransMessage record will be inserted, thid id will be used.'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+  - name: 'SettlementRate'
+    description: 'Rate PaymentCurrency <> CHF\r\nused for the rectification and the ''fondssparen'''
+  - name: 'AccountRate'
+    description: 'Rate AccountCurrency <> CHF\r\nused for the rectification and the ''fondssparen'''
+  - name: 'TransMessageIdChargeFut'
+    description: 'this field is only used for the futures orders. \r\nit refers to the PtTransMessage for the marketvalue.\r\nTransMessageId refers to the PtTransMessage of the charges.'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+  - name: 'AccountRateChargeFut'
+    description: 'used for the rectification'
+  - name: 'SettlementRateChargeFut'
+    description: 'used for the rectification'
+  - name: 'OrderDisposerId'
+    description: 'used for listing and pooled orders'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'OrderMiddlemanId'
+    description: 'used for listing and pooled orders'
+    genericControls:
+      refTable: 'PtUserBase'
+      refField: 'Id'
+  - name: 'ReversalTextIntern'
+    description: ''
+  - name: 'ReversalTextExtern'
+    description: ''
+  - name: 'IsShortSell'
+    description: 'true if its an sell order with a short position'
+  - name: 'IsShortSellWithLongPosition'
+    description: 'true if its a short sell (IsShortSell = true) with a long position (a position on another locgroup)'
+  - name: 'IsWithOrderQuantityMod'
+    description: 'this field is used for the rectification\r\nto handle a modification of an order quantity (Wf step)'
+  - name: 'IsNoRectificationText'
+    description: 'if the original order was entered with the wrong portfolio, rectification should look as a new order'
+  - name: 'BankInternalReferencePartner'
+    description: ''
+  - name: 'IsReleased'
+    description: 'flag if the order has to be checked by the trader in the sungard trading system\r\nthis field can be removed (25.1.2011)'
+  - name: 'IsOtcDerivat'
+    description: 'flag if it''s an OTC Derivat'
+  - name: 'BeneficialOwner'
+    description: 'beneficial owner of the order at the order entry\r\n\r\nThis field corresponds to the SIX field BeneficialOwner.\r\nFormat natural person:\r\nCC-YYYYMMDD-XXXXXXXX\r\nCC: PtNationality.CountryCode \r\nYYYYMMDD: PtBase.DateOfBirth\r\nXXXXXXX: PtBase.PartnerNo\r\n\r\nFormat juridical person:\r\nCC-XXXXXXXXXXXXXX\r\nCC: PtNationality.CountryCode \r\nXXXXXXXXXX: PtIdentificationExternal.IdentificationCode (LEI)'
+  - name: 'BeneficialOwnerDescription'
+    description: 'additional beneficial owner(s) of the order at the order entry, it is only used if there are more than one beneficialowner.\r\n\r\nThis field corresponds to the SIX field BeneficialOwnerDescription.\r\n\r\nFormat:\r\nCC-YYYYMMDD-XXXXXXXX\r\nCC: PtNationality.CountryCode \r\nYYYYMMDD: PtBase.DateOfBirth\r\nXXXXXXX: PtBase.PartnerNo\r\n\r\nFormat juridical person:\r\nCC-XXXXXXXXXXXXXX\r\nCC: PtNationality.CountryCode \r\nXXXXXXXXXX: PtIdentificationExternal.IdentificationCode (LEI)'
+  - name: 'OrderAdvisoryNo'
+    description: 'in this code is defined if the order was entered based on a consultation or not (see also PtTransSxOrderAdvisory).'
+    genericControls:
+      refTable: 'PtTransSxOrderAdvisory'
+      refField: 'OrderAdvisoryNo'
+  - name: 'BeneficialOwnerSMR8'
+    description: 'This field replaces the fields BeneficialOwner and BeneficialOwnerDescription.\r\n\r\nFormat natural person:\r\n"PRSN"-CC-YYYYMMDD-XXXXXXXX\r\n"PRSN": fix PRSN\r\nCC: PtNationality.CountryCode \r\nYYYYMMDD: PtBase.DateOfBirth\r\nXXXXXXX: PtBase.PartnerNo\r\n\r\nFormat juridical person:\r\nBOTC-CC--XXXXXXXX\r\nBOTC: BeneficialOwnerTypeCodes (LEI, BIC, CRN)\r\nCC: PtNationality.CountryCode \r\nYYYYMMDD: PtBase.DateOfBirth\r\nXXXXXXX: PtBase.PartnerNo'
+  - name: 'GoiApp'
+    description: 'This field will be filled if the order was entered via GenericOrderInterface\r\nKey 1 of PtTransSxGoiConfig'
+    genericControls:
+      refTable: 'PtTransSxGoiApp'
+      refField: 'App'
+  - name: 'GoiChannel'
+    description: 'This field will be filled if the order was entered via GenericOrderInterface.\r\nKey 2 of PtTransSxGoiConfig'
+    genericControls:
+      refTable: 'PtTransSxGoiChannel'
+      refField: 'Channel'
+  - name: 'ExtOrderCreator'
+    description: 'Optional field where the OrderCreator from the external system in the GenericOrderInterface can be saved (User e.g. Marc).'
+  - name: 'ExtOrderMandator'
+    description: 'Optional field where the OrderMandator from the source system in the GenericOrderInterface can be saved (Client e.g. EV or PSS AG).\r\nThis field is like an additional key field to BankInternalReferencePartner to be able to address the correct consumer for the Out-Data.\r\nFor orders from FIX (AssetMax) it contains: Custom-Tag 6667'
+  - name: 'IsNotBestExecution'
+    description: 'Flag to define if an order is not best execution'
+  - name: 'IsWithESGWarning'
+    description: '1= ESG-Warning was confirmed. Will only be checked in Finstar-FrontEnd and only if OrderAdvisoryNo = 10 (with consulting).\r\nPossible warnings:\r\n - ESG Score on instrument missing\r\n - ESG Preference on Partner/Portfolio missing\r\n - ESG Preference does not match with ESG Score'
+  - name: 'OrderNAVAmount'
+    description: 'NetAssetValue of the order (input): only used for fonds-orders (PtTradingOrder.IsFondsToNAV = 1).'
+  - name: 'RejectReason'
+    description: 'Reject reason received by the trading system (FixTag 58) if a new stockex order is rejected'

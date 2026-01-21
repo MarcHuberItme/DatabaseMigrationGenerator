@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetWithdrawRuleException'
+  description: 'retunrs list of defined exceptions and other concerned information defined on debit product for money transfer to specified credit product'

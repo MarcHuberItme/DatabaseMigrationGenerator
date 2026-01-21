@@ -1,0 +1,60 @@
+table:
+  name: 'ReValuationCheck'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Real Estate Check Valuat'
+    - german:
+        formTitle: 'Grundstück Plausi'
+  columns:
+  - name: 'PremisesType'
+    description: ''
+    genericControls:
+      refTable: 'RePremisesType'
+      refField: 'PremisesType'
+      defColumnPos: 1
+  - name: 'BuildingTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReBuildingType'
+      refField: 'BuildingTypeNo'
+      defColumnPos: 2
+  - name: 'QualityId'
+    description: 'Ausbaustandard'
+    genericControls:
+      refTable: 'ReBuildingQuality'
+      refField: 'Id'
+      defColumnPos: 3
+  - name: 'ConditionTypeId'
+    description: 'Zustand'
+    genericControls:
+      refTable: 'ReBuildingConditionType'
+      refField: 'Id'
+      defColumnPos: 4
+  - name: 'YearOfConstruction'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'PriceM3From'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'PriceM3To'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'EnvironmentCostRateMax'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'SortNo'
+    description: ''

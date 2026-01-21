@@ -1,0 +1,3 @@
+view:
+  name: 'PtAccountAddressView'
+  description: 'View for getting address of payer'

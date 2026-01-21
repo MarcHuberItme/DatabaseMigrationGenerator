@@ -1,0 +1,36 @@
+table:
+  name: 'CyRateImportFixation'
+  description: 'Date of rate fixing and value date for this date'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 4
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'rate import fixation'
+    - german:
+        formTitle: 'Kurs Import fixierung'
+  columns:
+  - name: 'Date'
+    description: 'Date of fixation'
+    genericControls:
+      defColumnPos: 1
+      noUpdatePos: 1
+  - name: 'ValueDate'
+    description: 'Value date of fixation'
+    genericControls:
+      defColumnPos: 2
+      noUpdatePos: 2
+  - name: 'PaymentInstrumentNo'
+    description: 'value date for one Payment instrument'
+    genericControls:
+      refTable: 'CyPaymentInstrument'
+      refField: 'PaymentInstrumentNo'
+      defColumnPos: 3
+      noUpdatePos: 3

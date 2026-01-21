@@ -1,0 +1,31 @@
+table:
+  name: 'PsAgent'
+  description: 'Contains a list of the machine names that have an agent for the printing system installed.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Printing System Agent'
+    - german:
+        formTitle: 'Druckagenten'
+  columns:
+  - name: 'MachineName'
+    description: 'Network name of the machine that has the Printing System Agent installed'
+    genericControls:
+      defColumnPos: 1
+  - name: 'AgentTypeNo'
+    description: 'Type of the printing system agent'
+    genericControls:
+      refTable: 'PsAgentType'
+      refField: 'AgentTypeNo'
+      defColumnPos: 2
+  - name: 'Threads'
+    description: ''
+    genericControls:
+      defColumnPos: 3

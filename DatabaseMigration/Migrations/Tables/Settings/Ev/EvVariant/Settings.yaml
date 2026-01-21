@@ -1,0 +1,136 @@
+table:
+  name: 'EvVariant'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    navigation:
+      applicationKey: 'VariantNo'
+      navigationConditionField: 'HasEuInterestTax'
+      rootTable: 'EvBase'
+      parentTable: 'EvBase'
+      parentRelationField: 'EventId'
+      parentIdField: 'Id'
+  columns:
+  - name: 'EventId'
+    description: ''
+    genericControls:
+      refTable: 'EvBase'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'VariantNo'
+    description: ''
+    minValue: '1'
+    maxValue: '99'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'EventTemplateId'
+    description: ''
+    genericControls:
+      refTable: 'EvTemplateView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'PublicCfId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicCf'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PublicCfSetId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicCfSet'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PublicTransformId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicTransform'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransformGroupNo'
+    description: ''
+  - name: 'IsOptional'
+    description: ''
+  - name: 'IsDefault'
+    description: ''
+  - name: 'InitialInstrQuantity'
+    description: ''
+  - name: 'ExDate'
+    description: ''
+  - name: 'ValueDate'
+    description: ''
+  - name: 'RecordDate'
+    description: ''
+  - name: 'EarningPerBeginDate'
+    description: ''
+  - name: 'EarningPerEndDate'
+    description: ''
+  - name: 'InterestPA'
+    description: ''
+  - name: 'InterestProRata'
+    description: ''
+  - name: 'RateNoCuPyCu'
+    description: ''
+  - name: 'PaymentCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'NominalCorrectionFactor'
+    description: ''
+  - name: 'DividendTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicDividendType'
+      refField: 'DividendTypeNo'
+  - name: 'CouponNo'
+    description: ''
+  - name: 'DayCountConvNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicDayCountConv'
+      refField: 'DayCountConvNo'
+  - name: 'InterestDays'
+    description: 'Number of interest days (interest period)'
+  - name: 'MinimumExercQuant'
+    description: ''
+  - name: 'OnlyMultipleOfMin'
+    description: ''
+  - name: 'OldNominalCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'OldNominalAmount'
+    description: ''
+  - name: 'NewNominalCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'NewNominalAmount'
+    description: ''
+  - name: 'HasEuInterestTax'
+    description: ''
+  - name: 'SpecEventRuleNo'
+    description: ''
+    genericControls:
+      refTable: 'EvSpecEventRule'
+      refField: 'SpecEventRuleNo'
+  - name: 'InheritPosBlockingNo'
+    description: ''
+    genericControls:
+      refTable: 'EvInheritPosBlocking'
+      refField: 'InheritPosBlockingNo'

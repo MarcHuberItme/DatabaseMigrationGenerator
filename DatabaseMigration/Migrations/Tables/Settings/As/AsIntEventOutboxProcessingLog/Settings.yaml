@@ -1,0 +1,43 @@
+table:
+  name: 'AsIntEventOutboxProcessingLog'
+  description: 'An append-only, immutable processing log for outgoing integration events.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 6
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Outbox Processing Log'
+        helpText: 'An append-only, immutable processing log for outgoing integration events.'
+    - german:
+        formTitle: 'Outbox Processing Log'
+        helpText: 'Ereignis-Ausgangverarbeitungsprotokoll'
+    - french:
+        formTitle: 'Outbox Processing Log'
+        helpText: 'An append-only, immutable processing log for outgoing integration events.'
+    - italian:
+        formTitle: 'Outbox Processing Log'
+        helpText: 'An append-only, immutable processing log for outgoing integration events.'
+  columns:
+  - name: 'EventId'
+    description: 'The event which is being published to the broker'
+    genericControls:
+      refTable: 'MsIntEventOutboxMsg'
+      refField: 'Id'
+  - name: 'Broker'
+    description: 'The name of the broker to which the event is being published to and for which the state for individual events is tracked.'
+    genericControls:
+      refTable: 'AsIntEventNode'
+      refField: 'Name'
+      isNoUpdate: true
+  - name: 'State'
+    description: 'The state entered at the time this record was created.'
+    genericControls:
+      refTable: 'AsIntEventOutboxProcState'
+      refField: 'StateName'
+      isNoUpdate: true

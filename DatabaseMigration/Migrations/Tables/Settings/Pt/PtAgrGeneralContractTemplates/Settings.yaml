@@ -1,0 +1,40 @@
+table:
+  name: 'PtAgrGeneralContractTemplates'
+  description: 'Agreement general contract: all selected text modules for this contract'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtAgrGeneralContract'
+      parentRelationField: 'GeneralContractId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'General Contract Template'
+    - german:
+        formTitle: 'Rahmenvertrag Vorlagen'
+    - french:
+        formTitle: 'Modèle de contrat général'
+  columns:
+  - name: 'GeneralContractId'
+    description: 'foreign-key;  Id of PtAgrGeneralContract'
+    genericControls:
+      refTable: 'PtAgrGeneralContract'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ContractTempType'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrGeneralContrTemplNames'
+      refField: 'ContractTempType'
+      defColumnPos: 1
+  - name: 'Text'
+    description: 'Documentcontent'

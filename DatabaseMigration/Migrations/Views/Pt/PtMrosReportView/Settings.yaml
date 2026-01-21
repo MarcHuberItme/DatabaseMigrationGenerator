@@ -1,0 +1,71 @@
+view:
+  name: 'PtMrosReportView'
+  description: ''
+frontendView:
+  name: 'PtMrosReportView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtMrosReportView'
+        helpText: 'PtMrosReportView'
+    - german:
+        formTitle: 'PtMrosReportView'
+        helpText: 'PtMrosReportView'
+    - french:
+        formTitle: 'PtMrosReportView'
+        helpText: 'PtMrosReportView'
+    - italian:
+        formTitle: 'PtMrosReportView'
+        helpText: 'PtMrosReportView'
+  columns:
+  - name: 'ReportId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtMrosReport'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'ReportTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtMrosReportType'
+      refField: 'ReportTypeNo'
+      defColumnPos: 2
+  - name: 'ReportReference'
+    description: ''
+    dataType: 'varchar'
+    prec: 80
+    genericControls:
+      defColumnPos: 3
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'ReportDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 5
+  - name: 'PeriodBegin'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'PeriodEnd'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7

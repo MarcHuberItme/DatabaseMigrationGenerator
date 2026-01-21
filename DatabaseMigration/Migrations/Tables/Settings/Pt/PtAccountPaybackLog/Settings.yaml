@@ -1,0 +1,34 @@
+table:
+  name: 'PtAccountPaybackLog'
+  description: 'Log for all executed account paybacks'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'AccountPaybackId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountPayback'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'MatureDate'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'DebitAccountNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'InvoiceAmount'
+    description: ''
+    genericControls:
+      isNoUpdate: true

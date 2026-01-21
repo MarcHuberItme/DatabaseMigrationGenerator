@@ -1,0 +1,29 @@
+table:
+  name: 'PtInsaPartner'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'LastTransDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'StartRefDate'
+    description: 'Start reference date to initialise the partner in PMS. If this date is not provided, balance per last day end will be used to initialise the partner'
+  - name: 'IsValidForPMS'
+    description: ''

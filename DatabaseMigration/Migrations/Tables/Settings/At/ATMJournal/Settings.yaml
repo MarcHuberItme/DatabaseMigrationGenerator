@@ -1,0 +1,53 @@
+table:
+  name: 'ATMJournal'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ATMJournal'
+        helpText: 'ATMJournal'
+    - german:
+        formTitle: 'ATMJournal'
+        helpText: 'ATMJournal'
+  columns:
+  - name: 'DeviceID'
+    description: ''
+    genericControls:
+      refTable: 'AsATMConfig'
+      refField: 'DeviceID'
+      defColumnPos: 1
+  - name: 'StartTimestamp'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'EndTimestamp'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'DocRefID'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ArchiveDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ArchivedStartTime'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'ArchivedEndTime'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'Text'
+    description: ''

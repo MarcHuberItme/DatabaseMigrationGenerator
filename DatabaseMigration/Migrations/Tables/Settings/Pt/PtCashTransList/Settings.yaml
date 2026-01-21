@@ -1,0 +1,58 @@
+table:
+  name: 'PtCashTransList'
+  description: 'Liste von getätigten Kassengeschäften gemäss VSB03'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumNumber: 1
+    visumLevel: 2
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Cash Transaktion List'
+    - german:
+        formTitle: 'Kassageschäfte'
+    - french:
+        formTitle: 'Transactions en espèces'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'TransDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'CashTransType'
+    description: ''
+    genericControls:
+      refTable: 'PtCashTransListType'
+      refField: 'CashTransType'
+      defColumnPos: 2
+  - name: 'CashAmount'
+    description: 'Betrag in CHF'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'AuthorisedPartnerId'
+    description: 'Partner-Nummer des wirtschaftlich berechtigten dieses Kassasgeschäftes aufnehmen, kann auch die eigene Partnernummer sein.'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4

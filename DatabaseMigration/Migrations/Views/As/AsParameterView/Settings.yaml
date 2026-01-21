@@ -1,0 +1,36 @@
+view:
+  name: 'AsParameterView'
+  description: 'View to join AsParameterGroup and AsParameter'
+frontendView:
+  name: 'AsParameterView'
+  description: 'Front end definition for view AsParameterView joining AsParameterGroup and AsParameter'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Parameter View'
+    - german:
+        formTitle: 'Parameter Sicht'
+    - french:
+        formTitle: 'Vue des paramètres'
+  columns:
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'GroupName'
+    description: 'Field GroupName from AsParameterGroup.'
+    dataType: 'varchar'
+    prec: 30
+  - name: 'ParameterName'
+    description: 'Field name of AsParameter.'
+    dataType: 'varchar'
+    prec: 30
+  - name: 'Value'
+    description: 'Field Value of AsParameter.'
+    dataType: 'nvarchar'
+    prec: 50

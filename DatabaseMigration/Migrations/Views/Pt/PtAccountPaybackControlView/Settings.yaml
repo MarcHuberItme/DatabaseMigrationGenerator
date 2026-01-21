@@ -1,0 +1,3 @@
+view:
+  name: 'PtAccountPaybackControlView'
+  description: 'Reporting View for Indirect Payback Control'

@@ -1,0 +1,31 @@
+table:
+  name: 'OaBusinessParameterType'
+  description: 'Defines the type and format for business parameters'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'OaBusinessParameterType'
+        helpText: 'Type and format for business parameters'
+    - german:
+        formTitle: 'OaBusinessParameterType'
+        helpText: 'Type and format for business parameters'
+    - french:
+        formTitle: 'OaBusinessParameterType'
+  columns:
+  - name: 'TypeName'
+    description: 'Name of the type.\r\nExample: int, string, date, date-time, etc.'
+  - name: 'RegexpFormat'
+    description: 'A regular expression that defines what kind of text can be entered.\r\n\r\nIf null, any string is accepted.\r\n\r\ne.g. \r\nTypeName: int\r\nRegexpFormat: /^([+-]?[1-9]\d*|0)$/ would accept any positive or negative integer number'
+  - name: 'Description'
+    description: 'Describes the Type and format, gives examples of valid values.'
+    genericControls:
+      multiLine: true

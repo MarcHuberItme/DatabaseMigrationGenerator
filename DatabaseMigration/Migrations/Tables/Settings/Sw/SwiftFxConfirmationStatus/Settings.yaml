@@ -1,0 +1,19 @@
+table:
+  name: 'SwiftFxConfirmationStatus'
+  description: 'Status code for Foriegn Exchange Confirmation'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Status'
+    description: 'ToBeProcessed = 0,\r\nProcessed = 1,\r\nSkipped = 2,\r\nConfirmationGenerated=3,\r\nError = 90,\r\n'
+    genericControls:
+      defColumnPos: 1

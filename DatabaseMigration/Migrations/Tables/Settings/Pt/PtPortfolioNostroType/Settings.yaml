@@ -1,0 +1,28 @@
+table:
+  name: 'PtPortfolioNostroType'
+  description: 'Nostrotyp\r\n\r\nFinanzanlagen\r\nHandelsbestand\r\nBeteiligungen'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Nostrotype'
+    - german:
+        formTitle: 'Nostrotyp'
+  columns:
+  - name: 'NostroType'
+    description: 'Nostrotyp'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IsTradingPosition'
+    description: 'Declares if the nostro type refers to a trading position'
+  - name: 'IsNostroPosition'
+    description: 'Declares if the nostro type refers to a nostro position'

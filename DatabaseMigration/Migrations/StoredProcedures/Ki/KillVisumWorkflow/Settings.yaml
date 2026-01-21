@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'KillVisumWorkflow'
+  description: 'Administrative procedure to remove all information of a visum workflow'

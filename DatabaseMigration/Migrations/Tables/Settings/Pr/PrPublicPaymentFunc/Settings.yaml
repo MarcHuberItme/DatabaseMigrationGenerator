@@ -1,0 +1,34 @@
+table:
+  name: 'PrPublicPaymentFunc'
+  description: 'VDF-Domaine: 4927 PAYFUNCTION'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment function'
+    - german:
+        formTitle: 'Zahlungsfunktion'
+  columns:
+  - name: 'PaymentFuncNo'
+    description: 'Maintained by VDF-Metadata'
+    genericControls:
+      defColumnPos: 1
+  - name: 'EventTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'EvEventType'
+      refField: 'EventTypeNo'
+      defColumnPos: 2
+  - name: 'GenerateHandlingInfo'
+    description: ''
+    genericControls:
+      defColumnPos: 3

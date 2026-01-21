@@ -1,0 +1,112 @@
+view:
+  name: 'OaAgrAppView'
+  description: 'View to query authentication information for a specific E-banking id and an OpenAPI application'
+frontendView:
+  name: 'OaAgrAppView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'MgVtNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+  - name: 'BeginDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ExpirationDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'AcceptanceDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'AgbAcceptedByCustomer'
+    description: ''
+    dataType: 'datetime'
+  - name: 'AppIdentifier'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'RequiresStrongAuthentication'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'StrongAuthForQueries'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'WrongPasswordCounter'
+    description: ''
+    dataType: 'int'
+  - name: 'PasswordRecordId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'OrderGroupTypeNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'SingleMoneyTransferLimit'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    scale: 4
+  - name: 'DailyMoneyTransferLimit'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    scale: 4
+  - name: 'MonthlyMoneyTransferLimit'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    scale: 4
+  - name: 'YearlyMoneyTransferLimit'
+    description: ''
+    dataType: 'money'
+    isNotNull: true
+    scale: 4
+  - name: 'ConfirmEachTransaction'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AccountRestriction'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 11
+  - name: 'PasswordBcrypt'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 60
+  - name: 'ShowOnlyDefaultAccount'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'UseEBankingConfirmationMethod'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IgnoreLimitsForOwnAccounts'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'SingleIpMoneyTransferLimit'
+    description: ''
+    dataType: 'money'
+  - name: 'DailyIpMoneyTransferLimit'
+    description: ''
+    dataType: 'money'
+  - name: 'MonthlyIpMoneyTransferLimit'
+    description: ''
+    dataType: 'money'
+  - name: 'YearlyIpMoneyTransferLimit'
+    description: ''
+    dataType: 'money'

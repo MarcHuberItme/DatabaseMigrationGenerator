@@ -1,0 +1,47 @@
+table:
+  name: 'PtNoga2008'
+  description: 'Table with all new business types (Noga Codes), launched in 2008'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    descField: 'TextLong'
+    uiTableDescription:
+    - english:
+        formTitle: 'Business Type'
+    - german:
+        formTitle: 'Noga-Code'
+  columns:
+  - name: 'NogaAbschnitt'
+    description: ''
+  - name: 'NogaUnterAbschnitt'
+    description: ''
+  - name: 'NogaAbteilung'
+    description: ''
+  - name: 'NogaGruppe'
+    description: ''
+  - name: 'NogaKlasse'
+    description: ''
+  - name: 'NogaArt'
+    description: ''
+  - name: 'NogaCode'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'TextLong'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'SnbWebeKolCH'
+    description: 'SNB-Statistik WeBe\r\nKolonnen-Code für Partnerdomizil Schweiz und Liechtenstein'
+  - name: 'SnbWebeKolAusland'
+    description: 'SNB-Statistik WeBe\r\nKolonnen-Code für Partnerdomizil Ausland'
+  - name: 'SUNReportCode'
+    description: 'Code für S.U.N. Report'

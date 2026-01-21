@@ -1,0 +1,32 @@
+table:
+  name: 'RePfBAllocationHistory'
+  description: 'Table used to store the history of allocation data. \r\nRecords are introduced and updated by a trigger associated with the table \r\n''RePfBRelLoan'' \r\n'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Pledge Inventory'
+    - german:
+        formTitle: 'Pfand Inventar'
+  columns:
+  - name: 'RePfBRelBCId'
+    description: 'Refers to the table ''RePfBRelBC'''
+    genericControls:
+      refTable: 'RePfBRelBC'
+      refField: 'Id'
+  - name: 'AllocationSum'
+    description: 'Sum over all ''RePfB.ToalAllocation'' corresponding to one BCNumber'
+  - name: 'BcNumber'
+    description: 'Swiss Bank Number'
+  - name: 'DateHistory'
+    description: 'Date of the historization of the data; one record per day and BCNumber'
+  - name: 'DataOrigin'
+    description: 'Indicates the table from where the AllocationSum is calculated'

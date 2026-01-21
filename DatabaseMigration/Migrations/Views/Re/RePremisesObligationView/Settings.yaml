@@ -1,0 +1,99 @@
+view:
+  name: 'RePremisesObligationView'
+  description: 'FrontEndView needed for search purposes in the form ''frmObligPremisesView'', \r\nassigned to its SearchController'
+frontendView:
+  name: 'RePremisesObligationView'
+  description: 'Used for the SearchController in the form ''frmObligPremisesRelation'''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Premises-Oblig. Relation'
+    - german:
+        formTitle: 'Premises-Oblig.Verbindung'
+  columns:
+  - name: 'PremisesId'
+    description: 'RePremises.Id'
+    dataType: 'uniqueidentifier'
+  - name: 'ObjectSeqNo'
+    description: 'ReObligation.ObjectSeqNo'
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ObligAmount'
+    description: 'ReObligation.ObligAmount'
+    dataType: 'nvarchar'
+    prec: 4000
+    genericControls:
+      defColumnPos: 5
+  - name: 'ObligTypeNo'
+    description: 'ReObligationType.ObligTypeNo'
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'ReObligType'
+      refField: 'ObligTypeNo'
+      defColumnPos: 2
+  - name: 'ObligDate'
+    description: 'ReObligation.ObligDate'
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ObligRank'
+    description: 'ReObligation.ObligRank'
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PfBFlag'
+    description: 'ReObligation.PfBFlag'
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 8
+  - name: 'ObligationId'
+    description: 'ReObligation.Id'
+    dataType: 'uniqueidentifier'
+  - name: 'SwissTownNo'
+    description: 'RePremises.SwissTownNo'
+    dataType: 'int'
+  - name: 'GBNo'
+    description: 'RePremises.GBNo'
+    dataType: 'nvarchar'
+    prec: 15
+  - name: 'GBNoAdd'
+    description: 'RePremises.GBNoAdd'
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'GBPlanNo'
+    description: 'RePremises.GBPlanNo'
+    dataType: 'nvarchar'
+    prec: 15
+  - name: 'ObligAmountChargeable'
+    description: 'ReObligPremisesRelation.ObligAmountChargeable'
+    dataType: 'money'
+    scale: 4
+  - name: 'AntecedentAmount'
+    description: 'ReObligPremisesRelation.AntecedentAmount if null then \r\nReObligation.AntecedentAmount'
+    dataType: 'money'
+    scale: 4
+  - name: 'RankRivalryAmount'
+    description: 'ReObligPremisesRelation.RankRivalryAmount if null then \r\nReObligation.RankRivalryAmount'
+    dataType: 'money'
+    scale: 4
+  - name: 'Currency'
+    description: 'ReObligation.Currency'
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      defColumnPos: 4
+  - name: 'ComplexObligation'
+    description: 'Gesamtpfand ja / nein'
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 7

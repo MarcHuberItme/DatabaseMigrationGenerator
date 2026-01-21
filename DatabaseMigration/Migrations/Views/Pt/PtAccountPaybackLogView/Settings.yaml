@@ -1,0 +1,71 @@
+view:
+  name: 'PtAccountPaybackLogView'
+  description: ''
+frontendView:
+  name: 'PtAccountPaybackLogView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'HdPendingSubChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'MatureDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PartnerName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 300
+    genericControls:
+      defColumnPos: 2
+  - name: 'TotalReducedAmount'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 4
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 5
+  - name: 'AccountPaybackId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 6
+  - name: 'PeriodRuleNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+      defColumnPos: 7
+  - name: 'DebitAccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 38
+    scale: 38
+  - name: 'InvoiceAmount'
+    description: ''
+    dataType: 'money'

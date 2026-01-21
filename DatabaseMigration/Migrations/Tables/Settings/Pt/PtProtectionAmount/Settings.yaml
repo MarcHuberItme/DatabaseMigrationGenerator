@@ -1,0 +1,50 @@
+table:
+  name: 'PtProtectionAmount'
+  description: 'table to calculate minimal amount of capital for the protection obligations for accounts by law'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Protected amounts'
+    - german:
+        formTitle: 'Geschütze Beträge'
+  columns:
+  - name: 'ReportingDate'
+    description: ''
+  - name: 'CalculationDate'
+    description: ''
+  - name: 'JobNumber'
+    description: ''
+  - name: 'PartnerId'
+    description: 'PartnerId, Id from PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'PartnerNo'
+    description: ''
+  - name: 'ProtectedAccounts'
+    description: 'Amount from accounts covered by the protection law'
+  - name: 'ForeignCurrency'
+    description: ''
+  - name: 'OwnBonds'
+    description: 'Amount protected in bonds of HBL'
+  - name: 'Privit'
+    description: 'amount resulting from protected ''Privit'' accounts'
+  - name: 'Revor'
+    description: 'Amount resulting from protected ''Revor'' accounts.'
+  - name: 'TimeMoney'
+    description: ''
+  - name: 'ProtectedAmountTotal'
+    description: ''
+  - name: 'UnprotectedAmountTotal'
+    description: ''
+  - name: 'PrivilegedAmount'
+    description: 'Summe from Privit and Revor'
+  - name: 'AccruedInterestTotal'
+    description: ''

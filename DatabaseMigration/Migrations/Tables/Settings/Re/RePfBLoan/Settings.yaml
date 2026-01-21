@@ -1,0 +1,42 @@
+table:
+  name: 'RePfBLoan'
+  description: 'Darlehenserien der Pfandbriefbank (nur dort benützt)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PfB Loan'
+    - german:
+        formTitle: 'PfB Darlehen'
+  columns:
+  - name: 'SerieDesc'
+    description: 'Seriennummer z.B. 356 (1 Anleihe = 1 Darlehen), 312/13 (2. Anl. 1 Dar. etc.)'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SerNo'
+    description: 'Serienummer und Tranche (3441 = Serie 344 1 Aufstockung)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Tranche'
+    description: 'Tranche (Basistranche, Aufstockung etc.)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'InterestRate'
+    description: 'Zinssatz'
+    genericControls:
+      defColumnPos: 4
+  - name: 'PaymentDate'
+    description: 'Liberierungsdatum'
+  - name: 'ValidFrom'
+    description: 'Laufzeit von'
+  - name: 'ValidTo'
+    description: 'Laufzeit bis'
+  - name: 'NominalAmount'
+    description: ''

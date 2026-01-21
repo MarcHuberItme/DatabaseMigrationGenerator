@@ -1,0 +1,147 @@
+view:
+  name: 'AcFrozenDerivativeFireView'
+  description: 'View aller Derivate für Fire Export'
+frontendView:
+  name: 'AcFrozenDerivativeFireView'
+  description: 'Derivatives for Fire-Export'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Derivatives for Fire-Exp.'
+    - german:
+        formTitle: 'Derivatives for Fire-Exp.'
+  columns:
+  - name: 'ReportDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'SourceRecordId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'SourceTableName'
+    description: ''
+    dataType: 'varchar'
+    prec: 30
+  - name: 'DerivativeTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AcDerivativeType'
+      refField: 'DerivativeTypeNo'
+  - name: 'ContractKey'
+    description: ''
+    dataType: 'varchar'
+    prec: 15
+  - name: 'FireTransactionNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 32
+  - name: 'DateTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'DateFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'IsTradingBook'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ReplacementValue'
+    description: ''
+    dataType: 'money'
+  - name: 'NettingContract'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+  - name: 'FiscalDomicileCountry'
+    description: ''
+    dataType: 'char'
+    prec: 2
+  - name: 'NogaCode2008'
+    description: ''
+    dataType: 'varchar'
+    prec: 6
+  - name: 'CodeC510'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AcFireC510'
+      refField: 'C510Code'
+  - name: 'LargeExpGroupNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+  - name: 'MainPartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+  - name: 'Nationality'
+    description: ''
+    dataType: 'char'
+    prec: 2
+  - name: 'Employees'
+    description: ''
+    dataType: 'int'
+  - name: 'LegTag'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'Amount'
+    description: ''
+    dataType: 'money'
+  - name: 'ConversionRate'
+    description: ''
+    dataType: 'float'
+  - name: 'AmountHoCu'
+    description: ''
+    dataType: 'money'
+  - name: 'InterestRate'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+  - name: 'PresentValueHoCu'
+    description: ''
+    dataType: 'money'
+  - name: 'FireAccountNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+  - name: 'ContractVolume'
+    description: ''
+    dataType: 'money'
+  - name: 'FireUnderlyingTypeValue'
+    description: ''
+    dataType: 'smallint'
+  - name: 'UnderlyingLargeExpGroupNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 15
+  - name: 'C026_Deri'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AcFireC026'
+      refField: 'C026'

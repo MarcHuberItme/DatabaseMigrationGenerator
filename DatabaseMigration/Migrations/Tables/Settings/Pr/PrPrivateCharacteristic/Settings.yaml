@@ -1,0 +1,34 @@
+table:
+  name: 'PrPrivateCharacteristic'
+  description: 'z.B. Maxi etc.\r\n\r\nMarketingnamen der Produkte'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Product Characterisic'
+    - german:
+        formTitle: 'Produktausprägung'
+  columns:
+  - name: 'CharacteristicNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'IsDefault'
+    description: '0 = no\r\n1 = yes'

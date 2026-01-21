@@ -1,0 +1,49 @@
+table:
+  name: 'PtMLMonitoringLogSteps'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Delegate Back Description'
+    - german:
+        formTitle: 'Kommentar Ablehnung'
+  columns:
+  - name: 'MonitoringLogId'
+    description: ''
+    genericControls:
+      refTable: 'PtMLMonitoringLog'
+      refField: 'Id'
+  - name: 'DateTime'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'FunctionCode'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'UserName'
+    description: ''
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'UserName'
+      defColumnPos: 3
+  - name: 'DescriptionDelegateBack'
+    description: 'The description will only be loaded if it was a delegate back.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'IsReportMROSPossible'
+    description: ''
+  - name: 'IsReportMROS'
+    description: ''
+  - name: 'DescriptionCheckMROS'
+    description: ''
+  - name: 'ReasonCheckReportMROS'
+    description: 'Reason'

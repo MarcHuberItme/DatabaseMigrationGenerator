@@ -1,0 +1,51 @@
+table:
+  name: 'PtMLParameters'
+  description: 'To store the parameters which will be used by the Anti Money Laundering Rules'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+  columns:
+  - name: 'ParamKey'
+    description: '- Unique Key for searching the specific records in the table'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Name'
+    description: 'Name of the parameter to be used in Money Laundering Montiring modules'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Type'
+    description: 'Information about the structural Information of the parameter\r\n------------------- to be finalized yet --------------------------------------------'
+    genericControls:
+      defColumnPos: 3
+  - name: 'BasePeriod'
+    description: '0 - Daily \r\n1 - Monthly\r\n2 - Yearly'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Scope'
+    description: '0 - Every Partner\r\n1 - Companies\r\n2 - Private Partners'
+    genericControls:
+      defColumnPos: 5
+  - name: 'LSafeValue'
+    description: 'Recommended Value against the parameter\r\nNormally, the values recommended from the Tvt Compliance AG. will be stored in this field but not necessary. \r\nThis field will contain the Lower limit value recommended for the partners of category No. 0'
+  - name: 'LNormalRiskValue'
+    description: 'This field will contain the lower limit value recommended for the partners of category No. 1'
+  - name: 'LRiskValue'
+    description: 'This field will contain the lower limit value recommended for the partners of category No. 2'
+  - name: 'USafeValue'
+    description: 'This field will contain the upper limit value recommended for the partners of category No. 0'
+  - name: 'UNormalRiskValue'
+    description: 'This field will contain the upper limit value recommended for the partners of category No. 1'
+  - name: 'URiskValue'
+    description: 'This field will contain the upper limit value recommended for the partners of category No. 2'
+    genericControls:
+      visNumber: 8
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true

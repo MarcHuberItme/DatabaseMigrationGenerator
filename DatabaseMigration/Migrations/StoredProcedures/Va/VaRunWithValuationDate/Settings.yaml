@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaRunWithValuationDate'
+  description: 'Letzter brauchbarer Bewertungslauf'

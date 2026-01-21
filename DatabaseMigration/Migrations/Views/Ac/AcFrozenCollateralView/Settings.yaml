@@ -1,0 +1,112 @@
+view:
+  name: 'AcFrozenCollateralView'
+  description: '2020-05-04/ram: LEFT OUTER JOIN auf CoBase und AcFrozenPartnerView aufgenommen'
+frontendView:
+  name: 'AcFrozenCollateralView'
+  description: 'Snapshot of collaterals for FiRE-Export'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ReportDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'C536'
+    description: 'Art der Deckung (Hypothek)'
+    dataType: 'smallint'
+  - name: 'C551'
+    description: 'Verbindung Kredit - Deckung'
+    dataType: 'nvarchar'
+    prec: 12
+  - name: 'FireAccountNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'CollNo'
+    description: 'Number of collateral'
+    dataType: 'int'
+  - name: 'CollType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'CoType'
+      refField: 'Colltype'
+  - name: 'CollSubType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'CoSubtype'
+      refField: 'Collsubtype'
+  - name: 'PriCover'
+    description: ''
+    dataType: 'tinyint'
+  - name: 'SubPriCover'
+    description: ''
+    dataType: 'int'
+  - name: 'CoValueTotAdjust'
+    description: 'Anteil am Verkehrswert'
+    dataType: 'money'
+    scale: 4
+  - name: 'CoValueTotCollateral'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'PledgeValueAssign'
+    description: 'Belehnungswert'
+    dataType: 'money'
+    scale: 4
+  - name: 'Description'
+    description: ''
+    dataType: 'varchar'
+    prec: 20
+  - name: 'CoValueTotAdjustNeg'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CantonSymbol'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 2
+  - name: 'FiscalDomicileCountry'
+    description: ''
+    dataType: 'char'
+    prec: 2
+  - name: 'CodeC510'
+    description: ''
+    dataType: 'smallint'
+  - name: 'LargeExpGroupNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'C568'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 60
+  - name: 'ObligAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4

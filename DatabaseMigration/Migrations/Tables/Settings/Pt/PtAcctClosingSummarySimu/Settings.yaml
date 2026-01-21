@@ -1,0 +1,69 @@
+table:
+  name: 'PtAcctClosingSummarySimu'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAcctClosingSummarySimu'
+        helpText: 'PtAcctClosingSummarySimu'
+    - german:
+        formTitle: 'PtAcctClosingSummarySimu'
+        helpText: 'PtAcctClosingSummarySimu'
+  columns:
+  - name: 'SimuID'
+    description: ''
+  - name: 'GroupName'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'BookingAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ProductAccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ProductBalanceOld'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ProductBalanceNew'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'PositiveAccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'PositiveBalanceOld'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'PositiveBalanceNew'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'NegativeAccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'NegativeBalanceOld'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'NegativeBalanceNew'
+    description: ''
+    genericControls:
+      defColumnPos: 11

@@ -1,0 +1,23 @@
+table:
+  name: 'PtPaymentMCChargeBackRecord'
+  description: 'Contains Fields for MasterCard File-Processing relevant for Section ChargeBack Record (CB)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TerminalID'
+    description: 'DE 41 (Card Acceptor Terminal ID) is a unique code identifying a terminal at the card acceptor location'
+  - name: 'MessageReasonDetails'
+    description: 'Message Reason Details provided by MPEE Chargeback Specialist'
+  - name: 'DocumentsAttached'
+    description: 'Information about attached documents to submitted chargeback. Possible values:\r\n"EC0" - Documents not attached\r\n"EC1" - Documents attached'
+  - name: 'PaymentMastercardId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentMasterCard'
+      refField: 'Id'

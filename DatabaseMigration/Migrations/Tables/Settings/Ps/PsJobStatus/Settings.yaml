@@ -1,0 +1,22 @@
+table:
+  name: 'PsJobStatus'
+  description: 'Status of the printing job'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: dfa425a0-fc5e-41ba-a1d2-22b8f44f2a95
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Print Job Status'
+    - german:
+        formTitle: 'Druckauftragsstatus'
+  columns:
+  - name: 'JobStatus'
+    description: 'Status of the print job'
+    genericControls:
+      defColumnPos: 1

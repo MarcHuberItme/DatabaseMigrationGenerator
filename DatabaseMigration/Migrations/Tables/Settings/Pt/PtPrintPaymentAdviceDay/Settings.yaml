@@ -1,0 +1,41 @@
+table:
+  name: 'PtPrintPaymentAdviceDay'
+  description: 'control the daily payment advice processing'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Print payment advice day'
+        helpText: 'Print payment advice day'
+    - german:
+        formTitle: 'ZV Avis Verarbeitung'
+        helpText: 'ZV Avis Verarbeitung'
+  columns:
+  - name: 'TransDate'
+    description: 'Payments transaction date'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'StatusNo'
+    description: '1 = initialized\r\n2 = Process single and multi item advice\r\n3 = Process dayend multi item advice\r\n4 = Processing completed'
+    genericControls:
+      refTable: 'PtPrintPaymentAdviceDayStatus'
+      refField: 'StatusNo'
+      defColumnPos: 3
+  - name: 'ProcessStepNo'
+    description: 'None = 0\r\nCopyTransMsg = 1\r\nCreatePayAdv = 2\r\nAssignTransItemId = 3\r\nUpdateReportName = 4\r\nUpdateAccDesc = 5\r\nInsertCorrData = 6\r\nRunReportJobs = 7\r\nAdvicesDone = 8\r\nAdviceDataDeleted = 9\r\n'
+    minValue: '0'
+    maxValue: '9'
+    genericControls:
+      refTable: 'PtPrintPaymentAdviceDayStep'
+      refField: 'ProcessStepNo'
+      isNoUpdate: true
+  - name: 'TotalDocuments'
+    description: ''

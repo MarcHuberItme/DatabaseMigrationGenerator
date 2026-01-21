@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'IbAuth_GetAccountAndPorfolioList'
+  description: 'Returns accounts and portfolios that are associated with a certain E-Banking Agreement (used by EbAuthService .NET).'

@@ -1,0 +1,47 @@
+table:
+  name: 'PtProfession'
+  description: 'contains all partner professions. The source of the data is a file retrieved from the federal office of statistics (Bundesamt für Statistik). \r\nThe translated textes are stored in AsText in German, Italian and French.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Professions'
+    - german:
+        formTitle: 'Berufe'
+  columns:
+  - name: 'ProfessionNo'
+    description: 'Profession number unique togheter with sexstatusno'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SexStatusNo'
+    description: 'male (2) or female (1) allowed'
+    minValue: '1'
+    maxValue: '3'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+      defColumnPos: 2
+  - name: 'WellDefinedG'
+    description: 'the profession is well defined in the German language'
+  - name: 'WellDefinedF'
+    description: 'the profession is well defined in the French language'
+  - name: 'WellDefinedI'
+    description: 'the profession is well defined in the Italian language'
+  - name: 'IscoGen'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'SbnCode'
+    description: ''
+    genericControls:
+      refTable: 'PtProfessionSbn'
+      refField: 'SbnCode'
+      defColumnPos: 4

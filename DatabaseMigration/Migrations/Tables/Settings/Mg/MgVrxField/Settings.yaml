@@ -1,0 +1,40 @@
+table:
+  name: 'MgVrxField'
+  description: 'migration meta data for each vrx field'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'VrxTableName'
+    description: 'vrx record name'
+    genericControls:
+      refTable: 'MgVrxTable'
+      refField: 'VrxTableName'
+  - name: 'VrxFieldName'
+    description: 'field name'
+  - name: 'Position'
+    description: 'field position in the record'
+    minValue: '0'
+  - name: 'FieldLenght'
+    description: 'field lenght'
+  - name: 'FieldType'
+    description: 'vrx data type'
+  - name: 'Decimal'
+    description: 'decimal number'
+  - name: 'Hidden'
+    description: 'If it is for forward migration'
+  - name: 'Backward'
+    description: 'Flag if there should be any data backmigrated to this vrx field'
+  - name: 'InitialValue'
+    description: 'default value in FIS-VRX'
+  - name: 'MgCodeTableName'
+    description: 'Mapping table name (not in use)'
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'

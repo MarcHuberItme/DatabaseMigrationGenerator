@@ -1,0 +1,51 @@
+table:
+  name: 'PtSexStatus'
+  description: 'Gender of the partner like Maleperson, Femaleperson, Organisation'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Sex Status'
+    - german:
+        formTitle: 'Geschlecht'
+  columns:
+  - name: 'SexStatusNo'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'MigValue'
+    description: 'FIS-VRX Value'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'ForNaturalPartner'
+    description: 'All SexStatuses having set this flag to true will appear in the GUI-Profile for NaturalPartners.'
+  - name: 'ForLegalPartner'
+    description: 'All SexStatuses having set this flag to true will appear in the GUI-Profile for LegalPartners.'
+  - name: 'ForAnonymous'
+    description: 'All SexStatuses having set this flag to true will appear in the GUI-Profile for Anonymous-Partners.'
+  - name: 'ForMarriedCouple'
+    description: 'All SexStatuses having set this flag to true will appear in the GUI-Profile for MarriedCouples.'
+  - name: 'ForRegisteredPartnership'
+    description: ''
+  - name: 'QualityCheck'
+    description: 'When a new partner is built, a correspondence will be created automatically. This field defines the default-value for the created correspondence-field ''QualityCheck''.'
+  - name: 'DeliveryRuleNo'
+    description: 'When a new partner is built, a correspondence will be created automatically. This field defines the default-value for the created correspondence-field ''DeliveryRuleNo''.'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+  - name: 'CarrierTypeNo'
+    description: 'When a new partner is built, a correspondence will be created automatically. This field defines the default-value for the created correspondence-field ''CarrierTypeNo''.'
+    genericControls:
+      refTable: 'AsCarrierType'
+      refField: 'CarrierTypeNo'

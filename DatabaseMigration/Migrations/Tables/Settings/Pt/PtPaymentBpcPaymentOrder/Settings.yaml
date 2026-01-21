@@ -1,0 +1,43 @@
+table:
+  name: 'PtPaymentBpcPaymentOrder'
+  description: 'Payment order belongig to an imported operation.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'BPC Payment Order'
+        helpText: 'BPC Payment Order'
+    - german:
+        formTitle: 'BPC Zahlungsauftrag'
+        helpText: 'BPC Zahlungsauftrag'
+  columns:
+  - name: 'OperationId'
+    description: 'Reference to operation'
+    genericControls:
+      refTable: 'PtPaymentBpcOperation'
+      refField: 'Id'
+  - name: 'PaymentOrderId'
+    description: 'Payment order identifier'
+  - name: 'PaymentOrderStatus'
+    description: 'Status of payment order'
+  - name: 'PaymentOrderNumber'
+    description: 'Payment order number from external system'
+  - name: 'PurposeId'
+    description: 'Purpose id'
+  - name: 'PurposeNumber'
+    description: 'External purpose id'
+  - name: 'PaymentAmountValue'
+    description: 'Payment order amount value'
+  - name: 'PaymentAmountCurrency'
+    description: 'Payment order amount currency'
+  - name: 'PaymentDate'
+    description: 'Payment order date'
+  - name: 'ParticipantType'
+    description: 'Participant type for using as customer in payment order:\r\nPRTYACQ - acquirer\r\nPRTYDST - destination\r\nPRTYISS - issuer\r\nPRTYPAGR - aggregator\r\nPRTYSRVP - service provider\r\nParticipant of that type must be present in the operation'

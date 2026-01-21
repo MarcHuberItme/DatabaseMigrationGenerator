@@ -1,0 +1,60 @@
+table:
+  name: 'PtAgrBase'
+  description: 'base agreement between a partner and the bank;\r\nEvery partner with an active business-relation has a base agreement including\r\nthe terms and conditions, and optionally with different components like TaxRegulation, EBanking, Fiduciary, etc.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Base Agreement'
+    - german:
+        formTitle: 'Basisvertrag'
+    - french:
+        formTitle: 'base contrat'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key;  Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'VersionNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'PrintDate'
+    description: ''
+  - name: 'DocumentStatusNo'
+    description: 'foreign-key; Id of PtDocumentStatus\r\nactual status of the document'
+    genericControls:
+      refTable: 'PtDocumentStatus'
+      refField: 'DocumentStatusNo'
+  - name: 'BeginDate'
+    description: ''
+  - name: 'ExpirationDate'
+    description: ''
+  - name: 'PeriodOfNotice'
+    description: 'period of time to cancel the deal; in days, month or years'
+  - name: 'Interval'
+    description: 'foreign-key;  candidate-key of AsInterval (Interval)\r\n(VB-function DateAdd)  d, m, yyyy'
+    genericControls:
+      refTable: 'AsInterval'
+      refField: 'Interval'
+  - name: 'GeneralTermsVersion'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

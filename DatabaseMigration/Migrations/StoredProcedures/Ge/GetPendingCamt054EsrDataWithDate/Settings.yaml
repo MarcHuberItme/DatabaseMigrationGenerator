@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPendingCamt054EsrDataWithDate'
+  description: 'Gets pending camt054Esr data.'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetOwnerList'
+  description: 'get a list of owners for proxy display\r\n2022-05-25/ram: AND M.CoPartnership in comment gesetzt'

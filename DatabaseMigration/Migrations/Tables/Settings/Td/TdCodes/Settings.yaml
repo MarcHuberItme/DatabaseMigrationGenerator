@@ -1,0 +1,43 @@
+table:
+  name: 'TdCodes'
+  description: 'Multiple TaxData Code Definitions'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 83458b04-5fa9-42c9-a46e-a39780ca3259
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Code Definitions'
+        helpText: 'Code Definitions'
+    - german:
+        formTitle: 'Code Definitionen'
+        helpText: 'Code Definitionen'
+    - french:
+        formTitle: 'Code Definitions'
+        helpText: 'Code Definitions'
+    - italian:
+        formTitle: 'Code Definitions'
+        helpText: 'Code Definitions'
+  columns:
+  - name: 'TdCodeGroup'
+    description: 'Group Identification'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TdCodeItem'
+    description: 'Code Item'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TdCodeValue'
+    description: 'Code Value'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TdCodeDescription'
+    description: 'Code Description'
+    genericControls:
+      defColumnPos: 4

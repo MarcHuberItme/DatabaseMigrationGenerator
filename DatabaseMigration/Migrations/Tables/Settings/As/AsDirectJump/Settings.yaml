@@ -1,0 +1,49 @@
+table:
+  name: 'AsDirectJump'
+  description: 'Defines syntay and description of direkt jumps'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Direct Jump'
+    - german:
+        formTitle: 'Direktsprung'
+    - french:
+        formTitle: 'Saut direct'
+  columns:
+  - name: 'ScreenCode'
+    description: 'Code of the screen to jump'
+    genericControls:
+      defColumnPos: 1
+  - name: 'MainForm'
+    description: 'Name of the form which is leader of the required view group'
+    genericControls:
+      defColumnPos: 2
+  - name: 'NodeForm'
+    description: 'Name of the form the jump has to go, if the jump addresses a form node.'
+  - name: 'TableName'
+    description: 'Name of the table to jump to. Not necessary if the DirectJump addresses a form node'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ApplicationKeyName'
+    description: 'Can contain the application key of the single table node the direct jump has to address. Not applicable for shared nodes and form nodes.'
+  - name: 'NavigationQuery'
+    description: 'Query to retrieve the RootId and the application key for the direct jump.'
+    genericControls:
+      multiLine: true
+  - name: 'RootIdName'
+    description: 'Name of the field in the NavigationQuery which represents the root id of the navigation root.'
+  - name: 'SearchPattern'
+    description: 'Regualr expression of the Search criteria after the dot which seperates the screen code from the seach key'
+  - name: 'JumpCommand'
+    description: 'Command that will be passed to a form if it is started using the dirdect jump'
+  - name: 'OrderField'
+    description: 'Determines the order of the direct jumps in the dropdown combo'

@@ -1,0 +1,31 @@
+table:
+  name: 'OaTwoFaMsgTmplt'
+  description: 'Storing 2FA message templates'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'IsActive'
+    description: 'If individual template is active, can be used for 2FA messages'
+  - name: 'Name'
+    description: 'Name of the template'
+  - name: 'Description'
+    description: 'Description of the template usage'
+  - name: 'DefaultLanguageNo'
+    description: 'Default language of the template content'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'ApplicationCode'
+    description: 'Referred application (AsExternalApplication) that the template belongs to'
+    genericControls:
+      refTable: 'AsExternalApplication'
+      refField: 'ApplicationCode'
+      defColumnPos: 1

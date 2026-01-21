@@ -1,0 +1,29 @@
+table:
+  name: 'ReIaziWFSettings'
+  description: 'Branch Based Workflow settings for the Data Receive notification from IAZI.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Iazi Workflow Settings'
+    - german:
+        formTitle: 'Iazi Workflow Settings'
+  columns:
+  - name: 'BranchNo'
+    description: ''
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 1
+  - name: 'UserGroupName'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+      defColumnPos: 2

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPdf'
+  description: 'Retrieves a PDF-Document from AsMailOutput or AsDocumentData.\r\nIs used for the Xerox scribble application which process mail output.'

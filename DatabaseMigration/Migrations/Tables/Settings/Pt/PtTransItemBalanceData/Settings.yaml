@@ -1,0 +1,53 @@
+table:
+  name: 'PtTransItemBalanceData'
+  description: 'Shadow table of PtTransItem for SP: GetBalance_Real'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'TransItem Balance Data'
+    - german:
+        formTitle: 'TransItem Saldo Daten'
+  columns:
+  - name: 'TransItemId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransItem'
+      refField: 'Id'
+  - name: 'PositionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'DetailCounter'
+    description: 'Mostly a transaction will consist of only one PtTransItem. But a transaction can consist of multiple PtTransItems. In case of multiple PtTransItems, all of the entries are put into PtTransItemDetail. And one entry in PtTransItem represents the summary of its Details. DetailCounter represents the count of PtTransItemDetail rows corresponding the current Transaction.\r\n0 = No entry exists in PtTransItemDetail\r\n2 = 2 entries exists in PtTransItemDetail'
+  - name: 'TransDate'
+    description: 'Date of transaction posting'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TransDateTime'
+    description: 'Date & Time of transaction posting'
+  - name: 'DebitQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'DebitAmount'
+    description: 'This field contains the amount to be debited from an account. In case of credit transaction this field contains 0'
+    genericControls:
+      defColumnPos: 3
+  - name: 'CreditQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'CreditAmount'
+    description: 'This field contains the amount to be credit to an account. In case of debit transaction this field contains 0'
+    genericControls:
+      defColumnPos: 4

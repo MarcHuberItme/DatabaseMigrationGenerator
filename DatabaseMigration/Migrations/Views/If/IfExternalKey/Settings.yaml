@@ -1,0 +1,36 @@
+view:
+  name: 'IfExternalKey'
+  description: 'Temporary view for compability reasons'
+frontendView:
+  name: 'IfExternalKey'
+  description: 'Temporary view for compability reasons'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ApplicationCode'
+    description: ''
+    dataType: 'varchar'
+    prec: 50
+    genericControls:
+      refTable: 'AsExternalApplication'
+      refField: 'ApplicationCode'
+  - name: 'ExternalKey'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'FinstarTableName'
+    description: ''
+    dataType: 'varchar'
+    prec: 30
+  - name: 'FinstarId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'InactivationTimestamp'
+    description: ''
+    dataType: 'datetime'

@@ -1,0 +1,389 @@
+table:
+  name: 'PrPrivate'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Private product'
+    - german:
+        formTitle: 'Eigenes Produkt'
+    - french:
+        formTitle: 'Produit private'
+    - italian:
+        formTitle: 'Produtto privato'
+  columns:
+  - name: 'ProductId'
+    description: 'foreign-key; Id of PrBase'
+    genericControls:
+      refTable: 'PrBase'
+      refField: 'Id'
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'ProductNo'
+    description: 'candidate-key'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'OperationTypeId'
+    description: 'Type of Product ("Hauptbuch-Konto"/"Partnerkonto") foreign-key; Id of PrOperationType'
+    genericControls:
+      refTable: 'PrOperationType'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'InterestPracticeType'
+    description: 'InterestPracticeType is stored on product and CurrRegion level.\r\nIt''s decided not to have an InterestPracticesType on Account Level ! That means: For different Practices there are different products, e.g mortgage and libor-mortgage'
+    genericControls:
+      refTable: 'AsInterestPractice'
+      refField: 'PracticeType'
+  - name: 'WithholdingTaxType'
+    description: ''
+    genericControls:
+      refTable: 'AsWithholdingTaxType'
+      refField: 'WithholdingTaxType'
+  - name: 'MinimumRate'
+    description: 'if filled, the minimum rate for this product is given'
+    genericControls:
+      defColumnPos: 9
+  - name: 'MaximumRate'
+    description: 'if filled, the maximum rate for this product is given'
+    genericControls:
+      defColumnPos: 10
+  - name: 'PayInRuleNo'
+    description: 'indicates whether there are restrictions for payment in'
+    genericControls:
+      refTable: 'PrPrivatePayRule'
+      refField: 'PayRuleNo'
+  - name: 'PayOutRuleNo'
+    description: 'indicates whether there are restrictions for payment out'
+    genericControls:
+      refTable: 'PrPrivatePayRule'
+      refField: 'PayRuleNo'
+  - name: 'RoundingType'
+    description: 'different types of rounding (for example eighth rounding, sixteenth rounding, etc.)'
+    genericControls:
+      refTable: 'PrRoundingType'
+      refField: 'TypeNo'
+  - name: 'RoundingRule'
+    description: 'definition of rounding rules (for example round mathematical, always round up, etc.)'
+    genericControls:
+      refTable: 'PrRoundingRule'
+      refField: 'TypeNo'
+  - name: 'MgFRONTFL'
+    description: 'Default value to put in PtAccountBase.MgFRONTFL on inserts'
+    genericControls:
+      defColumnPos: 8
+      isOnlyForMig: true
+  - name: 'MgMTAUSZG'
+    description: 'Default value to put in PtAccountBase.MgMTAUSZG on inserts'
+    genericControls:
+      defColumnPos: 7
+      isOnlyForMig: true
+  - name: 'MgSPESKATId'
+    description: 'Default value to put in PtAccountBase.MgSPESKATId on inserts'
+    genericControls:
+      refTable: 'MgExpensesCategory'
+      refField: 'Id'
+      defColumnPos: 6
+      isOnlyForMig: true
+  - name: 'MgABSCHLCD'
+    description: 'default closing rule to save in PrReference (insert)'
+    genericControls:
+      refTable: 'MgClosing'
+      refField: 'MigValue'
+      defColumnPos: 4
+      isOnlyForMig: true
+  - name: 'MgZINSKATId'
+    description: 'default interest category for new prreference'
+    genericControls:
+      refTable: 'MgInterestCategory'
+      refField: 'Id'
+      defColumnPos: 5
+      isOnlyForMig: true
+  - name: 'DebitInterestAccNo'
+    description: 'AccountId For Calculated Interest Amounts'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'CreditInterestNoTaxAccNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'CreditInterestWithTaxAccNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'CommissionAccNo'
+    description: 'AccountId For Calculated Commission Amounts(defined at PrPrivateComponent)'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'ProvisionAccNo'
+    description: 'AccountId For Provision (Unused amounts of loan)'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'SpCommissionAccNo'
+    description: 'AccountId For Commission Amounts(defined at PrCommissinPrice/PtAccountCommission)'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'ExpenesAccNo'
+    description: 'AccountNo for Expenses'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'NostroForexAccNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'ForexSpreadManagerAccNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'ForexSpreadTraderAccNo'
+    description: 'ForexSpreadTraderAccNo'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'BonusAccNo'
+    description: 'Bonus account when Withholding tax is involved'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'WithholdingTax'
+    description: 'VST'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'IsMoneyMarket'
+    description: 'True - Product related to moneymarket\r\nFalse - All types of products'
+  - name: 'DebitInstallment'
+    description: 'FsAccountPayback application uses this flag to determine how to perform the account payback.\r\n\r\ntrue = 	The payback installment amount will be debited or billed.\r\n	The debit limit reduction time depends in this case on the \r\n	apposite program parameter flag \r\n	(Group: AccountPayback Name: ReduceAfterDebiting)\r\n\r\nfalse =	No automatic debiting or billing. A debit limit reduction will be \r\n	performed automatically on this account.\r\n\r\n06.04.2004/mct'
+  - name: 'AcctNoRule'
+    description: 'Reference to rule for generatic a new accountno'
+    genericControls:
+      refTable: 'PtAccountNoRule'
+      refField: 'RuleNo'
+  - name: 'ManAcctNo'
+    description: 'Allows manual entery of account numer (for migration)'
+    genericControls:
+      defColumnPos: 12
+  - name: 'CommissionType'
+    description: 'This field will not be used in Finstar-Application, but it cannot be removed immediatly because the migration program needs it.\r\n\r\nBitte dieses Feld nicht entfernen... wird produktiv in Migration verwendet!!! 05.05.2004/mct'
+    genericControls:
+      refTable: 'PrCommissionType'
+      refField: 'CommissionTypeNo'
+      isOnlyForMig: true
+  - name: 'IsSavingsPlan'
+    description: 'If set, savings-plan no can be edited when openin an account'
+    genericControls:
+      defColumnPos: 11
+  - name: 'FormProfileName'
+    description: 'Name of the profile in PtPortfolioAdmin.frmAccountBase'
+  - name: 'IsInterestToCalculate'
+    description: '- Products associated with Company Accounts should have to Calculate Interest.'
+  - name: 'IsDueRelevant'
+    description: 'this product add''s the interest in a separate amount field (e.g. mortgages)'
+  - name: 'AdviceControlId'
+    description: 'reference to advice control ruleset to use when building \r\ntransaction advices'
+    genericControls:
+      refTable: 'PrAdviceControl'
+      refField: 'Id'
+  - name: 'RequiresIdent'
+    description: 'defines if a product requires a valid identification (PtIdentification)\r\n\r\n0 = Nein (keine ID nötig, z.B. Mieterkautionen)\r\n1 = Ja (bei diesem Produkt muss eine Identifikation nach VSB erfolgen !)'
+  - name: 'CalculateDelayedDueRelavant'
+    description: '1= Include transitems which delayed and due relevant.\r\n0= Don''t Include transitems which delayed and due relevant (default).\r\n\r\nCurrently this bank does not support this feature. The purpose of the inclusion of this field is the support for the adherence and compatibility with future banking trends, norms and standards.'
+  - name: 'DateLimit'
+    description: 'an opening of new account is only possilbe until that date. After this date, the product currency is valid, but no new entries are possible.'
+  - name: 'ChargePriority'
+    description: 'If accounts based on more than one product are liable to charge, one with higher priority (smaller number) is charged. In case of equal priority, one with smaller product number is charged.\r\nUsed in:\r\n  - Mail charging    // ishakeel'
+    minValue: '1'
+  - name: 'ExpenseRulesetNo'
+    description: ''
+    genericControls:
+      refTable: 'PrExpenseRuleset'
+      refField: 'ExpenseRulesetNo'
+  - name: 'SuppressInOverview'
+    description: 'do not show this products by default on the overview form (only if special checkbox is choosen). - e.g. Vorsorgeprodukte'
+  - name: 'EndBalanceRoundingType'
+    description: 'if not null  the endbalance after a closing will be rounded (difference is booked with charges) - if the chargeamount before rounding is 0 - no rounding will be applied (they will be added in rule based charges)'
+    genericControls:
+      refTable: 'AsRoundingRule'
+      refField: 'RoundingRule'
+  - name: 'FormOrderIsAllowed'
+    description: 'It''s allowed to order forms (ES, Quick)'
+  - name: 'TerminateOnZeroBalance'
+    description: '0 = no termination (e.g. Main Ledger - because of more than one Currency)\r\n1 = to be terminated if position balance = 0 (e.g. Savings Accounts)'
+  - name: 'ForAssetReport'
+    description: 'if true, this product is included in asset report'
+  - name: 'ForTaxReport'
+    description: 'if true, this product is included in tax report'
+  - name: 'ProtectionTypeNo'
+    description: 'characterizes the way a product is involved in the capital requirement calculation of the protection insurance.'
+    genericControls:
+      refTable: 'PrProtectionType'
+      refField: 'ProtectionTypeNo'
+  - name: 'AllowsSupplementaryItems'
+    description: '0 = Kein automatischen Übertrag aufs Gewinnverteilungskonto\r\n1 = automatischen Übertrag aufs Gewinnverteilungskonto'
+  - name: 'NoAMLCheck'
+    description: 'no money laundering check\r\n1 = no check'
+  - name: 'UseSpecialMortgageClosing'
+    description: '0 = Use the ''normal'' AccountClosingReport as stated in system parameter  AccountClosing-ReportNameAccountClosing\r\n\r\n1 = Use the special Closing Report for mortgages stated in system parameter AccountClosing-ReportNameMortgageClosing\r\n'
+  - name: 'IsAcctWorkflowAuto'
+    description: 'If this workflow is set, the new account and account related settings will be saved with FsAuto option'
+  - name: 'AccountGroupNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivateAccountGroup'
+      refField: 'AccountGroupNo'
+  - name: 'ForeignCurrencyValuation'
+    description: '1 = Devisenbewertung am Ende der Periode durchführen'
+  - name: 'AssetReportRuleNo'
+    description: 'Rule number for asset report'
+    genericControls:
+      refTable: 'PrAssetReportRule'
+      refField: 'AssetReportRuleNo'
+  - name: 'ConsCreditMonitoring'
+    description: ''
+    genericControls:
+      refTable: 'PtConsCreditMonitoringType'
+      refField: 'TypeNo'
+  - name: 'PMSProductNo'
+    description: 'This field is mainly used in connection with Netfolio. The PM1 solution use a different mechanism. Status as of 01.06.2017 skl'
+  - name: 'IsForPMS'
+    description: ''
+  - name: 'BonusAcctNoTax'
+    description: 'Bonus account when no Withholding tax is involved'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'EasyTaxType'
+    description: 'EasyTax type for Export-Mapping'
+    genericControls:
+      refTable: 'EtInstrType'
+      refField: 'InstrumentType'
+  - name: 'IsPfBRefinanced'
+    description: 'If set, the migration field "PFANDBRIEF" are mandatory and can be edited when opening an account'
+    genericControls:
+      defColumnPos: 13
+  - name: 'Possiblecol'
+    description: 'als Colleteral erlaubt ?'
+  - name: 'Possiblecredit'
+    description: 'als Kreditkonto erlaubt ?'
+  - name: 'Pricoverchf'
+    description: 'Priorität Deckung falls Kontowährung = CHF'
+    genericControls:
+      refTable: 'CoPricov'
+      refField: 'Pricover'
+  - name: 'SubPricoverchf'
+    description: 'Subpriorität innerhalb Pricoverchf'
+  - name: 'Priocoverfwg'
+    description: 'Priorität Deckung falls Kontowährung <> CHF'
+    genericControls:
+      refTable: 'CoPricov'
+      refField: 'Pricover'
+  - name: 'SubPriocoverfwg'
+    description: 'Subpriorität innerhalb Priocoverfwg'
+  - name: 'Typecovchf'
+    description: 'Typ der Deckung falls Kontowährung = CHF'
+    genericControls:
+      refTable: 'CoTypecov'
+      refField: 'Typecov'
+  - name: 'Typecovfwg'
+    description: 'Type der Deckung falls Kontowrg <> CHF'
+    genericControls:
+      refTable: 'CoTypecov'
+      refField: 'Typecov'
+  - name: 'Pledgevaluechf'
+    description: 'Belehungswert in % falls Kontowährung = CHF'
+  - name: 'Pledgevaluefwg'
+    description: 'Belehnungswert in % falls Kontowährung <> CHF'
+  - name: 'CompTypeNochfF'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'CompTypeNochfV'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'CompTypeNofwgF'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'CompTypeNofwgV'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'WithdrawCommRelevant'
+    description: 'Flag to indicate if the withdraw trnsactions on product accounts are relevant for calculation of withdraw commission'
+  - name: 'NonTerminationCommAccountNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'BookWithdrawComm'
+    description: '0 =  Withdraw commission is not booked with closing\r\n1 =   Withdraw commission is booked with closing'
+  - name: 'IsAiaRelevant'
+    description: 'True, if the product has to be included in AIA reports.'
+  - name: 'IsExcludForLatentRisk'
+    description: 'Product is excluded for latent risk calculation (FsPositionAnalysis)'
+  - name: 'DebitFeeAccNo'
+    description: 'AccountNo for fees on negative debit interest\r\n(Negativzins auf Aktivgelder, gem RVB Ertragsminderung)'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'CreditFeeAccNo'
+    description: 'Account for fee on negative credit interest. \r\n(Negativzinsen auf Passivgelder, gem.'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'IsVsbRelevant'
+    description: 'True, if the product has to be included in the VSB product check'
+  - name: 'IsForexRelevant'
+    description: ''
+  - name: 'OutgoingInstantPaymentsAllowed'
+    description: 'Sending of SIC instant payments is allowed for product'
+    genericControls:
+      refTable: 'PrPrivateIPPermission'
+      refField: 'PermissionTypeNo'
+  - name: 'IncomingInstantPaymentsAllowed'
+    description: 'Receiving of SIC instant payments is allowed for product'
+    genericControls:
+      refTable: 'PrPrivateIPPermission'
+      refField: 'PermissionTypeNo'
+  - name: 'IsCARFRelevant'
+    description: ''

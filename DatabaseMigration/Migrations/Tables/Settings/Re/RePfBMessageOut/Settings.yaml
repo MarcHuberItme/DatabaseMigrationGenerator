@@ -1,0 +1,49 @@
+table:
+  name: 'RePfBMessageOut'
+  description: 'Table to store generated messages'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Sent Messages'
+    - german:
+        formTitle: 'Gesendete Nachrichten'
+  columns:
+  - name: 'Message'
+    description: 'Sent XML-Message'
+  - name: 'MessageId'
+    description: 'Unique Id of the message'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SendDate'
+    description: 'Date of sending'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Sent'
+    description: 'True if the message was sent'
+    genericControls:
+      defColumnPos: 3
+  - name: 'FileName'
+    description: 'Name of the XML-File to send'
+    genericControls:
+      defColumnPos: 4
+  - name: 'MessageType'
+    description: 'MessageType\r\n1 -> ePledgePledge\r\n2 -> ePledgeSaldo'
+    genericControls:
+      refTable: 'RePfBMessageType'
+      refField: 'MessageType'
+      defColumnPos: 5
+  - name: 'Validated'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'ValidationError'
+    description: ''
+    genericControls:
+      multiLine: true

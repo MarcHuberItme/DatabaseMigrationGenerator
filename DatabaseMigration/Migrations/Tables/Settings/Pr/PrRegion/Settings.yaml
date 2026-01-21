@@ -1,0 +1,19 @@
+table:
+  name: 'PrRegion'
+  description: 'regions of PrPrivateComponent'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Region'
+    - german:
+        formTitle: 'Region'
+  columns: []

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetProductByAccountId'
+  description: 'To show the Currency and the Product of an AccountBase\r\n\r\npsk: WHAT HACK IS GOING ON HERE TO MAP HdProcessId To Id ????'

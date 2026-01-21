@@ -1,0 +1,29 @@
+table:
+  name: 'PtGeneralLimitType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Limit Type'
+    - german:
+        formTitle: 'Limitentyp'
+    - french:
+        formTitle: 'Limit Type'
+  columns:
+  - name: 'LimitTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IsDebit'
+    description: '1 = debit / soll\r\n0 = credit / haben'

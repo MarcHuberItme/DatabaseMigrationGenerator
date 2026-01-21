@@ -1,0 +1,31 @@
+table:
+  name: 'PtBuildingLoanCheckGroup'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Building Loan Costs'
+    - german:
+        formTitle: 'Kostenvoranschlagsgruppen'
+  columns:
+  - name: 'CheckGroupPos'
+    description: 'Erfassung alphanumerisch, weil so in SIA - Vorlage vorgegeben, z.B.:\r\n176\r\n176.0\r\n176.1'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'CheckGroupLabel'
+    description: ''
+    genericControls:
+      refTable: 'PtBuildingLoanCheckGroupLabel'
+      refField: 'CheckGroupLabel'
+      defColumnPos: 2

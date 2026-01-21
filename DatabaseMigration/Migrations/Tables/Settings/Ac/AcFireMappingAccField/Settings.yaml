@@ -1,0 +1,61 @@
+table:
+  name: 'AcFireMappingAccField'
+  description: 'Feld Mapping Fire'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FireMappingId'
+    description: ''
+    genericControls:
+      refTable: 'AcFireMapping'
+      refField: 'Id'
+  - name: 'FireFieldName'
+    description: ''
+    genericControls:
+      refTable: 'AcFireFieldView'
+      refField: 'FieldName'
+      defColumnPos: 1
+  - name: 'ConversionTypeNo'
+    description: '0 = No action, use database default value\r\n1 = Set individual default Value\r\n2 = Use source value\r\n3 = Use AsInterfaceConversion\r\n4 = Use internal dynamic conversion\r\n5 = Call special internal method'
+    genericControls:
+      refTable: 'AcFireConversionType'
+      refField: 'ConversionTypeNo'
+      defColumnPos: 2
+  - name: 'SourceFieldName'
+    description: ''
+    genericControls:
+      refTable: 'AcFireSourceFieldView'
+      refField: 'FieldName'
+      defColumnPos: 3
+  - name: 'DefaultValue'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'CodeTableName'
+    description: ''
+    genericControls:
+      refTable: 'MdTable'
+      refField: 'TableName'
+  - name: 'DynamicConversionId'
+    description: ''
+    genericControls:
+      refTable: 'AcDynamicConversion'
+      refField: 'Id'
+  - name: 'ValueSign'
+    description: ''
+    genericControls:
+      refTable: 'AsValueSign'
+      refField: 'ValueSign'
+  - name: 'ValueMandatory'
+    description: ''
+  - name: 'CodeFieldName'
+    description: ''
+  - name: 'CodeSelFilter'
+    description: ''

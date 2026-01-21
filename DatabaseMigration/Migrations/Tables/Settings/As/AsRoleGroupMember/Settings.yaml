@@ -1,0 +1,30 @@
+table:
+  name: 'AsRoleGroupMember'
+  description: 'Defines which entries of AsRole are assigned to entries in AsRoleGroup'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Role-Group Membership'
+    - german:
+        formTitle: 'Rollen-Gruppenzugehörigk.'
+  columns:
+  - name: 'RoleGroupName'
+    description: 'Name of the Role-Group. Since the name is not multi lingual (as a result of workflow capabilities) and unique in AsRoleGroup, is referenced directly. \r\nThis makes querying for members of a certain RoleGroupName even easier.'
+    genericControls:
+      refTable: 'AsRoleGroup'
+      refField: 'RoleGroupName'
+      defColumnPos: 1
+  - name: 'RoleName'
+    description: 'Name of the assigned role. Since the name is not multi lingual (as a result of workflow capabilities) and unique in AsRole, is referenced directly.'
+    genericControls:
+      refTable: 'AsRole'
+      refField: 'RoleName'
+      defColumnPos: 2

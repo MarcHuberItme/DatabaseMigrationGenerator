@@ -1,0 +1,51 @@
+table:
+  name: 'BpJobFlowInterval'
+  description: 'Interval of job flow block'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Interval of job flow bloc'
+    - german:
+        formTitle: 'Interval of job flow bloc'
+    - french:
+        formTitle: 'Interval of job flow bloc'
+    - italian:
+        formTitle: 'Interval of job flow bloc'
+  columns:
+  - name: 'JobFlowBlockId'
+    description: 'Reference to job flow block that owns this interval'
+    genericControls:
+      refTable: 'BpJobFlowBlock'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'Active'
+    description: 'Interval is active'
+  - name: 'ValidFrom'
+    description: 'Valid from date'
+  - name: 'ValidUntil'
+    description: 'Valid until date'
+  - name: 'IntervalType'
+    description: ''
+    genericControls:
+      refTable: 'BpIntervalType'
+      refField: 'IntervalType'
+  - name: 'StartTime'
+    description: 'Time to start the job flow'
+  - name: 'EndTime'
+    description: 'Time to stop the job flow'
+  - name: 'WeekDays'
+    description: 'Weekday selection (flags)'
+  - name: 'MonthDays'
+    description: 'Days of the month selection (flags)'
+  - name: 'Hours'
+    description: 'Hours selection (flags)'
+  - name: 'Minutes'
+    description: 'Minutes selection (flags)'

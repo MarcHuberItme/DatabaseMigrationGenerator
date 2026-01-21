@@ -1,0 +1,98 @@
+table:
+  name: 'AcFrozenPtBalanceSummary'
+  description: 'Zusammenfassung Bilanzwerte pro Kunde'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Partner Balance Values'
+    - german:
+        formTitle: 'Bilanzwerte pro Kunde'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'BalanceDay'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'DebitAmountHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'CreditAmountHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'PortfolioValueHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'PortfolioAcruedInterestHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'RecCount'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'EbankingAgr'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'RetainedMail'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'OnlyEbankingDeliveryForAccount'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'KO_ValueHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 11
+  - name: 'HBLN_Quantity'
+    description: ''
+    genericControls:
+      defColumnPos: 12
+  - name: 'Privor_ValueHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 13
+  - name: 'Bonus_ValueHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 14
+  - name: 'Fonds_ValueHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 15
+  - name: 'Hypothek_ValueHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 16
+  - name: 'Vorschuss_ValueHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 17
+  - name: 'IsUSPerson'
+    description: ''
+  - name: 'HasCard'
+    description: ''
+  - name: 'WithW9'
+    description: ''
+  - name: 'WithEuInfoX'
+    description: ''
+  - name: 'PortfolioId'
+    description: ''

@@ -1,0 +1,150 @@
+view:
+  name: 'PtAccountMovementCompoundView'
+  description: 'Used for getting account-transactions as Compound-Bookings.\r\nChange 21.02.2022 > removed joins to PtDispoBookingReference and PtTransMessage\r\nChange 26.06.2023 > removed union to dispobookings and remove the column isDispoBooking'
+frontendView:
+  name: 'PtAccountMovementCompoundView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Account movement compound'
+        helpText: 'Account movement compound'
+    - german:
+        formTitle: 'Kontobewegung Sammel'
+        helpText: 'Kontobewegung Sammel'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'ValueDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'TransDateTime'
+    description: ''
+    dataType: 'datetime'
+  - name: 'TransactionType'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'LanguageNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'TextNo'
+    description: ''
+    dataType: 'int'
+  - name: 'TransactionText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 300
+  - name: 'DebitAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CreditAmount'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 38
+    scale: 38
+  - name: 'TransDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'CreditPaymentInformation'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+  - name: 'DebitPaymentInformation'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+  - name: 'SalaryPaymentRestriction'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'BalanceRestriction'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'SalaryFlag'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'eBankingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'QueryRestriction'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'QueryDetailRestriction'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'HasAccess'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'InternetbankingAllowed'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'ValidFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ValidTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'DetailCounter'
+    description: ''
+    dataType: 'smallint'
+  - name: 'PositionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'DebitOrderingName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 255
+  - name: 'PersonalNote'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+  - name: 'OriginalSenderAddress'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+  - name: 'OriginalSenderName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'OriginalSenderStreetName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'OriginalSenderBuildingNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'OriginalSenderTownName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 35
+  - name: 'OriginalSenderCountry'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50

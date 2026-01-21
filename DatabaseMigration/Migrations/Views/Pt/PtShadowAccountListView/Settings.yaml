@@ -1,0 +1,101 @@
+view:
+  name: 'PtShadowAccountListView'
+  description: 'This view loads all main information about the shadow account'
+frontendView:
+  name: 'PtShadowAccountListView'
+  description: 'This view gets the main information for a shadow account'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ShadowAccountId'
+    description: 'Unique id of the shadowAccount'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'Balance'
+    description: 'Value of entire shadow account. \r\n= BalanceBvg + BalanceNonBvg + AccruedInterestBvg + AccruedInterestNonBvg + SecurityValue'
+    dataType: 'money'
+  - name: 'Currency'
+    description: 'Currency of shadow account.'
+    dataType: 'char'
+    prec: 3
+  - name: 'ShadowAccountNoEdited'
+    description: 'Formatted version of AccountNo'
+    dataType: 'varchar'
+    isNotNull: true
+    prec: 50
+  - name: 'ShadowProductId'
+    description: 'Unique id for shadow product'
+    dataType: 'uniqueidentifier'
+  - name: 'ProfileName'
+    description: 'Name of the display-profile to present the product.'
+    dataType: 'varchar'
+    prec: 32
+  - name: 'PartnerId'
+    description: 'Unique id of the PtBase'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'PartnerNo'
+    description: 'PartnerNo of the ptBase'
+    dataType: 'decimal'
+    isNotNull: true
+    isUnique: true
+    prec: 8
+  - name: 'PartnerNoEdited'
+    description: 'PartnerNoEdited of the ptBase'
+    dataType: 'nvarchar'
+    isNotNull: true
+    isUnique: true
+    prec: 10
+  - name: 'PartnerNoText'
+    description: 'PartnerNoText of the ptBase'
+    dataType: 'nvarchar'
+    isNotNull: true
+    isUnique: true
+    prec: 8
+  - name: 'OwnerNameLine'
+    description: 'NameLine of the partner''s main address'
+    dataType: 'nvarchar'
+    prec: 70
+  - name: 'ReportAdrLine'
+    description: 'ReportAdrLine of the partner''s main address'
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'AccountId'
+    description: 'Unique id of the account'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    isUnique: true
+  - name: 'AccountNo'
+    description: 'Account number numeric'
+    dataType: 'varchar'
+    isNotNull: true
+    isUnique: true
+    prec: 32
+  - name: 'AccountNoEdited'
+    description: 'Account number edited (formatted)'
+    dataType: 'nvarchar'
+    isNotNull: true
+    isUnique: true
+    prec: 20
+  - name: 'CustomerReference'
+    description: 'A name given to the account by the customer.'
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'ProductNo'
+    description: 'Product number of the account''s product.'
+    dataType: 'int'
+    isNotNull: true
+  - name: 'ProductId'
+    description: 'ProductId (Id of PrPrivate)'
+    dataType: 'uniqueidentifier'
+  - name: 'TerminationDate'
+    description: 'Date when the product was definitely termitated.'
+    dataType: 'datetime'

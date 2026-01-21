@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'NcZvBatchFull'
+  description: 'Full Batch-Records for AsPayee Sanction check (Name-Matching).'

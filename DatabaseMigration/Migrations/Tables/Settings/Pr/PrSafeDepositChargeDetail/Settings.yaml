@@ -1,0 +1,44 @@
+table:
+  name: 'PrSafeDepositChargeDetail'
+  description: 'this table records the detail of payment from safe deposit box application.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'DepositChargeDetail'
+        helpText: 'PrSafeDepositChargeDetail'
+    - german:
+        formTitle: 'DepositChargeDetail'
+        helpText: 'PrSafeDepositChargeDetail'
+  columns:
+  - name: 'PeriodFrom'
+    description: ''
+  - name: 'PeriodTo'
+    description: ''
+  - name: 'ServicePrice'
+    description: 'the price of the service defined from the contract'
+  - name: 'BankIncome'
+    description: ''
+  - name: 'VATTaxAmount'
+    description: ''
+  - name: 'Service'
+    description: 'service for safe deposit box and key of safe deposit box'
+  - name: 'VATTaxRate'
+    description: 'VAT tax rate, xxxx.xxxx%'
+  - name: 'IsTaxIncluded'
+    description: 'True, tax is included in the service price'
+  - name: 'TaxTypeNo'
+    description: ''
+  - name: 'ChargeSummaryID'
+    description: ''
+    genericControls:
+      refTable: 'PrSafeDepositChargeSummary'
+      refField: 'Id'

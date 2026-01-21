@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'RunCommandsForPositionUpdate'
+  description: 'Run commands to update PtTransitem.DetailCounter, PtTransaction.UpdateStatus\r\nRun commands to update PtPosition records\r\nRun commands to insert batch jobs'

@@ -1,0 +1,38 @@
+table:
+  name: 'FaRelationshipManager'
+  description: 'Relationship managers assigned to an U.S. account during the applicable periode.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'FaBaseId'
+    description: ''
+    genericControls:
+      refTable: 'FaBase'
+      refField: 'Id'
+  - name: 'UserGroupId'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'UserName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidTo'
+    description: ''
+    genericControls:
+      defColumnPos: 4

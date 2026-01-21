@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPrivateComponent'
+  description: 'to optimize to access from AccountComponent to PrivateComponent,\r\nfor example to check the Value of PtAccountCompValue if it is in the range of the Minimum-/MaximumValue of PrPrivateComponent'

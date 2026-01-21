@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaGetNextStepNo'
+  description: 'Get the next Step No with last Step No as Input'

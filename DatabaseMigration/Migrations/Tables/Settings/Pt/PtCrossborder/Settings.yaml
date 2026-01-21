@@ -1,0 +1,88 @@
+table:
+  name: 'PtCrossborder'
+  description: 'Authorisation for crossborder activities'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Crossborder'
+    - german:
+        formTitle: 'Crossborder'
+    - french:
+        formTitle: 'Crossborder'
+    - italian:
+        formTitle: 'Crossborder'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'TargetCountry'
+    description: ''
+  - name: 'CountryRuleId'
+    description: ''
+    genericControls:
+      refTable: 'PtCrossborderCountryRule'
+      refField: 'Id'
+  - name: 'AllowCashPayment'
+    description: 'Kassageschäfte zulassen'
+  - name: 'AllowCustomerAccount'
+    description: 'Kundenkonti in CHF und FWG zulassen'
+  - name: 'AllowOwnBond'
+    description: 'Kassenobligationen zulassen'
+  - name: 'AllowMoneyMarket'
+    description: 'Festgeld- und Treuhandanlagen zulassen'
+  - name: 'AllowPillar3aAccount'
+    description: 'Säule 3a Konto (Privor)'
+  - name: 'AllowPillar3aFund'
+    description: 'Säule 3a mit Fondsanlagen'
+  - name: 'AllowPrivit'
+    description: 'Vorsorgelösung Privit zulassen'
+  - name: 'AllowBVG'
+    description: 'Säule 2, berufliche Vorsorge zulassen'
+  - name: 'AllowFundAccount'
+    description: 'Fondssparen zulassen'
+  - name: 'AllowLoan'
+    description: 'Kredite, Leasing, Darlehen und Auslandhypotheken zulassen'
+  - name: 'AllowMortgageCH'
+    description: 'Hypotheken und Baukredite (Grundpfand CH) zulassen'
+  - name: 'AllowCard'
+    description: 'Debit- und Kreditkarten inkl. Maestro zulassen'
+  - name: 'AllowDomesticPayment'
+    description: 'Zahlungsverkehr Inland zulassen'
+  - name: 'AllowAbroadPayment'
+    description: 'Zahlungsverkehr Ausland zulassen'
+  - name: 'AllowStandingOrder'
+    description: 'Daueraufträge zulassen'
+  - name: 'EbankingRestrictionCode'
+    description: 'Ebanking Zugriffsberechtigung\r\n1 - keine Berechtigung\r\n2 - nur Abfragen\r\n3 - Aufträge erfassen (ZV + Börse)'
+    genericControls:
+      refTable: 'PtCrossborderEbRestriction'
+      refField: 'RestrictionCode'
+  - name: 'AllowSafeDepositBox'
+    description: 'Tresorfach erlaubt'
+  - name: 'AllowStockExchange'
+    description: ''
+  - name: 'AllowPortfolio'
+    description: ''
+  - name: 'AllowAssetManagement'
+    description: ''
+  - name: 'Remarks'
+    description: ''
+    genericControls:
+      multiLine: true

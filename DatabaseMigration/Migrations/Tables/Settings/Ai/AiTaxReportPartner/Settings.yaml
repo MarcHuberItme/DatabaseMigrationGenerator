@@ -1,0 +1,110 @@
+table:
+  name: 'AiTaxReportPartner'
+  description: 'Enthält Partnerinformationen (Person / Firma) zur Steuermeldung. Diese Felder (Name, Firstname, Street, Town, ...) sind zum Teil massiv länger als in PtBase oder PtAddress. Diese Felder können vor der Steuermeldung von Hand ergänzt werden.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'PartnerId'
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax report partner'
+    - german:
+        formTitle: 'Steuermeldung Partnerinfo'
+    - french:
+        formTitle: 'Partenaire rapport fiscal'
+  columns:
+  - name: 'TaxReportId'
+    description: 'Verbindung zur Steuermeldung.'
+    genericControls:
+      refTable: 'AiTaxReport'
+      refField: 'Id'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'PartnerTypeNo'
+    description: 'Partnertyp (Person, Firma, ..)'
+    genericControls:
+      refTable: 'AiTaxReportPartnerType'
+      refField: 'PartnerTypeNo'
+      defColumnPos: 2
+  - name: 'PartnerId'
+    description: 'Verbindung zum Partner'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'PartnerNoEdited'
+    description: 'Partnernummer (formatiert).'
+    genericControls:
+      defColumnPos: 9
+  - name: 'FiscalCountries'
+    description: 'Steuerländer (Ländercodes; Liste, Semikolon getrennt)'
+  - name: 'Tin'
+    description: 'Steuernummer (Tax identification number)'
+  - name: 'Title'
+    description: ''
+  - name: 'Name'
+    description: 'Name'
+    genericControls:
+      defColumnPos: 4
+  - name: 'FirstName'
+    description: 'Vorname'
+    genericControls:
+      defColumnPos: 5
+  - name: 'MiddleName'
+    description: 'Mittelname'
+  - name: 'NameCont'
+    description: 'Namenszusatz'
+  - name: 'AddrZip'
+    description: 'Postleitzahl'
+    genericControls:
+      defColumnPos: 6
+  - name: 'AddrTown'
+    description: 'Ortschaft'
+    genericControls:
+      defColumnPos: 7
+  - name: 'AddrStreet'
+    description: 'Strasse'
+  - name: 'AddrHouseNo'
+    description: 'Hausnummer'
+  - name: 'AddrPOBox'
+    description: 'Postfach\r\n\r\nby FATCA the checkbox POBox (by the table PtAddress) is used to differentiate (TRUE: data is filled, FALSE: NULL). \r\nHowever in the HBL Finstar DB the field is field independently of the checkbox with POBox or Address extention)\r\nTherefore on CRS (CommonReportingStandard, aka AIA Automatischinformationsaustausch) we are going to send the data independently of the checkbox\r\nSKL on 23.05.2018'
+  - name: 'AddrCountryCode'
+    description: 'ISO Ländercode'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 8
+  - name: 'AddrState'
+    description: 'Staat, Provinz'
+  - name: 'AddrFull'
+    description: 'LongAddress is the result of an automated process, can be overridden by manual input'
+    genericControls:
+      multiLine: true
+  - name: 'Nationalities'
+    description: 'Nationalitäten (Ländercodes; Liste, Semikolon getrennt)'
+  - name: 'DateOfBirth'
+    description: 'Geburtsdatum'
+  - name: 'StatusNo'
+    description: 'Verarbeitungsstatus'
+    genericControls:
+      refTable: 'AiTaxReportEntryStatus'
+      refField: 'StatusNo'
+  - name: 'AcctHolderTypeNo'
+    description: 'Fatca spezifischer Kontoinhaber Typ. Wird nur für Firmen benützt.'
+    genericControls:
+      refTable: 'AiTaxReportAcctHolderType'
+      refField: 'AcctHolderTypeNo'
+  - name: 'RefTaxReportPartnerId'
+    description: 'Referenz zur vorhergehenden Steuermeldung des Partners falls Korrekturen erfolgen.'
+    genericControls:
+      refTable: 'AiTaxDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true

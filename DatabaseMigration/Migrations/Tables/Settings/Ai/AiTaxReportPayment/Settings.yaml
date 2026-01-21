@@ -1,0 +1,47 @@
+table:
+  name: 'AiTaxReportPayment'
+  description: 'Informationen zur Steuermeldung über Zahlungen eines Kontos.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment'
+    - german:
+        formTitle: 'Zahlung'
+    - french:
+        formTitle: 'Paiement'
+  columns:
+  - name: 'TaxReportAccountId'
+    description: 'Verbindung zum Konto'
+    genericControls:
+      refTable: 'AiTaxReportAccount'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'PaymentTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'AiTaxReportPaymentType'
+      refField: 'PaymentTypeNo'
+      defColumnPos: 1
+  - name: 'Currency'
+    description: 'Währung der Zahlung (Währungscode).'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'Amount'
+    description: 'Betrag'
+    genericControls:
+      defColumnPos: 3
+  - name: 'StatusNo'
+    description: 'Verarbeitungsstatus'
+    genericControls:
+      refTable: 'AiTaxReportEntryStatus'
+      refField: 'StatusNo'

@@ -1,0 +1,36 @@
+table:
+  name: 'BpTaskBlockHistory'
+  description: 'History of taskblock entries'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'History of taskblock'
+    - german:
+        formTitle: 'History of taskblock'
+    - french:
+        formTitle: 'History of taskblock'
+    - italian:
+        formTitle: 'History of taskblock'
+  columns:
+  - name: 'JobFlowBlockId'
+    description: ''
+    genericControls:
+      refTable: 'BpJobFlowBlock'
+      refField: 'Id'
+  - name: 'BlockDesc'
+    description: 'Block description'
+  - name: 'Success'
+    description: 'Taskblock successful executed'
+  - name: 'StartTime'
+    description: 'Real start time of task block'
+  - name: 'EndTime'
+    description: 'Real end time of task block'
+  - name: 'ExecDate'
+    description: 'Planned execution date + time'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'RePfbLoan_History_CEN'
+  description: 'Calcutlates the total amount of PfB-Loan from the hypothekarbank and archvates the result in the table and is controlled by SQL Server Agent; should run daily at 23:55'

@@ -1,0 +1,26 @@
+table:
+  name: 'PtEbProductCategory'
+  description: 'Product category definition. E.g. Liquidity, Savings, Pension, Loans...'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Private product category'
+    - german:
+        formTitle: 'Eigene Produktkategorie'
+    - french:
+        formTitle: 'Produit privat catégorie'
+    - italian:
+        formTitle: 'Produtto privato categori'
+  columns:
+  - name: 'CategoryKey'
+    description: ''

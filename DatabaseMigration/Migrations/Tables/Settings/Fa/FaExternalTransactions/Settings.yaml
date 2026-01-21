@@ -1,0 +1,115 @@
+table:
+  name: 'FaExternalTransactions'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'FaExternalTransactions'
+        helpText: 'FaExternalTransactions'
+    - german:
+        formTitle: 'FaExternalTransactions'
+        helpText: 'FaExternalTransactions'
+  columns:
+  - name: 'FaBaseId'
+    description: ''
+    genericControls:
+      refTable: 'FaBase'
+      refField: 'Id'
+  - name: 'AccountNo'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'BookingDate'
+    description: 'Buchungsdatum'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Currency'
+    description: 'Währung des Transfers'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'Amount'
+    description: 'Betrag'
+    genericControls:
+      defColumnPos: 3
+  - name: 'BookingText'
+    description: ''
+  - name: 'Rate'
+    description: 'USD-Kurs zum Zeitpunkt der Transaktion\r\nUSD * Rate = CHF'
+  - name: 'AmountUSD'
+    description: 'Betrag in USD'
+  - name: 'TransactionType'
+    description: '1 = Cash\r\n2 = Transfer\r\n11 = Securities'
+    genericControls:
+      refTable: 'FaTransType'
+      refField: 'TransactionType'
+      defColumnPos: 4
+  - name: 'Direction'
+    description: '1 = IN\r\n2 = OUT'
+    genericControls:
+      refTable: 'FaTransDirection'
+      refField: 'Direction'
+      defColumnPos: 5
+  - name: 'Intermediary'
+    description: 'e.g. asset manager, financial advisor, trustee, fiduciary, nominee, attorney, accountant etc.'
+    genericControls:
+      multiLine: true
+  - name: 'IntermediaryRole'
+    description: ''
+  - name: 'FinancialInstitution'
+    description: 'Bank des Zahlungsempfängers (OUT) oder des Auftraggebers (IN)'
+    genericControls:
+      multiLine: true
+  - name: 'FI_BIC'
+    description: 'BIC-Code der Bank.'
+  - name: 'FI_BC'
+    description: 'BC-Nummer der Bank'
+  - name: 'FI_Country'
+    description: 'Domizilland der Bank'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 6
+  - name: 'CounterParty'
+    description: 'Endbegünstigter (OUT) oder Auftraggeber (IN)'
+    genericControls:
+      multiLine: true
+  - name: 'CP_ExternalAccountNo'
+    description: 'Externe Kontonummer der Gegenpartei'
+  - name: 'MessageId'
+    description: 'Interne Finstar-Referenz.'
+    genericControls:
+      hasDetailBtn: true
+  - name: 'IsExternalFlow'
+    description: ''
+    genericControls:
+      visNumber: 8
+      defColumnPos: 8
+  - name: 'Verified'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'BeneficiaryMessage'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SwiftInstruction'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'Source'
+    description: '1 = Finstar\r\n2 = IBIS SIC Ausgang\r\n3 = IBIS SIC Einang\r\n4 = SWIFT Ausgang'
+  - name: 'IsRelevant'
+    description: ''
+    genericControls:
+      defColumnPos: 10

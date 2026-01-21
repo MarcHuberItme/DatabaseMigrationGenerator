@@ -1,0 +1,55 @@
+table:
+  name: 'AsBICRelation'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 3
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Correspondent Banks'
+    - german:
+        formTitle: 'Korrespondentenbanken'
+  columns:
+  - name: 'BICGrantorId'
+    description: 'BIC No of a bank that has 1 - n correspondent bank (relation over BICCorrespondentId)'
+    genericControls:
+      refTable: 'AsBICIndex'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'BICCorrespondentId'
+    description: ''
+    genericControls:
+      refTable: 'AsBICIndex'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'BICGrantorAddress'
+    description: 'Denormalization'
+  - name: 'BICCorrespondentAddress'
+    description: 'Denormalization'
+  - name: 'CorrespondentPrReferenceId'
+    description: ''
+    genericControls:
+      refTable: 'PrReference'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'Purpose'
+    description: 'A Relation of one bank to another is for a particular kind of purpose\r\n-Stock Exchange\r\n-Money Trasfer etc...'
+    genericControls:
+      refTable: 'AsBICRelationPurpose'
+      refField: 'PurposeNo'
+  - name: 'ValidTo'
+    description: 'Relationships change with the passage of times. Mergers occurs,  shutting down of financial institutions (like BCCI).\r\nTherefore AsBICRelation must take care of currenly valid relations between two financial institutions.\r\nNULL           - Valid till infite future\r\n2005-01-01  - Valid Till the specified date'

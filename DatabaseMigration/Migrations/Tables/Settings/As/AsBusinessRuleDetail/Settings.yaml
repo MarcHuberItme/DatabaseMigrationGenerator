@@ -1,0 +1,41 @@
+table:
+  name: 'AsBusinessRuleDetail'
+  description: 'Business Rules JSON'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'JSON for business rule'
+        helpText: 'JSON for business rule'
+    - german:
+        formTitle: 'JSON für Geschäftsregeln'
+        helpText: 'JSON für Geschäftsregeln'
+    - french:
+        formTitle: 'JSONpour règle métier'
+        helpText: 'JSONpour règle métier'
+  columns:
+  - name: 'RuleId'
+    description: ''
+    genericControls:
+      refTable: 'AsBusinessRule'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'RuleExpression'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidTo'
+    description: ''
+    genericControls:
+      defColumnPos: 4

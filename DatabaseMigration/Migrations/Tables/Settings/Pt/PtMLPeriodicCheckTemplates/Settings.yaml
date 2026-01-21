@@ -1,0 +1,48 @@
+table:
+  name: 'PtMLPeriodicCheckTemplates'
+  description: 'Verwaltung der Templates einer GWG-Prüfung'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ML Check Templates'
+    - german:
+        formTitle: 'GWG Prüfungsvorlagen'
+    - french:
+        formTitle: 'Modèles vérification ML'
+    - italian:
+        formTitle: 'Modelli di controllo ML'
+  columns:
+  - name: 'TemplateNo'
+    description: 'Nummer des Templates:\r\n\r\n- 10 Natürliche Person, handlungsfähig\r\n- 15 Natürliche Person, verbeiständet\r\n- 20 Einzelfirma\r\n- 21 Aktiengesellschaft\r\n- 40 Sitzgesellschaft'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CorrItemNo'
+    description: 'CorrItemId des Templates'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'ItemNo'
+      defColumnPos: 2
+  - name: 'URL'
+    description: 'URL zu einem Webform, welches verwendet werden kann um dem Kunden den Fragebogen digital zuzustellen'
+  - name: 'ValidFrom'
+    description: 'Zeitliche Gültigkeit des Records, Startdatum'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidTo'
+    description: 'Zeitliche Gültigkeit des Records, Enddatum'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Remark'
+    description: 'Bemerkungen'
+    genericControls:
+      multiLine: true

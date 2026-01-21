@@ -1,0 +1,56 @@
+table:
+  name: 'PrComponentWithdrawRules'
+  description: 'Withdraw Rules for Product Component'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Compnent withdraw rules'
+    - german:
+        formTitle: 'Rückzugsregel Komponente'
+  columns:
+  - name: 'PrivateComponentNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivateComponent'
+      refField: 'PrivateComponentNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'WithdrawAmount'
+    description: 'Rückzugsbetrag, innerhalb Anzahl Monate gem. Feld WithdrawalPeriodInMonths'
+  - name: 'WithdrawalPeriodInMonths'
+    description: ''
+  - name: 'WithdrawInterval'
+    description: 'Interval to field WithdrawAmount\r\nm=Month\r\nq=Quarter\r\nyyyy=Yearly'
+    genericControls:
+      refTable: 'AsInterval'
+      refField: 'Interval'
+  - name: 'WithdrawalPeriod'
+    description: 'Togther with Withdrwal interval defines with actual period relevant to analysis of withdraw transactions and so calculating commission'
+  - name: 'MatchCalendarInterval'
+    description: 'Flag to specify if calculation is based on calendar month/year/quarter or according to interval size specified in the table. If this flag the relevant period will be as follows:\r\n\r\nMonth: Current month is relevant\r\nQuarter: Current month and 2 months earlier\r\nYear: Current year is relevant'
+  - name: 'NoticePeriod'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'Interval'
+    description: 'Interval to field Notice\r\nm=Month\r\nq=Quarter\r\nyyyy=Yearly'
+    genericControls:
+      refTable: 'AsInterval'
+      refField: 'Interval'
+      defColumnPos: 4
+  - name: 'WithdrawTimeFrameDays'
+    description: ''
+  - name: 'NoticeReminderDays'
+    description: ''

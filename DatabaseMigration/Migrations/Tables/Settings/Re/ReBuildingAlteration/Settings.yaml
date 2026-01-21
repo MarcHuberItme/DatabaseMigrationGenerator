@@ -1,0 +1,84 @@
+table:
+  name: 'ReBuildingAlteration'
+  description: 'alterations done on building'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'ReBuilding'
+      parentRelationField: 'BuildingId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'alterations on buildings'
+    - german:
+        formTitle: 'Investitionen'
+    - french:
+        formTitle: 'Investissements'
+    - italian:
+        formTitle: 'Investimenti'
+  columns:
+  - name: 'BuildingId'
+    description: ''
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'AlterationFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'AlterationTo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'AlterationGroupNo'
+    description: ''
+  - name: 'InvestmentTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReInvestmentType'
+      refField: 'InvestmentTypeNo'
+      defColumnPos: 3
+  - name: 'InvestmentStyleNo'
+    description: ''
+    genericControls:
+      refTable: 'ReInvestmentStyle'
+      refField: 'InvestStyleNo'
+      defColumnPos: 4
+  - name: 'EffectiveCost'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'AppreciationRate'
+    description: ''
+    minValue: '0'
+    maxValue: '100'
+    genericControls:
+      defColumnPos: 6
+  - name: 'Appreciation'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'InsuranceNo'
+    description: ''
+  - name: 'IsRealValueRelevant'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'RealValueRelevantFrom'
+    description: ''
+  - name: 'ValidPer'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true

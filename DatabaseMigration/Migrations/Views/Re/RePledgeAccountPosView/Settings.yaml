@@ -1,0 +1,3 @@
+view:
+  name: 'RePledgeAccountPosView'
+  description: 'View for sending RePledgeRegisterAccount to PfB ... to update the balance information'

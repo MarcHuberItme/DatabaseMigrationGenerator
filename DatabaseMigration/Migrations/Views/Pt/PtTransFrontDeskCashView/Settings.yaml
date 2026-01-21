@@ -1,0 +1,97 @@
+view:
+  name: 'PtTransFrontDeskCashView'
+  description: ''
+frontendView:
+  name: 'PtTransFrontDeskCashView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransactionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+  - name: 'DebitPrReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CreditPrReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'DebitValueDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'CreditValueDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'PaymentAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'PaymentCurrency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'CardBaseId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAgrCardBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'TransText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      multiLine: true
+  - name: 'TransRemark'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 150
+    genericControls:
+      multiLine: true
+  - name: 'DebitTextNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+  - name: 'CreditTextNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+  - name: 'ProxyThirdPerson'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 60
+    genericControls:
+      multiLine: true
+  - name: 'IsDueRelevant'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'MatchingCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 32

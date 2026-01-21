@@ -1,0 +1,24 @@
+table:
+  name: 'PtTaxReportMinMaxMode'
+  description: ''
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtTaxReportMinMaxMode'
+        helpText: 'PtTaxReportMinMaxMode'
+    - german:
+        formTitle: 'PtTaxReportMinMaxMode'
+        helpText: 'PtTaxReportMinMaxMode'
+  columns:
+  - name: 'TypeNo'
+    description: '0, partner level, hbl\r\n1, portfolio level, scobag'

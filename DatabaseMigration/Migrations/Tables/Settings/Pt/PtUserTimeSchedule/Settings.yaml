@@ -1,0 +1,46 @@
+table:
+  name: 'PtUserTimeSchedule'
+  description: 'DayNo = xx\r\n1 = Sunday\r\n2 = Monday\r\n3 = Tuesday\r\n4 = Wednesday\r\n5 = Wednesday\r\n6 = Friday\r\n7 = Saturday'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Time Schedule'
+    - german:
+        formTitle: 'Zeiterfassung Zonen'
+  columns:
+  - name: 'BranchNo'
+    description: 'Null = Für Gesamtbank gültig'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 1
+  - name: 'DayNo'
+    description: 'Wochentag (1 - 7 oder Null)\r\nEntweder DayNo oder Date muss <> NULL sein !'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Date'
+    description: 'Datum Regel oder Null\r\nEntweder DayNo oder Date muss <> NULL sein !'
+    genericControls:
+      defColumnPos: 3
+  - name: 'WorkingHours'
+    description: 'Anzahl Sollstunden für dieses Datum'
+    genericControls:
+      defColumnPos: 4
+  - name: 'StartTimeMorning'
+    description: 'Arbeitsbeginn am Morgen'
+  - name: 'EndTimeMorning'
+    description: 'Arbeitsende am Morgen'
+  - name: 'StartTimeAfternoon'
+    description: 'Arbeitsbeginn am Nachmittag'
+  - name: 'EndTimeAfternoon'
+    description: 'Arbeitsende am Nachmittag'

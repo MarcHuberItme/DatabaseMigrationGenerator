@@ -1,0 +1,40 @@
+table:
+  name: 'AsExternalServiceError'
+  description: 'Contains errors returned from external services / interfaces, e.g. PayNet, YellowBill etc.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Date'
+    description: 'Date and Time when error has been added to the table.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Service'
+    description: 'Used Service, e.g. \r\n1: E-Bill PayNet\r\n2: E-Bill YellowBill\r\netc.'
+    genericControls:
+      refTable: 'AsExternalService'
+      refField: 'ServiceNo'
+      defColumnPos: 3
+  - name: 'ServiceUrl'
+    description: 'URL of the used service.'
+  - name: 'MessageNo'
+    description: 'Error-Number returned by the service (if any).'
+    genericControls:
+      defColumnPos: 2
+  - name: 'MessageText'
+    description: 'Error-Description.'
+    genericControls:
+      multiLine: true
+  - name: 'FileInfo'
+    description: 'Project-file where the error occured, e.g. EpbbDac.clsGetBillsFromYellowBill.Method()'
+  - name: 'Status'
+    description: 'Status-Field: 1: Open, 2: settled etc.'
+    genericControls:
+      refTable: 'AsExternalServiceStatus'
+      refField: 'StatusNo'
+      defColumnPos: 4

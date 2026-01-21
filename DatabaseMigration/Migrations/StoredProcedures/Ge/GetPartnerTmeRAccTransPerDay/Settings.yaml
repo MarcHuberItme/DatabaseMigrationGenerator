@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPartnerTmeRAccTransPerDay'
+  description: 'Prepare a list of partners which should checked. Rule 111'

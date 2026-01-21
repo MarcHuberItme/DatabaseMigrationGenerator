@@ -1,0 +1,72 @@
+table:
+  name: 'DvTask'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 94c2d033-c482-4cd0-842b-8498330b12a6
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'Topic'
+  columns:
+  - name: 'ProjectId'
+    description: ''
+    genericControls:
+      refTable: 'DvProject'
+      refField: 'Id'
+      defColumnPos: 5
+  - name: 'Topic'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'TypeId'
+    description: ''
+    genericControls:
+      refTable: 'DvTaskType'
+      refField: 'Id'
+  - name: 'Date'
+    description: ''
+  - name: 'PriorityId'
+    description: ''
+    genericControls:
+      refTable: 'DvTaskPriority'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'InitiatorId'
+    description: ''
+    genericControls:
+      refTable: 'DvTeamMember'
+      refField: 'Id'
+  - name: 'DelegatedToId'
+    description: ''
+    genericControls:
+      refTable: 'DvTeamMember'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'ToDoDate'
+    description: ''
+  - name: 'StatusId'
+    description: ''
+    genericControls:
+      refTable: 'DvStatus'
+      refField: 'Id'
+      defColumnPos: 4
+  - name: 'Description'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ReproduceableBy'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SolutionComment'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'EnvironmentId'
+    description: ''
+    genericControls:
+      refTable: 'DvEnvironment'
+      refField: 'Id'

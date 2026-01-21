@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetForeignCyItemsByAccount'
+  description: 'select bookins on the specified range of valuedate for the given accountno (corr bank)'

@@ -1,0 +1,31 @@
+table:
+  name: 'PrBondRate'
+  description: 'Pricelist for bonds issued by the bank itself'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Bond Rate'
+    - german:
+        formTitle: 'Obligationenzinssätze'
+  columns:
+  - name: 'ValidFrom'
+    description: 'Valid From information for the bond'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Years'
+    description: 'No of years for the bond to be mature'
+    genericControls:
+      defColumnPos: 2
+  - name: 'InterestRate'
+    description: 'interest price of the bond'
+    genericControls:
+      defColumnPos: 3

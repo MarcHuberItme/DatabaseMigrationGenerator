@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AiTaxReportAiaCollectData'
+  description: 'Main procedure for filling the staging area of Aia Tax Reporting (AiTaxReport*) with data (based on classifications both on client and transaction side).\r\nBEWARE: It should run for one bank at a time (due to ## tables)'

@@ -1,0 +1,33 @@
+table:
+  name: 'PtPortfolioSxTariff'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Portfolio Tariff'
+    - german:
+        formTitle: 'Portfolio-Tarif'
+  columns:
+  - name: 'TariffNo'
+    description: 'General tariff.\r\nThis field substitutes the tariff for the own commission (SLP).\r\n'
+    genericControls:
+      refTable: 'PtTransSxTariff'
+      refField: 'TariffNo'
+      defColumnPos: 1
+  - name: 'TransSxRebateNo'
+    description: 'rebate general'
+    genericControls:
+      refTable: 'PtTransSxRebate'
+      refField: 'TransSxRebateNo'
+  - name: 'SpecialFeeRule'
+    description: 'Individual tariff.\r\nThis field is input for the SLP.'

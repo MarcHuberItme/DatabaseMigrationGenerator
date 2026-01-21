@@ -1,0 +1,83 @@
+table:
+  name: 'PtMLCheckMails'
+  description: 'In dieser Tabelle werden beim Start einer Prüfung die selektierten Werte gespeichert. Diese werden dem Kunden präsentiert (via Formular, BeratungsSuite, SelfService via API)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'CheckMasterDataId'
+    description: 'Id des zugehörigen MasterData Records.'
+    genericControls:
+      refTable: 'PtMLCheckMasterData'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'MailId'
+    description: ''
+    genericControls:
+      refTable: 'PtEMailAddress'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'EMailTypeNo'
+    description: 'foreign-key;  candidate-key of PtEMailAddressType  (PtEMailAddressType)'
+    genericControls:
+      refTable: 'PtEMailAddressType'
+      refField: 'EMailAddressTypeNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'EMailTypeNoCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtEMailAddressType'
+      refField: 'EMailAddressTypeNo'
+  - name: 'EMailType'
+    description: 'AsText.TextShort'
+  - name: 'EMailAddress'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'EMailAddressCorrected'
+    description: ''
+  - name: 'HasSignedWaiver'
+    description: 'Flag, welches kennzeichnet, ob für diese Mailadresse ein Waiver unterzeichnet wurde'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'HasSignedWaiverCorrected'
+    description: ''
+  - name: 'ProxyDetails'
+    description: 'Id der verbundenen Vollmacht'
+    genericControls:
+      refTable: 'PtProxySlaveContactPersonView'
+      refField: 'Id'
+      hasDetailBtn: true
+      isNoUpdate: true
+  - name: 'ProxyDetailsCorrected'
+    description: ''
+    genericControls:
+      refTable: 'PtProxySlaveContactPersonView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsToDelete'
+    description: ''
+  - name: 'HasChanges'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'Comment'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'CheckStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtMLPeriodicCheckDetailState'
+      refField: 'CheckDetailStateNo'
+      defColumnPos: 4
+      isNoUpdate: true

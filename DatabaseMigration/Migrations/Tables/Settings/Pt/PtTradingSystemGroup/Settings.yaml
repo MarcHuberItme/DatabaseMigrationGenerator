@@ -1,0 +1,48 @@
+table:
+  name: 'PtTradingSystemGroup'
+  description: 'TradingSystemGroup\r\ne.g. SWX, KeyTrader'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    descField: 'TradingSystemGroupCode'
+    uiTableDescription:
+    - english:
+        formTitle: 'Trading system group'
+    - german:
+        formTitle: 'Handelssystemgruppe'
+  columns:
+  - name: 'TradingSystemGroupCode'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'IsToffAllowed'
+    description: ''
+  - name: 'IsPartnerToTrader'
+    description: 'partner to trader (sbz to hbl)'
+  - name: 'IsPartnerIntern'
+    description: 'partner intern (hbl trades in name of sbz)'
+  - name: 'TradingSystemIdMan'
+    description: 'Feld vorübergehend wieder aufgenommen bis Software (FsStockExDeliveryJob) angepasst ist.'
+    genericControls:
+      refTable: 'PtTradingSystem'
+      refField: 'Id'
+  - name: 'IsInactive'
+    description: '1= record will not be displayed in the Frontend during entering an order.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TradingStartTime'
+    description: 'used for PtTradingSystem-records with AutoOrderRouting = 1 to decide if an order without Tradervisum may be sent to MAX automatically after creating the order.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TradingEndTime'
+    description: '1. Used to check if an order may be created with ValidTo = today (after 17:45 ValidTo must be next workingday).\r\n2. Used for PtTradingSystem-records with AutoOrderRouting = 1 to decide if an order without Tradervisum may be sent to MAX automatically after creating the order.'
+    genericControls:
+      defColumnPos: 4

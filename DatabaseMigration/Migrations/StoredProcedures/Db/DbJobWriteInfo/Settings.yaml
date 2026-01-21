@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DbJobWriteInfo'
+  description: ''

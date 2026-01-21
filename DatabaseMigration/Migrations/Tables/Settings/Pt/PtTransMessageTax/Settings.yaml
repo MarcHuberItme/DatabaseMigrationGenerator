@@ -1,0 +1,80 @@
+table:
+  name: 'PtTransMessageTax'
+  description: 'Withholding tax data for tax report\r\nReleation PtTransMessageCharge zu PtTransMessageTax: 1 zu C'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax data'
+        helpText: 'Charges'
+    - german:
+        formTitle: 'Steuerdaten'
+        helpText: 'Spesen'
+  columns:
+  - name: 'TransMessageChargeId'
+    description: 'Relation to PtTransMessageCharge'
+    genericControls:
+      refTable: 'PtTransMessageCharge'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'RateBaCuHoCu'
+    description: 'Rate between base amount currency (original curr.) and CHF (Home Currency)\r\nThis field is used for EU interest taxation'
+  - name: 'TaxAmountDa'
+    description: 'Tax amount (Pauschalanrechnung) in payment currency (field PtTransMessage.PaymentCurrency) for withholding tax'
+  - name: 'TaxAmountDaHoCu'
+    description: 'Tax amount (Pauschalanrechnung) in CHF for withholding tax'
+  - name: 'TaxAmountReclaim'
+    description: 'Reclaim tax amount in payment currency (field PtTransMessage.PaymentCurrency) for withholding tax'
+  - name: 'TaxAmountReclaimHoCu'
+    description: 'Reclaim tax amount in CHF for withholding tax'
+  - name: 'TaxRegulationCode'
+    description: 'Withholding tax code'
+    genericControls:
+      refTable: 'EvTaxRegulation'
+      refField: 'TaxRegulationCode'
+  - name: 'TaxEuCalcMethNo'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxEuCalcMeth'
+      refField: 'TaxEuCalcMethNo'
+      defColumnPos: 1
+  - name: 'DiscountTaxEuCalcMethNo'
+    description: ''
+    genericControls:
+      refTable: 'EvTaxEuCalcMeth'
+      refField: 'TaxEuCalcMethNo'
+  - name: 'CountryForEuTax'
+    description: 'only for EU tax retention (interest payments)'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'TaxRate'
+    description: ''
+  - name: 'ReclaimInfoTextNo'
+    description: ''
+    genericControls:
+      refTable: 'EvText'
+      refField: 'TextNo'
+  - name: 'ReclaimInfoRate'
+    description: ''
+  - name: 'ReclaimInfoAmount'
+    description: ''
+  - name: 'ReclaimInfoAmountHoCu'
+    description: ''
+  - name: 'ReclaimAddTextNo'
+    description: ''
+    genericControls:
+      refTable: 'EvText'
+      refField: 'TextNo'
+  - name: 'BaseQuantity'
+    description: ''
+  - name: 'BaseAmountHoCu'
+    description: 'Base amount in CHF'
+  - name: 'TaxAmountPyCu'
+    description: 'tax amount in payment currency'

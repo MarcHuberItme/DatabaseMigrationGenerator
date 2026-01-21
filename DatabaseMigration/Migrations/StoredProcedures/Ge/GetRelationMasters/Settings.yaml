@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetRelationMasters'
+  description: 'Queries all partners that have a relation-ship (for example proxy) to the actual partner (actual partner --> partnerId = input-parameter ParentTableId)\r\n'

@@ -1,0 +1,32 @@
+table:
+  name: 'PtAdmChargeExtraGroup'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargeExtraGroup'
+        helpText: 'PtAdmChargeExtraGroup'
+    - german:
+        formTitle: 'PtAdmChargeExtraGroup'
+        helpText: 'PtAdmChargeExtraGroup'
+  columns:
+  - name: 'ExtraGroupNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'AsInland'
+    description: 'for inland rabatt'
+  - name: 'AsPortfolioRebateDomestic'
+    description: ''
+  - name: 'AsPositionExtraForeign'
+    description: ''

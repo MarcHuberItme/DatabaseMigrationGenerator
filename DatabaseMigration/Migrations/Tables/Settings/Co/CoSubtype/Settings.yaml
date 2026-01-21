@@ -1,0 +1,112 @@
+table:
+  name: 'CoSubtype'
+  description: 'Codetabellle -  Subsicherheitentypen'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Colleteralsubtypes'
+    - german:
+        formTitle: 'Sicherheitensubtypen'
+  columns:
+  - name: 'Collsubtype'
+    description: 'Subtyp vom der Sicherheit, nur im folgenden Wertbereich bankinduviduell erlaubt (4000-4999, 5000-5999,6001-6999)\r\n(rest fix, hängt direkt ab von colltype)\r\n1000 Konto\r\n2000 Wertschriften\r\n4000 Bürgschaften\r\n5000 Versicherungen \r\n6000 Übrige\r\n7000 Grundpfand'
+    minValue: '1000'
+    maxValue: '9999'
+    genericControls:
+      defColumnPos: 1
+  - name: 'CollType'
+    description: 'Typ der Sicherheit\r\n1000 Konto\r\n2000 Wertschriften\r\n4000 Bürgschaften\r\n5000 Versicherungen\r\n6000 Übrige\r\n7000 Grundpfand'
+    genericControls:
+      refTable: 'CoType'
+      refField: 'Colltype'
+      defColumnPos: 2
+  - name: 'Nextscreen'
+    description: 'steuert ob bei der Erfassung von der Sicherheit eine Folgemaske aufgerufen werden kann,  \r\n0 -> Keine parametrisierte Folgemaske\r\nErfassung Bürgschaften\r\n1 -> Folgemaske "natürliche Person"\r\n2 -> Folgemaske "Firmen"\r\nErfassung Übrige\r\n10 -> Folgemaske "Drittbank / Vorsorge"'
+  - name: 'Matflagpossible'
+    description: 'Kann Sicherheit periodisch überprüft werden ?'
+  - name: 'Nextmatdatemonth'
+    description: 'Anzahl Monate bis zum nächsten Fälligkeitsdatum'
+  - name: 'PricoverI'
+    description: 'Priorität Deckung für inländische Sicherheit'
+    genericControls:
+      refTable: 'CoPricov'
+      refField: 'Pricover'
+  - name: 'SubPricoverI'
+    description: 'Subpriorität (innerhalb Pricoveri)'
+  - name: 'Pricovera'
+    description: 'Priorität Deckung ausländische Sicherheit'
+    genericControls:
+      refTable: 'CoPricov'
+      refField: 'Pricover'
+  - name: 'SubPricovera'
+    description: 'Subpriorität (innerhalb Pricoveria)'
+  - name: 'Typecovi'
+    description: 'Typ der Deckung bei inländischer Sicherheit'
+    genericControls:
+      refTable: 'CoTypecov'
+      refField: 'Typecov'
+  - name: 'Typecova'
+    description: 'Typ der Deckung bei ausländischer Sicherheit'
+    genericControls:
+      refTable: 'CoTypecov'
+      refField: 'Typecov'
+  - name: 'PledgevalueperI'
+    description: 'Belehnungswert in % (inländische Sicherheit)'
+  - name: 'Pledgevaluepera'
+    description: 'Belehnungswert in % (ausländische Sicherheit)'
+  - name: 'Assignnullallowed'
+    description: '0 Flag Zuordnung in Tabelle CobassAss erlaubt ? \r\n(nur relvant bei Sicherheiten mit Wert = 0, z.b. Todesfallversicherung)'
+  - name: 'Description'
+    description: 'Beschreibung'
+  - name: 'C540'
+    description: 'Nur relevant bei Typ der Sicherheit\r\n4000 Bürgschaften\r\n5000 Versicherungen\r\n6000 Übrige\r\nWenn versorgt beinhaltet das die Fire Account Nummer für die Schnittstelle, anderenfalls keine Übergabe an Fire\r\n\r\nBei den anderen Typen wird das C540 Feld der Fireschnittstelle von einem anderen Ort versorgt:\r\nTyp der Sicherheit\r\n1000 Konto               -> Bestehendes Mapping in AC... Tabellen\r\n2000 Wertschriften   -> Bestehendes Mapping in AC... Tabellen\r\n7000 Grundpfand      -> CoPremres'
+    genericControls:
+      refTable: 'AcFireAccount'
+      refField: 'AccountNo'
+  - name: 'CompTypeNoFI'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'CompTypeNoVI'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'CompTypeNoFA'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'CompTypeNoVA'
+    description: 'Bestehende Komponente, die die Sicherheitninformation beinhalten zum generieren'
+    genericControls:
+      refTable: 'PrPrivateCompType'
+      refField: 'CompTypeNo'
+  - name: 'Validation01'
+    description: 'Zusätzliche Feldvalidierung01'
+  - name: 'Validation02'
+    description: 'Zusaätzliche Feldvalidierung02'
+  - name: 'Validation03'
+    description: 'Zusaätzlcihe Feldvalidierung03'
+  - name: 'Validation04'
+    description: 'Zusaätzliche Feldvalidierung04'
+  - name: 'FieldName01'
+    description: ''
+  - name: 'FieldName02'
+    description: ''
+  - name: 'FieldName03'
+    description: ''
+  - name: 'FieldName04'
+    description: ''
+  - name: 'UniqueGroupNo'
+    description: 'Same owner can have only one CollSubType created within the same UniqueGroupNo'

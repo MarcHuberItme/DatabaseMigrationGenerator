@@ -1,0 +1,38 @@
+table:
+  name: 'WcrRegisterInOut'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'WcrRegisterInOut'
+        helpText: 'WcrRegisterInOut'
+    - german:
+        formTitle: 'WcrRegisterInOut'
+        helpText: 'WcrRegisterInOut'
+    - french:
+        formTitle: 'WcrRegisterInOut'
+        helpText: 'WcrRegisterInOut'
+  columns:
+  - name: 'ReportDate'
+    description: ''
+  - name: 'ReportId'
+    description: ''
+    genericControls:
+      refTable: 'WcrMessageReport'
+      refField: 'Id'
+  - name: 'PledgeRegisterId'
+    description: ''
+    genericControls:
+      refTable: 'RePledgeRegister'
+      refField: 'Id'
+  - name: 'StatusCode'
+    description: '7/new,8/out'
+  - name: 'PfandReg'
+    description: ''

@@ -1,0 +1,42 @@
+table:
+  name: 'PtPortfolioPrice'
+  description: 'Defines commission rules for portfolio types.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'PortfolioTypeId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'CommissionTypeId'
+    description: ''
+    genericControls:
+      refTable: 'PtCommissionType'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'Price'
+    description: ''
+    minValue: '0'
+  - name: 'PriceElectronicDelivery'
+    description: 'If the pricing is for document delivery, this field is to define different charges for electronic delivery.'
+    minValue: '0'

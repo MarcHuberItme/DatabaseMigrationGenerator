@@ -1,0 +1,27 @@
+view:
+  name: 'AsProcessActivityViewTab5'
+  description: ''
+frontendView:
+  name: 'AsProcessActivityViewTab5'
+  description: 'Ungrouped Information (Misc)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TypeIsDistributable'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AllowedTotalNoOfType'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'AllowedTypePerStationNo'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true

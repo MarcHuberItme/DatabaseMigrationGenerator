@@ -1,0 +1,28 @@
+table:
+  name: 'PtCardProducer'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Card producer'
+    - german:
+        formTitle: 'Kartenproduzent'
+    - french:
+        formTitle: 'Producteur de cartes'
+  columns:
+  - name: 'ProducerCode'
+    description: 'Code gemäss SIX-Spezifikation'
+    minValue: '90000'
+    maxValue: '99999'
+    genericControls:
+      defColumnPos: 1

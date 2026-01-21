@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPartnerRecognitionDataString'
+  description: 'return the partner signature datastring information'

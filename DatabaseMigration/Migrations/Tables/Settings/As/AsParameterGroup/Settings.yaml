@@ -1,0 +1,24 @@
+table:
+  name: 'AsParameterGroup'
+  description: 'Contains all parameter groups, and a description of each group.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'Parameter Group'
+    - german:
+        formTitle: 'Parameter Gruppe'
+    - french:
+        formTitle: 'Groupe de paramètres'
+  columns:
+  - name: 'GroupName'
+    description: 'Name of the parameter group'
+  - name: 'Description'
+    description: 'Short description of the parameter group'

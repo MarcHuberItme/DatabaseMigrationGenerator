@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtPaymentOrderUpdateStatus'
+  description: 'Checks if all transactions in a payment order have been parsed or not. If all the transaction have beeb parsed it marks the order as ''PEDNDING PROCESSING'''

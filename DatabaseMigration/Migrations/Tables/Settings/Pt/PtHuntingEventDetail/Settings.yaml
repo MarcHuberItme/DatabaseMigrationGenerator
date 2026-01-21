@@ -1,0 +1,23 @@
+table:
+  name: 'PtHuntingEventDetail'
+  description: 'Table used to characterize an event, main function is the selection of the fields to be shown in the event selection, configuration use only'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Details for HuntingEvent'
+    - german:
+        formTitle: 'Charakterisierung Event'
+  columns:
+  - name: 'EventId'
+    description: 'Id of the table ''PtHuntingEvent'''
+  - name: 'FieldName'
+    description: 'contains fieldnames of the Table ''PtHunting'''
+  - name: 'Position'
+    description: 'Position of the Fieldname in the table.'

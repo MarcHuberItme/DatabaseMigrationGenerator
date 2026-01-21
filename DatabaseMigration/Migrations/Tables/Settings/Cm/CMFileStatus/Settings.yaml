@@ -1,0 +1,17 @@
+table:
+  name: 'CMFileStatus'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'StatusCode'
+    description: '0 - To be imported\r\n1 - Imported / Pedning Processing\r\n2 - Prcoessed\r\n4 - Released\r\n90 - File/Data Read Error\r\n91 - Data Processing Error'
+    genericControls:
+      defColumnPos: 1

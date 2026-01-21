@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetSumWithdrawBeforeTransMsg'
+  description: 'Get Sum of withdraws before the specified TransMessage. This is used while re-analyzing TransMessage for Withdraw Commission (NKK)'

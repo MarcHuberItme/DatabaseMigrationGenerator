@@ -1,0 +1,62 @@
+table:
+  name: 'PtPM1PositionBalanceEOM'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 5041baf0-4b1e-42de-bc90-23121d0dddd6
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PM1 psosition balance'
+        helpText: 'PM1 psosition balance'
+    - german:
+        formTitle: 'PM1 psosition balance'
+        helpText: 'PM1 psosition balance'
+  columns:
+  - name: 'PortfolioNo'
+    description: 'EXP_RECONCILIATION.STR_PORTFOLIONR'
+  - name: 'Title'
+    description: 'EXP_RECONCILIATION.STR_TITLE'
+  - name: 'TitleCurrency'
+    description: 'EXP_RECONCILIATION.STR_TITLE_CURRENCY'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'AmountPM1E'
+    description: 'EXP_RECONCILIATION.DBL_AMOUNT_PM1E'
+  - name: 'IsAccount'
+    description: 'EXP_RECONCILIATION.BLN_ACCOUNT'
+  - name: 'Status'
+    description: '1= to process\r\n2= in process\r\n9= processed'
+  - name: 'TransDate'
+    description: ''
+  - name: 'PricePM1E'
+    description: 'DBL_PRICE'
+  - name: 'ExchangeRatePm1E'
+    description: 'DBL_EXCHANGE_RATE'
+  - name: 'MktValueOrigPM1E'
+    description: 'DBL_MARKETVALUE_ORIG'
+  - name: 'MktValueRefPM1E'
+    description: 'DBL_MARKETVALUE_REF'
+  - name: 'TitleDescription1PM1E'
+    description: 'STR_TITLE_DESCRIPTION1'
+  - name: 'AccruedInterestOrigPM1E'
+    description: 'DBL_ACCRUEDINTEREST_REF'
+  - name: 'UDivisorPM1E'
+    description: 'DBL_U_DIVISOR'
+  - name: 'NumDayPM1E'
+    description: 'DBL_NUMBER_OF_DAYS_PM1E'
+  - name: 'RefCurrency'
+    description: ''
+  - name: 'AccruedInterestRef'
+    description: ''
+  - name: 'InterestRatePM1E'
+    description: ''
+  - name: 'AcqCostOrig'
+    description: ''
+  - name: 'AcqCostRef'
+    description: ''

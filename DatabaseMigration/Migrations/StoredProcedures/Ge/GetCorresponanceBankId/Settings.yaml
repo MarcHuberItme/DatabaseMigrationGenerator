@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetCorresponanceBankId'
+  description: '--Author  : Abdul Nasir Khan  (15-Oct-2004)\r\n--Purpose : This procedure returns the BankBIcIndexId\r\n--Date Modified : (15-Oct-2004)'

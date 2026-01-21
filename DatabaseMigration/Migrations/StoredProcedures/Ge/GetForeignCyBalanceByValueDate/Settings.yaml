@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetForeignCyBalanceByValueDate'
+  description: 'get nostro foreign currencies balance information per value date\r\n'

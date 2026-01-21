@@ -1,0 +1,3 @@
+view:
+  name: 'AcCompression2DepotVMView'
+  description: 'Counts number of Verwaltungsmandate and number of portfolios (Depots) for Qlikview grouping'

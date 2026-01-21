@@ -1,0 +1,38 @@
+table:
+  name: 'MgVrxUnit'
+  description: 'Technical table to assign dinamically Fis Vrx Terminal Numbers!'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+    descField: 'SunNo'
+    uiTableDescription:
+    - english:
+        formTitle: 'FIS VRX Terminal Numbers'
+    - german:
+        formTitle: 'FIS VRX Terminal Nummern'
+  columns:
+  - name: 'SunNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'WorkStation'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'UserName'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'SessionNo'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'SignOnDate'
+    description: ''

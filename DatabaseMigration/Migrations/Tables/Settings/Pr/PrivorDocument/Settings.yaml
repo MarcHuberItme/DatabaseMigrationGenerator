@@ -1,0 +1,65 @@
+table:
+  name: 'PrivorDocument'
+  description: 'Privor Pension Document'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Privor Pension Document'
+  columns:
+  - name: 'CMFileImportProcessId'
+    description: ''
+    genericControls:
+      refTable: 'CMFileImportProcess'
+      refField: 'Id'
+  - name: 'CustomerIban'
+    description: 'Unique IBAN of customer'
+  - name: 'CustomerInfo'
+    description: 'Customer Name and Address'
+  - name: 'CustomerNumber'
+    description: 'Customer Number'
+  - name: 'BankNumber'
+    description: 'Bank Number'
+  - name: 'DocumentDate'
+    description: 'Document Date'
+  - name: 'Municipality'
+    description: ''
+  - name: 'ContactPersonName'
+    description: 'Contact Person Name'
+  - name: 'ContactPersonEmail'
+    description: 'Contact Person Email'
+  - name: 'ContactPersonPhone'
+    description: 'Contact Person Phone'
+  - name: 'AccountStatementFrom'
+    description: 'Account Statement From Date'
+  - name: 'AccountStatementTo'
+    description: 'Account Statement To Date'
+  - name: 'AccountStatementBalance'
+    description: 'Account Statement Total Balance'
+  - name: 'Currency'
+    description: 'Currency used in document'
+  - name: 'MaxContributionWithPension'
+    description: 'Maximum Contribution with pension amount'
+  - name: 'MaxContributionWithoutPension'
+    description: 'Maximum Contribution without pension amount'
+  - name: 'AssetCapitalAmount'
+    description: 'Asset Capital Amount'
+  - name: 'AssetInterestAmount'
+    description: 'Asset Interest Amount'
+  - name: 'AssetTotalAmount'
+    description: 'Asset Total Amount'
+  - name: 'TotalSecuritiesInvestment'
+    description: 'Total Securities Investment'
+  - name: 'FeeBankName'
+    description: 'Fee Bank Name'
+  - name: 'TotalCharge'
+    description: 'Total Charge'

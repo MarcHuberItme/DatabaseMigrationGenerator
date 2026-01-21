@@ -1,0 +1,101 @@
+view:
+  name: 'PtSHRegBookingView'
+  description: ''
+frontendView:
+  name: 'PtSHRegBookingView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtShareholderRegisterView'
+        helpText: 'PtShareholderRegisterView'
+    - german:
+        formTitle: 'PtShareholderRegisterView'
+        helpText: 'PtShareholderRegisterView'
+  columns:
+  - name: 'RefNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SeqNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ShareholderID'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ShareholderNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      defColumnPos: 4
+  - name: 'DepotbankID'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      defColumnPos: 5
+  - name: 'PortfolioID'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'DeliveryDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 7
+  - name: 'DeliveryType'
+    description: ''
+    dataType: 'varchar'
+    prec: 6
+    genericControls:
+      defColumnPos: 8
+  - name: 'Debit'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 9
+  - name: 'Credit'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 10
+  - name: 'TitleNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 8
+    genericControls:
+      defColumnPos: 11
+  - name: 'TitleShares'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 12
+  - name: 'TitleInfo'
+    description: ''
+    dataType: 'varchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 13
+  - name: 'RegisteredShares'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 14

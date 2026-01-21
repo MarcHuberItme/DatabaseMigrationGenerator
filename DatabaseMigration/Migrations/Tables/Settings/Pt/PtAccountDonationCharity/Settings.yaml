@@ -1,0 +1,33 @@
+table:
+  name: 'PtAccountDonationCharity'
+  description: 'It defines the donating charity with the ''DonationCharityTypeNo''-attribute, which will then displayed in the main GUI of Finstar on Account-Level, as well as the translation to it.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Donating Charity'
+    - german:
+        formTitle: 'Donating Charity'
+    - french:
+        formTitle: 'Donateur'
+    - italian:
+        formTitle: 'Donare beneficenza'
+  columns:
+  - name: 'AccountId'
+    description: 'Reference to PtAccountBase\r\n'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'DonationCharityTypeNo'
+    description: 'Reference to PtAccountDonationCharityType.'
+    genericControls:
+      refTable: 'PtAccountDonationCharityType'
+      refField: 'DonationCharityTypeNo'
+      defColumnPos: 1

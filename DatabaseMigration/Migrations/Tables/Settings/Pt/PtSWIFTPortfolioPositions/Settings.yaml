@@ -1,0 +1,70 @@
+table:
+  name: 'PtSWIFTPortfolioPositions'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtSWIFTPortfolioPositions'
+        helpText: 'PtSWIFTPortfolioPositions'
+    - german:
+        formTitle: 'PtSWIFTPortfolioPositions'
+        helpText: 'PtSWIFTPortfolioPositions'
+  columns:
+  - name: 'SWIFTPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtSWIFTPortfolio'
+      refField: 'Id'
+  - name: 'PositionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+  - name: 'IsinNo'
+    description: '"ISIN 123456789012"'
+  - name: 'IsinDesc01'
+    description: ''
+  - name: 'IsinDesc02'
+    description: ''
+  - name: 'IsinDesc03'
+    description: ''
+  - name: 'IsinDesc04'
+    description: ''
+  - name: 'IsinDesc'
+    description: ''
+  - name: 'IndicativePrice'
+    description: ''
+  - name: 'MarketPrice'
+    description: ''
+  - name: 'QuantityType'
+    description: ''
+  - name: 'QuantitySign'
+    description: ''
+  - name: 'ValQuantity'
+    description: ''
+  - name: 'MarketValuePrCu'
+    description: ''
+  - name: 'MarketValuePrCuDesc'
+    description: ''
+  - name: 'RatePrCuVaCu'
+    description: ''
+  - name: 'RatePrCuVaCuDesc'
+    description: ''
+  - name: 'PriceDate'
+    description: ''
+  - name: 'Currency'
+    description: ''
+  - name: 'AvgValueAcCu'
+    description: ''
+  - name: 'AvgValuePfCu'
+    description: ''
+  - name: 'AvgCostPriceDesc'
+    description: 'average cost price detail'

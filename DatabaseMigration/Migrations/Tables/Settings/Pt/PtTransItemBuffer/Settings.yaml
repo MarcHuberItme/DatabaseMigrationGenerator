@@ -1,0 +1,208 @@
+table:
+  name: 'PtTransItemBuffer'
+  description: 'Buffer table for single booking entries. Created to handle an small list of actual bookings.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Transaction'
+    - german:
+        formTitle: 'Buchung'
+  columns:
+  - name: 'TransId'
+    description: 'NULL - if PtTransItemDetail exists, then the PtTransaction.Id is stored there.'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+  - name: 'PositionId'
+    description: ''
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'MessageId'
+    description: 'It is Id of PtTransMessage'
+    genericControls:
+      refTable: 'PtTransMessage'
+      refField: 'Id'
+      isNoUpdate: true
+  - name: 'SourcePositionId'
+    description: 'Relation to the underlying position'
+    genericControls:
+      refTable: 'PtPosition'
+      refField: 'Id'
+  - name: 'GroupKey'
+    description: 'possible key format: yyyymmddhhmmssqqq where \r\nyyyymmdd = date, hhmmss = time\r\nqqqq = sequence no within the a second\r\nIt is used to force a single advice for multiple PtTransItem. The key remains the same for unprinted items. Therefore items sharing the same GroupKey are grouped together in a same advice. After printing is done a new entry is given a new GroupKey'
+  - name: 'DetailCounter'
+    description: 'Mostly a transaction will consist of only one PtTransItem. But a transaction can consist of multiple PtTransItems. In case of multiple PtTransItems, all of the entries are put into PtTransItemDetail. And one entry in PtTransItem represents the summary of its Details. DetailCounter represents the count of PtTransItemDetail rows corresponding the current Transaction.\r\n0 = No entry exists in PtTransItemDetail\r\n2 = 2 entries exists in PtTransItemDetail'
+  - name: 'TransMsgStatusNo'
+    description: 'This field has 4 possible status:\r\n- NULL = normal\r\n- this original transaction is cancelled\r\n- this is a cancellation transaction\r\n- Rektifikat'
+    genericControls:
+      refTable: 'PtTransMsgStatus'
+      refField: 'TransMsgStatusNo'
+  - name: 'IsInactive'
+    description: 'True means that this record is to ignore for bonus calculation and printing external account statements.'
+  - name: 'RealDate'
+    description: 'Dieses Datum wird benötigt, um eine Buchung dem effektiven Datum zuzuweisen, im speziellen für die Verbuchung der Gewinnverteilung am Jahresende benötigt. Dieses Datum wird defaultmässig auf TransDate gesetzt, kann jedoch mit speziellen Applikationen abweichend geladen werden.'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TransDate'
+    description: 'Date of transaction posting'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TransDateTime'
+    description: 'Date & Time of transaction posting'
+  - name: 'ValueDate'
+    description: 'Date of transaction settlement'
+  - name: 'TradeDate'
+    description: 'Date on wich the transaction (e.g. trade, interest payment, cash payment) was fixed.'
+  - name: 'IsInterestPayment'
+    description: 'This field will be removed with next release. Do use field IsDueRelevant instead of IsInterestPayment.\r\n-----\r\nUsed especially for mortgages:\r\nTrue = Interest payment\r\nFalse = Capital payment'
+  - name: 'DebitQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'DebitAmount'
+    description: 'This field contains the amount to be debited from an account. In case of credit transaction this field contains 0'
+    genericControls:
+      defColumnPos: 3
+  - name: 'CreditQuantity'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'CreditAmount'
+    description: 'This field contains the amount to be credit to an account. In case of debit transaction this field contains 0'
+    genericControls:
+      defColumnPos: 4
+  - name: 'RateAcCuPfCu'
+    description: 'Exchange rate between position currency (original curr.) and portfolio currency (target curr.). Position and portfolio are based on field PositionId'
+  - name: 'SourceAmount'
+    description: 'Amount in currency of source position (field SourcePositionId).'
+  - name: 'RateSourceAcCuPfCu'
+    description: 'Exchange rate between position currency (original curr.) and portfolio currency (target curr.). Position and portfolio are based on field SourcePositionId'
+  - name: 'SourceCvAmountTypeNo'
+    description: 'Amount type for booking in the portfolio bookkeeping (also called as cost value system)'
+    genericControls:
+      refTable: 'PtTransCvAmountType'
+      refField: 'CvAmountTypeNo'
+  - name: 'TextNo'
+    description: 'It refers to PtTransItemText. This text is displayed on Account Statements.'
+    genericControls:
+      refTable: 'PtTransItemText'
+      refField: 'TextNo'
+      defColumnPos: 1
+  - name: 'MainTransText'
+    description: 'This text is printed on a statement of account report'
+    genericControls:
+      multiLine: true
+  - name: 'TransText'
+    description: 'It is text entered by the Cashier or account manager'
+    genericControls:
+      multiLine: true
+  - name: 'CounterParty'
+    description: 'Optional description of the counter party, e.g. payee in case of payments'
+    genericControls:
+      multiLine: true
+  - name: 'ServiceCenterNo'
+    description: 'Transaction can occur any any branch of the bank. A branch of a bank can be consider as servicecenter providing services to customer. ServiceCenter stores the information about the branch/center, where transaction is happening. It comes from AsProfitCenter.ProfitCenterNo'
+    genericControls:
+      refTable: 'AsProfitCenter'
+      refField: 'ProfitCenterNo'
+  - name: 'MatchingCode'
+    description: ''
+  - name: 'Project'
+    description: '[bank internal project]'
+  - name: 'PeriodFrom'
+    description: '[bank internal project]'
+  - name: 'PeriodTo'
+    description: '[bank internal project]'
+  - name: 'BudgetValue'
+    description: '[bank internal project]'
+  - name: 'VatCode'
+    description: '[bank internal project]'
+  - name: 'VatPeriodNo'
+    description: '[bank internal project]'
+  - name: 'AdvicePrinted'
+    description: 'If advice is printed, this field is set True else it is set False'
+  - name: 'BookletPrintDate'
+    description: 'Last printing date of booklet. If this field is null then no booklet is to be printed.'
+  - name: 'BookletPageNo'
+    description: 'Page Number of booklet on which current transaction is printed. NULL value means transaction is not printed yet.'
+  - name: 'BookletLineNo'
+    description: 'Line Number of booklet on which current transaction is printed. NULL value means transaction is not printed yet.'
+  - name: 'CompletionDate'
+    description: 'This field relates to concept of Data Partioning. It is first value is MAXDATE (9999-12-31). It is then later changed by another process responsible for the task of Partioning.'
+  - name: 'IsClosingItem'
+    description: '0 = false = no closing item\r\n1 = true = is closing item (=Abschlussbuchung)'
+  - name: 'IsDueRelevant'
+    description: 'If this field is true, this amount have also booked in the DueValue... fields in table PtPosition.'
+  - name: 'IsSuspicious'
+    description: 'not any more used (MWI)'
+  - name: 'MgVrxBuNr'
+    description: 'Buchungsnummer in VRX'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgBuffer'
+    description: 'True (1) : Sum the transitems for back migration to VRX for the same account. SumOfDebits and SumOfCredits should be same.\r\nFalse (0) : Don''t Sum the transitems. Treat it normal.'
+  - name: 'MgBetragSfr'
+    description: 'Betrag in SFT bei Fremdwährungsbuchungen, nur für Rückmigration benötigt!'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgSpesen'
+    description: 'Summe der vorgemerkte Spesen für Rückmigration'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgMenge'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgHandelsWrg'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgKurs'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgBruttoHandelsWrg'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgChange'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgNettoKundenWrg'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgDepNr'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgValNrAnrecht'
+    description: 'vvvvvvvvaa'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgLabDat'
+    description: 'Letztes AbschlussDatum in VRX\r\nDient zum Update von PtAccountClosingPeriod'
+  - name: 'MgLabVal'
+    description: 'Letztes AbschlussValuta in VRX\r\nDient zum Update von PtAccountClosingPeriod'
+  - name: 'MgLabSaldo'
+    description: 'Saldo nach letztem Abschluss in VRX\r\nDient zum Update von PtAccountClosingPeriod'
+  - name: 'MgLabAuszug'
+    description: 'Datum des lezten Kontoauszuges in VRX\r\nDient zum Update von PtAccountStatementPeriod'
+  - name: 'CardNo'
+    description: 'Debit or Credit CardNo used for this'
+  - name: 'SourceKey'
+    description: 'Unique key for unique identification'
+  - name: 'ClearingNo'
+    description: '- Clearing number of card issuing bank (for ATM transactions only)'
+  - name: 'DetailsOnStatement'
+    description: 'Defines if the transaction details have to be printed in the account statement'

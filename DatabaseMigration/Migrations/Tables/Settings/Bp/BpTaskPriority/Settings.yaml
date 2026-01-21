@@ -1,0 +1,28 @@
+table:
+  name: 'BpTaskPriority'
+  description: 'JCS task priority.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'JCS task priority'
+    - german:
+        formTitle: 'JCS Task Priorität'
+    - french:
+        formTitle: 'JCS task priority'
+    - italian:
+        formTitle: 'JCS task priority'
+  columns:
+  - name: 'TaskPriority'
+    description: 'Current priority of the task:\r\n0 = Lowest\r\n1 = BelowNormal\r\n2 = Normal\r\n3 = AboveNormal\r\n4 = Highest'
+    genericControls:
+      defColumnPos: 1

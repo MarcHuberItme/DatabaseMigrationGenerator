@@ -1,0 +1,26 @@
+table:
+  name: 'OaTwoFaMsgContent'
+  description: 'Content of the 2Fa message template'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'TemplateId'
+    description: ''
+    genericControls:
+      refTable: 'OaTwoFaMsgTmplt'
+      refField: 'Id'
+  - name: 'Title'
+    description: 'Main title of the content'
+  - name: 'LanguageNo'
+    description: 'Language of the content'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'

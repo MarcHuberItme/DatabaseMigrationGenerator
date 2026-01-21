@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetProductNoListForAccount'
+  description: 'All Productnumbers are returned that are referenced by any component of the account. 28.06.2004/mct'

@@ -1,0 +1,66 @@
+table:
+  name: 'PtAdmChargeTitleGrouping'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAdmChargeTitleGrouping'
+        helpText: 'PtAdmChargeTitleGrouping'
+    - german:
+        formTitle: 'PtAdmChargeTitleGrouping'
+        helpText: 'PtAdmChargeTitleGrouping'
+    - french:
+        formTitle: 'PtAdmChargeTitleGrouping'
+        helpText: 'PtAdmChargeTitleGrouping'
+  columns:
+  - name: 'TitleTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargeTitleType'
+      refField: 'TypeNo'
+      defColumnPos: 2
+  - name: 'SecurityType'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicSecurityType'
+      refField: 'SecurityType'
+      defColumnPos: 1
+  - name: 'SubCheckSeqNo'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'InstrumentTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicInstrumentType'
+      refField: 'InstrumentTypeNo'
+  - name: 'UnitNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'KeyShortName'
+    description: ''
+  - name: 'KeyIssuerPartnerNo'
+    description: ''
+  - name: 'KeyList'
+    description: ''
+  - name: 'AsOther'
+    description: ''
+  - name: 'BankName'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'Comment'
+    description: ''
+  - name: 'NotUsed'
+    description: ''

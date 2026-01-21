@@ -1,0 +1,25 @@
+table:
+  name: 'PrExpenseRuleset'
+  description: 'Expense ruleset that can be assigned to a product or as well to an account.'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Expense ruleset'
+    - german:
+        formTitle: 'Spesenkategorie'
+  columns:
+  - name: 'ExpenseRulesetNo'
+    description: 'identification key for an expense ruleset'
+    minValue: '0'
+    genericControls:
+      defColumnPos: 1

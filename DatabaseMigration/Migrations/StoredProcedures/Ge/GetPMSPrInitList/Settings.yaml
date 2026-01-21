@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetPMSPrInitList'
+  description: 'Get list of security position for the partner initialization in PMS'

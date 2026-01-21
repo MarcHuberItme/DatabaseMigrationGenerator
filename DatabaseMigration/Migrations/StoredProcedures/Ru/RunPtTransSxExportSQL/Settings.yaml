@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'RunPtTransSxExportSQL'
+  description: 'Procedure to run SQL queries saved in the tabel PtTrabsSxExportSQL in the order of the field SequenceNo and for the given Parameters FileTypeNo and ExportTypeNo. This is to be executed within the JCS. It is part of the generic staging area prototype PtTransSxRegisterPlus.\r\n2021-04-21 / TSH+WWO New field UnderlyingISIN4 added.\r\n2021-11-18 / TSH+WWO New field BANKINTERNALREFERENCE added, just for ordering.\r\n2022-05-10 / TSH+WWO TrdMatchId increased from 52 to 200.\r\n2022-06-02 / WWO New field PTTRANSTRADEPRESETTLEMENTID added\r\n2024-03-04 / TSH Parameters from Job to sequence and IDENTICAL sequence syntax added\r\n2024-12-17 / TSH New field IsOffExchange added.'

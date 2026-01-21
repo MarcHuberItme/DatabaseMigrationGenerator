@@ -1,0 +1,41 @@
+table:
+  name: 'CmStxSecurity'
+  description: 'Mapping of Security ID form SWX/Virtex'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c8abdfd0-d645-4dd5-8162-b50d7fe587cb
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Security Mapping'
+    - german:
+        formTitle: 'Security Mapping'
+  columns:
+  - name: 'StxId'
+    description: 'Id of Stock Exchange'
+    genericControls:
+      defColumnPos: 1
+  - name: 'SecurityId'
+    description: 'Security Identity (Stock Exchange internal)'
+    genericControls:
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'EffectiveFromDate'
+    description: 'The date from which the information in an instance is applicable'
+    genericControls:
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'SecurityTypeCode'
+    description: 'Identifier of Security Type'
+  - name: 'ValorNo'
+    description: 'Valor Number'
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'ISIN'
+    description: 'International Security Identification Number'

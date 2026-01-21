@@ -1,0 +1,14 @@
+table:
+  name: 'OaNotificationSet'
+  description: 'Sets for notifications used in E-Banking and other apps. A set can contain multiple OaNotificationRule.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns: []

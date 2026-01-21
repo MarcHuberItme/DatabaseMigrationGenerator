@@ -1,0 +1,39 @@
+table:
+  name: 'ReLegalLienType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'LegalLienType'
+    - german:
+        formTitle: 'Art gesetzl. Pfandrecht'
+  columns:
+  - name: 'LegalLienType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ToBeAdded'
+    description: '0 = subtraction\r\n1 = addition'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ForValuation'
+    description: ''
+    genericControls:
+      refTable: 'ReEnvironmentAddValuation'
+      refField: 'ValuationNo'
+      defColumnPos: 3
+  - name: 'ForValuationFixed'
+    description: ''
+  - name: 'SortNo'
+    description: ''

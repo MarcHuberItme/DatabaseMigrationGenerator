@@ -1,0 +1,65 @@
+table:
+  name: 'PtPortfolioTaxChargeDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPortfolioTaxChargeDetai'
+        helpText: 'PtPortfolioTaxChargeDetail'
+    - german:
+        formTitle: 'PtPortfolioTaxChargeDetai'
+        helpText: 'PtPortfolioTaxChargeDetail'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'TaxYear'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'TaxReportRelChargeTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtTaxReportRelChargeType'
+      refField: 'TaxReportRelChargeTypeNo'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'TaxChargeAmountHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'TaxChargeAmountWithoutVatHoCu'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'TaxReportDataId'
+    description: ''
+    genericControls:
+      refTable: 'PtTaxReportDataView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'AdmChargePortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtAdmChargePortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 7
+  - name: 'IsManuallyInput'
+    description: ''
+    genericControls:
+      defColumnPos: 8

@@ -1,0 +1,28 @@
+table:
+  name: 'AsRoleGroup'
+  description: 'Special table to group AsRole. This table is needed because workflow clients can not handle standard grouping.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    descField: 'Description'
+    uiTableDescription:
+    - english:
+        formTitle: 'Role Grouping'
+    - german:
+        formTitle: 'Rollengruppierung'
+  columns:
+  - name: 'RoleGroupName'
+    description: 'Name of the role group. This field has to be unique, since workflow clients can not translate ID''s into their according description in AsText. Therefore, the field is used for displaying and for querying a certain role group.'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Description'
+    description: 'Description of RoleGroup'
+    genericControls:
+      defColumnPos: 2

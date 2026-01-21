@@ -1,0 +1,34 @@
+table:
+  name: 'PtMLIbanWhiteList'
+  description: 'Stores IBANs marked as whitelisted.\r\nPayments to the IBANs in the white list are excluded for money mule identification.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Whitelisted IBAN'
+    - german:
+        formTitle: 'Whitelisted IBAN'
+    - french:
+        formTitle: 'IBAN sur liste blanche'
+    - italian:
+        formTitle: 'IBAN inserito in whitelis'
+  columns:
+  - name: 'Iban'
+    description: 'International Bank Account Number'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Name'
+    description: 'Name associated with the IBAN'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsInWhiteList'
+    description: 'Indicates if the IBAN is whitelisted'
+  - name: 'Comments'
+    description: 'Optional comments'

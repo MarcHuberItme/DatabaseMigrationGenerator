@@ -1,0 +1,23 @@
+table:
+  name: 'WfStepType'
+  description: 'Types of the Workflow Steps'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Workflow Steptypes'
+    - german:
+        formTitle: 'Workflow Steptyp'
+  columns:
+  - name: 'StepTypeNo'
+    description: 'Number of the step type'
+    genericControls:
+      defColumnPos: 1

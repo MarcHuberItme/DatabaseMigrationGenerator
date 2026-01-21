@@ -1,0 +1,206 @@
+table:
+  name: 'RePledgeRegister'
+  description: 'Pfandregister\r\nPfandregister-No und Teilpfandregister-No müssen zusammen UNIQUE sein\r\nDie HBL führt Teilpfandregister ! z.B. für Sitz Mellingen, d.h. wir müssen die Teilpfandregister-Nummer verwenden (am besten füllen wir dort den 2-stelligen Sitzcode ab) - Die Pfandregister-Nummern sind in Nummernkreise eingeteilt und sollten sich nicht überschneiden, daher sollte dies möglich sein.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Pledge Register'
+    - german:
+        formTitle: 'Pfandregister'
+    - french:
+        formTitle: 'Registre de gage'
+  columns:
+  - name: 'ReBaseId'
+    description: 'relation to ReBase (Verbindung zur Liegenschaft) - es muss appl. sichergestellt werden, dass dieses Feld gefüllt wird (Grund: E-Banking Interface PfB).\r\n\r\nBei der HBL Applikation Pfandregister wird zusätzlich das Feld PremisesId verwendet, weil aus einem Objekt (ReBase) auch nur ein einzelnes Grundstück an die Pfandbriefbank vergeben werden kann. Wenn es sich um ein Geamtpfand handelt ist NUR das Feld ReBaseId gefüllt !'
+    genericControls:
+      refTable: 'ReBasePremisesView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PledgeRegisterNo'
+    description: 'Pfandregisternummer'
+    genericControls:
+      defColumnPos: 4
+  - name: 'PledgeRegisterPartNo'
+    description: 'Teilpfandregisternummer (falls pro Filiale ein Register geführt wird, würde diese Nummer dem Filialcode entsprechen).\r\n600/10 wäre z.B. Lenzburg oder 600/20 wäre z.B. Mellingen'
+    genericControls:
+      defColumnPos: 5
+  - name: 'PledgeTypeId'
+    description: 'Pfandobjektart'
+    genericControls:
+      refTable: 'RePledgeType'
+      refField: 'Id'
+      defColumnPos: 6
+  - name: 'PledgeTransTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'RePledgeTransType'
+      refField: 'PledgeTransTypeNo'
+      defColumnPos: 9
+  - name: 'StatusNo'
+    description: 'Verarbeitungsstatus'
+    genericControls:
+      refTable: 'RePledgeRegisterStatus'
+      refField: 'StatusNo'
+      defColumnPos: 7
+  - name: 'StatusNoPfB'
+    description: 'Verarbeitungsstatus bei der Pfandbriefbank (zurückgemeldet)'
+    genericControls:
+      refTable: 'RePledgeRegisterStatus'
+      refField: 'StatusNo'
+      defColumnPos: 12
+  - name: 'PartnerId'
+    description: 'Bei FinstarBank = Relation zu PtBase der eigenen Bank\r\nBei Pfandbriefbank = Relation zu PtBase der angeschlossenen Bank'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'BCNumber'
+    description: 'BCNo der Mitgliedbank (im Fall HBL 8307)'
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'PfBNo'
+    description: 'interne Numerierung der Pfandbriefbank (nur zum Suchen zu verwenden)'
+    genericControls:
+      refTable: 'RePfBRelBC'
+      refField: 'PfBNo'
+      defColumnPos: 8
+  - name: 'OpeningDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'PledgeAmount'
+    description: 'Pfandforderung - Field is entered by the user bank over the internet (Originalbetrag)'
+  - name: 'PledgeAmountAdjusted'
+    description: 'Pfandforderung reduziert, wenn Abzahlungen passiert sind.'
+  - name: 'AcceptanceDate'
+    description: ''
+  - name: 'AcceptanceOperator'
+    description: 'Mitarbeiter der Pfandbriefbank, der die Deckung akzeptierte.'
+  - name: 'ValueDate'
+    description: 'Bewilligungsdatum Deckungswert - on that date the ValueAmount would be accepted.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValuationOperator'
+    description: ''
+  - name: 'ValueAmount'
+    description: 'bewilligter Deckungswert / accepted Value amount (Originalwert)'
+    genericControls:
+      defColumnPos: 10
+  - name: 'ValueAmountAdjusted'
+    description: 'Deckungswert reduziert, wenn Abzahlungen passiert sind.'
+    genericControls:
+      defColumnPos: 11
+  - name: 'ValueAmountManual'
+    description: 'ValueAmountMaximum is overwritten by the user manually to this amount\r\nThe accepted value amount is calculated as (man. übersteuert):\r\nValueAmount = ValueAmountManual if this field is NOT NULL\r\nelse ValueAmount = ValueAmountMaximum'
+  - name: 'ValueAmountMaximum'
+    description: 'Calculated maximum amount for the ValueAmount, could be oversteered through a manual input in field ValueAmountManual (max. Deckungswert)\r\nThe accepted value amount is calulated as:\r\nValueAmount = ValueAmountManual if this field is NOT NULL\r\nelse ValueAmount = ValueAmountMaximum'
+  - name: 'TotalDebitAmount'
+    description: 'This amount is intially calculated but then saved independantly to isolate it from the base data (Summe aller Hypothekensaldi)'
+  - name: 'TotalColateralValue'
+    description: 'This amount is intially calculated but then saved independantly to isolate it from the base data. (Total anrechenbare SB nominal)'
+  - name: 'EarningAmount'
+    description: 'earning value (details are in ReBuilding)'
+  - name: 'ExposureValueTypeNo'
+    description: 'Belehnungsgrenze auf Basis von ...... (pro Pfandobjektart wird der Default Valuetype gesetzt. Dieser kann aber aufgrund der eingelieferten Werte der Bank manuell übersteuert werden).\r\nUsing this ExposureValueTypeNo, we can calulate the relevant exposure amount.'
+    genericControls:
+      refTable: 'ReValueType'
+      refField: 'ValueTypeNo'
+  - name: 'ExposureRate'
+    description: 'This rate is intially fetched from RePledgeTypeExpLimit, depending upon the ExposureAmount and is then saved here for further reference independant from the originating table.'
+    minValue: '0'
+    maxValue: '100'
+  - name: 'ExposureValue'
+    description: 'This amount in intially fetched depending on the ExposureValueTypeNo but then saved independatly to isolate it from any change in basic data. (Belehnungswert)'
+  - name: 'ExposureDate'
+    description: 'Für HBL: Datum, per wann der Exposure Value gemeldet wurde (es muss ein automatischer Abgleich zwischen dem "Datum per" des gemeldeten Wert aus RePremisesValue (gemäss ValueTypeNo) und diesem Datum geben. Sobald das Datum aus der Liegenschaftsverwaltung älter ist, muss eine Meldung an PfB ausgelöst werden.'
+  - name: 'InternalText'
+    description: 'this text is only used pfandbriefbank internal'
+    genericControls:
+      multiLine: true
+  - name: 'UserText'
+    description: 'this text field can be enterd by the userbank'
+    genericControls:
+      multiLine: true
+  - name: 'ExternalText'
+    description: 'this text field is filled up by the pfandbriefbank to adress the userbank. Can not be  changed through the userbank.'
+    genericControls:
+      multiLine: true
+  - name: 'ImportantExternalText'
+    description: 'indicates whether there is an important external text\r\n0 = external text is known / read by the userbank\r\n1 = external text is important and not read through the bank (text is entered by the pfandbriefbank)'
+    genericControls:
+      defColumnPos: 16
+  - name: 'ExternalTextDate'
+    description: 'the external text was modified last on that date (set automatically)'
+  - name: 'ExternalTextCode'
+    description: 'sum of the choosen error text codes (Fremdkey auf Tabelle nicht möglich, weil es sich um eine Summeninformation handelt !)'
+    genericControls:
+      defColumnPos: 15
+  - name: 'ChangeContactPersonId'
+    description: 'Erfasser bzw. Change User - PKI eingeloggte Kontaktperson'
+    genericControls:
+      refTable: 'PtContactPerson'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'SignerContactPersonId'
+    description: 'Visumsgeber - PKI eingeloggte Kontaktperson'
+    genericControls:
+      refTable: 'PtContactPerson'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'HistoryVersion'
+    description: ''
+  - name: 'OverallLien'
+    description: '1 = Gesamtpfand'
+  - name: 'MemberUniqueKey'
+    description: 'PfB spezifisch: Jede Mitgliedbank vergibt für den gemeldeten Record eine eindeutige Identifikation. Diese benötigt sie um über E-Banking die Daten zu mutieren. Diese eindeutige Kennung muss die Mitgliedbank bei sich speichern.'
+  - name: 'PledgeOrderField'
+    description: 'Redundant field for sorting and stepwise browsing of RePledgeRegister.\r\nIs completely maintained by DB-Trigger'
+  - name: 'Recalculation'
+    description: ''
+  - name: 'TotalExit'
+    description: 'Change the status to TotalExit'
+  - name: 'GenerateReply'
+    description: '0 = no reply file \r\n1 = reply xml file will be generated'
+  - name: 'PremisesId'
+    description: 'only used for HBL Applikation - nicht für Pfandbrief E-Banking Applikation'
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AuditDate'
+    description: 'Datum der letzten ext. Revision dieses Pfandregister - Eintrages'
+    genericControls:
+      defColumnPos: 13
+  - name: 'AuditRemark'
+    description: 'Kommentar des ext. Revisors zur Pfandregisterkarte'
+    genericControls:
+      multiLine: true
+  - name: 'AuditName'
+    description: 'Name des externen Revisors'
+    genericControls:
+      defColumnPos: 14
+  - name: 'PfBSendDate'
+    description: 'Date and time of the last time the pledgeregister was sent to the Pfandbriefbank'
+  - name: 'PledgeRegisterNoWinCr'
+    description: 'Pfandregisternummer in Wincredit'
+    genericControls:
+      defColumnPos: 5
+  - name: 'AbcLog'
+    description: 'WinCredit log'
+    genericControls:
+      multiLine: true

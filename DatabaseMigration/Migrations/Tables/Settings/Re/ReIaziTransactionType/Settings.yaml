@@ -1,0 +1,25 @@
+table:
+  name: 'ReIaziTransactionType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Iazi Transaction Type'
+        helpText: 'Iazi Transaction Type'
+    - german:
+        formTitle: 'Iazi Transaction Typ'
+        helpText: 'Iazi Transaction Typ'
+  columns:
+  - name: 'TransactionTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

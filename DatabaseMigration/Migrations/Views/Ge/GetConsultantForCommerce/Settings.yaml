@@ -1,0 +1,3 @@
+view:
+  name: 'GetConsultantForCommerce'
+  description: 'Retrieves the consultant for commerce based on the partner field MgSACHB, the UserGroup with the same name and the UserAssignment with the role ''Kommerz-Bearbeitung Firmen 1''.\r\nIf no consultant is found, the default user mca is returned.\r\n'

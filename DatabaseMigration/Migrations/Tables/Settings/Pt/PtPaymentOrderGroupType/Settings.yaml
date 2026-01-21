@@ -1,0 +1,24 @@
+table:
+  name: 'PtPaymentOrderGroupType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+  columns:
+  - name: 'OrderGroupTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'OrderGroupTypeName'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'KycCheckType'
+    description: '0 = no check\r\n1 = OriginalSender check\r\n2 = EndBeneficiary check\r\n3 = Both checks\r\n\r\nThe check is executed independently of the NameCheck setting if one of the fields IsBCNo, IsPCNo or IsBICNo is set on the PaymentOrderType.'

@@ -1,0 +1,108 @@
+view:
+  name: 'PrPublicCfCompView'
+  description: ''
+frontendView:
+  name: 'PrPublicCfCompView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'DefaultCf'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'VdfIdentification'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+  - name: 'CompositionTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicCompositionType'
+      refField: 'CompositionTypeNo'
+  - name: 'SelPeriodStart'
+    description: ''
+    dataType: 'datetime'
+  - name: 'SelPeriodEnd'
+    description: ''
+    dataType: 'datetime'
+  - name: 'EntitledPartyNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicEntitledParty'
+      refField: 'EntitledPartyNo'
+  - name: 'CfId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'CfVdfIdentification'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+  - name: 'PaymentFuncNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicPaymentFunc'
+      refField: 'PaymentFuncNo'
+  - name: 'DueDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'NumberUnderlying'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'CfUnderlTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicCfUnderlType'
+      refField: 'CfUnderlTypeNo'
+  - name: 'PublicUnderlyingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicUnderlying'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CfAmountTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicCfAmountType'
+      refField: 'CfAmountTypeNo'
+  - name: 'DistributedPublicId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'Amount'
+    description: ''
+    dataType: 'decimal'
+    prec: 28
+    scale: 10
+  - name: 'CashFlowStatusNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PrPublicCashFlowStatus'
+      refField: 'CashFlowStatusNo'

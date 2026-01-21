@@ -1,0 +1,57 @@
+table:
+  name: 'PtInstituteName'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Institute name'
+    - german:
+        formTitle: 'Instituitionsname'
+    - french:
+        formTitle: 'Nom de l''Institut'
+  columns:
+  - name: 'PartnerId'
+    description: 'Institute name'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'LanguageNo'
+    description: 'VDF: IAD.GEL.K982.9981 (exceptional, the text is copied from the main language)\r\nLanguage in which the text is'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'VdfLanguageNo'
+    description: 'VDF: IAD.GEL.K982.9981\r\nLanguage from whisch the text is created (normally main language)'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'VdfShortName'
+    description: 'VDF: GEL.3822\r\n'
+  - name: 'VdfLongName'
+    description: 'VDF: IAD.GEL.3823'
+  - name: 'VdfTown'
+    description: 'VDF: IAD.GEL.3824'
+  - name: 'Name'
+    description: 'Name of the institut, normally the same as Field VdfLongName, but if VdfLongName is to long, it''s the same as VdfShortName.\r\nThe user can change this field.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'NameManual'
+    description: 'Is set to true, if a user changes field Name'

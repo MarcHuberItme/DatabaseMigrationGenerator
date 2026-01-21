@@ -1,0 +1,120 @@
+table:
+  name: 'PtBusinessRatio'
+  description: 'BusinessRatio of a business-partner / Kennzahlen der Bilanzanalyse für Firmen / Zahlen für die Berechnung der Tragfähigkeit von Privaten'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Business Ratio'
+    - german:
+        formTitle: 'Kreditfähigkeit'
+    - french:
+        formTitle: 'Indicateurs'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key;  Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'Date'
+    description: 'Date of ratio / Bilanz per Datum'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Employees'
+    description: 'Number of employees within a company, used for statistical purposes.'
+    maxValue: '100000'
+    genericControls:
+      defColumnPos: 1
+  - name: 'ProfitDistribution'
+    description: 'Gewinnverteilung\r\n0 = vor Gewinnverteilung\r\n1 = Nach Gewinnverteilung'
+  - name: 'AuditReport'
+    description: 'Revisionsbericht vorhanden ?\r\n0 = nein\r\n1 = Ja'
+  - name: 'CashRatio'
+    description: 'Liquidität Stufe 1 =  (Liq. Mittel / Kurzfr. FK)'
+  - name: 'CurrentRatio'
+    description: 'Liquidität Stufe 2 = (Liq. Mittel + Forderungen / Kurzfr. FK)'
+  - name: 'QuickRatio'
+    description: 'Liquidität Stufe 3 = (Umlaufsvermögen / kurzfr. FK)'
+  - name: 'WorkingCapital'
+    description: 'Working Capital = (kurzfristige Verbindlichkeiten - Umlaufvermögen)'
+  - name: 'FixedAssetsEquityRatio1'
+    description: 'Anlagedeckungsgrad 1 (Eigenkapital / Anlagevermögen)'
+  - name: 'FixedAssetsEquityRatio2'
+    description: 'Anlagedeckungsgrad 2 (Eigenkapital + langfr. FK / Anlagevermögen)'
+  - name: 'CashFlowRatio'
+    description: 'Cash Flow Rendite'
+  - name: 'EffektiveDebt'
+    description: 'Effektivverschuldung = (Gesamtschulden - Flüssige Mittel - Forderungen)'
+  - name: 'DebtRatio'
+    description: 'Verschuldungsfaktor / Verschuldungsgrad\r\n= (Effektivverschuldung / Cashflow)'
+  - name: 'ReturnOnEquity'
+    description: 'Eigenkapital Rendite (ROE) / return on equity'
+    genericControls:
+      defColumnPos: 5
+  - name: 'StockTurnover'
+    description: 'Lagerumschlag'
+  - name: 'DepreciationRatio'
+    description: 'Abschreibungsgrad'
+  - name: 'CreditorDays'
+    description: 'Kreditorenziel'
+  - name: 'DebtorDays'
+    description: 'Debitorenziel'
+  - name: 'EquityRatio'
+    description: 'Eigenfinanzierungsgrad'
+  - name: 'GrossProfitMargin'
+    description: 'Bruttogewinn Marge'
+  - name: 'BudgetVariance'
+    description: 'Budget Abweichung im Berichtsjahr'
+  - name: 'BudgetCashFlowRatio'
+    description: 'budgetierte Cash Flow Rendite Folgejahr'
+  - name: 'UnsecuredCreditRatio'
+    description: 'Blankolimiten Banken in % der Unternehmenssubstanz'
+  - name: 'MaxUnsecuredCredit'
+    description: 'maximal vertretbares Blankovolumen Banken'
+  - name: 'Rating'
+    description: 'calculated rating e.g. 4.15 (could be mapped e.g. to AA over a special translation table)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TotalExpenses'
+    description: 'Private: Total Aufwände (netto) - Zins-,Kapitalaufwand und andere subst. Aufwände'
+  - name: 'NetIncome1'
+    description: 'Private: Netto-Einkünfte (dauerhaft, wiederkehrend)'
+  - name: 'NetIncome2'
+    description: 'Private: weitere Einkünfte (evtl. nicht dauerhaft)'
+  - name: 'NetIncomeRatio1'
+    description: 'Private: Einkommensbelastung (basierend auf dauerhaften Netto-Einkünften - NetIncome1) in %'
+  - name: 'NetIncomeRatio2'
+    description: 'Private: Einkommensbelastung (basierend auf evtl. nicht dauerhaften Netto-Einkünften - NetIncome2) in %'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'SubmitDate'
+    description: 'Bilanz eingereicht am SubmitDate'
+  - name: 'SubmissionDate'
+    description: 'Bilanz dem VRA vorgelegt am SubmissionDate'
+  - name: 'MgVrxKey'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'ProcessDate'
+    description: ''
+  - name: 'ProcessPerson'
+    description: 'Sachbearbeiter (short name)'

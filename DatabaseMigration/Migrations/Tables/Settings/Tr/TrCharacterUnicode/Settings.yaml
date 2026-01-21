@@ -1,0 +1,26 @@
+table:
+  name: 'TrCharacterUnicode'
+  description: 'List of characters that need to be converted in text fields while generating message'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'MessageStandardId'
+    description: ''
+    genericControls:
+      refTable: 'TrMessageStandard'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'CharacterCode'
+    description: 'Unicode Charactercode'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ConversionString'
+    description: ''
+    genericControls:
+      defColumnPos: 3

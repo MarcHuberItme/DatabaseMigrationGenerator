@@ -1,0 +1,196 @@
+table:
+  name: 'PtContract'
+  description: 'Kontrakte'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Contract Base'
+    - german:
+        formTitle: 'Kontrakte'
+  columns:
+  - name: 'ContractNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'PortfolioId'
+    description: 'This will store the portfolio id of investing partner if there is only one partner. Same information will be stored in the table ptContractPartner.\r\nThis portfolio has to be used for creation of Money market account. If this portfolio is not specified, the account will be created under same portfolio as source or target account, which ever is applicable.'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ContractType'
+    description: ''
+    genericControls:
+      refTable: 'PtContractType'
+      refField: 'ContractType'
+      defColumnPos: 2
+  - name: 'AgentId'
+    description: 'Vermittler'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'InternalRemark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'ExternalRemark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'OrderDate'
+    description: 'The date on which the contract was requested'
+    genericControls:
+      defColumnPos: 3
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 4
+  - name: 'Amount'
+    description: ''
+  - name: 'DateFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'DateTo'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'CommissionType'
+    description: ''
+    genericControls:
+      refTable: 'PtCommissionType'
+      refField: 'CommissionTypeNo'
+  - name: 'InterestRate'
+    description: ''
+  - name: 'InterestPaymentDate'
+    description: 'First interest payment date'
+  - name: 'InterestPaymentPeriod'
+    description: 'Payment period as number of months'
+  - name: 'InterestPracticeType'
+    description: 'The DB intergrity has not been set to aviod problems with migraton data'
+    genericControls:
+      refTable: 'AsInterestPractice'
+      refField: 'PracticeType'
+  - name: 'WithholdingTaxType'
+    description: ''
+    genericControls:
+      refTable: 'AsWithholdingTaxType'
+      refField: 'WithholdingTaxType'
+  - name: 'VrxData'
+    description: 'Datastring with VRX-Datafields\r\nFieldseperater is semicoloun\r\nFieldformat: FFFFFFFF=VVVVVVV\r\nwhere\r\nFFFF is Fieldname as in VRX\r\nVVV  is Fieldvalue\r\nExemple: \r\nAUFTRDAT=15.06.2007;BETRAG=100000;SPESBETR=50.00'
+    genericControls:
+      multiLine: true
+  - name: 'Status'
+    description: ''
+    genericControls:
+      refTable: 'PtContractStatus'
+      refField: 'ContractStatusNo'
+      defColumnPos: 11
+  - name: 'SequenceNo'
+    description: 'A totally new contract will have SequenceNo = 0 . but whenever it re-newed, a new entry will be created with the same contract number but new sequence number.  Contract number when combined with SequenceNo is unique.'
+    genericControls:
+      defColumnPos: 7
+  - name: 'TerminationDate'
+    description: 'The date on which the contract has been terminated.'
+  - name: 'ChangeMinNoticeDays'
+    description: 'Any change required in call account contract should be made on notice of number of days specified in this field.'
+  - name: 'FxSellCurrency'
+    description: 'Sell currency relevant to the Forex trade contract. If investor A buys CHF for EUR then EUR is the sell currency.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 12
+  - name: 'FxBuyCurrency'
+    description: 'The rate at which investor A is selling the currency. Usually sell rate is lower than the buy rate. The difference in the rates give profit to the bank.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+      defColumnPos: 13
+  - name: 'FxTransId'
+    description: 'TransactionId after the bookings have been generated for the Currency trade.'
+    genericControls:
+      refTable: 'PtTransaction'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ConfirmationUser'
+    description: ''
+  - name: 'StartDate'
+    description: 'The date on which the contract was started. specially relevant for call contract, as "valid from" date can be modified to end a period with certain interest rate and start the new one. In case of call contract "Valid from" is the start date of current interest rate, may not necessarily show the actual contract start'
+  - name: 'AdjustAmtOnRenew'
+    description: 'The flag specifies if contract has to be renewed only by payment of difference of amount. 0 = Pay back the whole amount and re-invest'
+  - name: 'IsRenewed'
+    description: 'The flag is set if this version of contract has already been used to create a new version. This is to make sure that only the latest version of contract is used to make new version.'
+  - name: 'IsCapitalModified'
+    description: 'The flag is set when capital is modified for a call contract without formal renewal of contract'
+  - name: 'DeTourGroup'
+    description: ''
+    genericControls:
+      refTable: 'AsUserGroup'
+      refField: 'UserGroupName'
+  - name: 'CapitalAccountNo'
+    description: 'This will store the capital account no for the investing partner in case if there is only one partner. Same information will be stored in the table ptContractPartner.'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+      defColumnPos: 10
+  - name: 'BranchNo'
+    description: ''
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      defColumnPos: 14
+  - name: 'BCapitalAccountNo'
+    description: 'This will store the capital account no for the borrowing partner in case if there is only one partner. Same information will be stored in the table ptContractPartner.'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'AccountNo'
+      hasDetailBtn: true
+  - name: 'BPortfolioId'
+    description: 'This will store the portfolio id of borrowing partner if there is only one partner. Same information will be stored in the table ptContractPartner.\r\nThis portfolio has to be used for creation of Money market account. If this portfolio is not specified, the account will be created under same portfolio as source or target account, which ever is applicable.'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'IsMigrated'
+    description: 'This flag will be true for all the migrated records.'
+  - name: 'IsContractReset'
+    description: 'Flag to specify that contract has been reset'
+  - name: 'ValueDateInterestChange'
+    description: 'This date will be used if there is a change in interest rate in Call contracts.'
+  - name: 'EmissionsabgabeAmount'
+    description: 'Amount for the Emissionsabgabe'
+  - name: 'EmissionsabgabeCurrency'
+    description: 'Currency For Emissionsabgabe'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      hasDetailBtn: true
+  - name: 'IsEmissionsabgabeCharged'
+    description: 'This flag will be true if Emissionsabgabe is charged on the contract based on the contract type. User can overwrite the Emissionsabgabe calucation by setting this flag to false.'
+  - name: 'ContactMediaNo'
+    description: ''
+    genericControls:
+      refTable: 'AsContactMedia'
+      refField: 'MediaNo'
+  - name: 'AdditionalInfo'
+    description: 'Free text field primarily for Contact Person'
+  - name: 'FxBuyCurrMktRate'
+    description: 'MarketRate FxBuyCurrency to CHF'
+  - name: 'FxSellCurrMktRate'
+    description: 'MarketRate FxSellCurrency to CHF'
+  - name: 'FxMarginEquivAmount'
+    description: 'Margin Equiv Amount'

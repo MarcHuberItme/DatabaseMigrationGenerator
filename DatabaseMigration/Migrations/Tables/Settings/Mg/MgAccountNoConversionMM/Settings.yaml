@@ -1,0 +1,33 @@
+table:
+  name: 'MgAccountNoConversionMM'
+  description: 'Umsetzungstabelle für Schlüssel der Geldmarkgeschäfte von\r\nVRX-Schlüssel auf Finstar-Kontonummer'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'MoneyMarketKeyTranslation'
+    - german:
+        formTitle: 'GM-Umschlüsselung'
+  columns:
+  - name: 'VRXAccountNo'
+    description: 'Format: NNNNNNNNNKKKKKK\r\n\r\nN = Kontonummer\r\nK = Kontraktnummer'
+    genericControls:
+      defColumnPos: 1
+  - name: 'FinstarAccountNo'
+    description: 'Format: 8CCCCCCMMP\r\n\r\n8 = Prefix\r\nC = ContractNo (from vRX)\r\nM = Membernummer, starting with 01\r\nP = CheckDigit\r\n'
+    genericControls:
+      defColumnPos: 2
+  - name: 'FinstarContractNo'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'FinstarMemberNo'
+    description: 'MemberNo within a contract\r\n\r\n'
+    genericControls:
+      defColumnPos: 4

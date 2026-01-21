@@ -1,0 +1,34 @@
+table:
+  name: 'RePremisesPtRelType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PremisesPtRelType'
+    - german:
+        formTitle: 'Grundst.Partner Verb.Typ'
+  columns:
+  - name: 'PremisesPtRelTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'IsInteractive'
+    description: ''
+  - name: 'FreePartnerEntryAllowed'
+    description: ''
+  - name: 'AdditionalDataEntryAllowed'
+    description: ''
+  - name: 'ForReBaseOnly'
+    description: ''
+  - name: 'SortNo'
+    description: ''

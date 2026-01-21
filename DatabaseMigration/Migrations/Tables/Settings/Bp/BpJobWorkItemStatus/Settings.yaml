@@ -1,0 +1,28 @@
+table:
+  name: 'BpJobWorkItemStatus'
+  description: 'JCS work item status.'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'JCS Work Item Status'
+    - german:
+        formTitle: 'JCS Work Item Status'
+    - french:
+        formTitle: 'JCS Work Item Status'
+    - italian:
+        formTitle: 'JCS Work Item Status'
+  columns:
+  - name: 'Status'
+    description: 'Current status of the work item:\r\n0 = Initial\r\n1 = Assigned\r\n2 = Running\r\n3 = Succeed\r\n4 = Failed'
+    genericControls:
+      defColumnPos: 1

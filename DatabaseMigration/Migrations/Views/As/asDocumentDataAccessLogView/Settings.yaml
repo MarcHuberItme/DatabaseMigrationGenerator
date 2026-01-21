@@ -1,0 +1,3 @@
+view:
+  name: 'asDocumentDataAccessLogView'
+  description: 'View for table asDocumentDataAccessLog'

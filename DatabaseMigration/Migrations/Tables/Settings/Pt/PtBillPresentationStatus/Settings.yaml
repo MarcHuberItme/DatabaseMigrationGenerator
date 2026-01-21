@@ -1,0 +1,25 @@
+table:
+  name: 'PtBillPresentationStatus'
+  description: 'ProcessStatus for PtBillPresentation'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'BillPresentationStatus'
+    - german:
+        formTitle: 'Rechnungsstatus'
+    - french:
+        formTitle: 'PtBillPresentationStatus'
+  columns:
+  - name: 'StatusNo'
+    description: 'FsBillPresentationUnprocessed = 0\r\nFsBillPresentationProcessed = 1\r\nFsBillPresentationError = 99'
+    genericControls:
+      defColumnPos: 1

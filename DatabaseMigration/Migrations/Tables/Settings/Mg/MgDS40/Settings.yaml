@@ -1,0 +1,55 @@
+table:
+  name: 'MgDS40'
+  description: 'FIS Vrx Remarks (DS40)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: f6a6cd91-488e-4742-a2e4-68a2be5a10a7
+    visumLevel: 8
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtPortfolio'
+      parentRelationField: 'PortfolioId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'FIS Remarks'
+    - german:
+        formTitle: 'FIS Bemerkungen'
+    - french:
+        formTitle: 'FIS remarques'
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'LineNumber'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'RemarkCode'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'MgVrxKey'
+    description: ''
+    genericControls:
+      isOnlyForMig: true

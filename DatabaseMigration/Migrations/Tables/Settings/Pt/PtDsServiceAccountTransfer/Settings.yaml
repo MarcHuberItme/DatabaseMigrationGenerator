@@ -1,0 +1,33 @@
+table:
+  name: 'PtDsServiceAccountTransfer'
+  description: 'Service bank account transfer'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PartnerTransferId'
+    description: ''
+    genericControls:
+      refTable: 'PtDsPartnerTransfer'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ExternalAccountMapId'
+    description: ''
+    genericControls:
+      refTable: 'PtExternalAppAcctMap'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AccountHolder'
+    description: ''
+  - name: 'Currency'
+    description: 'ISO4217 format'
+  - name: 'Iban'
+    description: ''
+  - name: 'Bic'
+    description: ''

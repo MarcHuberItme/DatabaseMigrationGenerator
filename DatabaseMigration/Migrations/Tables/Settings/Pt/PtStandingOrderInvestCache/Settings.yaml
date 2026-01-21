@@ -1,0 +1,73 @@
+table:
+  name: 'PtStandingOrderInvestCache'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtStandingOrderInvestCach'
+        helpText: 'PtStandingOrderInvestCache'
+    - german:
+        formTitle: 'PtStandingOrderInvestCach'
+        helpText: 'PtStandingOrderInvestCache'
+    - french:
+        formTitle: 'PtStandingOrderInvestCach'
+        helpText: 'PtStandingOrderInvestCache'
+    - italian:
+        formTitle: 'PtStandingOrderInvestCach'
+        helpText: 'PtStandingOrderInvestCache'
+  columns:
+  - name: 'PublicId'
+    description: ''
+  - name: 'ExecutionDate'
+    description: ''
+  - name: 'IsinNo'
+    description: ''
+  - name: 'VdfInstrumentSymbol'
+    description: ''
+  - name: 'PrPublicShortName'
+    description: ''
+  - name: 'SmallDenom'
+    description: ''
+  - name: 'SecurityCurrency'
+    description: ''
+  - name: 'OrderMediaNo'
+    description: ''
+  - name: 'HasTradingSystemRerouted'
+    description: ''
+  - name: 'PreferredPublicListingId'
+    description: ''
+  - name: 'TradingSystemGroupId'
+    description: ''
+  - name: 'TradingSystemGroupCode'
+    description: ''
+  - name: 'PublicTradingPlaceId'
+    description: ''
+  - name: 'PaymentCurrency'
+    description: ''
+  - name: 'PrPublicPriceId'
+    description: ''
+  - name: 'Price'
+    description: ''
+  - name: 'PriceCurrency'
+    description: ''
+  - name: 'MinQuantity'
+    description: ''
+  - name: 'MinQuantityMarketPrice'
+    description: ''
+  - name: 'MinQuantityAmountCHF'
+    description: ''
+  - name: 'IsPriceOk'
+    description: ''
+  - name: 'PriceDetail'
+    description: ''
+  - name: 'IsAnlageFonds'
+    description: ''
+  - name: 'AnlageFondsValidToMonth'
+    description: ''

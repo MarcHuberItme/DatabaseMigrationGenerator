@@ -1,0 +1,127 @@
+view:
+  name: 'PtAgrCardExecutionReportView'
+  description: 'Used to select execution reports for a given task during report publishing.'
+frontendView:
+  name: 'PtAgrCardExecutionReportView'
+  description: 'View for selecting execution reports while publishing the reports.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Card Execution Report'
+        helpText: 'Card Execution Report'
+    - german:
+        formTitle: 'Card Execution Report'
+        helpText: 'Card Execution Report'
+  columns:
+  - name: 'ExecType'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtAgrCardExecutionType'
+      refField: 'ExecType'
+  - name: 'ExecStatus'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtAgrCardExecutionStatus'
+      refField: 'ExecStatus'
+  - name: 'ErrorText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'Reported'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'TaskId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'Params'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 4000
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 38
+    scale: 38
+  - name: 'AccountNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 80
+  - name: 'CardNo'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'CardType'
+    description: ''
+    dataType: 'smallint'
+  - name: 'TextShortCardType'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'TextLongCardType'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+  - name: 'SerialNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'SerialNoPrev'
+    description: ''
+    dataType: 'smallint'
+  - name: 'ExpirationDatePrev'
+    description: ''
+    dataType: 'datetime'
+  - name: 'CardholderId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 38
+    scale: 38
+  - name: 'PartnerNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'Name'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 80
+  - name: 'MiddleName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'FirstName'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+  - name: 'BranchNo'
+    description: ''
+    dataType: 'int'
+  - name: 'CardStatus'
+    description: ''
+    dataType: 'smallint'
+  - name: 'CardStatusPrev'
+    description: ''
+    dataType: 'smallint'
+  - name: 'FullAddressDelivery'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 222
+  - name: 'CountryCodeDelivery'
+    description: ''
+    dataType: 'char'
+    prec: 2
+  - name: 'MailCode'
+    description: ''
+    dataType: 'smallint'

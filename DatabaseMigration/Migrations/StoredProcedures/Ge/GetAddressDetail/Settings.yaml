@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAddressDetail'
+  description: 'Retrieves the details of an address to feed the FsDocMailOutput class in the document handler for a given AddressId'

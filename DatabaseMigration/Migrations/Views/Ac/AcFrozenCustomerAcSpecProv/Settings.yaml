@@ -1,0 +1,284 @@
+view:
+  name: 'AcFrozenCustomerAcSpecProv'
+  description: 'Specific provisions an customer Accounts, will be booked as  - active'
+frontendView:
+  name: 'AcFrozenCustomerAcSpecProv'
+  description: 'View with specificcustomer account provisions'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ReportDate'
+    description: ''
+    dataType: 'datetime'
+    isNotNull: true
+    genericControls:
+      noUpdatePos: 1
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    isNotNull: true
+    prec: 11
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'AccountNo'
+      noUpdatePos: 2
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'PrReferenceId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      noUpdatePos: 3
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      noUpdatePos: 4
+  - name: 'ProductNo'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      noUpdatePos: 5
+  - name: 'AccountGroupNo'
+    description: ''
+    dataType: 'smallint'
+  - name: 'CharacteristicNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PrPrivateCharacteristic'
+      refField: 'CharacteristicNo'
+      noUpdatePos: 6
+  - name: 'IsDueRelevant'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      noUpdatePos: 7
+  - name: 'MgOBJEKT'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'MgA21'
+      refField: 'MigValue'
+      noUpdatePos: 18
+  - name: 'MgOBJPLZ'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      noUpdatePos: 19
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'OperationTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PrOperationType'
+      refField: 'TypeNo'
+  - name: 'ConsCreditMonitorId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'IsMoneyMarket'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'ClosingPeriodRuleNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsPeriodRule'
+      refField: 'PeriodRuleNo'
+  - name: 'FreezeStatus'
+    description: '1 = account data loaded\r\n2 = additional account data loaded\r\n3 = freeze account components done\r\n4 = freeze account balance done\r\n5 = freeze account interest done (account freeze process completed)'
+    dataType: 'int'
+  - name: 'PositionId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'DueValuePrCu'
+    description: ''
+    dataType: 'money'
+  - name: 'AccountNoText'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'ValueSign'
+    description: ''
+    dataType: 'smallint'
+  - name: 'DateFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ExpirationDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'InterestRate'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+  - name: 'AmountType'
+    description: ''
+    dataType: 'smallint'
+  - name: 'CodeC510'
+    description: ''
+    dataType: 'int'
+  - name: 'ValueHoCu'
+    description: ''
+    dataType: 'money'
+  - name: 'ValuePrCu'
+    description: ''
+    dataType: 'money'
+  - name: 'AccountDesc'
+    description: ''
+    dataType: 'varchar'
+    prec: 50
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+  - name: 'FiscalDomicileCountry'
+    description: ''
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'Nationality'
+    description: ''
+    dataType: 'char'
+    prec: 2
+  - name: 'Employees'
+    description: ''
+    dataType: 'int'
+  - name: 'LargeExpGroupNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 12
+  - name: 'Canton'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 2
+    genericControls:
+      refTable: 'AsCanton'
+      refField: 'CantonSymbol'
+  - name: 'InterestRateType'
+    description: '1 = fester Zinssatz\r\n2 = variabler Zinssatz\r\n3 = nicht zinsssensitives Instrument\r\n4 = nicht rapportierungspflichtig'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'CreditLimitsHoCu'
+    description: ''
+    dataType: 'money'
+  - name: 'RealEstateCanton'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 2
+  - name: 'Noga2008'
+    description: ''
+    dataType: 'varchar'
+    prec: 6
+    genericControls:
+      refTable: 'PtNoga2008'
+      refField: 'NogaCode'
+  - name: 'FiduciaryCountry'
+    description: ''
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+  - name: 'CompTypeNo'
+    description: ''
+    dataType: 'int'
+  - name: 'IsRepo'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'SpecProvision'
+    description: ''
+    dataType: 'money'
+  - name: 'IsImpaired'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsOverdue'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PledgeKey'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'CovCode'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 16
+  - name: 'MaxEffWithdrawAmountHoCu'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'SexStatusNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+  - name: 'MortgageExpirationDate'
+    description: 'Festhypotheken : ExpirationDate\r\nVariable Hypotheken: ReportDate + 6 Monate'
+    dataType: 'datetime'
+  - name: 'LoanExpirationDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Location'
+    description: ''
+    dataType: 'char'
+    prec: 2
+  - name: 'RelationshipMonths'
+    description: ''
+    dataType: 'int'
+  - name: 'LongTermLoan'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AmountOfProducts'
+    description: ''
+    dataType: 'int'
+  - name: 'ColClean'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'DefaultRiskAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'DefaultRiskAmountBasicCurrency'
+    description: ''
+    dataType: 'money'
+  - name: 'DefaultRiskSpecialAmountBaCu'
+    description: ''
+    dataType: 'money'
+  - name: 'DefaultRiskAccrualsAmountBaCu'
+    description: ''
+    dataType: 'money'
+  - name: 'DefaultRiskInterestAmountBaCu'
+    description: ''
+    dataType: 'money'

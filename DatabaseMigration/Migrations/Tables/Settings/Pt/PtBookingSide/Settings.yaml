@@ -1,0 +1,25 @@
+table:
+  name: 'PtBookingSide'
+  description: 'Defines the side of the booking (Credit / Debit)'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Booking side'
+    - german:
+        formTitle: 'Buchungsseite'
+  columns:
+  - name: 'BookingSide'
+    description: 'C= Credit\r\nD= Debit\r\nNull= Credit or Debit is possible'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

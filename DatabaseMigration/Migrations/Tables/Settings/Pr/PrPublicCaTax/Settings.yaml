@@ -1,0 +1,98 @@
+table:
+  name: 'PrPublicCaTax'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublicTransform'
+      parentRelationField: 'PublicTransformId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax for transformations'
+    - german:
+        formTitle: 'Steuern für Transformat.'
+  columns:
+  - name: 'VdfDocGen'
+    description: 'VDF: XSD.XSD.0813'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: XSD.MGA.7895'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'VdfDocKey'
+    description: 'Only informal.\r\nWith this field it''s possible to print the tax VDF doc (TKXSD) as PDF file.'
+  - name: 'PublicTransformId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicTransform'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'VdfMessageIdent'
+    description: 'VDF: XSD.MGG.7891 & - & XSD.MGG.7892 & - & XSD.MGG.7893'
+    genericControls:
+      defColumnPos: 6
+  - name: 'TaxCategoryNo'
+    description: 'VDF: XSD.XSB.4982'
+    genericControls:
+      refTable: 'PrPublicTaxCategory'
+      refField: 'TaxCategoryNo'
+      defColumnPos: 1
+  - name: 'ResNonResCode'
+    description: 'VDF: XSD.XSC.4983'
+    genericControls:
+      refTable: 'PrPublicNonResCode'
+      refField: 'NonResCode'
+      defColumnPos: 2
+  - name: 'TaxRaisingCountryCode'
+    description: 'VDF: XSD.LRI.K984.3991'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 3
+  - name: 'TaxDateTypeNo1'
+    description: 'VDF: XSD.XSA.4981'
+    genericControls:
+      refTable: 'PrPublicTaxDateType'
+      refField: 'TaxDateTypeNo'
+      defColumnPos: 4
+  - name: 'Date1'
+    description: 'VDF: XSD.XSA.2801'
+    genericControls:
+      defColumnPos: 5
+  - name: 'TaxDateTypeNo2'
+    description: 'VDF: XSD.XSA.4981'
+    genericControls:
+      refTable: 'PrPublicTaxDateType'
+      refField: 'TaxDateTypeNo'
+  - name: 'Date2'
+    description: 'VDF: XSD.XSA.2801'
+  - name: 'TaxDateTypeNo3'
+    description: 'VDF: XSD.XSA.4981'
+    genericControls:
+      refTable: 'PrPublicTaxDateType'
+      refField: 'TaxDateTypeNo'
+  - name: 'Date3'
+    description: 'VDF: XSD.XSA.2801'
+  - name: 'TaxDateTypeNo4'
+    description: 'VDF: XSD.XSA.4981'
+    genericControls:
+      refTable: 'PrPublicTaxDateType'
+      refField: 'TaxDateTypeNo'
+  - name: 'Date4'
+    description: 'VDF: XSD.XSA.2801'
+  - name: 'EarningPerBegin'
+    description: 'VDF: XSD.XSA.2811 (If XSD.XSA.4981 = 5)'
+  - name: 'EarningPerEnd'
+    description: 'VDF: XSD.XSA.2812 (If XSD.XSA.4981 = 5)'

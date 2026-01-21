@@ -1,0 +1,97 @@
+table:
+  name: 'PtPaymentSICCovOrig'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'PtPaymentSICCovOrig'
+        helpText: 'PtPaymentSICCovOrig'
+    - german:
+        formTitle: 'PtPaymentSICCovOrig'
+        helpText: 'PtPaymentSICCovOrig'
+  columns:
+  - name: 'OrderDetailID'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentOrderDetail'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ReferenceTransRefKey'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'OrderingPartyAccountNo'
+    description: ''
+  - name: 'OrderingPartyAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'OrderingPartyBIC'
+    description: ''
+  - name: 'SenderAccountNumber'
+    description: ''
+  - name: 'OriginalSenderAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'OriginalSenderBIC'
+    description: ''
+  - name: 'IntermediaryAccountNo'
+    description: ''
+  - name: 'IntermediaryAccountNoIBAN'
+    description: ''
+  - name: 'IntermediaryAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'IntermediaryBIC'
+    description: ''
+  - name: 'BBankAccountNo'
+    description: ''
+  - name: 'BBankAccountNoIBAN'
+    description: ''
+  - name: 'BeneficiaryFinalBankAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'BeneficiaryFinalBIC'
+    description: ''
+  - name: 'AccountNoExt'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'AccountNoPost'
+    description: ''
+  - name: 'AccountNoExtIBAN'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'BeneficiaryAddress'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'BeneficiaryBIC'
+    description: ''
+  - name: 'BeneficiaryReferenceNo'
+    description: ''
+  - name: 'BeneficiaryMessage'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'BankPaymentInstruction'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'AdditionalPaymentInfo'
+    description: ''
+    genericControls:
+      multiLine: true

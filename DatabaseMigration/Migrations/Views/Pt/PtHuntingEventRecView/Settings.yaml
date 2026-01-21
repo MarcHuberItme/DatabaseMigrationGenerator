@@ -1,0 +1,107 @@
+view:
+  name: 'PtHuntingEventRecView'
+  description: 'View used as FronEndView in the form ''FsPartnerHunting.frmEventData'''
+frontendView:
+  name: 'PtHuntingEventRecView'
+  description: 'Frontendview used for the form FsPartnerHunting.frmEventData'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Event Data'
+    - german:
+        formTitle: 'Ereignis-Daten'
+  columns:
+  - name: 'ReferenceDate'
+    description: ''
+    dataType: 'varchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 6
+  - name: 'EventNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 2
+  - name: 'MotiveOpenTypeNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtHuntingOpen'
+      refField: 'MotiveOpenTypeNo'
+      defColumnPos: 3
+  - name: 'ContactResult'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtHuntingResult'
+      refField: 'ResultNo'
+      defColumnPos: 4
+  - name: 'TimeInterval'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      defColumnPos: 5
+  - name: 'EventId'
+    description: 'Id of the Table PtHuntingEvent'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtHuntingEvent'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'SexStatusNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+      defColumnPos: 13
+  - name: 'LegalStatusNo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'PtLegalStatus'
+      refField: 'LegalStatusNo'
+      defColumnPos: 14
+  - name: 'ProfileName'
+    description: ''
+    dataType: 'varchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 7
+  - name: 'HasEMail'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 8
+  - name: 'IsPartner'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 9
+  - name: 'IsNotPartner'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 10
+  - name: 'IsOrganisation'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    genericControls:
+      defColumnPos: 11
+  - name: 'Zips'
+    description: ''
+    dataType: 'varchar'
+    prec: 256
+    genericControls:
+      defColumnPos: 12

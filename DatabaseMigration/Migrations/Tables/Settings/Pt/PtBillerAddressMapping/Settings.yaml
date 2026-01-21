@@ -1,0 +1,31 @@
+table:
+  name: 'PtBillerAddressMapping'
+  description: 'Map incoming LSV biller addresses with bad data quality to manually defined addresses'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtBillerNameMapping'
+        helpText: 'PtBillerNameMapping'
+    - german:
+        formTitle: 'PtBillerNameMapping'
+        helpText: 'PtBillerNameMapping'
+  columns:
+  - name: 'IncomingAddress'
+    description: 'Address from incoming message'
+    genericControls:
+      multiLine: true
+      defColumnPos: 1
+  - name: 'ManualAddress'
+    description: 'Manually defined address to use instead'
+    genericControls:
+      multiLine: true
+      defColumnPos: 2

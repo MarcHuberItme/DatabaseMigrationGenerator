@@ -1,0 +1,60 @@
+table:
+  name: 'PtTransSxFixMappingGroupConfig'
+  description: 'FIX group mapping configuration'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'FIX group mapping config'
+        helpText: 'FIX group mapping configuration'
+    - german:
+        formTitle: 'FIX Gruppe Mapping Konfig'
+        helpText: 'FIX Gruppen Mapping Konfiguration'
+  columns:
+  - name: 'App'
+    description: 'Application specific FIX group mapping configuration. Usually the Application/FIX client that is calling the GOI (e.g. AssetMax, GLOX, ...)\r\nNull can be used for a "default" FIX configuration that can be used by multiple Apps.\r\nApp specific configuration overrides values from default configuration.'
+    genericControls:
+      refTable: 'PtTransSxGoiApp'
+      refField: 'App'
+      defColumnPos: 1
+  - name: 'FinstarGroupField'
+    description: 'The Finstar group field (e.g. NoPartySubIDs)'
+    genericControls:
+      refTable: 'PtTransSxFixMappingGroupFld'
+      refField: 'FinstarGroupField'
+      defColumnPos: 2
+  - name: 'FinstarField'
+    description: 'The Finstar field (e.g. "ModifyUserNo")'
+    genericControls:
+      refTable: 'PtTransSxFixMappingFinstarFld'
+      refField: 'FinstarField'
+      defColumnPos: 3
+  - name: 'FixGroupIndexNo'
+    description: 'The number (index) in the group. The first entry in the group has index 1!\r\nEither specify FixTag and FixValue attributes (preferred) or alternatively a FixGroupIndexNo. Specifying all three attributes is also possible and will be considered by the code but it is not necessary and often also not useful.'
+  - name: 'FixTag'
+    description: 'The FIX tag (e.g. 447)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'FixValue'
+    description: 'The FIX value (e.g. "D")'
+    genericControls:
+      defColumnPos: 5
+  - name: 'UseForFixToFinstar'
+    description: 'If set, this mapping configuration is used for mappings from FIX to Finstar.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'UseForFinstarToFix'
+    description: 'If set, this mapping configuration is used for mappings from Finstar to FIX.'
+    genericControls:
+      defColumnPos: 7
+  - name: 'Description'
+    description: 'A not mandatory (human readable) description of the group mapping entry.'
+    genericControls:
+      multiLine: true

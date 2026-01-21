@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'FreezeCollateralCanton'
+  description: 'Adds the canton symbol to the collaterals which are based on obligations'

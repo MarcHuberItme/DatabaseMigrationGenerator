@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetETPartnerCorrespondence'
+  description: 'Get correpondence data to merge in easy tax dcouments for partners (partner level)'

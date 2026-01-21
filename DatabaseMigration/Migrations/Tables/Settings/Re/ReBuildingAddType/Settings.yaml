@@ -1,0 +1,42 @@
+table:
+  name: 'ReBuildingAddType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'BuildingAddType'
+    - german:
+        formTitle: 'Gebäudezuschlagstyp'
+  columns:
+  - name: 'BuildingAddType'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'StdPrice'
+    description: ''
+  - name: 'OverrideStdPrice'
+    description: 'übersteuern des Standardpreises erlaubt\r\n0 = ja\r\n1 = Nein'
+  - name: 'ForValuation'
+    description: ''
+    genericControls:
+      refTable: 'ReEnvironmentAddValuation'
+      refField: 'ValuationNo'
+  - name: 'EarningValueRate'
+    description: ''
+  - name: 'BuildingTypeNo'
+    description: 'in der Auswahl Drop Down erscheinen alle Einträge mit passendem Gebäudetyp und solche mit NULL'
+    genericControls:
+      refTable: 'ReBuildingType'
+      refField: 'BuildingTypeNo'
+      defColumnPos: 2
+  - name: 'SortNo'
+    description: ''

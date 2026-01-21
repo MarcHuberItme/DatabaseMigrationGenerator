@@ -1,0 +1,38 @@
+table:
+  name: 'PtEbDocumentGroup'
+  description: 'Defines the e-banking document groups.'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Document group'
+    - german:
+        formTitle: 'Dokumentengruppe'
+  columns:
+  - name: 'IsForAccount'
+    description: 'Determines if document group should check accounts'
+    genericControls:
+      defColumnPos: 1
+  - name: 'IsForPortfolio'
+    description: 'Determines if document group should check security accounts'
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsForPartner'
+    description: 'Determines if document group should check partners'
+    genericControls:
+      defColumnPos: 3
+  - name: 'SortingNo'
+    description: ''
+  - name: 'DaysBetweenDates'
+    description: ''
+  - name: 'EndOfLastYear'
+    description: ''

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetProxy03'
+  description: 'get one Proxy from database searching via:\r\nPartnerIdGiving\r\nPartnerIdReceiving\r\nContactPersonIdReceiving\r\nPortfolioId\r\nDate\r\n'

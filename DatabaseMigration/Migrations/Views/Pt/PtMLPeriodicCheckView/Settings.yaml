@@ -1,0 +1,34 @@
+view:
+  name: 'PtMLPeriodicCheckView'
+  description: 'View to deliver the translated text and URL for a money laundering check, if a check is open.'
+frontendView:
+  name: 'PtMLPeriodicCheckView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+  - name: 'EndDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'ChannelNo'
+    description: ''
+    dataType: 'int'
+  - name: 'Text'
+    description: ''
+    dataType: 'text'
+    isNotNull: true
+  - name: 'URL'
+    description: ''
+    dataType: 'nvarchar'
+    isNotNull: true
+    prec: 4000

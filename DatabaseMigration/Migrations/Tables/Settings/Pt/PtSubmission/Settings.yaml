@@ -1,0 +1,59 @@
+table:
+  name: 'PtSubmission'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Submission'
+    - german:
+        formTitle: 'Vorlagen'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'StatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtSubmissionStatus'
+      refField: 'StatusNo'
+      defColumnPos: 1
+  - name: 'ValidationNo'
+    description: 'grün / orange / rot -> zeigt an, ob ein Geschäft überhaupt gemacht werden soll'
+    genericControls:
+      refTable: 'PtSubmissionValdidation'
+      refField: 'ValidationNo'
+      defColumnPos: 2
+  - name: 'AuthorityNo'
+    description: 'grün / orange / rot -> zeigt an, ob ein Mitarbeiter die Kompetenz für die Vorlage hat (ChangeUser oder CreateUser wird für Prüfung verwendet)'
+    genericControls:
+      refTable: 'PtSubmissionAuthority'
+      refField: 'AuthorityNo'
+      defColumnPos: 3
+  - name: 'Recommendation'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 4
+  - name: 'OfferId'
+    description: 'Offerte, die der Vorlage zugrunde liegt'
+    genericControls:
+      refTable: 'PtOfferNew'
+      refField: 'Id'
+      defColumnPos: 5

@@ -1,0 +1,23 @@
+table:
+  name: 'PtCardShowStatusLabelValue'
+  description: 'Shows the Status-Items in vertival order'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'Label'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Value'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Position'
+    description: 'The vertical Position in the form where the Label-Value pair is displayed'

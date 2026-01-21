@@ -1,0 +1,29 @@
+table:
+  name: 'PtAgrTaxStatus'
+  description: 'Waiver Status'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: e5916290-2b38-446a-9502-236b10cb37f3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Waiver Status'
+        helpText: 'Waiver Status'
+    - german:
+        formTitle: 'Waiver Status'
+        helpText: 'Waiver Status'
+    - french:
+        formTitle: 'Waiver Status'
+        helpText: 'Waiver Status'
+  columns:
+  - name: 'StatusNo'
+    description: 'Status Nr.'
+    genericControls:
+      defColumnPos: 1

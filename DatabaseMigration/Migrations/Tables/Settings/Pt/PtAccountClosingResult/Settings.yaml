@@ -1,0 +1,61 @@
+table:
+  name: 'PtAccountClosingResult'
+  description: 'Detail results of closing calculation'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Closing results'
+    - german:
+        formTitle: 'Abschlussresultate'
+  columns:
+  - name: 'AccountClosingPeriodId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountClosingPeriod'
+      refField: 'Id'
+  - name: 'AccountComponentId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountComponent'
+      refField: 'Id'
+  - name: 'PartialBeginDate'
+    description: 'Begin of a time frame within a closing period\r\n*To be Removed*'
+  - name: 'PartialEndDate'
+    description: 'End of a time frame within a closing period\r\n*To be Removed*'
+  - name: 'Days'
+    description: ''
+  - name: 'ValueFrom'
+    description: ''
+  - name: 'Valueto'
+    description: ''
+  - name: 'InterestRate'
+    description: ''
+  - name: 'InterestAmount'
+    description: ''
+  - name: 'CommissionRate'
+    description: ''
+  - name: 'CommissionAmount'
+    description: ''
+  - name: 'ProvisionRate'
+    description: ''
+  - name: 'ProvisionAmount'
+    description: ''
+  - name: 'Priority'
+    description: '*To Be Discussed*'
+  - name: 'ValueDate'
+    description: ''
+  - name: 'IsDebit'
+    description: ''
+  - name: 'ComponentValidTo'
+    description: ''
+  - name: 'ComponentLimit'
+    description: ''
+  - name: 'DepositFee'
+    description: 'Guthabengebühr (Negativzins)'

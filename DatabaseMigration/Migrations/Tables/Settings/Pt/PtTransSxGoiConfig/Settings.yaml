@@ -1,0 +1,136 @@
+table:
+  name: 'PtTransSxGoiConfig'
+  description: 'Table to define the configuration of the different "partners" using the Generic Order Interface'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: b76a4fbd-6160-4021-9b0c-245c7b4371c2
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Configuration GOI'
+        helpText: 'Configuration GOI'
+    - german:
+        formTitle: 'Konfiguration GOI'
+        helpText: 'Konfiguration GOI'
+  columns:
+  - name: 'App'
+    description: 'Application where the input came from (e.g. AssetMax, PM1, BSZ, SCO)'
+    genericControls:
+      refTable: 'PtTransSxGoiApp'
+      refField: 'App'
+      defColumnPos: 1
+  - name: 'Channel'
+    description: 'Channel through the input came from (e.g. FIX, SOAP  REST...)\r\n\r\nInput from discussion (01.11.2022) concerning Neon: Later maybe we need a new field for the output channel or we need to split PtTransSxGoiConfig for input and output.'
+    genericControls:
+      refTable: 'PtTransSxGoiChannel'
+      refField: 'Channel'
+      defColumnPos: 2
+  - name: 'LanguageNo'
+    description: 'Language to communicate with the partner system (error messages).\r\nThis field may be overruled by an extended input parameter of AddStockExOrder.\r\n\r\n'
+    genericControls:
+      refTable: 'AsLanguage'
+      refField: 'LanguageNo'
+  - name: 'OrderMediaNoDefault'
+    description: 'OrderMedia to save in PtTradingOrder\r\nIf this field is null the OrderMediaNo has to be passed from the source (e.g. entered a BSZ order in HBL-Finstar-Frontend).'
+    genericControls:
+      refTable: 'PtTransOrderMedia'
+      refField: 'OrderMediaNo'
+      defColumnPos: 3
+  - name: 'BankShortName'
+    description: 'Name of the external partner (e.g. PM1, BSZ, SCO).\r\nThis field will be saved in PtTradingOrder.BankShortNamePartner'
+    genericControls:
+      defColumnPos: 4
+  - name: 'IgnoreExternalAccount'
+    description: 'Flag if the external account (e.g. from PM1) should be ignored (call GetAccountFromPortfolio) or not (use extneral account).\r\n1= call GetAccountFromPortfolio\r\n0= use external account'
+  - name: 'VdfRequestForExtUnknownIsinNo'
+    description: 'Flag to decide what to do if the input instrument is not in Finstar.\r\n0= error back to SourceApp\r\n1= call VdfRequest'
+  - name: 'CheckOrderRestriction'
+    description: 'Defines how GOI handles the result of order restriction check:\r\n- OrderRestrictionResult.IsError? \r\n   - don''t save order\r\n   - exit with exception (SeverityLevel.Error)\r\n- OrderRestrictionResult.IsWarning?\r\n    - 10 (CheckWarnToTrader) : \r\n            - save order\r\n           -  trader gets warning during placement\r\n    - 20 (CheckWarn) : \r\n            - don''t save order             \r\n            - exit with exception (SeverityLevel.Warning)\r\n    - 30 (CheckError) :\r\n           - don''t save order\r\n           - exit with exception (SeverityLevel.Exception)\r\nImportant:\r\n-	CheckOrderRestrictions will always be performed (independent of PtTransSxGoiConfig.CheckOrderRestriction).\r\n-	OrderRestrictionResult.IsError: can''t be overruled!\r\n-	OrderRestrictionResult.IsWarning: can be overruled (IgnoreWarningCheckOrderRestriction) \r\n-	TsxOrdInsert will not call SxOrderRestriction if the order was entered with GOI (GoiApp is not null).'
+    genericControls:
+      refTable: 'PtTransSxGoiCheckLevel'
+      refField: 'CheckLevel'
+  - name: 'CheckBlockingOrPledging'
+    description: 'Defines how GOI handles the blocking warnings (errors will always be rejected) and pledging checks.\r\nTsxOrdInsert will not checks BlockingOrPledging if the order was entered with GOI (GoiApp is not null), it only checks it for E-Banking and PM1-orders.\r\n- 0 (NoCheck): don''t check BlockingOrPledging, save order.\r\n- 10 (CheckWarnToTrader): save order and send warning to trader if there is a blocking or pledging.\r\n- 20 (CheckWarn): don''t save order, exception (severity= warning) if there is a blocking or pledging.\r\n- 30 (CheckError): don''t save order, exception (severity= error) if there is a blocking or pledging.\r\nAddStockExOrder (check will still be done but in case of Warning the order would be saved without Warning).'
+    genericControls:
+      refTable: 'PtTransSxGoiCheckLevel'
+      refField: 'CheckLevel'
+  - name: 'IsSkipBlockingWarnings'
+    description: 'Flag to define if blocking warnings (PtBlocking.IsWarning=1) can be ignored for CheckBlockingOrPrledging.'
+  - name: 'OrderAlreadyExistsTimeLimit'
+    description: 'If no OrderKey will be passed from the external system, GOI checks if a similar order already exists. Whis this field a TimeLimit in seconds can be set before the order to check were entered.'
+  - name: 'CheckShortSell'
+    description: 'Field to define if a short sell should be checked and what should be done if it is a short sell.\r\nPossible values:\r\n- 0 (NoCheck): don''t check short sell, save order.\r\n- 10 (CheckWarnToTrader): save order and send warning to trader if it''s a short sell.\r\n- 20 (CheckWarn): don''t save order, exception (severity= warning) if it''s a short sell.\r\n- 30 (CheckError): don''t save order, exception (severity= error) if it''s a short sell.\r\nAddStockExOrder (check will still be done but in case of Warning the order would be saved without Warning).'
+    genericControls:
+      refTable: 'PtTransSxGoiCheckLevel'
+      refField: 'CheckLevel'
+  - name: 'CheckAvailableBalance'
+    description: 'Field to define if the balance should be checked (buy order) and what should be done if the customer has no enough available balance.\r\nPossible values:\r\n- 0 (NoCheck): don''t check available balance, save order.\r\n- 10 (CheckWarnToTrader): save order and send warning to trader if it''s a buy with low balance.\r\n- 20 (CheckWarn): don''t save order, exception (severity= warning) to partner if it''s a buy with low balance.\r\n- 30 (CheckError): don''t save order, exception (severity= error) to partner if it''s a buy with low balance.\r\nWarning may be overruled (ignored) by an optional input parameter of AddStockExOrder (check will still be done but in case of Warning the order would be saved without Warning).'
+    genericControls:
+      refTable: 'PtTransSxGoiCheckLevel'
+      refField: 'CheckLevel'
+  - name: 'CheckMaxMarketValue'
+    description: 'Field to define if the market value (buy and sell order) and what should be done if the calculated marketvalue is higher than the field MaxMarketValueHoCu.\r\nPossible values:\r\n- 0 (NoCheck): don''t check marketvalue, save order.\r\n- 10 (CheckWarnToTrader): save order and send warning to trader if it''s an order with too high marketvalue.\r\n- 20 (CheckWarn): don''t save order, exception (severity= warning) to partner if it''s an order with too high marketvalue.\r\n- 30 (CheckError): don''t save order, exception (severity= error) to partner if it''s an order with too high marketvalue.\r\nWarning may be overruled (ignored) by an optional input parameter of AddStockExOrder (check will still be done but in case of Warning the order would be saved without Warning).'
+    genericControls:
+      refTable: 'PtTransSxGoiCheckLevel'
+      refField: 'CheckLevel'
+  - name: 'CheckMarketValueCalcResult'
+    description: 'Field to define the behaviour if the result of the marketvalue-calculation (buy order) is 0 (possible it''s a market order and no PrPublicPrice was found).\r\nPossible values:\r\n- 0 (NoCheck): don''t check result of marketvalue-calculation, save order.\r\n- 10 (CheckWarnToTrader): save order and send warning to trader.\r\n- 20 (CheckWarn): don''t save order, exception (severity= warning) to partner.\r\n- 30 (CheckError): don''t save order, exception (severity= error) to partner.\r\nWarning may be overruled (ignored) by an optional input parameter of AddStockExOrder (check will still be done but in case of Warning the order would be saved without Warning).'
+    genericControls:
+      refTable: 'PtTransSxGoiCheckLevel'
+      refField: 'CheckLevel'
+  - name: 'CheckOrderDateValidity'
+    description: 'Field to define if OrderDateCheckValidity is performed and what to do with the result.\r\nPossible values:\r\n- 0 (NoCheck): don''t check ValidFrom, ValidTo, ValidToRule, save order\r\n                        (used for GLOX).\r\n- 30 (CheckError): don''t save order, exception (severity= error) to partner.\r\n- 40 (CheckUpdate): check OrderDateValidity and update fields if necessary.'
+    genericControls:
+      refTable: 'PtTransSxGoiCheckLevel'
+      refField: 'CheckLevel'
+  - name: 'CheckFundsOrderQuantity'
+    description: 'Field to define if the the quantity for funds orders (not ETF funds) should be checked with SmallDenom. If SmallestTradingUnit exists, it will be checked always.\r\nPossible values:\r\n- 0 (NoCheck): don''t check, save order.\r\n- 10 (CheckWarnToTrader): save order and send warning to trader.\r\n- 20 (CheckWarn): don''t save order, exception (severity= warning) to partner.\r\n- 30 (CheckError): don''t save order, exception (severity= error) to partner.\r\nWarning may be overruled (ignored) by an optional input parameter of AddStockExOrder (check will still be done but in case of Warning the order would be saved without Warning).'
+    genericControls:
+      refTable: 'PtTransSxGoiCheckLevel'
+      refField: 'CheckLevel'
+  - name: 'MaxMarketValueHoCu'
+    description: 'Maximum MarketValue in HomeCurrency (CHF).\r\nSee also field CheckMaxMarketValue'
+  - name: 'IsMandatoryOrderKey'
+    description: 'Flag to define if OrderKey (input) is mandatory to add (and delete or update) an order.\r\nThe OrderKey will be saved in PtTradingOrderMessage.BankInternalReferencePartner'
+  - name: 'IsMandatoryExtOrderMandator'
+    description: 'Flag to define if ExtOrderMandator (input) is mandatory to add (or update and delete) an order.\r\nThe ExtOrderMandant will be saved in PtTradingOrderMessage.ExtOrderMandator'
+  - name: 'IsMandatoryModRequestKey'
+    description: 'Flag to define if ModRequestKey (input) is mandatory to delete or update an order.\r\nThe ModRequestKey will be saved in PtTradingOrderMod.ModRequestKey and/or PtTradingOrderMessageMod.ModRequestKey'
+  - name: 'IsForEBanking'
+    description: 'Flag to define if the order was enterred in Ebanking.\r\nUsed to decide what tradingplace selection priority to use for selecting PreferredListing (SelPrioEb) and to define the possible AsValidToRule records (IsForEbankingStockExOrder).\r\n\r\n0= not EBanking order\r\n1= Ebanking order'
+  - name: 'IsSelPrioEb'
+    description: 'this field can be removed'
+  - name: 'OutOrderRejected'
+    description: 'Flag if should be send a message to partner system when it was not possible to create the order in trader system. Used for AssetMax \r\nMessageType: Order\r\nOrderStatus: Rejected\r\n0= no\r\n1= yes'
+  - name: 'OutOrderCreated'
+    description: 'Flag if should be send a message to partner system when the order was successfully created in trader system. Used for AssetMax \r\nMessageType: Order\r\nOrderStatus: Created\r\n0= no\r\n1= yes'
+  - name: 'OutOrderPlaced'
+    description: 'Flag if should be send a message to partner system when the order was placed in trader system. Used for PM1 (sub_geos).\r\nMessageType: Order\r\nOrderStatus: Placed\r\n0= no\r\n1= yes'
+  - name: 'OutOrderModified'
+    description: 'Flag to decide if an order modification (AllowOrderModOnOrder= 1)  in trader system (without modrequest from partner) should be passed to partner system. \r\nNot activated at the moment.\r\nMessageType: Order? Vielleicht eher Modification.\r\nOrderStatus: Modified? Vielleicht eher der effektive Status.\r\n0= no\r\n1= yes'
+  - name: 'OutOrderCanceled'
+    description: 'Flag if should be send a message to partner system when the order was canceled in trader system. Used for PM1 (deleted) and AssetMax (canceled).\r\nMessageType: Order\r\nOrderStatus: Canceled\r\n0= no\r\n1= yes\r\n--> nicht sicher ob dieses Feld wirklich benötigt wird oder ob es nicht durch OutModAnswer abgedeckt ist. Falls Mutation (CancelRequest) nur von Partner (PM1 / AssetMax) ausgelöst werden kann, sollte dieses Feld überflüssig sein).\r\nJedenfalls sollte nur entweder OutOrderCanceled oder OutModAnswer aktiviert sein, da sonst 2 Cancel (1 Order / 1 Modification) in MsGoiOutMsg gestellt würden.'
+  - name: 'OutOrderExpired'
+    description: 'Flag if should be send a message to partner system when the order is expired. Used for PM1 (matured) and for AssetMax (OrderExpired).\r\nMessageType: Order\r\nOrderStatus: Expired\r\n0= no\r\n1= yes'
+  - name: 'OutOrderBooked'
+    description: 'Flag if the booked order data (TradingPlace, PaymentDate, etc) in the settlement workflow should be passed to SourceApp. Used for thirdbank.\r\nMessageType: Order\r\nOrderStatus: PartiallyFilled/Filled\r\nMessageData: PaymentDate <> null\r\n0= no\r\n1= yes'
+  - name: 'OutTradeBrokerNew'
+    description: 'Flag to define if the new PtTransTrade records should be passed (150= F) from Brokerside to SourceApp. \r\nThis will be happen immediately when PtTransTrade (FIX 150= B) or PtTransTradePreSettlement is saved in AppServer (from GLOX or manually) (FIX 150= F).. \r\nMessageType: Trade\r\nOrderStatus: PartiallyFilled/Filled\r\nMessageData: TradeExecutionStatus = New\r\n0= no\r\n1= yes'
+  - name: 'OutTradeBroker'
+    description: 'Flag to define if the PtTransTrade data should be passed (150= F) from Brokerside to SourceApp. This will be happen immediately when PtTransTrade (FIX 150= B) or PtTransTradePreSettlement is saved in AppServer (from GLOX (FIX 150=F) or manually.\r\nMessageType: Trade\r\nOrderStatus: PartiallyFilled/Filled/Placed\r\nMessageData: TradeExecutionStatus = New/Modification/Cancelation/Booking/Renew\r\n0= no\r\n1= yes'
+  - name: 'OutTradeAllocation'
+    description: 'Flag if for listing order the trade allocation should be passed (MsgType= J).\r\nMessageType: TradeAllocation\r\nOrderStatus: PartiallyFilled/Filled\r\n0= no\r\n1= yes\r\n'
+  - name: 'OutTradeCustomer'
+    description: 'Flag if for a single order the booked trade data should be passed (150= B) from Customerside to SourcApp. This will be happen during the settlement workflow when the order is booked. In case of multiple trades we will send only 1 message with the sum of the trade quantity and the average price.\r\nHBL uses a type of ''Settlement by Order'' to the consumer.\r\nUsed for thirdbank\r\nMessageType: Trade\r\nOrderStatus: PartiallyFilled/Filled \r\nMessageData: TradeExecutionStatus = Booking\r\n0= no\r\n1= yes\r\n'
+  - name: 'OutCharge'
+    description: 'Flag if the booked charge data (from the customer) in the settlement workflow should be passed to SourceApp. \r\nDepending on the flag OutTradeCustomer and OutTradeAllocation the charges will be send in 150= B (OutTradeCustomer= 1) and/or MsgType= J (OutTradeAllocation= 1).\r\nUsed for thirdbank and for Inyova.\r\nMessageType: Trade/TradeAllocation\r\nOrderStatus: PartiallyFilled/Filled\r\n0= no\r\n1= yes'
+  - name: 'OutModPending'
+    description: 'Flag to decide if the accept of a modification request (IsDeclined = 0 and IsAccepted = 0) should be passed to SourceApp (Thirdbank= 1, E-Banking= 0).\r\n0= no\r\n1= yes'
+  - name: 'OutModAnswer'
+    description: 'Flag to decide if the answer of a modification request (IsDeclined = 1 or IsAccepted = 1) should be passed to SourceApp (AssetMax = 1, Thirdbank= 0).\r\n0= no\r\n1= yes'

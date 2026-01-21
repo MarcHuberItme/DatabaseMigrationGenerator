@@ -1,0 +1,56 @@
+table:
+  name: 'RePremisesAttachment'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Images'
+    - german:
+        formTitle: 'Photos'
+    - french:
+        formTitle: 'Photos'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'Format'
+    description: 'Format of Document (like .jpg / .bmp / .tif - or Winword95, Winword97)'
+    genericControls:
+      refTable: 'AsDocumentFormat'
+      refField: 'Format'
+      defColumnPos: 1
+  - name: 'RecordDate'
+    description: 'date of ''recording'' the document'
+    genericControls:
+      defColumnPos: 2
+  - name: 'Comments'
+    description: 'Comments of the document'
+    genericControls:
+      multiLine: true
+      defColumnPos: 3
+  - name: 'Attachment'
+    description: ''
+  - name: 'UsedForPfB'
+    description: 'Photo soll der Pfandbriefbank übermittelt werden'
+    genericControls:
+      defColumnPos: 4
+  - name: 'DatePfB'
+    description: 'Sent to Pfandbriefbank'
+  - name: 'FileName'
+    description: 'The name of the file/attachment being uploaded. This can not be null'

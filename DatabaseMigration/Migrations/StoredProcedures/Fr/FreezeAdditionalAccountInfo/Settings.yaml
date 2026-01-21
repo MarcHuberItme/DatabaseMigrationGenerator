@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'FreezeAdditionalAccountInfo'
+  description: 'save account data snapshot at end of month.\r\nSource Tables: PtConsCreditAccountDetail, PtConsCreditMonitor, PtAccountProcRule, PrPrivateProcRule, PtContract, PtContractPartner\r\nDestination Tables: AcFrozenAccount'

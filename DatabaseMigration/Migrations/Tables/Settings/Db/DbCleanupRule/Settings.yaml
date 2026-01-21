@@ -1,0 +1,63 @@
+table:
+  name: 'DbCleanupRule'
+  description: 'Contains rules about tables to cleanup, like delete all entries that are older than 90 days'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Cleanup Rule'
+        helpText: 'Rule definition for cleaning up a table'
+    - german:
+        formTitle: 'Aufräum Regel'
+        helpText: 'Regel für das löschen einer Tabelle'
+  columns:
+  - name: 'Name'
+    description: 'Name of Rule'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Description'
+    description: 'Description of the Rule'
+    genericControls:
+      multiLine: true
+  - name: 'TableName'
+    description: 'Name of Table to Cleanup'
+    genericControls:
+      defColumnPos: 2
+  - name: 'MaxDeletePerChunk'
+    description: 'The maximum amount of Rows to delete per chunk'
+    maxValue: '4900'
+  - name: 'Minute'
+    description: 'Crontab Like Minute. 0-59 [* , - /] null = *'
+  - name: 'Hour'
+    description: 'Crontab Like Hour. 0-23 [* , - /] null = *'
+  - name: 'DayOfWeek'
+    description: 'Crontab Like DayOfWeek. 0-6  or SUN-SAT   [* , - / # L ?] null = *'
+  - name: 'DayOfMonth'
+    description: 'Crontab Like DayOfMonth. 1-31 [* , - / L W ?] null = *'
+  - name: 'Active'
+    description: 'If this rule is active or not'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidFrom'
+    description: 'valid from date, can be null'
+  - name: 'ValidTo'
+    description: 'valid to date, can be null'
+  - name: 'Review'
+    description: 'Flag for Autopilot. If Review is set to True (1), someone has to manually review the suggested cleanup job, in order to be processed.'
+  - name: 'PhysicalDelete'
+    description: 'Sets the option, if a record will be deleted for good, or only logicaly (set version to "deleted")'
+  - name: 'WhereQuery'
+    description: 'Where statement, by which the entries of the specified table will be selected to be deleted.'
+    genericControls:
+      multiLine: true
+  - name: 'LastExecution'
+    description: 'Last execution datetime in order to check if a new execution is due\r\ndeprecated! use DbCleanupMetadata.LastExecutionTimestamp instead'

@@ -1,0 +1,34 @@
+table:
+  name: 'PtSISAmounts'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: c1378147-e089-4f5e-aba8-c2f0e293c21a
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransMessageSISId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransMessageSis'
+      refField: 'Id'
+  - name: 'AmountQualifier'
+    description: ''
+    genericControls:
+      refTable: 'PtSISAmountQualifier'
+      refField: 'AmtQualifierCode'
+      defColumnPos: 1
+  - name: 'AmountSign'
+    description: ''
+  - name: 'SettlementAmountCurrency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 2
+  - name: 'SettlementAmount'
+    description: ''

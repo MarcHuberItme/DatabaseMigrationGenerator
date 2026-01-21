@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAnnuInterestDebitAccount'
+  description: ''

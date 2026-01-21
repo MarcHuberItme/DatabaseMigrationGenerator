@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxCollectTaxReportData'
+  description: 'Alpha Tax Source:\r\ncollect all data'

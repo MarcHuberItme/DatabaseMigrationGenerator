@@ -1,0 +1,66 @@
+table:
+  name: 'PtDsPartnerTransfer'
+  description: 'Transmission log/staging table for Deposit solution partner transfer'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'TransferProcessId'
+    description: ''
+    genericControls:
+      refTable: 'AsExternalAppTransferProcess'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ExtAppPartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtExternalAppPartner'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'FinstarPartnerNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'Title'
+    description: ''
+  - name: 'FirstName'
+    description: ''
+  - name: 'LastName'
+    description: ''
+  - name: 'IsFatca'
+    description: ''
+  - name: 'IsPep'
+    description: ''
+  - name: 'Gender'
+    description: ''
+  - name: 'LocalTaxNumber'
+    description: ''
+  - name: 'MaritalStatus'
+    description: ''
+  - name: 'DateOfBirth'
+    description: ''
+  - name: 'CountryOfBirth'
+    description: ''
+  - name: 'Profession'
+    description: ''
+  - name: 'RequestId'
+    description: ''
+    genericControls:
+      refTable: 'PtDsRequest'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'RetryCount'
+    description: ''
+  - name: 'Nationality'
+    description: 'ISO nationality, e.g. CH'
+  - name: 'RequiresManualIntervention'
+    description: ''
+  - name: 'ErrorReason'
+    description: ''

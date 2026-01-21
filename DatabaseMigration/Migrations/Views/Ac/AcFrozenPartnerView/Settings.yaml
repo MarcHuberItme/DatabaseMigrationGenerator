@@ -1,0 +1,229 @@
+view:
+  name: 'AcFrozenPartnerView'
+  description: 'partner detail information (frozen snapshot) for fire export\r\n2025-05-12/ram: AND TKBNSectorCode IS NULL bei Private Haushalte hinzugefügt'
+frontendView:
+  name: 'AcFrozenPartnerView'
+  description: 'Diese Tabelle enthält den monatlichen Snapshot der Partnerdaten'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdPendingSubChanges'
+    dataType: 'smallint'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'HdEditStamp'
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    defaultValue: '(newsequentialid())'
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdProcessId'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'WfProcess'
+      refField: 'Id'
+  - name: 'HdStatusFlag'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'ReportDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      isNoUpdate: true
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      isNoUpdate: true
+  - name: 'PartnerNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'SexStatusNo'
+    description: ''
+    dataType: 'tinyint'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+      isNoUpdate: true
+  - name: 'LegalStatusNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtLegalStatus'
+      refField: 'LegalStatusNo'
+      isNoUpdate: true
+  - name: 'BusinessTypeCode'
+    description: ''
+    dataType: 'varchar'
+    prec: 6
+    genericControls:
+      refTable: 'PtBusinessType'
+      refField: 'NogaCode'
+      isNoUpdate: true
+  - name: 'NogaCode2008'
+    description: ''
+    dataType: 'varchar'
+    prec: 6
+    genericControls:
+      refTable: 'PtNoga2008'
+      refField: 'NogaCode'
+      defColumnPos: 6
+      isNoUpdate: true
+  - name: 'BranchNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      isNoUpdate: true
+  - name: 'ReportAdrLine'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'SwissTownNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'AsSwissTown'
+      refField: 'SwissTownNo'
+      isNoUpdate: true
+  - name: 'Canton'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 2
+    genericControls:
+      refTable: 'AsCanton'
+      refField: 'CantonSymbol'
+      defColumnPos: 3
+      isNoUpdate: true
+  - name: 'FiscalDomicileCountry'
+    description: ''
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'Nationality'
+    description: ''
+    dataType: 'char'
+    prec: 2
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      defColumnPos: 5
+      isNoUpdate: true
+  - name: 'Employees'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      isNoUpdate: true
+  - name: 'EmployeeGroupNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+    genericControls:
+      isNoUpdate: true
+  - name: 'FireEmployeeValue'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      isNoUpdate: true
+  - name: 'NogaAbteilung2008'
+    description: ''
+    dataType: 'varchar'
+    prec: 2
+    genericControls:
+      isNoUpdate: true
+  - name: 'NogaGruppe2008'
+    description: ''
+    dataType: 'varchar'
+    prec: 3
+    genericControls:
+      isNoUpdate: true
+  - name: 'NogaKlasse2008'
+    description: ''
+    dataType: 'varchar'
+    prec: 5
+    genericControls:
+      isNoUpdate: true
+  - name: 'LargeExpGroupNo'
+    description: 'Partnernummer für Klumpenrisiko'
+    dataType: 'decimal'
+    prec: 8
+    genericControls:
+      defColumnPos: 7
+  - name: 'CodeC510'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AcFireC510'
+      refField: 'C510Code'
+      defColumnPos: 9
+      isNoUpdate: true
+  - name: 'C510_Override'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AcFireC510'
+      refField: 'C510Code'
+  - name: 'C026_Deri'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AcFireC026'
+      refField: 'C026'
+  - name: 'C026_Repo'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AcFireC026'
+      refField: 'C026'
+  - name: 'C026_DF'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AcFireC026'
+      refField: 'C026'
+  - name: 'RelationshipMonths'
+    description: ''
+    dataType: 'int'
+  - name: 'LongTermLoan'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+    defaultValue: '0'
+  - name: 'AmountOfProducts'
+    description: ''
+    dataType: 'int'

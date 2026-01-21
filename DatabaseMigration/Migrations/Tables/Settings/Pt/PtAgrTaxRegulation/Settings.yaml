@@ -1,0 +1,74 @@
+table:
+  name: 'PtAgrTaxRegulation'
+  description: 'agreement between a partner and the bank about TaxRegulations;\r\ncan be a stand-alone agreement or a component of the BaseAgreement\r\nUS und EU\r\n(Entweder oder gefüllt - solange Migration)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 8
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax Regulation'
+    - german:
+        formTitle: 'Steuerabkommen'
+    - french:
+        formTitle: 'Convention fiscale'
+  columns:
+  - name: 'PartnerId'
+    description: 'foreign-key;  Id of PtBase'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'VersionNo'
+    description: ''
+  - name: 'PrintDate'
+    description: ''
+  - name: 'BeginDate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ExpirationDate'
+    description: ''
+  - name: 'PeriodOfNotice'
+    description: 'period of time to cancel the deal; in days, month or years'
+  - name: 'Interval'
+    description: 'foreign-key;  candidate-key of AsInterval (Interval)\r\n(VB-function DateAdd)  d, m, yyyy of the PeriodOfNotice'
+    genericControls:
+      refTable: 'AsInterval'
+      refField: 'Interval'
+  - name: 'Tin'
+    description: 'TIN is used for US-Tax-Regulations - The Taxpayer Identification Number (TIN), is a tax processing number for certain nonresident and resident aliens, their spouse, and dependents.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'BasketNo'
+    description: 'The Basket is a category that contains the status of a client concerning US-Tax Regulation, for example:\r\n- US-Person with form W9\r\n- Non-US-Person (without Doppelbesteuerungsabkommen DBA)\r\n- foreigner with DBA'
+    genericControls:
+      refTable: 'PtUSBasket'
+      refField: 'BasketNo'
+      defColumnPos: 2
+  - name: 'InterestTaxation'
+    description: 'EU Interest taxation\r\n- freiwilliger Informationsaustausch (Besteuerung im Steuersitzland)\r\n- Quellensteuer (CH-er Bank liefert ab)'
+    genericControls:
+      refTable: 'PtEUTaxation'
+      refField: 'InterestTaxation'
+      defColumnPos: 3
+  - name: 'MgVrxKey'
+    description: 'FIS-VRX database key'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'TaxStatusNo'
+    description: 'Status Nr. für Waiver Informationen'
+    genericControls:
+      refTable: 'PtAgrTaxStatus'
+      refField: 'StatusNo'

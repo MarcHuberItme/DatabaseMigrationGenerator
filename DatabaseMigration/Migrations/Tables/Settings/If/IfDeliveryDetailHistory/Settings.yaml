@@ -1,0 +1,33 @@
+table:
+  name: 'IfDeliveryDetailHistory'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 7dfee250-9877-4fdc-9d97-41e6028999f6
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'SettingGroupId'
+    description: ''
+    genericControls:
+      refTable: 'IfSettingGroup'
+      refField: 'Id'
+  - name: 'StartDateTime'
+    description: ''
+  - name: 'EndDateTime'
+    description: ''
+  - name: 'State'
+    description: ''
+  - name: 'IsDayEnd'
+    description: ''
+  - name: 'RefItemId'
+    description: '??'
+  - name: 'Settings'
+    description: '??'

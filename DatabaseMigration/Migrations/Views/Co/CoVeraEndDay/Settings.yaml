@@ -1,0 +1,3 @@
+view:
+  name: 'CoVeraEndDay'
+  description: 'Bring fü jedes Konto die letzte Tagesende Verarbeitungsgruppennumme, wird für EInzel WB gebraucht'

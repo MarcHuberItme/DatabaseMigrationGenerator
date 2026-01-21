@@ -1,0 +1,116 @@
+table:
+  name: 'AsDocument'
+  description: 'Table with a description of all saved documents (for example documents for Identification like Passport, etc.)\r\n\r\nFor each AsDocument there are one or more AsDocumentData. Binary data of the document are stored in AsDocumentData'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 2
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Document description'
+    - german:
+        formTitle: 'Dokument Beschreibung'
+  columns:
+  - name: 'DocumentNo'
+    description: 'Unique application number of a document (could be printed within Barcode)\r\nBarcode: BcNo (4 n) -  DocumentNo (9 n) - TotalPageNo (3 n)\r\n\r\nA doument with the same number may exist in various formats (.doc, .tif etc)\r\nThe DocumentNo represents a logical (application) group of an amount of physical documents, that are stored in AsDocumentData (e.g.: DocumentNo 4711 = Payment Avis with 6 single documents --> Avis + 5 scanned images).\r\n\r\nOnly when the document has a barcode it is very necessary to have a document number. That''s why it is not declare as unique in database. 04.02.2003/mct'
+    maxValue: '999999999'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'NumPages'
+    description: 'number of pages\r\nfor barcode only 3 digits are used (d.h. max. 999 pages)'
+    genericControls:
+      defColumnPos: 7
+  - name: 'Type'
+    description: 'type of the document\r\ne.g. Börsenabrechnung, ZV-Anzeige, Effektenjournal'
+    genericControls:
+      refTable: 'AsCorrItem'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'VirtualDate'
+    description: 'virtual or effective date of the document\r\n\r\ne.g.: account statement referes to the 31.12.2003 (virtualdate) but is created only on the 03.01.2004 or the other way round the document referes to the 31.12.2003 (virtualdate) but is already produced on the 29.12.2003'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PartnerId'
+    description: 'Partner it belongs to. All documents that belong to a partner must have a partnerid.'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+      isNoUpdate: true
+  - name: 'PortfolioId'
+    description: 'If the document belongs to a specific portfolio, this field is set'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 5
+  - name: 'AccountBaseId'
+    description: 'If the document belongs to a specific account, this field is filled.'
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'Location'
+    description: '1 = Operativ (Legal contract which still has validity)\r\n2 = Archiv'
+    genericControls:
+      isNoUpdate: true
+  - name: 'TemplateId'
+    description: 'template that was used to produce this document\r\nReference AsTemplate.Id is guaranteed using separate check constraint'
+    genericControls:
+      hasDetailBtn: true
+  - name: 'BankSpeakerId'
+    description: 'Id of the user that will be set in PtContactReport.BankSpeakerId when the document is definitly printed and the contact report is generated.'
+    genericControls:
+      refTable: 'AsUser'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'AddressId'
+    description: 'AddressId that was used for the document and that has to be saved in contact report'
+    genericControls:
+      refTable: 'PtAddressView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'ContactInitiatorId'
+    description: 'value to save to PtContactReport (Document Manager)'
+    genericControls:
+      refTable: 'AsContactInitiator'
+      refField: 'Id'
+  - name: 'ContactTopicId'
+    description: 'value to save to PtContactReport (Document Manager)'
+    genericControls:
+      refTable: 'AsContactTopic'
+      refField: 'Id'
+  - name: 'ContactTriggerId'
+    description: 'value to save in PtContactReport (Document Manager)'
+    genericControls:
+      refTable: 'AsContactTrigger'
+      refField: 'Id'
+  - name: 'ContactMediaId'
+    description: 'value to save to PtContactReport (document manager)'
+    genericControls:
+      refTable: 'AsContactMedia'
+      refField: 'Id'
+  - name: 'Amount'
+    description: 'field amount is used to better find documents like payment order, ...'
+  - name: 'ExpirationStart'
+    description: 'On this date, the legally required keeping and retention period for this document starts.\r\nFor documents that may never be deleted, this field contains the date of 31.12.9999 (but just 9999-12-31 00:00:00.000, no time!)'
+  - name: 'PrivacyGroupNo'
+    description: 'If there is a restricted access to the document, the field privacy group no defines the authorized privacy group.'
+    genericControls:
+      refTable: 'AsPrivacyGroup'
+      refField: 'PrivacyGroupNo'
+  - name: 'DocVerification'
+    description: 'verification of the document'
+    genericControls:
+      refTable: 'AsDocumentVerification'
+      refField: 'VerifcationTypeNo'
+  - name: 'ExternalRefNo'
+    description: '-Finnova-ID bei Riviera\r\n-Id aus Cembra System'

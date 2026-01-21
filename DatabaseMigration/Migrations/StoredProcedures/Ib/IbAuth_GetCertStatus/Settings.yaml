@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'IbAuth_GetCertStatus'
+  description: 'Returns the Status and Contact Persons for the specified Certificate (used by EbAuthService .NET).'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CySettings'
+  description: 'Give back Settings of one CyCommission ID'

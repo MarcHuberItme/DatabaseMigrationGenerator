@@ -1,0 +1,50 @@
+table:
+  name: 'NcIndexVersion'
+  description: 'Representing a particular index version, a index who has been created.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0ebe92b4-009e-4d5f-b882-c8d9daf72042
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    descField: 'FileName'
+    uiTableDescription:
+    - english:
+        formTitle: 'NameMatching Index Vers.'
+    - german:
+        formTitle: 'Namematching Index Vers.'
+  columns:
+  - name: 'IndexDefinitionId'
+    description: 'Id of the used IndexDefinition (NcIndexDefinition) to create this version.'
+    genericControls:
+      refTable: 'NcIndexDefinition'
+      refField: 'Id'
+  - name: 'TimeStart'
+    description: 'Time when the index buildung process has been started.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TimeEnd'
+    description: 'Time when the index building process has been finished.'
+    genericControls:
+      defColumnPos: 2
+  - name: 'TimeLastProfilUpdate'
+    description: 'Time when the newest profil given from CouchDB has been inserted/updated into the CouchDB. This field is used to determine with which profiles a new index of the same IndexDefinition has to be created.'
+  - name: 'FileName'
+    description: 'Name of the physical index file. Only the name whitout the full path. The exact full path is defined on the machine of the service who use it.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'NumberOfEntitiesProc'
+    description: 'Show the number of entities (persons and/or organisations) has been proceeded. This number not means how many documents are added, deleted or updated. It''s only the number of proceeded entities.'
+  - name: 'SearchProperties'
+    description: 'JSON-String of the search properties with which this index was created.'
+    genericControls:
+      multiLine: true
+  - name: 'StatusType'
+    description: 'Status of the index building process for this index.'
+    genericControls:
+      refTable: 'NcStatusType'
+      refField: 'Type'
+      defColumnPos: 5

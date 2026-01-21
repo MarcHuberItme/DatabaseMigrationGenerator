@@ -1,0 +1,91 @@
+view:
+  name: 'CyRateView'
+  description: 'This view provides an overview about the currency rates for customer issues.'
+frontendView:
+  name: 'CyRateView'
+  description: 'This view provides an overview about the currency rates for customer issues.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 39e36615-106e-4bd9-b32f-7d3294315ab3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Rate View'
+    - german:
+        formTitle: 'Kurs Übersicht'
+  columns:
+  - name: 'Sequence'
+    description: ''
+    dataType: 'int'
+    isNotNull: true
+  - name: 'CySymbolTarget'
+    description: ''
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'CySymbolOriginate'
+    description: ''
+    dataType: 'char'
+    isNotNull: true
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 1
+  - name: 'AmountInTargetCurrency'
+    description: ''
+    dataType: 'money'
+    genericControls:
+      defColumnPos: 2
+  - name: 'ValidFrom'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 3
+  - name: 'ValidTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'FactorOriginate'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      defColumnPos: 4
+  - name: 'RateFactor'
+    description: 'Rate multiplied with the factor of the origin currency.'
+    dataType: 'float'
+    genericControls:
+      defColumnPos: 5
+  - name: 'RateType'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'CyRateType'
+      refField: 'RateType'
+  - name: 'BuyRate'
+    description: ''
+    dataType: 'float'
+    genericControls:
+      defColumnPos: 6
+  - name: 'SellRate'
+    description: ''
+    dataType: 'float'
+    genericControls:
+      defColumnPos: 7
+  - name: 'SpreadManager'
+    description: ''
+    dataType: 'float'
+  - name: 'SpreadTrader'
+    description: ''
+    dataType: 'float'
+  - name: 'AmountInOriginCurrency'
+    description: ''
+    dataType: 'money'

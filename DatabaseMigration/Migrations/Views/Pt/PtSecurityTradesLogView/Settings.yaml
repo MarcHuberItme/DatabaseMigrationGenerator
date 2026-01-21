@@ -1,0 +1,3 @@
+view:
+  name: 'PtSecurityTradesLogView'
+  description: 'View for Effektenjournal, new version - TFS ITEM 674 - Defect #52098\r\n- Changes for modification and for PtTransTradePreSettlement / wwo 20.06.2022 (FIN-6460)'

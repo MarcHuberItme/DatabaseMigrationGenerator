@@ -1,0 +1,75 @@
+table:
+  name: 'RePollution'
+  description: 'inherited pollution burden\r\ne.g. toxic waste'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'inherited pollution burde'
+    - german:
+        formTitle: 'Altlasten'
+    - french:
+        formTitle: 'contamination'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'EstimationRelevance'
+    description: 'idicates whether the premises is relevant for the Estimation\r\n0 = YES / 1 = NO\r\nFIS-2000: ALTLAST_FL'
+  - name: 'PollutionCauseId'
+    description: ''
+    genericControls:
+      refTable: 'RePollutionCause'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'BusinessTypeCode'
+    description: 'Business type of the company that causes the pollution'
+    genericControls:
+      refTable: 'PtBusinessType'
+      refField: 'NogaCode'
+      hasDetailBtn: true
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 2
+  - name: 'FromDump'
+    description: 'Wurde die Altlast von einer Deponie verursacht ?\r\n1 = YES'
+  - name: 'FromAccident'
+    description: 'wurde die Altlast durch einen Unfall verursacht ?\r\n1 = YES'
+  - name: 'FromIndustry'
+    description: 'Altlast wurde durch Industrie verursacht ?\r\n1 = YES'
+  - name: 'Action1'
+    description: '1 = YES - Massnahme wurde getroffen'
+  - name: 'Action2'
+    description: '1 = YES - Massnahme wurde getroffen'
+  - name: 'Action3'
+    description: '1 = YES - Massnahme wurde getroffen'
+  - name: 'Action4'
+    description: '1 = YES - Massnahme wurde getroffen'
+  - name: 'Action5'
+    description: '1 = YES - Massnahme wurde getroffen'
+  - name: 'Action6'
+    description: '1 = YES - Massnahme wurde getroffen'
+  - name: 'DumpAmount'
+    description: 'Betrag für Deponie'
+  - name: 'AccidentAmount'
+    description: 'Betrag für Unfall'
+  - name: 'IndustryAmount'
+    description: 'Betrag für Industrie'

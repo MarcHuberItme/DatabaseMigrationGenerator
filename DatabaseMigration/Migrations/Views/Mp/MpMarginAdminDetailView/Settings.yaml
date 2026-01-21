@@ -1,0 +1,60 @@
+view:
+  name: 'MpMarginAdminDetailView'
+  description: ''
+frontendView:
+  name: 'MpMarginAdminDetailView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 1b7f657d-bf02-4f66-b37b-cee0cfa5299b
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PortfolioTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+  - name: 'StaffRebate'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'IntVal'
+  - name: 'Symbol'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'Margin'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+  - name: 'ValueType'
+    description: ''
+    dataType: 'varchar'
+    prec: 3
+    genericControls:
+      refTable: 'MpValueType'
+      refField: 'Label'
+  - name: 'CurveId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'MpCurve'
+      refField: 'Id'

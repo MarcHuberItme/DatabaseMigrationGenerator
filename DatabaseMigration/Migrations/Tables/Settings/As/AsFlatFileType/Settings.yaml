@@ -1,0 +1,29 @@
+table:
+  name: 'AsFlatFileType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'Label'
+    description: 'Unique Label of the file type'
+  - name: 'Delimiter'
+    description: ''
+  - name: 'DelimiterRegularExpression'
+    description: ''
+  - name: 'HeaderRows'
+    description: ''
+  - name: 'TrailerRows'
+    description: ''
+  - name: 'SkipHeaderRows'
+    description: ''
+  - name: 'SkipTrailerRows'
+    description: ''
+  - name: 'HeaderRecord'
+    description: 'Header Record for flexibility and column repositioning'

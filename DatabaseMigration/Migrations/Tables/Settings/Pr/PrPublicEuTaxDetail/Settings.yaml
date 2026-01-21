@@ -1,0 +1,87 @@
+table:
+  name: 'PrPublicEuTaxDetail'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublicEuTax'
+      parentRelationField: 'PublicEuTaxId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'EU tax details'
+    - german:
+        formTitle: 'Details EU-Steuerrückbeh.'
+  columns:
+  - name: 'PublicEuTaxId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicEuTax'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'RegionCountryCode'
+    description: 'VDF: EUD.EUL.3988'
+    genericControls:
+      refTable: 'PrPublicRegionCountry'
+      refField: 'RegionCountryCode'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'CountryTaxDefinitionNo'
+    description: 'VDF: EUD.EUL.4915'
+    genericControls:
+      refTable: 'PrPublicCountryTaxDefinition'
+      refField: 'CountryTaxDefinitionNo'
+      defColumnPos: 2
+  - name: 'ProspectusProportionClassNo'
+    description: 'VDF: EUD.EUG.4921-A'
+    genericControls:
+      refTable: 'PrPublicProportionClass'
+      refField: 'ProportionClassNo'
+      defColumnPos: 3
+  - name: 'AssetPropCalcMethNo'
+    description: 'VDF: EUD.EUG.4914'
+    genericControls:
+      refTable: 'PrPublicAssetPropCalcMeth'
+      refField: 'AssetPropCalcMethNo'
+      defColumnPos: 4
+  - name: 'CalcMethProportionClassNo'
+    description: 'VDF: EUD.EUG.4921-B'
+    genericControls:
+      refTable: 'PrPublicProportionClass'
+      refField: 'ProportionClassNo'
+      defColumnPos: 5
+  - name: 'ProportionNonGrandfathBond'
+    description: 'VDF: EUD.EUG.5835'
+  - name: 'ConsiderDistribution'
+    description: 'VDF: EUD.EUG.4924'
+  - name: 'ConsiderRedemptionSale'
+    description: 'VDF: EUD.EUG.4920'
+    genericControls:
+      refTable: 'PrPublicHistoryFlag'
+      refField: 'HistoryFlagNo'
+  - name: 'SpecInterestTaxScopeNo'
+    description: 'VDF: EUD.EUF.4923'
+    genericControls:
+      refTable: 'PrPublicEuInterestTaxScope'
+      refField: 'EuInterestTaxScopeNo'
+  - name: 'DiscountInTolerance'
+    description: 'VDF: EUD.EUF.4924'
+    genericControls:
+      refTable: 'PrPublicFlag'
+      refField: 'Flag'
+  - name: 'EuTaxInstrClassNo'
+    description: 'VDF: EUD.EUF.4909'
+    genericControls:
+      refTable: 'PrPublicEuTaxInstrClass'
+      refField: 'EuTaxInstrClassNo'

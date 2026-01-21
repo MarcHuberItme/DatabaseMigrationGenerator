@@ -1,0 +1,88 @@
+table:
+  name: 'PtShadowBookingSecurity'
+  description: 'SecurityTransaction, history of ShadowBooking'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: a457c69a-1aff-4501-93c1-65635c1471d4
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Booking Security'
+    - german:
+        formTitle: 'Buchungen Anlagen'
+  columns:
+  - name: 'PtShadowBookingId'
+    description: 'reference shadow booking'
+    genericControls:
+      refTable: 'PtShadowBooking'
+      refField: 'Id'
+  - name: 'ExecutionDate'
+    description: 'execution date'
+  - name: 'BookingTypeCode'
+    description: 'booking type code (Finnova)'
+  - name: 'BookingType'
+    description: 'booking type'
+    genericControls:
+      defColumnPos: 2
+  - name: 'DebitCreditCode'
+    description: 'debit / credit code (1 = debit, 2 = credit)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TradingCurrency'
+    description: 'trading currency'
+  - name: 'Price'
+    description: 'price (trading currency)'
+    genericControls:
+      defColumnPos: 4
+  - name: 'GrossAmount'
+    description: 'gross amount (trading currency)'
+    genericControls:
+      defColumnPos: 5
+  - name: 'TotalFees'
+    description: 'total fees (trading currency)'
+    genericControls:
+      defColumnPos: 6
+  - name: 'B2BK'
+    description: 'brokerage fees (trading currency)'
+  - name: 'B2SA'
+    description: 'stamp duty (trading currency)'
+  - name: 'B2EK'
+    description: 'ticket fees (trading currency)'
+  - name: 'B2FK'
+    description: 'third party fees (trading currency)'
+  - name: 'B2DS'
+    description: 'other fees (trading currency)'
+  - name: 'B2DX'
+    description: 'derivative charges (trading currency)'
+  - name: 'B2SE'
+    description: 'rounding adjustment negativ (trading currency)'
+  - name: 'B2RT'
+    description: 'rounding adjustment positiv (trading currency)'
+  - name: 'NetAmountAcc'
+    description: 'net amount in account currency'
+    genericControls:
+      defColumnPos: 7
+  - name: 'ForeignExchangeRate'
+    description: 'foreign exchange rate trading currency vs CHF'
+  - name: 'StatementDescription'
+    description: 'statement description'
+  - name: 'StockExchangeCode'
+    description: 'stock exchange code (Finnova)'
+  - name: 'StockExchange'
+    description: 'stock exchange'
+  - name: 'Amount'
+    description: 'Amount (always positive - debit or credit is handled in own field)'
+    genericControls:
+      defColumnPos: 8
+  - name: 'BookingDate'
+    description: 'booking date'
+  - name: 'ValueDate'
+    description: 'value date'
+    genericControls:
+      defColumnPos: 1

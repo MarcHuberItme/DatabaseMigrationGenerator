@@ -1,0 +1,117 @@
+table:
+  name: 'PrPublicEvent'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - german:
+        formTitle: 'Instrumentenereignis'
+  columns:
+  - name: 'PublicId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'PublicCfId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicCf'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PublicCfSetId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicCfSet'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PublicTransformId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicTransform'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PublicOfficialMeetingId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicOfficialMeetingView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'EffectiveDate'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+  - name: 'ExDate'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'EventTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicEventType'
+      refField: 'EventTypeNo'
+      defColumnPos: 3
+  - name: 'PeriodStartDate'
+    description: ''
+  - name: 'PeriodEndDate'
+    description: ''
+  - name: 'ReplyClient'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'ReplyDepositary'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'TransferDepositary'
+    description: ''
+  - name: 'EventStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicEventStatus'
+      refField: 'EventStatusNo'
+      defColumnPos: 7
+  - name: 'Depositary'
+    description: ''
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'UserName'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'ListDate'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+      isNoUpdate: true
+  - name: 'RigthsTradingFrom'
+    description: ''
+  - name: 'RigthsTradingTo'
+    description: ''
+  - name: 'InfoInstrument1'
+    description: ''
+  - name: 'InfoInstrument2'
+    description: ''
+  - name: 'InfoRatioOld'
+    description: ''
+  - name: 'InfoRatioNew'
+    description: ''
+  - name: 'InfoPrice'
+    description: ''
+  - name: 'InfoRestriction'
+    description: ''
+  - name: 'InfoCorpAct'
+    description: ''
+  - name: 'InfoExPosition'
+    description: ''

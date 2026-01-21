@@ -1,0 +1,53 @@
+table:
+  name: 'PtInsaInterfaceController'
+  description: 'Controller-table for the different INSA-Files and their generation status.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 93dd25c4-d1d7-4060-b575-fdb05f708086
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'FileTypeCode'
+    description: 'KURST, XHOLDING, etc.'
+    genericControls:
+      refTable: 'PtInsaFileTypeCode'
+      refField: 'FileTypeCode'
+      defColumnPos: 1
+  - name: 'Status'
+    description: ''
+    genericControls:
+      refTable: 'PtInsaFileTypeStatus'
+      refField: 'Status'
+      defColumnPos: 2
+  - name: 'TransdateStart'
+    description: 'Start of process where batch generates Insa-data.\r\nIMPORTANT: TransdateStart doesn''t match the valuation-date, it only says when the Insa-records where generated. The valuation-date is tipically one day older, it can be determined with LastRunId.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TransdateFinish'
+    description: 'End of process where batch generates Insa-data.\r\nIMPORTANT: TransdateFinish doesn''t match the valuation-date, it only says when the Insa-records where generated. The valuation-date is tipically one day older, it can be determined with LastRunId.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Transdate'
+    description: 'Date and FileTypeCode have a unique-key constraint. This ensures that only one filetype can be inserted each day. The time is always set to ''00:00:00.000'' (ensured by a check-constraint).\r\nIMPORTANT: Transdate doesn''t match the valuation-date, it only says when the Insa-records where generated. The valuation-date is tipically one day older, it can be determined with LastRunId.'
+  - name: 'LastRunId'
+    description: '-> VaRun.Id, stores the run-id the prices have been generated with (KURST, DEVIT)'
+    genericControls:
+      refTable: 'VaRun'
+      refField: 'Id'
+      defColumnPos: 5
+  - name: 'DownloadDateStart'
+    description: 'Start of file-generation. If files were not generated yet, it is null.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'DownloadDateFinish'
+    description: 'End-time of file-generation. If files were not generated yet, it is null.'
+    genericControls:
+      defColumnPos: 7
+  - name: 'UserName'
+    description: 'User who downloaded the file.'
+  - name: 'WorkStation'
+    description: 'Workstation from where the file has been downloaded.'

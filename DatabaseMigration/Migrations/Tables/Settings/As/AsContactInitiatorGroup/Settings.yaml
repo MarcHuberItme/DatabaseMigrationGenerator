@@ -1,0 +1,24 @@
+table:
+  name: 'AsContactInitiatorGroup'
+  description: 'contact initiator group name... used for faster search access in the contact report.'
+  tableUsageNo: 1
+  domainType: 30
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Contact Initiator Group'
+    - german:
+        formTitle: 'Kontaktanlass Gruppe'
+  columns:
+  - name: 'InitiatorGroupNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1

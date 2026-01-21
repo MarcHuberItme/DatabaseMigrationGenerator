@@ -1,0 +1,94 @@
+table:
+  name: 'RePremisesROICalculation'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'ROI Calculation'
+    - german:
+        formTitle: 'ROI Kalkulation'
+    - french:
+        formTitle: 'ROI Calcul'
+    - italian:
+        formTitle: 'ROI Calculo'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'FinancingPortfolioId'
+    description: ''
+    genericControls:
+      refTable: 'PtPortfolioViewMortgage'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'CalculationDate'
+    description: 'date when the calculation was done in FinancingSuite or elsewhere'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Name'
+    description: 'name the user gave to this calculation'
+    genericControls:
+      defColumnPos: 2
+  - name: 'MarketValue'
+    description: 'market value the user gave this property at the time of calculation'
+    genericControls:
+      defColumnPos: 3
+  - name: 'LoanCapital'
+    description: 'sum of loans on this property'
+    genericControls:
+      defColumnPos: 4
+  - name: 'YearlyReOccuringCosts'
+    description: 'yearly reoccuring costs -> cost the owner has to pay every year besides cost of interest and payback...'
+  - name: 'CalculatoryInterestRate'
+    description: ''
+  - name: 'YearlyPaybackAmount'
+    description: 'Yearly Payback Amount (not necessarily corresponding to a Finstar PtAccountPayback Record, since the loan could be with another bank'
+  - name: 'PaybackComment'
+    description: ''
+  - name: 'AncillaryCostsRate'
+    description: 'the Rate thas was used to calculate the ancillary costs, default is suggested, but can be overwritten by the user'
+  - name: 'AncillaryCosts'
+    description: 'the calculated ancillary costs (MarketValue * AncillaryCostsRate)'
+  - name: 'AncillaryCostsComment'
+    description: ''
+  - name: 'ReOccuringCostsComment'
+    description: ''
+  - name: 'IncomeAmount'
+    description: 'yearly income for the property'
+  - name: 'Result'
+    description: '= IncomeAmount + YearlyReOccuringCosts + AncillaryCosts + SUM(RePremisesROICalculationInterest.CalculatoryInterest)'
+    genericControls:
+      defColumnPos: 5
+  - name: 'ROIRate'
+    description: 'calculated ROI Rate (Result / Loan Capital) * 100'
+    genericControls:
+      defColumnPos: 6
+  - name: 'IncomeComment'
+    description: ''
+  - name: 'ResultComment'
+    description: ''
+  - name: 'ROIComment'
+    description: ''
+  - name: 'CalculatoryInterestAmount'
+    description: 'Sum of Calculatory Interests (RePremisesROICalcInterest)'
+  - name: 'PortfolioNoEdited'
+    description: ''
+    genericControls:
+      defColumnPos: 7

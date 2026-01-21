@@ -1,0 +1,88 @@
+table:
+  name: 'PrPublicTransformTo'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PrPublic'
+      parentTable: 'PrPublicTransform'
+      parentRelationField: 'PublicTransformId'
+      parentIdField: 'Id'
+      isHiddenNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Transform result'
+    - german:
+        formTitle: 'Transformationsergebnis'
+  columns:
+  - name: 'PublicTransformId'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicTransform'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'GroupNo'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'Defaultgrp'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'PublicId'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      refTable: 'PrPublicDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'Currency'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'Amount'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'UnitNo'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      refTable: 'PrPublicUnit'
+      refField: 'UnitNo'
+  - name: 'PayDate'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'NominalCurrency'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 5
+  - name: 'NominalAmount'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'FractionSettlementNo'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      refTable: 'PrPublicFractionType'
+      refField: 'FractionTypeNo'
+  - name: 'CashSettlCurrency'
+    description: 'VDF: ZTD.\r\n         ZED.'
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'AmountCashSettlement'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'ReferenceSize'
+    description: 'VDF: ZTD.\r\n         ZED.'
+  - name: 'CashSettlDate'
+    description: 'VDF: ZTD.\r\n         ZED.'

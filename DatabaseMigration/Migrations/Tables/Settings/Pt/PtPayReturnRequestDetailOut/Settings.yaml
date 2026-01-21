@@ -1,0 +1,58 @@
+table:
+  name: 'PtPayReturnRequestDetailOut'
+  description: 'Details of the payment return request to send out'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'OrderDetailId'
+    description: ''
+    genericControls:
+      refTable: 'PtSentOrderDetailView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'OrigInstructedAmount'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'CurrencyCode'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'CancelReasonCode'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'AdditionalDetails'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'InstrSettlementDate'
+    description: ''
+    genericControls:
+      defColumnPos: 6
+  - name: 'ServiceLevelCode'
+    description: ''
+  - name: 'SenderBIC'
+    description: ''
+  - name: 'ReceiverBIC'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'TransReferenceKey'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'CommStatus'
+    description: ''
+    genericControls:
+      refTable: 'PtSisMessageStatus'
+      refField: 'StatusCode'
+      defColumnPos: 8

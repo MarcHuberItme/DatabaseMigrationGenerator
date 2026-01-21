@@ -1,0 +1,48 @@
+view:
+  name: 'PtVsbComplianceCheckView'
+  description: 'Shows VSB compliance data.'
+frontendView:
+  name: 'PtVsbComplianceCheckView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    isNotNull: true
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtAccountBase'
+      refField: 'Id'
+  - name: 'VsbComplianceCheckDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'IsProductVsbRelevant'
+    description: 'If account exists and product is VSB relevant => 1\r\nif account does not exist or it exists but it is not VSB relevant => 0'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'IsPortfolioVsbRelevant'
+    description: 'If portfolio exists and is vsb relevant => 1\r\nif portfolio does not exist or is not vsb relevant => 0'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'TerminationDate'
+    description: 'Termination date of either account or portfolio, if portfolio is terminated, then termination date of the portfolio, else if the account is terminated, then termination date of the account.'
+    dataType: 'datetime'

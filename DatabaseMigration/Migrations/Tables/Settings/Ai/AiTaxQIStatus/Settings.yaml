@@ -1,0 +1,57 @@
+table:
+  name: 'AiTaxQIStatus'
+  description: 'Steuerstati QI'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax QI status'
+    - german:
+        formTitle: 'Steuer QI Status'
+    - french:
+        formTitle: 'Statut fiscal QI'
+  columns:
+  - name: 'QIStatusNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'LOBCode'
+    description: 'Limitation on Benefits (LOB)'
+    genericControls:
+      refTable: 'AiTaxLOBCodes'
+      refField: 'LOBCode'
+      defColumnPos: 2
+  - name: 'Country'
+    description: ''
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'Duration'
+    description: 'Aufgrund dieses Wertes wird das Verfalldatum beim QI-Status berechnet.\r\nWert bezieht sich auf Jahre!'
+    genericControls:
+      defColumnPos: 4
+  - name: 'IsWaiver'
+    description: 'freiwilliger Verzicht auf DBA-Vorteile\r\nIst dieses Flag gesetzt, so wird die gleichnamige Checkbox auf dem Form angezeigt'
+    genericControls:
+      defColumnPos: 5
+  - name: 'NoCheckMainDomicile'
+    description: 'Hauptdomizil muss nicht zwingend mit DBA Land übereinstimmen.'
+    genericControls:
+      defColumnPos: 6
+  - name: 'IsMandatoryChap3Status'
+    description: ''
+    genericControls:
+      defColumnPos: 7
+  - name: 'NotForLegalStatusNo'
+    description: 'aufgeführte Zivilstands- / Rechtsform-Codes dürfen nicht mit diesem QI-Status verwendet werden.'

@@ -1,0 +1,22 @@
+table:
+  name: 'AcFireC541'
+  description: 'Wertliste für die Konsolidierung der Beteiligungen in FiRE'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Konsolid. Beteil. (FiRE)'
+    - german:
+        formTitle: 'Konsolid. Beteil. (FiRE)'
+  columns:
+  - name: 'Code'
+    description: '0 = Default\r\n1 = Nicht unter Beteiligungen bilanziert\r\n2 = Nicht zu konsolidierende Beteiligungen\r\n3 = Zu konsolidierende Beteiligungen'

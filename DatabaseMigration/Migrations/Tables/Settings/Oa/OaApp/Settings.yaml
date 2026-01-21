@@ -1,0 +1,74 @@
+table:
+  name: 'OaApp'
+  description: 'External Apps using the OpenBanking API\r\nThe possible scopes, authetications and Limits are subject to future extensions'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Open Banking Apps'
+    - german:
+        formTitle: 'Open Banking Apps'
+  columns:
+  - name: 'AppIdentifier'
+    description: 'Id that identifies the App when we receive a call from the openBanking API'
+    genericControls:
+      defColumnPos: 1
+  - name: 'RequiresStrongAuthentication'
+    description: 'If True, a 2nd factor authentication is required'
+  - name: 'AppSpecificPassword'
+    description: 'True: The user has a specific password for the app, stored in OaAgrApp\r\n(Typically used if the app has a password vault)\r\n\r\nFalse: The user can use a general password for several OpenAPI App.'
+  - name: 'OrderGroupTypeNo'
+    description: 'Order group type for payment orders created by this app.'
+    genericControls:
+      refTable: 'PtPaymentOrderGroupType'
+      refField: 'OrderGroupTypeNo'
+  - name: 'MaxSingleMoneyTransferLimit'
+    description: ''
+  - name: 'MaxDailyMoneyTransferLimit'
+    description: 'Max cumulated amount of payments created on a single day.'
+  - name: 'ConfirmEachTransaction'
+    description: 'True, if every transaction needs to be confirmed.'
+  - name: 'AccountRestriction'
+    description: 'Contains internal account number if payments are restricted to the given internal account.'
+  - name: 'ShowOnlyDefaultAccount'
+    description: 'If True, the account functions shall only display the account which is marked as default payment accont.'
+  - name: 'DisplayInPortal'
+    description: 'If true, the app is displayed in the self-service portal to be selected by the user.'
+  - name: 'UseEBankingConfirmationMethod'
+    description: 'This is only relevant if ConfirmEachtransaction is true.\r\n1 = Payment will be saved, separate thread waits for confirmation and deletes the payment if there is none\r\n0 = Payment processing will be blocked before saving until the confirmation is received'
+  - name: 'IgnoreLimitsForOwnAccounts'
+    description: '0 = Apply limits defined in MaxSingleMontyTransferLimit and MaxDailyMoneyTransferLimit for payments within accounts of partner/agreement\r\n1 = Ignore limits defined in MaxSingleMontyTransferLimit and MaxDailyMoneyTransferLimit for payments within accounts of partner/agreement'
+  - name: 'ApplicationCode'
+    description: 'Reference to external application'
+    genericControls:
+      refTable: 'AsExternalApplication'
+      refField: 'ApplicationCode'
+  - name: 'OwnerId'
+    description: 'Application Owner''s Partner Reference'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'MaxMonthlyMoneyTransferLimit'
+    description: 'Max cumulated amount of payments created on a single month.'
+  - name: 'MaxYearlyMoneyTransferLimit'
+    description: 'Max cumulated amount of payments created on a single year.'
+  - name: 'RequiresConsent'
+    description: 'When this is true, the access control will require a user consent besides the regular PtAgrEBankingDetail (both are needed) to be present for the accessed resources so that the client application can access any api.\r\nNote that it is left open where the consent comes from. First we check any access token claims then we check OaAgrAppConsent. Other sources might be added later.'
+  - name: 'MaxSingleIpMoneyTransferLimit'
+    description: ''
+  - name: 'MaxDailyIpMoneyTransferLimit'
+    description: 'Max cumulated amount of instant payments created on a single day.'
+  - name: 'MaxMonthlyIpMoneyTransferLimit'
+    description: 'Max cumulated amount of instant payments created on a single month.'
+  - name: 'MaxYearlyIpMoneyTransferLimit'
+    description: 'Max cumulated amount of instant payments created on a single year.'

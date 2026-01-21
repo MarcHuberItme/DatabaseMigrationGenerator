@@ -1,0 +1,67 @@
+view:
+  name: 'PtPosHoCuProfitYearView'
+  description: ''
+frontendView:
+  name: 'PtPosHoCuProfitYearView'
+  description: 'Details Erfolg mit Devisen, Noten und Edelmetalle'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Details Erfolg Devisen'
+        helpText: 'Details Erfolg Devisen'
+    - german:
+        formTitle: 'Details Erfolg Devisen'
+        helpText: 'Details Erfolg Devisen'
+  columns:
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'HdVersionNo'
+    dataType: 'int'
+  - name: 'HdCreator'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'HdChangeUser'
+    dataType: 'varchar'
+    prec: 20
+  - name: 'HdChangeDate'
+    dataType: 'datetime'
+  - name: 'HdPendingChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'HdPendingSubChanges'
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'Label'
+    description: 'Produkt Nr. zum Zeitpunkt der Bewertung (Fremdschlüssel zu PrPrivate)'
+    dataType: 'varchar'
+    isNotNull: true
+    prec: 50
+    genericControls:
+      hasDetailBtn: true
+      defColumnPos: 2
+      isNoUpdate: true
+  - name: 'VariationHoCu'
+    description: 'Gewinn/Verlust aus Bewertung'
+    dataType: 'money'
+    isNotNull: true
+    defaultValue: '0'
+    genericControls:
+      defColumnPos: 13
+  - name: 'SortField'
+    description: ''
+    dataType: 'tinyint'
+    isNotNull: true
+  - name: 'PeriodEndDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 1

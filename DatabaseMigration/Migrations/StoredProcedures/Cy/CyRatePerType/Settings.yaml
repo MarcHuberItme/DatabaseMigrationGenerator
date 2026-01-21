@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'CyRatePerType'
+  description: 'give all Rates of one Type'

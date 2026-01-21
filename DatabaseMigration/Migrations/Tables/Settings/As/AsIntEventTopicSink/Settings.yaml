@@ -1,0 +1,42 @@
+table:
+  name: 'AsIntEventTopicSink'
+  description: 'This can be used like a feature toggle for turning event sinks on and off.\r\nDefines in which broker(s) a sink topic can exist.\r\nFor special occasions it is possible to have multiple brokers for the same topics as sink.\r\n1. When migrating the broker technology so that two brokers can be supported at the same time.\r\n2. When there are multiple sink systems with their own brokers which consume compatible events. (unlikely case and would do differently)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Topic Sink'
+        helpText: 'Enables one or brokers as topic sinks. Integration events will  be published to all  of them.'
+    - german:
+        formTitle: 'Themen-Senke (Topic Sink)'
+        helpText: 'Aktiviert brokers als sinks für bestimmte topics. Kann als feature toggle verwendet werden.'
+    - french:
+        formTitle: 'Pozzo Argomeno (TopicSink'
+        helpText: 'Enables one or brokers as topic sinks. Integration events will  be published to all  of them.'
+    - italian:
+        formTitle: 'Puits de Sujet (TopicSink'
+        helpText: 'Enables one or brokers as topic sinks. Integration events will  be published to all  of them.'
+  columns:
+  - name: 'Topic'
+    description: 'The topic which should be published to the broker.'
+    genericControls:
+      refTable: 'AsIntEventTopic'
+      refField: 'TopicName'
+      defColumnPos: 2
+  - name: 'SinkNode'
+    description: 'The sink node to which the events in the topic should be routed'
+    genericControls:
+      refTable: 'AsIntEventNode'
+      refField: 'Name'
+      defColumnPos: 1
+  - name: 'IsEnabled'
+    description: 'Whether this sink broker is enabled for the topic or not.\r\nUse it as a feature toggle, for example when migrating event brokers or when there are temporary problems with the broker setup.\r\nThe events are still written to the outbox. As soon as the broker sink is re-enabled, the producer will continue to produce events to the broker where it left off.'
+    genericControls:
+      defColumnPos: 3

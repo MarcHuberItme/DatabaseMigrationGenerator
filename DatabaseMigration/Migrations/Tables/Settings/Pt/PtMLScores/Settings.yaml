@@ -1,0 +1,24 @@
+table:
+  name: 'PtMLScores'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'PartnerNo'
+    description: ''
+  - name: 'EvaluationDate'
+    description: ''
+  - name: 'Scores'
+    description: ''
+  - name: 'AlertDate'
+    description: ''
+  - name: 'Rank'
+    description: ''

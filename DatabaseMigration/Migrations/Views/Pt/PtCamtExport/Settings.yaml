@@ -1,0 +1,67 @@
+view:
+  name: 'PtCamtExport'
+  description: ''
+frontendView:
+  name: 'PtCamtExport'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: 50c8cf24-0d64-438a-8e98-cf3f5d8300f4
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+  columns:
+  - name: 'MgVTNo'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+  - name: 'AccountId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'AccountNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+  - name: 'AccountNoEdited'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 20
+  - name: 'Currency'
+    description: ''
+    dataType: 'char'
+    prec: 3
+  - name: 'HdCreateDate'
+    dataType: 'datetime'
+  - name: 'Id'
+    dataType: 'uniqueidentifier'
+  - name: 'UserFilename'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 64
+  - name: 'DateFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'DateTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'NumberOfPayments'
+    description: ''
+    dataType: 'int'
+  - name: 'TransferTime'
+    description: ''
+    dataType: 'datetime'
+  - name: 'TotalAmount'
+    description: ''
+    dataType: 'money'
+  - name: 'EBankingId'
+    description: ''
+    dataType: 'uniqueidentifier'
+  - name: 'Type'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 100

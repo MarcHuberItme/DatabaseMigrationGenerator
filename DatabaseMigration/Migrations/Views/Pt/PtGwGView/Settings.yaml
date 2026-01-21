@@ -1,0 +1,3 @@
+view:
+  name: 'PtGwGView'
+  description: 'Query to show all risk categories of the partners'

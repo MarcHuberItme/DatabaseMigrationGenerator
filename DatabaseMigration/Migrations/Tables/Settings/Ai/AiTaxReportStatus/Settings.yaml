@@ -1,0 +1,26 @@
+table:
+  name: 'AiTaxReportStatus'
+  description: 'Verarbeitungsstatus der Steuermeldung (initialisiert, erstellt, gesendet, fehlerhaft etc.)'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Tax report status'
+    - german:
+        formTitle: 'Steuermeldung Status'
+    - french:
+        formTitle: 'État du rapport d''impôt'
+  columns:
+  - name: 'ReportStatusNo'
+    description: '1 = Initial\r\n2 = Created\r\n3 = Ready\r\n4 = Sent\r\n9 = Error'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true

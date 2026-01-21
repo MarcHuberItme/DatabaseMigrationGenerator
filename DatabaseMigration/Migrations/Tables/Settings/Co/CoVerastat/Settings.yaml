@@ -1,0 +1,23 @@
+table:
+  name: 'CoVerastat'
+  description: 'Codetabellle - Status der Verarbeitung (Deckungsausscheidung)'
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 3
+    uiTableDescription:
+    - english:
+        formTitle: 'workingstatus'
+    - german:
+        formTitle: 'Verarbeitungsstatus'
+  columns:
+  - name: 'Verastat'
+    description: 'Verarbeitungstyp Deckungsausscheidung\r\n000 - angemeldet\r\n010 - Blowup fertig (Tabelle CoVeradet gefüllt)\r\n020 - Belehnungswert pro Sicherheit ermittel (Tabelle CoBasecalc gefüllt)\r\n100 - abgeschlossen (Tabelle CoBaseasscalc gefüllt)\r\n200 - Verarbeitung fehlerhaft abgeschlossen'
+    genericControls:
+      defColumnPos: 1

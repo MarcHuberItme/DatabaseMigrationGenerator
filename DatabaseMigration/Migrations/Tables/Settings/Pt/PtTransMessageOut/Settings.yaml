@@ -1,0 +1,45 @@
+table:
+  name: 'PtTransMessageOut'
+  description: 'Contains out going payment messages and related information.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  writableForEbanking: true
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'MessageStandard'
+    description: 'Code for the Message Standard'
+  - name: 'Message'
+    description: 'Contents of the message'
+    genericControls:
+      multiLine: true
+  - name: 'Status'
+    description: 'Status of the message to be sent By default it should "To be sent"'
+  - name: 'Description'
+    description: 'Error information and other relation description'
+    genericControls:
+      multiLine: true
+  - name: 'SendTime'
+    description: ''
+  - name: 'AcknowledgedTime'
+    description: ''
+  - name: 'MessageReply'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'TransMessageId'
+    description: 'Refers to ''Id'' of PtTransmMessageSIS or any other table.'
+  - name: 'PDEKey'
+    description: 'The key to track duplicate messages'
+  - name: 'Priority'
+    description: ''
+  - name: 'PossibleDuplicateFlag'
+    description: ''
+  - name: 'ExternalPartnerCode'
+    description: 'Partner code like SBB (Bank Short Name) for messages sent on behalf of this partner'
+  - name: 'PaymentAmount'
+    description: ''

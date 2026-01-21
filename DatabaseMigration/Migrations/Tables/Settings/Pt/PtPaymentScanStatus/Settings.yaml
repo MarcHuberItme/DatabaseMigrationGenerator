@@ -1,0 +1,28 @@
+table:
+  name: 'PtPaymentScanStatus'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Payment Scan Status'
+    - german:
+        formTitle: 'Zahlungsauft. Scan Status'
+  columns:
+  - name: 'StatusNo'
+    description: '1 = Importing.\r\n2 = Ready for correction.\r\n3 = Corrected. (Ready for transfer to PtPaymentOrder*)\r\n4 = Being Transferred.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'IsError'
+    description: ''
+  - name: 'ShowAlert'
+    description: ''

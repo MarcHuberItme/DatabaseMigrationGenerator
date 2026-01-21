@@ -1,0 +1,36 @@
+table:
+  name: 'BpJobAgentGroupJobAgent'
+  description: 'Job Agent Group Agent assignment'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Job Agent Group assign.'
+    - german:
+        formTitle: 'Job Agent Gruppe Zuordn.'
+    - french:
+        formTitle: 'Job Agent Group assign.'
+    - italian:
+        formTitle: 'Job Agent Group assign.'
+  columns:
+  - name: 'JobAgentGroupId'
+    description: 'Job Agent Group reference'
+    genericControls:
+      refTable: 'BpJobAgentGroup'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'JobAgentId'
+    description: 'Job Agent reference'
+    genericControls:
+      refTable: 'BpJobAgent'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'Priority'
+    description: 'Priority of Job Agent in the Job Agent Group'

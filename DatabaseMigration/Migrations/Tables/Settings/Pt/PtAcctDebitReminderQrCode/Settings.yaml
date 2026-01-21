@@ -1,0 +1,28 @@
+table:
+  name: 'PtAcctDebitReminderQrCode'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtAcctDebitReminderQrCode'
+        helpText: 'PtAcctDebitReminderQrCode'
+    - german:
+        formTitle: 'PtAcctDebitReminderQrCode'
+        helpText: 'PtAcctDebitReminderQrCode'
+    - french:
+        formTitle: 'PtAcctDebitReminderQrCode'
+        helpText: 'PtAcctDebitReminderQrCode'
+  columns:
+  - name: 'AccountDebitReminderId'
+    description: ''
+  - name: 'QrCode'
+    description: ''

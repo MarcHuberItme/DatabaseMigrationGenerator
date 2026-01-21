@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetAccCompValueId'
+  description: 'Get all AccountComponentValue.Ids for a specific component.'

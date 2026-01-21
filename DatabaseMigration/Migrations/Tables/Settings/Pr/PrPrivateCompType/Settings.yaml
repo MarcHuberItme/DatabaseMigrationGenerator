@@ -1,0 +1,82 @@
+table:
+  name: 'PrPrivateCompType'
+  description: ''
+  tableUsageNo: 1
+  domainType: 40
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 20cc6fa2-8ebc-4afe-a0af-709583029d4c
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Private Component Type'
+    - german:
+        formTitle: 'Art der Prod..-Komponente'
+  columns:
+  - name: 'CompTypeNo'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IsDebit'
+    description: 'Defines if this Component belongs to the Debit or to the Credit side'
+  - name: 'IsFixed'
+    description: 'PrivateComponent marked as "fixed" has to be included in every PrPrivateComponent, when a new PrPrivate is created. It will not be allowed to modify such a Component.'
+  - name: 'SecurityLevelNo'
+    description: 'Security Level of the component. This field replaces fields IsMarketable, IsNotEasyMarketable, IsBlank. On long therm this fields will be removed.'
+    genericControls:
+      refTable: 'PrPrivateSecurityLevel'
+      refField: 'SecurityLevelNo'
+      defColumnPos: 2
+  - name: 'IsMarketable'
+    description: 'Defines, if the Component has a marketable-security (kurante Sicherheit).\r\nReplaced by new field SecurityLevelNo'
+  - name: 'IsNotEasyMarketable'
+    description: 'Defines, if the Component has a not-easy-marketable-security (unkurante Sicherheit). Replaced by new field SecurityLevelNo'
+  - name: 'IsBlank'
+    description: 'Defines, if the Component has a no security (blanko). Replaced by new field SecurityLevelNo'
+  - name: 'IsFixedDuration'
+    description: 'Defines, if the Component has a fixed duration.'
+  - name: 'IsLimitRelevant'
+    description: 'Defines, if the Component Type is relevant for Limit calculation or not'
+  - name: 'PriorityOfInterestCalculation'
+    description: 'Default Priority of Interest Calculation for Component (fixed Priority for fixed Component)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'PriorityOfPayback'
+    description: 'Priority of Payback for Component (fixed Priority for fixed Component)'
+  - name: 'PriorityOfLegalReporting'
+    description: 'Priority of Legal Reporting for Component (fixed Priority for fixed Component)'
+  - name: 'CanHaveSecurity'
+    description: 'define if product component can have a security'
+  - name: 'MgCoverageNo'
+    description: 'fis vrx coverage record type'
+    genericControls:
+      refTable: 'MgCoverage'
+      refField: 'CoverageNo'
+      isOnlyForMig: true
+  - name: 'MgDeckartNo'
+    description: ''
+    minValue: '0'
+    maxValue: '99'
+    genericControls:
+      isOnlyForMig: true
+  - name: 'Score'
+    description: 'for rating (Loss Given Default) LGD'
+    genericControls:
+      defColumnPos: 5
+  - name: 'CovCode'
+    description: 'Code für Schnittstelle zu S.U.N. Reports\r\n\r\n--> Wird bei FGB für die Zusweisung zu den Fire-Accounts und der Deckungsart misbraucht:\r\nWert gem. Fire-Doku Feld C536\r\n\r\n'
+    genericControls:
+      defColumnPos: 4
+  - name: 'IsSubordinated'
+    description: '0 = nicht nachrangig / not subordinated\r\n1 = nachrangig / subordinated'
+  - name: 'SequenceNo'
+    description: 'Sortreihenfolge innerhalb der Priorität für Berechnung der Beanspruchung der Deckung'
+    genericControls:
+      defColumnPos: 6
+  - name: 'WcrCreditTypeNo'
+    description: '1	Festhypothek mit fester Kapitalbindungsfrist und festem Zinssatz		\r\n2	Geldmarkthypothek mit fester Kapitalbindungsfrist   (Saron)		\r\n3	Variable Hypothek ohne feste Kapitalbindungsfrist		\r\n4	Geldmarkthypothek ohne feste Kapitalbindungsfrist (Saron)		\r\n5	Callhypothek ohne feste Kapitalbindungsfrist'

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetRelationMasterId'
+  description: 'to get the masterId of a certain relationtype of the current partner. if no master exits, it will be created a new record in PtRelationMaster.\r\nREMARKS: The set of the return value (recordset with the parameter @MasterId) is written knowingly before the insert-statement. We don''t know why, but if the set of the return value is after the insert-statement, the recordset will be closed.'

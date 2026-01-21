@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetInvoiceCorrInfoAccount'
+  description: 'used in debit control component to produce invoices'

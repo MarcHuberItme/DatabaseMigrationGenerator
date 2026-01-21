@@ -1,0 +1,27 @@
+table:
+  name: 'PtPaymentMasterCardFee'
+  description: 'Contains parsed Values from PtPaymentMCTransactionRecord/CMSTransactionFeeDetails ([/-50.00/D/978])'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Fee'
+    description: ''
+  - name: 'Amount'
+    description: ''
+  - name: 'Sign'
+    description: ''
+  - name: 'Currency'
+    description: ''
+  - name: 'CurrencySymbol'
+    description: ''
+  - name: 'PtPaymentMasterCardId'
+    description: ''
+    genericControls:
+      refTable: 'PtPaymentMasterCard'
+      refField: 'Id'

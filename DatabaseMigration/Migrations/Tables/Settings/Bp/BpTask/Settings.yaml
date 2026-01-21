@@ -1,0 +1,73 @@
+table:
+  name: 'BpTask'
+  description: 'JCS Task list. List of executing jobs.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    physicalDelete: true
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'JCS Task list'
+    - german:
+        formTitle: 'JCS Task list'
+    - french:
+        formTitle: 'JCS Task list'
+    - italian:
+        formTitle: 'JCS Task list'
+  columns:
+  - name: 'JobBaseId'
+    description: 'Job Base reference.'
+    genericControls:
+      refTable: 'BpJobBase'
+      refField: 'Id'
+  - name: 'AddParam'
+    description: 'Additional job parameters.'
+  - name: 'Priority'
+    description: ''
+    genericControls:
+      refTable: 'BpTaskPriority'
+      refField: 'TaskPriority'
+  - name: 'TaskStatus'
+    description: ''
+    genericControls:
+      refTable: 'BpTaskStatus'
+      refField: 'TaskStatus'
+  - name: 'TaskStatusDetail'
+    description: ''
+    genericControls:
+      refTable: 'BpTaskStatusDetail'
+      refField: 'TaskStatusDetail'
+  - name: 'JobAgent'
+    description: ''
+  - name: 'IsEndless'
+    description: ''
+  - name: 'RunCount'
+    description: 'Number of executions'
+  - name: 'AutoStarting'
+    description: 'Auto starting this task'
+  - name: 'TaskBlockId'
+    description: 'Link to task block'
+    genericControls:
+      refTable: 'BpTaskBlock'
+      refField: 'Id'
+  - name: 'JobFlowJobId'
+    description: 'Link to jobflow job'
+    genericControls:
+      refTable: 'BpJobFlowJob'
+      refField: 'Id'
+  - name: 'ParentTaskId'
+    description: 'Id of the parent task to wait for.'
+    genericControls:
+      refTable: 'BpTask'
+      refField: 'Id'
+  - name: 'ParentTaskWaitForStatus'
+    description: 'Status of the parent task to wait for.'
+    genericControls:
+      refTable: 'BpTaskStatusWaitRule'
+      refField: 'WaitRule'

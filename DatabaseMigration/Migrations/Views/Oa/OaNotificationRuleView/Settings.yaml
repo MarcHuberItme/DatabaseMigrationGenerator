@@ -1,0 +1,59 @@
+view:
+  name: 'OaNotificationRuleView'
+  description: 'Active notification rules'
+frontendView:
+  name: 'OaNotificationRuleView'
+  description: 'Active notification rules used by E-Banking and other apps.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: ''
+  genericComponents:
+    tableType: 5
+    groupId: a4112bd6-f727-4177-a33e-e8cac9f81144
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'RuleId'
+    description: 'OaNotificationRule.Id reference'
+    dataType: 'uniqueidentifier'
+  - name: 'AgrEBankingId'
+    description: 'PtAgrEBanking.Id reference'
+    dataType: 'uniqueidentifier'
+  - name: 'ApplicationCode'
+    description: 'Translated ApplicationCode value'
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'Name'
+    description: 'OaNotificationRule.Name reference'
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'WithDetails'
+    description: 'OaNotificationRule.WithDetails reference'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'PushEnabled'
+    description: 'OaNotificationRule.PushEnabled reference'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AllAccounts'
+    description: 'OaNotificationRule.AllAccounts reference'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'AllPortfolio'
+    description: 'OaNotificationRule.AllPortfolio reference'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'InstantConfigMinAmount'
+    description: 'OaNotificationInstantConfig.MinAmount reference'
+    dataType: 'money'
+  - name: 'InstantConfigMaxAmount'
+    description: 'OaNotificationInstantConfig.MaxAmount reference'
+    dataType: 'money'
+  - name: 'TextShort'
+    description: 'OaNotificationText.TextShort for the language of the user and depending on OaNotificationrule.WithDetails value'
+    dataType: 'nvarchar'
+    prec: 100
+  - name: 'TextLong'
+    description: 'OaNotificationText.TextLong for the language of the user and depending on OaNotificationrule.WithDetails value'
+    dataType: 'nvarchar'
+    prec: 4000

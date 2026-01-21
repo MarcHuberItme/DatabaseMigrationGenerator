@@ -1,0 +1,45 @@
+view:
+  name: 'PtStandingOrderFurtherInfoView'
+  description: ''
+frontendView:
+  name: 'PtStandingOrderFurtherInfoView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'MaxSelection'
+    description: ''
+    dataType: 'smallint'
+  - name: 'PreviousSelectionDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'PreviousExecutionDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'SelectionCounter'
+    description: ''
+    dataType: 'smallint'
+  - name: 'SuspendFrom'
+    description: ''
+    dataType: 'datetime'
+  - name: 'SuspendTo'
+    description: ''
+    dataType: 'datetime'
+  - name: 'BalanceLimit'
+    description: ''
+    dataType: 'money'
+    scale: 4
+  - name: 'FullPayment'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'BlockedForPartner'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true

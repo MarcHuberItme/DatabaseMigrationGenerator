@@ -1,0 +1,3 @@
+view:
+  name: 'AcCompression2CourtDPView'
+  description: 'Calculates sum of Courtage for Qlikview grouping'

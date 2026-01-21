@@ -1,0 +1,95 @@
+view:
+  name: 'CoEngcliView'
+  description: '/* View CoEngcliView, stellt ausgehenden von einem Kunden alle andere Kunden aus den Gemeinschaften (Typ 10 oder 92) zur Verfügung. \r\nEgal ob der Kunde als Master oder Slave einer Beziehung fungiert (Feld parterno)\r\nTyp 10 Einschränkungen:\r\nGelesen werden alle Mitglieder von "und/oder" Gemeinschaften "Comp Join", (Feld relationtypeno = 10 und Feld copartnership = 1)\r\nmit den Rollen Mitinhaber / gleicher Partner (Feld RelationRoleNo in (6,7))\r\nwenn Erben dabei sind (Feld IsJointHeirExclude = 0) wird noch zusätzlich die Rolle Erben (RelationRoleNo in (6,7,18)) dazugenommen\r\nTyp 92:\r\nkeine weitere Einschränkung\r\nes ist möglich das ein Kunde in mehreren Gemeinschaften oder Gesamtengagaments in der Rolle als Slave auftritt\r\n*/'
+frontendView:
+  name: 'CoEngcliView'
+  description: 'View CoEngcliView, stellt ausgehenden von einem Kunden alle andere Kunden aus den Gemeinschaften (Typ 10 oder 92) zur Verfügung. \r\nEgal ob der Kunde als Master oder Slave einer Beziehung fungiert (Feld parterno)\r\nTyp 10 Einschränkungen:\r\nGelesen werden alle Mitglieder von "und/oder" Gemeinschaften "Comp Join", (Feld relationtypeno = 10 und Feld copartnership = 1)\r\nmit den Rollen Mitinhaber / gleicher Partner (Feld RelationRoleNo in (6,7))\r\nwenn Erben dabei sind (Feld IsJointHeirExclude = 0) wird noch zusätzlich die Rolle Erben (RelationRoleNo in (6,7,18)) dazugenommen\r\nTyp 92:\r\nkeine weitere Einschränkung\r\nes ist möglich das ein Kunde in mehreren Gemeinschaften oder Gesamtengagaments in der Rolle als Slave auftritt'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 0aa7953a-9813-4f76-9e53-78df724f757a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'View CoEngcliView'
+    - german:
+        formTitle: 'View CoEngcliView'
+  columns:
+  - name: 'Ptrelationmasterid'
+    description: 'Id Master'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtRelationMaster'
+      refField: 'Id'
+  - name: 'Memberid'
+    description: 'From table ptbase (slave or master)'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+  - name: 'Partnerno'
+    description: 'From table ptbase (slave or master)'
+    dataType: 'decimal'
+    scale: 8
+  - name: 'Partnernoedited'
+    description: 'From table ptbase (slave or master)'
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'SexStatusNo'
+    description: 'From table ptbase (slave or master)'
+    dataType: 'tinyint'
+  - name: 'Firstname'
+    description: 'From table ptbase (slave or master)'
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'Name'
+    description: 'From table ptbase (slave or master)'
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'Masterid'
+    description: 'From table ptbase (always master)'
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+  - name: 'MasterPartnerno'
+    description: 'From table ptbase (always master)'
+    dataType: 'decimal'
+    scale: 8
+  - name: 'MasterPartnernoedited'
+    description: 'From table ptbase (always master)'
+    dataType: 'nvarchar'
+    prec: 10
+  - name: 'MasterFirstname'
+    description: 'From table ptbase (always master)'
+    dataType: 'nvarchar'
+    prec: 25
+  - name: 'MasterName'
+    description: 'From table ptbase (always master)'
+    dataType: 'nvarchar'
+    prec: 40
+  - name: 'Relationtypeno'
+    description: 'from table ptrelationmaster'
+    dataType: 'int'
+  - name: 'LastCheckDate'
+    description: 'from ptreleationmaster (only if relationtypeno = 92)'
+    dataType: 'datetime'
+  - name: 'RelationRoleNo'
+    description: 'from table prrelationslave'
+    dataType: 'smallint'
+  - name: 'Copartnership'
+    description: 'from table ptrelationmaster'
+    dataType: 'tinyint'
+  - name: 'Isjointheirexclude'
+    description: 'from table ptrelationmaster'
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Instruction'
+    description: 'from ptrelationslave'
+    dataType: 'nvarchar'
+    prec: 400
+    genericControls:
+      multiLine: true

@@ -1,0 +1,26 @@
+table:
+  name: 'ReAccountCompPremisesRelation'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'CompId'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountComponent'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'ReBasePremisesView'
+      refField: 'PremisesId'
+      hasDetailBtn: true
+      defColumnPos: 2

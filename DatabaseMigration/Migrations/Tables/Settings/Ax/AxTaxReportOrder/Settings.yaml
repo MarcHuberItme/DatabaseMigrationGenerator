@@ -1,0 +1,40 @@
+table:
+  name: 'AxTaxReportOrder'
+  description: 'List of ordered reports for TaxSource'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 6343cc8c-363d-4cce-968c-fe33e28066e0
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'List of ordered reports f'
+        helpText: 'List of ordered reports for TaxSource'
+    - german:
+        formTitle: 'List of ordered reports f'
+        helpText: 'List of ordered reports for TaxSource'
+  columns:
+  - name: 'ReportPartnerNo'
+    description: 'PartnerNo of the ordered tax report'
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'PartnerNo'
+  - name: 'AxTaxDetailATXType'
+    description: 'ordered report'
+    genericControls:
+      refTable: 'AxTaxDetailATXType'
+      refField: 'TaxDetailATXTypeNo'
+  - name: 'ReportTaxYear'
+    description: 'Year per which the ordered report should be produced'
+  - name: 'ReceivedFromVendorDate'
+    description: 'timestamp when delivered from TaxSource'
+  - name: 'DeliveredToClientDate'
+    description: 'timestamp when delivered to client (for later charging)'
+  - name: 'ClientChargeDateTimeStamp'
+    description: 'Time when the client was charged'

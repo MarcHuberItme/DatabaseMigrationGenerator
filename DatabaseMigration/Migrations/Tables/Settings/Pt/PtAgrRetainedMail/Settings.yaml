@@ -1,0 +1,75 @@
+table:
+  name: 'PtAgrRetainedMail'
+  description: 'retained mail agreement (Bleibepost)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtBase'
+      parentRelationField: 'PartnerId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Retained Mail agreement'
+    - german:
+        formTitle: 'Bleibepost Vereinbarung'
+    - french:
+        formTitle: 'Contrat banque restante'
+  columns:
+  - name: 'PartnerId'
+    description: ''
+    genericControls:
+      refTable: 'PtBase'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'ServiceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtServiceNameList'
+      refField: 'ServiceTypeNo'
+      defColumnPos: 2
+  - name: 'BeginDate'
+    description: ''
+  - name: 'ExpirationDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'PeriodOfNotice'
+    description: 'period of time to cancel the deal; in days, month or years'
+  - name: 'Interval'
+    description: 'foreign-key;  candidate-key of AsInterval (Interval)\r\n(VB-function DateAdd)  d, m, yyyy of the PeriodOfNotice'
+    genericControls:
+      refTable: 'AsInterval'
+      refField: 'Interval'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+  - name: 'VersionNo'
+    description: 'document version of the agreement'
+  - name: 'PrintDate'
+    description: ''
+  - name: 'ChargeStartDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'DebitAccountID'
+    description: ''
+    genericControls:
+      refTable: 'PtAccountView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 4
+  - name: 'Rebate'
+    description: ''
+    genericControls:
+      defColumnPos: 5

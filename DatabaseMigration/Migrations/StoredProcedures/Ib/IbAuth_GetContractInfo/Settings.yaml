@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'IbAuth_GetContractInfo'
+  description: 'Returns general information about the specified E-Banking agreement (used by EbAuthService .NET).'

@@ -1,0 +1,59 @@
+view:
+  name: 'WfVwActiveProcesses'
+  description: 'Shows the currently active Workflow-Processes'
+frontendView:
+  name: 'WfVwActiveProcesses'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 65ffe932-c171-41f2-94bd-8d53bb5e922a
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Active Workflow Processes'
+    - german:
+        formTitle: 'Aktive Worflow-Prozesse'
+  columns:
+  - name: 'Name'
+    description: 'Name of the Workflow Map.'
+    dataType: 'varchar'
+    prec: 32
+    genericControls:
+      defColumnPos: 2
+  - name: 'MapNo'
+    description: 'No of the active workflow map.'
+    dataType: 'int'
+  - name: 'VersionNo'
+    description: 'Version of the workflow map'
+    dataType: 'int'
+  - name: 'Status'
+    description: 'Proces status'
+    dataType: 'tinyint'
+    genericControls:
+      defColumnPos: 3
+  - name: 'DynamicDescription'
+    description: ''
+    dataType: 'varchar'
+    prec: 4000
+  - name: 'CreationDate'
+    description: ''
+    dataType: 'datetime'
+    genericControls:
+      defColumnPos: 4
+  - name: 'FinishDate'
+    description: ''
+    dataType: 'datetime'
+  - name: 'Instanciator'
+    description: 'The user who started the process'
+    dataType: 'varchar'
+    prec: 50
+    genericControls:
+      defColumnPos: 5
+  - name: 'VariableInstanceSet'
+    description: 'Data belonging to the process, mainly the chaged or new values of the changed record'
+    dataType: 'varchar'
+    prec: 8000

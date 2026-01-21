@@ -1,0 +1,70 @@
+table:
+  name: 'PrPublicVdfDocLog'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: ad1522a5-0089-4328-b6d3-7d873ca13f19
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'VDF doc log'
+    - german:
+        formTitle: 'VDF Doc Log'
+  columns:
+  - name: 'VdfDocVersionNo'
+    description: 'VDF: Doc.K801.0803\r\nDOC version number'
+  - name: 'VdfDocSeqNo'
+    description: 'VDF: Doc.K801.0808'
+  - name: 'VdfDocTransactionType'
+    description: 'VDF: Doc.K801.0802'
+    genericControls:
+      refTable: 'PrPublicDocTransactionType'
+      refField: 'DocTransactionTypeNo'
+  - name: 'VdfDocIdentifier'
+    description: 'VDF: Doc.K801.0804'
+  - name: 'VdfDocGen'
+    description: 'VDF: Doc.K801.0813'
+  - name: 'VdfDocProcStatusNo'
+    description: 'VDF: Doc.K801.0814'
+    genericControls:
+      refTable: 'PrPublicVdfDocProcStatus'
+      refField: 'VdfDocProcStatusNo'
+  - name: 'VdfDocTimestamp'
+    description: 'VDF: Doc.K802.2801 & Doc.K802.2802'
+  - name: 'VdfDocKey'
+    description: 'VDF: contains the concatenated values of all doc type key fields (defined in VDF meta data)'
+  - name: 'VdfDocStatusNo'
+    description: 'VDF: Doc.MGA.7895'
+    genericControls:
+      refTable: 'PrPublicVdfDocStatus'
+      refField: 'VdfDocStatusNo'
+  - name: 'ImportDate'
+    description: ''
+  - name: 'ImportStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicImportStatus'
+      refField: 'ImportStatusNo'
+  - name: 'ImportInfo'
+    description: ''
+  - name: 'ImportSession'
+    description: ''
+    genericControls:
+      refTable: 'PrPublicVdfImportSession'
+      refField: 'ImportSession'
+  - name: 'EdifactFileName'
+    description: 'Name of Edifact file'
+  - name: 'RecordSequence'
+    description: ''
+  - name: 'ProcessId'
+    description: ''
+  - name: 'RootTableId'
+    description: ''
+  - name: 'Matched'
+    description: 'This field is never filled in database, it''s only for the class clsEdifactFile'
+  - name: 'VdfDocText'
+    description: 'contains the whole doc string in Edifact format (only for doc''s, they couldn''t processed during the first import)'

@@ -1,0 +1,70 @@
+table:
+  name: 'PtTransMessageInIp'
+  description: 'Contains original in-coming messages and related information, e.g. SIC-IP'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 81a3a910-e114-4a8b-892c-bbbaa4bd60c8
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'Message'
+    description: 'Actual content of the message.'
+    genericControls:
+      multiLine: true
+      defColumnPos: 2
+  - name: 'Status'
+    description: 'Status of the message. For incoming messages following messages are important:\r\n1. To be processed = 9\r\n2. Error         = 7\r\n3. Processed successfully'
+    genericControls:
+      refTable: 'PtSisMessageStatus'
+      refField: 'StatusCode'
+      defColumnPos: 3
+  - name: 'Description'
+    description: 'Error information or other related information'
+    genericControls:
+      multiLine: true
+      defColumnPos: 4
+  - name: 'MessageStandard'
+    description: 'Code for the source Message Standard'
+    genericControls:
+      defColumnPos: 6
+  - name: 'ClearingDate'
+    description: 'The Date and Time when message received'
+    genericControls:
+      defColumnPos: 1
+  - name: 'PDEKey'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'MgStatus'
+    description: ''
+    genericControls:
+      isOnlyForMig: true
+  - name: 'MgMessageReply'
+    description: ''
+    genericControls:
+      multiLine: true
+      isOnlyForMig: true
+  - name: 'PaymentOrderId'
+    description: 'Payment Order in case the message have been imported from a file and  there orders have pre-defined in the file.,'
+  - name: 'FileImportProcessId'
+    description: 'File import process Id'
+    genericControls:
+      refTable: 'CMFileImportProcess'
+      refField: 'Id'
+  - name: 'ExternalPartnerCode'
+    description: ''
+  - name: 'MessageReply'
+    description: 'Reply for Message'
+  - name: 'TransactionStatus'
+    description: ''
+  - name: 'DetailStatus'
+    description: ''
+  - name: 'ReasonCode'
+    description: ''
+  - name: 'RejectReason'
+    description: ''
+  - name: 'SICNumber'
+    description: ''

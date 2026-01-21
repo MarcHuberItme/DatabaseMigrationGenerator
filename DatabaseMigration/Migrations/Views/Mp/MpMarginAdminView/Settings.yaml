@@ -1,0 +1,98 @@
+view:
+  name: 'MpMarginAdminView'
+  description: ''
+frontendView:
+  name: 'MpMarginAdminView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 1b7f657d-bf02-4f66-b37b-cee0cfa5299b
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'PortfolioTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+      defColumnPos: 5
+  - name: 'PartnerId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 2
+  - name: 'PortfolioNo'
+    description: ''
+    dataType: 'decimal'
+    prec: 11
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'PortfolioNo'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 3
+  - name: 'StaffRebate'
+    description: ''
+    dataType: 'smallint'
+    genericControls:
+      refTable: 'AsBoolean'
+      refField: 'IntVal'
+      defColumnPos: 3
+  - name: 'Symbol'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+  - name: 'CurrencyInfo'
+    description: ''
+    dataType: 'varchar'
+    prec: 10
+    genericControls:
+      defColumnPos: 1
+  - name: 'Margin'
+    description: ''
+    dataType: 'decimal'
+    prec: 19
+    scale: 6
+  - name: 'ValueType'
+    description: ''
+    dataType: 'varchar'
+    prec: 3
+    genericControls:
+      refTable: 'MpValueType'
+      refField: 'Label'
+  - name: 'CurveId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'MpCurve'
+      refField: 'Id'
+  - name: 'MarginInfo'
+    description: ''
+    dataType: 'varchar'
+    prec: 20
+    genericControls:
+      defColumnPos: 6
+  - name: 'PtDescription'
+    description: ''
+    dataType: 'nvarchar'
+    prec: 1000
+    genericControls:
+      defColumnPos: 10

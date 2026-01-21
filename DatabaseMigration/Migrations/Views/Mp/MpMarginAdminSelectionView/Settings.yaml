@@ -1,0 +1,40 @@
+view:
+  name: 'MpMarginAdminSelectionView'
+  description: ''
+frontendView:
+  name: 'MpMarginAdminSelectionView'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 5
+    groupId: 1b7f657d-bf02-4f66-b37b-cee0cfa5299b
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+  columns:
+  - name: 'PortfolioId'
+    description: ''
+    dataType: 'uniqueidentifier'
+    genericControls:
+      refTable: 'PtPortfolioView'
+      refField: 'Id'
+      hasDetailBtn: true
+  - name: 'PortfolioTypeNo'
+    description: ''
+    dataType: 'int'
+    genericControls:
+      refTable: 'PtPortfolioType'
+      refField: 'PortfolioTypeNo'
+  - name: 'StaffRebate'
+    description: ''
+    dataType: 'bit'
+    isNotNull: true
+  - name: 'Symbol'
+    description: ''
+    dataType: 'char'
+    prec: 3
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'

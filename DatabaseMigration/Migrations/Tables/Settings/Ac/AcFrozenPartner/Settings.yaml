@@ -1,0 +1,153 @@
+table:
+  name: 'AcFrozenPartner'
+  description: 'Diese Tabelle enthält den monatlichen Snapshot der Partnerdaten'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 55cf3376-ad4b-4c80-836a-4b8403901d1a
+    visumLevel: 1
+    cacheLevel: 1
+  columns:
+  - name: 'ReportDate'
+    description: 'Berichtsdatum'
+    genericControls:
+      isNoUpdate: true
+  - name: 'PartnerId'
+    description: 'Partner Identifikation (PtBase.Id)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'PartnerNo'
+    description: 'Partnernummer (PtBase.PartnerNo)'
+    genericControls:
+      isNoUpdate: true
+  - name: 'SexStatusNo'
+    description: 'Geschlecht'
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+      isNoUpdate: true
+  - name: 'LegalStatusNo'
+    description: 'Rechtsform'
+    genericControls:
+      refTable: 'PtLegalStatus'
+      refField: 'LegalStatusNo'
+      isNoUpdate: true
+  - name: 'BusinessTypeCode'
+    description: 'NogaCode alt'
+    genericControls:
+      refTable: 'PtBusinessType'
+      refField: 'NogaCode'
+      isNoUpdate: true
+  - name: 'NogaCode2008'
+    description: 'NogaCode neu'
+    genericControls:
+      refTable: 'PtNoga2008'
+      refField: 'NogaCode'
+  - name: 'BranchNo'
+    description: 'Geschäftsstellencode'
+    genericControls:
+      refTable: 'AsBranch'
+      refField: 'BranchNo'
+      isNoUpdate: true
+  - name: 'ReportAdrLine'
+    description: 'Kundenkurzbezeichnung'
+    genericControls:
+      isNoUpdate: true
+  - name: 'SwissTownNo'
+    description: 'Domizilort'
+    genericControls:
+      refTable: 'AsSwissTown'
+      refField: 'SwissTownNo'
+      isNoUpdate: true
+  - name: 'Canton'
+    description: 'Domizilkanton'
+    genericControls:
+      refTable: 'AsCanton'
+      refField: 'CantonSymbol'
+      isNoUpdate: true
+  - name: 'FiscalDomicileCountry'
+    description: 'Domizilland'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      isNoUpdate: true
+  - name: 'Nationality'
+    description: 'Nationalität'
+    genericControls:
+      refTable: 'AsCountry'
+      refField: 'ISOCode'
+      isNoUpdate: true
+  - name: 'Employees'
+    description: 'Anzahl Angestellte'
+    genericControls:
+      isNoUpdate: true
+  - name: 'EmployeeGroupNo'
+    description: 'Kategorie Anzahl Angestellte'
+    genericControls:
+      isNoUpdate: true
+  - name: 'FireEmployeeValue'
+    description: 'Anzahl Angestellte, Wert für Fire'
+    genericControls:
+      isNoUpdate: true
+  - name: 'NogaAbteilung2008'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'NogaGruppe2008'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'NogaKlasse2008'
+    description: ''
+    genericControls:
+      isNoUpdate: true
+  - name: 'LargeExpGroupNo'
+    description: 'Partnernummer für Klumpenrisiko'
+    genericControls:
+      refTable: 'PtDescriptionView'
+      refField: 'PartnerNo'
+      hasDetailBtn: true
+  - name: 'TKBNSectorCode'
+    description: 'Telekurs Branchencode'
+    genericControls:
+      isNoUpdate: true
+  - name: 'GeneralLimitSumHoCu'
+    description: 'Gesamtkundenlimite in Bilanzwährung'
+  - name: 'GeneralLimitUnusedHoCu'
+    description: 'Nicht beanspruchte Gesamtkundenlimite in Bilanzwährung'
+  - name: 'ArCode'
+    description: 'Gegenparteicode gemäss ARIS Statistik'
+    genericControls:
+      refTable: 'AcBankCounterparty'
+      refField: 'ArCode'
+      hasDetailBtn: true
+  - name: 'RatingResult'
+    description: 'Kundenrating per Berichtsdatum'
+  - name: 'C510_Override'
+    description: 'Kind of counterparty'
+    genericControls:
+      refTable: 'AcFireC510'
+      refField: 'C510Code'
+  - name: 'C026_Deri'
+    description: 'Type of central counterparty for derivatives'
+    genericControls:
+      refTable: 'AcFireC026'
+      refField: 'C026'
+  - name: 'C026_Repo'
+    description: 'Type of central counterparty for repo'
+    genericControls:
+      refTable: 'AcFireC026'
+      refField: 'C026'
+  - name: 'C026_DF'
+    description: 'Typ of default fond for central counterparty'
+    genericControls:
+      refTable: 'AcFireC026'
+      refField: 'C026'
+  - name: 'RelationshipMonths'
+    description: 'Duration of relationship between partner and bank in months.\r\nBegin of relationship = BeginDate of first accont.'
+  - name: 'LongTermLoan'
+    description: 'Flag whether customer has long tem loans'
+  - name: 'AmountOfProducts'
+    description: 'Amount of additional products'

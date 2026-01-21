@@ -1,0 +1,50 @@
+table:
+  name: 'PtUserTimeRule'
+  description: 'Ferien für User'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtUserBase'
+      parentRelationField: 'UserBaseId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'User Time Rule'
+    - german:
+        formTitle: 'Zeitregeln'
+  columns:
+  - name: 'ValidFrom'
+    description: ''
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'VacationRuleNo'
+    description: 'Ferienzeitregel'
+    genericControls:
+      refTable: 'PtUserTimeVacationRule'
+      refField: 'RuleNo'
+      defColumnPos: 2
+  - name: 'VacationDeviationDays'
+    description: 'Aus VacationRuleNo werden die Standard Ferientage gebildet, als individuelle Abweichung dazu kann pro Mitarbeiter eine gewisse Anzahl Tage erfasst werden. (PLUS oder MINUS Tage)'
+  - name: 'CutRuleNo'
+    description: 'Überzeitregel'
+    genericControls:
+      refTable: 'PtUserTimeCutRule'
+      refField: 'RuleNo'
+  - name: 'UserBaseId'
+    description: ''
+    genericControls:
+      refTable: 'PtUserBase'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'CutDeviationHours'
+    description: 'Aus CutRuleNo werden die Standard Überzeitstunden gebildet, als individuelle Abweichung dazu kann pro Mitarbeiter eine gewisse Anzahl Tage erfasst werden. (PLUS oder MINUS Tage)'

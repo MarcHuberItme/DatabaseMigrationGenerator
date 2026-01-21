@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PtAccountAnnuityPayback_UpdateInterest'
+  description: ''

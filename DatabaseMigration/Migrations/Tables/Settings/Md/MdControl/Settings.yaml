@@ -1,0 +1,26 @@
+table:
+  name: 'MdControl'
+  description: 'List of Controls which can be modified by the FormShaper'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: d18c2bae-7838-4b83-a18e-29041114c63e
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Controls'
+    - german:
+        formTitle: 'Controls'
+  columns:
+  - name: 'ControlName'
+    description: 'Typename of the Control'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TextProperty'
+    description: 'Name of the property that can contain multi language text'
+    genericControls:
+      defColumnPos: 2

@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'AxUpdateTaxReportLanguage'
+  description: 'Leider kann TaxSource unsere Bestellfile nicht korrekt verarbeiten und sie verlangen auf Ebene individuelle Transaktion, dass wir Sprache des bestellten Reports in ein Feld Language mitliefern.'

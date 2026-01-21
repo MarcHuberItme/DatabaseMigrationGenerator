@@ -1,0 +1,25 @@
+table:
+  name: 'TrSequence'
+  description: 'Sequnce blocks'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    visumLevel: 1
+    cacheLevel: 2
+  columns:
+  - name: 'Code'
+    description: ''
+  - name: 'MessageTypeId'
+    description: ''
+    genericControls:
+      refTable: 'TrMessageType'
+      refField: 'Id'
+  - name: 'IsMandatory'
+    description: ''
+  - name: 'IsRepetitive'
+    description: ''
+  - name: 'SeqIndex'
+    description: ''

@@ -1,0 +1,85 @@
+table:
+  name: 'RePremisesValues'
+  description: 'Werte zum Grundstück'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'ReBase'
+      parentTable: 'RePremises'
+      parentRelationField: 'PremisesId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Values'
+    - german:
+        formTitle: 'Werte'
+    - french:
+        formTitle: 'évaluent'
+  columns:
+  - name: 'PremisesId'
+    description: ''
+    genericControls:
+      refTable: 'RePremises'
+      refField: 'Id'
+      createNavigationIndex: true
+  - name: 'ValueTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'ReValueType'
+      refField: 'ValueTypeNo'
+      defColumnPos: 1
+  - name: 'ValueDate'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'Currency'
+    description: ''
+    genericControls:
+      refTable: 'CyBase'
+      refField: 'Symbol'
+      defColumnPos: 3
+  - name: 'Amount'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
+      defColumnPos: 5
+  - name: 'Valuation'
+    description: 'schätzungsrelevant\r\n0 = Nein\r\n1 = Ja'
+  - name: 'BasisYear'
+    description: 'falls der Wert auf einem Index basiert, ist hier das Basisjahr erfasst.'
+  - name: 'BasisAmount'
+    description: 'falls der Wert auf einem Index basiert, ist hier der Basiswert erfasst.'
+  - name: 'CalcMethodeId'
+    description: 'Berechnungsweise (vordefiniert)'
+    genericControls:
+      refTable: 'ReValueCalcMethode'
+      refField: 'Id'
+  - name: 'STPFlag'
+    description: '1 = gebildet durch Store Proc - kann nicht manuell geändert werden, bevor die Details gelöscht werden !'
+  - name: 'MemberUniqueKey'
+    description: 'PfB spezifisch: Jede Mitgliedbank vergibt für den gemeldeten Record eine eindeutige Identifikation. Diese benötigt sie um über E-Banking die Daten zu mutieren. Diese eindeutige Kennung muss die Mitgliedbank bei sich speichern.'
+  - name: 'BuildingId'
+    description: 'Werte können mit einzelnen Gebäuden verbunden sein.'
+    genericControls:
+      refTable: 'ReBuilding'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 6
+  - name: 'LandId'
+    description: ''
+    genericControls:
+      refTable: 'ReLand'
+      refField: 'Id'
+      hasDetailBtn: true

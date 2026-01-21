@@ -1,0 +1,48 @@
+table:
+  name: 'PtInfoPoolPortfolio'
+  description: 'possibility to save some remark of a certain portfolio'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtPortfolio'
+      parentRelationField: 'PortfolioId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Information'
+    - german:
+        formTitle: 'Informationen'
+    - french:
+        formTitle: 'Informations'
+  columns:
+  - name: 'PortfolioId'
+    description: 'foreign-key; Id of PtPortfolio'
+    genericControls:
+      refTable: 'PtPortfolio'
+      refField: 'Id'
+      isNoUpdate: true
+      createNavigationIndex: true
+  - name: 'Remark'
+    description: 'Free text comments'
+    genericControls:
+      multiLine: true
+      defColumnPos: 2
+  - name: 'InfoPoolType'
+    description: 'foreign-key; Id of PtInfoPoolType\r\nclassification of the remark'
+    genericControls:
+      refTable: 'PtInfoPoolType'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'RemarkDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3

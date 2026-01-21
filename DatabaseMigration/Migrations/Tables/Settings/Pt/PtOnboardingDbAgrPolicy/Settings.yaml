@@ -1,0 +1,38 @@
+table:
+  name: 'PtOnboardingDbAgrPolicy'
+  description: 'Digital Banking Agreement Policy'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Digital Banking Agreement'
+    - german:
+        formTitle: 'Digital Banking Agreement'
+    - french:
+        formTitle: 'Digital Banking Agreement'
+  columns:
+  - name: 'PolicyId'
+    description: ''
+    genericControls:
+      refTable: 'PtOnboardingPolicy'
+      refField: 'Id'
+  - name: 'DigitalBankingAppIdentifier'
+    description: ''
+    genericControls:
+      refTable: 'OaApp'
+      refField: 'AppIdentifier'
+  - name: 'AppOwnerAgreementId'
+    description: ''
+    genericControls:
+      refTable: 'PtAgrEbankingReferenceView'
+      refField: 'Id'
+      hasDetailBtn: true

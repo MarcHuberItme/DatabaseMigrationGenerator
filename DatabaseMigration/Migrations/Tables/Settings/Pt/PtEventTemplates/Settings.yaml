@@ -1,0 +1,38 @@
+table:
+  name: 'PtEventTemplates'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+  columns:
+  - name: 'EventMasterId'
+    description: ''
+    genericControls:
+      refTable: 'PtEventMaster'
+      refField: 'Id'
+  - name: 'TemplateId'
+    description: 'Id of the template, to be used for the printing of the ticket(s)'
+    genericControls:
+      refTable: 'AsTemplate'
+      refField: 'Id'
+      defColumnPos: 1
+  - name: 'Quantity'
+    description: 'Initial quantity of ticket to be issued'
+    genericControls:
+      defColumnPos: 2
+  - name: 'SalePrice'
+    description: 'Price per ticket'
+    genericControls:
+      defColumnPos: 3
+  - name: 'IsForPartner'
+    description: '1 - Partners\r\n0 - Acquisition(PtHunting)'
+    genericControls:
+      defColumnPos: 5

@@ -1,0 +1,58 @@
+table:
+  name: 'PtInvestmentKHExperience'
+  description: 'KnowHow and Experience (SEBA)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    navigation:
+      rootTable: 'PtBase'
+      parentTable: 'PtProfile'
+      parentRelationField: 'ProfileId'
+      parentIdField: 'Id'
+      isSharedNode: true
+    uiTableDescription:
+    - english:
+        formTitle: 'KnowHow and Experience'
+        helpText: 'KnowHow and Experience'
+    - german:
+        formTitle: 'KnowHow und Erfahrung'
+        helpText: 'KnowHow und Erfahrung'
+    - french:
+        formTitle: 'KnowHow und Erfahrung'
+        helpText: 'KnowHow und Erfahrung'
+  columns:
+  - name: 'ProfileId'
+    description: ''
+    genericControls:
+      refTable: 'PtProfile'
+      refField: 'Id'
+      hasDetailBtn: true
+      createNavigationIndex: true
+  - name: 'Cash'
+    description: ''
+  - name: 'Bonds'
+    description: ''
+  - name: 'Securities'
+    description: ''
+  - name: 'InvestmentFunds'
+    description: ''
+  - name: 'RealEstate'
+    description: ''
+  - name: 'Derivates'
+    description: ''
+  - name: 'StructuredProducts'
+    description: ''
+  - name: 'AlternativeInvestmentFunds'
+    description: ''
+  - name: 'Forwards'
+    description: ''
+  - name: 'DigitalAssets'
+    description: ''

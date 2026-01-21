@@ -1,0 +1,86 @@
+table:
+  name: 'PtHuntingEvent'
+  description: ''
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'CRM Events'
+    - german:
+        formTitle: 'CRM Termine & Ereignisse'
+  columns:
+  - name: 'EventNo'
+    description: 'Code for the event record.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'MotiveOpenTypeNo'
+    description: 'Reason leading to the contact with the potential customer'
+    genericControls:
+      refTable: 'PtHuntingOpen'
+      refField: 'MotiveOpenTypeNo'
+      defColumnPos: 2
+  - name: 'ContactResult'
+    description: 'Result or status of a contact.'
+    genericControls:
+      refTable: 'PtHuntingResult'
+      refField: 'ResultNo'
+      defColumnPos: 3
+  - name: 'TimeInterval'
+    description: 'Time intervall for the next interaction with the costomer. \r\nTime in days. Fraction of a day can be entered in decimal numbers.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'ReferenceDate'
+    description: 'FieldName of the Date in the Table ''PtHunting'' to which the time interval is referring.'
+    genericControls:
+      defColumnPos: 5
+  - name: 'SexStatusNo'
+    description: ''
+    genericControls:
+      refTable: 'PtSexStatus'
+      refField: 'SexStatusNo'
+      defColumnPos: 6
+  - name: 'LegalStatusNo'
+    description: 'Link zur Tabelle PtLegalStatus'
+    genericControls:
+      refTable: 'PtLegalStatus'
+      refField: 'LegalStatusNo'
+      defColumnPos: 7
+  - name: 'TemplateId'
+    description: 'conection to an evantually used document template.'
+    genericControls:
+      refTable: 'AsTemplate'
+      refField: 'Id'
+  - name: 'WorkflowMap'
+    description: 'Name of the map to launch (not implemented)'
+  - name: 'ProfileName'
+    description: ''
+    genericControls:
+      defColumnPos: 8
+  - name: 'HasEMail'
+    description: ''
+    genericControls:
+      defColumnPos: 9
+  - name: 'IsPartner'
+    description: ''
+    genericControls:
+      defColumnPos: 10
+  - name: 'IsOrganisation'
+    description: 'Alle nicht privaten Organisationsformen, wird von der Einstellung LegalStatusId überfahren.'
+    genericControls:
+      defColumnPos: 11
+  - name: 'IsNotPartner'
+    description: ''
+    genericControls:
+      defColumnPos: 12
+  - name: 'Zips'
+    description: 'Komma separated list of Zip-Numbers.'
+    genericControls:
+      defColumnPos: 13

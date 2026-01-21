@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'GetReportTkSectorCode'
+  description: '\r\n--Author		: Rolf Amstad\r\n--Date Created	: 16-Februar-2005'

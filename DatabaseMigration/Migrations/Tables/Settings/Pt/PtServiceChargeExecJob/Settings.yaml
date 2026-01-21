@@ -1,0 +1,75 @@
+table:
+  name: 'PtServiceChargeExecJob'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'PtServiceChargeExecJob'
+        helpText: 'PtServiceChargeExecJob'
+    - german:
+        formTitle: 'PtServiceChargeExecJob'
+        helpText: 'PtServiceChargeExecJob'
+  columns:
+  - name: 'JobDefID'
+    description: ''
+    genericControls:
+      refTable: 'PtServiceChargeJobDef'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'ServiceTypeNo'
+    description: ''
+    genericControls:
+      refTable: 'PtServiceNameList'
+      refField: 'ServiceTypeNo'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'JobNo'
+    description: ''
+    genericControls:
+      defColumnPos: 2
+  - name: 'IsAdHoc'
+    description: ''
+  - name: 'PartnerList'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'RunCalculation'
+    description: ''
+  - name: 'CalculationDate'
+    description: ''
+    genericControls:
+      defColumnPos: 3
+  - name: 'RunBooking'
+    description: ''
+  - name: 'BookingDate'
+    description: ''
+    genericControls:
+      defColumnPos: 4
+  - name: 'RunReporting'
+    description: ''
+  - name: 'ReportingDate'
+    description: ''
+    genericControls:
+      defColumnPos: 5
+  - name: 'RunReverse'
+    description: ''
+  - name: 'ReverseDate'
+    description: ''
+  - name: 'CalcItems'
+    description: ''
+  - name: 'TotalCharges'
+    description: ''
+  - name: 'ForClosing'
+    description: '1, as closing charge calculation'
+  - name: 'ReferenceDate'
+    description: 'for tax source charge'

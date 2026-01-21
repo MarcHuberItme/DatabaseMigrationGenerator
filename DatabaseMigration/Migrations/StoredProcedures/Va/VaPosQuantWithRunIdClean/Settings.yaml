@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'VaPosQuantWithRunIdClean'
+  description: '2015-03-02/ram: add DATEADD bei AB.OpeningDate'

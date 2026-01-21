@@ -1,0 +1,42 @@
+table:
+  name: 'AsCalExceptionSx'
+  description: 'AsCalExceptionSx  (Sx= StockExchange).\r\nThis table can be used to override the AsCalException for a specific date and a specific TradingSystemGroup.'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 1913daa1-53ed-41c4-a39e-d6e93a2e67d3
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Calendar Exceptions Sx'
+    - german:
+        formTitle: 'Kalender Ausnahmen Börse'
+    - french:
+        formTitle: 'Exceptions de calendrier'
+  columns:
+  - name: 'Date'
+    description: 'Exception date.'
+    genericControls:
+      defColumnPos: 1
+  - name: 'TradingSystemGroupId'
+    description: 'If this field is null the exception will be used for all TradingSystemGroup.\r\nIf this field contains a value the exception will only be used for this specific TradingSystemGroup.'
+    genericControls:
+      refTable: 'PtTradingSystemGroup'
+      refField: 'Id'
+      defColumnPos: 2
+  - name: 'TradingStartTime'
+    description: '1. Used to overrule a record of AsCalException (e.g. 1st Mai is in AsCalException because it''s not a value day but it''s a tradingday (at least in the morning).\r\n\r\n2. Used to overrule the value of PtTradingSystemGroup.StartTime on a specific date (e.g. 24th December is trading only from 07:02 until 12:00.'
+    genericControls:
+      defColumnPos: 3
+  - name: 'TradingEndTime'
+    description: '1. Used to overrule a record of AsCalException (e.g. 1st Mai is in AsCalException because it''s not a value day but it''s a tradingday (at least in the morning).\r\n\r\n2. Used to overrule the value of PtTradingSystemGroup.StartTime on a specific date (e.g. 24th December is trading only from 07:02 until 12:00.'
+    genericControls:
+      defColumnPos: 4
+  - name: 'Description'
+    description: ''
+    genericControls:
+      defColumnPos: 5

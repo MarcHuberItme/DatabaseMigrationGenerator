@@ -1,0 +1,38 @@
+table:
+  name: 'PtCardTypeProductNo'
+  description: ''
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 2
+    uiTableDescription:
+    - english:
+        formTitle: 'Zuord. CardType/ProductNo'
+    - german:
+        formTitle: 'Zuord. CardType/ProductNo'
+    - french:
+        formTitle: 'Type de carte/No de produ'
+  columns:
+  - name: 'CardType'
+    description: ''
+    genericControls:
+      refTable: 'PtCardType'
+      refField: 'CardType'
+      defColumnPos: 1
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      defColumnPos: 2
+  - name: 'IsChargeFree'
+    description: '1, is charge free'
+  - name: 'IsMainAccount'
+    description: 'frmCardBase: nur Karten/Kontoprodukte zur Auswahl, die hier markiert sind'
+  - name: 'IsAddAccount'
+    description: ''

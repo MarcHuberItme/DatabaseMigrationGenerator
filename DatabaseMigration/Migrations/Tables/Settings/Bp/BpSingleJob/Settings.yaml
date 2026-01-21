@@ -1,0 +1,47 @@
+table:
+  name: 'BpSingleJob'
+  description: 'Batch Job (without periodic execution)'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 3
+    groupId: 78cc5ca3-d241-48ac-9c89-b1583300cd2b
+    visumLevel: 1
+    cacheLevel: 1
+    uiTableDescription:
+    - english:
+        formTitle: 'Batch Job'
+    - german:
+        formTitle: 'Batch Job'
+  columns:
+  - name: 'LogicalName'
+    description: 'Name of Task which must be activated by the Batch Processor Engine'
+    genericControls:
+      refTable: 'AsLogicalTask'
+      refField: 'LogicalName'
+      defColumnPos: 1
+  - name: 'ParameterString'
+    description: 'Parameter String for Job execution'
+    genericControls:
+      multiLine: true
+  - name: 'MinStartTime'
+    description: 'Minimal date and time for (first) execution of Batch Job'
+    genericControls:
+      defColumnPos: 4
+  - name: 'AttachedEngine'
+    description: 'Name of engine which has to execute this batch job'
+    genericControls:
+      defColumnPos: 3
+  - name: 'JobName'
+    description: 'Name of Job (can be specified for improved monitoring)'
+    genericControls:
+      defColumnPos: 2
+  - name: 'State'
+    description: 'State of Job, indicating if it is waiting (0) or running (1) or finished (2)'
+  - name: 'RestartLevel'
+    description: 'Level of job restarts. The default (0) means that this job is not a restarted one, ''1'' means that this is the first restart entry of the job and so on.'
+  - name: 'OriginalJobId'
+    description: 'Information is only used for restarted jobs. It defines the Id of the original Job in this table.'
+  - name: 'StationName'
+    description: 'Name of station where job is executed'

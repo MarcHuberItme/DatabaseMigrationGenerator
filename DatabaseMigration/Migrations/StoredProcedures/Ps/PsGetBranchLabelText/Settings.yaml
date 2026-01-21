@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'PsGetBranchLabelText'
+  description: 'Retrieves the labels for a certain Branch\r\nIs used in FsReportServer'

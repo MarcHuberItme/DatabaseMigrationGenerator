@@ -1,0 +1,37 @@
+table:
+  name: 'ReBaseType'
+  description: 'Real estate type'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 617e9b96-2fc1-4dbb-b666-17533607e005
+    defArchive: true
+    visumLevel: 1
+    hasAsText: true
+    cacheLevel: 2
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Real estate type'
+    - german:
+        formTitle: 'Liegenschaftstyp'
+  columns:
+  - name: 'BaseTypeNo'
+    description: 'Real estate type\r\ne.g. wirtschaftliche Einheit'
+    genericControls:
+      defColumnPos: 1
+      isNoUpdate: true
+  - name: 'IaziValue'
+    description: 'Value for IAZI Interface'
+    genericControls:
+      defColumnPos: 2
+  - name: 'PfandRegValue'
+    description: 'Value for the interface to the Pfandregister (Pfandbriefbank)'
+    genericControls:
+      defColumnPos: 3
+  - name: 'SortNo'
+    description: ''
+  - name: 'NavigationStructureName'
+    description: ''

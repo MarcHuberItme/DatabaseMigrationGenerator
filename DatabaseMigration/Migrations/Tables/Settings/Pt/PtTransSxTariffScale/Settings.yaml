@@ -1,0 +1,44 @@
+table:
+  name: 'PtTransSxTariffScale'
+  description: 'Scaling of the limits and the factors to calculate the commission for stock exchange transactions'
+  tableUsageNo: 1
+  domainType: 20
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 2
+    groupId: 39fefc5c-772a-4ec8-ba9e-e396da7b80bb
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    isGroupable: true
+    uiTableDescription:
+    - english:
+        formTitle: 'Tariff Scale'
+    - german:
+        formTitle: 'Börsengebühr Staffel'
+  columns:
+  - name: 'TariffId'
+    description: ''
+    genericControls:
+      refTable: 'PtTransSxTariff'
+      refField: 'Id'
+      hasDetailBtn: true
+      defColumnPos: 1
+  - name: 'Limit'
+    description: 'Limit until ....'
+    genericControls:
+      defColumnPos: 2
+  - name: 'LevelTariff'
+    description: 'Tariff for that specific level'
+  - name: 'LevelFixCharge'
+    description: 'Fix amount to add per level'
+  - name: 'IsAccumulative'
+    description: '0 = absolut amout for Limit\r\n1 = amout limit is accumalative'
+  - name: 'AccumulatedSurcharge'
+    description: 'Accumulated charge per limit (this field depends on the field IsAccumulative)\r\nThe chare has to be caculated considering the following formula:\r\n(A - A) * R / CalcUnit + Z\r\nx-1  x    x-1                   x-1\r\nA: LevelTariff\r\nR: Limit\r\nZ: AccumulatedSurcharge\r\nx actual level'
+  - name: 'ManualEntryCode'
+    description: 'Code to specify whether the amount shall be entered manually or not (True = yes)'
+  - name: 'MinAmount'
+    description: 'Minimum amount per level. If one minimum in the row of the levels is set, the minimum on the TariffBasis is not allowed to carry a value.'
+  - name: 'IsWithoutRebate'
+    description: ''

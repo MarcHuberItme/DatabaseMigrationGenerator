@@ -1,0 +1,3 @@
+storedProcedure:
+  name: 'DbJobPreExecutionProcessing'
+  description: 'PRE-CHECK STEPS for JOBS'

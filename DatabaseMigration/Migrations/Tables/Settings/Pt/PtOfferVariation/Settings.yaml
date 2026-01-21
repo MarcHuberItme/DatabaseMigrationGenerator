@@ -1,0 +1,47 @@
+table:
+  name: 'PtOfferVariation'
+  description: 'z.B. Maxi  Casa'
+  tableUsageNo: 1
+  domainType: 10
+  headerTable: 'HdStandard'
+  genericComponents:
+    tableType: 1
+    groupId: 9dc441d9-52c0-4cec-8a7f-e57b0ead1674
+    defArchive: true
+    visumLevel: 1
+    cacheLevel: 1
+    navigation:
+      applicationKey: 'VariationTypeNo'
+      navigationConditionField: 'VariationTypeNo'
+      rootTable: 'PtEbInfo'
+      parentTable: 'PtOfferRealEstateDetail'
+      parentRelationField: 'DetailId'
+      parentIdField: 'Id'
+    uiTableDescription:
+    - english:
+        formTitle: 'Version'
+    - german:
+        formTitle: 'Variante'
+  columns:
+  - name: 'DetailId'
+    description: 'Version within an offer'
+    genericControls:
+      refTable: 'PtOfferRealEstateDetail'
+      refField: 'Id'
+  - name: 'VariationTypeNo'
+    description: 'z.B Maxi / Reno'
+    genericControls:
+      refTable: 'PtOfferVariationType'
+      refField: 'VersionTypeNo'
+  - name: 'ProductNo'
+    description: ''
+    genericControls:
+      refTable: 'PrPrivate'
+      refField: 'ProductNo'
+      hasDetailBtn: true
+  - name: 'Acceptability'
+    description: 'Tragbarkeit in %'
+  - name: 'Remark'
+    description: ''
+    genericControls:
+      multiLine: true
