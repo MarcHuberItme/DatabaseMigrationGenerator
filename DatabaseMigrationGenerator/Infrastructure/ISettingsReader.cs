@@ -10,6 +10,6 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 {
     public interface ISettingsReader
     {
-        Task<(IEnumerable<ISettings> settings, int totalScanned)> ReadAsync(string migrationsPath, IProgress<(int current, int total)>? progress = null);
+        Task<(IEnumerable<ISettings> settings, int totalScanned)> ReadAsync(string migrationsPath, Action<int, int>? onProgress = null);
     }
 }

@@ -4,6 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
+using System.Collections.Concurrent;
 using Finstar.DatabaseMigrationGenerator.Domain.SettingsObject;
 using YamlDotNet.Core;
 using YamlDotNet.Serialization;
@@ -14,30 +15,47 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
     public class SettingsReader : ISettingsReader
     {
         private const string SettingsFilePattern = "Settings.yaml";
-        
-        public async Task<(IEnumerable<ISettings> settings, int totalScanned)> ReadAsync(string migrationsPath, IProgress<(int current, int total)>? progress = null)
+
+        private static readonly IDeserializer Deserializer = new DeserializerBuilder()
+            .WithNamingConvention(CamelCaseNamingConvention.Instance)
+            .IgnoreUnmatchedProperties()
+            .Build();
+
+        public async Task<(IEnumerable<ISettings> settings, int totalScanned)> ReadAsync(string migrationsPath, Action<int, int>? onProgress = null)
         {
             var settingsFiles = Directory.GetFiles(migrationsPath, SettingsFilePattern, SearchOption.AllDirectories);
             var totalFiles = settingsFiles.Length;
 
-            var settings = new List<ISettings>();
+            var settings = new ConcurrentBag<ISettings>();
             var currentFile = 0;
+            var lastReported = 0;
+            var progressLock = new object();
 
-            foreach (var file in settingsFiles)
+            var parallelOptions = new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount };
+
+            await Parallel.ForEachAsync(settingsFiles, parallelOptions, async (file, cancellationToken) =>
             {
-                currentFile++;
-                progress?.Report((currentFile, totalFiles));
-                var content = await File.ReadAllTextAsync(file);
-                var deserializer = new DeserializerBuilder()
-                    .WithNamingConvention(CamelCaseNamingConvention.Instance)
-                    .IgnoreUnmatchedProperties()
-                    .Build();
-                
+                var current = Interlocked.Increment(ref currentFile);
+
+                if (onProgress != null && (current - lastReported >= 100 || current == totalFiles))
+                {
+                    lock (progressLock)
+                    {
+                        if (current - lastReported >= 100 || current == totalFiles)
+                        {
+                            lastReported = current;
+                            onProgress(current, totalFiles);
+                        }
+                    }
+                }
+
+                var content = await File.ReadAllTextAsync(file, cancellationToken);
+
                 if (content.StartsWith("table:"))
                 {
                     try
                     {
-                        var tableSettingsRoot = deserializer.Deserialize<TableSettingsRoot>(content);
+                        var tableSettingsRoot = Deserializer.Deserialize<TableSettingsRoot>(content);
                         var tableSettings = tableSettingsRoot.Table;
                         tableSettings.MapSourceFilePath(file);
                         tableSettings.Columns.AddRange(tableSettingsRoot.Columns);
@@ -49,31 +67,8 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
                             $"Error deserializing '{file}': {GetDeserializationErrorMessage(ex)}", ex);
                     }
                 }
-                // else if (yamlContent.StartsWith("function:"))
-                // {
-                //     var settings = deserializer.Deserialize<SettingsYamlFunctionModel>(yamlContent);
-                //     yield return ConfigurationMapper.MapFunction(settings.Function);
-                // }
-                // else if (yamlContent.StartsWith("view:"))
-                // {
-                //     var settings = deserializer.Deserialize<SettingsYamlViewModel>(yamlContent);
-                //     if (settings.FrontendView != null)
-                //     {
-                //         var headerTable = headerTableReader.Get(settings.FrontendView.HeaderTable);
-                //         yield return ConfigurationMapper.MapView(settings.View, settings.FrontendView, headerTable?.Columns);
-                //     }
-                //     else
-                //     {
-                //         yield return ConfigurationMapper.MapView(settings.View, settings.FrontendView);
-                //     }
-                // }
-                // else if (yamlContent.StartsWith("storedProcedure:"))
-                // {
-                //     var settings = deserializer.Deserialize<SettingsYamlStoredProcedureModel>(yamlContent);
-                //     yield return ConfigurationMapper.MapStoredProcedure(settings.StoredProcedure);
-                // }
-            }
-            
+            });
+
             return (settings, totalFiles);
         }
 

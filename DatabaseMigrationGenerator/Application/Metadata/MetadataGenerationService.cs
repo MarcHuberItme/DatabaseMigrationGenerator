@@ -46,14 +46,12 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
             TableSettings.SetValidHeaderTables(validHeaderTables);
             Console.WriteLine(" done.");
 
-            Console.Write("Reading settings files... ");
-            var progress = new Progress<(int current, int total)>(p =>
+            var (settingsEnumerable, totalScanned) = await settingsReader.ReadAsync(migrationsPath, (current, total) =>
             {
-                Console.Write($"\rReading settings files... {p.current}/{p.total}");
+                Console.Write($"\rReading settings files... {current}/{total}   ");
             });
-            var (settingsEnumerable, totalScanned) = await settingsReader.ReadAsync(migrationsPath, progress);
             var settings = settingsEnumerable.ToList();
-            Console.WriteLine($"\rReading settings files... {settings.Count} table(s) of {totalScanned} file(s) found.");
+            Console.WriteLine($"\rReading settings files... {settings.Count} table(s) of {totalScanned} file(s) found.   ");
 
             Console.Write("Validating settings...");
             var allErrors = new List<(ISettings Setting, List<string> Errors)>();
