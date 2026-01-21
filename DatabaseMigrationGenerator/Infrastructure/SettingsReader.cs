@@ -33,17 +33,17 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
                 {
                     try
                     {
-                        var tableSettings = deserializer.Deserialize<TableSettingsRoot>(content);
-                        tableSettings.Table.MapSourceFilePath(file);
-                        settings.Add(tableSettings.Table);
+                        var tableSettingsRoot = deserializer.Deserialize<TableSettingsRoot>(content);
+                        var tableSettings = tableSettingsRoot.Table;
+                        tableSettings.MapSourceFilePath(file);
+                        tableSettings.Columns.AddRange(tableSettingsRoot.Columns);
+                        settings.Add(tableSettings);
                     }
                     catch (YamlException ex)
                     {
                         throw new InvalidOperationException(
                             $"Error deserializing '{file}': {GetDeserializationErrorMessage(ex)}", ex);
                     }
-                    // var headerTable = headerTableReader.Get(settings.Table.HeaderTable);
-                    // yield return ConfigurationMapper.MapTable(settings.Table, headerTable?.Columns);
                 }
                 // else if (yamlContent.StartsWith("function:"))
                 // {

@@ -28,6 +28,9 @@ namespace Finstar.DatabaseMigrationGenerator
             services.AddTransient<IHeaderTableSettingsReader, HeaderTableSettingsReader>();
             services.AddTransient<IMdDomainTypeReader, MdDomainTypeReader>();
             services.AddTransient<IMdTableTypeReader, MdTableTypeReader>();
+            services.AddTransient<IMdVisumLevelReader, MdVisumLevelReader>();
+            services.AddTransient<IMdCacheLevelReader, MdCacheLevelReader>();
+            services.AddTransient<IMdGroupReader, MdGroupReader>();
             services.AddTransient<IMetadataBuilder, MetadataBuilder>();
             services.AddTransient<IMetadataGenerationService, MetadataGenerationService>();
             

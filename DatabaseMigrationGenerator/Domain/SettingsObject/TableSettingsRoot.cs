@@ -6,8 +6,10 @@
 
 namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
 {
-    public class TableSettingsRoot 
+    public class TableSettingsRoot
     {
         public TableSettings Table { get; init; } = new();
+
+        public List<ColumnSettings> Columns { get; init; } = [];
     }
 }

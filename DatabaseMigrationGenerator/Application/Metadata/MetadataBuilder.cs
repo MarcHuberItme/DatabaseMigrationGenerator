@@ -30,7 +30,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
                             tableSetting.TableUsageNo,
                             tableSetting.DomainType,
                             tableSetting.HeaderTable,
-                            tableSetting.WritableForEbanking!.Value);
+                            tableSetting.WritableForEbanking);
                         
                         metaData.Add(tableMetaData);
                         break;

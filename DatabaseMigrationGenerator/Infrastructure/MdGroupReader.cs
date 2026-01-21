@@ -4,32 +4,36 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-using Finstar.DatabaseMigrationGenerator.Domain.HeaderTable;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
 namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 {
-    public class HeaderTableSettingsReader : IHeaderTableSettingsReader
+    public class MdGroupReader : IMdGroupReader
     {
-        private const string HeaderTablesFileName = "HeaderTables.yaml";
-        
-        public async Task<IEnumerable<HeaderTableSettings>> ReadAsync(string migrationsPath)
-        {
-            var headerTablesFilePath = Path.Combine(migrationsPath, HeaderTablesFileName);
+        private const string MdGroupFileName = "Tables/Data/Md/MdGroup.yaml";
 
-            if (!File.Exists(headerTablesFilePath)) {
+        public async Task<string[]> ReadAsync(string migrationsPath)
+        {
+            var filePath = Path.Combine(migrationsPath, MdGroupFileName);
+
+            if (!File.Exists(filePath)) {
                 return [];
             }
 
-            var content = await File.ReadAllTextAsync(headerTablesFilePath);
+            var content = await File.ReadAllTextAsync(filePath);
             var deserializer = new DeserializerBuilder()
                 .WithNamingConvention(CamelCaseNamingConvention.Instance)
                 .IgnoreUnmatchedProperties()
                 .Build();
 
-            var headerTableObjects = deserializer.Deserialize<HeaderTableSettingsRoot>(content);
-            return headerTableObjects?.HeaderTables ?? [];
+            var root = deserializer.Deserialize<MdGroupRoot>(content);
+            return root.Index.Values.ToArray();
+        }
+
+        private class MdGroupRoot
+        {
+            public Dictionary<string, string> Index { get; set; } = new();
         }
     }
 }

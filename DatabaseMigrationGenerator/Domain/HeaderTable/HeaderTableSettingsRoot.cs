@@ -8,6 +8,6 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.HeaderTable
 {
     public class HeaderTableSettingsRoot
     {
-        public IEnumerable<HeaderTableSettings> HeaderTables { get; init; } = new List<HeaderTableSettings>();
+        public IEnumerable<HeaderTableSettings> HeaderTables { get; set; } = new List<HeaderTableSettings>();
     }
 }

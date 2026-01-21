@@ -18,6 +18,9 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
         IHeaderTableSettingsReader headerTableSettingsReader,
         IMdDomainTypeReader mdDomainTypeReader,
         IMdTableTypeReader mdTableTypeReader,
+        IMdVisumLevelReader mdVisumLevelReader,
+        IMdCacheLevelReader mdCacheLevelReader,
+        IMdGroupReader mdGroupReader,
         IMetadataBuilder metadataBuilder) : IMetadataGenerationService
     {
         public async Task<IEnumerable<IMetadata>> Generate(string migrationsPath)
@@ -27,6 +30,19 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
 
             var validTableTypes = await mdTableTypeReader.ReadAsync(migrationsPath);
             GenericComponentsSettings.SetValidTableTypes(validTableTypes);
+
+            var validVisumLevels = await mdVisumLevelReader.ReadAsync(migrationsPath);
+            GenericComponentsSettings.SetValidVisumLevels(validVisumLevels);
+
+            var validCacheLevels = await mdCacheLevelReader.ReadAsync(migrationsPath);
+            GenericComponentsSettings.SetValidCacheLevels(validCacheLevels);
+
+            var validGroupIds = await mdGroupReader.ReadAsync(migrationsPath);
+            GenericComponentsSettings.SetValidGroupIds(validGroupIds);
+
+            var headerTableSettings = await headerTableSettingsReader.ReadAsync(migrationsPath);
+            var validHeaderTables = headerTableSettings.Select(h => h.Type).ToArray();
+            TableSettings.SetValidHeaderTables(validHeaderTables);
 
             var settings = (await settingsReader.ReadAsync(migrationsPath)).ToList();
 
@@ -53,7 +69,6 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
 
             logger.LogInformation("Validation successful: {Count} file(s) validated.", settings.Count);
 
-            var headerTableSettings = await headerTableSettingsReader.ReadAsync(migrationsPath);
             var metaData = metadataBuilder.Build(settings, headerTableSettings);
             return metaData;
         }

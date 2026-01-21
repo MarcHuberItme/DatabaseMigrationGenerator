@@ -20,21 +20,27 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
 
         public byte TableUsageNo { get; init; }
 
-        public bool? WritableForEbanking { get; init; }
+        public bool WritableForEbanking { get; init; } = false;
 
         public GenericComponentsSettings? GenericComponents { get; init; }
 
-        // public List<TableColumnSettings>? Columns { get; set; } = new();
+        public List<ColumnSettings> Columns { get; init; } = [];
 
         private const int MaxNameLength = 30;
         private const int MaxDescriptionLength = 2000;
         private static readonly Regex AllowedNamePattern = new(@"^[a-zA-Z0-9]+$", RegexOptions.Compiled);
         private static readonly char[] NotAllowedDescriptionCharacters = ['ä', 'ö', 'ü', 'Ä', 'Ö', 'Ü', 'ß', 'é', 'è', 'à', 'ù', 'É', 'È', 'À', 'Ù'];
         private static byte[] ValidDomainTypes { get; set; } = [];
+        private static string[] ValidHeaderTables { get; set; } = [];
 
         public static void SetValidDomainTypes(byte[] validDomainTypes)
         {
             ValidDomainTypes = validDomainTypes;
+        }
+
+        public static void SetValidHeaderTables(string[] validHeaderTables)
+        {
+            ValidHeaderTables = validHeaderTables;
         }
 
         public override List<string> Validate()
@@ -45,8 +51,9 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
             ValidateDescription(errors);
             ValidateTableUsageNo(errors);
             ValidateDomainType(errors);
-            ValidateWritableForEbanking(errors);
+            ValidateHeaderTable(errors);
             ValidateGenericComponents(errors);
+            ValidateColumns(errors);
 
             return errors;
         }
@@ -105,10 +112,15 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
             }
         }
 
-        private void ValidateWritableForEbanking(List<string> errors)
+        private void ValidateHeaderTable(List<string> errors)
         {
-            if (WritableForEbanking is null) {
-                errors.Add($"{nameof(WritableForEbanking)} is required.");
+            if (string.IsNullOrEmpty(HeaderTable)) {
+                errors.Add($"{nameof(HeaderTable)} is required.");
+                return;
+            }
+
+            if (!ValidHeaderTables.Contains(HeaderTable, StringComparer.OrdinalIgnoreCase)) {
+                errors.Add($"{nameof(HeaderTable)} must be one of: {string.Join(", ", ValidHeaderTables)}.");
             }
         }
 
@@ -119,7 +131,15 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
                 return;
             }
 
-            errors.AddRange(GenericComponents.Validate());
+            var columnNames = Columns.Select(c => c.Name).ToList();
+            errors.AddRange(GenericComponents.Validate(columnNames));
+        }
+
+        private void ValidateColumns(List<string> errors)
+        {
+            foreach (var column in Columns) {
+                errors.AddRange(column.Validate());
+            }
         }
     }
 }

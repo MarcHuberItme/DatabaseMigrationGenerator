@@ -4,12 +4,10 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-namespace Finstar.DatabaseMigrationGenerator.Domain.HeaderTable
+namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 {
-    public class HeaderTableSettings
+    public interface IMdGroupReader
     {
-        public string Type { get; set; } = string.Empty;
-        
-        //public IEnumerable<HeaderTableColumn> Columns { get; set; }
+        Task<string[]> ReadAsync(string migrationsPath);
     }
 }
