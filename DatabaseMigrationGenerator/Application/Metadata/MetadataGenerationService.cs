@@ -51,7 +51,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
                 Console.Write($"\rReading settings files... {current}/{total}   ");
             });
             var settings = settingsEnumerable.ToList();
-            Console.WriteLine($"\rReading settings files... {settings.Count} table(s) of {totalScanned} file(s) found.   ");
+            Console.WriteLine($"\rReading settings files... {settings.Count} of {totalScanned} file(s) found.   ");
 
             Console.Write("Validating settings...");
             var allErrors = new List<(ISettings Setting, List<string> Errors)>();

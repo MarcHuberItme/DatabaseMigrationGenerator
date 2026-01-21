@@ -9,8 +9,8 @@ frontendView:
   headerTable: 'HdStandard'
   genericComponents:
     tableType: 5
-    tableGroupId: ''
-    archiveAsHistory: true
+    groupId: ''
+    defArchive: true
     visumNumber: 0
     visumLevel: 1
     hasAsText: true

@@ -6,7 +6,7 @@
 
 namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
 {
-    public class GenericComponentsSettings
+    public class FrontEndViewGenericComponentsSettings
     {
         public byte? TableType { get; init; }
 
@@ -34,40 +34,6 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
 
         public List<UiTableDescriptionSettings>? UiTableDescription { get; init; }
 
-        private static byte[] ValidTableTypes { get; set; } = [];
-        private static byte[] ValidVisumLevels { get; set; } = [];
-        private static byte[] ValidCacheLevels { get; set; } = [];
-        private static string[] ValidGroupIds { get; set; } = [];
-
-        public static void SetValidTableTypes(byte[] validTableTypes)
-        {
-            ValidTableTypes = validTableTypes;
-        }
-
-        public static void SetValidVisumLevels(byte[] validVisumLevels)
-        {
-            ValidVisumLevels = validVisumLevels;
-        }
-
-        public static void SetValidCacheLevels(byte[] validCacheLevels)
-        {
-            ValidCacheLevels = validCacheLevels;
-        }
-
-        public static void SetValidGroupIds(string[] validGroupIds)
-        {
-            ValidGroupIds = validGroupIds;
-        }
-
-        public static bool IsValidTableType(byte tableType) => ValidTableTypes.Contains(tableType);
-        public static bool IsValidVisumLevel(byte visumLevel) => ValidVisumLevels.Contains(visumLevel);
-        public static bool IsValidCacheLevel(byte cacheLevel) => ValidCacheLevels.Contains(cacheLevel);
-        public static bool IsValidGroupId(string groupId) => ValidGroupIds.Contains(groupId, StringComparer.OrdinalIgnoreCase);
-
-        public static string GetValidTableTypesString() => string.Join(", ", ValidTableTypes);
-        public static string GetValidVisumLevelsString() => string.Join(", ", ValidVisumLevels);
-        public static string GetValidCacheLevelsString() => string.Join(", ", ValidCacheLevels);
-
         private static readonly byte[] ValidVisumNumbers = [0, 1, 85];
 
         public List<string> Validate(IEnumerable<string> validColumnNames)
@@ -92,8 +58,8 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
                 return;
             }
 
-            if (!ValidTableTypes.Contains(TableType.Value)) {
-                errors.Add($"{nameof(TableType)} must be one of: {string.Join(", ", ValidTableTypes)}.");
+            if (!GenericComponentsSettings.IsValidTableType(TableType.Value)) {
+                errors.Add($"{nameof(TableType)} must be one of: {GenericComponentsSettings.GetValidTableTypesString()}.");
             }
         }
 
@@ -104,7 +70,7 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
                 return;
             }
 
-            if (!ValidGroupIds.Contains(GroupId, StringComparer.OrdinalIgnoreCase)) {
+            if (!GenericComponentsSettings.IsValidGroupId(GroupId)) {
                 errors.Add($"{nameof(GroupId)} must be a valid group GUID.");
             }
         }
@@ -123,8 +89,8 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
                 return;
             }
 
-            if (!ValidVisumLevels.Contains(VisumLevel.Value)) {
-                errors.Add($"{nameof(VisumLevel)} must be one of: {string.Join(", ", ValidVisumLevels)}.");
+            if (!GenericComponentsSettings.IsValidVisumLevel(VisumLevel.Value)) {
+                errors.Add($"{nameof(VisumLevel)} must be one of: {GenericComponentsSettings.GetValidVisumLevelsString()}.");
             }
         }
 
@@ -135,8 +101,8 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
                 return;
             }
 
-            if (!ValidCacheLevels.Contains(CacheLevel.Value)) {
-                errors.Add($"{nameof(CacheLevel)} must be one of: {string.Join(", ", ValidCacheLevels)}.");
+            if (!GenericComponentsSettings.IsValidCacheLevel(CacheLevel.Value)) {
+                errors.Add($"{nameof(CacheLevel)} must be one of: {GenericComponentsSettings.GetValidCacheLevelsString()}.");
             }
         }
 

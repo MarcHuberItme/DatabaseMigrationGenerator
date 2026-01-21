@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
 {
-    public class TableSettings() : SettingsBase
+    public class FrontEndViewSettings() : SettingsBase
     {
         public string Name { get; init; } = string.Empty;
 
@@ -20,33 +20,13 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
 
         public byte TableUsageNo { get; init; }
 
-        public bool WritableForEbanking { get; init; } = false;
+        public FrontEndViewGenericComponentsSettings? GenericComponents { get; init; }
 
-        public GenericComponentsSettings? GenericComponents { get; init; }
-
-        public List<ColumnSettings> Columns { get; init; } = [];
+        public List<FrontEndViewColumnSettings> Columns { get; init; } = [];
 
         private const int MaxNameLength = 30;
         private const int MaxDescriptionLength = 2000;
         private static readonly Regex AllowedNamePattern = new(@"^[a-zA-Z0-9_]+$", RegexOptions.Compiled);
-        private static byte[] ValidDomainTypes { get; set; } = [];
-        private static string[] ValidHeaderTables { get; set; } = [];
-
-        public static void SetValidDomainTypes(byte[] validDomainTypes)
-        {
-            ValidDomainTypes = validDomainTypes;
-        }
-
-        public static void SetValidHeaderTables(string[] validHeaderTables)
-        {
-            ValidHeaderTables = validHeaderTables;
-        }
-
-        public static bool IsValidDomainType(byte domainType) => ValidDomainTypes.Contains(domainType);
-        public static bool IsValidHeaderTable(string headerTable) => ValidHeaderTables.Contains(headerTable, StringComparer.OrdinalIgnoreCase);
-
-        public static string GetValidDomainTypesString() => string.Join(", ", ValidDomainTypes);
-        public static string GetValidHeaderTablesString() => string.Join(", ", ValidHeaderTables);
 
         public override List<string> Validate()
         {
@@ -99,8 +79,8 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
 
         private void ValidateDomainType(List<string> errors)
         {
-            if (!ValidDomainTypes.Contains(DomainType)) {
-                errors.Add($"{nameof(DomainType)} must be one of: {string.Join(", ", ValidDomainTypes)}.");
+            if (!TableSettings.IsValidDomainType(DomainType)) {
+                errors.Add($"{nameof(DomainType)} must be one of: {TableSettings.GetValidDomainTypesString()}.");
             }
         }
 
@@ -110,8 +90,8 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
                 return;
             }
 
-            if (!ValidHeaderTables.Contains(HeaderTable, StringComparer.OrdinalIgnoreCase)) {
-                errors.Add($"{nameof(HeaderTable)} must be one of: {string.Join(", ", ValidHeaderTables)}.");
+            if (!TableSettings.IsValidHeaderTable(HeaderTable)) {
+                errors.Add($"{nameof(HeaderTable)} must be one of: {TableSettings.GetValidHeaderTablesString()}.");
             }
         }
 

@@ -51,9 +51,9 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 
                 var content = await File.ReadAllTextAsync(file, cancellationToken);
 
-                if (content.StartsWith("table:"))
+                try
                 {
-                    try
+                    if (content.StartsWith("table:"))
                     {
                         var tableSettingsRoot = Deserializer.Deserialize<TableSettingsRoot>(content);
                         var tableSettings = tableSettingsRoot.Table;
@@ -61,11 +61,40 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
                         tableSettings.Columns.AddRange(tableSettingsRoot.Columns);
                         settings.Add(tableSettings);
                     }
-                    catch (YamlException ex)
+                    else if (content.StartsWith("view:") && content.Contains("frontendView:"))
                     {
-                        throw new InvalidOperationException(
-                            $"Error deserializing '{file}': {GetDeserializationErrorMessage(ex)}", ex);
+                        var frontEndViewSettingsRoot = Deserializer.Deserialize<FrontEndViewSettingsRoot>(content);
+                        var frontEndViewSettings = frontEndViewSettingsRoot.FrontendView;
+                        frontEndViewSettings.MapSourceFilePath(file);
+                        frontEndViewSettings.Columns.AddRange(frontEndViewSettingsRoot.Columns);
+                        settings.Add(frontEndViewSettings);
                     }
+                    else if (content.StartsWith("view:"))
+                    {
+                        var viewSettingsRoot = Deserializer.Deserialize<ViewSettingsRoot>(content);
+                        var viewSettings = viewSettingsRoot.View;
+                        viewSettings.MapSourceFilePath(file);
+                        settings.Add(viewSettings);
+                    }
+                    else if (content.StartsWith("storedProcedure:"))
+                    {
+                        var storedProcedureSettingsRoot = Deserializer.Deserialize<StoredProcedureSettingsRoot>(content);
+                        var storedProcedureSettings = storedProcedureSettingsRoot.StoredProcedure;
+                        storedProcedureSettings.MapSourceFilePath(file);
+                        settings.Add(storedProcedureSettings);
+                    }
+                    else if (content.StartsWith("function:"))
+                    {
+                        var functionSettingsRoot = Deserializer.Deserialize<FunctionSettingsRoot>(content);
+                        var functionSettings = functionSettingsRoot.Function;
+                        functionSettings.MapSourceFilePath(file);
+                        settings.Add(functionSettings);
+                    }
+                }
+                catch (YamlException ex)
+                {
+                    throw new InvalidOperationException(
+                        $"Error deserializing '{file}': {GetDeserializationErrorMessage(ex)}", ex);
                 }
             });
 
