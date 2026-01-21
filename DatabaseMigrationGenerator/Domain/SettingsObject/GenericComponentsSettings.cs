@@ -134,7 +134,6 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
         private void ValidateNavigation(List<string> errors)
         {
             if (Navigation is null) {
-                errors.Add($"{nameof(Navigation)} is required.");
                 return;
             }
 

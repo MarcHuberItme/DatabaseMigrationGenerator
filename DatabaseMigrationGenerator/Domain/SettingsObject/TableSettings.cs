@@ -28,8 +28,7 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
 
         private const int MaxNameLength = 30;
         private const int MaxDescriptionLength = 2000;
-        private static readonly Regex AllowedNamePattern = new(@"^[a-zA-Z0-9]+$", RegexOptions.Compiled);
-        private static readonly char[] NotAllowedDescriptionCharacters = ['ä', 'ö', 'ü', 'Ä', 'Ö', 'Ü', 'ß', 'é', 'è', 'à', 'ù', 'É', 'È', 'À', 'Ù'];
+        private static readonly Regex AllowedNamePattern = new(@"^[a-zA-Z0-9_]+$", RegexOptions.Compiled);
         private static byte[] ValidDomainTypes { get; set; } = [];
         private static string[] ValidHeaderTables { get; set; } = [];
 
@@ -69,32 +68,19 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
                 errors.Add($"{nameof(Name)} must not exceed {MaxNameLength} characters.");
             }
 
-            if (!char.IsUpper(Name[0])) {
-                errors.Add($"{nameof(Name)} must start with an uppercase letter.");
-            }
-
             if (!AllowedNamePattern.IsMatch(Name)) {
-                errors.Add($"{nameof(Name)} must only contain letters (a-z, A-Z) and digits (0-9).");
+                errors.Add($"{nameof(Name)} must only contain letters (a-z, A-Z), digits (0-9), and underscores (_).");
             }
         }
 
         private void ValidateDescription(List<string> errors)
         {
             if (string.IsNullOrEmpty(Description)) {
-                errors.Add($"{nameof(Description)} is required.");
                 return;
             }
 
             if (Description.Length > MaxDescriptionLength) {
                 errors.Add($"{nameof(Description)} must not exceed {MaxDescriptionLength} characters.");
-            }
-
-            if (!char.IsUpper(Description[0])) {
-                errors.Add($"{nameof(Description)} must start with an uppercase letter.");
-            }
-
-            if (Description.IndexOfAny(NotAllowedDescriptionCharacters) >= 0) {
-                errors.Add($"{nameof(Description)} must not contain umlauts.");
             }
         }
 
@@ -115,7 +101,6 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
         private void ValidateHeaderTable(List<string> errors)
         {
             if (string.IsNullOrEmpty(HeaderTable)) {
-                errors.Add($"{nameof(HeaderTable)} is required.");
                 return;
             }
 

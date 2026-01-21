@@ -108,20 +108,21 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         }
 
         [TestMethod]
-        public void Validate_NameStartsWithLowercase_ReturnsError()
+        public void Validate_NameStartsWithLowercase_ReturnsNoError()
         {
             var setting = new TableSettings {
                 Name = "testTable",
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = 10,
+                HeaderTable = "HdStandard",
                 WritableForEbanking = false,
                 GenericComponents = CreateValidGenericComponents()
             };
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("Name") && e.Contains("uppercase"));
+            errors.Should().BeEmpty();
         }
 
         [TestMethod]
@@ -163,20 +164,21 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         #region Description Validation
 
         [TestMethod]
-        public void Validate_DescriptionIsEmpty_ReturnsError()
+        public void Validate_DescriptionIsEmpty_ReturnsNoError()
         {
             var setting = new TableSettings {
                 Name = "ValidName",
                 Description = string.Empty,
                 TableUsageNo = 1,
                 DomainType = 10,
+                HeaderTable = "HdStandard",
                 WritableForEbanking = false,
                 GenericComponents = CreateValidGenericComponents()
             };
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("Description") && e.Contains("required"));
+            errors.Should().BeEmpty();
         }
 
         [TestMethod]
@@ -197,20 +199,21 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         }
 
         [TestMethod]
-        public void Validate_DescriptionStartsWithLowercase_ReturnsError()
+        public void Validate_DescriptionStartsWithLowercase_ReturnsNoError()
         {
             var setting = new TableSettings {
                 Name = "ValidName",
                 Description = "lowercase description",
                 TableUsageNo = 1,
                 DomainType = 10,
+                HeaderTable = "HdStandard",
                 WritableForEbanking = false,
                 GenericComponents = CreateValidGenericComponents()
             };
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("Description") && e.Contains("uppercase"));
+            errors.Should().BeEmpty();
         }
 
         [TestMethod]
@@ -814,13 +817,14 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         #region Navigation Validation
 
         [TestMethod]
-        public void Validate_NavigationIsNull_ReturnsError()
+        public void Validate_NavigationIsNull_ReturnsNoError()
         {
             var setting = new TableSettings {
                 Name = "ValidName",
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = 10,
+                HeaderTable = "HdStandard",
                 WritableForEbanking = false,
                 GenericComponents = new GenericComponentsSettings {
                     TableType = 1,
@@ -837,17 +841,18 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("Navigation") && e.Contains("required"));
+            errors.Should().BeEmpty();
         }
 
         [TestMethod]
-        public void Validate_IsNavigationRootIsNull_ReturnsError()
+        public void Validate_IsNavigationRootIsNull_ReturnsNoError()
         {
             var setting = new TableSettings {
                 Name = "ValidName",
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = 10,
+                HeaderTable = "HdStandard",
                 WritableForEbanking = false,
                 GenericComponents = new GenericComponentsSettings {
                     TableType = 1,
@@ -868,7 +873,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("IsNavigationRoot") && e.Contains("required"));
+            errors.Should().BeEmpty();
         }
 
         [TestMethod]
@@ -903,13 +908,14 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         }
 
         [TestMethod]
-        public void Validate_IsHiddenNodeIsNull_ReturnsError()
+        public void Validate_IsHiddenNodeIsNull_ReturnsNoError()
         {
             var setting = new TableSettings {
                 Name = "ValidName",
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = 10,
+                HeaderTable = "HdStandard",
                 WritableForEbanking = false,
                 GenericComponents = new GenericComponentsSettings {
                     TableType = 1,
@@ -930,7 +936,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("IsHiddenNode") && e.Contains("required"));
+            errors.Should().BeEmpty();
         }
 
         #endregion

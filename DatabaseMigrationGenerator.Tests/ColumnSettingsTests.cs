@@ -68,7 +68,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         }
 
         [TestMethod]
-        public void Validate_NameStartsWithLowercase_ReturnsError()
+        public void Validate_NameStartsWithLowercase_ReturnsNoError()
         {
             var setting = new ColumnSettings {
                 Name = "testColumn",
@@ -78,7 +78,21 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("Name") && e.Contains("uppercase"));
+            errors.Should().BeEmpty();
+        }
+
+        [TestMethod]
+        public void Validate_NameWithUnderscore_ReturnsNoError()
+        {
+            var setting = new ColumnSettings {
+                Name = "Test_Column",
+                Description = "Valid description",
+                GenericControls = CreateValidGenericControls()
+            };
+
+            var errors = setting.Validate();
+
+            errors.Should().BeEmpty();
         }
 
         [TestMethod]
@@ -92,7 +106,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("Name") && e.Contains("letters") && e.Contains("digits"));
+            errors.Should().Contain(e => e.Contains("Cölumn") && e.Contains("underscores"));
         }
 
         [TestMethod]
@@ -106,7 +120,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("Name") && e.Contains("letters") && e.Contains("digits"));
+            errors.Should().Contain(e => e.Contains("Column Name") && e.Contains("underscores"));
         }
 
         #endregion
@@ -114,7 +128,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         #region Description Validation
 
         [TestMethod]
-        public void Validate_DescriptionIsEmpty_ReturnsError()
+        public void Validate_DescriptionIsEmpty_ReturnsNoError()
         {
             var setting = new ColumnSettings {
                 Name = "ValidColumn",
@@ -124,7 +138,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("Description") && e.Contains("required"));
+            errors.Should().BeEmpty();
         }
 
         [TestMethod]
@@ -138,11 +152,11 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("Description") && e.Contains("2000"));
+            errors.Should().Contain(e => e.Contains("ValidColumn") && e.Contains("Description") && e.Contains("2000"));
         }
 
         [TestMethod]
-        public void Validate_DescriptionStartsWithLowercase_ReturnsError()
+        public void Validate_DescriptionStartsWithLowercase_ReturnsNoError()
         {
             var setting = new ColumnSettings {
                 Name = "ValidColumn",
@@ -152,11 +166,11 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("Description") && e.Contains("uppercase"));
+            errors.Should().BeEmpty();
         }
 
         [TestMethod]
-        public void Validate_DescriptionContainsUmlaut_ReturnsError()
+        public void Validate_DescriptionContainsUmlaut_ReturnsNoError()
         {
             var setting = new ColumnSettings {
                 Name = "ValidColumn",
@@ -166,7 +180,109 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("Description") && e.Contains("umlaut"));
+            errors.Should().BeEmpty();
+        }
+
+        #endregion
+
+        #region MinValue Validation
+
+        [TestMethod]
+        public void Validate_MinValueExceedsMaxLength_ReturnsError()
+        {
+            var setting = new ColumnSettings {
+                Name = "ValidColumn",
+                Description = "Valid description",
+                MinValue = new string('1', 31),
+                GenericControls = CreateValidGenericControls()
+            };
+
+            var errors = setting.Validate();
+
+            errors.Should().Contain(e => e.Contains("MinValue") && e.Contains("30"));
+        }
+
+        [TestMethod]
+        public void Validate_MinValueWithinLimit_ReturnsNoError()
+        {
+            var setting = new ColumnSettings {
+                Name = "ValidColumn",
+                Description = "Valid description",
+                MinValue = new string('1', 30),
+                GenericControls = CreateValidGenericControls()
+            };
+
+            var errors = setting.Validate();
+
+            errors.Should().NotContain(e => e.Contains("MinValue"));
+        }
+
+        #endregion
+
+        #region MaxValue Validation
+
+        [TestMethod]
+        public void Validate_MaxValueExceedsMaxLength_ReturnsError()
+        {
+            var setting = new ColumnSettings {
+                Name = "ValidColumn",
+                Description = "Valid description",
+                MaxValue = new string('9', 31),
+                GenericControls = CreateValidGenericControls()
+            };
+
+            var errors = setting.Validate();
+
+            errors.Should().Contain(e => e.Contains("MaxValue") && e.Contains("30"));
+        }
+
+        [TestMethod]
+        public void Validate_MaxValueWithinLimit_ReturnsNoError()
+        {
+            var setting = new ColumnSettings {
+                Name = "ValidColumn",
+                Description = "Valid description",
+                MaxValue = new string('9', 30),
+                GenericControls = CreateValidGenericControls()
+            };
+
+            var errors = setting.Validate();
+
+            errors.Should().NotContain(e => e.Contains("MaxValue"));
+        }
+
+        #endregion
+
+        #region DefaultValue Validation
+
+        [TestMethod]
+        public void Validate_DefaultValueExceedsMaxLength_ReturnsError()
+        {
+            var setting = new ColumnSettings {
+                Name = "ValidColumn",
+                Description = "Valid description",
+                DefaultValue = new string('x', 31),
+                GenericControls = CreateValidGenericControls()
+            };
+
+            var errors = setting.Validate();
+
+            errors.Should().Contain(e => e.Contains("DefaultValue") && e.Contains("30"));
+        }
+
+        [TestMethod]
+        public void Validate_DefaultValueWithinLimit_ReturnsNoError()
+        {
+            var setting = new ColumnSettings {
+                Name = "ValidColumn",
+                Description = "Valid description",
+                DefaultValue = new string('x', 30),
+                GenericControls = CreateValidGenericControls()
+            };
+
+            var errors = setting.Validate();
+
+            errors.Should().NotContain(e => e.Contains("DefaultValue"));
         }
 
         #endregion
@@ -174,7 +290,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         #region GenericControls Validation
 
         [TestMethod]
-        public void Validate_GenericControlsIsNull_ReturnsError()
+        public void Validate_GenericControlsIsNull_ReturnsNoError()
         {
             var setting = new ColumnSettings {
                 Name = "ValidColumn",
@@ -184,7 +300,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("GenericControls") && e.Contains("required"));
+            errors.Should().BeEmpty();
         }
 
         #endregion
@@ -206,12 +322,13 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         {
             var setting = new ColumnSettings {
                 Name = "cölumn",
-                Description = "löwercase"
+                Description = "Description"
             };
 
             var errors = setting.Validate();
 
-            errors.Should().HaveCountGreaterThanOrEqualTo(3);
+            errors.Should().HaveCount(1);
+            errors.Should().Contain(e => e.Contains("cölumn") && e.Contains("underscores"));
         }
 
         #endregion

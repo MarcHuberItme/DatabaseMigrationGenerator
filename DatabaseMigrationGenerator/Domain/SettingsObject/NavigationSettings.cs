@@ -28,21 +28,7 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
 
         public List<string> Validate()
         {
-            var errors = new List<string>();
-
-            if (IsNavigationRoot is null) {
-                errors.Add($"{nameof(IsNavigationRoot)} is required.");
-            }
-
-            if (IsSharedNode is null) {
-                errors.Add($"{nameof(IsSharedNode)} is required.");
-            }
-
-            if (IsHiddenNode is null) {
-                errors.Add($"{nameof(IsHiddenNode)} is required.");
-            }
-
-            return errors;
+            return [];
         }
     }
 }
