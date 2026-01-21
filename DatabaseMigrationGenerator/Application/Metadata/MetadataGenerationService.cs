@@ -25,6 +25,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
     {
         public async Task<IEnumerable<IMetadata>> Generate(string migrationsPath)
         {
+            Console.Write("Loading configuration...");
             var validDomainTypes = await mdDomainTypeReader.ReadAsync(migrationsPath);
             TableSettings.SetValidDomainTypes(validDomainTypes);
 
@@ -43,9 +44,18 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
             var headerTableSettings = await headerTableSettingsReader.ReadAsync(migrationsPath);
             var validHeaderTables = headerTableSettings.Select(h => h.Type).ToArray();
             TableSettings.SetValidHeaderTables(validHeaderTables);
+            Console.WriteLine(" done.");
 
-            var settings = (await settingsReader.ReadAsync(migrationsPath)).ToList();
+            Console.Write("Reading settings files... ");
+            var progress = new Progress<(int current, int total)>(p =>
+            {
+                Console.Write($"\rReading settings files... {p.current}/{p.total}");
+            });
+            var (settingsEnumerable, totalScanned) = await settingsReader.ReadAsync(migrationsPath, progress);
+            var settings = settingsEnumerable.ToList();
+            Console.WriteLine($"\rReading settings files... {settings.Count} table(s) of {totalScanned} file(s) found.");
 
+            Console.Write("Validating settings...");
             var allErrors = new List<(ISettings Setting, List<string> Errors)>();
             foreach (var setting in settings) {
                 var errors = setting.Validate();
@@ -53,6 +63,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
                     allErrors.Add((setting, errors));
                 }
             }
+            Console.WriteLine(" done.");
 
             if (allErrors.Count > 0) {
                 logger.LogWarning("Validation errors found:");
@@ -64,7 +75,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
                     }
                     logger.LogWarning("");
                 }
-                throw new ValidationException($"Validation failed with {allErrors.Sum(e => e.Errors.Count)} error(s) in {allErrors.Count} file(s).");
+                throw new ValidationException($"Validation failed with {allErrors.Sum(e => e.Errors.Count)} error(s) in {allErrors.Count} of {settings.Count} file(s).");
             }
 
             logger.LogInformation("Validation successful: {Count} file(s) validated.", settings.Count);

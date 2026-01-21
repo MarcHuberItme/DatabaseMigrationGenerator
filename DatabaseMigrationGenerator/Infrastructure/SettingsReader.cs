@@ -15,14 +15,18 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
     {
         private const string SettingsFilePattern = "Settings.yaml";
         
-        public async Task<IEnumerable<ISettings>> ReadAsync(string migrationsPath)
+        public async Task<(IEnumerable<ISettings> settings, int totalScanned)> ReadAsync(string migrationsPath, IProgress<(int current, int total)>? progress = null)
         {
             var settingsFiles = Directory.GetFiles(migrationsPath, SettingsFilePattern, SearchOption.AllDirectories);
+            var totalFiles = settingsFiles.Length;
 
             var settings = new List<ISettings>();
-            
+            var currentFile = 0;
+
             foreach (var file in settingsFiles)
             {
+                currentFile++;
+                progress?.Report((currentFile, totalFiles));
                 var content = await File.ReadAllTextAsync(file);
                 var deserializer = new DeserializerBuilder()
                     .WithNamingConvention(CamelCaseNamingConvention.Instance)
@@ -70,7 +74,7 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
                 // }
             }
             
-            return settings;
+            return (settings, totalFiles);
         }
 
         private static string GetDeserializationErrorMessage(YamlException ex)

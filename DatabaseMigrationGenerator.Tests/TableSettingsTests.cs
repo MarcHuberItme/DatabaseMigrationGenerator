@@ -217,20 +217,21 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         }
 
         [TestMethod]
-        public void Validate_DescriptionContainsUmlaut_ReturnsError()
+        public void Validate_DescriptionContainsUmlaut_ReturnsNoError()
         {
             var setting = new TableSettings {
                 Name = "ValidName",
                 Description = "Description with Ümlauts",
                 TableUsageNo = 1,
                 DomainType = 10,
+                HeaderTable = "HdStandard",
                 WritableForEbanking = false,
                 GenericComponents = CreateValidGenericComponents()
             };
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("Description") && e.Contains("umlaut"));
+            errors.Should().BeEmpty();
         }
 
         #endregion
@@ -335,7 +336,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         #region HeaderTable Validation
 
         [TestMethod]
-        public void Validate_HeaderTableIsEmpty_ReturnsError()
+        public void Validate_HeaderTableIsEmpty_ReturnsNoError()
         {
             var setting = new TableSettings {
                 Name = "ValidName",
@@ -349,7 +350,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("HeaderTable") && e.Contains("required"));
+            errors.Should().BeEmpty();
         }
 
         [TestMethod]
@@ -877,13 +878,14 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         }
 
         [TestMethod]
-        public void Validate_IsSharedNodeIsNull_ReturnsError()
+        public void Validate_IsSharedNodeIsNull_ReturnsNoError()
         {
             var setting = new TableSettings {
                 Name = "ValidName",
                 Description = "Valid description",
                 TableUsageNo = 1,
                 DomainType = 10,
+                HeaderTable = "HdStandard",
                 WritableForEbanking = false,
                 GenericComponents = new GenericComponentsSettings {
                     TableType = 1,
@@ -904,7 +906,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("IsSharedNode") && e.Contains("required"));
+            errors.Should().BeEmpty();
         }
 
         [TestMethod]
@@ -958,14 +960,18 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         {
             var setting = new TableSettings {
                 Name = "täble",
-                Description = "löwercase",
+                Description = "Valid",
                 TableUsageNo = 0,
                 DomainType = 0
             };
 
             var errors = setting.Validate();
 
-            errors.Should().HaveCountGreaterThanOrEqualTo(6);
+            errors.Should().HaveCountGreaterThanOrEqualTo(4);
+            errors.Should().Contain(e => e.Contains("Name") && e.Contains("underscores"));
+            errors.Should().Contain(e => e.Contains("TableUsageNo"));
+            errors.Should().Contain(e => e.Contains("DomainType"));
+            errors.Should().Contain(e => e.Contains("GenericComponents"));
         }
 
         #endregion
