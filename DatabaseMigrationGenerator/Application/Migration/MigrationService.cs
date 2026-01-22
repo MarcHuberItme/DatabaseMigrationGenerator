@@ -1,16 +1,26 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Finstar.DatabaseMigrationGenerator.Application.Changeset;
 using Finstar.DatabaseMigrationGenerator.Application.Metadata;
+using Finstar.DatabaseMigrationGenerator.Application.Structure;
 
 namespace Finstar.DatabaseMigrationGenerator.Application.Migration;
 
 public class MigrationService(
+    IStructureValidationService structureValidationService,
     IMetadataGenerationService metadataGenerationService,
     IChangesetGenerationService changesetValidatorService) : IMigrationService
 {
     public async Task CreateChangeSetsAsync(CreateChangeSetsCommand command)
     {
         var validationErrors = new List<string>();
+
+        Console.WriteLine();
+        Console.WriteLine("=== Structure Validation ===");
+        try {
+            structureValidationService.Validate(command.MigrationsPath);
+        } catch (ValidationException ex) {
+            validationErrors.Add(ex.Message);
+        }
 
         Console.WriteLine();
         Console.WriteLine("=== Settings (YAML) ===");

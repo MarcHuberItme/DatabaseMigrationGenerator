@@ -7,6 +7,7 @@
 using Finstar.DatabaseMigrationGenerator.Application.Changeset;
 using Finstar.DatabaseMigrationGenerator.Application.Metadata;
 using Finstar.DatabaseMigrationGenerator.Application.Migration;
+using Finstar.DatabaseMigrationGenerator.Application.Structure;
 using Finstar.DatabaseMigrationGenerator.AppSettings;
 using Finstar.DatabaseMigrationGenerator.Infrastructure;
 using Microsoft.Extensions.Configuration;
@@ -36,6 +37,7 @@ namespace Finstar.DatabaseMigrationGenerator
             services.AddTransient<IMetadataGenerationService, MetadataGenerationService>();
             services.AddTransient<IChangesetReader, ChangesetReader>();
             services.AddTransient<IChangesetGenerationService, ChangesetGenerationService>();
+            services.AddTransient<IStructureValidationService, StructureValidationService>();
 
             return services;
         }
