@@ -13,7 +13,7 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
         private const string ChangesetMarker = "--changeset";
         private const string CommentMarker = "--comment:";
 
-        public async Task<(IEnumerable<IChangesets> Changesets, int TotalScanned)> ReadAsync(
+        public async Task<IEnumerable<IChangesets>> ReadAsync(
             string migrationsPath,
             Action<int, int>? progressCallback = null)
         {
@@ -33,7 +33,7 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
                 }
             }
 
-            return (changesets, totalFiles);
+            return changesets;
         }
 
         private static List<string> GetSqlFiles(string migrationsPath)

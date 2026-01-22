@@ -15,7 +15,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Changeset
         public async Task<IEnumerable<IChangesets>> ValidateAsync(string migrationsPath)
         {
             Console.Write("Reading changeset files...");
-            var (changesetsEnumerable, _) = await changesetReader.ReadAsync(migrationsPath, (current, total) =>
+            var changesetsEnumerable = await changesetReader.ReadAsync(migrationsPath, (current, total) =>
             {
                 Console.Write($"\rReading changeset files... {current}/{total}");
             });

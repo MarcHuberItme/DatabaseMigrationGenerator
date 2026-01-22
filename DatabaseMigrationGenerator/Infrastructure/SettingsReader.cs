@@ -21,7 +21,7 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
             .IgnoreUnmatchedProperties()
             .Build();
 
-        public async Task<(IEnumerable<ISettings> settings, int totalScanned)> ReadAsync(string migrationsPath, Action<int, int>? onProgress = null)
+        public async Task<IEnumerable<ISettings>> ReadAsync(string migrationsPath, Action<int, int>? onProgress = null)
         {
             var settingsFiles = Directory.GetFiles(migrationsPath, SettingsFilePattern, SearchOption.AllDirectories);
             var totalFiles = settingsFiles.Length;
@@ -98,7 +98,7 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
                 }
             });
 
-            return (settings, totalFiles);
+            return settings;
         }
 
         private static string GetDeserializationErrorMessage(YamlException ex)
