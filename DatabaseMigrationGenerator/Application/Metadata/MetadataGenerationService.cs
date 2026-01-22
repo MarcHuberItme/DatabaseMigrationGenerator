@@ -68,7 +68,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
                 foreach (var (setting, errors) in allErrors) {
                     Console.WriteLine($"  {setting.SourceFilePath}:");
                     foreach (var error in errors) {
-                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine($"    - {error}");
                         Console.ResetColor();
                     }
@@ -78,6 +78,10 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
             }
 
             Console.WriteLine(" done");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"{settings.Count:N0} Settings.yaml files loaded and validated successfully!");
+            Console.ResetColor();
 
             var metaData = metadataBuilder.Build(settings, headerTableSettings);
             return metaData;
