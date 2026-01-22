@@ -1,19 +1,26 @@
-﻿using Finstar.DatabaseMigrationGenerator.Application.Metadata;
+﻿using Finstar.DatabaseMigrationGenerator.Application.Changeset;
+using Finstar.DatabaseMigrationGenerator.Application.Metadata;
 
 namespace Finstar.DatabaseMigrationGenerator.Application.Migration;
 
 public class MigrationService(
-    IMetadataGenerationService metadataGenerationService) : IMigrationService
+    IMetadataGenerationService metadataGenerationService,
+    IChangesetGenerationService changesetGenerationService) : IMigrationService
 {
     public async Task CreateChangeSetsAsync(CreateChangeSetsCommand command)
     {
         try {
+            Console.WriteLine();
+            Console.WriteLine("=== Settings (YAML) ===");
             var metadata = await metadataGenerationService.Generate(command.MigrationsPath);
 
-            //Genarte changeset(metadat)
+            Console.WriteLine();
+            Console.WriteLine("=== Changesets (SQL) ===");
+            var changesets = await changesetGenerationService.GenerateAsync(command.MigrationsPath);
+
+            //Generate changeset(metadata)
         } catch (Exception)
         {
-            //logger.LogError(ex, "Error creating changesets");
             throw;
         }
         

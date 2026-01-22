@@ -62,7 +62,6 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
 
             if (allErrors.Count > 0) {
                 Console.WriteLine();
-                Console.WriteLine();
                 Console.WriteLine("Validation errors found:");
                 Console.WriteLine();
                 foreach (var (setting, errors) in allErrors) {
@@ -78,8 +77,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
             }
 
             Console.WriteLine(" done");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine($"{settings.Count:N0} Settings.yaml files loaded and validated successfully!");
             Console.ResetColor();
 
