@@ -1,4 +1,4 @@
---liquibase formatted sql1
+--liquibase formatted sql
 
 --changeset system:create-alter-view-AcBalanceViewLevel1 context:any labels:c-any,o-view,ot-schema,on-AcBalanceViewLevel1,fin-13659 runOnChange:true splitStatements:false stripComments:false endDelimiter:GO
 --comment: Create view AcBalanceViewLevel1

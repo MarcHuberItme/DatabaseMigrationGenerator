@@ -6,7 +6,7 @@
 
 namespace Finstar.DatabaseMigrationGenerator.Domain.ChangesetObject
 {
-    public abstract class ChangesetSettingsBase : IChangesetSettings
+    public abstract class ChangesetsBase : IChangesets
     {
         public string SourceFilePath { get; set; } = string.Empty;
         public abstract ChangesetType Type { get; }

@@ -10,7 +10,7 @@ using FluentAssertions;
 namespace Finstar.DatabaseMigrationGenerator.Tests
 {
     [TestClass]
-    public class ChangesetSettingsTests
+    public class ChangesetTests
     {
         private static ChangesetEntry CreateValidChangesetEntry(string sqlPrefix = "SELECT 1")
         {
@@ -30,9 +30,9 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         [DataRow("StoredProcedure")]
         public void Validate_ChangesetRootIsEmpty_ReturnsError(string type)
         {
-            var settings = CreateSettings(type, "", [CreateValidChangesetEntry()]);
+            var changesets = CreateChangesets(type, "", [CreateValidChangesetEntry()]);
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().Contain(e => e.Contains("ChangesetRoot") && e.Contains("required"));
         }
@@ -44,9 +44,9 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         [DataRow("StoredProcedure")]
         public void Validate_ChangesetRootIsInvalid_ReturnsError(string type)
         {
-            var settings = CreateSettings(type, "--invalid root", [CreateValidChangesetEntry()]);
+            var changesets = CreateChangesets(type, "--invalid root", [CreateValidChangesetEntry()]);
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().Contain(e => e.Contains("ChangesetRoot") && e.Contains("--liquibase formatted sql"));
         }
@@ -58,9 +58,9 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         [DataRow("StoredProcedure")]
         public void Validate_ChangesetRootIsValid_ReturnsNoError(string type)
         {
-            var settings = CreateSettings(type, "--liquibase formatted sql", [CreateValidChangesetEntry()]);
+            var changesets = CreateChangesets(type, "--liquibase formatted sql", [CreateValidChangesetEntry()]);
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().NotContain(e => e.Contains("ChangesetRoot"));
         }
@@ -81,9 +81,9 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Comment = "--comment: Test",
                 Sql = "SELECT 1"
             };
-            var settings = CreateSettings(type, "--liquibase formatted sql", [entry]);
+            var changesets = CreateChangesets(type, "--liquibase formatted sql", [entry]);
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().Contain(e => e.Contains("Header") && e.Contains("required"));
         }
@@ -100,9 +100,9 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Comment = "--comment: Test",
                 Sql = "SELECT 1"
             };
-            var settings = CreateSettings(type, "--liquibase formatted sql", [entry]);
+            var changesets = CreateChangesets(type, "--liquibase formatted sql", [entry]);
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().Contain(e => e.Contains("Header") && e.Contains("--changeset"));
         }
@@ -114,9 +114,9 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         [DataRow("StoredProcedure")]
         public void Validate_HeaderIsValid_ReturnsNoError(string type)
         {
-            var settings = CreateSettings(type, "--liquibase formatted sql", [CreateValidChangesetEntry()]);
+            var changesets = CreateChangesets(type, "--liquibase formatted sql", [CreateValidChangesetEntry()]);
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().NotContain(e => e.Contains("Header"));
         }
@@ -137,9 +137,9 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Comment = "",
                 Sql = "SELECT 1"
             };
-            var settings = CreateSettings(type, "--liquibase formatted sql", [entry]);
+            var changesets = CreateChangesets(type, "--liquibase formatted sql", [entry]);
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().Contain(e => e.Contains("Comment") && e.Contains("required"));
         }
@@ -156,9 +156,9 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Comment = "-- invalid comment",
                 Sql = "SELECT 1"
             };
-            var settings = CreateSettings(type, "--liquibase formatted sql", [entry]);
+            var changesets = CreateChangesets(type, "--liquibase formatted sql", [entry]);
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().Contain(e => e.Contains("Comment") && e.Contains("--comment:"));
         }
@@ -170,9 +170,9 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         [DataRow("StoredProcedure")]
         public void Validate_CommentIsValid_ReturnsNoError(string type)
         {
-            var settings = CreateSettings(type, "--liquibase formatted sql", [CreateValidChangesetEntry()]);
+            var changesets = CreateChangesets(type, "--liquibase formatted sql", [CreateValidChangesetEntry()]);
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().NotContain(e => e.Contains("Comment"));
         }
@@ -193,9 +193,9 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Comment = "--comment: Test",
                 Sql = ""
             };
-            var settings = CreateSettings(type, "--liquibase formatted sql", [entry]);
+            var changesets = CreateChangesets(type, "--liquibase formatted sql", [entry]);
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().Contain(e => e.Contains("Sql") && e.Contains("required"));
         }
@@ -208,12 +208,12 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Comment = "--comment: Test",
                 Sql = "SELECT * FROM MyTable"
             };
-            var settings = new ViewChangesetSettings {
+            var changesets = new ViewChangesets {
                 ChangesetRoot = "--liquibase formatted sql",
                 Changesets = [entry]
             };
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().Contain(e => e.Contains("CREATE OR ALTER VIEW"));
         }
@@ -226,12 +226,12 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Comment = "--comment: Test",
                 Sql = "CREATE OR ALTER VIEW dbo.MyView AS SELECT 1"
             };
-            var settings = new ViewChangesetSettings {
+            var changesets = new ViewChangesets {
                 ChangesetRoot = "--liquibase formatted sql",
                 Changesets = [entry]
             };
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().NotContain(e => e.Contains("CREATE OR ALTER VIEW"));
         }
@@ -244,12 +244,12 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Comment = "--comment: Test",
                 Sql = "SELECT * FROM MyTable"
             };
-            var settings = new FunctionChangesetSettings {
+            var changesets = new FunctionChangesets {
                 ChangesetRoot = "--liquibase formatted sql",
                 Changesets = [entry]
             };
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().Contain(e => e.Contains("CREATE OR ALTER FUNCTION"));
         }
@@ -262,12 +262,12 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Comment = "--comment: Test",
                 Sql = "CREATE OR ALTER FUNCTION dbo.MyFunc() RETURNS INT AS BEGIN RETURN 1 END"
             };
-            var settings = new FunctionChangesetSettings {
+            var changesets = new FunctionChangesets {
                 ChangesetRoot = "--liquibase formatted sql",
                 Changesets = [entry]
             };
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().NotContain(e => e.Contains("CREATE OR ALTER FUNCTION"));
         }
@@ -280,12 +280,12 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Comment = "--comment: Test",
                 Sql = "SELECT * FROM MyTable"
             };
-            var settings = new StoredProcedureChangesetSettings {
+            var changesets = new StoredProcedureChangesets {
                 ChangesetRoot = "--liquibase formatted sql",
                 Changesets = [entry]
             };
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().Contain(e => e.Contains("CREATE OR ALTER PROCEDURE"));
         }
@@ -298,12 +298,12 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Comment = "--comment: Test",
                 Sql = "CREATE OR ALTER PROCEDURE dbo.MyProc AS BEGIN SELECT 1 END"
             };
-            var settings = new StoredProcedureChangesetSettings {
+            var changesets = new StoredProcedureChangesets {
                 ChangesetRoot = "--liquibase formatted sql",
                 Changesets = [entry]
             };
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().NotContain(e => e.Contains("CREATE OR ALTER PROCEDURE"));
         }
@@ -316,12 +316,12 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Comment = "--comment: Test",
                 Sql = "CREATE TABLE dbo.MyTable (Id INT)"
             };
-            var settings = new TableChangesetSettings {
+            var changesets = new TableChangesets {
                 ChangesetRoot = "--liquibase formatted sql",
                 Changesets = [entry]
             };
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().NotContain(e => e.Contains("Sql"));
         }
@@ -333,14 +333,14 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         [TestMethod]
         public void Validate_ReleaseFileNameIsValid_ReturnsNoError()
         {
-            var settings = new TableChangesetSettings {
+            var changesets = new TableChangesets {
                 SourceFilePath = @"C:\Migrations\Tables\Releases\20251208-1022-AcAmountType.sql",
                 ChangesetRoot = "--liquibase formatted sql",
                 Changesets = [CreateValidChangesetEntry()],
                 IsReleaseFile = true
             };
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().NotContain(e => e.Contains("Release file name"));
         }
@@ -348,14 +348,14 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         [TestMethod]
         public void Validate_ReleaseFileNameIsInvalid_ReturnsError()
         {
-            var settings = new TableChangesetSettings {
+            var changesets = new TableChangesets {
                 SourceFilePath = @"C:\Migrations\Tables\Releases\InvalidFileName.sql",
                 ChangesetRoot = "--liquibase formatted sql",
                 Changesets = [CreateValidChangesetEntry()],
                 IsReleaseFile = true
             };
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().Contain(e => e.Contains("Release file name") && e.Contains("YYYYMMDD-HHMM"));
         }
@@ -363,14 +363,14 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         [TestMethod]
         public void Validate_NonReleaseFileWithInvalidName_ReturnsNoError()
         {
-            var settings = new TableChangesetSettings {
+            var changesets = new TableChangesets {
                 SourceFilePath = @"C:\Migrations\Tables\Ac\AcTable\SchemaChangeLog.sql",
                 ChangesetRoot = "--liquibase formatted sql",
                 Changesets = [CreateValidChangesetEntry()],
                 IsReleaseFile = false
             };
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().NotContain(e => e.Contains("Release file name"));
         }
@@ -384,7 +384,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
         [DataRow("View")]
         [DataRow("Function")]
         [DataRow("StoredProcedure")]
-        public void Validate_ValidSettings_ReturnsNoErrors(string type)
+        public void Validate_ValidChangesets_ReturnsNoErrors(string type)
         {
             var sqlContent = type switch {
                 "View" => "CREATE OR ALTER VIEW dbo.MyView AS SELECT 1",
@@ -397,9 +397,9 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 Comment = "--comment: Test comment",
                 Sql = sqlContent
             };
-            var settings = CreateSettings(type, "--liquibase formatted sql", [entry]);
+            var changesets = CreateChangesets(type, "--liquibase formatted sql", [entry]);
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().BeEmpty();
         }
@@ -422,22 +422,22 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
                 new() { Header = "--changeset user:test2", Comment = "--comment: Test 2", Sql = sqlContent },
                 new() { Header = "--changeset user:test3", Comment = "--comment: Test 3", Sql = sqlContent }
             };
-            var settings = CreateSettings(type, "--liquibase formatted sql", entries);
+            var changesets = CreateChangesets(type, "--liquibase formatted sql", entries);
 
-            var errors = settings.Validate();
+            var errors = changesets.Validate();
 
             errors.Should().BeEmpty();
         }
 
         #endregion
 
-        private static IChangesetSettings CreateSettings(string type, string root, List<ChangesetEntry> entries)
+        private static IChangesets CreateChangesets(string type, string root, List<ChangesetEntry> entries)
         {
             return type switch {
-                "Table" => new TableChangesetSettings { ChangesetRoot = root, Changesets = entries },
-                "View" => new ViewChangesetSettings { ChangesetRoot = root, Changesets = entries },
-                "Function" => new FunctionChangesetSettings { ChangesetRoot = root, Changesets = entries },
-                "StoredProcedure" => new StoredProcedureChangesetSettings { ChangesetRoot = root, Changesets = entries },
+                "Table" => new TableChangesets { ChangesetRoot = root, Changesets = entries },
+                "View" => new ViewChangesets { ChangesetRoot = root, Changesets = entries },
+                "Function" => new FunctionChangesets { ChangesetRoot = root, Changesets = entries },
+                "StoredProcedure" => new StoredProcedureChangesets { ChangesetRoot = root, Changesets = entries },
                 _ => throw new ArgumentException($"Unknown type: {type}")
             };
         }

@@ -10,7 +10,7 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 {
     public interface IChangesetReader
     {
-        Task<(IEnumerable<IChangesetSettings> Settings, int TotalScanned)> ReadAsync(
+        Task<(IEnumerable<IChangesets> Changesets, int TotalScanned)> ReadAsync(
             string migrationsPath,
             Action<int, int>? progressCallback = null);
     }

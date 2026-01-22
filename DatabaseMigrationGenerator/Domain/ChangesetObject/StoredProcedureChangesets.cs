@@ -6,7 +6,7 @@
 
 namespace Finstar.DatabaseMigrationGenerator.Domain.ChangesetObject
 {
-    public class StoredProcedureChangesetSettings : ChangesetSettingsBase
+    public class StoredProcedureChangesets : ChangesetsBase
     {
         public override ChangesetType Type => ChangesetType.StoredProcedure;
 

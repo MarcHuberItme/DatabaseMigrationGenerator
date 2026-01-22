@@ -5,7 +5,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Migration;
 
 public class MigrationService(
     IMetadataGenerationService metadataGenerationService,
-    IChangesetGenerationService changesetGenerationService) : IMigrationService
+    IChangesetGenerationService changesetValidatorService) : IMigrationService
 {
     public async Task CreateChangeSetsAsync(CreateChangeSetsCommand command)
     {
@@ -16,7 +16,7 @@ public class MigrationService(
 
             Console.WriteLine();
             Console.WriteLine("=== Changesets (SQL) ===");
-            var changesets = await changesetGenerationService.GenerateAsync(command.MigrationsPath);
+            var changesets = await changesetValidatorService.ValidateAsync(command.MigrationsPath);
 
             //Generate changeset(metadata)
         } catch (Exception)

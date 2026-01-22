@@ -13,19 +13,19 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
         private const string ChangesetMarker = "--changeset";
         private const string CommentMarker = "--comment:";
 
-        public async Task<(IEnumerable<IChangesetSettings> Settings, int TotalScanned)> ReadAsync(
+        public async Task<(IEnumerable<IChangesets> Changesets, int TotalScanned)> ReadAsync(
             string migrationsPath,
             Action<int, int>? progressCallback = null)
         {
             var sqlFiles = GetSqlFiles(migrationsPath);
             var totalFiles = sqlFiles.Count;
-            var settings = new List<IChangesetSettings>();
+            var changesets = new List<IChangesets>();
 
             for (int i = 0; i < totalFiles; i++) {
                 var filePath = sqlFiles[i];
-                var changesetSettings = await ParseFileAsync(filePath, migrationsPath);
-                if (changesetSettings != null) {
-                    settings.Add(changesetSettings);
+                var changesetContent = await ParseFileAsync(filePath, migrationsPath);
+                if (changesetContent != null) {
+                    changesets.Add(changesetContent);
                 }
 
                 if ((i + 1) % 100 == 0 || i == totalFiles - 1) {
@@ -33,7 +33,7 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
                 }
             }
 
-            return (settings, totalFiles);
+            return (changesets, totalFiles);
         }
 
         private static List<string> GetSqlFiles(string migrationsPath)
@@ -62,7 +62,7 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
             return files;
         }
 
-        private static async Task<IChangesetSettings?> ParseFileAsync(string filePath, string migrationsPath)
+        private static async Task<IChangesets?> ParseFileAsync(string filePath, string migrationsPath)
         {
             var content = await File.ReadAllTextAsync(filePath);
             var lines = content.Split('\n');
@@ -72,33 +72,33 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
             }
 
             var changesetRoot = lines[0].TrimEnd('\r');
-            var changesets = ParseChangesets(lines);
+            var changesetsContent = ParseChangesets(lines);
             var type = DetermineChangesetType(filePath, migrationsPath);
             var isReleaseFile = ChangesetValidators.IsReleaseFile(filePath);
 
-            IChangesetSettings settings = type switch {
-                ChangesetType.Table => new TableChangesetSettings {
+            IChangesets changesets = type switch {
+                ChangesetType.Table => new TableChangesets {
                     ChangesetRoot = changesetRoot,
-                    Changesets = changesets,
+                    Changesets = changesetsContent,
                     IsReleaseFile = isReleaseFile
                 },
-                ChangesetType.View => new ViewChangesetSettings {
+                ChangesetType.View => new ViewChangesets {
                     ChangesetRoot = changesetRoot,
-                    Changesets = changesets
+                    Changesets = changesetsContent
                 },
-                ChangesetType.Function => new FunctionChangesetSettings {
+                ChangesetType.Function => new FunctionChangesets {
                     ChangesetRoot = changesetRoot,
-                    Changesets = changesets
+                    Changesets = changesetsContent
                 },
-                ChangesetType.StoredProcedure => new StoredProcedureChangesetSettings {
+                ChangesetType.StoredProcedure => new StoredProcedureChangesets {
                     ChangesetRoot = changesetRoot,
-                    Changesets = changesets
+                    Changesets = changesetsContent
                 },
                 _ => throw new InvalidOperationException($"Unknown changeset type for file: {filePath}")
             };
 
-            settings.SourceFilePath = filePath;
-            return settings;
+            changesets.SourceFilePath = filePath;
+            return changesets;
         }
 
         private static List<ChangesetEntry> ParseChangesets(string[] lines)

@@ -6,13 +6,12 @@
 
 namespace Finstar.DatabaseMigrationGenerator.Domain.ChangesetObject
 {
-    public class FunctionChangesetSettings : ChangesetSettingsBase
+    public interface IChangesets
     {
-        public override ChangesetType Type => ChangesetType.Function;
-
-        protected override void ValidateSql(List<string> errors, string sql, int index)
-        {
-            ChangesetValidators.ValidateFunctionSql(errors, sql, index);
-        }
+        string SourceFilePath { get; set; }
+        ChangesetType Type { get; }
+        string ChangesetRoot { get; init; }
+        List<ChangesetEntry> Changesets { get; init; }
+        List<string> Validate();
     }
 }

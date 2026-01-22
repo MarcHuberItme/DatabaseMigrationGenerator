@@ -6,7 +6,7 @@
 
 namespace Finstar.DatabaseMigrationGenerator.Domain.ChangesetObject
 {
-    public class ViewChangesetSettings : ChangesetSettingsBase
+    public class ViewChangesets : ChangesetsBase
     {
         public override ChangesetType Type => ChangesetType.View;
 

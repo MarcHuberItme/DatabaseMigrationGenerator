@@ -6,7 +6,7 @@
 
 namespace Finstar.DatabaseMigrationGenerator.Domain.ChangesetObject
 {
-    public class TableChangesetSettings : ChangesetSettingsBase
+    public class TableChangesets : ChangesetsBase
     {
         public override ChangesetType Type => ChangesetType.Table;
         public bool IsReleaseFile { get; init; }

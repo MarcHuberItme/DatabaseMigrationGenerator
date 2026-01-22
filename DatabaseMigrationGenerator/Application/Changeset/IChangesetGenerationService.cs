@@ -10,6 +10,6 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Changeset
 {
     public interface IChangesetGenerationService
     {
-        Task<IEnumerable<IChangesetSettings>> GenerateAsync(string migrationsPath);
+        Task<IEnumerable<IChangesets>> ValidateAsync(string migrationsPath);
     }
 }
