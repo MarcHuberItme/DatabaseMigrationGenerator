@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Finstar.DatabaseMigrationGenerator.Application.Changeset;
 using Finstar.DatabaseMigrationGenerator.Application.Metadata;
+using Finstar.DatabaseMigrationGenerator.Application.Output;
 using Finstar.DatabaseMigrationGenerator.Application.Structure;
 
 namespace Finstar.DatabaseMigrationGenerator.Application.Migration;
 
 public class MigrationService(
+    IConsoleOutput console,
     IStructureValidationService structureValidationService,
     IMetadataGenerationService metadataGenerationService,
     IChangesetGenerationService changesetValidatorService) : IMigrationService
@@ -14,24 +16,21 @@ public class MigrationService(
     {
         var validationErrors = new List<string>();
 
-        Console.WriteLine();
-        Console.WriteLine("=== Structure Validation ===");
+        console.WriteSection("Structure Validation");
         try {
             structureValidationService.Validate(command.MigrationsPath);
         } catch (ValidationException ex) {
             validationErrors.Add(ex.Message);
         }
 
-        Console.WriteLine();
-        Console.WriteLine("=== Settings (YAML) ===");
+        console.WriteSection("Settings (YAML)");
         try {
             var metadata = await metadataGenerationService.Generate(command.MigrationsPath);
         } catch (ValidationException ex) {
             validationErrors.Add(ex.Message);
         }
 
-        Console.WriteLine();
-        Console.WriteLine("=== Changesets (SQL) ===");
+        console.WriteSection("Changesets (SQL)");
         try {
             var changesets = await changesetValidatorService.ValidateAsync(command.MigrationsPath);
         } catch (ValidationException ex) {
@@ -39,13 +38,10 @@ public class MigrationService(
         }
 
         if (validationErrors.Count > 0) {
-            Console.WriteLine();
-            Console.WriteLine("=== Validation Summary ===");
-            Console.ForegroundColor = ConsoleColor.DarkRed;
+            console.WriteSection("Validation Summary");
             foreach (var error in validationErrors) {
-                Console.WriteLine(error);
+                console.WriteError(error);
             }
-            Console.ResetColor();
             throw new ValidationException("Validation failed. See details above.");
         }
 

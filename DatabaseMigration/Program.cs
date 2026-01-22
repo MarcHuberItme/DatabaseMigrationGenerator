@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Finstar.DatabaseMigrationGenerator;
 using Finstar.DatabaseMigrationGenerator.Application.Migration;
+using Finstar.DatabaseMigrationGenerator.Application.Output;
 using Finstar.DatabaseMigrationGenerator.AppSettings;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,20 +30,25 @@ class Program
                 });
             })
             .Build();
-        
+
         using var scope = host.Services.CreateScope();
-        
+
         var miscSettings = scope.ServiceProvider.GetRequiredService<IOptions<MiscSettings>>();
         var migrationsDirectoryPath = miscSettings.Value.MigrationsDirectoryPath(AppContext.BaseDirectory);
-        
+
         var logic = scope.ServiceProvider.GetRequiredService<IMigrationService>();
-        var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+        var console = scope.ServiceProvider.GetRequiredService<IConsoleOutput>();
 
         var command = new CreateChangeSetsCommand(migrationsDirectoryPath);
         try {
             await logic.CreateChangeSetsAsync(command);
+            console.WriteLine();
+            console.WriteSuccess("Process finished with exit code 0.");
         } catch (ValidationException ex) {
-            logger.LogError("{Message}", ex.Message);
+            console.WriteLine();
+            console.WriteError(ex.Message);
+            console.WriteLine();
+            console.WriteError("Process finished with exit code 1.");
             Environment.Exit(1);
         }
     }

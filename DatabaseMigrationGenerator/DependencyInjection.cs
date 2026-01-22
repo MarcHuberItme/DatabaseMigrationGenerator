@@ -7,6 +7,7 @@
 using Finstar.DatabaseMigrationGenerator.Application.Changeset;
 using Finstar.DatabaseMigrationGenerator.Application.Metadata;
 using Finstar.DatabaseMigrationGenerator.Application.Migration;
+using Finstar.DatabaseMigrationGenerator.Application.Output;
 using Finstar.DatabaseMigrationGenerator.Application.Structure;
 using Finstar.DatabaseMigrationGenerator.AppSettings;
 using Finstar.DatabaseMigrationGenerator.Infrastructure;
@@ -24,7 +25,8 @@ namespace Finstar.DatabaseMigrationGenerator
             services.Configure<LiquibaseSettings>(configuration.GetSection("Liquibase"));
             services.Configure<SqlServerSettings>(configuration.GetSection("SqlServer"));
             services.Configure<MiscSettings>(configuration.GetSection("Misc"));
-            
+
+            services.AddSingleton<IConsoleOutput, ConsoleOutput>();
             services.AddTransient<IMigrationService, MigrationService>();
             services.AddTransient<ISettingsReader, SettingsReader>();
             services.AddTransient<IHeaderTableSettingsReader, HeaderTableSettingsReader>();

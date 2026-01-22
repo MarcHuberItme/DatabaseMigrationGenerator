@@ -5,6 +5,7 @@
 // -----------------------------------------------------------------------------
 
 using System.ComponentModel.DataAnnotations;
+using Finstar.DatabaseMigrationGenerator.Application.Output;
 using Finstar.DatabaseMigrationGenerator.Domain.Metadata;
 using Finstar.DatabaseMigrationGenerator.Domain.SettingsObject;
 using Finstar.DatabaseMigrationGenerator.Infrastructure;
@@ -12,6 +13,7 @@ using Finstar.DatabaseMigrationGenerator.Infrastructure;
 namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
 {
     public class MetadataGenerationService(
+        IConsoleOutput console,
         ISettingsReader settingsReader,
         IHeaderTableSettingsReader headerTableSettingsReader,
         IMdDomainTypeReader mdDomainTypeReader,
@@ -23,7 +25,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
     {
         public async Task<IEnumerable<IMetadata>> Generate(string migrationsPath)
         {
-            Console.Write("Loading configuration...");
+            console.Write("Loading configuration...");
             var validDomainTypes = await mdDomainTypeReader.ReadAsync(migrationsPath);
             TableSettings.SetValidDomainTypes(validDomainTypes);
 
@@ -42,16 +44,16 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
             var headerTableSettings = await headerTableSettingsReader.ReadAsync(migrationsPath);
             var validHeaderTables = headerTableSettings.Select(h => h.Type).ToArray();
             TableSettings.SetValidHeaderTables(validHeaderTables);
-            Console.WriteLine(" done");
+            console.WriteLine(" done");
 
             var settingsEnumerable = await settingsReader.ReadAsync(migrationsPath, (current, total) =>
             {
-                Console.Write($"\rReading settings files... {current}/{total}");
+                console.WriteProgress($"Reading settings files... {current}/{total}");
             });
             var settings = settingsEnumerable.ToList();
-            Console.WriteLine(" done");
+            console.WriteLine(" done");
 
-            Console.Write("Validating settings...");
+            console.Write("Validating settings...");
             var allErrors = new List<(ISettings Setting, List<string> Errors)>();
             foreach (var setting in settings) {
                 var errors = setting.Validate();
@@ -61,25 +63,21 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
             }
 
             if (allErrors.Count > 0) {
-                Console.WriteLine();
-                Console.WriteLine("Validation errors found:");
-                Console.WriteLine();
+                console.WriteLine();
+                console.WriteLine("Validation errors found:");
+                console.WriteLine();
                 foreach (var (setting, errors) in allErrors) {
-                    Console.WriteLine($"  {setting.SourceFilePath}:");
+                    console.WriteLine($"  {setting.SourceFilePath}:");
                     foreach (var error in errors) {
-                        Console.ForegroundColor = ConsoleColor.DarkRed;
-                        Console.WriteLine($"    - {error}");
-                        Console.ResetColor();
+                        console.WriteError($"    - {error}");
                     }
-                    Console.WriteLine();
+                    console.WriteLine();
                 }
                 throw new ValidationException($"Settings.yaml validation failed with {allErrors.Sum(e => e.Errors.Count)} error(s) in {allErrors.Count} of {settings.Count} file(s).");
             }
 
-            Console.WriteLine(" done");
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine($"{settings.Count:N0} Settings.yaml files loaded and validated successfully!");
-            Console.ResetColor();
+            console.WriteLine(" done");
+            console.WriteSuccess($"{settings.Count:N0} Settings.yaml files loaded and validated successfully!");
 
             var metaData = metadataBuilder.Build(settings, headerTableSettings);
             return metaData;
