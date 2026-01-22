@@ -82,6 +82,9 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Structure
 
             ValidateItems(path, $"Migrations/{folderName}/", ItemType.Files, ValidationMode.AllowedOnly, StructureRules.FunctionsViewsAllowedFiles);
             ValidateTwoCharSubfolders(path, $"Migrations/{folderName}/");
+
+            var changeLogValidator = new ChangeLogValidator(_errors);
+            changeLogValidator.ValidateSchemaChangeLog(path, folderName);
         }
 
         private void ValidateStoredProcedures(string migrationsPath)
@@ -129,6 +132,9 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Structure
                 var folderName = Path.GetFileName(versionFolder);
                 ValidateItems(versionFolder, $"Migrations/Tables/Releases/{folderName}/", ItemType.Files, ValidationMode.None);
             }
+
+            var changeLogValidator = new ChangeLogValidator(_errors);
+            changeLogValidator.ValidateReleasesChangeLog(releasesPath);
         }
 
         private void ValidateTablesSettings(string tablesPath)

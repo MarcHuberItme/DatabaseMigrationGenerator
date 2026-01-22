@@ -14,6 +14,5 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Output
         void WriteSuccess(string message);
         void WriteError(string message);
         void WriteSection(string title);
-        void Flush();
     }
 }

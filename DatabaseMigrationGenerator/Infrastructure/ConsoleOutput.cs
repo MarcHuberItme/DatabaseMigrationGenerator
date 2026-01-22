@@ -44,10 +44,5 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
             Console.WriteLine();
             Console.WriteLine($"=== {title} ===");
         }
-
-        public void Flush()
-        {
-            // All output is written immediately, nothing to flush
-        }
     }
 }

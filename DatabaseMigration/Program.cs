@@ -42,13 +42,9 @@ class Program
         var command = new CreateChangeSetsCommand(migrationsDirectoryPath);
         try {
             await logic.CreateChangeSetsAsync(command);
-            console.WriteLine();
-            console.WriteSuccess("Process finished with exit code 0.");
         } catch (ValidationException ex) {
             console.WriteLine();
             console.WriteError(ex.Message);
-            console.WriteLine();
-            console.WriteError("Process finished with exit code 1.");
             Environment.Exit(1);
         }
     }
