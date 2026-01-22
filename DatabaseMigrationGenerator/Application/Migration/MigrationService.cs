@@ -15,7 +15,7 @@ public class MigrationService(
     public async Task CreateChangeSetsAsync(CreateChangeSetsCommand command)
     {
         var validationErrors = new List<string>();
-
+        console.WriteLine();
         console.WriteSection("Structure Validation");
         try {
             structureValidationService.Validate(command.MigrationsPath);
@@ -29,7 +29,7 @@ public class MigrationService(
         } catch (ValidationException ex) {
             validationErrors.Add(ex.Message);
         }
-
+        console.WriteLine();
         console.WriteSection("Changesets (SQL)");
         try {
             var changesets = await changesetValidatorService.ValidateAsync(command.MigrationsPath);

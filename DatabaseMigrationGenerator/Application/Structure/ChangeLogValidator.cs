@@ -18,7 +18,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Structure
 
         private static readonly HashSet<string> AllowedMissingFiles = new(StringComparer.OrdinalIgnoreCase)
         {
-            "ECH0196SecurityTypeMapping/SchemaChangeLog.sql"
+            "Ec/ECH0196SecurityTypeMapping/SchemaChangeLog.sql"
         };
 
         public void ValidateSchemaChangeLog(string folderPath, string folderName)

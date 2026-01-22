@@ -49,7 +49,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Changeset
 
             console.WriteLine(" done");
             console.WriteSuccess($"{changesets.Count:N0} SchemaChangeLog.sql files loaded and validated successfully!");
-
+            console.WriteLine();
             return changesets;
         }
     }

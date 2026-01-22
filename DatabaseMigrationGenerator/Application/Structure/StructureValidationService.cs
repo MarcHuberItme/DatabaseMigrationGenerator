@@ -32,6 +32,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Structure
 
             console.WriteLine(" done");
             console.WriteSuccess("Folder structure validated successfully!");
+            console.WriteLine();
         }
 
         private void ValidateAllFolders(string migrationsPath)
@@ -47,9 +48,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Structure
         private void ReportErrors()
         {
             console.WriteLine();
-            console.WriteLine();
             console.WriteLine("Structure validation errors found:");
-            console.WriteLine();
             foreach (var error in _errors)
             {
                 console.WriteError($"    - {error}");

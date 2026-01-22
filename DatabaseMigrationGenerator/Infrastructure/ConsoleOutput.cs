@@ -41,7 +41,6 @@ namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 
         public void WriteSection(string title)
         {
-            Console.WriteLine();
             Console.WriteLine($"=== {title} ===");
         }
     }
