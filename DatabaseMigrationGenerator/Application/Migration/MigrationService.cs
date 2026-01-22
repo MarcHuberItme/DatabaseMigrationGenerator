@@ -1,4 +1,5 @@
-﻿using Finstar.DatabaseMigrationGenerator.Application.Changeset;
+﻿using System.ComponentModel.DataAnnotations;
+using Finstar.DatabaseMigrationGenerator.Application.Changeset;
 using Finstar.DatabaseMigrationGenerator.Application.Metadata;
 
 namespace Finstar.DatabaseMigrationGenerator.Application.Migration;
@@ -9,20 +10,36 @@ public class MigrationService(
 {
     public async Task CreateChangeSetsAsync(CreateChangeSetsCommand command)
     {
+        var validationErrors = new List<string>();
+
+        Console.WriteLine();
+        Console.WriteLine("=== Settings (YAML) ===");
         try {
-            Console.WriteLine();
-            Console.WriteLine("=== Settings (YAML) ===");
             var metadata = await metadataGenerationService.Generate(command.MigrationsPath);
-
-            Console.WriteLine();
-            Console.WriteLine("=== Changesets (SQL) ===");
-            var changesets = await changesetValidatorService.ValidateAsync(command.MigrationsPath);
-
-            //Generate changeset(metadata)
-        } catch (Exception)
-        {
-            throw;
+        } catch (ValidationException ex) {
+            validationErrors.Add(ex.Message);
         }
+
+        Console.WriteLine();
+        Console.WriteLine("=== Changesets (SQL) ===");
+        try {
+            var changesets = await changesetValidatorService.ValidateAsync(command.MigrationsPath);
+        } catch (ValidationException ex) {
+            validationErrors.Add(ex.Message);
+        }
+
+        if (validationErrors.Count > 0) {
+            Console.WriteLine();
+            Console.WriteLine("=== Validation Summary ===");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            foreach (var error in validationErrors) {
+                Console.WriteLine(error);
+            }
+            Console.ResetColor();
+            throw new ValidationException("Validation failed. See details above.");
+        }
+
+        //Generate changeset(metadata)
         
 
         //Map headers

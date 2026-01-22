@@ -43,7 +43,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Changeset
                     }
                     Console.WriteLine();
                 }
-                throw new ValidationException($"Changeset validation failed with {allErrors.Sum(e => e.Errors.Count)} error(s) in {allErrors.Count} of {changesets.Count} file(s).");
+                throw new ValidationException($"SchemaChangeLog.sql validation failed with {allErrors.Sum(e => e.Errors.Count)} error(s) in {allErrors.Count} of {changesets.Count} file(s).");
             }
 
             Console.WriteLine(" done");

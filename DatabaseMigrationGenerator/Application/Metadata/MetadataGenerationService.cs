@@ -73,7 +73,7 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
                     }
                     Console.WriteLine();
                 }
-                throw new ValidationException($"Validation failed with {allErrors.Sum(e => e.Errors.Count)} error(s) in {allErrors.Count} of {settings.Count} file(s).");
+                throw new ValidationException($"Settings.yaml validation failed with {allErrors.Sum(e => e.Errors.Count)} error(s) in {allErrors.Count} of {settings.Count} file(s).");
             }
 
             Console.WriteLine(" done");
