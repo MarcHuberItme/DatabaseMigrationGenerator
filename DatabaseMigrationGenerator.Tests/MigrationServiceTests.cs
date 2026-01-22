@@ -1,4 +1,4 @@
-﻿using Finstar.DatabaseMigrationGenerator.Application.Migration;
+using Finstar.DatabaseMigrationGenerator.Application.Migration;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,16 +8,16 @@ namespace Finstar.DatabaseMigrationGenerator.Tests;
 public class MigrationServiceTests : TestsBase
 {
     [TestMethod]
-    public async Task Test()
+    public async Task Test_WithInvalidPath_ThrowsException()
     {
         //arrange
         var uut = ServiceProvider.GetRequiredService<IMigrationService>();
-        var command = new CreateChangeSetsCommand("test");
-        
+        var command = new CreateChangeSetsCommand("nonexistent_path");
+
         //act
         Func<Task> act = async () => await uut.CreateChangeSetsAsync(command);
 
         //assert
-        await act.Should().NotThrowAsync();
+        await act.Should().ThrowAsync<DirectoryNotFoundException>();
     }
 }

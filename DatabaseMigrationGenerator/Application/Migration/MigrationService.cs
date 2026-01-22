@@ -1,10 +1,8 @@
 ﻿using Finstar.DatabaseMigrationGenerator.Application.Metadata;
-using Microsoft.Extensions.Logging;
 
 namespace Finstar.DatabaseMigrationGenerator.Application.Migration;
 
 public class MigrationService(
-    ILogger<MigrationService> logger,
     IMetadataGenerationService metadataGenerationService) : IMigrationService
 {
     public async Task CreateChangeSetsAsync(CreateChangeSetsCommand command)
@@ -13,9 +11,10 @@ public class MigrationService(
             var metadata = await metadataGenerationService.Generate(command.MigrationsPath);
 
             //Genarte changeset(metadat)
-        } catch (Exception ex)
+        } catch (Exception)
         {
-            logger.LogError(ex.Message);
+            //logger.LogError(ex, "Error creating changesets");
+            throw;
         }
         
 

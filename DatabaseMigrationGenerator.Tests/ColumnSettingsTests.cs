@@ -106,7 +106,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
 
             var errors = setting.Validate();
 
-            errors.Should().Contain(e => e.Contains("Cölumn") && e.Contains("underscores"));
+            errors.Should().Contain(e => e.Contains("Column") && e.Contains("Name") && e.Contains("underscores"));
         }
 
         [TestMethod]
@@ -328,7 +328,7 @@ namespace Finstar.DatabaseMigrationGenerator.Tests
             var errors = setting.Validate();
 
             errors.Should().HaveCount(1);
-            errors.Should().Contain(e => e.Contains("cölumn") && e.Contains("underscores"));
+            errors.Should().Contain(e => e.Contains("Column") && e.Contains("Name") && e.Contains("underscores"));
         }
 
         #endregion

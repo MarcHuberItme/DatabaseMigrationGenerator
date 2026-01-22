@@ -1,4 +1,5 @@
-﻿using Finstar.DatabaseMigrationGenerator;
+﻿using System.ComponentModel.DataAnnotations;
+using Finstar.DatabaseMigrationGenerator;
 using Finstar.DatabaseMigrationGenerator.Application.Migration;
 using Finstar.DatabaseMigrationGenerator.AppSettings;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,8 +36,14 @@ class Program
         var migrationsDirectoryPath = miscSettings.Value.MigrationsDirectoryPath(AppContext.BaseDirectory);
         
         var logic = scope.ServiceProvider.GetRequiredService<IMigrationService>();
-        
+        var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+
         var command = new CreateChangeSetsCommand(migrationsDirectoryPath);
-        await logic.CreateChangeSetsAsync(command);
+        try {
+            await logic.CreateChangeSetsAsync(command);
+        } catch (ValidationException ex) {
+            logger.LogError("{Message}", ex.Message);
+            Environment.Exit(1);
+        }
     }
 }

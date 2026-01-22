@@ -8,12 +8,10 @@ using System.ComponentModel.DataAnnotations;
 using Finstar.DatabaseMigrationGenerator.Domain.Metadata;
 using Finstar.DatabaseMigrationGenerator.Domain.SettingsObject;
 using Finstar.DatabaseMigrationGenerator.Infrastructure;
-using Microsoft.Extensions.Logging;
 
 namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
 {
     public class MetadataGenerationService(
-        ILogger<MetadataGenerationService> logger,
         ISettingsReader settingsReader,
         IHeaderTableSettingsReader headerTableSettingsReader,
         IMdDomainTypeReader mdDomainTypeReader,
@@ -44,14 +42,14 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
             var headerTableSettings = await headerTableSettingsReader.ReadAsync(migrationsPath);
             var validHeaderTables = headerTableSettings.Select(h => h.Type).ToArray();
             TableSettings.SetValidHeaderTables(validHeaderTables);
-            Console.WriteLine(" done.");
+            Console.WriteLine(" done");
 
             var (settingsEnumerable, totalScanned) = await settingsReader.ReadAsync(migrationsPath, (current, total) =>
             {
-                Console.Write($"\rReading settings files... {current}/{total}   ");
+                Console.Write($"\rReading settings files... {current}/{total}");
             });
             var settings = settingsEnumerable.ToList();
-            Console.WriteLine($"\rReading settings files... {settings.Count} of {totalScanned} file(s) found.   ");
+            Console.WriteLine(" done");
 
             Console.Write("Validating settings...");
             var allErrors = new List<(ISettings Setting, List<string> Errors)>();
@@ -61,22 +59,25 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Metadata
                     allErrors.Add((setting, errors));
                 }
             }
-            Console.WriteLine(" done.");
 
             if (allErrors.Count > 0) {
-                logger.LogWarning("Validation errors found:");
-                logger.LogWarning("");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("Validation errors found:");
+                Console.WriteLine();
                 foreach (var (setting, errors) in allErrors) {
-                    logger.LogWarning("  {SourceFilePath}:", setting.SourceFilePath);
+                    Console.WriteLine($"  {setting.SourceFilePath}:");
                     foreach (var error in errors) {
-                        logger.LogError("    - {Error}", error);
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"    - {error}");
+                        Console.ResetColor();
                     }
-                    logger.LogWarning("");
+                    Console.WriteLine();
                 }
                 throw new ValidationException($"Validation failed with {allErrors.Sum(e => e.Errors.Count)} error(s) in {allErrors.Count} of {settings.Count} file(s).");
             }
 
-            logger.LogInformation("Validation successful: {Count} file(s) validated.", settings.Count);
+            Console.WriteLine(" done");
 
             var metaData = metadataBuilder.Build(settings, headerTableSettings);
             return metaData;

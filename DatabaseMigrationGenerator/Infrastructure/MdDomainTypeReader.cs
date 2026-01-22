@@ -4,33 +4,14 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
-
 namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 {
-    public class MdDomainTypeReader : IMdDomainTypeReader
+    public class MdDomainTypeReader : MdByteArrayReaderBase<MdDomainTypeReader.MdDomainTypeRoot>, IMdDomainTypeReader
     {
-        private const string MdDomainTypeFileName = "Tables/Data/Md/MdDomainType.yaml";
+        protected override string FileName => "Tables/Data/Md/MdDomainType.yaml";
+        protected override Dictionary<int, string> GetDictionary(MdDomainTypeRoot root) => root.MdDomainType;
 
-        public async Task<byte[]> ReadAsync(string migrationsPath)
-        {
-            var filePath = Path.Combine(migrationsPath, MdDomainTypeFileName);
-
-            if (!File.Exists(filePath)) {
-                return [];
-            }
-
-            var content = await File.ReadAllTextAsync(filePath);
-            var deserializer = new DeserializerBuilder()
-                .WithNamingConvention(CamelCaseNamingConvention.Instance)
-                .Build();
-
-            var root = deserializer.Deserialize<MdDomainTypeRoot>(content);
-            return root.MdDomainType.Keys.Select(k => (byte)k).ToArray();
-        }
-
-        private class MdDomainTypeRoot
+        public class MdDomainTypeRoot
         {
             public Dictionary<int, string> MdDomainType { get; set; } = new();
         }

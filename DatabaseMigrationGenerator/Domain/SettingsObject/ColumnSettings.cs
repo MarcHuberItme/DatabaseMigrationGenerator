@@ -4,8 +4,6 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-using System.Text.RegularExpressions;
-
 namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
 {
     public class ColumnSettings
@@ -23,70 +21,20 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.SettingsObject
         public GenericControlsSettings? GenericControls { get; init; }
 
         private const int MaxNameLength = 30;
-        private const int MaxDescriptionLength = 2000;
         private const int MaxValueLength = 30;
-        private static readonly Regex AllowedNamePattern = new(@"^[a-zA-Z0-9_]+$", RegexOptions.Compiled);
 
         public List<string> Validate()
         {
             var errors = new List<string>();
 
-            ValidateName(errors);
-            ValidateDescription(errors);
-            ValidateMinValue(errors);
-            ValidateMaxValue(errors);
-            ValidateDefaultValue(errors);
+            SettingsValidators.ValidateName(errors, Name, MaxNameLength, "Column");
+            SettingsValidators.ValidateDescription(errors, Description, prefix: $"Column '{Name}':");
+            SettingsValidators.ValidateStringField(errors, MinValue, $"Column '{Name}': MinValue", MaxValueLength);
+            SettingsValidators.ValidateStringField(errors, MaxValue, $"Column '{Name}': MaxValue", MaxValueLength);
+            SettingsValidators.ValidateStringField(errors, DefaultValue, $"Column '{Name}': DefaultValue", MaxValueLength);
             ValidateGenericControls(errors);
 
             return errors;
-        }
-
-        private void ValidateName(List<string> errors)
-        {
-            if (string.IsNullOrEmpty(Name)) {
-                errors.Add($"Column {nameof(Name)} is required.");
-                return;
-            }
-
-            if (Name.Length > MaxNameLength) {
-                errors.Add($"Column '{Name}': {nameof(Name)} must not exceed {MaxNameLength} characters.");
-            }
-
-            if (!AllowedNamePattern.IsMatch(Name)) {
-                errors.Add($"Column '{Name}': {nameof(Name)} must only contain letters (a-z, A-Z), digits (0-9), and underscores (_).");
-            }
-        }
-
-        private void ValidateDescription(List<string> errors)
-        {
-            if (string.IsNullOrEmpty(Description)) {
-                return;
-            }
-
-            if (Description.Length > MaxDescriptionLength) {
-                errors.Add($"Column '{Name}': {nameof(Description)} must not exceed {MaxDescriptionLength} characters.");
-            }
-        }
-
-        private void ValidateMinValue(List<string> errors)
-        {
-            if (!string.IsNullOrEmpty(MinValue) && MinValue.Length > MaxValueLength) {
-                errors.Add($"Column '{Name}': {nameof(MinValue)} must not exceed {MaxValueLength} characters.");
-            }
-        }
-
-        private void ValidateMaxValue(List<string> errors)
-        {
-            if (!string.IsNullOrEmpty(MaxValue) && MaxValue.Length > MaxValueLength) {
-                errors.Add($"Column '{Name}': {nameof(MaxValue)} must not exceed {MaxValueLength} characters.");
-            }
-        }
-
-        private void ValidateDefaultValue(List<string> errors)
-        {
-            if (!string.IsNullOrEmpty(DefaultValue) && DefaultValue.Length > MaxValueLength) {
-                errors.Add($"Column '{Name}': {nameof(DefaultValue)} must not exceed {MaxValueLength} characters.");
-            }
         }
 
         private void ValidateGenericControls(List<string> errors)

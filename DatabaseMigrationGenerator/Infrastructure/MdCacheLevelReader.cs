@@ -4,33 +4,14 @@
 // </copyright>
 // -----------------------------------------------------------------------------
 
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
-
 namespace Finstar.DatabaseMigrationGenerator.Infrastructure
 {
-    public class MdCacheLevelReader : IMdCacheLevelReader
+    public class MdCacheLevelReader : MdByteArrayReaderBase<MdCacheLevelReader.MdCacheLevelRoot>, IMdCacheLevelReader
     {
-        private const string MdCacheLevelFileName = "Tables/Data/Md/MdCacheLevel.yaml";
+        protected override string FileName => "Tables/Data/Md/MdCacheLevel.yaml";
+        protected override Dictionary<int, string> GetDictionary(MdCacheLevelRoot root) => root.MdCacheLevel;
 
-        public async Task<byte[]> ReadAsync(string migrationsPath)
-        {
-            var filePath = Path.Combine(migrationsPath, MdCacheLevelFileName);
-
-            if (!File.Exists(filePath)) {
-                return [];
-            }
-
-            var content = await File.ReadAllTextAsync(filePath);
-            var deserializer = new DeserializerBuilder()
-                .WithNamingConvention(CamelCaseNamingConvention.Instance)
-                .Build();
-
-            var root = deserializer.Deserialize<MdCacheLevelRoot>(content);
-            return root.MdCacheLevel.Keys.Select(k => (byte)k).ToArray();
-        }
-
-        private class MdCacheLevelRoot
+        public class MdCacheLevelRoot
         {
             public Dictionary<int, string> MdCacheLevel { get; set; } = new();
         }
