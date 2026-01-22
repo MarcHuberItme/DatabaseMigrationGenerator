@@ -12,7 +12,9 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.ChangesetObject
     {
         private const string ExpectedChangesetRoot = "--liquibase formatted sql";
 
-        [GeneratedRegex(@"^--changeset\s+.+$", RegexOptions.Compiled)]
+        //[GeneratedRegex(@"^--changeset\s+.+$", RegexOptions.Compiled)]
+        [GeneratedRegex(@"^--changeset (?=.{0,6}:)[a-z]+:(?=.{0,255} context:)[A-Za-z0-9-_]* context:(any|prd|tsn|tst) labels:(?=.{1,255}$)c-[a-z]+,o-(table|view|stored-procedure|function|extended-properties|permission),ot-(schema|data),on-[A-Za-z0-9_]+,fin-[0-9]+", RegexOptions.Compiled)]
+        
         private static partial Regex ChangesetHeaderPattern();
 
         [GeneratedRegex(@"^--comment:\s*.+$", RegexOptions.Compiled)]
@@ -45,7 +47,7 @@ namespace Finstar.DatabaseMigrationGenerator.Domain.ChangesetObject
 
             if (!ChangesetHeaderPattern().IsMatch(header.Trim()))
             {
-                errors.Add($"Changeset[{index}] Header must match pattern '--changeset ...'. Found: '{header.Trim()}'.");
+                errors.Add($"Changeset[{index}] Header must match pattern '--changeset mhy:create-alter-function-AccClosingPeriodInfo context:any labels:c-any1,o-function,ot-schema,on-AccClosingPeriodInfo,fin-13659'. Found: '{header.Trim()}'.");
             }
         }
 
