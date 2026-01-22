@@ -131,7 +131,8 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Structure
             var releasesPath = Path.Combine(tablesPath, "Releases");
             if (Directory.Exists(releasesPath)) {
                 ValidateAllowedFiles(releasesPath, StructureRules.TablesReleasesAllowedFiles, "Migrations/Tables/Releases/");
-                // Any folders allowed under Releases
+                // Validate version folders (e.g., 3.5x, 3.6x) - no files allowed directly
+                ValidateReleasesVersionFolders(releasesPath);
             }
 
             // Tables/Settings
@@ -204,6 +205,15 @@ namespace Finstar.DatabaseMigrationGenerator.Application.Structure
                 if (folder == null || !TwoCharFolderPattern().IsMatch(folder)) {
                     _errors.Add($"{location}: Folder '{folder}' must be exactly 2 characters (e.g., 'Ac', 'Db').");
                 }
+            }
+        }
+
+        private void ValidateReleasesVersionFolders(string releasesPath)
+        {
+            var versionFolders = Directory.GetDirectories(releasesPath);
+            foreach (var versionFolder in versionFolders) {
+                var folderName = Path.GetFileName(versionFolder);
+                ValidateNoFiles(versionFolder, $"Migrations/Tables/Releases/{folderName}/");
             }
         }
     }
